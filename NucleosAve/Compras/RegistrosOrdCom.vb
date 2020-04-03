@@ -2350,7 +2350,7 @@ Public Class RegistrosOrdCom
                 OrdCompra.TextUnitPrice10.Visible = True
                 OrdCompra.TextTotal10.Visible = True
                 OrdCompra.TextUm10.Visible = True
-                OrdCompra.TextBox_detalles10.Visible = False
+                OrdCompra.TextBox_detalles10.Visible = True
 
                 '-------------------------------------------------------------
                 OrdCompra.TextNum11.Visible = True
@@ -3575,7 +3575,6 @@ Public Class RegistrosOrdCom
             End If
         End If
     End Sub
-
 
 
     Private Sub Inicio_Od_MouseDown(sender As Object, e As MouseEventArgs) Handles MyBase.MouseDown
