@@ -1,0 +1,856 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+NucleosAve
+</name>
+</assembly>
+<members>
+<member name="T:NucleosAve.My.Resources.Resources">
+<summary>
+  Clase de recurso fuertemente tipado, para buscar cadenas traducidas, etc.
+</summary>
+</member>
+<member name="P:NucleosAve.My.Resources.Resources.ResourceManager">
+<summary>
+  Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
+</summary>
+</member>
+<member name="P:NucleosAve.My.Resources.Resources.Culture">
+<summary>
+  Reemplaza la propiedad CurrentUICulture del subproceso actual para todas las
+  búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
+</summary>
+</member>
+<member name="P:NucleosAve.My.Resources.Resources.calendar_281">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:NucleosAve.My.Resources.Resources.file_1311">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:NucleosAve.My.Resources.Resources.file_1411">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:NucleosAve.My.Resources.Resources.file_1911">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:NucleosAve.My.Resources.Resources.file_22">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:NucleosAve.My.Resources.Resources.file_42">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:NucleosAve.My.Resources.Resources.file_511">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:NucleosAve.My.Resources.Resources.file1">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:NucleosAve.My.Resources.Resources.Fondo">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:NucleosAve.My.Resources.Resources.Icono_Usuario1">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:NucleosAve.My.Resources.Resources.icons_almacén">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:NucleosAve.My.Resources.Resources.icons_orden_de_compra">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:NucleosAve.My.Resources.Resources.icons_recibo">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:NucleosAve.My.Resources.Resources.icons8_almacén_40">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:NucleosAve.My.Resources.Resources.icons8_almacén_80">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:NucleosAve.My.Resources.Resources.icons8_archivo_xml_100">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:NucleosAve.My.Resources.Resources.icons8_archivo_xml_1001">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:NucleosAve.My.Resources.Resources.icons8_archivo_xml_96">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:NucleosAve.My.Resources.Resources.icons8_basura_100">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:NucleosAve.My.Resources.Resources.icons8_booking_5001">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:NucleosAve.My.Resources.Resources.icons8_caja_registradora_80">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:NucleosAve.My.Resources.Resources.icons8_cancelar_suscripción_64">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:NucleosAve.My.Resources.Resources.icons8_cerrar_ventana_5001">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:NucleosAve.My.Resources.Resources.icons8_descargar_100">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:NucleosAve.My.Resources.Resources.icons8_entrega_100">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:NucleosAve.My.Resources.Resources.icons8_entrega_100_2">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:NucleosAve.My.Resources.Resources.icons8_escáner_de_código_de_barras_2_filled_64">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:NucleosAve.My.Resources.Resources.icons8_exportar_pdf_100">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:NucleosAve.My.Resources.Resources.icons8_google_web_search_512">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:NucleosAve.My.Resources.Resources.icons8_imprimir_481">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:NucleosAve.My.Resources.Resources.icons8_izquierda_64__1_">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:NucleosAve.My.Resources.Resources.icons8_minimizar_la_ventana_5001">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:NucleosAve.My.Resources.Resources.icons8_paquete_64">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:NucleosAve.My.Resources.Resources.icons8_pdf_100">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:NucleosAve.My.Resources.Resources.icons8_pdf_2_100">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:NucleosAve.My.Resources.Resources.icons8_producto_40">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:NucleosAve.My.Resources.Resources.icons8_proveedor_16">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:NucleosAve.My.Resources.Resources.icons8_refrescar_código_de_barras_32">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:NucleosAve.My.Resources.Resources.icons8_shutdown_50_2">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:NucleosAve.My.Resources.Resources.icons8_verificar_80">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:NucleosAve.My.Resources.Resources.icons8_xml_100">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:NucleosAve.My.Resources.Resources.list_3">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:NucleosAve.My.Resources.Resources.list_81">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:NucleosAve.My.Resources.Resources.list1">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:NucleosAve.My.Resources.Resources.Logo_Nucleos1">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:NucleosAve.My.Resources.Resources.notepad_101">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:NucleosAve.My.Resources.Resources.notepad_81">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:NucleosAve.My.Resources.Resources.notepad1">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:NucleosAve.My.Resources.Resources.user_40">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="T:NucleosAve.combito">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:NucleosAve.combito.SP38_Combo_ReportesDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:NucleosAve.combito.SP38_Combo_ReportesRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:NucleosAve.combito.SP38_Combo_ReportesRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:NucleosAve.combitoTableAdapters.SP38_Combo_ReportesTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:NucleosAve.combitoTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:NucleosAve.combitoTableAdapters.TableAdapterManager.UpdateUpdatedRows(NucleosAve.combito,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:NucleosAve.combitoTableAdapters.TableAdapterManager.UpdateInsertedRows(NucleosAve.combito,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:NucleosAve.combitoTableAdapters.TableAdapterManager.UpdateDeletedRows(NucleosAve.combito,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:NucleosAve.combitoTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:NucleosAve.combitoTableAdapters.TableAdapterManager.UpdateAll(NucleosAve.combito)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:NucleosAve.combitoTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:NucleosAve.combitoTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:NucleosAve.traerproductos">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:NucleosAve.traerproductos.TB_Ordenes_DetalleDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:NucleosAve.traerproductos.TB_Ordenes_DetalleRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:NucleosAve.traerproductos.TB_Ordenes_DetalleRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:NucleosAve.mostrarTrasportes">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:NucleosAve.mostrarTrasportes.TB_TrasportesDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:NucleosAve.mostrarTrasportes.TB_TrasportesRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:NucleosAve.mostrarTrasportes.TB_TrasportesRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:NucleosAve.mostrarTrasportesTableAdapters.TB_TrasportesTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:NucleosAve.mostrarTrasportesTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:NucleosAve.mostrarTrasportesTableAdapters.TableAdapterManager.UpdateUpdatedRows(NucleosAve.mostrarTrasportes,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:NucleosAve.mostrarTrasportesTableAdapters.TableAdapterManager.UpdateInsertedRows(NucleosAve.mostrarTrasportes,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:NucleosAve.mostrarTrasportesTableAdapters.TableAdapterManager.UpdateDeletedRows(NucleosAve.mostrarTrasportes,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:NucleosAve.mostrarTrasportesTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:NucleosAve.mostrarTrasportesTableAdapters.TableAdapterManager.UpdateAll(NucleosAve.mostrarTrasportes)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:NucleosAve.mostrarTrasportesTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:NucleosAve.mostrarTrasportesTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:NucleosAve.reporteOrdC">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:NucleosAve.reporteOrdC.DataTable1DataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:NucleosAve.reporteOrdC.DataTable1Row">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:NucleosAve.reporteOrdC.DataTable1RowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:NucleosAve.reporteOrdCTableAdapters.DataTable1TableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:NucleosAve.reporteOrdCTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:NucleosAve.reporteOrdCTableAdapters.TableAdapterManager.UpdateUpdatedRows(NucleosAve.reporteOrdC,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:NucleosAve.reporteOrdCTableAdapters.TableAdapterManager.UpdateInsertedRows(NucleosAve.reporteOrdC,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:NucleosAve.reporteOrdCTableAdapters.TableAdapterManager.UpdateDeletedRows(NucleosAve.reporteOrdC,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:NucleosAve.reporteOrdCTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:NucleosAve.reporteOrdCTableAdapters.TableAdapterManager.UpdateAll(NucleosAve.reporteOrdC)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:NucleosAve.reporteOrdCTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:NucleosAve.reporteOrdCTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:NucleosAve.SISUT020DataSet">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:NucleosAve.SISUT020DataSet.Ordenes_CompraDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:NucleosAve.SISUT020DataSet.Ordenes_detDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:NucleosAve.SISUT020DataSet.ProveedoresDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:NucleosAve.SISUT020DataSet.SP38_Mostrar_OrdComDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:NucleosAve.SISUT020DataSet.Ordenes_CompraRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:NucleosAve.SISUT020DataSet.Ordenes_detRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:NucleosAve.SISUT020DataSet.ProveedoresRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:NucleosAve.SISUT020DataSet.SP38_Mostrar_OrdComRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:NucleosAve.SISUT020DataSet.Ordenes_CompraRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:NucleosAve.SISUT020DataSet.Ordenes_detRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:NucleosAve.SISUT020DataSet.ProveedoresRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:NucleosAve.SISUT020DataSet.SP38_Mostrar_OrdComRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:NucleosAve.SISUT020DataSetTableAdapters.Ordenes_CompraTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:NucleosAve.SISUT020DataSetTableAdapters.Ordenes_detTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:NucleosAve.SISUT020DataSetTableAdapters.ProveedoresTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:NucleosAve.SISUT020DataSetTableAdapters.SP38_Mostrar_OrdComTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:NucleosAve.SISUT020DataSetTableAdapters.QueriesTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:NucleosAve.SISUT020DataSetTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:NucleosAve.SISUT020DataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(NucleosAve.SISUT020DataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:NucleosAve.SISUT020DataSetTableAdapters.TableAdapterManager.UpdateInsertedRows(NucleosAve.SISUT020DataSet,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:NucleosAve.SISUT020DataSetTableAdapters.TableAdapterManager.UpdateDeletedRows(NucleosAve.SISUT020DataSet,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:NucleosAve.SISUT020DataSetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:NucleosAve.SISUT020DataSetTableAdapters.TableAdapterManager.UpdateAll(NucleosAve.SISUT020DataSet)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:NucleosAve.SISUT020DataSetTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:NucleosAve.SISUT020DataSetTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:NucleosAve.SISUT020DataSet1">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:NucleosAve.SISUT020DataSet1.SP38_REPORTES_ORDCDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:NucleosAve.SISUT020DataSet1.SP38_REPORTES_ORDCRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:NucleosAve.SISUT020DataSet1.SP38_REPORTES_ORDCRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:NucleosAve.SISUT020DataSet1TableAdapters.SP38_REPORTES_ORDCTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:NucleosAve.SISUT020DataSet1TableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:NucleosAve.SISUT020DataSet1TableAdapters.TableAdapterManager.UpdateUpdatedRows(NucleosAve.SISUT020DataSet1,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:NucleosAve.SISUT020DataSet1TableAdapters.TableAdapterManager.UpdateInsertedRows(NucleosAve.SISUT020DataSet1,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:NucleosAve.SISUT020DataSet1TableAdapters.TableAdapterManager.UpdateDeletedRows(NucleosAve.SISUT020DataSet1,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:NucleosAve.SISUT020DataSet1TableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:NucleosAve.SISUT020DataSet1TableAdapters.TableAdapterManager.UpdateAll(NucleosAve.SISUT020DataSet1)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:NucleosAve.SISUT020DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:NucleosAve.SISUT020DataSet1TableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:NucleosAve.SISUT020DataSet2">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:NucleosAve.SISUT020DataSet2.SP38_REPORTES_ORDCDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:NucleosAve.SISUT020DataSet2.SP38_REPORTES_ORDCRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:NucleosAve.SISUT020DataSet2.SP38_REPORTES_ORDCRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:NucleosAve.SISUT020DataSet2TableAdapters.SP38_REPORTES_ORDCTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:NucleosAve.SISUT020DataSet2TableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:NucleosAve.SISUT020DataSet2TableAdapters.TableAdapterManager.UpdateUpdatedRows(NucleosAve.SISUT020DataSet2,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:NucleosAve.SISUT020DataSet2TableAdapters.TableAdapterManager.UpdateInsertedRows(NucleosAve.SISUT020DataSet2,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:NucleosAve.SISUT020DataSet2TableAdapters.TableAdapterManager.UpdateDeletedRows(NucleosAve.SISUT020DataSet2,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:NucleosAve.SISUT020DataSet2TableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:NucleosAve.SISUT020DataSet2TableAdapters.TableAdapterManager.UpdateAll(NucleosAve.SISUT020DataSet2)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:NucleosAve.SISUT020DataSet2TableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:NucleosAve.SISUT020DataSet2TableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:NucleosAve.traerproductosTableAdapters.TB_Ordenes_DetalleTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:NucleosAve.traerproductosTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:NucleosAve.traerproductosTableAdapters.TableAdapterManager.UpdateUpdatedRows(NucleosAve.traerproductos,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:NucleosAve.traerproductosTableAdapters.TableAdapterManager.UpdateInsertedRows(NucleosAve.traerproductos,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:NucleosAve.traerproductosTableAdapters.TableAdapterManager.UpdateDeletedRows(NucleosAve.traerproductos,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:NucleosAve.traerproductosTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:NucleosAve.traerproductosTableAdapters.TableAdapterManager.UpdateAll(NucleosAve.traerproductos)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:NucleosAve.traerproductosTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:NucleosAve.traerproductosTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:NucleosAve.SISUT020DataSet3">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:NucleosAve.SISUT020DataSet3.SP_MostrarTrasportesDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:NucleosAve.SISUT020DataSet3.SP_MostrarTrasportesRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:NucleosAve.SISUT020DataSet3.SP_MostrarTrasportesRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:NucleosAve.SISUT020DataSet3TableAdapters.SP_MostrarTrasportesTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:NucleosAve.SISUT020DataSet3TableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:NucleosAve.SISUT020DataSet3TableAdapters.TableAdapterManager.UpdateUpdatedRows(NucleosAve.SISUT020DataSet3,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:NucleosAve.SISUT020DataSet3TableAdapters.TableAdapterManager.UpdateInsertedRows(NucleosAve.SISUT020DataSet3,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:NucleosAve.SISUT020DataSet3TableAdapters.TableAdapterManager.UpdateDeletedRows(NucleosAve.SISUT020DataSet3,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:NucleosAve.SISUT020DataSet3TableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:NucleosAve.SISUT020DataSet3TableAdapters.TableAdapterManager.UpdateAll(NucleosAve.SISUT020DataSet3)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:NucleosAve.SISUT020DataSet3TableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:NucleosAve.SISUT020DataSet3TableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+</members>
+</doc>

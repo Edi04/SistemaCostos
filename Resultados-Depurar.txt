@@ -1,0 +1,71 @@
+﻿'NucleosAve.exe' (CLR v4.0.30319: DefaultDomain): 'C:\WINDOWS\Microsoft.Net\assembly\GAC_32\mscorlib\v4.0_4.0.0.0__b77a5c561934e089\mscorlib.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'NucleosAve.exe' (CLR v4.0.30319: DefaultDomain): 'C:\Users\ANTUA\Desktop\Sistema_Costos\NucleosAve\bin\Debug\NucleosAve.exe' cargado. Símbolos cargados.
+'NucleosAve.exe' (CLR v4.0.30319: NucleosAve.exe): 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Windows.Forms\v4.0_4.0.0.0__b77a5c561934e089\System.Windows.Forms.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'NucleosAve.exe' (CLR v4.0.30319: NucleosAve.exe): 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System\v4.0_4.0.0.0__b77a5c561934e089\System.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'NucleosAve.exe' (CLR v4.0.30319: NucleosAve.exe): 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Drawing\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Drawing.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'NucleosAve.exe' (CLR v4.0.30319: NucleosAve.exe): 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\Microsoft.VisualBasic\v4.0_10.0.0.0__b03f5f7f11d50a3a\Microsoft.VisualBasic.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'NucleosAve.exe' (CLR v4.0.30319: NucleosAve.exe): 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Core\v4.0_4.0.0.0__b77a5c561934e089\System.Core.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+Ir a: paso a paso por procedimientos en código 'NucleosAve.My.MyProject.get_Forms' que no es de usuario
+Ir a: paso a paso por procedimientos en código 'NucleosAve.My.MyProject.ThreadSafeObjectProvider.get_GetInstance' que no es de usuario
+Ir a: paso a paso por procedimientos en código 'NucleosAve.My.MyProject.MyForms..ctor' que no es de usuario
+Ir a: paso a paso por procedimientos en código 'NucleosAve.My.MyProject.MyForms.get_InicioSesion' que no es de usuario
+Ir a: paso a paso por procedimientos en código 'NucleosAve.My.MyProject.MyForms.Create__Instance__' que no es de usuario
+Ir a: paso a paso por procedimientos en código 'NucleosAve.InicioSesion..ctor' que no es de usuario
+'NucleosAve.exe' (CLR v4.0.30319: NucleosAve.exe): 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Configuration\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Configuration.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'NucleosAve.exe' (CLR v4.0.30319: NucleosAve.exe): 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Xml\v4.0_4.0.0.0__b77a5c561934e089\System.Xml.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+Ir a: paso a paso por procedimientos en código 'NucleosAve.InicioSesion.InitializeComponent' que no es de usuario
+Ir a: paso a paso por procedimientos en código 'NucleosAve.InicioSesion.set_BMinimizar' que no es de usuario
+Ir a: paso a paso por procedimientos en código 'NucleosAve.InicioSesion.set_BCerrar' que no es de usuario
+Ir a: paso a paso por procedimientos en código 'NucleosAve.InicioSesion.set_PLogo' que no es de usuario
+Ir a: paso a paso por procedimientos en código 'NucleosAve.InicioSesion.set_PLogin' que no es de usuario
+Ir a: paso a paso por procedimientos en código 'NucleosAve.InicioSesion.set_PictureBox1' que no es de usuario
+Ir a: paso a paso por procedimientos en código 'NucleosAve.InicioSesion.set_LUsuario' que no es de usuario
+Ir a: paso a paso por procedimientos en código 'NucleosAve.InicioSesion.set_CUsuarios' que no es de usuario
+Ir a: paso a paso por procedimientos en código 'NucleosAve.InicioSesion.set_LPassword' que no es de usuario
+Ir a: paso a paso por procedimientos en código 'NucleosAve.InicioSesion.set_LProceso' que no es de usuario
+Ir a: paso a paso por procedimientos en código 'NucleosAve.InicioSesion.set_TxtContrasena' que no es de usuario
+Ir a: paso a paso por procedimientos en código 'NucleosAve.InicioSesion.set_BInicioSesion' que no es de usuario
+Ir a: paso a paso por procedimientos en código 'NucleosAve.InicioSesion.set_CProceso' que no es de usuario
+Ir a: paso a paso por procedimientos en código 'NucleosAve.InicioSesion.set_LV' que no es de usuario
+Ir a: paso a paso por procedimientos en código 'NucleosAve.InicioSesion.get_BMinimizar' que no es de usuario
+Ir a: paso a paso por procedimientos en código 'NucleosAve.InicioSesion.get_BCerrar' que no es de usuario
+Ir a: paso a paso por procedimientos en código 'NucleosAve.InicioSesion.get_PLogo' que no es de usuario
+Ir a: paso a paso por procedimientos en código 'NucleosAve.InicioSesion.get_PLogin' que no es de usuario
+Ir a: paso a paso por procedimientos en código 'NucleosAve.InicioSesion.get_PictureBox1' que no es de usuario
+Ir a: paso a paso por procedimientos en código 'NucleosAve.My.Resources.Resources.get_icons8_minimizar_la_ventana_5001' que no es de usuario
+Ir a: paso a paso por procedimientos en código 'NucleosAve.My.Resources.Resources.get_ResourceManager' que no es de usuario
+Ir a: paso a paso por procedimientos en código 'NucleosAve.My.Resources.Resources.get_icons8_cerrar_ventana_5001' que no es de usuario
+Ir a: paso a paso por procedimientos en código 'NucleosAve.My.Resources.Resources.get_Logo_Nucleos1' que no es de usuario
+Ir a: paso a paso por procedimientos en código 'NucleosAve.InicioSesion.get_LUsuario' que no es de usuario
+Ir a: paso a paso por procedimientos en código 'NucleosAve.InicioSesion.get_CUsuarios' que no es de usuario
+Ir a: paso a paso por procedimientos en código 'NucleosAve.InicioSesion.get_LPassword' que no es de usuario
+Ir a: paso a paso por procedimientos en código 'NucleosAve.InicioSesion.get_LProceso' que no es de usuario
+Ir a: paso a paso por procedimientos en código 'NucleosAve.InicioSesion.get_TxtContrasena' que no es de usuario
+Ir a: paso a paso por procedimientos en código 'NucleosAve.InicioSesion.get_BInicioSesion' que no es de usuario
+Ir a: paso a paso por procedimientos en código 'NucleosAve.InicioSesion.get_CProceso' que no es de usuario
+Ir a: paso a paso por procedimientos en código 'NucleosAve.My.Resources.Resources.get_Icono_Usuario1' que no es de usuario
+Ir a: paso a paso por procedimientos en código 'NucleosAve.InicioSesion.get_LV' que no es de usuario
+Ir a: paso a paso por procedimientos en código 'NucleosAve.My.Resources.Resources.get_Fondo' que no es de usuario
+'NucleosAve.exe' (CLR v4.0.30319: NucleosAve.exe): 'C:\WINDOWS\Microsoft.Net\assembly\GAC_32\System.Data\v4.0_4.0.0.0__b77a5c561934e089\System.Data.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'NucleosAve.exe' (CLR v4.0.30319: NucleosAve.exe): 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Data.resources\v4.0_4.0.0.0_es_b77a5c561934e089\System.Data.resources.dll' cargado. El módulo se compiló sin símbolos.
+'NucleosAve.exe' (CLR v4.0.30319: NucleosAve.exe): 'C:\WINDOWS\Microsoft.Net\assembly\GAC_32\System.Transactions\v4.0_4.0.0.0__b77a5c561934e089\System.Transactions.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'NucleosAve.exe' (CLR v4.0.30319: NucleosAve.exe): 'C:\WINDOWS\Microsoft.Net\assembly\GAC_32\System.EnterpriseServices\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.EnterpriseServices.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'NucleosAve.exe' (CLR v4.0.30319: NucleosAve.exe): 'C:\WINDOWS\Microsoft.Net\assembly\GAC_32\System.EnterpriseServices\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.EnterpriseServices.Wrapper.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'NucleosAve.exe' (CLR v4.0.30319: NucleosAve.exe): 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Runtime.Caching\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Runtime.Caching.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'NucleosAve.exe' (CLR v4.0.30319: NucleosAve.exe): 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Numerics\v4.0_4.0.0.0__b77a5c561934e089\System.Numerics.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'NucleosAve.exe' (CLR v4.0.30319: NucleosAve.exe): 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Windows.Forms.resources\v4.0_4.0.0.0_es_b77a5c561934e089\System.Windows.Forms.resources.dll' cargado. El módulo se compiló sin símbolos.
+Excepción producida: 'System.InvalidOperationException' en System.Data.dll
+'NucleosAve.exe' (CLR v4.0.30319: NucleosAve.exe): 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Data.DataSetExtensions\v4.0_4.0.0.0__b77a5c561934e089\System.Data.DataSetExtensions.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'NucleosAve.exe' (CLR v4.0.30319: NucleosAve.exe): 'C:\Users\ANTUA\Desktop\Sistema_Costos\NucleosAve\bin\Debug\Microsoft.ReportViewer.WinForms.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'NucleosAve.exe' (CLR v4.0.30319: NucleosAve.exe): 'C:\Users\ANTUA\Desktop\Sistema_Costos\NucleosAve\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll' cargado. El módulo se compiló sin símbolos.
+'NucleosAve.exe' (CLR v4.0.30319: NucleosAve.exe): 'C:\Users\ANTUA\Desktop\Sistema_Costos\NucleosAve\bin\Debug\Microsoft.ReportViewer.Common.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'NucleosAve.exe' (CLR v4.0.30319: Domain 2): 'C:\WINDOWS\Microsoft.Net\assembly\GAC_32\mscorlib\v4.0_4.0.0.0__b77a5c561934e089\mscorlib.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'NucleosAve.exe' (CLR v4.0.30319: NucleosAve.exe): 'C:\Users\ANTUA\Desktop\Sistema_Costos\NucleosAve\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll' cargado. El módulo se compiló sin símbolos.
+'NucleosAve.exe' (CLR v4.0.30319: NucleosAve.exe): 'C:\Users\ANTUA\Desktop\Sistema_Costos\NucleosAve\bin\Debug\Microsoft.SqlServer.Types.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'NucleosAve.exe' (CLR v4.0.30319: NucleosAve.exe): 'C:\Users\ANTUA\Desktop\Sistema_Costos\NucleosAve\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'NucleosAve.exe' (CLR v4.0.30319: Domain 2): 'C:\WINDOWS\Microsoft.Net\assembly\GAC_32\mscorlib\v4.0_4.0.0.0__b77a5c561934e089\mscorlib.dll' descargado
+'NucleosAve.exe' (CLR v4.0.30319: Domain 3): 'C:\WINDOWS\Microsoft.Net\assembly\GAC_32\mscorlib\v4.0_4.0.0.0__b77a5c561934e089\mscorlib.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+El subproceso 0x2bd4 terminó con código 0 (0x0).
+'NucleosAve.exe' (CLR v4.0.30319: NucleosAve.exe): 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\mscorlib.resources\v4.0_4.0.0.0_es_b77a5c561934e089\mscorlib.resources.dll' cargado. El módulo se compiló sin símbolos.
+'NucleosAve.exe' (CLR v4.0.30319: Domain 3): 'C:\WINDOWS\Microsoft.Net\assembly\GAC_32\mscorlib\v4.0_4.0.0.0__b77a5c561934e089\mscorlib.dll' descargado
+El programa '[14852] NucleosAve.exe' terminó con código 0 (0x0).

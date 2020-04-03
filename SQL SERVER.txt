@@ -1,0 +1,17 @@
+CREATE TABLE [dbo].[TB_Entrega_Combustible](
+	[id_reparticion] [int] IDENTITY(1,1) PRIMARY KEY,
+	[codigo] [varchar](50) NULL,
+	[fecha] [date] NULL,
+	[trasporte] [varchar](50) NULL,
+	area varchar(50),
+	[litros_entregados] [float] NULL,
+	[tipo] [varchar](50) NULL,
+	cantidad_cuenta varchar(150),
+	[entrego] [varchar](250) NULL,
+	[quien_porta_unidad] [varchar](250) NULL,
+	mpn varchar(50),
+	responsable varchar(150)
+) ON [PRIMARY]
+
+GO
+
