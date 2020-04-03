@@ -633,7 +633,7 @@ Public Class OrdCompra
             '2--Funcion_registros nos vamos a clase Fn_insertar_productosOrdC/creamos el procedimietnorp almacenado
             '3--traemos todo aqui
             '---------------------------------------registro de tabla 1------------------------------------------------
-            If (TextNum1.Text = "" Or TextQuantity1.Text = "" Or TextUnitPrice1.Text = "" Or TextTotal1.Text = "") Then
+            If (TextNum1.Text = "" Or TextQuantity1.Text = "" Or TextTotal1.Text = "") Then
 
             Else
                 Try
@@ -645,12 +645,15 @@ Public Class OrdCompra
                     'logica1.Gdescripcion = Me.TextDescription1.Text
                     logica1.Gdescripcion = Me.ComboBoxProducto1.Text
                     logica1.GCantidad = Me.TextQuantity1.Text
-                    logica1.Gprecio = Me.TextUnitPrice1.Text 'obtemos el id del valor el cual se esta mostrando en el combo
+                    If TextUnitPrice1.Text = "" Then
+                        logica1.Gprecio = "0"
+                    Else
+                        logica1.Gprecio = Me.TextUnitPrice1.Text 'obtemos el id del valor el cual se esta mostrando en el combo
+                    End If
                     logica1.Gsubtotal = Me.TextTotal1.Text
                     logica1.G_id_pro_pro = Me.ComboBoxProveedores.SelectedValue
                     logica1.GUm = Me.TextUm1.Text
                     logica1.Gdetalles = Me.TextBox_detalles1.Text
-
 
                     If funciones.Fn_insertar_productosOrdC(logica1) Then
                         MsgBox("Productos Insertados Correctamente", MessageBoxIcon.Information)
@@ -668,7 +671,7 @@ Public Class OrdCompra
             '-------------TERMINA LIMPIAR CAJAS----------
 
             '---------------------------------------registro de tabla 2------------------------------------------------
-            If (TextNum2.Text = "" Or TextQuantity2.Text = "" Or TextUnitPrice2.Text = "" Or TextTotal2.Text = "") Then
+            If (TextNum2.Text = "" Or TextQuantity2.Text = "" Or TextTotal2.Text = "") Then
 
             Else
                 Try
@@ -679,9 +682,13 @@ Public Class OrdCompra
                     logica1.G_codigo_pro = Me.TextCodigo.Text
                     logica1.Gdescripcion = Me.ComboBoxProducto2.Text
                     logica1.GCantidad = Me.TextQuantity2.Text
-                    logica1.Gprecio = Me.TextUnitPrice2.Text 'obtemos el id del valor el cual se esta mostrando en el combo
+                    If TextUnitPrice2.Text = "" Then
+                        logica1.Gprecio = "0"
+                    Else
+                        logica1.Gprecio = Me.TextUnitPrice2.Text 'obtemos el id del valor el cual se esta mostrando en el combo
+                    End If
                     logica1.Gsubtotal = Me.TextTotal2.Text
-                    logica1.G_id_pro_pro = Me.ComboBoxProveedores.SelectedValue
+                        logica1.G_id_pro_pro = Me.ComboBoxProveedores.SelectedValue
                     logica1.GUm = Me.TextUm2.Text
                     logica1.Gdetalles = Me.TextBox_detalles2.Text
 
@@ -702,7 +709,7 @@ Public Class OrdCompra
             '-------------TERMINA LIMPIAR CAJAS----------
 
             '---------------------------------------registro de tabla 3------------------------------------------------
-            If (TextNum3.Text = "" Or TextQuantity3.Text = "" Or TextUnitPrice3.Text = "" Or TextTotal3.Text = "") Then
+            If (TextNum3.Text = "" Or TextQuantity3.Text = "" Or TextTotal3.Text = "") Then
 
             Else
                 Try
@@ -713,7 +720,11 @@ Public Class OrdCompra
                     logica1.G_codigo_pro = Me.TextCodigo.Text
                     logica1.Gdescripcion = Me.ComboBoxProducto3.Text
                     logica1.GCantidad = Me.TextQuantity3.Text
-                    logica1.Gprecio = Me.TextUnitPrice3.Text 'obtemos el id del valor el cual se esta mostrando en el combo
+                    If TextUnitPrice3.Text = "" Then
+                        logica1.Gprecio = "0"
+                    Else
+                        logica1.Gprecio = Me.TextUnitPrice3.Text 'obtemos el id del valor el cual se esta mostrando en el combo
+                    End If
                     logica1.Gsubtotal = Me.TextTotal3.Text
                     logica1.G_id_pro_pro = Me.ComboBoxProveedores.SelectedValue
                     logica1.GUm = Me.TextUm3.Text
@@ -736,7 +747,7 @@ Public Class OrdCompra
             '-------------TERMINA LIMPIAR CAJAS----------
 
             '---------------------------------------registro de tabla 4------------------------------------------------
-            If (TextNum4.Text = "" Or TextQuantity4.Text = "" Or TextUnitPrice4.Text = "" Or TextTotal4.Text = "") Then
+            If (TextNum4.Text = "" Or TextQuantity4.Text = "" Or TextTotal4.Text = "") Then
 
             Else
                 Try
@@ -747,9 +758,13 @@ Public Class OrdCompra
                     logica1.G_codigo_pro = Me.TextCodigo.Text
                     logica1.Gdescripcion = Me.ComboBoxProducto4.Text
                     logica1.GCantidad = Me.TextQuantity4.Text
-                    logica1.Gprecio = Me.TextUnitPrice4.Text 'obtemos el id del valor el cual se esta mostrando en el combo
+                    If TextUnitPrice4.Text = "" Then
+                        logica1.Gprecio = "0"
+                    Else
+                        logica1.Gprecio = Me.TextUnitPrice4.Text 'obtemos el id del valor el cual se esta mostrando en el combo
+                    End If
                     logica1.Gsubtotal = Me.TextTotal4.Text
-                    logica1.G_id_pro_pro = Me.ComboBoxProveedores.SelectedValue
+                        logica1.G_id_pro_pro = Me.ComboBoxProveedores.SelectedValue
                     logica1.GUm = Me.TextUm4.Text
                     logica1.Gdetalles = Me.TextBox_detalles4.Text
 
@@ -770,7 +785,7 @@ Public Class OrdCompra
             '-------------TERMINA LIMPIAR CAJAS----------
 
             '---------------------------------------registro de tabla 5------------------------------------------------
-            If (TextNum5.Text = "" Or TextQuantity5.Text = "" Or TextUnitPrice5.Text = "" Or TextTotal5.Text = "") Then
+            If (TextNum5.Text = "" Or TextQuantity5.Text = "" Or TextTotal5.Text = "") Then
 
             Else
                 Try
@@ -781,7 +796,11 @@ Public Class OrdCompra
                     logica1.G_codigo_pro = Me.TextCodigo.Text
                     logica1.Gdescripcion = Me.ComboBoxProducto5.Text
                     logica1.GCantidad = Me.TextQuantity5.Text
-                    logica1.Gprecio = Me.TextUnitPrice5.Text 'obtemos el id del valor el cual se esta mostrando en el combo
+                    If TextUnitPrice5.Text = "" Then
+                        logica1.Gprecio = "0"
+                    Else
+                        logica1.Gprecio = Me.TextUnitPrice5.Text 'obtemos el id del valor el cual se esta mostrando en el combo
+                    End If
                     logica1.Gsubtotal = Me.TextTotal5.Text
                     logica1.G_id_pro_pro = Me.ComboBoxProveedores.SelectedValue
                     logica1.GUm = Me.TextUm5.Text
@@ -804,7 +823,7 @@ Public Class OrdCompra
             '-------------TERMINA LIMPIAR CAJAS----------
 
             '---------------------------------------registro de tabla 6------------------------------------------------
-            If (TextNum6.Text = "" Or TextQuantity6.Text = "" Or TextUnitPrice6.Text = "" Or TextTotal6.Text = "") Then
+            If (TextNum6.Text = "" Or TextQuantity6.Text = "" Or TextTotal6.Text = "") Then
 
             Else
                 Try
@@ -815,7 +834,11 @@ Public Class OrdCompra
                     logica1.G_codigo_pro = Me.TextCodigo.Text
                     logica1.Gdescripcion = Me.ComboBoxProducto6.Text
                     logica1.GCantidad = Me.TextQuantity6.Text
-                    logica1.Gprecio = Me.TextUnitPrice6.Text 'obtemos el id del valor el cual se esta mostrando en el combo
+                    If TextUnitPrice6.Text = "" Then
+                        logica1.Gprecio = "0"
+                    Else
+                        logica1.Gprecio = Me.TextUnitPrice6.Text 'obtemos el id del valor el cual se esta mostrando en el combo
+                    End If
                     logica1.Gsubtotal = Me.TextTotal6.Text
                     logica1.G_id_pro_pro = Me.ComboBoxProveedores.SelectedValue
                     logica1.GUm = Me.TextUm6.Text
@@ -838,7 +861,7 @@ Public Class OrdCompra
             '-------------TERMINA LIMPIAR CAJAS----------
 
             '---------------------------------------registro de tabla 7------------------------------------------------
-            If (TextNum7.Text = "" Or TextQuantity7.Text = "" Or TextUnitPrice7.Text = "" Or TextTotal7.Text = "") Then
+            If (TextNum7.Text = "" Or TextQuantity7.Text = "" Or TextTotal7.Text = "") Then
 
             Else
                 Try
@@ -849,7 +872,11 @@ Public Class OrdCompra
                     logica1.G_codigo_pro = Me.TextCodigo.Text
                     logica1.Gdescripcion = Me.ComboBoxProducto7.Text
                     logica1.GCantidad = Me.TextQuantity7.Text
-                    logica1.Gprecio = Me.TextUnitPrice7.Text 'obtemos el id del valor el cual se esta mostrando en el combo
+                    If TextUnitPrice7.Text = "" Then
+                        logica1.Gprecio = "0"
+                    Else
+                        logica1.Gprecio = Me.TextUnitPrice7.Text 'obtemos el id del valor el cual se esta mostrando en el combo
+                    End If
                     logica1.Gsubtotal = Me.TextTotal7.Text
                     logica1.G_id_pro_pro = Me.ComboBoxProveedores.SelectedValue
                     logica1.GUm = Me.TextUm7.Text
@@ -872,7 +899,7 @@ Public Class OrdCompra
             '-------------TERMINA LIMPIAR CAJAS----------
 
             '---------------------------------------registro de tabla 8------------------------------------------------
-            If (TextNum8.Text = "" Or TextQuantity8.Text = "" Or TextUnitPrice8.Text = "" Or TextTotal8.Text = "") Then
+            If (TextNum8.Text = "" Or TextQuantity8.Text = "" Or TextTotal8.Text = "") Then
 
             Else
                 Try
@@ -883,7 +910,11 @@ Public Class OrdCompra
                     logica1.G_codigo_pro = Me.TextCodigo.Text
                     logica1.Gdescripcion = Me.ComboBoxProducto8.Text
                     logica1.GCantidad = Me.TextQuantity8.Text
-                    logica1.Gprecio = Me.TextUnitPrice8.Text 'obtemos el id del valor el cual se esta mostrando en el combo
+                    If TextUnitPrice8.Text = "" Then
+                        logica1.Gprecio = "0"
+                    Else
+                        logica1.Gprecio = Me.TextUnitPrice8.Text 'obtemos el id del valor el cual se esta mostrando en el combo
+                    End If
                     logica1.Gsubtotal = Me.TextTotal8.Text
                     logica1.G_id_pro_pro = Me.ComboBoxProveedores.SelectedValue
                     logica1.GUm = Me.TextUm8.Text
@@ -907,7 +938,7 @@ Public Class OrdCompra
 
 
             '---------------------------------------registro de tabla ¿9------------------------------------------------
-            If (TextNum9.Text = "" Or TextQuantity9.Text = "" Or TextUnitPrice9.Text = "" Or TextTotal9.Text = "") Then
+            If (TextNum9.Text = "" Or TextQuantity9.Text = "" Or TextTotal9.Text = "") Then
 
             Else
                 Try
@@ -918,7 +949,11 @@ Public Class OrdCompra
                     logica1.G_codigo_pro = Me.TextCodigo.Text
                     logica1.Gdescripcion = Me.ComboBoxProducto9.Text
                     logica1.GCantidad = Me.TextQuantity9.Text
-                    logica1.Gprecio = Me.TextUnitPrice9.Text 'obtemos el id del valor el cual se esta mostrando en el combo
+                    If TextUnitPrice9.Text = "" Then
+                        logica1.Gprecio = "0"
+                    Else
+                        logica1.Gprecio = Me.TextUnitPrice9.Text 'obtemos el id del valor el cual se esta mostrando en el combo
+                    End If
                     logica1.Gsubtotal = Me.TextTotal9.Text
                     logica1.G_id_pro_pro = Me.ComboBoxProveedores.SelectedValue
                     logica1.GUm = Me.TextUm9.Text
@@ -941,7 +976,7 @@ Public Class OrdCompra
             '-------------TERMINA LIMPIAR CAJAS----------
 
             '---------------------------------------registro de tabla 10------------------------------------------------
-            If (TextNum10.Text = "" Or TextQuantity10.Text = "" Or TextUnitPrice10.Text = "" Or TextTotal10.Text = "") Then
+            If (TextNum10.Text = "" Or TextQuantity10.Text = "" Or TextTotal10.Text = "") Then
 
             Else
                 Try
@@ -952,7 +987,11 @@ Public Class OrdCompra
                     logica1.G_codigo_pro = Me.TextCodigo.Text
                     logica1.Gdescripcion = Me.ComboBoxProducto10.Text
                     logica1.GCantidad = Me.TextQuantity10.Text
-                    logica1.Gprecio = Me.TextUnitPrice10.Text 'obtemos el id del valor el cual se esta mostrando en el combo
+                    If TextUnitPrice10.Text = "" Then
+                        logica1.Gprecio = "0"
+                    Else
+                        logica1.Gprecio = Me.TextUnitPrice10.Text 'obtemos el id del valor el cual se esta mostrando en el combo
+                    End If
                     logica1.Gsubtotal = Me.TextTotal10.Text
                     logica1.G_id_pro_pro = Me.ComboBoxProveedores.SelectedValue
                     logica1.GUm = Me.TextUm10.Text
@@ -978,7 +1017,7 @@ Public Class OrdCompra
 
 
             '---------------------------------------registro de tabla 11------------------------------------------------
-            If (TextNum11.Text = "" Or TextQuantity11.Text = "" Or TextUnitPrice11.Text = "" Or TextTotal11.Text = "") Then
+            If (TextNum11.Text = "" Or TextQuantity11.Text = "" Or TextTotal11.Text = "") Then
 
             Else
                 Try
@@ -989,7 +1028,11 @@ Public Class OrdCompra
                     logica1.G_codigo_pro = Me.TextCodigo.Text
                     logica1.Gdescripcion = Me.ComboBoxProducto11.Text
                     logica1.GCantidad = Me.TextQuantity11.Text
-                    logica1.Gprecio = Me.TextUnitPrice11.Text 'obtemos el id del valor el cual se esta mostrando en el combo
+                    If TextUnitPrice11.Text = "" Then
+                        logica1.Gprecio = "0"
+                    Else
+                        logica1.Gprecio = Me.TextUnitPrice11.Text 'obtemos el id del valor el cual se esta mostrando en el combo
+                    End If
                     logica1.Gsubtotal = Me.TextTotal11.Text
                     logica1.G_id_pro_pro = Me.ComboBoxProveedores.SelectedValue
                     logica1.GUm = Me.TextUm11.Text
@@ -1014,7 +1057,7 @@ Public Class OrdCompra
             '-------------TERMINA LIMPIAR CAJAS----------
 
             '---------------------------------------registro de tabla 12    ------------------------------------------------
-            If (TextNum12.Text = "" Or TextQuantity12.Text = "" Or TextUnitPrice12.Text = "" Or TextTotal12.Text = "") Then
+            If (TextNum12.Text = "" Or TextQuantity12.Text = "" Or TextTotal12.Text = "") Then
 
             Else
                 Try
@@ -1025,9 +1068,13 @@ Public Class OrdCompra
                     logica1.G_codigo_pro = Me.TextCodigo.Text
                     logica1.Gdescripcion = Me.ComboBoxProducto12.Text
                     logica1.GCantidad = Me.TextQuantity12.Text
-                    logica1.Gprecio = Me.TextUnitPrice12.Text 'obtemos el id del valor el cual se esta mostrando en el combo
+                    If TextUnitPrice12.Text = "" Then
+                        logica1.Gprecio = "0"
+                    Else
+                        logica1.Gprecio = Me.TextUnitPrice12.Text 'obtemos el id del valor el cual se esta mostrando en el combo
+                    End If
                     logica1.Gsubtotal = Me.TextTotal12.Text
-                    logica1.G_id_pro_pro = Me.ComboBoxProveedores.SelectedValue
+                        logica1.G_id_pro_pro = Me.ComboBoxProveedores.SelectedValue
                     logica1.GUm = Me.TextUm12.Text
                     logica1.Gdetalles = Me.TextBox_detalles12.Text
 
@@ -1050,7 +1097,7 @@ Public Class OrdCompra
             '-------------TERMINA LIMPIAR CAJAS----------
 
             '---------------------------------------registro de tabla 13------------------------------------------------
-            If (TextNum13.Text = "" Or TextQuantity13.Text = "" Or TextUnitPrice13.Text = "" Or TextTotal13.Text = "") Then
+            If (TextNum13.Text = "" Or TextQuantity13.Text = "" Or TextTotal13.Text = "") Then
 
             Else
                 Try
@@ -1061,9 +1108,13 @@ Public Class OrdCompra
                     logica1.G_codigo_pro = Me.TextCodigo.Text
                     logica1.Gdescripcion = Me.ComboBoxProducto13.Text
                     logica1.GCantidad = Me.TextQuantity13.Text
-                    logica1.Gprecio = Me.TextUnitPrice13.Text 'obtemos el id del valor el cual se esta mostrando en el combo
+                    If TextUnitPrice13.Text = "" Then
+                        logica1.Gprecio = "0"
+                    Else
+                        logica1.Gprecio = Me.TextUnitPrice13.Text 'obtemos el id del valor el cual se esta mostrando en el combo
+                    End If
                     logica1.Gsubtotal = Me.TextTotal13.Text
-                    logica1.G_id_pro_pro = Me.ComboBoxProveedores.SelectedValue
+                        logica1.G_id_pro_pro = Me.ComboBoxProveedores.SelectedValue
                     logica1.GUm = Me.TextUm13.Text
                     logica1.Gdetalles = Me.TextBox_detalles13.Text
 
@@ -1086,7 +1137,7 @@ Public Class OrdCompra
             '-------------TERMINA LIMPIAR CAJAS----------
 
             '---------------------------------------registro de tabla 14    ------------------------------------------------
-            If (TextNum10.Text = "" Or TextQuantity10.Text = "" Or TextUnitPrice10.Text = "" Or TextTotal10.Text = "") Then
+            If (TextNum10.Text = "" Or TextQuantity10.Text = "" Or TextTotal10.Text = "") Then
 
             Else
                 Try
@@ -1097,7 +1148,11 @@ Public Class OrdCompra
                     logica1.G_codigo_pro = Me.TextCodigo.Text
                     logica1.Gdescripcion = Me.ComboBoxProducto14.Text
                     logica1.GCantidad = Me.TextQuantity14.Text
-                    logica1.Gprecio = Me.TextUnitPrice14.Text 'obtemos el id del valor el cual se esta mostrando en el combo
+                    If TextUnitPrice10.Text = "" Then
+                        logica1.Gprecio = "0"
+                    Else
+                        logica1.Gprecio = Me.TextUnitPrice14.Text 'obtemos el id del valor el cual se esta mostrando en el combo
+                    End If
                     logica1.Gsubtotal = Me.TextTotal14.Text
                     logica1.G_id_pro_pro = Me.ComboBoxProveedores.SelectedValue
                     logica1.GUm = Me.TextUm14.Text
@@ -1122,7 +1177,7 @@ Public Class OrdCompra
             '-------------TERMINA LIMPIAR CAJAS----------
 
             '---------------------------------------registro de tabla 15------------------------------------------------
-            If (TextNum15.Text = "" Or TextQuantity15.Text = "" Or TextUnitPrice15.Text = "" Or TextTotal15.Text = "") Then
+            If (TextNum15.Text = "" Or TextQuantity15.Text = "" Or TextTotal15.Text = "") Then
 
             Else
                 Try
@@ -1133,7 +1188,11 @@ Public Class OrdCompra
                     logica1.G_codigo_pro = Me.TextCodigo.Text
                     logica1.Gdescripcion = Me.ComboBoxProducto15.Text
                     logica1.GCantidad = Me.TextQuantity15.Text
-                    logica1.Gprecio = Me.TextUnitPrice15.Text 'obtemos el id del valor el cual se esta mostrando en el combo
+                    If TextUnitPrice15.Text = "" Then
+                        logica1.Gprecio = "0"
+                    Else
+                        logica1.Gprecio = Me.TextUnitPrice15.Text 'obtemos el id del valor el cual se esta mostrando en el combo
+                    End If
                     logica1.Gsubtotal = Me.TextTotal15.Text
                     logica1.G_id_pro_pro = Me.ComboBoxProveedores.SelectedValue
                     logica1.GUm = Me.TextUm15.Text
@@ -1158,7 +1217,7 @@ Public Class OrdCompra
             '-------------TERMINA LIMPIAR CAJAS----------
 
             '---------------------------------------registro de tabla 16    ------------------------------------------------
-            If (TextNum16.Text = "" Or TextQuantity16.Text = "" Or TextUnitPrice16.Text = "" Or TextTotal16.Text = "") Then
+            If (TextNum16.Text = "" Or TextQuantity16.Text = "" Or TextTotal16.Text = "") Then
 
             Else
                 Try
@@ -1169,7 +1228,11 @@ Public Class OrdCompra
                     logica1.G_codigo_pro = Me.TextCodigo.Text
                     logica1.Gdescripcion = Me.ComboBoxProducto16.Text
                     logica1.GCantidad = Me.TextQuantity16.Text
-                    logica1.Gprecio = Me.TextUnitPrice16.Text 'obtemos el id del valor el cual se esta mostrando en el combo
+                    If TextUnitPrice16.Text = "" Then
+                        logica1.Gprecio = "0"
+                    Else
+                        logica1.Gprecio = Me.TextUnitPrice16.Text 'obtemos el id del valor el cual se esta mostrando en el combo
+                    End If
                     logica1.Gsubtotal = Me.TextTotal16.Text
                     logica1.G_id_pro_pro = Me.ComboBoxProveedores.SelectedValue
                     logica1.GUm = Me.TextUm16.Text
@@ -1194,7 +1257,7 @@ Public Class OrdCompra
             '-------------TERMINA LIMPIAR CAJAS----------
 
             '---------------------------------------registro de tabla 17    ------------------------------------------------
-            If (TextNum17.Text = "" Or TextQuantity17.Text = "" Or TextUnitPrice17.Text = "" Or TextTotal17.Text = "") Then
+            If (TextNum17.Text = "" Or TextQuantity17.Text = "" Or TextTotal17.Text = "") Then
 
             Else
                 Try
@@ -1205,7 +1268,11 @@ Public Class OrdCompra
                     logica1.G_codigo_pro = Me.TextCodigo.Text
                     logica1.Gdescripcion = Me.ComboBoxProducto17.Text
                     logica1.GCantidad = Me.TextQuantity17.Text
-                    logica1.Gprecio = Me.TextUnitPrice17.Text 'obtemos el id del valor el cual se esta mostrando en el combo
+                    If TextUnitPrice17.Text = "" Then
+                        logica1.Gprecio = "0"
+                    Else
+                        logica1.Gprecio = Me.TextUnitPrice17.Text 'obtemos el id del valor el cual se esta mostrando en el combo
+                    End If
                     logica1.Gsubtotal = Me.TextTotal17.Text
                     logica1.G_id_pro_pro = Me.ComboBoxProveedores.SelectedValue
                     logica1.GUm = Me.TextUm17.Text
@@ -1230,7 +1297,7 @@ Public Class OrdCompra
             '-------------TERMINA LIMPIAR CAJAS----------
 
             '---------------------------------------registro de tabla 10------------------------------------------------
-            If (TextNum18.Text = "" Or TextQuantity18.Text = "" Or TextUnitPrice18.Text = "" Or TextTotal18.Text = "") Then
+            If (TextNum18.Text = "" Or TextQuantity18.Text = "" Or TextTotal18.Text = "") Then
 
             Else
                 Try
@@ -1241,7 +1308,11 @@ Public Class OrdCompra
                     logica1.G_codigo_pro = Me.TextCodigo.Text
                     logica1.Gdescripcion = Me.ComboBoxProducto18.Text
                     logica1.GCantidad = Me.TextQuantity18.Text
-                    logica1.Gprecio = Me.TextUnitPrice18.Text 'obtemos el id del valor el cual se esta mostrando en el combo
+                    If TextUnitPrice18.Text = "" Then
+                        logica1.Gprecio = "0"
+                    Else
+                        logica1.Gprecio = Me.TextUnitPrice18.Text 'obtemos el id del valor el cual se esta mostrando en el combo
+                    End If
                     logica1.Gsubtotal = Me.TextTotal18.Text
                     logica1.G_id_pro_pro = Me.ComboBoxProveedores.SelectedValue
                     logica1.GUm = Me.TextUm18.Text
@@ -1266,7 +1337,7 @@ Public Class OrdCompra
             '-------------TERMINA LIMPIAR CAJAS----------
 
             '---------------------------------------registro de tabla 10------------------------------------------------
-            If (TextNum19.Text = "" Or TextQuantity19.Text = "" Or TextUnitPrice19.Text = "" Or TextTotal19.Text = "") Then
+            If (TextNum19.Text = "" Or TextQuantity19.Text = "" Or TextTotal19.Text = "") Then
 
             Else
                 Try
@@ -1277,7 +1348,11 @@ Public Class OrdCompra
                     logica1.G_codigo_pro = Me.TextCodigo.Text
                     logica1.Gdescripcion = Me.ComboBoxProducto19.Text
                     logica1.GCantidad = Me.TextQuantity19.Text
-                    logica1.Gprecio = Me.TextUnitPrice19.Text 'obtemos el id del valor el cual se esta mostrando en el combo
+                    If TextUnitPrice19.Text = "" Then
+                        logica1.Gprecio = "0"
+                    Else
+                        logica1.Gprecio = Me.TextUnitPrice19.Text 'obtemos el id del valor el cual se esta mostrando en el combo
+                    End If
                     logica1.Gsubtotal = Me.TextTotal19.Text
                     logica1.G_id_pro_pro = Me.ComboBoxProveedores.SelectedValue
                     logica1.GUm = Me.TextUm19.Text
@@ -1302,7 +1377,7 @@ Public Class OrdCompra
             '-------------TERMINA LIMPIAR CAJAS----------
 
             '---------------------------------------registro de tabla 20------------------------------------------------
-            If (TextNum20.Text = "" Or TextQuantity20.Text = "" Or TextUnitPrice20.Text = "" Or TextTotal20.Text = "") Then
+            If (TextNum20.Text = "" Or TextQuantity20.Text = "" Or TextTotal20.Text = "") Then
 
             Else
                 Try
@@ -1313,7 +1388,11 @@ Public Class OrdCompra
                     logica1.G_codigo_pro = Me.TextCodigo.Text
                     logica1.Gdescripcion = Me.ComboBoxProducto20.Text
                     logica1.GCantidad = Me.TextQuantity20.Text
-                    logica1.Gprecio = Me.TextUnitPrice20.Text 'obtemos el id del valor el cual se esta mostrando en el combo
+                    If TextUnitPrice20.Text = "" Then
+                        logica1.Gprecio = "0"
+                    Else
+                        logica1.Gprecio = Me.TextUnitPrice20.Text 'obtemos el id del valor el cual se esta mostrando en el combo
+                    End If
                     logica1.Gsubtotal = Me.TextTotal20.Text
                     logica1.G_id_pro_pro = Me.ComboBoxProveedores.SelectedValue
                     logica1.GUm = Me.TextUm20.Text
@@ -1354,6 +1433,7 @@ Public Class OrdCompra
 
         If TextQuantity1.Text <> Nothing Then
             cu1 = (TextQuantity1.Text)
+
         End If
 
         If TextUnitPrice1.Text <> Nothing Then

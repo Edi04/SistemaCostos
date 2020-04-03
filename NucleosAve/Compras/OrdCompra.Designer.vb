@@ -1996,7 +1996,7 @@ Partial Class OrdCompra
         Me.btn_minimizar.BackColor = System.Drawing.Color.Transparent
         Me.btn_minimizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btn_minimizar.Image = Global.NucleosAve.My.Resources.Resources.icons8_minimizar_la_ventana_5001
-        Me.btn_minimizar.Location = New System.Drawing.Point(1062, 1)
+        Me.btn_minimizar.Location = New System.Drawing.Point(1050, -3)
         Me.btn_minimizar.Name = "btn_minimizar"
         Me.btn_minimizar.Size = New System.Drawing.Size(53, 52)
         Me.btn_minimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -2010,7 +2010,7 @@ Partial Class OrdCompra
         Me.btn_Cerrar.BackColor = System.Drawing.Color.Transparent
         Me.btn_Cerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btn_Cerrar.Image = Global.NucleosAve.My.Resources.Resources.icons8_cerrar_ventana_5001
-        Me.btn_Cerrar.Location = New System.Drawing.Point(1117, 1)
+        Me.btn_Cerrar.Location = New System.Drawing.Point(1105, -3)
         Me.btn_Cerrar.Name = "btn_Cerrar"
         Me.btn_Cerrar.Size = New System.Drawing.Size(55, 52)
         Me.btn_Cerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -3220,7 +3220,7 @@ Partial Class OrdCompra
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(1172, 613)
+        Me.ClientSize = New System.Drawing.Size(1044, 613)
         Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.Label42)
         Me.Controls.Add(Me.TextBox_observaciones)
