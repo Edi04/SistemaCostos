@@ -280,7 +280,7 @@ Partial Class OrdCompra
         Me.TextMoneda = New System.Windows.Forms.TextBox()
         Me.Label42 = New System.Windows.Forms.Label()
         Me.TextBox_observaciones = New System.Windows.Forms.TextBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.ComboBox_AREA = New System.Windows.Forms.ComboBox()
         CType(Me.btnEliminar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnModificar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnview, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -3205,13 +3205,14 @@ Partial Class OrdCompra
         Me.TextBox_observaciones.Size = New System.Drawing.Size(451, 22)
         Me.TextBox_observaciones.TabIndex = 126
         '
-        'ComboBox1
+        'ComboBox_AREA
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(947, 540)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(201, 21)
-        Me.ComboBox1.TabIndex = 128
+        Me.ComboBox_AREA.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox_AREA.FormattingEnabled = True
+        Me.ComboBox_AREA.Location = New System.Drawing.Point(947, 540)
+        Me.ComboBox_AREA.Name = "ComboBox_AREA"
+        Me.ComboBox_AREA.Size = New System.Drawing.Size(201, 21)
+        Me.ComboBox_AREA.TabIndex = 128
         '
         'OrdCompra
         '
@@ -3221,7 +3222,7 @@ Partial Class OrdCompra
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(1172, 613)
-        Me.Controls.Add(Me.ComboBox1)
+        Me.Controls.Add(Me.ComboBox_AREA)
         Me.Controls.Add(Me.Label42)
         Me.Controls.Add(Me.TextBox_observaciones)
         Me.Controls.Add(Me.btnview)
@@ -3561,5 +3562,5 @@ Partial Class OrdCompra
     Friend WithEvents TextBox_detalles11 As TextBox
     Friend WithEvents Label42 As Label
     Friend WithEvents TextBox_observaciones As TextBox
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents ComboBox_AREA As ComboBox
 End Class

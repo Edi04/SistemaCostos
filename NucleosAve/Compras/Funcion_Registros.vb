@@ -35,6 +35,7 @@ Public Class Funcion_Registros
             comando.Parameters.AddWithValue("@Cs", dts.G_CS)
             comando.Parameters.AddWithValue("@Moneda", dts.G_moneda)
             comando.Parameters.AddWithValue("@observaciones", dts.G_observaciones)
+            comando.Parameters.AddWithValue("@Categoria", dts.G_Categoria)
 
 
             If comando.ExecuteNonQuery Then
@@ -168,6 +169,7 @@ Public Class Funcion_Registros
             comando.Parameters.AddWithValue("@total_letter", dts.G_total_letter)
             comando.Parameters.AddWithValue("@Moneda", dts.G_moneda)
             comando.Parameters.AddWithValue("@observaciones", dts.G_observaciones)
+            comando.Parameters.AddWithValue("@Categoria", dts.G_Categoria)
 
 
             If comando.ExecuteNonQuery Then

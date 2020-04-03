@@ -39,8 +39,24 @@ Public Class OrdCompra
         'FechaActual()
         EsperatePlis.Enabled = True
         GenerarCS()
-
+        combo_SECCION()
     End Sub
+
+    '--------cOMBO sECCION-----------------
+    Sub combo_SECCION() 'combo para mostrar los productos
+        Dim conexxo As New SqlConnection(conexioncita)
+        conexxo.Open()
+        comando = New SqlCommand("select * from TB_Procesos order by Nombre_Proceso asc", conexxo)
+        adaptador = New SqlDataAdapter(comando)
+        tabla = New DataTable()
+        adaptador.Fill(tabla)
+        '-------PRODUCTO 1 --------------
+        ComboBox_AREA.DataSource = tabla
+        ComboBox_AREA.DisplayMember = "Nombre_Proceso"
+        ComboBox_AREA.ValueMember = "Id_Proceso"
+    End Sub
+    '------------------------------------------
+
     '---------------------<<<<<<<<<<<<<<<<<<<<Combo de proveedores>>>>>>-----------------------------------
     Sub combo_provee() 'combo para mostrar los proveedores
         Try
@@ -593,6 +609,7 @@ Public Class OrdCompra
                 logica.G_total_letter = Me.TextTotalLetra.Text
                 logica.G_CS = Me.Text_Cs.Text
                 logica.G_observaciones = Me.TextBox_observaciones.Text
+                logica.G_Categoria = Me.ComboBox_AREA.Text
 
                 If check_Mxn.Checked = True Then
                     logica.G_moneda = "Mxn".ToString
@@ -610,6 +627,7 @@ Public Class OrdCompra
 
                 If funciones.FN_InsertarPersonas(logica) Then
                     MsgBox("Orden Insertada Correctamente", MessageBoxIcon.Information)
+                    combo_SECCION()
                 End If
             Catch ex As Exception
                 MsgBox(ex.Message)
@@ -2169,6 +2187,7 @@ Public Class OrdCompra
                 logica.G_Total = Me.TextTotalFinal.Text
                 logica.G_total_letter = Me.TextTotalLetra.Text
                 logica.G_observaciones = Me.TextBox_observaciones.Text
+                logica.G_Categoria = Me.ComboBox_AREA.Text
                 If check_Mxn.Checked = True Then
                     logica.G_moneda = "Mxn".ToString
                 Else
@@ -2185,26 +2204,28 @@ Public Class OrdCompra
 
                 If funciones.FN_ModificarOrdenes(logica) Then
                     MsgBox("Orden Modificada Correctamente", MessageBoxIcon.Information)
+                    combo_SECCION()
+                    TextCodigo.Clear()
+                    TextPurchase.Clear()
+                    TexReqCompra.Clear()
+                    TextCif.Clear()
+                    TextDeliverytime.Clear()
+                    TextBoarding.Clear()
+                    TextPaymentConditions.Clear()
+                    TextBuyer.Clear()
+                    TextApproved.Clear()
+                    TextPersonalSeller.Clear()
+                    TextSubtotal.Clear()
+                    TextIva.Clear()
+                    TextTotalFinal.Clear()
+                    TextTotalLetra.Clear()
+                    TextBox_observaciones.Clear()
                 End If
             Catch ex As Exception
                 MsgBox(ex.Message)
             End Try
             '---------------------LIMPIAR TEXTBOX----------------
-            TextCodigo.Clear()
-            TextPurchase.Clear()
-            TexReqCompra.Clear()
-            TextCif.Clear()
-            TextDeliverytime.Clear()
-            TextBoarding.Clear()
-            TextPaymentConditions.Clear()
-            TextBuyer.Clear()
-            TextApproved.Clear()
-            TextPersonalSeller.Clear()
-            TextSubtotal.Clear()
-            TextIva.Clear()
-            TextTotalFinal.Clear()
-            TextTotalLetra.Clear()
-            TextBox_observaciones.Clear()
+
             '---------------------TERMINA LIMPIAR TEXTBOX----------------
             '--------------------------recargar codigo Orden------------------------------
             'GenerarCodigo()
@@ -2236,18 +2257,19 @@ Public Class OrdCompra
 
                     If funciones.Fn_ModificarProductos(logica1) Then
                         'MsgBox("Datos Insertados Correctamente")
+                        '--------LIMPIAR CAJAS-------
+                        TextQuantity1.Clear()
+                        TextUnitPrice1.Clear()
+                        TextTotal1.Clear()
+                        TextUm1.Clear()
+                        TextBox_detalles1.Clear()
+                        '-------------TERMINA LIMPIAR CAJAS----------
                     End If
                 Catch ex As Exception
                     MsgBox(ex.Message)
                 End Try
             End If
-            '--------LIMPIAR CAJAS-------
-            TextQuantity1.Clear()
-            TextUnitPrice1.Clear()
-            TextTotal1.Clear()
-            TextUm1.Clear()
-            TextBox_detalles1.Clear()
-            '-------------TERMINA LIMPIAR CAJAS----------
+
             '---------------------------------------registro de tabla 2------------------------------------------------
             If (TextNum2.Text = "" Or TextQuantity2.Text = "" Or TextUnitPrice2.Text = "" Or TextTotal2.Text = "") Then
 
@@ -2269,18 +2291,19 @@ Public Class OrdCompra
 
                     If funciones.Fn_ModificarProductos(logica1) Then
                         'MsgBox("Datos Insertados Correctamente")
+                        '--------LIMPIAR CAJAS-------
+                        TextQuantity2.Clear()
+                        TextUnitPrice2.Clear()
+                        TextTotal2.Clear()
+                        TextUm2.Clear()
+                        TextBox_detalles2.Clear()
+                        '-------------TERMINA LIMPIAR CAJAS----------
                     End If
                 Catch ex As Exception
                     MsgBox(ex.Message)
                 End Try
             End If
-            '--------LIMPIAR CAJAS-------
-            TextQuantity2.Clear()
-            TextUnitPrice2.Clear()
-            TextTotal2.Clear()
-            TextUm2.Clear()
-            TextBox_detalles2.Clear()
-            '-------------TERMINA LIMPIAR CAJAS----------
+
             '---------------------------------------registro de tabla 3------------------------------------------------
             If (TextNum3.Text = "" Or TextQuantity3.Text = "" Or TextUnitPrice3.Text = "" Or TextTotal3.Text = "") Then
 
@@ -2302,18 +2325,19 @@ Public Class OrdCompra
 
                     If funciones.Fn_ModificarProductos(logica1) Then
                         ' MsgBox("Datos Insertados Correctamente")
+                        '--------LIMPIAR CAJAS-------
+                        TextQuantity3.Clear()
+                        TextUnitPrice3.Clear()
+                        TextTotal3.Clear()
+                        TextUm3.Clear()
+                        TextBox_detalles3.Clear()
+                        '-------------TERMINA LIMPIAR CAJAS----------
                     End If
                 Catch ex As Exception
                     MsgBox(ex.Message)
                 End Try
             End If
-            '--------LIMPIAR CAJAS-------
-            TextQuantity3.Clear()
-            TextUnitPrice3.Clear()
-            TextTotal3.Clear()
-            TextUm3.Clear()
-            TextBox_detalles3.Clear()
-            '-------------TERMINA LIMPIAR CAJAS----------
+
             '---------------------------------------registro de tabla 4------------------------------------------------
             If (TextNum4.Text = "" Or TextQuantity4.Text = "" Or TextUnitPrice4.Text = "" Or TextTotal4.Text = "") Then
 
@@ -2335,18 +2359,18 @@ Public Class OrdCompra
 
                     If funciones.Fn_ModificarProductos(logica1) Then
                         'MsgBox("Datos Insertados Correctamente")
+                        '--------LIMPIAR CAJAS-------
+                        TextQuantity4.Clear()
+                        TextUnitPrice4.Clear()
+                        TextTotal4.Clear()
+                        TextUm4.Clear()
+                        TextBox_detalles4.Clear()
+                        '-------------TERMINA LIMPIAR CAJAS----------
                     End If
                 Catch ex As Exception
                     MsgBox(ex.Message)
                 End Try
             End If
-            '--------LIMPIAR CAJAS-------
-            TextQuantity4.Clear()
-            TextUnitPrice4.Clear()
-            TextTotal4.Clear()
-            TextUm4.Clear()
-            TextBox_detalles4.Clear()
-            '-------------TERMINA LIMPIAR CAJAS----------
 
             '---------------------------------------registro de tabla 5------------------------------------------------
             If (TextNum5.Text = "" Or TextQuantity5.Text = "" Or TextUnitPrice5.Text = "" Or TextTotal5.Text = "") Then
@@ -2369,18 +2393,19 @@ Public Class OrdCompra
 
                     If funciones.Fn_ModificarProductos(logica1) Then
                         'MsgBox("Datos Insertados Correctamente")
+                        '--------LIMPIAR CAJAS-------
+                        TextQuantity5.Clear()
+                        TextUnitPrice5.Clear()
+                        TextTotal5.Clear()
+                        TextUm5.Clear()
+                        TextBox_detalles5.Clear()
+                        '-------------TERMINA LIMPIAR CAJAS----------
+
                     End If
                 Catch ex As Exception
                     MsgBox(ex.Message)
                 End Try
             End If
-            '--------LIMPIAR CAJAS-------
-            TextQuantity5.Clear()
-            TextUnitPrice5.Clear()
-            TextTotal5.Clear()
-            TextUm5.Clear()
-            TextBox_detalles5.Clear()
-            '-------------TERMINA LIMPIAR CAJAS----------
 
             '---------------------------------------registro de tabla 6------------------------------------------------
             If (TextNum6.Text = "" Or TextQuantity6.Text = "" Or TextUnitPrice6.Text = "" Or TextTotal6.Text = "") Then
@@ -2403,18 +2428,19 @@ Public Class OrdCompra
 
                     If funciones.Fn_ModificarProductos(logica1) Then
                         'MsgBox("Datos Insertados Correctamente")
+                        '--------LIMPIAR CAJAS-------
+                        TextQuantity6.Clear()
+                        TextUnitPrice6.Clear()
+                        TextTotal6.Clear()
+                        TextUm6.Clear()
+                        TextBox_detalles6.Clear()
+                        '-------------TERMINA LIMPIAR CAJAS----------
+
                     End If
                 Catch ex As Exception
                     MsgBox(ex.Message)
                 End Try
             End If
-            '--------LIMPIAR CAJAS-------
-            TextQuantity6.Clear()
-            TextUnitPrice6.Clear()
-            TextTotal6.Clear()
-            TextUm6.Clear()
-            TextBox_detalles6.Clear()
-            '-------------TERMINA LIMPIAR CAJAS----------
 
             '---------------------------------------registro de tabla 7------------------------------------------------
             If (TextNum7.Text = "" Or TextQuantity7.Text = "" Or TextUnitPrice7.Text = "" Or TextTotal7.Text = "") Then
@@ -2437,18 +2463,19 @@ Public Class OrdCompra
 
                     If funciones.Fn_ModificarProductos(logica1) Then
                         'MsgBox("Datos Insertados Correctamente")
+                        '--------LIMPIAR CAJAS-------
+                        TextQuantity7.Clear()
+                        TextUnitPrice7.Clear()
+                        TextTotal7.Clear()
+                        TextUm7.Clear()
+                        TextBox_detalles7.Clear()
+                        '-------------TERMINA LIMPIAR CAJAS----------
                     End If
                 Catch ex As Exception
                     MsgBox(ex.Message)
                 End Try
             End If
-            '--------LIMPIAR CAJAS-------
-            TextQuantity7.Clear()
-            TextUnitPrice7.Clear()
-            TextTotal7.Clear()
-            TextUm7.Clear()
-            TextBox_detalles7.Clear()
-            '-------------TERMINA LIMPIAR CAJAS----------
+
 
             '---------------------------------------registro de tabla 8------------------------------------------------
             If (TextNum8.Text = "" Or TextQuantity8.Text = "" Or TextUnitPrice8.Text = "" Or TextTotal8.Text = "") Then
@@ -2471,18 +2498,19 @@ Public Class OrdCompra
 
                     If funciones.Fn_ModificarProductos(logica1) Then
                         'MsgBox("Datos Insertados Correctamente")
+                        '--------LIMPIAR CAJAS-------
+                        TextQuantity8.Clear()
+                        TextUnitPrice8.Clear()
+                        TextTotal8.Clear()
+                        TextUm8.Clear()
+                        TextBox_detalles8.Clear()
+                        '-------------TERMINA LIMPIAR CAJAS----------
                     End If
                 Catch ex As Exception
                     MsgBox(ex.Message)
                 End Try
             End If
-            '--------LIMPIAR CAJAS-------
-            TextQuantity8.Clear()
-            TextUnitPrice8.Clear()
-            TextTotal8.Clear()
-            TextUm8.Clear()
-            TextBox_detalles8.Clear()
-            '-------------TERMINA LIMPIAR CAJAS----------
+
 
             '---------------------------------------registro de tabla ¿9------------------------------------------------
             If (TextNum9.Text = "" Or TextQuantity9.Text = "" Or TextUnitPrice9.Text = "" Or TextTotal9.Text = "") Then
@@ -2505,19 +2533,19 @@ Public Class OrdCompra
 
                     If funciones.Fn_ModificarProductos(logica1) Then
                         'MsgBox("Datos Insertados Correctamente")
+                        '--------LIMPIAR CAJAS-------
+                        TextQuantity9.Clear()
+                        TextUnitPrice9.Clear()
+                        TextTotal9.Clear()
+                        TextUm9.Clear()
+                        TextBox_detalles9.Clear()
+                        '-------------TERMINA LIMPIAR CAJAS----------
                     End If
                 Catch ex As Exception
                     MsgBox(ex.Message)
                 End Try
             End If
 
-            '--------LIMPIAR CAJAS-------
-            TextQuantity9.Clear()
-            TextUnitPrice9.Clear()
-            TextTotal9.Clear()
-            TextUm9.Clear()
-            TextBox_detalles9.Clear()
-            '-------------TERMINA LIMPIAR CAJAS----------
             '---------------------------------------registro de tabla 10------------------------------------------------
             If (TextNum10.Text = "" Or TextQuantity10.Text = "" Or TextUnitPrice10.Text = "" Or TextTotal10.Text = "") Then
 
@@ -2540,19 +2568,19 @@ Public Class OrdCompra
 
                     If funciones.Fn_ModificarProductos(logica1) Then
                         MsgBox("Datos Insertados Correctamente")
+                        '--------LIMPIAR CAJAS-------
+                        TextQuantity10.Clear()
+                        TextUnitPrice10.Clear()
+                        TextTotal10.Clear()
+                        TextUm10.Clear()
+                        TextBox_detalles10.Clear()
+                        '-------------TERMINA LIMPIAR CAJAS----------
+                        '-------termina codigo---------
                     End If
                 Catch ex As Exception
                     'MsgBox(ex.Message)
                 End Try
             End If
-            '--------LIMPIAR CAJAS-------
-            TextQuantity10.Clear()
-            TextUnitPrice10.Clear()
-            TextTotal10.Clear()
-            TextUm10.Clear()
-            TextBox_detalles10.Clear()
-            '-------------TERMINA LIMPIAR CAJAS----------
-            '-------termina codigo---------
 
             '---------------------------------------registro de tabla 11------------------------------------------------
             If (TextNum11.Text = "" Or TextQuantity11.Text = "" Or TextUnitPrice11.Text = "" Or TextTotal11.Text = "") Then
@@ -2575,18 +2603,19 @@ Public Class OrdCompra
 
                     If funciones.Fn_ModificarProductos(logica1) Then
                         'MsgBox("Datos Insertados Correctamente")
+                        '--------LIMPIAR CAJAS-------
+                        TextQuantity11.Clear()
+                        TextUnitPrice11.Clear()
+                        TextTotal11.Clear()
+                        TextUm11.Clear()
+                        TextBox_detalles11.Clear()
+                        '-------------TERMINA LIMPIAR CAJAS----------
                     End If
                 Catch ex As Exception
                     MsgBox(ex.Message)
                 End Try
             End If
-            '--------LIMPIAR CAJAS-------
-            TextQuantity11.Clear()
-            TextUnitPrice11.Clear()
-            TextTotal11.Clear()
-            TextUm11.Clear()
-            TextBox_detalles11.Clear()
-            '-------------TERMINA LIMPIAR CAJAS----------
+
             '---------------------------------------registro de tabla 12------------------------------------------------
             If (TextNum12.Text = "" Or TextQuantity12.Text = "" Or TextUnitPrice12.Text = "" Or TextTotal12.Text = "") Then
 
@@ -2608,18 +2637,18 @@ Public Class OrdCompra
 
                     If funciones.Fn_ModificarProductos(logica1) Then
                         'MsgBox("Datos Insertados Correctamente")
+                        '--------LIMPIAR CAJAS-------
+                        TextQuantity12.Clear()
+                        TextUnitPrice12.Clear()
+                        TextTotal12.Clear()
+                        TextUm12.Clear()
+                        TextBox_detalles12.Clear()
+                        '-------------TERMINA LIMPIAR CAJAS----------
                     End If
                 Catch ex As Exception
                     MsgBox(ex.Message)
                 End Try
             End If
-            '--------LIMPIAR CAJAS-------
-            TextQuantity12.Clear()
-            TextUnitPrice12.Clear()
-            TextTotal12.Clear()
-            TextUm12.Clear()
-            TextBox_detalles12.Clear()
-            '-------------TERMINA LIMPIAR CAJAS----------
             '---------------------------------------registro de tabla 13------------------------------------------------
             If (TextNum13.Text = "" Or TextQuantity13.Text = "" Or TextUnitPrice13.Text = "" Or TextTotal13.Text = "") Then
 
@@ -2641,18 +2670,19 @@ Public Class OrdCompra
 
                     If funciones.Fn_ModificarProductos(logica1) Then
                         ' MsgBox("Datos Insertados Correctamente")
+                        '--------LIMPIAR CAJAS-------
+                        TextQuantity13.Clear()
+                        TextUnitPrice13.Clear()
+                        TextTotal13.Clear()
+                        TextUm13.Clear()
+                        TextBox_detalles13.Clear()
+                        '-------------TERMINA LIMPIAR CAJAS----------
                     End If
                 Catch ex As Exception
                     MsgBox(ex.Message)
                 End Try
             End If
-            '--------LIMPIAR CAJAS-------
-            TextQuantity13.Clear()
-            TextUnitPrice13.Clear()
-            TextTotal13.Clear()
-            TextUm13.Clear()
-            TextBox_detalles13.Clear()
-            '-------------TERMINA LIMPIAR CAJAS----------
+
             '---------------------------------------registro de tabla 14------------------------------------------------
             If (TextNum14.Text = "" Or TextQuantity14.Text = "" Or TextUnitPrice14.Text = "" Or TextTotal14.Text = "") Then
 
@@ -2674,18 +2704,18 @@ Public Class OrdCompra
 
                     If funciones.Fn_ModificarProductos(logica1) Then
                         'MsgBox("Datos Insertados Correctamente")
+                        '--------LIMPIAR CAJAS-------
+                        TextQuantity14.Clear()
+                        TextUnitPrice14.Clear()
+                        TextTotal14.Clear()
+                        TextUm14.Clear()
+                        TextBox_detalles14.Clear()
+                        '-------------TERMINA LIMPIAR CAJAS----------
                     End If
                 Catch ex As Exception
                     MsgBox(ex.Message)
                 End Try
             End If
-            '--------LIMPIAR CAJAS-------
-            TextQuantity14.Clear()
-            TextUnitPrice14.Clear()
-            TextTotal14.Clear()
-            TextUm14.Clear()
-            TextBox_detalles14.Clear()
-            '-------------TERMINA LIMPIAR CAJAS----------
 
             '---------------------------------------registro de tabla 15------------------------------------------------
             If (TextNum15.Text = "" Or TextQuantity15.Text = "" Or TextUnitPrice15.Text = "" Or TextTotal15.Text = "") Then
@@ -2708,18 +2738,19 @@ Public Class OrdCompra
 
                     If funciones.Fn_ModificarProductos(logica1) Then
                         'MsgBox("Datos Insertados Correctamente")
+                        '--------LIMPIAR CAJAS-------
+                        TextQuantity15.Clear()
+                        TextUnitPrice15.Clear()
+                        TextTotal15.Clear()
+                        TextUm15.Clear()
+                        TextBox_detalles15.Clear()
+                        '-------------TERMINA LIMPIAR CAJAS----------
+
                     End If
                 Catch ex As Exception
                     MsgBox(ex.Message)
                 End Try
             End If
-            '--------LIMPIAR CAJAS-------
-            TextQuantity15.Clear()
-            TextUnitPrice15.Clear()
-            TextTotal15.Clear()
-            TextUm15.Clear()
-            TextBox_detalles15.Clear()
-            '-------------TERMINA LIMPIAR CAJAS----------
 
             '---------------------------------------registro de tabla 16------------------------------------------------
             If (TextNum16.Text = "" Or TextQuantity16.Text = "" Or TextUnitPrice16.Text = "" Or TextTotal16.Text = "") Then
@@ -2742,18 +2773,19 @@ Public Class OrdCompra
 
                     If funciones.Fn_ModificarProductos(logica1) Then
                         'MsgBox("Datos Insertados Correctamente")
+                        '--------LIMPIAR CAJAS-------
+                        TextQuantity16.Clear()
+                        TextUnitPrice16.Clear()
+                        TextTotal16.Clear()
+                        TextUm16.Clear()
+                        TextBox_detalles16.Clear()
+                        '-------------TERMINA LIMPIAR CAJAS----------
                     End If
                 Catch ex As Exception
                     MsgBox(ex.Message)
                 End Try
             End If
-            '--------LIMPIAR CAJAS-------
-            TextQuantity16.Clear()
-            TextUnitPrice16.Clear()
-            TextTotal16.Clear()
-            TextUm16.Clear()
-            TextBox_detalles16.Clear()
-            '-------------TERMINA LIMPIAR CAJAS----------
+
 
             '---------------------------------------registro de tabla 7------------------------------------------------
             If (TextNum17.Text = "" Or TextQuantity17.Text = "" Or TextUnitPrice17.Text = "" Or TextTotal17.Text = "") Then
@@ -2776,19 +2808,18 @@ Public Class OrdCompra
 
                     If funciones.Fn_ModificarProductos(logica1) Then
                         'MsgBox("Datos Insertados Correctamente")
+                        '--------LIMPIAR CAJAS-------
+                        TextQuantity17.Clear()
+                        TextUnitPrice17.Clear()
+                        TextTotal17.Clear()
+                        TextUm17.Clear()
+                        TextBox_detalles17.Clear()
+                        '-------------TERMINA LIMPIAR CAJAS----------
                     End If
                 Catch ex As Exception
                     MsgBox(ex.Message)
                 End Try
             End If
-            '--------LIMPIAR CAJAS-------
-            TextQuantity17.Clear()
-            TextUnitPrice17.Clear()
-            TextTotal17.Clear()
-            TextUm17.Clear()
-            TextBox_detalles17.Clear()
-            '-------------TERMINA LIMPIAR CAJAS----------
-
             '---------------------------------------registro de tabla 8------------------------------------------------
             If (TextNum18.Text = "" Or TextQuantity18.Text = "" Or TextUnitPrice18.Text = "" Or TextTotal18.Text = "") Then
 
@@ -2810,18 +2841,18 @@ Public Class OrdCompra
 
                     If funciones.Fn_ModificarProductos(logica1) Then
                         'MsgBox("Datos Insertados Correctamente")
+                        '--------LIMPIAR CAJAS-------
+                        TextQuantity18.Clear()
+                        TextUnitPrice18.Clear()
+                        TextTotal18.Clear()
+                        TextUm18.Clear()
+                        TextBox_detalles18.Clear()
+                        '-------------TERMINA LIMPIAR CAJAS----------
                     End If
                 Catch ex As Exception
                     MsgBox(ex.Message)
                 End Try
             End If
-            '--------LIMPIAR CAJAS-------
-            TextQuantity18.Clear()
-            TextUnitPrice18.Clear()
-            TextTotal18.Clear()
-            TextUm18.Clear()
-            TextBox_detalles18.Clear()
-            '-------------TERMINA LIMPIAR CAJAS----------
 
             '---------------------------------------registro de tabla ¿9------------------------------------------------
             If (TextNum19.Text = "" Or TextQuantity19.Text = "" Or TextUnitPrice19.Text = "" Or TextTotal19.Text = "") Then
@@ -2844,19 +2875,20 @@ Public Class OrdCompra
 
                     If funciones.Fn_ModificarProductos(logica1) Then
                         'MsgBox("Datos Insertados Correctamente")
+                        '--------LIMPIAR CAJAS-------
+                        TextQuantity19.Clear()
+                        TextUnitPrice19.Clear()
+                        TextTotal19.Clear()
+                        TextUm19.Clear()
+                        TextBox_detalles19.Clear()
+                        '-------------TERMINA LIMPIAR CAJAS----------
                     End If
                 Catch ex As Exception
                     MsgBox(ex.Message)
                 End Try
             End If
 
-            '--------LIMPIAR CAJAS-------
-            TextQuantity19.Clear()
-            TextUnitPrice19.Clear()
-            TextTotal19.Clear()
-            TextUm19.Clear()
-            TextBox_detalles19.Clear()
-            '-------------TERMINA LIMPIAR CAJAS----------
+
             '---------------------------------------registro de tabla 10------------------------------------------------
             If (TextNum20.Text = "" Or TextQuantity20.Text = "" Or TextUnitPrice20.Text = "" Or TextTotal20.Text = "") Then
 
@@ -2879,23 +2911,23 @@ Public Class OrdCompra
 
                     If funciones.Fn_ModificarProductos(logica1) Then
                         MsgBox("Datos Insertados Correctamente")
+                        '--------LIMPIAR CAJAS-------
+                        TextQuantity20.Clear()
+                        TextUnitPrice20.Clear()
+                        TextTotal20.Clear()
+                        TextUm20.Clear()
+                        TextBox_detalles20.Clear()
+
+                        '-------------TERMINA LIMPIAR CAJAS----------
+                        '-------termina codigo---------
                     End If
                 Catch ex As Exception
                     'MsgBox(ex.Message)
                 End Try
             End If
-            '--------LIMPIAR CAJAS-------
-            TextQuantity20.Clear()
-            TextUnitPrice20.Clear()
-            TextTotal20.Clear()
-            TextUm20.Clear()
-            TextBox_detalles20.Clear()
-            '-------------TERMINA LIMPIAR CAJAS----------
-            '-------termina codigo---------
-            GenerarCS()
-
         End If
-
+        GenerarCS()
+        combo_SECCION()
     End Sub
 
 

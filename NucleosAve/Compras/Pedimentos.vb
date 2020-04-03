@@ -2693,7 +2693,7 @@ Public Class Pedimentos
             cu10 = (TexIvaOp9.Text)
         End If
 
-        TextIvaTotalll.Text = FormatCurrency((cu1 + cu2 + cu3 + cu4 + cu5 + cu6 + cu7 + cu8 + cu9 + cu10), 4)
+        TextIvaTotalll.Text = FormatCurrency((cu1), 4)
 
     End Sub
     '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -2813,7 +2813,9 @@ Public Class Pedimentos
 
     '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
     '-------------------------------Operaciones3-------------------------------------------
-    Public Sub TotalRelacionGastos1() Handles txtimporte1.TextChanged, txtimporte2.TextChanged, txtimporte3.TextChanged, txtimporte4.TextChanged, txtimporte5.TextChanged, txtimporte6.TextChanged, txtimporte7.TextChanged, txtimporte8.TextChanged, txtimporte9.TextChanged, txtimporte10.TextChanged, TextIvaTotalll.TextChanged
+    Public Sub TotalRelacionGastos1() Handles txtimporte1.TextChanged, txtimporte2.TextChanged, txtimporte3.TextChanged,
+        txtimporte4.TextChanged, txtimporte5.TextChanged, txtimporte6.TextChanged, txtimporte7.TextChanged, txtimporte8.TextChanged,
+        txtimporte9.TextChanged, txtimporte10.TextChanged, TextIvaTotalll.TextChanged, TexIvaOp1.TextChanged, TexIvaOp2.TextChanged, TexIvaOp3.TextChanged, TexIvaOp4.TextChanged, TexIvaOp5.TextChanged, TexIvaOp6.TextChanged, TexIvaOp7.TextChanged, TexIvaOp8.TextChanged, TexIvaOp9.TextChanged
 
         Dim cu1 As Double = 0
         Dim cu2 As Double = 0
@@ -2827,6 +2829,15 @@ Public Class Pedimentos
         Dim cu10 As Double = 0
         Dim cu11 As Double = 0
         Dim resultado As Double = 0
+        Dim cu12 As Double = 0
+        Dim cu13 As Double = 0
+        Dim cu14 As Double = 0
+        Dim cu15 As Double = 0
+        Dim cu16 As Double = 0
+        Dim cu17 As Double = 0
+        Dim cu18 As Double = 0
+        Dim cu19 As Double = 0
+        Dim cu20 As Double = 0
 
         If txtimporte1.Text <> Nothing Then
             cu1 = (txtimporte1.Text)
@@ -2861,7 +2872,37 @@ Public Class Pedimentos
         If TextIvaTotalll.Text <> Nothing Then
             cu11 = (TextIvaTotalll.Text)
         End If
-        txttotal_gastosterceros.Text = FormatCurrency((cu1 + cu2 + cu3 + cu4 + cu5 + cu6 + cu7 + cu8 + cu9 + cu10 + cu11), 4)
+        If TexIvaOp1.Text <> Nothing Then
+            cu12 = (TexIvaOp1.Text)
+        End If
+        If TexIvaOp2.Text <> Nothing Then
+            cu13 = (TexIvaOp2.Text)
+        End If
+        If TexIvaOp3.Text <> Nothing Then
+            cu14 = (TexIvaOp3.Text)
+        End If
+        If TexIvaOp4.Text <> Nothing Then
+            cu15 = (TexIvaOp4.Text)
+        End If
+        If TexIvaOp5.Text <> Nothing Then
+            cu16 = (TexIvaOp5.Text)
+        End If
+        If TexIvaOp6.Text <> Nothing Then
+            cu17 = (TexIvaOp6.Text)
+        End If
+        If TexIvaOp7.Text <> Nothing Then
+            cu18 = (TexIvaOp7.Text)
+        End If
+        If TexIvaOp8.Text <> Nothing Then
+            cu19 = (TexIvaOp8.Text)
+        End If
+        If TexIvaOp9.Text <> Nothing Then
+            cu20 = (TexIvaOp9.Text)
+        End If
+
+
+
+        txttotal_gastosterceros.Text = FormatCurrency((cu1 + cu2 + cu3 + cu4 + cu5 + cu6 + cu7 + cu8 + cu9 + cu10 + cu11 + cu12 + cu13 + cu14 + cu15 + cu16 + cu17 + cu18 + cu19 + cu20), 4)
 
     End Sub
 
@@ -3949,7 +3990,18 @@ Public Class Pedimentos
         Dim cu21 As Double = 0
         Dim cu22 As Double = 0
 
+        Dim cu23 As Double = 0
+        Dim cu24 As Double = 0
+        Dim cu25 As Double = 0
+        Dim cu26 As Double = 0
+        Dim cu27 As Double = 0
+        Dim cu28 As Double = 0
+        Dim cu29 As Double = 0
+        Dim cu30 As Double = 0
+        Dim cu31 As Double = 0
+
         Dim resultado As Double = 0
+        '---------GATOS POR TERCEROS 2
         If textIva_GT2_1.Text <> Nothing Then
             cu1 = (textIva_GT2_1.Text)
         End If
@@ -3987,15 +4039,51 @@ Public Class Pedimentos
         End If
 
         If textIva_GT2_10.Text <> Nothing Then
-            cu10 = (textIva_GT2_10.Text)
+            cu10 = (textIva_GT2_9.Text)
         End If
+
+        '----------------------GASTOS TERCEROS
         If txtIva_gastosterceros.Text <> Nothing Then
             cu11 = (txtIva_gastosterceros.Text)
         End If
 
+        If TexIvaOp1.Text <> Nothing Then
+            cu23 = (TexIvaOp1.Text)
+        End If
+        If TexIvaOp2.Text <> Nothing Then
+            cu24 = (TexIvaOp2.Text)
+        End If
+        If TexIvaOp3.Text <> Nothing Then
+            cu25 = (TexIvaOp3.Text)
+        End If
+        If TexIvaOp4.Text <> Nothing Then
+            cu26 = (TexIvaOp4.Text)
+        End If
+        If TexIvaOp5.Text <> Nothing Then
+            cu27 = (TexIvaOp5.Text)
+        End If
+        If TexIvaOp6.Text <> Nothing Then
+            cu28 = (TexIvaOp6.Text)
+        End If
+        If TexIvaOp7.Text <> Nothing Then
+            cu29 = (TexIvaOp7.Text)
+        End If
+        If TexIvaOp8.Text <> Nothing Then
+            cu30 = (TexIvaOp8.Text)
+        End If
+        If TexIvaOp9.Text <> Nothing Then
+            cu31 = (TexIvaOp9.Text)
+        End If
+
+
+
+
+        '--------------CUSTOM BROKERAGE
         If textivaCB.Text <> Nothing Then
             cu12 = (textivaCB.Text)
         End If
+
+        '---------FLETES Y SEGUROS
 
         If txtIvaFS1.Text <> Nothing Then
             cu13 = (txtIvaFS1.Text)
@@ -4036,8 +4124,8 @@ Public Class Pedimentos
         If txtIvaFS10.Text <> Nothing Then
             cu22 = (txtIvaFS10.Text)
         End If
-
-        ivaTGAG.Text = FormatCurrency((cu1 + cu2 + cu3 + cu4 + cu5 + cu6 + cu7 + cu8 + cu9 + cu10 + cu11 + cu12 + cu13 + cu14 + cu15 + cu16 + cu17 + cu18 + cu19 + cu20 + cu21 + cu22), 4)
+        '-----------------------------------
+        ivaTGAG.Text = FormatCurrency((cu1 + cu2 + cu3 + cu4 + cu5 + cu6 + cu7 + cu8 + cu9 + cu10 + cu11 + cu12 + cu13 + cu14 + cu15 + cu16 + cu17 + cu18 + cu19 + cu20 + cu21 + cu22 + cu23 + cu24 + cu25 + cu26 + cu27 + cu28 + cu29 + cu30 + cu31), 4)
 
     End Sub
 

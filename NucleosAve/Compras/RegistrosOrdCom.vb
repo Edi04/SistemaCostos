@@ -89,7 +89,8 @@ Public Class RegistrosOrdCom
             od.Um,
             O.Moneda,
             od.detalles,
-            O.observaciones
+            O.observaciones,
+            O.Categoria
             from TB_Ordenes_Compra AS O
             INNER JOIN TB_Ordenes_Detalle as od on o.codigo=od.codigo
             where od.codigo='" + codigo + "'", conexxo)
@@ -114,6 +115,7 @@ Public Class RegistrosOrdCom
                 OrdCompra.TextTotalLetra.Text = tabla.Rows(0)(16).ToString
                 OrdCompra.TextMoneda.Text = tabla.Rows(0)(23).ToString
                 OrdCompra.TextBox_observaciones.Text = tabla.Rows(0)(25).ToString
+                OrdCompra.ComboBox_AREA.Text = tabla.Rows(0)(26).ToString
 
             End If
             If (tabla.Rows.Count >= 1) Then
