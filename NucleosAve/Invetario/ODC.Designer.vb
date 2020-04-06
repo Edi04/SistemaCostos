@@ -22,6 +22,10 @@ Partial Class ODC
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.BBOCompra = New System.Windows.Forms.Button()
         Me.OCompra = New System.Windows.Forms.TextBox()
         Me.BMinimizar = New System.Windows.Forms.Button()
@@ -31,257 +35,257 @@ Partial Class ODC
         Me.LProd = New System.Windows.Forms.Label()
         Me.Productos1 = New System.Windows.Forms.TabControl()
         Me.TP1 = New System.Windows.Forms.TabPage()
-        Me.Label82 = New System.Windows.Forms.Label()
-        Me.Label83 = New System.Windows.Forms.Label()
+        Me.LA1 = New System.Windows.Forms.Label()
+        Me.LA2 = New System.Windows.Forms.Label()
         Me.IDS2 = New System.Windows.Forms.Label()
         Me.IDS1 = New System.Windows.Forms.Label()
-        Me.Label86 = New System.Windows.Forms.Label()
+        Me.LA3 = New System.Windows.Forms.Label()
         Me.IDS3 = New System.Windows.Forms.Label()
-        Me.Label88 = New System.Windows.Forms.Label()
+        Me.LA4 = New System.Windows.Forms.Label()
         Me.IDS4 = New System.Windows.Forms.Label()
-        Me.Label90 = New System.Windows.Forms.Label()
-        Me.Label91 = New System.Windows.Forms.Label()
-        Me.Label92 = New System.Windows.Forms.Label()
-        Me.Label93 = New System.Windows.Forms.Label()
+        Me.LUM4 = New System.Windows.Forms.Label()
+        Me.LUM3 = New System.Windows.Forms.Label()
+        Me.LUM1 = New System.Windows.Forms.Label()
+        Me.LUM2 = New System.Windows.Forms.Label()
         Me.LI1 = New System.Windows.Forms.Label()
-        Me.Label95 = New System.Windows.Forms.Label()
-        Me.Label96 = New System.Windows.Forms.Label()
-        Me.TextBox85 = New System.Windows.Forms.TextBox()
-        Me.Button13 = New System.Windows.Forms.Button()
-        Me.TextBox86 = New System.Windows.Forms.TextBox()
-        Me.Panel10 = New System.Windows.Forms.Panel()
-        Me.Label97 = New System.Windows.Forms.Label()
-        Me.Label98 = New System.Windows.Forms.Label()
-        Me.TextBox87 = New System.Windows.Forms.TextBox()
-        Me.Button14 = New System.Windows.Forms.Button()
-        Me.TextBox88 = New System.Windows.Forms.TextBox()
-        Me.Panel11 = New System.Windows.Forms.Panel()
-        Me.Label99 = New System.Windows.Forms.Label()
-        Me.Label100 = New System.Windows.Forms.Label()
-        Me.TextBox89 = New System.Windows.Forms.TextBox()
-        Me.Button15 = New System.Windows.Forms.Button()
-        Me.TextBox90 = New System.Windows.Forms.TextBox()
-        Me.Panel12 = New System.Windows.Forms.Panel()
-        Me.Label101 = New System.Windows.Forms.Label()
-        Me.Label102 = New System.Windows.Forms.Label()
-        Me.TextBox91 = New System.Windows.Forms.TextBox()
-        Me.Button16 = New System.Windows.Forms.Button()
-        Me.TextBox92 = New System.Windows.Forms.TextBox()
+        Me.IDP4 = New System.Windows.Forms.Label()
+        Me.LAP4 = New System.Windows.Forms.Label()
+        Me.TxtAP4 = New System.Windows.Forms.TextBox()
+        Me.BB4 = New System.Windows.Forms.Button()
+        Me.TxtObser4 = New System.Windows.Forms.TextBox()
+        Me.P3 = New System.Windows.Forms.Panel()
+        Me.IDP3 = New System.Windows.Forms.Label()
+        Me.LAP3 = New System.Windows.Forms.Label()
+        Me.TxtAP3 = New System.Windows.Forms.TextBox()
+        Me.BB3 = New System.Windows.Forms.Button()
+        Me.TxtObser3 = New System.Windows.Forms.TextBox()
+        Me.P2 = New System.Windows.Forms.Panel()
+        Me.IDP2 = New System.Windows.Forms.Label()
+        Me.LAP2 = New System.Windows.Forms.Label()
+        Me.TxtAP2 = New System.Windows.Forms.TextBox()
+        Me.BB2 = New System.Windows.Forms.Button()
+        Me.TxtObser2 = New System.Windows.Forms.TextBox()
+        Me.P1 = New System.Windows.Forms.Panel()
+        Me.IDP1 = New System.Windows.Forms.Label()
+        Me.LAP1 = New System.Windows.Forms.Label()
+        Me.TxtAP1 = New System.Windows.Forms.TextBox()
+        Me.BB1 = New System.Windows.Forms.Button()
+        Me.TxtObser1 = New System.Windows.Forms.TextBox()
         Me.LObserv1 = New System.Windows.Forms.Label()
         Me.LCE1 = New System.Windows.Forms.Label()
         Me.LCEn1 = New System.Windows.Forms.Label()
         Me.LCS1 = New System.Windows.Forms.Label()
         Me.LPr1 = New System.Windows.Forms.Label()
-        Me.ID1 = New System.Windows.Forms.Label()
-        Me.TextBox93 = New System.Windows.Forms.TextBox()
-        Me.TextBox94 = New System.Windows.Forms.TextBox()
-        Me.TextBox95 = New System.Windows.Forms.TextBox()
-        Me.TextBox96 = New System.Windows.Forms.TextBox()
-        Me.TextBox97 = New System.Windows.Forms.TextBox()
-        Me.TextBox98 = New System.Windows.Forms.TextBox()
-        Me.TextBox99 = New System.Windows.Forms.TextBox()
-        Me.TextBox100 = New System.Windows.Forms.TextBox()
-        Me.TextBox101 = New System.Windows.Forms.TextBox()
-        Me.TextBox102 = New System.Windows.Forms.TextBox()
-        Me.TextBox103 = New System.Windows.Forms.TextBox()
-        Me.TextBox104 = New System.Windows.Forms.TextBox()
-        Me.TextBox105 = New System.Windows.Forms.TextBox()
-        Me.TextBox106 = New System.Windows.Forms.TextBox()
-        Me.TextBox107 = New System.Windows.Forms.TextBox()
-        Me.TextBox108 = New System.Windows.Forms.TextBox()
-        Me.TextBox109 = New System.Windows.Forms.TextBox()
-        Me.TextBox110 = New System.Windows.Forms.TextBox()
-        Me.TextBox111 = New System.Windows.Forms.TextBox()
-        Me.TextBox112 = New System.Windows.Forms.TextBox()
+        Me.LID1 = New System.Windows.Forms.Label()
+        Me.CEnt4 = New System.Windows.Forms.TextBox()
+        Me.CEnt3 = New System.Windows.Forms.TextBox()
+        Me.CEnt2 = New System.Windows.Forms.TextBox()
+        Me.CEnt1 = New System.Windows.Forms.TextBox()
+        Me.CEntra4 = New System.Windows.Forms.TextBox()
+        Me.CEntra3 = New System.Windows.Forms.TextBox()
+        Me.CEntra2 = New System.Windows.Forms.TextBox()
+        Me.CEntra1 = New System.Windows.Forms.TextBox()
+        Me.CantidadS4 = New System.Windows.Forms.TextBox()
+        Me.CantidadS3 = New System.Windows.Forms.TextBox()
+        Me.CantidadS2 = New System.Windows.Forms.TextBox()
+        Me.CantidadS1 = New System.Windows.Forms.TextBox()
+        Me.Producto4 = New System.Windows.Forms.TextBox()
+        Me.Producto3 = New System.Windows.Forms.TextBox()
+        Me.Producto2 = New System.Windows.Forms.TextBox()
+        Me.Producto1 = New System.Windows.Forms.TextBox()
+        Me.ID4 = New System.Windows.Forms.TextBox()
+        Me.ID3 = New System.Windows.Forms.TextBox()
+        Me.ID2 = New System.Windows.Forms.TextBox()
+        Me.ID1 = New System.Windows.Forms.TextBox()
         Me.TP2 = New System.Windows.Forms.TabPage()
-        Me.Label55 = New System.Windows.Forms.Label()
-        Me.Label56 = New System.Windows.Forms.Label()
-        Me.Label57 = New System.Windows.Forms.Label()
-        Me.Label58 = New System.Windows.Forms.Label()
-        Me.Label59 = New System.Windows.Forms.Label()
-        Me.Label60 = New System.Windows.Forms.Label()
-        Me.Label61 = New System.Windows.Forms.Label()
-        Me.Label62 = New System.Windows.Forms.Label()
-        Me.Label63 = New System.Windows.Forms.Label()
-        Me.Label64 = New System.Windows.Forms.Label()
-        Me.Label65 = New System.Windows.Forms.Label()
-        Me.Label66 = New System.Windows.Forms.Label()
+        Me.LA5 = New System.Windows.Forms.Label()
+        Me.LA6 = New System.Windows.Forms.Label()
+        Me.IDS6 = New System.Windows.Forms.Label()
+        Me.IDS5 = New System.Windows.Forms.Label()
+        Me.LA7 = New System.Windows.Forms.Label()
+        Me.IDS7 = New System.Windows.Forms.Label()
+        Me.LA8 = New System.Windows.Forms.Label()
+        Me.IDS8 = New System.Windows.Forms.Label()
+        Me.LUM8 = New System.Windows.Forms.Label()
+        Me.LUM7 = New System.Windows.Forms.Label()
+        Me.LUM5 = New System.Windows.Forms.Label()
+        Me.LUM6 = New System.Windows.Forms.Label()
         Me.LI2 = New System.Windows.Forms.Label()
-        Me.Label68 = New System.Windows.Forms.Label()
-        Me.Label69 = New System.Windows.Forms.Label()
-        Me.TextBox57 = New System.Windows.Forms.TextBox()
-        Me.Button9 = New System.Windows.Forms.Button()
-        Me.TextBox58 = New System.Windows.Forms.TextBox()
-        Me.Panel7 = New System.Windows.Forms.Panel()
-        Me.Label70 = New System.Windows.Forms.Label()
-        Me.Label71 = New System.Windows.Forms.Label()
-        Me.TextBox59 = New System.Windows.Forms.TextBox()
-        Me.Button10 = New System.Windows.Forms.Button()
-        Me.TextBox60 = New System.Windows.Forms.TextBox()
-        Me.Panel8 = New System.Windows.Forms.Panel()
-        Me.Label72 = New System.Windows.Forms.Label()
-        Me.Label73 = New System.Windows.Forms.Label()
-        Me.TextBox61 = New System.Windows.Forms.TextBox()
-        Me.Button11 = New System.Windows.Forms.Button()
-        Me.TextBox62 = New System.Windows.Forms.TextBox()
-        Me.Panel9 = New System.Windows.Forms.Panel()
-        Me.Label74 = New System.Windows.Forms.Label()
-        Me.Label75 = New System.Windows.Forms.Label()
-        Me.TextBox63 = New System.Windows.Forms.TextBox()
-        Me.Button12 = New System.Windows.Forms.Button()
-        Me.TextBox64 = New System.Windows.Forms.TextBox()
+        Me.IDP8 = New System.Windows.Forms.Label()
+        Me.LAP8 = New System.Windows.Forms.Label()
+        Me.TxtAP8 = New System.Windows.Forms.TextBox()
+        Me.BB8 = New System.Windows.Forms.Button()
+        Me.TxtObser8 = New System.Windows.Forms.TextBox()
+        Me.P6 = New System.Windows.Forms.Panel()
+        Me.IDP7 = New System.Windows.Forms.Label()
+        Me.LAP7 = New System.Windows.Forms.Label()
+        Me.TxtAP7 = New System.Windows.Forms.TextBox()
+        Me.BB7 = New System.Windows.Forms.Button()
+        Me.TxtObser7 = New System.Windows.Forms.TextBox()
+        Me.P5 = New System.Windows.Forms.Panel()
+        Me.IDP6 = New System.Windows.Forms.Label()
+        Me.LAP6 = New System.Windows.Forms.Label()
+        Me.TxtAP6 = New System.Windows.Forms.TextBox()
+        Me.BB6 = New System.Windows.Forms.Button()
+        Me.TxtObser6 = New System.Windows.Forms.TextBox()
+        Me.P4 = New System.Windows.Forms.Panel()
+        Me.IDP5 = New System.Windows.Forms.Label()
+        Me.LAP5 = New System.Windows.Forms.Label()
+        Me.TxtAP5 = New System.Windows.Forms.TextBox()
+        Me.BB5 = New System.Windows.Forms.Button()
+        Me.TxtObser5 = New System.Windows.Forms.TextBox()
         Me.LObserv2 = New System.Windows.Forms.Label()
         Me.LCE2 = New System.Windows.Forms.Label()
         Me.LCEn2 = New System.Windows.Forms.Label()
         Me.LCS2 = New System.Windows.Forms.Label()
         Me.LPr2 = New System.Windows.Forms.Label()
-        Me.ID2 = New System.Windows.Forms.Label()
-        Me.TextBox65 = New System.Windows.Forms.TextBox()
-        Me.TextBox66 = New System.Windows.Forms.TextBox()
-        Me.TextBox67 = New System.Windows.Forms.TextBox()
-        Me.TextBox68 = New System.Windows.Forms.TextBox()
-        Me.TextBox69 = New System.Windows.Forms.TextBox()
-        Me.TextBox70 = New System.Windows.Forms.TextBox()
-        Me.TextBox71 = New System.Windows.Forms.TextBox()
-        Me.TextBox72 = New System.Windows.Forms.TextBox()
-        Me.TextBox73 = New System.Windows.Forms.TextBox()
-        Me.TextBox74 = New System.Windows.Forms.TextBox()
-        Me.TextBox75 = New System.Windows.Forms.TextBox()
-        Me.TextBox76 = New System.Windows.Forms.TextBox()
-        Me.TextBox77 = New System.Windows.Forms.TextBox()
-        Me.TextBox78 = New System.Windows.Forms.TextBox()
-        Me.TextBox79 = New System.Windows.Forms.TextBox()
-        Me.TextBox80 = New System.Windows.Forms.TextBox()
-        Me.TextBox81 = New System.Windows.Forms.TextBox()
-        Me.TextBox82 = New System.Windows.Forms.TextBox()
-        Me.TextBox83 = New System.Windows.Forms.TextBox()
-        Me.TextBox84 = New System.Windows.Forms.TextBox()
+        Me.LID2 = New System.Windows.Forms.Label()
+        Me.CEnt8 = New System.Windows.Forms.TextBox()
+        Me.CEnt7 = New System.Windows.Forms.TextBox()
+        Me.CEnt6 = New System.Windows.Forms.TextBox()
+        Me.CEnt5 = New System.Windows.Forms.TextBox()
+        Me.CEntra8 = New System.Windows.Forms.TextBox()
+        Me.CEntra7 = New System.Windows.Forms.TextBox()
+        Me.CEntra6 = New System.Windows.Forms.TextBox()
+        Me.CEntra5 = New System.Windows.Forms.TextBox()
+        Me.CantidadS8 = New System.Windows.Forms.TextBox()
+        Me.CantidadS7 = New System.Windows.Forms.TextBox()
+        Me.CantidadS6 = New System.Windows.Forms.TextBox()
+        Me.CantidadS5 = New System.Windows.Forms.TextBox()
+        Me.Producto8 = New System.Windows.Forms.TextBox()
+        Me.Producto7 = New System.Windows.Forms.TextBox()
+        Me.Producto6 = New System.Windows.Forms.TextBox()
+        Me.Producto5 = New System.Windows.Forms.TextBox()
+        Me.ID8 = New System.Windows.Forms.TextBox()
+        Me.ID7 = New System.Windows.Forms.TextBox()
+        Me.ID6 = New System.Windows.Forms.TextBox()
+        Me.ID5 = New System.Windows.Forms.TextBox()
         Me.TP3 = New System.Windows.Forms.TabPage()
-        Me.Label28 = New System.Windows.Forms.Label()
-        Me.Label29 = New System.Windows.Forms.Label()
-        Me.Label30 = New System.Windows.Forms.Label()
-        Me.Label31 = New System.Windows.Forms.Label()
-        Me.Label32 = New System.Windows.Forms.Label()
-        Me.Label33 = New System.Windows.Forms.Label()
-        Me.Label34 = New System.Windows.Forms.Label()
-        Me.Label35 = New System.Windows.Forms.Label()
-        Me.Label36 = New System.Windows.Forms.Label()
-        Me.Label37 = New System.Windows.Forms.Label()
-        Me.Label38 = New System.Windows.Forms.Label()
-        Me.Label39 = New System.Windows.Forms.Label()
+        Me.LA9 = New System.Windows.Forms.Label()
+        Me.LA10 = New System.Windows.Forms.Label()
+        Me.IDS10 = New System.Windows.Forms.Label()
+        Me.IDS9 = New System.Windows.Forms.Label()
+        Me.LA11 = New System.Windows.Forms.Label()
+        Me.IDS11 = New System.Windows.Forms.Label()
+        Me.LA12 = New System.Windows.Forms.Label()
+        Me.IDS12 = New System.Windows.Forms.Label()
+        Me.LUM12 = New System.Windows.Forms.Label()
+        Me.LUM11 = New System.Windows.Forms.Label()
+        Me.LUM9 = New System.Windows.Forms.Label()
+        Me.LUM10 = New System.Windows.Forms.Label()
         Me.LI3 = New System.Windows.Forms.Label()
-        Me.Label41 = New System.Windows.Forms.Label()
-        Me.Label42 = New System.Windows.Forms.Label()
-        Me.TextBox29 = New System.Windows.Forms.TextBox()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.TextBox30 = New System.Windows.Forms.TextBox()
-        Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.Label43 = New System.Windows.Forms.Label()
-        Me.Label44 = New System.Windows.Forms.Label()
-        Me.TextBox31 = New System.Windows.Forms.TextBox()
-        Me.Button6 = New System.Windows.Forms.Button()
-        Me.TextBox32 = New System.Windows.Forms.TextBox()
-        Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.Label45 = New System.Windows.Forms.Label()
-        Me.Label46 = New System.Windows.Forms.Label()
-        Me.TextBox33 = New System.Windows.Forms.TextBox()
-        Me.Button7 = New System.Windows.Forms.Button()
-        Me.TextBox34 = New System.Windows.Forms.TextBox()
-        Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.Label47 = New System.Windows.Forms.Label()
-        Me.Label48 = New System.Windows.Forms.Label()
-        Me.TextBox35 = New System.Windows.Forms.TextBox()
-        Me.Button8 = New System.Windows.Forms.Button()
-        Me.TextBox36 = New System.Windows.Forms.TextBox()
+        Me.IDP12 = New System.Windows.Forms.Label()
+        Me.LAP12 = New System.Windows.Forms.Label()
+        Me.TxtAP12 = New System.Windows.Forms.TextBox()
+        Me.BB12 = New System.Windows.Forms.Button()
+        Me.TxtObser12 = New System.Windows.Forms.TextBox()
+        Me.P9 = New System.Windows.Forms.Panel()
+        Me.IDP11 = New System.Windows.Forms.Label()
+        Me.LAP11 = New System.Windows.Forms.Label()
+        Me.TxtAP11 = New System.Windows.Forms.TextBox()
+        Me.BB11 = New System.Windows.Forms.Button()
+        Me.TxtObser11 = New System.Windows.Forms.TextBox()
+        Me.P8 = New System.Windows.Forms.Panel()
+        Me.IDP10 = New System.Windows.Forms.Label()
+        Me.LAP10 = New System.Windows.Forms.Label()
+        Me.TxtAP10 = New System.Windows.Forms.TextBox()
+        Me.BB10 = New System.Windows.Forms.Button()
+        Me.TxtObser10 = New System.Windows.Forms.TextBox()
+        Me.P7 = New System.Windows.Forms.Panel()
+        Me.IDP9 = New System.Windows.Forms.Label()
+        Me.LAP9 = New System.Windows.Forms.Label()
+        Me.TxtAP9 = New System.Windows.Forms.TextBox()
+        Me.BB9 = New System.Windows.Forms.Button()
+        Me.TxtObser9 = New System.Windows.Forms.TextBox()
         Me.LObserv3 = New System.Windows.Forms.Label()
         Me.LCE3 = New System.Windows.Forms.Label()
         Me.LCEn3 = New System.Windows.Forms.Label()
         Me.LCS3 = New System.Windows.Forms.Label()
         Me.LPr3 = New System.Windows.Forms.Label()
-        Me.ID3 = New System.Windows.Forms.Label()
-        Me.TextBox37 = New System.Windows.Forms.TextBox()
-        Me.TextBox38 = New System.Windows.Forms.TextBox()
-        Me.TextBox39 = New System.Windows.Forms.TextBox()
-        Me.TextBox40 = New System.Windows.Forms.TextBox()
-        Me.TextBox41 = New System.Windows.Forms.TextBox()
-        Me.TextBox42 = New System.Windows.Forms.TextBox()
-        Me.TextBox43 = New System.Windows.Forms.TextBox()
-        Me.TextBox44 = New System.Windows.Forms.TextBox()
-        Me.TextBox45 = New System.Windows.Forms.TextBox()
-        Me.TextBox46 = New System.Windows.Forms.TextBox()
-        Me.TextBox47 = New System.Windows.Forms.TextBox()
-        Me.TextBox48 = New System.Windows.Forms.TextBox()
-        Me.TextBox49 = New System.Windows.Forms.TextBox()
-        Me.TextBox50 = New System.Windows.Forms.TextBox()
-        Me.TextBox51 = New System.Windows.Forms.TextBox()
-        Me.TextBox52 = New System.Windows.Forms.TextBox()
-        Me.TextBox53 = New System.Windows.Forms.TextBox()
-        Me.TextBox54 = New System.Windows.Forms.TextBox()
-        Me.TextBox55 = New System.Windows.Forms.TextBox()
-        Me.TextBox56 = New System.Windows.Forms.TextBox()
+        Me.LID3 = New System.Windows.Forms.Label()
+        Me.CEnt12 = New System.Windows.Forms.TextBox()
+        Me.CEnt11 = New System.Windows.Forms.TextBox()
+        Me.CEnt10 = New System.Windows.Forms.TextBox()
+        Me.CEnt9 = New System.Windows.Forms.TextBox()
+        Me.CEntra12 = New System.Windows.Forms.TextBox()
+        Me.CEntra11 = New System.Windows.Forms.TextBox()
+        Me.CEntra10 = New System.Windows.Forms.TextBox()
+        Me.CEntra9 = New System.Windows.Forms.TextBox()
+        Me.CantidadS12 = New System.Windows.Forms.TextBox()
+        Me.CantidadS11 = New System.Windows.Forms.TextBox()
+        Me.CantidadS10 = New System.Windows.Forms.TextBox()
+        Me.CantidadS9 = New System.Windows.Forms.TextBox()
+        Me.Producto12 = New System.Windows.Forms.TextBox()
+        Me.Producto11 = New System.Windows.Forms.TextBox()
+        Me.Producto10 = New System.Windows.Forms.TextBox()
+        Me.Producto9 = New System.Windows.Forms.TextBox()
+        Me.ID12 = New System.Windows.Forms.TextBox()
+        Me.ID11 = New System.Windows.Forms.TextBox()
+        Me.ID10 = New System.Windows.Forms.TextBox()
+        Me.ID9 = New System.Windows.Forms.TextBox()
         Me.TP4 = New System.Windows.Forms.TabPage()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
+        Me.LA13 = New System.Windows.Forms.Label()
+        Me.LA14 = New System.Windows.Forms.Label()
+        Me.IDS14 = New System.Windows.Forms.Label()
+        Me.IDS13 = New System.Windows.Forms.Label()
+        Me.LA15 = New System.Windows.Forms.Label()
+        Me.IDS15 = New System.Windows.Forms.Label()
+        Me.LA16 = New System.Windows.Forms.Label()
+        Me.IDS16 = New System.Windows.Forms.Label()
+        Me.LUM16 = New System.Windows.Forms.Label()
+        Me.LUM15 = New System.Windows.Forms.Label()
+        Me.LUM13 = New System.Windows.Forms.Label()
+        Me.LUM14 = New System.Windows.Forms.Label()
         Me.LI4 = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label16 = New System.Windows.Forms.Label()
-        Me.Label17 = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Label18 = New System.Windows.Forms.Label()
-        Me.Label19 = New System.Windows.Forms.Label()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Label20 = New System.Windows.Forms.Label()
-        Me.Label21 = New System.Windows.Forms.Label()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
+        Me.IDP16 = New System.Windows.Forms.Label()
+        Me.LAP16 = New System.Windows.Forms.Label()
+        Me.TxtAP16 = New System.Windows.Forms.TextBox()
+        Me.BB16 = New System.Windows.Forms.Button()
+        Me.TxtObser16 = New System.Windows.Forms.TextBox()
+        Me.P12 = New System.Windows.Forms.Panel()
+        Me.IDP15 = New System.Windows.Forms.Label()
+        Me.LAP15 = New System.Windows.Forms.Label()
+        Me.TxtAP15 = New System.Windows.Forms.TextBox()
+        Me.BB15 = New System.Windows.Forms.Button()
+        Me.TxtObser15 = New System.Windows.Forms.TextBox()
+        Me.P11 = New System.Windows.Forms.Panel()
+        Me.IDP14 = New System.Windows.Forms.Label()
+        Me.LAP14 = New System.Windows.Forms.Label()
+        Me.TxtAP14 = New System.Windows.Forms.TextBox()
+        Me.BB14 = New System.Windows.Forms.Button()
+        Me.TxtObser14 = New System.Windows.Forms.TextBox()
+        Me.P10 = New System.Windows.Forms.Panel()
+        Me.IDP13 = New System.Windows.Forms.Label()
+        Me.LAP13 = New System.Windows.Forms.Label()
+        Me.TxtAP13 = New System.Windows.Forms.TextBox()
+        Me.BB13 = New System.Windows.Forms.Button()
+        Me.TxtObser13 = New System.Windows.Forms.TextBox()
         Me.LObserv4 = New System.Windows.Forms.Label()
         Me.LCE4 = New System.Windows.Forms.Label()
         Me.LCEn4 = New System.Windows.Forms.Label()
         Me.LCS4 = New System.Windows.Forms.Label()
         Me.LPr4 = New System.Windows.Forms.Label()
-        Me.ID4 = New System.Windows.Forms.Label()
-        Me.TextBox9 = New System.Windows.Forms.TextBox()
-        Me.TextBox10 = New System.Windows.Forms.TextBox()
-        Me.TextBox11 = New System.Windows.Forms.TextBox()
-        Me.TextBox12 = New System.Windows.Forms.TextBox()
-        Me.TextBox13 = New System.Windows.Forms.TextBox()
-        Me.TextBox14 = New System.Windows.Forms.TextBox()
-        Me.TextBox15 = New System.Windows.Forms.TextBox()
-        Me.TextBox16 = New System.Windows.Forms.TextBox()
-        Me.TextBox17 = New System.Windows.Forms.TextBox()
-        Me.TextBox18 = New System.Windows.Forms.TextBox()
-        Me.TextBox19 = New System.Windows.Forms.TextBox()
-        Me.LCS = New System.Windows.Forms.TextBox()
-        Me.TextBox21 = New System.Windows.Forms.TextBox()
-        Me.TextBox22 = New System.Windows.Forms.TextBox()
-        Me.TextBox23 = New System.Windows.Forms.TextBox()
-        Me.TextBox24 = New System.Windows.Forms.TextBox()
-        Me.TextBox25 = New System.Windows.Forms.TextBox()
-        Me.TextBox26 = New System.Windows.Forms.TextBox()
-        Me.TextBox27 = New System.Windows.Forms.TextBox()
-        Me.TextBox28 = New System.Windows.Forms.TextBox()
+        Me.LID4 = New System.Windows.Forms.Label()
+        Me.CEnt16 = New System.Windows.Forms.TextBox()
+        Me.CEnt15 = New System.Windows.Forms.TextBox()
+        Me.CEnt14 = New System.Windows.Forms.TextBox()
+        Me.CEnt13 = New System.Windows.Forms.TextBox()
+        Me.CEntra16 = New System.Windows.Forms.TextBox()
+        Me.CEntra15 = New System.Windows.Forms.TextBox()
+        Me.CEntra14 = New System.Windows.Forms.TextBox()
+        Me.CEntra13 = New System.Windows.Forms.TextBox()
+        Me.CantidadS16 = New System.Windows.Forms.TextBox()
+        Me.CantidadS15 = New System.Windows.Forms.TextBox()
+        Me.CantidadS14 = New System.Windows.Forms.TextBox()
+        Me.CantidadS13 = New System.Windows.Forms.TextBox()
+        Me.Producto16 = New System.Windows.Forms.TextBox()
+        Me.Producto15 = New System.Windows.Forms.TextBox()
+        Me.Producto14 = New System.Windows.Forms.TextBox()
+        Me.Producto13 = New System.Windows.Forms.TextBox()
+        Me.ID16 = New System.Windows.Forms.TextBox()
+        Me.ID15 = New System.Windows.Forms.TextBox()
+        Me.ID14 = New System.Windows.Forms.TextBox()
+        Me.ID13 = New System.Windows.Forms.TextBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.LA17 = New System.Windows.Forms.Label()
         Me.LA18 = New System.Windows.Forms.Label()
@@ -345,12 +349,37 @@ Partial Class ODC
         Me.ID19 = New System.Windows.Forms.TextBox()
         Me.ID18 = New System.Windows.Forms.TextBox()
         Me.ID17 = New System.Windows.Forms.TextBox()
+        Me.LFinalizar = New System.Windows.Forms.Label()
+        Me.BTerminar = New System.Windows.Forms.Button()
+        Me.BGuardar = New System.Windows.Forms.Button()
+        Me.POC = New System.Windows.Forms.Panel()
+        Me.TxtBOC = New System.Windows.Forms.TextBox()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.BBOC1 = New System.Windows.Forms.Button()
+        Me.DTF2 = New System.Windows.Forms.DateTimePicker()
+        Me.DTF1 = New System.Windows.Forms.DateTimePicker()
+        Me.LBOD = New System.Windows.Forms.Label()
+        Me.LBusqueda = New System.Windows.Forms.Label()
+        Me.DGOCA = New System.Windows.Forms.DataGridView()
+        Me.ID = New System.Windows.Forms.DataGridViewLinkColumn()
+        Me.COC = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.COrden = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Codis = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Proveedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PS = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IDOC = New System.Windows.Forms.Label()
+        Me.COCS = New System.Windows.Forms.Label()
+        Me.CodS = New System.Windows.Forms.Label()
+        Me.LUsuario = New System.Windows.Forms.Label()
         Me.Productos1.SuspendLayout()
         Me.TP1.SuspendLayout()
         Me.TP2.SuspendLayout()
         Me.TP3.SuspendLayout()
         Me.TP4.SuspendLayout()
         Me.TabPage2.SuspendLayout()
+        Me.POC.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
+        CType(Me.DGOCA, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BBOCompra
@@ -444,68 +473,68 @@ Partial Class ODC
         'TP1
         '
         Me.TP1.BackColor = System.Drawing.Color.White
-        Me.TP1.Controls.Add(Me.Label82)
-        Me.TP1.Controls.Add(Me.Label83)
+        Me.TP1.Controls.Add(Me.LA1)
+        Me.TP1.Controls.Add(Me.LA2)
         Me.TP1.Controls.Add(Me.IDS2)
         Me.TP1.Controls.Add(Me.IDS1)
-        Me.TP1.Controls.Add(Me.Label86)
+        Me.TP1.Controls.Add(Me.LA3)
         Me.TP1.Controls.Add(Me.IDS3)
-        Me.TP1.Controls.Add(Me.Label88)
+        Me.TP1.Controls.Add(Me.LA4)
         Me.TP1.Controls.Add(Me.IDS4)
-        Me.TP1.Controls.Add(Me.Label90)
-        Me.TP1.Controls.Add(Me.Label91)
-        Me.TP1.Controls.Add(Me.Label92)
-        Me.TP1.Controls.Add(Me.Label93)
+        Me.TP1.Controls.Add(Me.LUM4)
+        Me.TP1.Controls.Add(Me.LUM3)
+        Me.TP1.Controls.Add(Me.LUM1)
+        Me.TP1.Controls.Add(Me.LUM2)
         Me.TP1.Controls.Add(Me.LI1)
-        Me.TP1.Controls.Add(Me.Label95)
-        Me.TP1.Controls.Add(Me.Label96)
-        Me.TP1.Controls.Add(Me.TextBox85)
-        Me.TP1.Controls.Add(Me.Button13)
-        Me.TP1.Controls.Add(Me.TextBox86)
-        Me.TP1.Controls.Add(Me.Panel10)
-        Me.TP1.Controls.Add(Me.Label97)
-        Me.TP1.Controls.Add(Me.Label98)
-        Me.TP1.Controls.Add(Me.TextBox87)
-        Me.TP1.Controls.Add(Me.Button14)
-        Me.TP1.Controls.Add(Me.TextBox88)
-        Me.TP1.Controls.Add(Me.Panel11)
-        Me.TP1.Controls.Add(Me.Label99)
-        Me.TP1.Controls.Add(Me.Label100)
-        Me.TP1.Controls.Add(Me.TextBox89)
-        Me.TP1.Controls.Add(Me.Button15)
-        Me.TP1.Controls.Add(Me.TextBox90)
-        Me.TP1.Controls.Add(Me.Panel12)
-        Me.TP1.Controls.Add(Me.Label101)
-        Me.TP1.Controls.Add(Me.Label102)
-        Me.TP1.Controls.Add(Me.TextBox91)
-        Me.TP1.Controls.Add(Me.Button16)
-        Me.TP1.Controls.Add(Me.TextBox92)
+        Me.TP1.Controls.Add(Me.IDP4)
+        Me.TP1.Controls.Add(Me.LAP4)
+        Me.TP1.Controls.Add(Me.TxtAP4)
+        Me.TP1.Controls.Add(Me.BB4)
+        Me.TP1.Controls.Add(Me.TxtObser4)
+        Me.TP1.Controls.Add(Me.P3)
+        Me.TP1.Controls.Add(Me.IDP3)
+        Me.TP1.Controls.Add(Me.LAP3)
+        Me.TP1.Controls.Add(Me.TxtAP3)
+        Me.TP1.Controls.Add(Me.BB3)
+        Me.TP1.Controls.Add(Me.TxtObser3)
+        Me.TP1.Controls.Add(Me.P2)
+        Me.TP1.Controls.Add(Me.IDP2)
+        Me.TP1.Controls.Add(Me.LAP2)
+        Me.TP1.Controls.Add(Me.TxtAP2)
+        Me.TP1.Controls.Add(Me.BB2)
+        Me.TP1.Controls.Add(Me.TxtObser2)
+        Me.TP1.Controls.Add(Me.P1)
+        Me.TP1.Controls.Add(Me.IDP1)
+        Me.TP1.Controls.Add(Me.LAP1)
+        Me.TP1.Controls.Add(Me.TxtAP1)
+        Me.TP1.Controls.Add(Me.BB1)
+        Me.TP1.Controls.Add(Me.TxtObser1)
         Me.TP1.Controls.Add(Me.LObserv1)
         Me.TP1.Controls.Add(Me.LCE1)
         Me.TP1.Controls.Add(Me.LCEn1)
         Me.TP1.Controls.Add(Me.LCS1)
         Me.TP1.Controls.Add(Me.LPr1)
+        Me.TP1.Controls.Add(Me.LID1)
+        Me.TP1.Controls.Add(Me.CEnt4)
+        Me.TP1.Controls.Add(Me.CEnt3)
+        Me.TP1.Controls.Add(Me.CEnt2)
+        Me.TP1.Controls.Add(Me.CEnt1)
+        Me.TP1.Controls.Add(Me.CEntra4)
+        Me.TP1.Controls.Add(Me.CEntra3)
+        Me.TP1.Controls.Add(Me.CEntra2)
+        Me.TP1.Controls.Add(Me.CEntra1)
+        Me.TP1.Controls.Add(Me.CantidadS4)
+        Me.TP1.Controls.Add(Me.CantidadS3)
+        Me.TP1.Controls.Add(Me.CantidadS2)
+        Me.TP1.Controls.Add(Me.CantidadS1)
+        Me.TP1.Controls.Add(Me.Producto4)
+        Me.TP1.Controls.Add(Me.Producto3)
+        Me.TP1.Controls.Add(Me.Producto2)
+        Me.TP1.Controls.Add(Me.Producto1)
+        Me.TP1.Controls.Add(Me.ID4)
+        Me.TP1.Controls.Add(Me.ID3)
+        Me.TP1.Controls.Add(Me.ID2)
         Me.TP1.Controls.Add(Me.ID1)
-        Me.TP1.Controls.Add(Me.TextBox93)
-        Me.TP1.Controls.Add(Me.TextBox94)
-        Me.TP1.Controls.Add(Me.TextBox95)
-        Me.TP1.Controls.Add(Me.TextBox96)
-        Me.TP1.Controls.Add(Me.TextBox97)
-        Me.TP1.Controls.Add(Me.TextBox98)
-        Me.TP1.Controls.Add(Me.TextBox99)
-        Me.TP1.Controls.Add(Me.TextBox100)
-        Me.TP1.Controls.Add(Me.TextBox101)
-        Me.TP1.Controls.Add(Me.TextBox102)
-        Me.TP1.Controls.Add(Me.TextBox103)
-        Me.TP1.Controls.Add(Me.TextBox104)
-        Me.TP1.Controls.Add(Me.TextBox105)
-        Me.TP1.Controls.Add(Me.TextBox106)
-        Me.TP1.Controls.Add(Me.TextBox107)
-        Me.TP1.Controls.Add(Me.TextBox108)
-        Me.TP1.Controls.Add(Me.TextBox109)
-        Me.TP1.Controls.Add(Me.TextBox110)
-        Me.TP1.Controls.Add(Me.TextBox111)
-        Me.TP1.Controls.Add(Me.TextBox112)
         Me.TP1.Location = New System.Drawing.Point(4, 22)
         Me.TP1.Name = "TP1"
         Me.TP1.Padding = New System.Windows.Forms.Padding(3)
@@ -513,29 +542,29 @@ Partial Class ODC
         Me.TP1.TabIndex = 0
         Me.TP1.Text = "Productos"
         '
-        'Label82
+        'LA1
         '
-        Me.Label82.AutoSize = True
-        Me.Label82.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.Label82.Location = New System.Drawing.Point(847, 67)
-        Me.Label82.Name = "Label82"
-        Me.Label82.Size = New System.Drawing.Size(97, 39)
-        Me.Label82.TabIndex = 1
-        Me.Label82.Text = "Asignar Unidad " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "de Medida " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "desde el Inventario"
-        Me.Label82.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.Label82.Visible = False
+        Me.LA1.AutoSize = True
+        Me.LA1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.LA1.Location = New System.Drawing.Point(847, 67)
+        Me.LA1.Name = "LA1"
+        Me.LA1.Size = New System.Drawing.Size(97, 39)
+        Me.LA1.TabIndex = 0
+        Me.LA1.Text = "Asignar Unidad " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "de Medida " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "desde el Inventario"
+        Me.LA1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.LA1.Visible = False
         '
-        'Label83
+        'LA2
         '
-        Me.Label83.AutoSize = True
-        Me.Label83.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.Label83.Location = New System.Drawing.Point(847, 173)
-        Me.Label83.Name = "Label83"
-        Me.Label83.Size = New System.Drawing.Size(97, 39)
-        Me.Label83.TabIndex = 33
-        Me.Label83.Text = "Asignar Unidad " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "de Medida " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "desde el Inventario"
-        Me.Label83.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.Label83.Visible = False
+        Me.LA2.AutoSize = True
+        Me.LA2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.LA2.Location = New System.Drawing.Point(847, 173)
+        Me.LA2.Name = "LA2"
+        Me.LA2.Size = New System.Drawing.Size(97, 39)
+        Me.LA2.TabIndex = 0
+        Me.LA2.Text = "Asignar Unidad " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "de Medida " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "desde el Inventario"
+        Me.LA2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.LA2.Visible = False
         '
         'IDS2
         '
@@ -559,17 +588,17 @@ Partial Class ODC
         Me.IDS1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.IDS1.Visible = False
         '
-        'Label86
+        'LA3
         '
-        Me.Label86.AutoSize = True
-        Me.Label86.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.Label86.Location = New System.Drawing.Point(847, 278)
-        Me.Label86.Name = "Label86"
-        Me.Label86.Size = New System.Drawing.Size(97, 39)
-        Me.Label86.TabIndex = 36
-        Me.Label86.Text = "Asignar Unidad " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "de Medida " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "desde el Inventario"
-        Me.Label86.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.Label86.Visible = False
+        Me.LA3.AutoSize = True
+        Me.LA3.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.LA3.Location = New System.Drawing.Point(847, 278)
+        Me.LA3.Name = "LA3"
+        Me.LA3.Size = New System.Drawing.Size(97, 39)
+        Me.LA3.TabIndex = 0
+        Me.LA3.Text = "Asignar Unidad " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "de Medida " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "desde el Inventario"
+        Me.LA3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.LA3.Visible = False
         '
         'IDS3
         '
@@ -582,64 +611,64 @@ Partial Class ODC
         Me.IDS3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.IDS3.Visible = False
         '
-        'Label88
+        'LA4
         '
-        Me.Label88.AutoSize = True
-        Me.Label88.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.Label88.Location = New System.Drawing.Point(847, 383)
-        Me.Label88.Name = "Label88"
-        Me.Label88.Size = New System.Drawing.Size(97, 39)
-        Me.Label88.TabIndex = 38
-        Me.Label88.Text = "Asignar Unidad " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "de Medida " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "desde el Inventario"
-        Me.Label88.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.Label88.Visible = False
+        Me.LA4.AutoSize = True
+        Me.LA4.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.LA4.Location = New System.Drawing.Point(847, 383)
+        Me.LA4.Name = "LA4"
+        Me.LA4.Size = New System.Drawing.Size(97, 39)
+        Me.LA4.TabIndex = 0
+        Me.LA4.Text = "Asignar Unidad " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "de Medida " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "desde el Inventario"
+        Me.LA4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.LA4.Visible = False
         '
         'IDS4
         '
         Me.IDS4.AutoSize = True
         Me.IDS4.Location = New System.Drawing.Point(19, 362)
         Me.IDS4.Name = "IDS4"
-        Me.IDS4.Size = New System.Drawing.Size(19, 13)
-        Me.IDS4.TabIndex = 39
-        Me.IDS4.Text = "20"
+        Me.IDS4.Size = New System.Drawing.Size(16, 13)
+        Me.IDS4.TabIndex = 0
+        Me.IDS4.Text = " 4"
         Me.IDS4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.IDS4.Visible = False
         '
-        'Label90
+        'LUM4
         '
-        Me.Label90.AutoSize = True
-        Me.Label90.Location = New System.Drawing.Point(868, 363)
-        Me.Label90.Name = "Label90"
-        Me.Label90.Size = New System.Drawing.Size(0, 13)
-        Me.Label90.TabIndex = 40
-        Me.Label90.Visible = False
+        Me.LUM4.AutoSize = True
+        Me.LUM4.Location = New System.Drawing.Point(868, 363)
+        Me.LUM4.Name = "LUM4"
+        Me.LUM4.Size = New System.Drawing.Size(0, 13)
+        Me.LUM4.TabIndex = 0
+        Me.LUM4.Visible = False
         '
-        'Label91
+        'LUM3
         '
-        Me.Label91.AutoSize = True
-        Me.Label91.Location = New System.Drawing.Point(868, 258)
-        Me.Label91.Name = "Label91"
-        Me.Label91.Size = New System.Drawing.Size(0, 13)
-        Me.Label91.TabIndex = 41
-        Me.Label91.Visible = False
+        Me.LUM3.AutoSize = True
+        Me.LUM3.Location = New System.Drawing.Point(868, 258)
+        Me.LUM3.Name = "LUM3"
+        Me.LUM3.Size = New System.Drawing.Size(0, 13)
+        Me.LUM3.TabIndex = 0
+        Me.LUM3.Visible = False
         '
-        'Label92
+        'LUM1
         '
-        Me.Label92.AutoSize = True
-        Me.Label92.Location = New System.Drawing.Point(868, 48)
-        Me.Label92.Name = "Label92"
-        Me.Label92.Size = New System.Drawing.Size(0, 13)
-        Me.Label92.TabIndex = 42
-        Me.Label92.Visible = False
+        Me.LUM1.AutoSize = True
+        Me.LUM1.Location = New System.Drawing.Point(868, 48)
+        Me.LUM1.Name = "LUM1"
+        Me.LUM1.Size = New System.Drawing.Size(0, 13)
+        Me.LUM1.TabIndex = 0
+        Me.LUM1.Visible = False
         '
-        'Label93
+        'LUM2
         '
-        Me.Label93.AutoSize = True
-        Me.Label93.Location = New System.Drawing.Point(868, 153)
-        Me.Label93.Name = "Label93"
-        Me.Label93.Size = New System.Drawing.Size(0, 13)
-        Me.Label93.TabIndex = 43
-        Me.Label93.Visible = False
+        Me.LUM2.AutoSize = True
+        Me.LUM2.Location = New System.Drawing.Point(868, 153)
+        Me.LUM2.Name = "LUM2"
+        Me.LUM2.Size = New System.Drawing.Size(0, 13)
+        Me.LUM2.TabIndex = 0
+        Me.LUM2.Visible = False
         '
         'LI1
         '
@@ -654,251 +683,251 @@ Partial Class ODC
         Me.LI1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.LI1.Visible = False
         '
-        'Label95
+        'IDP4
         '
-        Me.Label95.AutoSize = True
-        Me.Label95.BackColor = System.Drawing.Color.Transparent
-        Me.Label95.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label95.Location = New System.Drawing.Point(626, 409)
-        Me.Label95.Name = "Label95"
-        Me.Label95.Size = New System.Drawing.Size(0, 15)
-        Me.Label95.TabIndex = 45
-        Me.Label95.Visible = False
+        Me.IDP4.AutoSize = True
+        Me.IDP4.BackColor = System.Drawing.Color.Transparent
+        Me.IDP4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.IDP4.Location = New System.Drawing.Point(626, 409)
+        Me.IDP4.Name = "IDP4"
+        Me.IDP4.Size = New System.Drawing.Size(0, 15)
+        Me.IDP4.TabIndex = 0
+        Me.IDP4.Visible = False
         '
-        'Label96
+        'LAP4
         '
-        Me.Label96.AutoSize = True
-        Me.Label96.BackColor = System.Drawing.Color.Transparent
-        Me.Label96.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label96.Location = New System.Drawing.Point(35, 409)
-        Me.Label96.Name = "Label96"
-        Me.Label96.Size = New System.Drawing.Size(100, 15)
-        Me.Label96.TabIndex = 47
-        Me.Label96.Text = "Asignar Producto"
-        Me.Label96.Visible = False
+        Me.LAP4.AutoSize = True
+        Me.LAP4.BackColor = System.Drawing.Color.Transparent
+        Me.LAP4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LAP4.Location = New System.Drawing.Point(35, 409)
+        Me.LAP4.Name = "LAP4"
+        Me.LAP4.Size = New System.Drawing.Size(100, 15)
+        Me.LAP4.TabIndex = 0
+        Me.LAP4.Text = "Asignar Producto"
+        Me.LAP4.Visible = False
         '
-        'TextBox85
+        'TxtAP4
         '
-        Me.TextBox85.Location = New System.Drawing.Point(163, 410)
-        Me.TextBox85.Name = "TextBox85"
-        Me.TextBox85.ReadOnly = True
-        Me.TextBox85.Size = New System.Drawing.Size(448, 20)
-        Me.TextBox85.TabIndex = 61
-        Me.TextBox85.Visible = False
+        Me.TxtAP4.Location = New System.Drawing.Point(163, 410)
+        Me.TxtAP4.Name = "TxtAP4"
+        Me.TxtAP4.ReadOnly = True
+        Me.TxtAP4.Size = New System.Drawing.Size(448, 20)
+        Me.TxtAP4.TabIndex = 0
+        Me.TxtAP4.Visible = False
         '
-        'Button13
+        'BB4
         '
-        Me.Button13.BackColor = System.Drawing.Color.Transparent
-        Me.Button13.BackgroundImage = Global.NucleosAve.My.Resources.Resources.list_3
-        Me.Button13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Button13.Location = New System.Drawing.Point(135, 405)
-        Me.Button13.Name = "Button13"
-        Me.Button13.Size = New System.Drawing.Size(24, 28)
-        Me.Button13.TabIndex = 48
-        Me.Button13.UseVisualStyleBackColor = False
-        Me.Button13.Visible = False
+        Me.BB4.BackColor = System.Drawing.Color.Transparent
+        Me.BB4.BackgroundImage = Global.NucleosAve.My.Resources.Resources.list_3
+        Me.BB4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.BB4.Location = New System.Drawing.Point(135, 405)
+        Me.BB4.Name = "BB4"
+        Me.BB4.Size = New System.Drawing.Size(24, 28)
+        Me.BB4.TabIndex = 0
+        Me.BB4.UseVisualStyleBackColor = False
+        Me.BB4.Visible = False
         '
-        'TextBox86
+        'TxtObser4
         '
-        Me.TextBox86.Location = New System.Drawing.Point(340, 359)
-        Me.TextBox86.Multiline = True
-        Me.TextBox86.Name = "TextBox86"
-        Me.TextBox86.ReadOnly = True
-        Me.TextBox86.Size = New System.Drawing.Size(272, 39)
-        Me.TextBox86.TabIndex = 49
-        Me.TextBox86.Visible = False
+        Me.TxtObser4.Location = New System.Drawing.Point(340, 359)
+        Me.TxtObser4.Multiline = True
+        Me.TxtObser4.Name = "TxtObser4"
+        Me.TxtObser4.ReadOnly = True
+        Me.TxtObser4.Size = New System.Drawing.Size(272, 39)
+        Me.TxtObser4.TabIndex = 0
+        Me.TxtObser4.Visible = False
         '
-        'Panel10
+        'P3
         '
-        Me.Panel10.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Panel10.BackColor = System.Drawing.Color.SteelBlue
-        Me.Panel10.Location = New System.Drawing.Point(29, 334)
-        Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(900, 5)
-        Me.Panel10.TabIndex = 50
-        Me.Panel10.Visible = False
+        Me.P3.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.P3.BackColor = System.Drawing.Color.SteelBlue
+        Me.P3.Location = New System.Drawing.Point(29, 334)
+        Me.P3.Name = "P3"
+        Me.P3.Size = New System.Drawing.Size(900, 5)
+        Me.P3.TabIndex = 0
+        Me.P3.Visible = False
         '
-        'Label97
+        'IDP3
         '
-        Me.Label97.AutoSize = True
-        Me.Label97.BackColor = System.Drawing.Color.Transparent
-        Me.Label97.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label97.Location = New System.Drawing.Point(626, 306)
-        Me.Label97.Name = "Label97"
-        Me.Label97.Size = New System.Drawing.Size(0, 15)
-        Me.Label97.TabIndex = 51
-        Me.Label97.Visible = False
+        Me.IDP3.AutoSize = True
+        Me.IDP3.BackColor = System.Drawing.Color.Transparent
+        Me.IDP3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.IDP3.Location = New System.Drawing.Point(626, 306)
+        Me.IDP3.Name = "IDP3"
+        Me.IDP3.Size = New System.Drawing.Size(0, 15)
+        Me.IDP3.TabIndex = 0
+        Me.IDP3.Visible = False
         '
-        'Label98
+        'LAP3
         '
-        Me.Label98.AutoSize = True
-        Me.Label98.BackColor = System.Drawing.Color.Transparent
-        Me.Label98.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label98.Location = New System.Drawing.Point(35, 304)
-        Me.Label98.Name = "Label98"
-        Me.Label98.Size = New System.Drawing.Size(100, 15)
-        Me.Label98.TabIndex = 52
-        Me.Label98.Text = "Asignar Producto"
-        Me.Label98.Visible = False
+        Me.LAP3.AutoSize = True
+        Me.LAP3.BackColor = System.Drawing.Color.Transparent
+        Me.LAP3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LAP3.Location = New System.Drawing.Point(35, 304)
+        Me.LAP3.Name = "LAP3"
+        Me.LAP3.Size = New System.Drawing.Size(100, 15)
+        Me.LAP3.TabIndex = 0
+        Me.LAP3.Text = "Asignar Producto"
+        Me.LAP3.Visible = False
         '
-        'TextBox87
+        'TxtAP3
         '
-        Me.TextBox87.Location = New System.Drawing.Point(163, 305)
-        Me.TextBox87.Name = "TextBox87"
-        Me.TextBox87.ReadOnly = True
-        Me.TextBox87.Size = New System.Drawing.Size(448, 20)
-        Me.TextBox87.TabIndex = 53
-        Me.TextBox87.Visible = False
+        Me.TxtAP3.Location = New System.Drawing.Point(163, 305)
+        Me.TxtAP3.Name = "TxtAP3"
+        Me.TxtAP3.ReadOnly = True
+        Me.TxtAP3.Size = New System.Drawing.Size(448, 20)
+        Me.TxtAP3.TabIndex = 0
+        Me.TxtAP3.Visible = False
         '
-        'Button14
+        'BB3
         '
-        Me.Button14.BackColor = System.Drawing.Color.Transparent
-        Me.Button14.BackgroundImage = Global.NucleosAve.My.Resources.Resources.list_3
-        Me.Button14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Button14.Location = New System.Drawing.Point(135, 300)
-        Me.Button14.Name = "Button14"
-        Me.Button14.Size = New System.Drawing.Size(24, 28)
-        Me.Button14.TabIndex = 54
-        Me.Button14.UseVisualStyleBackColor = False
-        Me.Button14.Visible = False
+        Me.BB3.BackColor = System.Drawing.Color.Transparent
+        Me.BB3.BackgroundImage = Global.NucleosAve.My.Resources.Resources.list_3
+        Me.BB3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.BB3.Location = New System.Drawing.Point(135, 300)
+        Me.BB3.Name = "BB3"
+        Me.BB3.Size = New System.Drawing.Size(24, 28)
+        Me.BB3.TabIndex = 0
+        Me.BB3.UseVisualStyleBackColor = False
+        Me.BB3.Visible = False
         '
-        'TextBox88
+        'TxtObser3
         '
-        Me.TextBox88.Location = New System.Drawing.Point(340, 254)
-        Me.TextBox88.Multiline = True
-        Me.TextBox88.Name = "TextBox88"
-        Me.TextBox88.ReadOnly = True
-        Me.TextBox88.Size = New System.Drawing.Size(272, 39)
-        Me.TextBox88.TabIndex = 55
-        Me.TextBox88.Visible = False
+        Me.TxtObser3.Location = New System.Drawing.Point(340, 254)
+        Me.TxtObser3.Multiline = True
+        Me.TxtObser3.Name = "TxtObser3"
+        Me.TxtObser3.ReadOnly = True
+        Me.TxtObser3.Size = New System.Drawing.Size(272, 39)
+        Me.TxtObser3.TabIndex = 0
+        Me.TxtObser3.Visible = False
         '
-        'Panel11
+        'P2
         '
-        Me.Panel11.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Panel11.BackColor = System.Drawing.Color.SteelBlue
-        Me.Panel11.Location = New System.Drawing.Point(29, 229)
-        Me.Panel11.Name = "Panel11"
-        Me.Panel11.Size = New System.Drawing.Size(900, 5)
-        Me.Panel11.TabIndex = 56
-        Me.Panel11.Visible = False
+        Me.P2.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.P2.BackColor = System.Drawing.Color.SteelBlue
+        Me.P2.Location = New System.Drawing.Point(29, 229)
+        Me.P2.Name = "P2"
+        Me.P2.Size = New System.Drawing.Size(900, 5)
+        Me.P2.TabIndex = 0
+        Me.P2.Visible = False
         '
-        'Label99
+        'IDP2
         '
-        Me.Label99.AutoSize = True
-        Me.Label99.BackColor = System.Drawing.Color.Transparent
-        Me.Label99.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label99.Location = New System.Drawing.Point(626, 199)
-        Me.Label99.Name = "Label99"
-        Me.Label99.Size = New System.Drawing.Size(0, 15)
-        Me.Label99.TabIndex = 57
-        Me.Label99.Visible = False
+        Me.IDP2.AutoSize = True
+        Me.IDP2.BackColor = System.Drawing.Color.Transparent
+        Me.IDP2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.IDP2.Location = New System.Drawing.Point(626, 199)
+        Me.IDP2.Name = "IDP2"
+        Me.IDP2.Size = New System.Drawing.Size(0, 15)
+        Me.IDP2.TabIndex = 0
+        Me.IDP2.Visible = False
         '
-        'Label100
+        'LAP2
         '
-        Me.Label100.AutoSize = True
-        Me.Label100.BackColor = System.Drawing.Color.Transparent
-        Me.Label100.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label100.Location = New System.Drawing.Point(35, 199)
-        Me.Label100.Name = "Label100"
-        Me.Label100.Size = New System.Drawing.Size(100, 15)
-        Me.Label100.TabIndex = 58
-        Me.Label100.Text = "Asignar Producto"
-        Me.Label100.Visible = False
+        Me.LAP2.AutoSize = True
+        Me.LAP2.BackColor = System.Drawing.Color.Transparent
+        Me.LAP2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LAP2.Location = New System.Drawing.Point(35, 199)
+        Me.LAP2.Name = "LAP2"
+        Me.LAP2.Size = New System.Drawing.Size(100, 15)
+        Me.LAP2.TabIndex = 0
+        Me.LAP2.Text = "Asignar Producto"
+        Me.LAP2.Visible = False
         '
-        'TextBox89
+        'TxtAP2
         '
-        Me.TextBox89.Location = New System.Drawing.Point(163, 200)
-        Me.TextBox89.Name = "TextBox89"
-        Me.TextBox89.ReadOnly = True
-        Me.TextBox89.Size = New System.Drawing.Size(448, 20)
-        Me.TextBox89.TabIndex = 59
-        Me.TextBox89.Visible = False
+        Me.TxtAP2.Location = New System.Drawing.Point(163, 200)
+        Me.TxtAP2.Name = "TxtAP2"
+        Me.TxtAP2.ReadOnly = True
+        Me.TxtAP2.Size = New System.Drawing.Size(448, 20)
+        Me.TxtAP2.TabIndex = 0
+        Me.TxtAP2.Visible = False
         '
-        'Button15
+        'BB2
         '
-        Me.Button15.BackColor = System.Drawing.Color.Transparent
-        Me.Button15.BackgroundImage = Global.NucleosAve.My.Resources.Resources.list_3
-        Me.Button15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Button15.Location = New System.Drawing.Point(135, 195)
-        Me.Button15.Name = "Button15"
-        Me.Button15.Size = New System.Drawing.Size(24, 28)
-        Me.Button15.TabIndex = 60
-        Me.Button15.UseVisualStyleBackColor = False
-        Me.Button15.Visible = False
+        Me.BB2.BackColor = System.Drawing.Color.Transparent
+        Me.BB2.BackgroundImage = Global.NucleosAve.My.Resources.Resources.list_3
+        Me.BB2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.BB2.Location = New System.Drawing.Point(135, 195)
+        Me.BB2.Name = "BB2"
+        Me.BB2.Size = New System.Drawing.Size(24, 28)
+        Me.BB2.TabIndex = 0
+        Me.BB2.UseVisualStyleBackColor = False
+        Me.BB2.Visible = False
         '
-        'TextBox90
+        'TxtObser2
         '
-        Me.TextBox90.Location = New System.Drawing.Point(340, 149)
-        Me.TextBox90.Multiline = True
-        Me.TextBox90.Name = "TextBox90"
-        Me.TextBox90.ReadOnly = True
-        Me.TextBox90.Size = New System.Drawing.Size(272, 39)
-        Me.TextBox90.TabIndex = 32
-        Me.TextBox90.Visible = False
+        Me.TxtObser2.Location = New System.Drawing.Point(340, 149)
+        Me.TxtObser2.Multiline = True
+        Me.TxtObser2.Name = "TxtObser2"
+        Me.TxtObser2.ReadOnly = True
+        Me.TxtObser2.Size = New System.Drawing.Size(272, 39)
+        Me.TxtObser2.TabIndex = 0
+        Me.TxtObser2.Visible = False
         '
-        'Panel12
+        'P1
         '
-        Me.Panel12.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Panel12.BackColor = System.Drawing.Color.SteelBlue
-        Me.Panel12.Location = New System.Drawing.Point(29, 124)
-        Me.Panel12.Name = "Panel12"
-        Me.Panel12.Size = New System.Drawing.Size(900, 5)
-        Me.Panel12.TabIndex = 31
-        Me.Panel12.Visible = False
+        Me.P1.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.P1.BackColor = System.Drawing.Color.SteelBlue
+        Me.P1.Location = New System.Drawing.Point(29, 124)
+        Me.P1.Name = "P1"
+        Me.P1.Size = New System.Drawing.Size(900, 5)
+        Me.P1.TabIndex = 0
+        Me.P1.Visible = False
         '
-        'Label101
+        'IDP1
         '
-        Me.Label101.AutoSize = True
-        Me.Label101.BackColor = System.Drawing.Color.Transparent
-        Me.Label101.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label101.Location = New System.Drawing.Point(626, 96)
-        Me.Label101.Name = "Label101"
-        Me.Label101.Size = New System.Drawing.Size(0, 15)
-        Me.Label101.TabIndex = 30
-        Me.Label101.Visible = False
+        Me.IDP1.AutoSize = True
+        Me.IDP1.BackColor = System.Drawing.Color.Transparent
+        Me.IDP1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.IDP1.Location = New System.Drawing.Point(626, 96)
+        Me.IDP1.Name = "IDP1"
+        Me.IDP1.Size = New System.Drawing.Size(0, 15)
+        Me.IDP1.TabIndex = 0
+        Me.IDP1.Visible = False
         '
-        'Label102
+        'LAP1
         '
-        Me.Label102.AutoSize = True
-        Me.Label102.BackColor = System.Drawing.Color.Transparent
-        Me.Label102.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label102.Location = New System.Drawing.Point(35, 94)
-        Me.Label102.Name = "Label102"
-        Me.Label102.Size = New System.Drawing.Size(100, 15)
-        Me.Label102.TabIndex = 29
-        Me.Label102.Text = "Asignar Producto"
-        Me.Label102.Visible = False
+        Me.LAP1.AutoSize = True
+        Me.LAP1.BackColor = System.Drawing.Color.Transparent
+        Me.LAP1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LAP1.Location = New System.Drawing.Point(35, 94)
+        Me.LAP1.Name = "LAP1"
+        Me.LAP1.Size = New System.Drawing.Size(100, 15)
+        Me.LAP1.TabIndex = 0
+        Me.LAP1.Text = "Asignar Producto"
+        Me.LAP1.Visible = False
         '
-        'TextBox91
+        'TxtAP1
         '
-        Me.TextBox91.Location = New System.Drawing.Point(163, 95)
-        Me.TextBox91.Name = "TextBox91"
-        Me.TextBox91.ReadOnly = True
-        Me.TextBox91.Size = New System.Drawing.Size(448, 20)
-        Me.TextBox91.TabIndex = 2
-        Me.TextBox91.Visible = False
+        Me.TxtAP1.Location = New System.Drawing.Point(163, 95)
+        Me.TxtAP1.Name = "TxtAP1"
+        Me.TxtAP1.ReadOnly = True
+        Me.TxtAP1.Size = New System.Drawing.Size(448, 20)
+        Me.TxtAP1.TabIndex = 0
+        Me.TxtAP1.Visible = False
         '
-        'Button16
+        'BB1
         '
-        Me.Button16.BackColor = System.Drawing.Color.Transparent
-        Me.Button16.BackgroundImage = Global.NucleosAve.My.Resources.Resources.list_3
-        Me.Button16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Button16.Location = New System.Drawing.Point(135, 90)
-        Me.Button16.Name = "Button16"
-        Me.Button16.Size = New System.Drawing.Size(24, 28)
-        Me.Button16.TabIndex = 3
-        Me.Button16.UseVisualStyleBackColor = False
-        Me.Button16.Visible = False
+        Me.BB1.BackColor = System.Drawing.Color.Transparent
+        Me.BB1.BackgroundImage = Global.NucleosAve.My.Resources.Resources.list_3
+        Me.BB1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.BB1.Location = New System.Drawing.Point(135, 90)
+        Me.BB1.Name = "BB1"
+        Me.BB1.Size = New System.Drawing.Size(24, 28)
+        Me.BB1.TabIndex = 0
+        Me.BB1.UseVisualStyleBackColor = False
+        Me.BB1.Visible = False
         '
-        'TextBox92
+        'TxtObser1
         '
-        Me.TextBox92.Location = New System.Drawing.Point(340, 44)
-        Me.TextBox92.Multiline = True
-        Me.TextBox92.Name = "TextBox92"
-        Me.TextBox92.ReadOnly = True
-        Me.TextBox92.Size = New System.Drawing.Size(272, 39)
-        Me.TextBox92.TabIndex = 4
-        Me.TextBox92.Visible = False
+        Me.TxtObser1.Location = New System.Drawing.Point(340, 44)
+        Me.TxtObser1.Multiline = True
+        Me.TxtObser1.Name = "TxtObser1"
+        Me.TxtObser1.ReadOnly = True
+        Me.TxtObser1.Size = New System.Drawing.Size(272, 39)
+        Me.TxtObser1.TabIndex = 0
+        Me.TxtObser1.Visible = False
         '
         'LObserv1
         '
@@ -963,291 +992,291 @@ Partial Class ODC
         Me.LPr1.Text = "Producto"
         Me.LPr1.Visible = False
         '
+        'LID1
+        '
+        Me.LID1.AutoSize = True
+        Me.LID1.BackColor = System.Drawing.Color.Transparent
+        Me.LID1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LID1.Location = New System.Drawing.Point(19, 16)
+        Me.LID1.Name = "LID1"
+        Me.LID1.Size = New System.Drawing.Size(19, 15)
+        Me.LID1.TabIndex = 0
+        Me.LID1.Text = "ID"
+        Me.LID1.Visible = False
+        '
+        'CEnt4
+        '
+        Me.CEnt4.Location = New System.Drawing.Point(804, 359)
+        Me.CEnt4.Name = "CEnt4"
+        Me.CEnt4.ReadOnly = True
+        Me.CEnt4.Size = New System.Drawing.Size(56, 20)
+        Me.CEnt4.TabIndex = 0
+        Me.CEnt4.Text = "0"
+        Me.CEnt4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.CEnt4.Visible = False
+        '
+        'CEnt3
+        '
+        Me.CEnt3.Location = New System.Drawing.Point(804, 254)
+        Me.CEnt3.Name = "CEnt3"
+        Me.CEnt3.ReadOnly = True
+        Me.CEnt3.Size = New System.Drawing.Size(56, 20)
+        Me.CEnt3.TabIndex = 0
+        Me.CEnt3.Text = "0"
+        Me.CEnt3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.CEnt3.Visible = False
+        '
+        'CEnt2
+        '
+        Me.CEnt2.Location = New System.Drawing.Point(804, 149)
+        Me.CEnt2.Name = "CEnt2"
+        Me.CEnt2.ReadOnly = True
+        Me.CEnt2.Size = New System.Drawing.Size(56, 20)
+        Me.CEnt2.TabIndex = 0
+        Me.CEnt2.Text = "0"
+        Me.CEnt2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.CEnt2.Visible = False
+        '
+        'CEnt1
+        '
+        Me.CEnt1.Location = New System.Drawing.Point(804, 44)
+        Me.CEnt1.Name = "CEnt1"
+        Me.CEnt1.ReadOnly = True
+        Me.CEnt1.Size = New System.Drawing.Size(56, 20)
+        Me.CEnt1.TabIndex = 0
+        Me.CEnt1.Text = "0"
+        Me.CEnt1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.CEnt1.Visible = False
+        '
+        'CEntra4
+        '
+        Me.CEntra4.Location = New System.Drawing.Point(739, 359)
+        Me.CEntra4.Name = "CEntra4"
+        Me.CEntra4.ReadOnly = True
+        Me.CEntra4.Size = New System.Drawing.Size(49, 20)
+        Me.CEntra4.TabIndex = 0
+        Me.CEntra4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.CEntra4.Visible = False
+        '
+        'CEntra3
+        '
+        Me.CEntra3.Location = New System.Drawing.Point(739, 254)
+        Me.CEntra3.Name = "CEntra3"
+        Me.CEntra3.ReadOnly = True
+        Me.CEntra3.Size = New System.Drawing.Size(49, 20)
+        Me.CEntra3.TabIndex = 0
+        Me.CEntra3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.CEntra3.Visible = False
+        '
+        'CEntra2
+        '
+        Me.CEntra2.Location = New System.Drawing.Point(739, 149)
+        Me.CEntra2.Name = "CEntra2"
+        Me.CEntra2.ReadOnly = True
+        Me.CEntra2.Size = New System.Drawing.Size(49, 20)
+        Me.CEntra2.TabIndex = 0
+        Me.CEntra2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.CEntra2.Visible = False
+        '
+        'CEntra1
+        '
+        Me.CEntra1.Location = New System.Drawing.Point(739, 44)
+        Me.CEntra1.Name = "CEntra1"
+        Me.CEntra1.ReadOnly = True
+        Me.CEntra1.Size = New System.Drawing.Size(49, 20)
+        Me.CEntra1.TabIndex = 0
+        Me.CEntra1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.CEntra1.Visible = False
+        '
+        'CantidadS4
+        '
+        Me.CantidadS4.Location = New System.Drawing.Point(629, 359)
+        Me.CantidadS4.Multiline = True
+        Me.CantidadS4.Name = "CantidadS4"
+        Me.CantidadS4.ReadOnly = True
+        Me.CantidadS4.Size = New System.Drawing.Size(86, 45)
+        Me.CantidadS4.TabIndex = 0
+        Me.CantidadS4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.CantidadS4.Visible = False
+        '
+        'CantidadS3
+        '
+        Me.CantidadS3.Location = New System.Drawing.Point(629, 254)
+        Me.CantidadS3.Multiline = True
+        Me.CantidadS3.Name = "CantidadS3"
+        Me.CantidadS3.ReadOnly = True
+        Me.CantidadS3.Size = New System.Drawing.Size(86, 45)
+        Me.CantidadS3.TabIndex = 0
+        Me.CantidadS3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.CantidadS3.Visible = False
+        '
+        'CantidadS2
+        '
+        Me.CantidadS2.Location = New System.Drawing.Point(629, 149)
+        Me.CantidadS2.Multiline = True
+        Me.CantidadS2.Name = "CantidadS2"
+        Me.CantidadS2.ReadOnly = True
+        Me.CantidadS2.Size = New System.Drawing.Size(86, 45)
+        Me.CantidadS2.TabIndex = 0
+        Me.CantidadS2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.CantidadS2.Visible = False
+        '
+        'CantidadS1
+        '
+        Me.CantidadS1.Location = New System.Drawing.Point(629, 44)
+        Me.CantidadS1.Multiline = True
+        Me.CantidadS1.Name = "CantidadS1"
+        Me.CantidadS1.ReadOnly = True
+        Me.CantidadS1.Size = New System.Drawing.Size(86, 45)
+        Me.CantidadS1.TabIndex = 0
+        Me.CantidadS1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.CantidadS1.Visible = False
+        '
+        'Producto4
+        '
+        Me.Producto4.Location = New System.Drawing.Point(63, 359)
+        Me.Producto4.Multiline = True
+        Me.Producto4.Name = "Producto4"
+        Me.Producto4.ReadOnly = True
+        Me.Producto4.Size = New System.Drawing.Size(272, 39)
+        Me.Producto4.TabIndex = 0
+        Me.Producto4.Visible = False
+        '
+        'Producto3
+        '
+        Me.Producto3.Location = New System.Drawing.Point(63, 254)
+        Me.Producto3.Multiline = True
+        Me.Producto3.Name = "Producto3"
+        Me.Producto3.ReadOnly = True
+        Me.Producto3.Size = New System.Drawing.Size(272, 39)
+        Me.Producto3.TabIndex = 0
+        Me.Producto3.Visible = False
+        '
+        'Producto2
+        '
+        Me.Producto2.Location = New System.Drawing.Point(63, 149)
+        Me.Producto2.Multiline = True
+        Me.Producto2.Name = "Producto2"
+        Me.Producto2.ReadOnly = True
+        Me.Producto2.Size = New System.Drawing.Size(272, 39)
+        Me.Producto2.TabIndex = 0
+        Me.Producto2.Visible = False
+        '
+        'Producto1
+        '
+        Me.Producto1.Location = New System.Drawing.Point(63, 44)
+        Me.Producto1.Multiline = True
+        Me.Producto1.Name = "Producto1"
+        Me.Producto1.ReadOnly = True
+        Me.Producto1.Size = New System.Drawing.Size(272, 39)
+        Me.Producto1.TabIndex = 0
+        Me.Producto1.Visible = False
+        '
+        'ID4
+        '
+        Me.ID4.Location = New System.Drawing.Point(5, 359)
+        Me.ID4.Name = "ID4"
+        Me.ID4.ReadOnly = True
+        Me.ID4.Size = New System.Drawing.Size(46, 20)
+        Me.ID4.TabIndex = 0
+        Me.ID4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ID4.Visible = False
+        '
+        'ID3
+        '
+        Me.ID3.Location = New System.Drawing.Point(5, 254)
+        Me.ID3.Name = "ID3"
+        Me.ID3.ReadOnly = True
+        Me.ID3.Size = New System.Drawing.Size(46, 20)
+        Me.ID3.TabIndex = 0
+        Me.ID3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ID3.Visible = False
+        '
+        'ID2
+        '
+        Me.ID2.Location = New System.Drawing.Point(5, 149)
+        Me.ID2.Name = "ID2"
+        Me.ID2.ReadOnly = True
+        Me.ID2.Size = New System.Drawing.Size(46, 20)
+        Me.ID2.TabIndex = 0
+        Me.ID2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ID2.Visible = False
+        '
         'ID1
         '
-        Me.ID1.AutoSize = True
-        Me.ID1.BackColor = System.Drawing.Color.Transparent
-        Me.ID1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ID1.Location = New System.Drawing.Point(19, 16)
+        Me.ID1.Location = New System.Drawing.Point(5, 44)
         Me.ID1.Name = "ID1"
-        Me.ID1.Size = New System.Drawing.Size(19, 15)
+        Me.ID1.ReadOnly = True
+        Me.ID1.Size = New System.Drawing.Size(46, 20)
         Me.ID1.TabIndex = 0
-        Me.ID1.Text = "ID"
+        Me.ID1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.ID1.Visible = False
-        '
-        'TextBox93
-        '
-        Me.TextBox93.Location = New System.Drawing.Point(804, 359)
-        Me.TextBox93.Name = "TextBox93"
-        Me.TextBox93.ReadOnly = True
-        Me.TextBox93.Size = New System.Drawing.Size(56, 20)
-        Me.TextBox93.TabIndex = 11
-        Me.TextBox93.Text = "0"
-        Me.TextBox93.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox93.Visible = False
-        '
-        'TextBox94
-        '
-        Me.TextBox94.Location = New System.Drawing.Point(804, 254)
-        Me.TextBox94.Name = "TextBox94"
-        Me.TextBox94.ReadOnly = True
-        Me.TextBox94.Size = New System.Drawing.Size(56, 20)
-        Me.TextBox94.TabIndex = 12
-        Me.TextBox94.Text = "0"
-        Me.TextBox94.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox94.Visible = False
-        '
-        'TextBox95
-        '
-        Me.TextBox95.Location = New System.Drawing.Point(804, 149)
-        Me.TextBox95.Name = "TextBox95"
-        Me.TextBox95.ReadOnly = True
-        Me.TextBox95.Size = New System.Drawing.Size(56, 20)
-        Me.TextBox95.TabIndex = 13
-        Me.TextBox95.Text = "0"
-        Me.TextBox95.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox95.Visible = False
-        '
-        'TextBox96
-        '
-        Me.TextBox96.Location = New System.Drawing.Point(804, 44)
-        Me.TextBox96.Name = "TextBox96"
-        Me.TextBox96.ReadOnly = True
-        Me.TextBox96.Size = New System.Drawing.Size(56, 20)
-        Me.TextBox96.TabIndex = 14
-        Me.TextBox96.Text = "0"
-        Me.TextBox96.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox96.Visible = False
-        '
-        'TextBox97
-        '
-        Me.TextBox97.Location = New System.Drawing.Point(739, 359)
-        Me.TextBox97.Name = "TextBox97"
-        Me.TextBox97.ReadOnly = True
-        Me.TextBox97.Size = New System.Drawing.Size(49, 20)
-        Me.TextBox97.TabIndex = 15
-        Me.TextBox97.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox97.Visible = False
-        '
-        'TextBox98
-        '
-        Me.TextBox98.Location = New System.Drawing.Point(739, 254)
-        Me.TextBox98.Name = "TextBox98"
-        Me.TextBox98.ReadOnly = True
-        Me.TextBox98.Size = New System.Drawing.Size(49, 20)
-        Me.TextBox98.TabIndex = 16
-        Me.TextBox98.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox98.Visible = False
-        '
-        'TextBox99
-        '
-        Me.TextBox99.Location = New System.Drawing.Point(739, 149)
-        Me.TextBox99.Name = "TextBox99"
-        Me.TextBox99.ReadOnly = True
-        Me.TextBox99.Size = New System.Drawing.Size(49, 20)
-        Me.TextBox99.TabIndex = 17
-        Me.TextBox99.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox99.Visible = False
-        '
-        'TextBox100
-        '
-        Me.TextBox100.Location = New System.Drawing.Point(739, 44)
-        Me.TextBox100.Name = "TextBox100"
-        Me.TextBox100.ReadOnly = True
-        Me.TextBox100.Size = New System.Drawing.Size(49, 20)
-        Me.TextBox100.TabIndex = 18
-        Me.TextBox100.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox100.Visible = False
-        '
-        'TextBox101
-        '
-        Me.TextBox101.Location = New System.Drawing.Point(629, 359)
-        Me.TextBox101.Multiline = True
-        Me.TextBox101.Name = "TextBox101"
-        Me.TextBox101.ReadOnly = True
-        Me.TextBox101.Size = New System.Drawing.Size(86, 45)
-        Me.TextBox101.TabIndex = 19
-        Me.TextBox101.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox101.Visible = False
-        '
-        'TextBox102
-        '
-        Me.TextBox102.Location = New System.Drawing.Point(629, 254)
-        Me.TextBox102.Multiline = True
-        Me.TextBox102.Name = "TextBox102"
-        Me.TextBox102.ReadOnly = True
-        Me.TextBox102.Size = New System.Drawing.Size(86, 45)
-        Me.TextBox102.TabIndex = 20
-        Me.TextBox102.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox102.Visible = False
-        '
-        'TextBox103
-        '
-        Me.TextBox103.Location = New System.Drawing.Point(629, 149)
-        Me.TextBox103.Multiline = True
-        Me.TextBox103.Name = "TextBox103"
-        Me.TextBox103.ReadOnly = True
-        Me.TextBox103.Size = New System.Drawing.Size(86, 45)
-        Me.TextBox103.TabIndex = 21
-        Me.TextBox103.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox103.Visible = False
-        '
-        'TextBox104
-        '
-        Me.TextBox104.Location = New System.Drawing.Point(629, 44)
-        Me.TextBox104.Multiline = True
-        Me.TextBox104.Name = "TextBox104"
-        Me.TextBox104.ReadOnly = True
-        Me.TextBox104.Size = New System.Drawing.Size(86, 45)
-        Me.TextBox104.TabIndex = 22
-        Me.TextBox104.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox104.Visible = False
-        '
-        'TextBox105
-        '
-        Me.TextBox105.Location = New System.Drawing.Point(63, 359)
-        Me.TextBox105.Multiline = True
-        Me.TextBox105.Name = "TextBox105"
-        Me.TextBox105.ReadOnly = True
-        Me.TextBox105.Size = New System.Drawing.Size(272, 39)
-        Me.TextBox105.TabIndex = 23
-        Me.TextBox105.Visible = False
-        '
-        'TextBox106
-        '
-        Me.TextBox106.Location = New System.Drawing.Point(63, 254)
-        Me.TextBox106.Multiline = True
-        Me.TextBox106.Name = "TextBox106"
-        Me.TextBox106.ReadOnly = True
-        Me.TextBox106.Size = New System.Drawing.Size(272, 39)
-        Me.TextBox106.TabIndex = 24
-        Me.TextBox106.Visible = False
-        '
-        'TextBox107
-        '
-        Me.TextBox107.Location = New System.Drawing.Point(63, 149)
-        Me.TextBox107.Multiline = True
-        Me.TextBox107.Name = "TextBox107"
-        Me.TextBox107.ReadOnly = True
-        Me.TextBox107.Size = New System.Drawing.Size(272, 39)
-        Me.TextBox107.TabIndex = 25
-        Me.TextBox107.Visible = False
-        '
-        'TextBox108
-        '
-        Me.TextBox108.Location = New System.Drawing.Point(63, 44)
-        Me.TextBox108.Multiline = True
-        Me.TextBox108.Name = "TextBox108"
-        Me.TextBox108.ReadOnly = True
-        Me.TextBox108.Size = New System.Drawing.Size(272, 39)
-        Me.TextBox108.TabIndex = 26
-        Me.TextBox108.Visible = False
-        '
-        'TextBox109
-        '
-        Me.TextBox109.Location = New System.Drawing.Point(5, 359)
-        Me.TextBox109.Name = "TextBox109"
-        Me.TextBox109.ReadOnly = True
-        Me.TextBox109.Size = New System.Drawing.Size(46, 20)
-        Me.TextBox109.TabIndex = 27
-        Me.TextBox109.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox109.Visible = False
-        '
-        'TextBox110
-        '
-        Me.TextBox110.Location = New System.Drawing.Point(5, 254)
-        Me.TextBox110.Name = "TextBox110"
-        Me.TextBox110.ReadOnly = True
-        Me.TextBox110.Size = New System.Drawing.Size(46, 20)
-        Me.TextBox110.TabIndex = 28
-        Me.TextBox110.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox110.Visible = False
-        '
-        'TextBox111
-        '
-        Me.TextBox111.Location = New System.Drawing.Point(5, 149)
-        Me.TextBox111.Name = "TextBox111"
-        Me.TextBox111.ReadOnly = True
-        Me.TextBox111.Size = New System.Drawing.Size(46, 20)
-        Me.TextBox111.TabIndex = 46
-        Me.TextBox111.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox111.Visible = False
-        '
-        'TextBox112
-        '
-        Me.TextBox112.Location = New System.Drawing.Point(5, 44)
-        Me.TextBox112.Name = "TextBox112"
-        Me.TextBox112.ReadOnly = True
-        Me.TextBox112.Size = New System.Drawing.Size(46, 20)
-        Me.TextBox112.TabIndex = 62
-        Me.TextBox112.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox112.Visible = False
         '
         'TP2
         '
         Me.TP2.BackColor = System.Drawing.Color.White
-        Me.TP2.Controls.Add(Me.Label55)
-        Me.TP2.Controls.Add(Me.Label56)
-        Me.TP2.Controls.Add(Me.Label57)
-        Me.TP2.Controls.Add(Me.Label58)
-        Me.TP2.Controls.Add(Me.Label59)
-        Me.TP2.Controls.Add(Me.Label60)
-        Me.TP2.Controls.Add(Me.Label61)
-        Me.TP2.Controls.Add(Me.Label62)
-        Me.TP2.Controls.Add(Me.Label63)
-        Me.TP2.Controls.Add(Me.Label64)
-        Me.TP2.Controls.Add(Me.Label65)
-        Me.TP2.Controls.Add(Me.Label66)
+        Me.TP2.Controls.Add(Me.LA5)
+        Me.TP2.Controls.Add(Me.LA6)
+        Me.TP2.Controls.Add(Me.IDS6)
+        Me.TP2.Controls.Add(Me.IDS5)
+        Me.TP2.Controls.Add(Me.LA7)
+        Me.TP2.Controls.Add(Me.IDS7)
+        Me.TP2.Controls.Add(Me.LA8)
+        Me.TP2.Controls.Add(Me.IDS8)
+        Me.TP2.Controls.Add(Me.LUM8)
+        Me.TP2.Controls.Add(Me.LUM7)
+        Me.TP2.Controls.Add(Me.LUM5)
+        Me.TP2.Controls.Add(Me.LUM6)
         Me.TP2.Controls.Add(Me.LI2)
-        Me.TP2.Controls.Add(Me.Label68)
-        Me.TP2.Controls.Add(Me.Label69)
-        Me.TP2.Controls.Add(Me.TextBox57)
-        Me.TP2.Controls.Add(Me.Button9)
-        Me.TP2.Controls.Add(Me.TextBox58)
-        Me.TP2.Controls.Add(Me.Panel7)
-        Me.TP2.Controls.Add(Me.Label70)
-        Me.TP2.Controls.Add(Me.Label71)
-        Me.TP2.Controls.Add(Me.TextBox59)
-        Me.TP2.Controls.Add(Me.Button10)
-        Me.TP2.Controls.Add(Me.TextBox60)
-        Me.TP2.Controls.Add(Me.Panel8)
-        Me.TP2.Controls.Add(Me.Label72)
-        Me.TP2.Controls.Add(Me.Label73)
-        Me.TP2.Controls.Add(Me.TextBox61)
-        Me.TP2.Controls.Add(Me.Button11)
-        Me.TP2.Controls.Add(Me.TextBox62)
-        Me.TP2.Controls.Add(Me.Panel9)
-        Me.TP2.Controls.Add(Me.Label74)
-        Me.TP2.Controls.Add(Me.Label75)
-        Me.TP2.Controls.Add(Me.TextBox63)
-        Me.TP2.Controls.Add(Me.Button12)
-        Me.TP2.Controls.Add(Me.TextBox64)
+        Me.TP2.Controls.Add(Me.IDP8)
+        Me.TP2.Controls.Add(Me.LAP8)
+        Me.TP2.Controls.Add(Me.TxtAP8)
+        Me.TP2.Controls.Add(Me.BB8)
+        Me.TP2.Controls.Add(Me.TxtObser8)
+        Me.TP2.Controls.Add(Me.P6)
+        Me.TP2.Controls.Add(Me.IDP7)
+        Me.TP2.Controls.Add(Me.LAP7)
+        Me.TP2.Controls.Add(Me.TxtAP7)
+        Me.TP2.Controls.Add(Me.BB7)
+        Me.TP2.Controls.Add(Me.TxtObser7)
+        Me.TP2.Controls.Add(Me.P5)
+        Me.TP2.Controls.Add(Me.IDP6)
+        Me.TP2.Controls.Add(Me.LAP6)
+        Me.TP2.Controls.Add(Me.TxtAP6)
+        Me.TP2.Controls.Add(Me.BB6)
+        Me.TP2.Controls.Add(Me.TxtObser6)
+        Me.TP2.Controls.Add(Me.P4)
+        Me.TP2.Controls.Add(Me.IDP5)
+        Me.TP2.Controls.Add(Me.LAP5)
+        Me.TP2.Controls.Add(Me.TxtAP5)
+        Me.TP2.Controls.Add(Me.BB5)
+        Me.TP2.Controls.Add(Me.TxtObser5)
         Me.TP2.Controls.Add(Me.LObserv2)
         Me.TP2.Controls.Add(Me.LCE2)
         Me.TP2.Controls.Add(Me.LCEn2)
         Me.TP2.Controls.Add(Me.LCS2)
         Me.TP2.Controls.Add(Me.LPr2)
-        Me.TP2.Controls.Add(Me.ID2)
-        Me.TP2.Controls.Add(Me.TextBox65)
-        Me.TP2.Controls.Add(Me.TextBox66)
-        Me.TP2.Controls.Add(Me.TextBox67)
-        Me.TP2.Controls.Add(Me.TextBox68)
-        Me.TP2.Controls.Add(Me.TextBox69)
-        Me.TP2.Controls.Add(Me.TextBox70)
-        Me.TP2.Controls.Add(Me.TextBox71)
-        Me.TP2.Controls.Add(Me.TextBox72)
-        Me.TP2.Controls.Add(Me.TextBox73)
-        Me.TP2.Controls.Add(Me.TextBox74)
-        Me.TP2.Controls.Add(Me.TextBox75)
-        Me.TP2.Controls.Add(Me.TextBox76)
-        Me.TP2.Controls.Add(Me.TextBox77)
-        Me.TP2.Controls.Add(Me.TextBox78)
-        Me.TP2.Controls.Add(Me.TextBox79)
-        Me.TP2.Controls.Add(Me.TextBox80)
-        Me.TP2.Controls.Add(Me.TextBox81)
-        Me.TP2.Controls.Add(Me.TextBox82)
-        Me.TP2.Controls.Add(Me.TextBox83)
-        Me.TP2.Controls.Add(Me.TextBox84)
+        Me.TP2.Controls.Add(Me.LID2)
+        Me.TP2.Controls.Add(Me.CEnt8)
+        Me.TP2.Controls.Add(Me.CEnt7)
+        Me.TP2.Controls.Add(Me.CEnt6)
+        Me.TP2.Controls.Add(Me.CEnt5)
+        Me.TP2.Controls.Add(Me.CEntra8)
+        Me.TP2.Controls.Add(Me.CEntra7)
+        Me.TP2.Controls.Add(Me.CEntra6)
+        Me.TP2.Controls.Add(Me.CEntra5)
+        Me.TP2.Controls.Add(Me.CantidadS8)
+        Me.TP2.Controls.Add(Me.CantidadS7)
+        Me.TP2.Controls.Add(Me.CantidadS6)
+        Me.TP2.Controls.Add(Me.CantidadS5)
+        Me.TP2.Controls.Add(Me.Producto8)
+        Me.TP2.Controls.Add(Me.Producto7)
+        Me.TP2.Controls.Add(Me.Producto6)
+        Me.TP2.Controls.Add(Me.Producto5)
+        Me.TP2.Controls.Add(Me.ID8)
+        Me.TP2.Controls.Add(Me.ID7)
+        Me.TP2.Controls.Add(Me.ID6)
+        Me.TP2.Controls.Add(Me.ID5)
         Me.TP2.Location = New System.Drawing.Point(4, 22)
         Me.TP2.Name = "TP2"
         Me.TP2.Padding = New System.Windows.Forms.Padding(3)
@@ -1255,133 +1284,133 @@ Partial Class ODC
         Me.TP2.TabIndex = 1
         Me.TP2.Text = "Productos"
         '
-        'Label55
+        'LA5
         '
-        Me.Label55.AutoSize = True
-        Me.Label55.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.Label55.Location = New System.Drawing.Point(847, 67)
-        Me.Label55.Name = "Label55"
-        Me.Label55.Size = New System.Drawing.Size(97, 39)
-        Me.Label55.TabIndex = 1
-        Me.Label55.Text = "Asignar Unidad " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "de Medida " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "desde el Inventario"
-        Me.Label55.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.Label55.Visible = False
+        Me.LA5.AutoSize = True
+        Me.LA5.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.LA5.Location = New System.Drawing.Point(847, 67)
+        Me.LA5.Name = "LA5"
+        Me.LA5.Size = New System.Drawing.Size(97, 39)
+        Me.LA5.TabIndex = 0
+        Me.LA5.Text = "Asignar Unidad " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "de Medida " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "desde el Inventario"
+        Me.LA5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.LA5.Visible = False
         '
-        'Label56
+        'LA6
         '
-        Me.Label56.AutoSize = True
-        Me.Label56.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.Label56.Location = New System.Drawing.Point(847, 173)
-        Me.Label56.Name = "Label56"
-        Me.Label56.Size = New System.Drawing.Size(97, 39)
-        Me.Label56.TabIndex = 33
-        Me.Label56.Text = "Asignar Unidad " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "de Medida " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "desde el Inventario"
-        Me.Label56.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.Label56.Visible = False
+        Me.LA6.AutoSize = True
+        Me.LA6.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.LA6.Location = New System.Drawing.Point(847, 173)
+        Me.LA6.Name = "LA6"
+        Me.LA6.Size = New System.Drawing.Size(97, 39)
+        Me.LA6.TabIndex = 0
+        Me.LA6.Text = "Asignar Unidad " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "de Medida " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "desde el Inventario"
+        Me.LA6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.LA6.Visible = False
         '
-        'Label57
+        'IDS6
         '
-        Me.Label57.AutoSize = True
-        Me.Label57.Location = New System.Drawing.Point(19, 152)
-        Me.Label57.Name = "Label57"
-        Me.Label57.Size = New System.Drawing.Size(19, 13)
-        Me.Label57.TabIndex = 34
-        Me.Label57.Text = "18"
-        Me.Label57.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.Label57.Visible = False
+        Me.IDS6.AutoSize = True
+        Me.IDS6.Location = New System.Drawing.Point(19, 152)
+        Me.IDS6.Name = "IDS6"
+        Me.IDS6.Size = New System.Drawing.Size(16, 13)
+        Me.IDS6.TabIndex = 0
+        Me.IDS6.Text = " 6"
+        Me.IDS6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.IDS6.Visible = False
         '
-        'Label58
+        'IDS5
         '
-        Me.Label58.AutoSize = True
-        Me.Label58.Location = New System.Drawing.Point(19, 47)
-        Me.Label58.Name = "Label58"
-        Me.Label58.Size = New System.Drawing.Size(19, 13)
-        Me.Label58.TabIndex = 35
-        Me.Label58.Text = "17"
-        Me.Label58.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.Label58.Visible = False
+        Me.IDS5.AutoSize = True
+        Me.IDS5.Location = New System.Drawing.Point(19, 47)
+        Me.IDS5.Name = "IDS5"
+        Me.IDS5.Size = New System.Drawing.Size(16, 13)
+        Me.IDS5.TabIndex = 0
+        Me.IDS5.Text = " 5"
+        Me.IDS5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.IDS5.Visible = False
         '
-        'Label59
+        'LA7
         '
-        Me.Label59.AutoSize = True
-        Me.Label59.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.Label59.Location = New System.Drawing.Point(847, 278)
-        Me.Label59.Name = "Label59"
-        Me.Label59.Size = New System.Drawing.Size(97, 39)
-        Me.Label59.TabIndex = 36
-        Me.Label59.Text = "Asignar Unidad " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "de Medida " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "desde el Inventario"
-        Me.Label59.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.Label59.Visible = False
+        Me.LA7.AutoSize = True
+        Me.LA7.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.LA7.Location = New System.Drawing.Point(847, 278)
+        Me.LA7.Name = "LA7"
+        Me.LA7.Size = New System.Drawing.Size(97, 39)
+        Me.LA7.TabIndex = 0
+        Me.LA7.Text = "Asignar Unidad " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "de Medida " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "desde el Inventario"
+        Me.LA7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.LA7.Visible = False
         '
-        'Label60
+        'IDS7
         '
-        Me.Label60.AutoSize = True
-        Me.Label60.Location = New System.Drawing.Point(19, 257)
-        Me.Label60.Name = "Label60"
-        Me.Label60.Size = New System.Drawing.Size(19, 13)
-        Me.Label60.TabIndex = 37
-        Me.Label60.Text = "19"
-        Me.Label60.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.Label60.Visible = False
+        Me.IDS7.AutoSize = True
+        Me.IDS7.Location = New System.Drawing.Point(19, 257)
+        Me.IDS7.Name = "IDS7"
+        Me.IDS7.Size = New System.Drawing.Size(16, 13)
+        Me.IDS7.TabIndex = 0
+        Me.IDS7.Text = " 7"
+        Me.IDS7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.IDS7.Visible = False
         '
-        'Label61
+        'LA8
         '
-        Me.Label61.AutoSize = True
-        Me.Label61.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.Label61.Location = New System.Drawing.Point(847, 383)
-        Me.Label61.Name = "Label61"
-        Me.Label61.Size = New System.Drawing.Size(97, 39)
-        Me.Label61.TabIndex = 38
-        Me.Label61.Text = "Asignar Unidad " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "de Medida " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "desde el Inventario"
-        Me.Label61.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.Label61.Visible = False
+        Me.LA8.AutoSize = True
+        Me.LA8.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.LA8.Location = New System.Drawing.Point(847, 383)
+        Me.LA8.Name = "LA8"
+        Me.LA8.Size = New System.Drawing.Size(97, 39)
+        Me.LA8.TabIndex = 0
+        Me.LA8.Text = "Asignar Unidad " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "de Medida " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "desde el Inventario"
+        Me.LA8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.LA8.Visible = False
         '
-        'Label62
+        'IDS8
         '
-        Me.Label62.AutoSize = True
-        Me.Label62.Location = New System.Drawing.Point(19, 362)
-        Me.Label62.Name = "Label62"
-        Me.Label62.Size = New System.Drawing.Size(19, 13)
-        Me.Label62.TabIndex = 39
-        Me.Label62.Text = "20"
-        Me.Label62.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.Label62.Visible = False
+        Me.IDS8.AutoSize = True
+        Me.IDS8.Location = New System.Drawing.Point(19, 362)
+        Me.IDS8.Name = "IDS8"
+        Me.IDS8.Size = New System.Drawing.Size(16, 13)
+        Me.IDS8.TabIndex = 0
+        Me.IDS8.Text = " 8"
+        Me.IDS8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.IDS8.Visible = False
         '
-        'Label63
+        'LUM8
         '
-        Me.Label63.AutoSize = True
-        Me.Label63.Location = New System.Drawing.Point(868, 363)
-        Me.Label63.Name = "Label63"
-        Me.Label63.Size = New System.Drawing.Size(0, 13)
-        Me.Label63.TabIndex = 40
-        Me.Label63.Visible = False
+        Me.LUM8.AutoSize = True
+        Me.LUM8.Location = New System.Drawing.Point(868, 363)
+        Me.LUM8.Name = "LUM8"
+        Me.LUM8.Size = New System.Drawing.Size(0, 13)
+        Me.LUM8.TabIndex = 0
+        Me.LUM8.Visible = False
         '
-        'Label64
+        'LUM7
         '
-        Me.Label64.AutoSize = True
-        Me.Label64.Location = New System.Drawing.Point(868, 258)
-        Me.Label64.Name = "Label64"
-        Me.Label64.Size = New System.Drawing.Size(0, 13)
-        Me.Label64.TabIndex = 41
-        Me.Label64.Visible = False
+        Me.LUM7.AutoSize = True
+        Me.LUM7.Location = New System.Drawing.Point(868, 258)
+        Me.LUM7.Name = "LUM7"
+        Me.LUM7.Size = New System.Drawing.Size(0, 13)
+        Me.LUM7.TabIndex = 0
+        Me.LUM7.Visible = False
         '
-        'Label65
+        'LUM5
         '
-        Me.Label65.AutoSize = True
-        Me.Label65.Location = New System.Drawing.Point(868, 48)
-        Me.Label65.Name = "Label65"
-        Me.Label65.Size = New System.Drawing.Size(0, 13)
-        Me.Label65.TabIndex = 42
-        Me.Label65.Visible = False
+        Me.LUM5.AutoSize = True
+        Me.LUM5.Location = New System.Drawing.Point(868, 48)
+        Me.LUM5.Name = "LUM5"
+        Me.LUM5.Size = New System.Drawing.Size(0, 13)
+        Me.LUM5.TabIndex = 0
+        Me.LUM5.Visible = False
         '
-        'Label66
+        'LUM6
         '
-        Me.Label66.AutoSize = True
-        Me.Label66.Location = New System.Drawing.Point(868, 153)
-        Me.Label66.Name = "Label66"
-        Me.Label66.Size = New System.Drawing.Size(0, 13)
-        Me.Label66.TabIndex = 43
-        Me.Label66.Visible = False
+        Me.LUM6.AutoSize = True
+        Me.LUM6.Location = New System.Drawing.Point(868, 153)
+        Me.LUM6.Name = "LUM6"
+        Me.LUM6.Size = New System.Drawing.Size(0, 13)
+        Me.LUM6.TabIndex = 0
+        Me.LUM6.Visible = False
         '
         'LI2
         '
@@ -1396,251 +1425,251 @@ Partial Class ODC
         Me.LI2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.LI2.Visible = False
         '
-        'Label68
+        'IDP8
         '
-        Me.Label68.AutoSize = True
-        Me.Label68.BackColor = System.Drawing.Color.Transparent
-        Me.Label68.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label68.Location = New System.Drawing.Point(626, 409)
-        Me.Label68.Name = "Label68"
-        Me.Label68.Size = New System.Drawing.Size(0, 15)
-        Me.Label68.TabIndex = 45
-        Me.Label68.Visible = False
+        Me.IDP8.AutoSize = True
+        Me.IDP8.BackColor = System.Drawing.Color.Transparent
+        Me.IDP8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.IDP8.Location = New System.Drawing.Point(626, 409)
+        Me.IDP8.Name = "IDP8"
+        Me.IDP8.Size = New System.Drawing.Size(0, 15)
+        Me.IDP8.TabIndex = 0
+        Me.IDP8.Visible = False
         '
-        'Label69
+        'LAP8
         '
-        Me.Label69.AutoSize = True
-        Me.Label69.BackColor = System.Drawing.Color.Transparent
-        Me.Label69.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label69.Location = New System.Drawing.Point(35, 409)
-        Me.Label69.Name = "Label69"
-        Me.Label69.Size = New System.Drawing.Size(100, 15)
-        Me.Label69.TabIndex = 47
-        Me.Label69.Text = "Asignar Producto"
-        Me.Label69.Visible = False
+        Me.LAP8.AutoSize = True
+        Me.LAP8.BackColor = System.Drawing.Color.Transparent
+        Me.LAP8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LAP8.Location = New System.Drawing.Point(35, 409)
+        Me.LAP8.Name = "LAP8"
+        Me.LAP8.Size = New System.Drawing.Size(100, 15)
+        Me.LAP8.TabIndex = 0
+        Me.LAP8.Text = "Asignar Producto"
+        Me.LAP8.Visible = False
         '
-        'TextBox57
+        'TxtAP8
         '
-        Me.TextBox57.Location = New System.Drawing.Point(163, 410)
-        Me.TextBox57.Name = "TextBox57"
-        Me.TextBox57.ReadOnly = True
-        Me.TextBox57.Size = New System.Drawing.Size(448, 20)
-        Me.TextBox57.TabIndex = 61
-        Me.TextBox57.Visible = False
+        Me.TxtAP8.Location = New System.Drawing.Point(163, 410)
+        Me.TxtAP8.Name = "TxtAP8"
+        Me.TxtAP8.ReadOnly = True
+        Me.TxtAP8.Size = New System.Drawing.Size(448, 20)
+        Me.TxtAP8.TabIndex = 0
+        Me.TxtAP8.Visible = False
         '
-        'Button9
+        'BB8
         '
-        Me.Button9.BackColor = System.Drawing.Color.Transparent
-        Me.Button9.BackgroundImage = Global.NucleosAve.My.Resources.Resources.list_3
-        Me.Button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Button9.Location = New System.Drawing.Point(135, 405)
-        Me.Button9.Name = "Button9"
-        Me.Button9.Size = New System.Drawing.Size(24, 28)
-        Me.Button9.TabIndex = 48
-        Me.Button9.UseVisualStyleBackColor = False
-        Me.Button9.Visible = False
+        Me.BB8.BackColor = System.Drawing.Color.Transparent
+        Me.BB8.BackgroundImage = Global.NucleosAve.My.Resources.Resources.list_3
+        Me.BB8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.BB8.Location = New System.Drawing.Point(135, 405)
+        Me.BB8.Name = "BB8"
+        Me.BB8.Size = New System.Drawing.Size(24, 28)
+        Me.BB8.TabIndex = 0
+        Me.BB8.UseVisualStyleBackColor = False
+        Me.BB8.Visible = False
         '
-        'TextBox58
+        'TxtObser8
         '
-        Me.TextBox58.Location = New System.Drawing.Point(340, 359)
-        Me.TextBox58.Multiline = True
-        Me.TextBox58.Name = "TextBox58"
-        Me.TextBox58.ReadOnly = True
-        Me.TextBox58.Size = New System.Drawing.Size(272, 39)
-        Me.TextBox58.TabIndex = 49
-        Me.TextBox58.Visible = False
+        Me.TxtObser8.Location = New System.Drawing.Point(340, 359)
+        Me.TxtObser8.Multiline = True
+        Me.TxtObser8.Name = "TxtObser8"
+        Me.TxtObser8.ReadOnly = True
+        Me.TxtObser8.Size = New System.Drawing.Size(272, 39)
+        Me.TxtObser8.TabIndex = 0
+        Me.TxtObser8.Visible = False
         '
-        'Panel7
+        'P6
         '
-        Me.Panel7.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Panel7.BackColor = System.Drawing.Color.SteelBlue
-        Me.Panel7.Location = New System.Drawing.Point(29, 334)
-        Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(900, 5)
-        Me.Panel7.TabIndex = 50
-        Me.Panel7.Visible = False
+        Me.P6.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.P6.BackColor = System.Drawing.Color.SteelBlue
+        Me.P6.Location = New System.Drawing.Point(29, 334)
+        Me.P6.Name = "P6"
+        Me.P6.Size = New System.Drawing.Size(900, 5)
+        Me.P6.TabIndex = 0
+        Me.P6.Visible = False
         '
-        'Label70
+        'IDP7
         '
-        Me.Label70.AutoSize = True
-        Me.Label70.BackColor = System.Drawing.Color.Transparent
-        Me.Label70.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label70.Location = New System.Drawing.Point(626, 306)
-        Me.Label70.Name = "Label70"
-        Me.Label70.Size = New System.Drawing.Size(0, 15)
-        Me.Label70.TabIndex = 51
-        Me.Label70.Visible = False
+        Me.IDP7.AutoSize = True
+        Me.IDP7.BackColor = System.Drawing.Color.Transparent
+        Me.IDP7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.IDP7.Location = New System.Drawing.Point(626, 306)
+        Me.IDP7.Name = "IDP7"
+        Me.IDP7.Size = New System.Drawing.Size(0, 15)
+        Me.IDP7.TabIndex = 0
+        Me.IDP7.Visible = False
         '
-        'Label71
+        'LAP7
         '
-        Me.Label71.AutoSize = True
-        Me.Label71.BackColor = System.Drawing.Color.Transparent
-        Me.Label71.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label71.Location = New System.Drawing.Point(35, 304)
-        Me.Label71.Name = "Label71"
-        Me.Label71.Size = New System.Drawing.Size(100, 15)
-        Me.Label71.TabIndex = 52
-        Me.Label71.Text = "Asignar Producto"
-        Me.Label71.Visible = False
+        Me.LAP7.AutoSize = True
+        Me.LAP7.BackColor = System.Drawing.Color.Transparent
+        Me.LAP7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LAP7.Location = New System.Drawing.Point(35, 304)
+        Me.LAP7.Name = "LAP7"
+        Me.LAP7.Size = New System.Drawing.Size(100, 15)
+        Me.LAP7.TabIndex = 0
+        Me.LAP7.Text = "Asignar Producto"
+        Me.LAP7.Visible = False
         '
-        'TextBox59
+        'TxtAP7
         '
-        Me.TextBox59.Location = New System.Drawing.Point(163, 305)
-        Me.TextBox59.Name = "TextBox59"
-        Me.TextBox59.ReadOnly = True
-        Me.TextBox59.Size = New System.Drawing.Size(448, 20)
-        Me.TextBox59.TabIndex = 53
-        Me.TextBox59.Visible = False
+        Me.TxtAP7.Location = New System.Drawing.Point(163, 305)
+        Me.TxtAP7.Name = "TxtAP7"
+        Me.TxtAP7.ReadOnly = True
+        Me.TxtAP7.Size = New System.Drawing.Size(448, 20)
+        Me.TxtAP7.TabIndex = 0
+        Me.TxtAP7.Visible = False
         '
-        'Button10
+        'BB7
         '
-        Me.Button10.BackColor = System.Drawing.Color.Transparent
-        Me.Button10.BackgroundImage = Global.NucleosAve.My.Resources.Resources.list_3
-        Me.Button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Button10.Location = New System.Drawing.Point(135, 300)
-        Me.Button10.Name = "Button10"
-        Me.Button10.Size = New System.Drawing.Size(24, 28)
-        Me.Button10.TabIndex = 54
-        Me.Button10.UseVisualStyleBackColor = False
-        Me.Button10.Visible = False
+        Me.BB7.BackColor = System.Drawing.Color.Transparent
+        Me.BB7.BackgroundImage = Global.NucleosAve.My.Resources.Resources.list_3
+        Me.BB7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.BB7.Location = New System.Drawing.Point(135, 300)
+        Me.BB7.Name = "BB7"
+        Me.BB7.Size = New System.Drawing.Size(24, 28)
+        Me.BB7.TabIndex = 0
+        Me.BB7.UseVisualStyleBackColor = False
+        Me.BB7.Visible = False
         '
-        'TextBox60
+        'TxtObser7
         '
-        Me.TextBox60.Location = New System.Drawing.Point(340, 254)
-        Me.TextBox60.Multiline = True
-        Me.TextBox60.Name = "TextBox60"
-        Me.TextBox60.ReadOnly = True
-        Me.TextBox60.Size = New System.Drawing.Size(272, 39)
-        Me.TextBox60.TabIndex = 55
-        Me.TextBox60.Visible = False
+        Me.TxtObser7.Location = New System.Drawing.Point(340, 254)
+        Me.TxtObser7.Multiline = True
+        Me.TxtObser7.Name = "TxtObser7"
+        Me.TxtObser7.ReadOnly = True
+        Me.TxtObser7.Size = New System.Drawing.Size(272, 39)
+        Me.TxtObser7.TabIndex = 0
+        Me.TxtObser7.Visible = False
         '
-        'Panel8
+        'P5
         '
-        Me.Panel8.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Panel8.BackColor = System.Drawing.Color.SteelBlue
-        Me.Panel8.Location = New System.Drawing.Point(29, 229)
-        Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(900, 5)
-        Me.Panel8.TabIndex = 56
-        Me.Panel8.Visible = False
+        Me.P5.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.P5.BackColor = System.Drawing.Color.SteelBlue
+        Me.P5.Location = New System.Drawing.Point(29, 229)
+        Me.P5.Name = "P5"
+        Me.P5.Size = New System.Drawing.Size(900, 5)
+        Me.P5.TabIndex = 0
+        Me.P5.Visible = False
         '
-        'Label72
+        'IDP6
         '
-        Me.Label72.AutoSize = True
-        Me.Label72.BackColor = System.Drawing.Color.Transparent
-        Me.Label72.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label72.Location = New System.Drawing.Point(626, 199)
-        Me.Label72.Name = "Label72"
-        Me.Label72.Size = New System.Drawing.Size(0, 15)
-        Me.Label72.TabIndex = 57
-        Me.Label72.Visible = False
+        Me.IDP6.AutoSize = True
+        Me.IDP6.BackColor = System.Drawing.Color.Transparent
+        Me.IDP6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.IDP6.Location = New System.Drawing.Point(626, 199)
+        Me.IDP6.Name = "IDP6"
+        Me.IDP6.Size = New System.Drawing.Size(0, 15)
+        Me.IDP6.TabIndex = 0
+        Me.IDP6.Visible = False
         '
-        'Label73
+        'LAP6
         '
-        Me.Label73.AutoSize = True
-        Me.Label73.BackColor = System.Drawing.Color.Transparent
-        Me.Label73.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label73.Location = New System.Drawing.Point(35, 199)
-        Me.Label73.Name = "Label73"
-        Me.Label73.Size = New System.Drawing.Size(100, 15)
-        Me.Label73.TabIndex = 58
-        Me.Label73.Text = "Asignar Producto"
-        Me.Label73.Visible = False
+        Me.LAP6.AutoSize = True
+        Me.LAP6.BackColor = System.Drawing.Color.Transparent
+        Me.LAP6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LAP6.Location = New System.Drawing.Point(35, 199)
+        Me.LAP6.Name = "LAP6"
+        Me.LAP6.Size = New System.Drawing.Size(100, 15)
+        Me.LAP6.TabIndex = 0
+        Me.LAP6.Text = "Asignar Producto"
+        Me.LAP6.Visible = False
         '
-        'TextBox61
+        'TxtAP6
         '
-        Me.TextBox61.Location = New System.Drawing.Point(163, 200)
-        Me.TextBox61.Name = "TextBox61"
-        Me.TextBox61.ReadOnly = True
-        Me.TextBox61.Size = New System.Drawing.Size(448, 20)
-        Me.TextBox61.TabIndex = 59
-        Me.TextBox61.Visible = False
+        Me.TxtAP6.Location = New System.Drawing.Point(163, 200)
+        Me.TxtAP6.Name = "TxtAP6"
+        Me.TxtAP6.ReadOnly = True
+        Me.TxtAP6.Size = New System.Drawing.Size(448, 20)
+        Me.TxtAP6.TabIndex = 0
+        Me.TxtAP6.Visible = False
         '
-        'Button11
+        'BB6
         '
-        Me.Button11.BackColor = System.Drawing.Color.Transparent
-        Me.Button11.BackgroundImage = Global.NucleosAve.My.Resources.Resources.list_3
-        Me.Button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Button11.Location = New System.Drawing.Point(135, 195)
-        Me.Button11.Name = "Button11"
-        Me.Button11.Size = New System.Drawing.Size(24, 28)
-        Me.Button11.TabIndex = 60
-        Me.Button11.UseVisualStyleBackColor = False
-        Me.Button11.Visible = False
+        Me.BB6.BackColor = System.Drawing.Color.Transparent
+        Me.BB6.BackgroundImage = Global.NucleosAve.My.Resources.Resources.list_3
+        Me.BB6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.BB6.Location = New System.Drawing.Point(135, 195)
+        Me.BB6.Name = "BB6"
+        Me.BB6.Size = New System.Drawing.Size(24, 28)
+        Me.BB6.TabIndex = 0
+        Me.BB6.UseVisualStyleBackColor = False
+        Me.BB6.Visible = False
         '
-        'TextBox62
+        'TxtObser6
         '
-        Me.TextBox62.Location = New System.Drawing.Point(340, 149)
-        Me.TextBox62.Multiline = True
-        Me.TextBox62.Name = "TextBox62"
-        Me.TextBox62.ReadOnly = True
-        Me.TextBox62.Size = New System.Drawing.Size(272, 39)
-        Me.TextBox62.TabIndex = 32
-        Me.TextBox62.Visible = False
+        Me.TxtObser6.Location = New System.Drawing.Point(340, 149)
+        Me.TxtObser6.Multiline = True
+        Me.TxtObser6.Name = "TxtObser6"
+        Me.TxtObser6.ReadOnly = True
+        Me.TxtObser6.Size = New System.Drawing.Size(272, 39)
+        Me.TxtObser6.TabIndex = 0
+        Me.TxtObser6.Visible = False
         '
-        'Panel9
+        'P4
         '
-        Me.Panel9.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Panel9.BackColor = System.Drawing.Color.SteelBlue
-        Me.Panel9.Location = New System.Drawing.Point(29, 124)
-        Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(900, 5)
-        Me.Panel9.TabIndex = 31
-        Me.Panel9.Visible = False
+        Me.P4.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.P4.BackColor = System.Drawing.Color.SteelBlue
+        Me.P4.Location = New System.Drawing.Point(29, 124)
+        Me.P4.Name = "P4"
+        Me.P4.Size = New System.Drawing.Size(900, 5)
+        Me.P4.TabIndex = 0
+        Me.P4.Visible = False
         '
-        'Label74
+        'IDP5
         '
-        Me.Label74.AutoSize = True
-        Me.Label74.BackColor = System.Drawing.Color.Transparent
-        Me.Label74.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label74.Location = New System.Drawing.Point(626, 96)
-        Me.Label74.Name = "Label74"
-        Me.Label74.Size = New System.Drawing.Size(0, 15)
-        Me.Label74.TabIndex = 30
-        Me.Label74.Visible = False
+        Me.IDP5.AutoSize = True
+        Me.IDP5.BackColor = System.Drawing.Color.Transparent
+        Me.IDP5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.IDP5.Location = New System.Drawing.Point(626, 96)
+        Me.IDP5.Name = "IDP5"
+        Me.IDP5.Size = New System.Drawing.Size(0, 15)
+        Me.IDP5.TabIndex = 0
+        Me.IDP5.Visible = False
         '
-        'Label75
+        'LAP5
         '
-        Me.Label75.AutoSize = True
-        Me.Label75.BackColor = System.Drawing.Color.Transparent
-        Me.Label75.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label75.Location = New System.Drawing.Point(35, 94)
-        Me.Label75.Name = "Label75"
-        Me.Label75.Size = New System.Drawing.Size(100, 15)
-        Me.Label75.TabIndex = 29
-        Me.Label75.Text = "Asignar Producto"
-        Me.Label75.Visible = False
+        Me.LAP5.AutoSize = True
+        Me.LAP5.BackColor = System.Drawing.Color.Transparent
+        Me.LAP5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LAP5.Location = New System.Drawing.Point(35, 94)
+        Me.LAP5.Name = "LAP5"
+        Me.LAP5.Size = New System.Drawing.Size(100, 15)
+        Me.LAP5.TabIndex = 0
+        Me.LAP5.Text = "Asignar Producto"
+        Me.LAP5.Visible = False
         '
-        'TextBox63
+        'TxtAP5
         '
-        Me.TextBox63.Location = New System.Drawing.Point(163, 95)
-        Me.TextBox63.Name = "TextBox63"
-        Me.TextBox63.ReadOnly = True
-        Me.TextBox63.Size = New System.Drawing.Size(448, 20)
-        Me.TextBox63.TabIndex = 2
-        Me.TextBox63.Visible = False
+        Me.TxtAP5.Location = New System.Drawing.Point(163, 95)
+        Me.TxtAP5.Name = "TxtAP5"
+        Me.TxtAP5.ReadOnly = True
+        Me.TxtAP5.Size = New System.Drawing.Size(448, 20)
+        Me.TxtAP5.TabIndex = 0
+        Me.TxtAP5.Visible = False
         '
-        'Button12
+        'BB5
         '
-        Me.Button12.BackColor = System.Drawing.Color.Transparent
-        Me.Button12.BackgroundImage = Global.NucleosAve.My.Resources.Resources.list_3
-        Me.Button12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Button12.Location = New System.Drawing.Point(135, 90)
-        Me.Button12.Name = "Button12"
-        Me.Button12.Size = New System.Drawing.Size(24, 28)
-        Me.Button12.TabIndex = 3
-        Me.Button12.UseVisualStyleBackColor = False
-        Me.Button12.Visible = False
+        Me.BB5.BackColor = System.Drawing.Color.Transparent
+        Me.BB5.BackgroundImage = Global.NucleosAve.My.Resources.Resources.list_3
+        Me.BB5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.BB5.Location = New System.Drawing.Point(135, 90)
+        Me.BB5.Name = "BB5"
+        Me.BB5.Size = New System.Drawing.Size(24, 28)
+        Me.BB5.TabIndex = 0
+        Me.BB5.UseVisualStyleBackColor = False
+        Me.BB5.Visible = False
         '
-        'TextBox64
+        'TxtObser5
         '
-        Me.TextBox64.Location = New System.Drawing.Point(340, 44)
-        Me.TextBox64.Multiline = True
-        Me.TextBox64.Name = "TextBox64"
-        Me.TextBox64.ReadOnly = True
-        Me.TextBox64.Size = New System.Drawing.Size(272, 39)
-        Me.TextBox64.TabIndex = 4
-        Me.TextBox64.Visible = False
+        Me.TxtObser5.Location = New System.Drawing.Point(340, 44)
+        Me.TxtObser5.Multiline = True
+        Me.TxtObser5.Name = "TxtObser5"
+        Me.TxtObser5.ReadOnly = True
+        Me.TxtObser5.Size = New System.Drawing.Size(272, 39)
+        Me.TxtObser5.TabIndex = 0
+        Me.TxtObser5.Visible = False
         '
         'LObserv2
         '
@@ -1705,291 +1734,291 @@ Partial Class ODC
         Me.LPr2.Text = "Producto"
         Me.LPr2.Visible = False
         '
-        'ID2
+        'LID2
         '
-        Me.ID2.AutoSize = True
-        Me.ID2.BackColor = System.Drawing.Color.Transparent
-        Me.ID2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ID2.Location = New System.Drawing.Point(19, 16)
-        Me.ID2.Name = "ID2"
-        Me.ID2.Size = New System.Drawing.Size(19, 15)
-        Me.ID2.TabIndex = 0
-        Me.ID2.Text = "ID"
-        Me.ID2.Visible = False
+        Me.LID2.AutoSize = True
+        Me.LID2.BackColor = System.Drawing.Color.Transparent
+        Me.LID2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LID2.Location = New System.Drawing.Point(19, 16)
+        Me.LID2.Name = "LID2"
+        Me.LID2.Size = New System.Drawing.Size(19, 15)
+        Me.LID2.TabIndex = 0
+        Me.LID2.Text = "ID"
+        Me.LID2.Visible = False
         '
-        'TextBox65
+        'CEnt8
         '
-        Me.TextBox65.Location = New System.Drawing.Point(804, 359)
-        Me.TextBox65.Name = "TextBox65"
-        Me.TextBox65.ReadOnly = True
-        Me.TextBox65.Size = New System.Drawing.Size(56, 20)
-        Me.TextBox65.TabIndex = 11
-        Me.TextBox65.Text = "0"
-        Me.TextBox65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox65.Visible = False
+        Me.CEnt8.Location = New System.Drawing.Point(804, 359)
+        Me.CEnt8.Name = "CEnt8"
+        Me.CEnt8.ReadOnly = True
+        Me.CEnt8.Size = New System.Drawing.Size(56, 20)
+        Me.CEnt8.TabIndex = 0
+        Me.CEnt8.Text = "0"
+        Me.CEnt8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.CEnt8.Visible = False
         '
-        'TextBox66
+        'CEnt7
         '
-        Me.TextBox66.Location = New System.Drawing.Point(804, 254)
-        Me.TextBox66.Name = "TextBox66"
-        Me.TextBox66.ReadOnly = True
-        Me.TextBox66.Size = New System.Drawing.Size(56, 20)
-        Me.TextBox66.TabIndex = 12
-        Me.TextBox66.Text = "0"
-        Me.TextBox66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox66.Visible = False
+        Me.CEnt7.Location = New System.Drawing.Point(804, 254)
+        Me.CEnt7.Name = "CEnt7"
+        Me.CEnt7.ReadOnly = True
+        Me.CEnt7.Size = New System.Drawing.Size(56, 20)
+        Me.CEnt7.TabIndex = 0
+        Me.CEnt7.Text = "0"
+        Me.CEnt7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.CEnt7.Visible = False
         '
-        'TextBox67
+        'CEnt6
         '
-        Me.TextBox67.Location = New System.Drawing.Point(804, 149)
-        Me.TextBox67.Name = "TextBox67"
-        Me.TextBox67.ReadOnly = True
-        Me.TextBox67.Size = New System.Drawing.Size(56, 20)
-        Me.TextBox67.TabIndex = 13
-        Me.TextBox67.Text = "0"
-        Me.TextBox67.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox67.Visible = False
+        Me.CEnt6.Location = New System.Drawing.Point(804, 149)
+        Me.CEnt6.Name = "CEnt6"
+        Me.CEnt6.ReadOnly = True
+        Me.CEnt6.Size = New System.Drawing.Size(56, 20)
+        Me.CEnt6.TabIndex = 0
+        Me.CEnt6.Text = "0"
+        Me.CEnt6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.CEnt6.Visible = False
         '
-        'TextBox68
+        'CEnt5
         '
-        Me.TextBox68.Location = New System.Drawing.Point(804, 44)
-        Me.TextBox68.Name = "TextBox68"
-        Me.TextBox68.ReadOnly = True
-        Me.TextBox68.Size = New System.Drawing.Size(56, 20)
-        Me.TextBox68.TabIndex = 14
-        Me.TextBox68.Text = "0"
-        Me.TextBox68.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox68.Visible = False
+        Me.CEnt5.Location = New System.Drawing.Point(804, 44)
+        Me.CEnt5.Name = "CEnt5"
+        Me.CEnt5.ReadOnly = True
+        Me.CEnt5.Size = New System.Drawing.Size(56, 20)
+        Me.CEnt5.TabIndex = 0
+        Me.CEnt5.Text = "0"
+        Me.CEnt5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.CEnt5.Visible = False
         '
-        'TextBox69
+        'CEntra8
         '
-        Me.TextBox69.Location = New System.Drawing.Point(739, 359)
-        Me.TextBox69.Name = "TextBox69"
-        Me.TextBox69.ReadOnly = True
-        Me.TextBox69.Size = New System.Drawing.Size(49, 20)
-        Me.TextBox69.TabIndex = 15
-        Me.TextBox69.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox69.Visible = False
+        Me.CEntra8.Location = New System.Drawing.Point(739, 359)
+        Me.CEntra8.Name = "CEntra8"
+        Me.CEntra8.ReadOnly = True
+        Me.CEntra8.Size = New System.Drawing.Size(49, 20)
+        Me.CEntra8.TabIndex = 0
+        Me.CEntra8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.CEntra8.Visible = False
         '
-        'TextBox70
+        'CEntra7
         '
-        Me.TextBox70.Location = New System.Drawing.Point(739, 254)
-        Me.TextBox70.Name = "TextBox70"
-        Me.TextBox70.ReadOnly = True
-        Me.TextBox70.Size = New System.Drawing.Size(49, 20)
-        Me.TextBox70.TabIndex = 16
-        Me.TextBox70.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox70.Visible = False
+        Me.CEntra7.Location = New System.Drawing.Point(739, 254)
+        Me.CEntra7.Name = "CEntra7"
+        Me.CEntra7.ReadOnly = True
+        Me.CEntra7.Size = New System.Drawing.Size(49, 20)
+        Me.CEntra7.TabIndex = 0
+        Me.CEntra7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.CEntra7.Visible = False
         '
-        'TextBox71
+        'CEntra6
         '
-        Me.TextBox71.Location = New System.Drawing.Point(739, 149)
-        Me.TextBox71.Name = "TextBox71"
-        Me.TextBox71.ReadOnly = True
-        Me.TextBox71.Size = New System.Drawing.Size(49, 20)
-        Me.TextBox71.TabIndex = 17
-        Me.TextBox71.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox71.Visible = False
+        Me.CEntra6.Location = New System.Drawing.Point(739, 149)
+        Me.CEntra6.Name = "CEntra6"
+        Me.CEntra6.ReadOnly = True
+        Me.CEntra6.Size = New System.Drawing.Size(49, 20)
+        Me.CEntra6.TabIndex = 0
+        Me.CEntra6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.CEntra6.Visible = False
         '
-        'TextBox72
+        'CEntra5
         '
-        Me.TextBox72.Location = New System.Drawing.Point(739, 44)
-        Me.TextBox72.Name = "TextBox72"
-        Me.TextBox72.ReadOnly = True
-        Me.TextBox72.Size = New System.Drawing.Size(49, 20)
-        Me.TextBox72.TabIndex = 18
-        Me.TextBox72.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox72.Visible = False
+        Me.CEntra5.Location = New System.Drawing.Point(739, 44)
+        Me.CEntra5.Name = "CEntra5"
+        Me.CEntra5.ReadOnly = True
+        Me.CEntra5.Size = New System.Drawing.Size(49, 20)
+        Me.CEntra5.TabIndex = 0
+        Me.CEntra5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.CEntra5.Visible = False
         '
-        'TextBox73
+        'CantidadS8
         '
-        Me.TextBox73.Location = New System.Drawing.Point(629, 359)
-        Me.TextBox73.Multiline = True
-        Me.TextBox73.Name = "TextBox73"
-        Me.TextBox73.ReadOnly = True
-        Me.TextBox73.Size = New System.Drawing.Size(86, 45)
-        Me.TextBox73.TabIndex = 19
-        Me.TextBox73.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox73.Visible = False
+        Me.CantidadS8.Location = New System.Drawing.Point(629, 359)
+        Me.CantidadS8.Multiline = True
+        Me.CantidadS8.Name = "CantidadS8"
+        Me.CantidadS8.ReadOnly = True
+        Me.CantidadS8.Size = New System.Drawing.Size(86, 45)
+        Me.CantidadS8.TabIndex = 0
+        Me.CantidadS8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.CantidadS8.Visible = False
         '
-        'TextBox74
+        'CantidadS7
         '
-        Me.TextBox74.Location = New System.Drawing.Point(629, 254)
-        Me.TextBox74.Multiline = True
-        Me.TextBox74.Name = "TextBox74"
-        Me.TextBox74.ReadOnly = True
-        Me.TextBox74.Size = New System.Drawing.Size(86, 45)
-        Me.TextBox74.TabIndex = 20
-        Me.TextBox74.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox74.Visible = False
+        Me.CantidadS7.Location = New System.Drawing.Point(629, 254)
+        Me.CantidadS7.Multiline = True
+        Me.CantidadS7.Name = "CantidadS7"
+        Me.CantidadS7.ReadOnly = True
+        Me.CantidadS7.Size = New System.Drawing.Size(86, 45)
+        Me.CantidadS7.TabIndex = 0
+        Me.CantidadS7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.CantidadS7.Visible = False
         '
-        'TextBox75
+        'CantidadS6
         '
-        Me.TextBox75.Location = New System.Drawing.Point(629, 149)
-        Me.TextBox75.Multiline = True
-        Me.TextBox75.Name = "TextBox75"
-        Me.TextBox75.ReadOnly = True
-        Me.TextBox75.Size = New System.Drawing.Size(86, 45)
-        Me.TextBox75.TabIndex = 21
-        Me.TextBox75.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox75.Visible = False
+        Me.CantidadS6.Location = New System.Drawing.Point(629, 149)
+        Me.CantidadS6.Multiline = True
+        Me.CantidadS6.Name = "CantidadS6"
+        Me.CantidadS6.ReadOnly = True
+        Me.CantidadS6.Size = New System.Drawing.Size(86, 45)
+        Me.CantidadS6.TabIndex = 0
+        Me.CantidadS6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.CantidadS6.Visible = False
         '
-        'TextBox76
+        'CantidadS5
         '
-        Me.TextBox76.Location = New System.Drawing.Point(629, 44)
-        Me.TextBox76.Multiline = True
-        Me.TextBox76.Name = "TextBox76"
-        Me.TextBox76.ReadOnly = True
-        Me.TextBox76.Size = New System.Drawing.Size(86, 45)
-        Me.TextBox76.TabIndex = 22
-        Me.TextBox76.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox76.Visible = False
+        Me.CantidadS5.Location = New System.Drawing.Point(629, 44)
+        Me.CantidadS5.Multiline = True
+        Me.CantidadS5.Name = "CantidadS5"
+        Me.CantidadS5.ReadOnly = True
+        Me.CantidadS5.Size = New System.Drawing.Size(86, 45)
+        Me.CantidadS5.TabIndex = 0
+        Me.CantidadS5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.CantidadS5.Visible = False
         '
-        'TextBox77
+        'Producto8
         '
-        Me.TextBox77.Location = New System.Drawing.Point(63, 359)
-        Me.TextBox77.Multiline = True
-        Me.TextBox77.Name = "TextBox77"
-        Me.TextBox77.ReadOnly = True
-        Me.TextBox77.Size = New System.Drawing.Size(272, 39)
-        Me.TextBox77.TabIndex = 23
-        Me.TextBox77.Visible = False
+        Me.Producto8.Location = New System.Drawing.Point(63, 359)
+        Me.Producto8.Multiline = True
+        Me.Producto8.Name = "Producto8"
+        Me.Producto8.ReadOnly = True
+        Me.Producto8.Size = New System.Drawing.Size(272, 39)
+        Me.Producto8.TabIndex = 0
+        Me.Producto8.Visible = False
         '
-        'TextBox78
+        'Producto7
         '
-        Me.TextBox78.Location = New System.Drawing.Point(63, 254)
-        Me.TextBox78.Multiline = True
-        Me.TextBox78.Name = "TextBox78"
-        Me.TextBox78.ReadOnly = True
-        Me.TextBox78.Size = New System.Drawing.Size(272, 39)
-        Me.TextBox78.TabIndex = 24
-        Me.TextBox78.Visible = False
+        Me.Producto7.Location = New System.Drawing.Point(63, 254)
+        Me.Producto7.Multiline = True
+        Me.Producto7.Name = "Producto7"
+        Me.Producto7.ReadOnly = True
+        Me.Producto7.Size = New System.Drawing.Size(272, 39)
+        Me.Producto7.TabIndex = 0
+        Me.Producto7.Visible = False
         '
-        'TextBox79
+        'Producto6
         '
-        Me.TextBox79.Location = New System.Drawing.Point(63, 149)
-        Me.TextBox79.Multiline = True
-        Me.TextBox79.Name = "TextBox79"
-        Me.TextBox79.ReadOnly = True
-        Me.TextBox79.Size = New System.Drawing.Size(272, 39)
-        Me.TextBox79.TabIndex = 25
-        Me.TextBox79.Visible = False
+        Me.Producto6.Location = New System.Drawing.Point(63, 149)
+        Me.Producto6.Multiline = True
+        Me.Producto6.Name = "Producto6"
+        Me.Producto6.ReadOnly = True
+        Me.Producto6.Size = New System.Drawing.Size(272, 39)
+        Me.Producto6.TabIndex = 0
+        Me.Producto6.Visible = False
         '
-        'TextBox80
+        'Producto5
         '
-        Me.TextBox80.Location = New System.Drawing.Point(63, 44)
-        Me.TextBox80.Multiline = True
-        Me.TextBox80.Name = "TextBox80"
-        Me.TextBox80.ReadOnly = True
-        Me.TextBox80.Size = New System.Drawing.Size(272, 39)
-        Me.TextBox80.TabIndex = 26
-        Me.TextBox80.Visible = False
+        Me.Producto5.Location = New System.Drawing.Point(63, 44)
+        Me.Producto5.Multiline = True
+        Me.Producto5.Name = "Producto5"
+        Me.Producto5.ReadOnly = True
+        Me.Producto5.Size = New System.Drawing.Size(272, 39)
+        Me.Producto5.TabIndex = 0
+        Me.Producto5.Visible = False
         '
-        'TextBox81
+        'ID8
         '
-        Me.TextBox81.Location = New System.Drawing.Point(5, 359)
-        Me.TextBox81.Name = "TextBox81"
-        Me.TextBox81.ReadOnly = True
-        Me.TextBox81.Size = New System.Drawing.Size(46, 20)
-        Me.TextBox81.TabIndex = 27
-        Me.TextBox81.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox81.Visible = False
+        Me.ID8.Location = New System.Drawing.Point(5, 359)
+        Me.ID8.Name = "ID8"
+        Me.ID8.ReadOnly = True
+        Me.ID8.Size = New System.Drawing.Size(46, 20)
+        Me.ID8.TabIndex = 0
+        Me.ID8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ID8.Visible = False
         '
-        'TextBox82
+        'ID7
         '
-        Me.TextBox82.Location = New System.Drawing.Point(5, 254)
-        Me.TextBox82.Name = "TextBox82"
-        Me.TextBox82.ReadOnly = True
-        Me.TextBox82.Size = New System.Drawing.Size(46, 20)
-        Me.TextBox82.TabIndex = 28
-        Me.TextBox82.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox82.Visible = False
+        Me.ID7.Location = New System.Drawing.Point(5, 254)
+        Me.ID7.Name = "ID7"
+        Me.ID7.ReadOnly = True
+        Me.ID7.Size = New System.Drawing.Size(46, 20)
+        Me.ID7.TabIndex = 0
+        Me.ID7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ID7.Visible = False
         '
-        'TextBox83
+        'ID6
         '
-        Me.TextBox83.Location = New System.Drawing.Point(5, 149)
-        Me.TextBox83.Name = "TextBox83"
-        Me.TextBox83.ReadOnly = True
-        Me.TextBox83.Size = New System.Drawing.Size(46, 20)
-        Me.TextBox83.TabIndex = 46
-        Me.TextBox83.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox83.Visible = False
+        Me.ID6.Location = New System.Drawing.Point(5, 149)
+        Me.ID6.Name = "ID6"
+        Me.ID6.ReadOnly = True
+        Me.ID6.Size = New System.Drawing.Size(46, 20)
+        Me.ID6.TabIndex = 0
+        Me.ID6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ID6.Visible = False
         '
-        'TextBox84
+        'ID5
         '
-        Me.TextBox84.Location = New System.Drawing.Point(5, 44)
-        Me.TextBox84.Name = "TextBox84"
-        Me.TextBox84.ReadOnly = True
-        Me.TextBox84.Size = New System.Drawing.Size(46, 20)
-        Me.TextBox84.TabIndex = 62
-        Me.TextBox84.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox84.Visible = False
+        Me.ID5.Location = New System.Drawing.Point(5, 44)
+        Me.ID5.Name = "ID5"
+        Me.ID5.ReadOnly = True
+        Me.ID5.Size = New System.Drawing.Size(46, 20)
+        Me.ID5.TabIndex = 0
+        Me.ID5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ID5.Visible = False
         '
         'TP3
         '
         Me.TP3.BackColor = System.Drawing.Color.White
-        Me.TP3.Controls.Add(Me.Label28)
-        Me.TP3.Controls.Add(Me.Label29)
-        Me.TP3.Controls.Add(Me.Label30)
-        Me.TP3.Controls.Add(Me.Label31)
-        Me.TP3.Controls.Add(Me.Label32)
-        Me.TP3.Controls.Add(Me.Label33)
-        Me.TP3.Controls.Add(Me.Label34)
-        Me.TP3.Controls.Add(Me.Label35)
-        Me.TP3.Controls.Add(Me.Label36)
-        Me.TP3.Controls.Add(Me.Label37)
-        Me.TP3.Controls.Add(Me.Label38)
-        Me.TP3.Controls.Add(Me.Label39)
+        Me.TP3.Controls.Add(Me.LA9)
+        Me.TP3.Controls.Add(Me.LA10)
+        Me.TP3.Controls.Add(Me.IDS10)
+        Me.TP3.Controls.Add(Me.IDS9)
+        Me.TP3.Controls.Add(Me.LA11)
+        Me.TP3.Controls.Add(Me.IDS11)
+        Me.TP3.Controls.Add(Me.LA12)
+        Me.TP3.Controls.Add(Me.IDS12)
+        Me.TP3.Controls.Add(Me.LUM12)
+        Me.TP3.Controls.Add(Me.LUM11)
+        Me.TP3.Controls.Add(Me.LUM9)
+        Me.TP3.Controls.Add(Me.LUM10)
         Me.TP3.Controls.Add(Me.LI3)
-        Me.TP3.Controls.Add(Me.Label41)
-        Me.TP3.Controls.Add(Me.Label42)
-        Me.TP3.Controls.Add(Me.TextBox29)
-        Me.TP3.Controls.Add(Me.Button5)
-        Me.TP3.Controls.Add(Me.TextBox30)
-        Me.TP3.Controls.Add(Me.Panel4)
-        Me.TP3.Controls.Add(Me.Label43)
-        Me.TP3.Controls.Add(Me.Label44)
-        Me.TP3.Controls.Add(Me.TextBox31)
-        Me.TP3.Controls.Add(Me.Button6)
-        Me.TP3.Controls.Add(Me.TextBox32)
-        Me.TP3.Controls.Add(Me.Panel5)
-        Me.TP3.Controls.Add(Me.Label45)
-        Me.TP3.Controls.Add(Me.Label46)
-        Me.TP3.Controls.Add(Me.TextBox33)
-        Me.TP3.Controls.Add(Me.Button7)
-        Me.TP3.Controls.Add(Me.TextBox34)
-        Me.TP3.Controls.Add(Me.Panel6)
-        Me.TP3.Controls.Add(Me.Label47)
-        Me.TP3.Controls.Add(Me.Label48)
-        Me.TP3.Controls.Add(Me.TextBox35)
-        Me.TP3.Controls.Add(Me.Button8)
-        Me.TP3.Controls.Add(Me.TextBox36)
+        Me.TP3.Controls.Add(Me.IDP12)
+        Me.TP3.Controls.Add(Me.LAP12)
+        Me.TP3.Controls.Add(Me.TxtAP12)
+        Me.TP3.Controls.Add(Me.BB12)
+        Me.TP3.Controls.Add(Me.TxtObser12)
+        Me.TP3.Controls.Add(Me.P9)
+        Me.TP3.Controls.Add(Me.IDP11)
+        Me.TP3.Controls.Add(Me.LAP11)
+        Me.TP3.Controls.Add(Me.TxtAP11)
+        Me.TP3.Controls.Add(Me.BB11)
+        Me.TP3.Controls.Add(Me.TxtObser11)
+        Me.TP3.Controls.Add(Me.P8)
+        Me.TP3.Controls.Add(Me.IDP10)
+        Me.TP3.Controls.Add(Me.LAP10)
+        Me.TP3.Controls.Add(Me.TxtAP10)
+        Me.TP3.Controls.Add(Me.BB10)
+        Me.TP3.Controls.Add(Me.TxtObser10)
+        Me.TP3.Controls.Add(Me.P7)
+        Me.TP3.Controls.Add(Me.IDP9)
+        Me.TP3.Controls.Add(Me.LAP9)
+        Me.TP3.Controls.Add(Me.TxtAP9)
+        Me.TP3.Controls.Add(Me.BB9)
+        Me.TP3.Controls.Add(Me.TxtObser9)
         Me.TP3.Controls.Add(Me.LObserv3)
         Me.TP3.Controls.Add(Me.LCE3)
         Me.TP3.Controls.Add(Me.LCEn3)
         Me.TP3.Controls.Add(Me.LCS3)
         Me.TP3.Controls.Add(Me.LPr3)
-        Me.TP3.Controls.Add(Me.ID3)
-        Me.TP3.Controls.Add(Me.TextBox37)
-        Me.TP3.Controls.Add(Me.TextBox38)
-        Me.TP3.Controls.Add(Me.TextBox39)
-        Me.TP3.Controls.Add(Me.TextBox40)
-        Me.TP3.Controls.Add(Me.TextBox41)
-        Me.TP3.Controls.Add(Me.TextBox42)
-        Me.TP3.Controls.Add(Me.TextBox43)
-        Me.TP3.Controls.Add(Me.TextBox44)
-        Me.TP3.Controls.Add(Me.TextBox45)
-        Me.TP3.Controls.Add(Me.TextBox46)
-        Me.TP3.Controls.Add(Me.TextBox47)
-        Me.TP3.Controls.Add(Me.TextBox48)
-        Me.TP3.Controls.Add(Me.TextBox49)
-        Me.TP3.Controls.Add(Me.TextBox50)
-        Me.TP3.Controls.Add(Me.TextBox51)
-        Me.TP3.Controls.Add(Me.TextBox52)
-        Me.TP3.Controls.Add(Me.TextBox53)
-        Me.TP3.Controls.Add(Me.TextBox54)
-        Me.TP3.Controls.Add(Me.TextBox55)
-        Me.TP3.Controls.Add(Me.TextBox56)
+        Me.TP3.Controls.Add(Me.LID3)
+        Me.TP3.Controls.Add(Me.CEnt12)
+        Me.TP3.Controls.Add(Me.CEnt11)
+        Me.TP3.Controls.Add(Me.CEnt10)
+        Me.TP3.Controls.Add(Me.CEnt9)
+        Me.TP3.Controls.Add(Me.CEntra12)
+        Me.TP3.Controls.Add(Me.CEntra11)
+        Me.TP3.Controls.Add(Me.CEntra10)
+        Me.TP3.Controls.Add(Me.CEntra9)
+        Me.TP3.Controls.Add(Me.CantidadS12)
+        Me.TP3.Controls.Add(Me.CantidadS11)
+        Me.TP3.Controls.Add(Me.CantidadS10)
+        Me.TP3.Controls.Add(Me.CantidadS9)
+        Me.TP3.Controls.Add(Me.Producto12)
+        Me.TP3.Controls.Add(Me.Producto11)
+        Me.TP3.Controls.Add(Me.Producto10)
+        Me.TP3.Controls.Add(Me.Producto9)
+        Me.TP3.Controls.Add(Me.ID12)
+        Me.TP3.Controls.Add(Me.ID11)
+        Me.TP3.Controls.Add(Me.ID10)
+        Me.TP3.Controls.Add(Me.ID9)
         Me.TP3.Location = New System.Drawing.Point(4, 22)
         Me.TP3.Name = "TP3"
         Me.TP3.Padding = New System.Windows.Forms.Padding(3)
@@ -1997,133 +2026,133 @@ Partial Class ODC
         Me.TP3.TabIndex = 2
         Me.TP3.Text = "Productos"
         '
-        'Label28
+        'LA9
         '
-        Me.Label28.AutoSize = True
-        Me.Label28.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.Label28.Location = New System.Drawing.Point(847, 67)
-        Me.Label28.Name = "Label28"
-        Me.Label28.Size = New System.Drawing.Size(97, 39)
-        Me.Label28.TabIndex = 1
-        Me.Label28.Text = "Asignar Unidad " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "de Medida " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "desde el Inventario"
-        Me.Label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.Label28.Visible = False
+        Me.LA9.AutoSize = True
+        Me.LA9.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.LA9.Location = New System.Drawing.Point(847, 67)
+        Me.LA9.Name = "LA9"
+        Me.LA9.Size = New System.Drawing.Size(97, 39)
+        Me.LA9.TabIndex = 0
+        Me.LA9.Text = "Asignar Unidad " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "de Medida " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "desde el Inventario"
+        Me.LA9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.LA9.Visible = False
         '
-        'Label29
+        'LA10
         '
-        Me.Label29.AutoSize = True
-        Me.Label29.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.Label29.Location = New System.Drawing.Point(847, 173)
-        Me.Label29.Name = "Label29"
-        Me.Label29.Size = New System.Drawing.Size(97, 39)
-        Me.Label29.TabIndex = 33
-        Me.Label29.Text = "Asignar Unidad " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "de Medida " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "desde el Inventario"
-        Me.Label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.Label29.Visible = False
+        Me.LA10.AutoSize = True
+        Me.LA10.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.LA10.Location = New System.Drawing.Point(847, 173)
+        Me.LA10.Name = "LA10"
+        Me.LA10.Size = New System.Drawing.Size(97, 39)
+        Me.LA10.TabIndex = 0
+        Me.LA10.Text = "Asignar Unidad " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "de Medida " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "desde el Inventario"
+        Me.LA10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.LA10.Visible = False
         '
-        'Label30
+        'IDS10
         '
-        Me.Label30.AutoSize = True
-        Me.Label30.Location = New System.Drawing.Point(19, 152)
-        Me.Label30.Name = "Label30"
-        Me.Label30.Size = New System.Drawing.Size(19, 13)
-        Me.Label30.TabIndex = 34
-        Me.Label30.Text = "18"
-        Me.Label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.Label30.Visible = False
+        Me.IDS10.AutoSize = True
+        Me.IDS10.Location = New System.Drawing.Point(19, 152)
+        Me.IDS10.Name = "IDS10"
+        Me.IDS10.Size = New System.Drawing.Size(19, 13)
+        Me.IDS10.TabIndex = 0
+        Me.IDS10.Text = "10"
+        Me.IDS10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.IDS10.Visible = False
         '
-        'Label31
+        'IDS9
         '
-        Me.Label31.AutoSize = True
-        Me.Label31.Location = New System.Drawing.Point(19, 47)
-        Me.Label31.Name = "Label31"
-        Me.Label31.Size = New System.Drawing.Size(19, 13)
-        Me.Label31.TabIndex = 35
-        Me.Label31.Text = "17"
-        Me.Label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.Label31.Visible = False
+        Me.IDS9.AutoSize = True
+        Me.IDS9.Location = New System.Drawing.Point(19, 47)
+        Me.IDS9.Name = "IDS9"
+        Me.IDS9.Size = New System.Drawing.Size(16, 13)
+        Me.IDS9.TabIndex = 0
+        Me.IDS9.Text = " 9"
+        Me.IDS9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.IDS9.Visible = False
         '
-        'Label32
+        'LA11
         '
-        Me.Label32.AutoSize = True
-        Me.Label32.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.Label32.Location = New System.Drawing.Point(847, 278)
-        Me.Label32.Name = "Label32"
-        Me.Label32.Size = New System.Drawing.Size(97, 39)
-        Me.Label32.TabIndex = 36
-        Me.Label32.Text = "Asignar Unidad " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "de Medida " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "desde el Inventario"
-        Me.Label32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.Label32.Visible = False
+        Me.LA11.AutoSize = True
+        Me.LA11.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.LA11.Location = New System.Drawing.Point(847, 278)
+        Me.LA11.Name = "LA11"
+        Me.LA11.Size = New System.Drawing.Size(97, 39)
+        Me.LA11.TabIndex = 0
+        Me.LA11.Text = "Asignar Unidad " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "de Medida " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "desde el Inventario"
+        Me.LA11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.LA11.Visible = False
         '
-        'Label33
+        'IDS11
         '
-        Me.Label33.AutoSize = True
-        Me.Label33.Location = New System.Drawing.Point(19, 257)
-        Me.Label33.Name = "Label33"
-        Me.Label33.Size = New System.Drawing.Size(19, 13)
-        Me.Label33.TabIndex = 37
-        Me.Label33.Text = "19"
-        Me.Label33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.Label33.Visible = False
+        Me.IDS11.AutoSize = True
+        Me.IDS11.Location = New System.Drawing.Point(19, 257)
+        Me.IDS11.Name = "IDS11"
+        Me.IDS11.Size = New System.Drawing.Size(19, 13)
+        Me.IDS11.TabIndex = 0
+        Me.IDS11.Text = "11"
+        Me.IDS11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.IDS11.Visible = False
         '
-        'Label34
+        'LA12
         '
-        Me.Label34.AutoSize = True
-        Me.Label34.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.Label34.Location = New System.Drawing.Point(847, 383)
-        Me.Label34.Name = "Label34"
-        Me.Label34.Size = New System.Drawing.Size(97, 39)
-        Me.Label34.TabIndex = 38
-        Me.Label34.Text = "Asignar Unidad " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "de Medida " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "desde el Inventario"
-        Me.Label34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.Label34.Visible = False
+        Me.LA12.AutoSize = True
+        Me.LA12.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.LA12.Location = New System.Drawing.Point(847, 383)
+        Me.LA12.Name = "LA12"
+        Me.LA12.Size = New System.Drawing.Size(97, 39)
+        Me.LA12.TabIndex = 0
+        Me.LA12.Text = "Asignar Unidad " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "de Medida " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "desde el Inventario"
+        Me.LA12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.LA12.Visible = False
         '
-        'Label35
+        'IDS12
         '
-        Me.Label35.AutoSize = True
-        Me.Label35.Location = New System.Drawing.Point(19, 362)
-        Me.Label35.Name = "Label35"
-        Me.Label35.Size = New System.Drawing.Size(19, 13)
-        Me.Label35.TabIndex = 39
-        Me.Label35.Text = "20"
-        Me.Label35.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.Label35.Visible = False
+        Me.IDS12.AutoSize = True
+        Me.IDS12.Location = New System.Drawing.Point(19, 362)
+        Me.IDS12.Name = "IDS12"
+        Me.IDS12.Size = New System.Drawing.Size(19, 13)
+        Me.IDS12.TabIndex = 0
+        Me.IDS12.Text = "12"
+        Me.IDS12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.IDS12.Visible = False
         '
-        'Label36
+        'LUM12
         '
-        Me.Label36.AutoSize = True
-        Me.Label36.Location = New System.Drawing.Point(868, 363)
-        Me.Label36.Name = "Label36"
-        Me.Label36.Size = New System.Drawing.Size(0, 13)
-        Me.Label36.TabIndex = 40
-        Me.Label36.Visible = False
+        Me.LUM12.AutoSize = True
+        Me.LUM12.Location = New System.Drawing.Point(868, 363)
+        Me.LUM12.Name = "LUM12"
+        Me.LUM12.Size = New System.Drawing.Size(0, 13)
+        Me.LUM12.TabIndex = 0
+        Me.LUM12.Visible = False
         '
-        'Label37
+        'LUM11
         '
-        Me.Label37.AutoSize = True
-        Me.Label37.Location = New System.Drawing.Point(868, 258)
-        Me.Label37.Name = "Label37"
-        Me.Label37.Size = New System.Drawing.Size(0, 13)
-        Me.Label37.TabIndex = 41
-        Me.Label37.Visible = False
+        Me.LUM11.AutoSize = True
+        Me.LUM11.Location = New System.Drawing.Point(868, 258)
+        Me.LUM11.Name = "LUM11"
+        Me.LUM11.Size = New System.Drawing.Size(0, 13)
+        Me.LUM11.TabIndex = 0
+        Me.LUM11.Visible = False
         '
-        'Label38
+        'LUM9
         '
-        Me.Label38.AutoSize = True
-        Me.Label38.Location = New System.Drawing.Point(868, 48)
-        Me.Label38.Name = "Label38"
-        Me.Label38.Size = New System.Drawing.Size(0, 13)
-        Me.Label38.TabIndex = 42
-        Me.Label38.Visible = False
+        Me.LUM9.AutoSize = True
+        Me.LUM9.Location = New System.Drawing.Point(868, 48)
+        Me.LUM9.Name = "LUM9"
+        Me.LUM9.Size = New System.Drawing.Size(0, 13)
+        Me.LUM9.TabIndex = 0
+        Me.LUM9.Visible = False
         '
-        'Label39
+        'LUM10
         '
-        Me.Label39.AutoSize = True
-        Me.Label39.Location = New System.Drawing.Point(868, 153)
-        Me.Label39.Name = "Label39"
-        Me.Label39.Size = New System.Drawing.Size(0, 13)
-        Me.Label39.TabIndex = 43
-        Me.Label39.Visible = False
+        Me.LUM10.AutoSize = True
+        Me.LUM10.Location = New System.Drawing.Point(868, 153)
+        Me.LUM10.Name = "LUM10"
+        Me.LUM10.Size = New System.Drawing.Size(0, 13)
+        Me.LUM10.TabIndex = 0
+        Me.LUM10.Visible = False
         '
         'LI3
         '
@@ -2138,251 +2167,251 @@ Partial Class ODC
         Me.LI3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.LI3.Visible = False
         '
-        'Label41
+        'IDP12
         '
-        Me.Label41.AutoSize = True
-        Me.Label41.BackColor = System.Drawing.Color.Transparent
-        Me.Label41.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label41.Location = New System.Drawing.Point(626, 409)
-        Me.Label41.Name = "Label41"
-        Me.Label41.Size = New System.Drawing.Size(0, 15)
-        Me.Label41.TabIndex = 45
-        Me.Label41.Visible = False
+        Me.IDP12.AutoSize = True
+        Me.IDP12.BackColor = System.Drawing.Color.Transparent
+        Me.IDP12.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.IDP12.Location = New System.Drawing.Point(626, 409)
+        Me.IDP12.Name = "IDP12"
+        Me.IDP12.Size = New System.Drawing.Size(0, 15)
+        Me.IDP12.TabIndex = 0
+        Me.IDP12.Visible = False
         '
-        'Label42
+        'LAP12
         '
-        Me.Label42.AutoSize = True
-        Me.Label42.BackColor = System.Drawing.Color.Transparent
-        Me.Label42.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label42.Location = New System.Drawing.Point(35, 409)
-        Me.Label42.Name = "Label42"
-        Me.Label42.Size = New System.Drawing.Size(100, 15)
-        Me.Label42.TabIndex = 47
-        Me.Label42.Text = "Asignar Producto"
-        Me.Label42.Visible = False
+        Me.LAP12.AutoSize = True
+        Me.LAP12.BackColor = System.Drawing.Color.Transparent
+        Me.LAP12.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LAP12.Location = New System.Drawing.Point(35, 409)
+        Me.LAP12.Name = "LAP12"
+        Me.LAP12.Size = New System.Drawing.Size(100, 15)
+        Me.LAP12.TabIndex = 0
+        Me.LAP12.Text = "Asignar Producto"
+        Me.LAP12.Visible = False
         '
-        'TextBox29
+        'TxtAP12
         '
-        Me.TextBox29.Location = New System.Drawing.Point(163, 410)
-        Me.TextBox29.Name = "TextBox29"
-        Me.TextBox29.ReadOnly = True
-        Me.TextBox29.Size = New System.Drawing.Size(448, 20)
-        Me.TextBox29.TabIndex = 61
-        Me.TextBox29.Visible = False
+        Me.TxtAP12.Location = New System.Drawing.Point(163, 410)
+        Me.TxtAP12.Name = "TxtAP12"
+        Me.TxtAP12.ReadOnly = True
+        Me.TxtAP12.Size = New System.Drawing.Size(448, 20)
+        Me.TxtAP12.TabIndex = 0
+        Me.TxtAP12.Visible = False
         '
-        'Button5
+        'BB12
         '
-        Me.Button5.BackColor = System.Drawing.Color.Transparent
-        Me.Button5.BackgroundImage = Global.NucleosAve.My.Resources.Resources.list_3
-        Me.Button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Button5.Location = New System.Drawing.Point(135, 405)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(24, 28)
-        Me.Button5.TabIndex = 48
-        Me.Button5.UseVisualStyleBackColor = False
-        Me.Button5.Visible = False
+        Me.BB12.BackColor = System.Drawing.Color.Transparent
+        Me.BB12.BackgroundImage = Global.NucleosAve.My.Resources.Resources.list_3
+        Me.BB12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.BB12.Location = New System.Drawing.Point(135, 405)
+        Me.BB12.Name = "BB12"
+        Me.BB12.Size = New System.Drawing.Size(24, 28)
+        Me.BB12.TabIndex = 0
+        Me.BB12.UseVisualStyleBackColor = False
+        Me.BB12.Visible = False
         '
-        'TextBox30
+        'TxtObser12
         '
-        Me.TextBox30.Location = New System.Drawing.Point(340, 359)
-        Me.TextBox30.Multiline = True
-        Me.TextBox30.Name = "TextBox30"
-        Me.TextBox30.ReadOnly = True
-        Me.TextBox30.Size = New System.Drawing.Size(272, 39)
-        Me.TextBox30.TabIndex = 49
-        Me.TextBox30.Visible = False
+        Me.TxtObser12.Location = New System.Drawing.Point(340, 359)
+        Me.TxtObser12.Multiline = True
+        Me.TxtObser12.Name = "TxtObser12"
+        Me.TxtObser12.ReadOnly = True
+        Me.TxtObser12.Size = New System.Drawing.Size(272, 39)
+        Me.TxtObser12.TabIndex = 0
+        Me.TxtObser12.Visible = False
         '
-        'Panel4
+        'P9
         '
-        Me.Panel4.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Panel4.BackColor = System.Drawing.Color.SteelBlue
-        Me.Panel4.Location = New System.Drawing.Point(29, 334)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(900, 5)
-        Me.Panel4.TabIndex = 50
-        Me.Panel4.Visible = False
+        Me.P9.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.P9.BackColor = System.Drawing.Color.SteelBlue
+        Me.P9.Location = New System.Drawing.Point(29, 334)
+        Me.P9.Name = "P9"
+        Me.P9.Size = New System.Drawing.Size(900, 5)
+        Me.P9.TabIndex = 0
+        Me.P9.Visible = False
         '
-        'Label43
+        'IDP11
         '
-        Me.Label43.AutoSize = True
-        Me.Label43.BackColor = System.Drawing.Color.Transparent
-        Me.Label43.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label43.Location = New System.Drawing.Point(626, 306)
-        Me.Label43.Name = "Label43"
-        Me.Label43.Size = New System.Drawing.Size(0, 15)
-        Me.Label43.TabIndex = 51
-        Me.Label43.Visible = False
+        Me.IDP11.AutoSize = True
+        Me.IDP11.BackColor = System.Drawing.Color.Transparent
+        Me.IDP11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.IDP11.Location = New System.Drawing.Point(626, 306)
+        Me.IDP11.Name = "IDP11"
+        Me.IDP11.Size = New System.Drawing.Size(0, 15)
+        Me.IDP11.TabIndex = 0
+        Me.IDP11.Visible = False
         '
-        'Label44
+        'LAP11
         '
-        Me.Label44.AutoSize = True
-        Me.Label44.BackColor = System.Drawing.Color.Transparent
-        Me.Label44.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label44.Location = New System.Drawing.Point(35, 304)
-        Me.Label44.Name = "Label44"
-        Me.Label44.Size = New System.Drawing.Size(100, 15)
-        Me.Label44.TabIndex = 52
-        Me.Label44.Text = "Asignar Producto"
-        Me.Label44.Visible = False
+        Me.LAP11.AutoSize = True
+        Me.LAP11.BackColor = System.Drawing.Color.Transparent
+        Me.LAP11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LAP11.Location = New System.Drawing.Point(35, 304)
+        Me.LAP11.Name = "LAP11"
+        Me.LAP11.Size = New System.Drawing.Size(100, 15)
+        Me.LAP11.TabIndex = 0
+        Me.LAP11.Text = "Asignar Producto"
+        Me.LAP11.Visible = False
         '
-        'TextBox31
+        'TxtAP11
         '
-        Me.TextBox31.Location = New System.Drawing.Point(163, 305)
-        Me.TextBox31.Name = "TextBox31"
-        Me.TextBox31.ReadOnly = True
-        Me.TextBox31.Size = New System.Drawing.Size(448, 20)
-        Me.TextBox31.TabIndex = 53
-        Me.TextBox31.Visible = False
+        Me.TxtAP11.Location = New System.Drawing.Point(163, 305)
+        Me.TxtAP11.Name = "TxtAP11"
+        Me.TxtAP11.ReadOnly = True
+        Me.TxtAP11.Size = New System.Drawing.Size(448, 20)
+        Me.TxtAP11.TabIndex = 0
+        Me.TxtAP11.Visible = False
         '
-        'Button6
+        'BB11
         '
-        Me.Button6.BackColor = System.Drawing.Color.Transparent
-        Me.Button6.BackgroundImage = Global.NucleosAve.My.Resources.Resources.list_3
-        Me.Button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Button6.Location = New System.Drawing.Point(135, 300)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(24, 28)
-        Me.Button6.TabIndex = 54
-        Me.Button6.UseVisualStyleBackColor = False
-        Me.Button6.Visible = False
+        Me.BB11.BackColor = System.Drawing.Color.Transparent
+        Me.BB11.BackgroundImage = Global.NucleosAve.My.Resources.Resources.list_3
+        Me.BB11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.BB11.Location = New System.Drawing.Point(135, 300)
+        Me.BB11.Name = "BB11"
+        Me.BB11.Size = New System.Drawing.Size(24, 28)
+        Me.BB11.TabIndex = 0
+        Me.BB11.UseVisualStyleBackColor = False
+        Me.BB11.Visible = False
         '
-        'TextBox32
+        'TxtObser11
         '
-        Me.TextBox32.Location = New System.Drawing.Point(340, 254)
-        Me.TextBox32.Multiline = True
-        Me.TextBox32.Name = "TextBox32"
-        Me.TextBox32.ReadOnly = True
-        Me.TextBox32.Size = New System.Drawing.Size(272, 39)
-        Me.TextBox32.TabIndex = 55
-        Me.TextBox32.Visible = False
+        Me.TxtObser11.Location = New System.Drawing.Point(340, 254)
+        Me.TxtObser11.Multiline = True
+        Me.TxtObser11.Name = "TxtObser11"
+        Me.TxtObser11.ReadOnly = True
+        Me.TxtObser11.Size = New System.Drawing.Size(272, 39)
+        Me.TxtObser11.TabIndex = 0
+        Me.TxtObser11.Visible = False
         '
-        'Panel5
+        'P8
         '
-        Me.Panel5.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Panel5.BackColor = System.Drawing.Color.SteelBlue
-        Me.Panel5.Location = New System.Drawing.Point(29, 229)
-        Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(900, 5)
-        Me.Panel5.TabIndex = 56
-        Me.Panel5.Visible = False
+        Me.P8.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.P8.BackColor = System.Drawing.Color.SteelBlue
+        Me.P8.Location = New System.Drawing.Point(29, 229)
+        Me.P8.Name = "P8"
+        Me.P8.Size = New System.Drawing.Size(900, 5)
+        Me.P8.TabIndex = 0
+        Me.P8.Visible = False
         '
-        'Label45
+        'IDP10
         '
-        Me.Label45.AutoSize = True
-        Me.Label45.BackColor = System.Drawing.Color.Transparent
-        Me.Label45.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label45.Location = New System.Drawing.Point(626, 199)
-        Me.Label45.Name = "Label45"
-        Me.Label45.Size = New System.Drawing.Size(0, 15)
-        Me.Label45.TabIndex = 57
-        Me.Label45.Visible = False
+        Me.IDP10.AutoSize = True
+        Me.IDP10.BackColor = System.Drawing.Color.Transparent
+        Me.IDP10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.IDP10.Location = New System.Drawing.Point(626, 199)
+        Me.IDP10.Name = "IDP10"
+        Me.IDP10.Size = New System.Drawing.Size(0, 15)
+        Me.IDP10.TabIndex = 0
+        Me.IDP10.Visible = False
         '
-        'Label46
+        'LAP10
         '
-        Me.Label46.AutoSize = True
-        Me.Label46.BackColor = System.Drawing.Color.Transparent
-        Me.Label46.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label46.Location = New System.Drawing.Point(35, 199)
-        Me.Label46.Name = "Label46"
-        Me.Label46.Size = New System.Drawing.Size(100, 15)
-        Me.Label46.TabIndex = 58
-        Me.Label46.Text = "Asignar Producto"
-        Me.Label46.Visible = False
+        Me.LAP10.AutoSize = True
+        Me.LAP10.BackColor = System.Drawing.Color.Transparent
+        Me.LAP10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LAP10.Location = New System.Drawing.Point(35, 199)
+        Me.LAP10.Name = "LAP10"
+        Me.LAP10.Size = New System.Drawing.Size(100, 15)
+        Me.LAP10.TabIndex = 0
+        Me.LAP10.Text = "Asignar Producto"
+        Me.LAP10.Visible = False
         '
-        'TextBox33
+        'TxtAP10
         '
-        Me.TextBox33.Location = New System.Drawing.Point(163, 200)
-        Me.TextBox33.Name = "TextBox33"
-        Me.TextBox33.ReadOnly = True
-        Me.TextBox33.Size = New System.Drawing.Size(448, 20)
-        Me.TextBox33.TabIndex = 59
-        Me.TextBox33.Visible = False
+        Me.TxtAP10.Location = New System.Drawing.Point(163, 200)
+        Me.TxtAP10.Name = "TxtAP10"
+        Me.TxtAP10.ReadOnly = True
+        Me.TxtAP10.Size = New System.Drawing.Size(448, 20)
+        Me.TxtAP10.TabIndex = 0
+        Me.TxtAP10.Visible = False
         '
-        'Button7
+        'BB10
         '
-        Me.Button7.BackColor = System.Drawing.Color.Transparent
-        Me.Button7.BackgroundImage = Global.NucleosAve.My.Resources.Resources.list_3
-        Me.Button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Button7.Location = New System.Drawing.Point(135, 195)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(24, 28)
-        Me.Button7.TabIndex = 60
-        Me.Button7.UseVisualStyleBackColor = False
-        Me.Button7.Visible = False
+        Me.BB10.BackColor = System.Drawing.Color.Transparent
+        Me.BB10.BackgroundImage = Global.NucleosAve.My.Resources.Resources.list_3
+        Me.BB10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.BB10.Location = New System.Drawing.Point(135, 195)
+        Me.BB10.Name = "BB10"
+        Me.BB10.Size = New System.Drawing.Size(24, 28)
+        Me.BB10.TabIndex = 0
+        Me.BB10.UseVisualStyleBackColor = False
+        Me.BB10.Visible = False
         '
-        'TextBox34
+        'TxtObser10
         '
-        Me.TextBox34.Location = New System.Drawing.Point(340, 149)
-        Me.TextBox34.Multiline = True
-        Me.TextBox34.Name = "TextBox34"
-        Me.TextBox34.ReadOnly = True
-        Me.TextBox34.Size = New System.Drawing.Size(272, 39)
-        Me.TextBox34.TabIndex = 32
-        Me.TextBox34.Visible = False
+        Me.TxtObser10.Location = New System.Drawing.Point(340, 149)
+        Me.TxtObser10.Multiline = True
+        Me.TxtObser10.Name = "TxtObser10"
+        Me.TxtObser10.ReadOnly = True
+        Me.TxtObser10.Size = New System.Drawing.Size(272, 39)
+        Me.TxtObser10.TabIndex = 0
+        Me.TxtObser10.Visible = False
         '
-        'Panel6
+        'P7
         '
-        Me.Panel6.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Panel6.BackColor = System.Drawing.Color.SteelBlue
-        Me.Panel6.Location = New System.Drawing.Point(29, 124)
-        Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(900, 5)
-        Me.Panel6.TabIndex = 31
-        Me.Panel6.Visible = False
+        Me.P7.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.P7.BackColor = System.Drawing.Color.SteelBlue
+        Me.P7.Location = New System.Drawing.Point(29, 124)
+        Me.P7.Name = "P7"
+        Me.P7.Size = New System.Drawing.Size(900, 5)
+        Me.P7.TabIndex = 0
+        Me.P7.Visible = False
         '
-        'Label47
+        'IDP9
         '
-        Me.Label47.AutoSize = True
-        Me.Label47.BackColor = System.Drawing.Color.Transparent
-        Me.Label47.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label47.Location = New System.Drawing.Point(626, 96)
-        Me.Label47.Name = "Label47"
-        Me.Label47.Size = New System.Drawing.Size(0, 15)
-        Me.Label47.TabIndex = 30
-        Me.Label47.Visible = False
+        Me.IDP9.AutoSize = True
+        Me.IDP9.BackColor = System.Drawing.Color.Transparent
+        Me.IDP9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.IDP9.Location = New System.Drawing.Point(626, 96)
+        Me.IDP9.Name = "IDP9"
+        Me.IDP9.Size = New System.Drawing.Size(0, 15)
+        Me.IDP9.TabIndex = 0
+        Me.IDP9.Visible = False
         '
-        'Label48
+        'LAP9
         '
-        Me.Label48.AutoSize = True
-        Me.Label48.BackColor = System.Drawing.Color.Transparent
-        Me.Label48.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label48.Location = New System.Drawing.Point(35, 94)
-        Me.Label48.Name = "Label48"
-        Me.Label48.Size = New System.Drawing.Size(100, 15)
-        Me.Label48.TabIndex = 29
-        Me.Label48.Text = "Asignar Producto"
-        Me.Label48.Visible = False
+        Me.LAP9.AutoSize = True
+        Me.LAP9.BackColor = System.Drawing.Color.Transparent
+        Me.LAP9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LAP9.Location = New System.Drawing.Point(35, 94)
+        Me.LAP9.Name = "LAP9"
+        Me.LAP9.Size = New System.Drawing.Size(100, 15)
+        Me.LAP9.TabIndex = 0
+        Me.LAP9.Text = "Asignar Producto"
+        Me.LAP9.Visible = False
         '
-        'TextBox35
+        'TxtAP9
         '
-        Me.TextBox35.Location = New System.Drawing.Point(163, 95)
-        Me.TextBox35.Name = "TextBox35"
-        Me.TextBox35.ReadOnly = True
-        Me.TextBox35.Size = New System.Drawing.Size(448, 20)
-        Me.TextBox35.TabIndex = 2
-        Me.TextBox35.Visible = False
+        Me.TxtAP9.Location = New System.Drawing.Point(163, 95)
+        Me.TxtAP9.Name = "TxtAP9"
+        Me.TxtAP9.ReadOnly = True
+        Me.TxtAP9.Size = New System.Drawing.Size(448, 20)
+        Me.TxtAP9.TabIndex = 0
+        Me.TxtAP9.Visible = False
         '
-        'Button8
+        'BB9
         '
-        Me.Button8.BackColor = System.Drawing.Color.Transparent
-        Me.Button8.BackgroundImage = Global.NucleosAve.My.Resources.Resources.list_3
-        Me.Button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Button8.Location = New System.Drawing.Point(135, 90)
-        Me.Button8.Name = "Button8"
-        Me.Button8.Size = New System.Drawing.Size(24, 28)
-        Me.Button8.TabIndex = 3
-        Me.Button8.UseVisualStyleBackColor = False
-        Me.Button8.Visible = False
+        Me.BB9.BackColor = System.Drawing.Color.Transparent
+        Me.BB9.BackgroundImage = Global.NucleosAve.My.Resources.Resources.list_3
+        Me.BB9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.BB9.Location = New System.Drawing.Point(135, 90)
+        Me.BB9.Name = "BB9"
+        Me.BB9.Size = New System.Drawing.Size(24, 28)
+        Me.BB9.TabIndex = 0
+        Me.BB9.UseVisualStyleBackColor = False
+        Me.BB9.Visible = False
         '
-        'TextBox36
+        'TxtObser9
         '
-        Me.TextBox36.Location = New System.Drawing.Point(340, 44)
-        Me.TextBox36.Multiline = True
-        Me.TextBox36.Name = "TextBox36"
-        Me.TextBox36.ReadOnly = True
-        Me.TextBox36.Size = New System.Drawing.Size(272, 39)
-        Me.TextBox36.TabIndex = 4
-        Me.TextBox36.Visible = False
+        Me.TxtObser9.Location = New System.Drawing.Point(340, 44)
+        Me.TxtObser9.Multiline = True
+        Me.TxtObser9.Name = "TxtObser9"
+        Me.TxtObser9.ReadOnly = True
+        Me.TxtObser9.Size = New System.Drawing.Size(272, 39)
+        Me.TxtObser9.TabIndex = 0
+        Me.TxtObser9.Visible = False
         '
         'LObserv3
         '
@@ -2447,291 +2476,291 @@ Partial Class ODC
         Me.LPr3.Text = "Producto"
         Me.LPr3.Visible = False
         '
-        'ID3
+        'LID3
         '
-        Me.ID3.AutoSize = True
-        Me.ID3.BackColor = System.Drawing.Color.Transparent
-        Me.ID3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ID3.Location = New System.Drawing.Point(19, 16)
-        Me.ID3.Name = "ID3"
-        Me.ID3.Size = New System.Drawing.Size(19, 15)
-        Me.ID3.TabIndex = 0
-        Me.ID3.Text = "ID"
-        Me.ID3.Visible = False
+        Me.LID3.AutoSize = True
+        Me.LID3.BackColor = System.Drawing.Color.Transparent
+        Me.LID3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LID3.Location = New System.Drawing.Point(19, 16)
+        Me.LID3.Name = "LID3"
+        Me.LID3.Size = New System.Drawing.Size(19, 15)
+        Me.LID3.TabIndex = 0
+        Me.LID3.Text = "ID"
+        Me.LID3.Visible = False
         '
-        'TextBox37
+        'CEnt12
         '
-        Me.TextBox37.Location = New System.Drawing.Point(804, 359)
-        Me.TextBox37.Name = "TextBox37"
-        Me.TextBox37.ReadOnly = True
-        Me.TextBox37.Size = New System.Drawing.Size(56, 20)
-        Me.TextBox37.TabIndex = 11
-        Me.TextBox37.Text = "0"
-        Me.TextBox37.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox37.Visible = False
+        Me.CEnt12.Location = New System.Drawing.Point(804, 359)
+        Me.CEnt12.Name = "CEnt12"
+        Me.CEnt12.ReadOnly = True
+        Me.CEnt12.Size = New System.Drawing.Size(56, 20)
+        Me.CEnt12.TabIndex = 0
+        Me.CEnt12.Text = "0"
+        Me.CEnt12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.CEnt12.Visible = False
         '
-        'TextBox38
+        'CEnt11
         '
-        Me.TextBox38.Location = New System.Drawing.Point(804, 254)
-        Me.TextBox38.Name = "TextBox38"
-        Me.TextBox38.ReadOnly = True
-        Me.TextBox38.Size = New System.Drawing.Size(56, 20)
-        Me.TextBox38.TabIndex = 12
-        Me.TextBox38.Text = "0"
-        Me.TextBox38.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox38.Visible = False
+        Me.CEnt11.Location = New System.Drawing.Point(804, 254)
+        Me.CEnt11.Name = "CEnt11"
+        Me.CEnt11.ReadOnly = True
+        Me.CEnt11.Size = New System.Drawing.Size(56, 20)
+        Me.CEnt11.TabIndex = 0
+        Me.CEnt11.Text = "0"
+        Me.CEnt11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.CEnt11.Visible = False
         '
-        'TextBox39
+        'CEnt10
         '
-        Me.TextBox39.Location = New System.Drawing.Point(804, 149)
-        Me.TextBox39.Name = "TextBox39"
-        Me.TextBox39.ReadOnly = True
-        Me.TextBox39.Size = New System.Drawing.Size(56, 20)
-        Me.TextBox39.TabIndex = 13
-        Me.TextBox39.Text = "0"
-        Me.TextBox39.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox39.Visible = False
+        Me.CEnt10.Location = New System.Drawing.Point(804, 149)
+        Me.CEnt10.Name = "CEnt10"
+        Me.CEnt10.ReadOnly = True
+        Me.CEnt10.Size = New System.Drawing.Size(56, 20)
+        Me.CEnt10.TabIndex = 0
+        Me.CEnt10.Text = "0"
+        Me.CEnt10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.CEnt10.Visible = False
         '
-        'TextBox40
+        'CEnt9
         '
-        Me.TextBox40.Location = New System.Drawing.Point(804, 44)
-        Me.TextBox40.Name = "TextBox40"
-        Me.TextBox40.ReadOnly = True
-        Me.TextBox40.Size = New System.Drawing.Size(56, 20)
-        Me.TextBox40.TabIndex = 14
-        Me.TextBox40.Text = "0"
-        Me.TextBox40.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox40.Visible = False
+        Me.CEnt9.Location = New System.Drawing.Point(804, 44)
+        Me.CEnt9.Name = "CEnt9"
+        Me.CEnt9.ReadOnly = True
+        Me.CEnt9.Size = New System.Drawing.Size(56, 20)
+        Me.CEnt9.TabIndex = 0
+        Me.CEnt9.Text = "0"
+        Me.CEnt9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.CEnt9.Visible = False
         '
-        'TextBox41
+        'CEntra12
         '
-        Me.TextBox41.Location = New System.Drawing.Point(739, 359)
-        Me.TextBox41.Name = "TextBox41"
-        Me.TextBox41.ReadOnly = True
-        Me.TextBox41.Size = New System.Drawing.Size(49, 20)
-        Me.TextBox41.TabIndex = 15
-        Me.TextBox41.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox41.Visible = False
+        Me.CEntra12.Location = New System.Drawing.Point(739, 359)
+        Me.CEntra12.Name = "CEntra12"
+        Me.CEntra12.ReadOnly = True
+        Me.CEntra12.Size = New System.Drawing.Size(49, 20)
+        Me.CEntra12.TabIndex = 0
+        Me.CEntra12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.CEntra12.Visible = False
         '
-        'TextBox42
+        'CEntra11
         '
-        Me.TextBox42.Location = New System.Drawing.Point(739, 254)
-        Me.TextBox42.Name = "TextBox42"
-        Me.TextBox42.ReadOnly = True
-        Me.TextBox42.Size = New System.Drawing.Size(49, 20)
-        Me.TextBox42.TabIndex = 16
-        Me.TextBox42.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox42.Visible = False
+        Me.CEntra11.Location = New System.Drawing.Point(739, 254)
+        Me.CEntra11.Name = "CEntra11"
+        Me.CEntra11.ReadOnly = True
+        Me.CEntra11.Size = New System.Drawing.Size(49, 20)
+        Me.CEntra11.TabIndex = 0
+        Me.CEntra11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.CEntra11.Visible = False
         '
-        'TextBox43
+        'CEntra10
         '
-        Me.TextBox43.Location = New System.Drawing.Point(739, 149)
-        Me.TextBox43.Name = "TextBox43"
-        Me.TextBox43.ReadOnly = True
-        Me.TextBox43.Size = New System.Drawing.Size(49, 20)
-        Me.TextBox43.TabIndex = 17
-        Me.TextBox43.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox43.Visible = False
+        Me.CEntra10.Location = New System.Drawing.Point(739, 149)
+        Me.CEntra10.Name = "CEntra10"
+        Me.CEntra10.ReadOnly = True
+        Me.CEntra10.Size = New System.Drawing.Size(49, 20)
+        Me.CEntra10.TabIndex = 0
+        Me.CEntra10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.CEntra10.Visible = False
         '
-        'TextBox44
+        'CEntra9
         '
-        Me.TextBox44.Location = New System.Drawing.Point(739, 44)
-        Me.TextBox44.Name = "TextBox44"
-        Me.TextBox44.ReadOnly = True
-        Me.TextBox44.Size = New System.Drawing.Size(49, 20)
-        Me.TextBox44.TabIndex = 18
-        Me.TextBox44.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox44.Visible = False
+        Me.CEntra9.Location = New System.Drawing.Point(739, 44)
+        Me.CEntra9.Name = "CEntra9"
+        Me.CEntra9.ReadOnly = True
+        Me.CEntra9.Size = New System.Drawing.Size(49, 20)
+        Me.CEntra9.TabIndex = 0
+        Me.CEntra9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.CEntra9.Visible = False
         '
-        'TextBox45
+        'CantidadS12
         '
-        Me.TextBox45.Location = New System.Drawing.Point(629, 359)
-        Me.TextBox45.Multiline = True
-        Me.TextBox45.Name = "TextBox45"
-        Me.TextBox45.ReadOnly = True
-        Me.TextBox45.Size = New System.Drawing.Size(86, 45)
-        Me.TextBox45.TabIndex = 19
-        Me.TextBox45.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox45.Visible = False
+        Me.CantidadS12.Location = New System.Drawing.Point(629, 359)
+        Me.CantidadS12.Multiline = True
+        Me.CantidadS12.Name = "CantidadS12"
+        Me.CantidadS12.ReadOnly = True
+        Me.CantidadS12.Size = New System.Drawing.Size(86, 45)
+        Me.CantidadS12.TabIndex = 0
+        Me.CantidadS12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.CantidadS12.Visible = False
         '
-        'TextBox46
+        'CantidadS11
         '
-        Me.TextBox46.Location = New System.Drawing.Point(629, 254)
-        Me.TextBox46.Multiline = True
-        Me.TextBox46.Name = "TextBox46"
-        Me.TextBox46.ReadOnly = True
-        Me.TextBox46.Size = New System.Drawing.Size(86, 45)
-        Me.TextBox46.TabIndex = 20
-        Me.TextBox46.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox46.Visible = False
+        Me.CantidadS11.Location = New System.Drawing.Point(629, 254)
+        Me.CantidadS11.Multiline = True
+        Me.CantidadS11.Name = "CantidadS11"
+        Me.CantidadS11.ReadOnly = True
+        Me.CantidadS11.Size = New System.Drawing.Size(86, 45)
+        Me.CantidadS11.TabIndex = 0
+        Me.CantidadS11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.CantidadS11.Visible = False
         '
-        'TextBox47
+        'CantidadS10
         '
-        Me.TextBox47.Location = New System.Drawing.Point(629, 149)
-        Me.TextBox47.Multiline = True
-        Me.TextBox47.Name = "TextBox47"
-        Me.TextBox47.ReadOnly = True
-        Me.TextBox47.Size = New System.Drawing.Size(86, 45)
-        Me.TextBox47.TabIndex = 21
-        Me.TextBox47.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox47.Visible = False
+        Me.CantidadS10.Location = New System.Drawing.Point(629, 149)
+        Me.CantidadS10.Multiline = True
+        Me.CantidadS10.Name = "CantidadS10"
+        Me.CantidadS10.ReadOnly = True
+        Me.CantidadS10.Size = New System.Drawing.Size(86, 45)
+        Me.CantidadS10.TabIndex = 0
+        Me.CantidadS10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.CantidadS10.Visible = False
         '
-        'TextBox48
+        'CantidadS9
         '
-        Me.TextBox48.Location = New System.Drawing.Point(629, 44)
-        Me.TextBox48.Multiline = True
-        Me.TextBox48.Name = "TextBox48"
-        Me.TextBox48.ReadOnly = True
-        Me.TextBox48.Size = New System.Drawing.Size(86, 45)
-        Me.TextBox48.TabIndex = 22
-        Me.TextBox48.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox48.Visible = False
+        Me.CantidadS9.Location = New System.Drawing.Point(629, 44)
+        Me.CantidadS9.Multiline = True
+        Me.CantidadS9.Name = "CantidadS9"
+        Me.CantidadS9.ReadOnly = True
+        Me.CantidadS9.Size = New System.Drawing.Size(86, 45)
+        Me.CantidadS9.TabIndex = 0
+        Me.CantidadS9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.CantidadS9.Visible = False
         '
-        'TextBox49
+        'Producto12
         '
-        Me.TextBox49.Location = New System.Drawing.Point(63, 359)
-        Me.TextBox49.Multiline = True
-        Me.TextBox49.Name = "TextBox49"
-        Me.TextBox49.ReadOnly = True
-        Me.TextBox49.Size = New System.Drawing.Size(272, 39)
-        Me.TextBox49.TabIndex = 23
-        Me.TextBox49.Visible = False
+        Me.Producto12.Location = New System.Drawing.Point(63, 359)
+        Me.Producto12.Multiline = True
+        Me.Producto12.Name = "Producto12"
+        Me.Producto12.ReadOnly = True
+        Me.Producto12.Size = New System.Drawing.Size(272, 39)
+        Me.Producto12.TabIndex = 0
+        Me.Producto12.Visible = False
         '
-        'TextBox50
+        'Producto11
         '
-        Me.TextBox50.Location = New System.Drawing.Point(63, 254)
-        Me.TextBox50.Multiline = True
-        Me.TextBox50.Name = "TextBox50"
-        Me.TextBox50.ReadOnly = True
-        Me.TextBox50.Size = New System.Drawing.Size(272, 39)
-        Me.TextBox50.TabIndex = 24
-        Me.TextBox50.Visible = False
+        Me.Producto11.Location = New System.Drawing.Point(63, 254)
+        Me.Producto11.Multiline = True
+        Me.Producto11.Name = "Producto11"
+        Me.Producto11.ReadOnly = True
+        Me.Producto11.Size = New System.Drawing.Size(272, 39)
+        Me.Producto11.TabIndex = 0
+        Me.Producto11.Visible = False
         '
-        'TextBox51
+        'Producto10
         '
-        Me.TextBox51.Location = New System.Drawing.Point(63, 149)
-        Me.TextBox51.Multiline = True
-        Me.TextBox51.Name = "TextBox51"
-        Me.TextBox51.ReadOnly = True
-        Me.TextBox51.Size = New System.Drawing.Size(272, 39)
-        Me.TextBox51.TabIndex = 25
-        Me.TextBox51.Visible = False
+        Me.Producto10.Location = New System.Drawing.Point(63, 149)
+        Me.Producto10.Multiline = True
+        Me.Producto10.Name = "Producto10"
+        Me.Producto10.ReadOnly = True
+        Me.Producto10.Size = New System.Drawing.Size(272, 39)
+        Me.Producto10.TabIndex = 0
+        Me.Producto10.Visible = False
         '
-        'TextBox52
+        'Producto9
         '
-        Me.TextBox52.Location = New System.Drawing.Point(63, 44)
-        Me.TextBox52.Multiline = True
-        Me.TextBox52.Name = "TextBox52"
-        Me.TextBox52.ReadOnly = True
-        Me.TextBox52.Size = New System.Drawing.Size(272, 39)
-        Me.TextBox52.TabIndex = 26
-        Me.TextBox52.Visible = False
+        Me.Producto9.Location = New System.Drawing.Point(63, 44)
+        Me.Producto9.Multiline = True
+        Me.Producto9.Name = "Producto9"
+        Me.Producto9.ReadOnly = True
+        Me.Producto9.Size = New System.Drawing.Size(272, 39)
+        Me.Producto9.TabIndex = 0
+        Me.Producto9.Visible = False
         '
-        'TextBox53
+        'ID12
         '
-        Me.TextBox53.Location = New System.Drawing.Point(5, 359)
-        Me.TextBox53.Name = "TextBox53"
-        Me.TextBox53.ReadOnly = True
-        Me.TextBox53.Size = New System.Drawing.Size(46, 20)
-        Me.TextBox53.TabIndex = 27
-        Me.TextBox53.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox53.Visible = False
+        Me.ID12.Location = New System.Drawing.Point(5, 359)
+        Me.ID12.Name = "ID12"
+        Me.ID12.ReadOnly = True
+        Me.ID12.Size = New System.Drawing.Size(46, 20)
+        Me.ID12.TabIndex = 0
+        Me.ID12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ID12.Visible = False
         '
-        'TextBox54
+        'ID11
         '
-        Me.TextBox54.Location = New System.Drawing.Point(5, 254)
-        Me.TextBox54.Name = "TextBox54"
-        Me.TextBox54.ReadOnly = True
-        Me.TextBox54.Size = New System.Drawing.Size(46, 20)
-        Me.TextBox54.TabIndex = 28
-        Me.TextBox54.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox54.Visible = False
+        Me.ID11.Location = New System.Drawing.Point(5, 254)
+        Me.ID11.Name = "ID11"
+        Me.ID11.ReadOnly = True
+        Me.ID11.Size = New System.Drawing.Size(46, 20)
+        Me.ID11.TabIndex = 0
+        Me.ID11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ID11.Visible = False
         '
-        'TextBox55
+        'ID10
         '
-        Me.TextBox55.Location = New System.Drawing.Point(5, 149)
-        Me.TextBox55.Name = "TextBox55"
-        Me.TextBox55.ReadOnly = True
-        Me.TextBox55.Size = New System.Drawing.Size(46, 20)
-        Me.TextBox55.TabIndex = 46
-        Me.TextBox55.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox55.Visible = False
+        Me.ID10.Location = New System.Drawing.Point(5, 149)
+        Me.ID10.Name = "ID10"
+        Me.ID10.ReadOnly = True
+        Me.ID10.Size = New System.Drawing.Size(46, 20)
+        Me.ID10.TabIndex = 0
+        Me.ID10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ID10.Visible = False
         '
-        'TextBox56
+        'ID9
         '
-        Me.TextBox56.Location = New System.Drawing.Point(5, 44)
-        Me.TextBox56.Name = "TextBox56"
-        Me.TextBox56.ReadOnly = True
-        Me.TextBox56.Size = New System.Drawing.Size(46, 20)
-        Me.TextBox56.TabIndex = 62
-        Me.TextBox56.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox56.Visible = False
+        Me.ID9.Location = New System.Drawing.Point(5, 44)
+        Me.ID9.Name = "ID9"
+        Me.ID9.ReadOnly = True
+        Me.ID9.Size = New System.Drawing.Size(46, 20)
+        Me.ID9.TabIndex = 0
+        Me.ID9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ID9.Visible = False
         '
         'TP4
         '
         Me.TP4.BackColor = System.Drawing.Color.White
-        Me.TP4.Controls.Add(Me.Label1)
-        Me.TP4.Controls.Add(Me.Label2)
-        Me.TP4.Controls.Add(Me.Label3)
-        Me.TP4.Controls.Add(Me.Label4)
-        Me.TP4.Controls.Add(Me.Label5)
-        Me.TP4.Controls.Add(Me.Label6)
-        Me.TP4.Controls.Add(Me.Label7)
-        Me.TP4.Controls.Add(Me.Label8)
-        Me.TP4.Controls.Add(Me.Label9)
-        Me.TP4.Controls.Add(Me.Label10)
-        Me.TP4.Controls.Add(Me.Label11)
-        Me.TP4.Controls.Add(Me.Label12)
+        Me.TP4.Controls.Add(Me.LA13)
+        Me.TP4.Controls.Add(Me.LA14)
+        Me.TP4.Controls.Add(Me.IDS14)
+        Me.TP4.Controls.Add(Me.IDS13)
+        Me.TP4.Controls.Add(Me.LA15)
+        Me.TP4.Controls.Add(Me.IDS15)
+        Me.TP4.Controls.Add(Me.LA16)
+        Me.TP4.Controls.Add(Me.IDS16)
+        Me.TP4.Controls.Add(Me.LUM16)
+        Me.TP4.Controls.Add(Me.LUM15)
+        Me.TP4.Controls.Add(Me.LUM13)
+        Me.TP4.Controls.Add(Me.LUM14)
         Me.TP4.Controls.Add(Me.LI4)
-        Me.TP4.Controls.Add(Me.Label14)
-        Me.TP4.Controls.Add(Me.Label15)
-        Me.TP4.Controls.Add(Me.TextBox1)
-        Me.TP4.Controls.Add(Me.Button1)
-        Me.TP4.Controls.Add(Me.TextBox2)
-        Me.TP4.Controls.Add(Me.Panel1)
-        Me.TP4.Controls.Add(Me.Label16)
-        Me.TP4.Controls.Add(Me.Label17)
-        Me.TP4.Controls.Add(Me.TextBox3)
-        Me.TP4.Controls.Add(Me.Button2)
-        Me.TP4.Controls.Add(Me.TextBox4)
-        Me.TP4.Controls.Add(Me.Panel2)
-        Me.TP4.Controls.Add(Me.Label18)
-        Me.TP4.Controls.Add(Me.Label19)
-        Me.TP4.Controls.Add(Me.TextBox5)
-        Me.TP4.Controls.Add(Me.Button3)
-        Me.TP4.Controls.Add(Me.TextBox6)
-        Me.TP4.Controls.Add(Me.Panel3)
-        Me.TP4.Controls.Add(Me.Label20)
-        Me.TP4.Controls.Add(Me.Label21)
-        Me.TP4.Controls.Add(Me.TextBox7)
-        Me.TP4.Controls.Add(Me.Button4)
-        Me.TP4.Controls.Add(Me.TextBox8)
+        Me.TP4.Controls.Add(Me.IDP16)
+        Me.TP4.Controls.Add(Me.LAP16)
+        Me.TP4.Controls.Add(Me.TxtAP16)
+        Me.TP4.Controls.Add(Me.BB16)
+        Me.TP4.Controls.Add(Me.TxtObser16)
+        Me.TP4.Controls.Add(Me.P12)
+        Me.TP4.Controls.Add(Me.IDP15)
+        Me.TP4.Controls.Add(Me.LAP15)
+        Me.TP4.Controls.Add(Me.TxtAP15)
+        Me.TP4.Controls.Add(Me.BB15)
+        Me.TP4.Controls.Add(Me.TxtObser15)
+        Me.TP4.Controls.Add(Me.P11)
+        Me.TP4.Controls.Add(Me.IDP14)
+        Me.TP4.Controls.Add(Me.LAP14)
+        Me.TP4.Controls.Add(Me.TxtAP14)
+        Me.TP4.Controls.Add(Me.BB14)
+        Me.TP4.Controls.Add(Me.TxtObser14)
+        Me.TP4.Controls.Add(Me.P10)
+        Me.TP4.Controls.Add(Me.IDP13)
+        Me.TP4.Controls.Add(Me.LAP13)
+        Me.TP4.Controls.Add(Me.TxtAP13)
+        Me.TP4.Controls.Add(Me.BB13)
+        Me.TP4.Controls.Add(Me.TxtObser13)
         Me.TP4.Controls.Add(Me.LObserv4)
         Me.TP4.Controls.Add(Me.LCE4)
         Me.TP4.Controls.Add(Me.LCEn4)
         Me.TP4.Controls.Add(Me.LCS4)
         Me.TP4.Controls.Add(Me.LPr4)
-        Me.TP4.Controls.Add(Me.ID4)
-        Me.TP4.Controls.Add(Me.TextBox9)
-        Me.TP4.Controls.Add(Me.TextBox10)
-        Me.TP4.Controls.Add(Me.TextBox11)
-        Me.TP4.Controls.Add(Me.TextBox12)
-        Me.TP4.Controls.Add(Me.TextBox13)
-        Me.TP4.Controls.Add(Me.TextBox14)
-        Me.TP4.Controls.Add(Me.TextBox15)
-        Me.TP4.Controls.Add(Me.TextBox16)
-        Me.TP4.Controls.Add(Me.TextBox17)
-        Me.TP4.Controls.Add(Me.TextBox18)
-        Me.TP4.Controls.Add(Me.TextBox19)
-        Me.TP4.Controls.Add(Me.LCS)
-        Me.TP4.Controls.Add(Me.TextBox21)
-        Me.TP4.Controls.Add(Me.TextBox22)
-        Me.TP4.Controls.Add(Me.TextBox23)
-        Me.TP4.Controls.Add(Me.TextBox24)
-        Me.TP4.Controls.Add(Me.TextBox25)
-        Me.TP4.Controls.Add(Me.TextBox26)
-        Me.TP4.Controls.Add(Me.TextBox27)
-        Me.TP4.Controls.Add(Me.TextBox28)
+        Me.TP4.Controls.Add(Me.LID4)
+        Me.TP4.Controls.Add(Me.CEnt16)
+        Me.TP4.Controls.Add(Me.CEnt15)
+        Me.TP4.Controls.Add(Me.CEnt14)
+        Me.TP4.Controls.Add(Me.CEnt13)
+        Me.TP4.Controls.Add(Me.CEntra16)
+        Me.TP4.Controls.Add(Me.CEntra15)
+        Me.TP4.Controls.Add(Me.CEntra14)
+        Me.TP4.Controls.Add(Me.CEntra13)
+        Me.TP4.Controls.Add(Me.CantidadS16)
+        Me.TP4.Controls.Add(Me.CantidadS15)
+        Me.TP4.Controls.Add(Me.CantidadS14)
+        Me.TP4.Controls.Add(Me.CantidadS13)
+        Me.TP4.Controls.Add(Me.Producto16)
+        Me.TP4.Controls.Add(Me.Producto15)
+        Me.TP4.Controls.Add(Me.Producto14)
+        Me.TP4.Controls.Add(Me.Producto13)
+        Me.TP4.Controls.Add(Me.ID16)
+        Me.TP4.Controls.Add(Me.ID15)
+        Me.TP4.Controls.Add(Me.ID14)
+        Me.TP4.Controls.Add(Me.ID13)
         Me.TP4.Location = New System.Drawing.Point(4, 22)
         Me.TP4.Name = "TP4"
         Me.TP4.Padding = New System.Windows.Forms.Padding(3)
@@ -2739,133 +2768,133 @@ Partial Class ODC
         Me.TP4.TabIndex = 3
         Me.TP4.Text = "Productos"
         '
-        'Label1
+        'LA13
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(847, 67)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(97, 39)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Asignar Unidad " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "de Medida " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "desde el Inventario"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.Label1.Visible = False
+        Me.LA13.AutoSize = True
+        Me.LA13.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.LA13.Location = New System.Drawing.Point(847, 67)
+        Me.LA13.Name = "LA13"
+        Me.LA13.Size = New System.Drawing.Size(97, 39)
+        Me.LA13.TabIndex = 0
+        Me.LA13.Text = "Asignar Unidad " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "de Medida " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "desde el Inventario"
+        Me.LA13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.LA13.Visible = False
         '
-        'Label2
+        'LA14
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(847, 173)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(97, 39)
-        Me.Label2.TabIndex = 33
-        Me.Label2.Text = "Asignar Unidad " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "de Medida " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "desde el Inventario"
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.Label2.Visible = False
+        Me.LA14.AutoSize = True
+        Me.LA14.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.LA14.Location = New System.Drawing.Point(847, 173)
+        Me.LA14.Name = "LA14"
+        Me.LA14.Size = New System.Drawing.Size(97, 39)
+        Me.LA14.TabIndex = 0
+        Me.LA14.Text = "Asignar Unidad " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "de Medida " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "desde el Inventario"
+        Me.LA14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.LA14.Visible = False
         '
-        'Label3
+        'IDS14
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(19, 152)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(19, 13)
-        Me.Label3.TabIndex = 34
-        Me.Label3.Text = "18"
-        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.Label3.Visible = False
+        Me.IDS14.AutoSize = True
+        Me.IDS14.Location = New System.Drawing.Point(19, 152)
+        Me.IDS14.Name = "IDS14"
+        Me.IDS14.Size = New System.Drawing.Size(19, 13)
+        Me.IDS14.TabIndex = 0
+        Me.IDS14.Text = "14"
+        Me.IDS14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.IDS14.Visible = False
         '
-        'Label4
+        'IDS13
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(19, 47)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(19, 13)
-        Me.Label4.TabIndex = 35
-        Me.Label4.Text = "17"
-        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.Label4.Visible = False
+        Me.IDS13.AutoSize = True
+        Me.IDS13.Location = New System.Drawing.Point(19, 47)
+        Me.IDS13.Name = "IDS13"
+        Me.IDS13.Size = New System.Drawing.Size(19, 13)
+        Me.IDS13.TabIndex = 0
+        Me.IDS13.Text = "13"
+        Me.IDS13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.IDS13.Visible = False
         '
-        'Label5
+        'LA15
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.Label5.Location = New System.Drawing.Point(847, 278)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(97, 39)
-        Me.Label5.TabIndex = 36
-        Me.Label5.Text = "Asignar Unidad " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "de Medida " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "desde el Inventario"
-        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.Label5.Visible = False
+        Me.LA15.AutoSize = True
+        Me.LA15.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.LA15.Location = New System.Drawing.Point(847, 278)
+        Me.LA15.Name = "LA15"
+        Me.LA15.Size = New System.Drawing.Size(97, 39)
+        Me.LA15.TabIndex = 0
+        Me.LA15.Text = "Asignar Unidad " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "de Medida " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "desde el Inventario"
+        Me.LA15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.LA15.Visible = False
         '
-        'Label6
+        'IDS15
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(19, 257)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(19, 13)
-        Me.Label6.TabIndex = 37
-        Me.Label6.Text = "19"
-        Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.Label6.Visible = False
+        Me.IDS15.AutoSize = True
+        Me.IDS15.Location = New System.Drawing.Point(19, 257)
+        Me.IDS15.Name = "IDS15"
+        Me.IDS15.Size = New System.Drawing.Size(19, 13)
+        Me.IDS15.TabIndex = 0
+        Me.IDS15.Text = "15"
+        Me.IDS15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.IDS15.Visible = False
         '
-        'Label7
+        'LA16
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.Label7.Location = New System.Drawing.Point(847, 383)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(97, 39)
-        Me.Label7.TabIndex = 38
-        Me.Label7.Text = "Asignar Unidad " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "de Medida " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "desde el Inventario"
-        Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.Label7.Visible = False
+        Me.LA16.AutoSize = True
+        Me.LA16.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.LA16.Location = New System.Drawing.Point(847, 383)
+        Me.LA16.Name = "LA16"
+        Me.LA16.Size = New System.Drawing.Size(97, 39)
+        Me.LA16.TabIndex = 0
+        Me.LA16.Text = "Asignar Unidad " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "de Medida " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "desde el Inventario"
+        Me.LA16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.LA16.Visible = False
         '
-        'Label8
+        'IDS16
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(19, 362)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(19, 13)
-        Me.Label8.TabIndex = 39
-        Me.Label8.Text = "20"
-        Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.Label8.Visible = False
+        Me.IDS16.AutoSize = True
+        Me.IDS16.Location = New System.Drawing.Point(19, 362)
+        Me.IDS16.Name = "IDS16"
+        Me.IDS16.Size = New System.Drawing.Size(19, 13)
+        Me.IDS16.TabIndex = 0
+        Me.IDS16.Text = "16"
+        Me.IDS16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.IDS16.Visible = False
         '
-        'Label9
+        'LUM16
         '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(868, 363)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(0, 13)
-        Me.Label9.TabIndex = 40
-        Me.Label9.Visible = False
+        Me.LUM16.AutoSize = True
+        Me.LUM16.Location = New System.Drawing.Point(868, 363)
+        Me.LUM16.Name = "LUM16"
+        Me.LUM16.Size = New System.Drawing.Size(0, 13)
+        Me.LUM16.TabIndex = 0
+        Me.LUM16.Visible = False
         '
-        'Label10
+        'LUM15
         '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(868, 258)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(0, 13)
-        Me.Label10.TabIndex = 41
-        Me.Label10.Visible = False
+        Me.LUM15.AutoSize = True
+        Me.LUM15.Location = New System.Drawing.Point(868, 258)
+        Me.LUM15.Name = "LUM15"
+        Me.LUM15.Size = New System.Drawing.Size(0, 13)
+        Me.LUM15.TabIndex = 0
+        Me.LUM15.Visible = False
         '
-        'Label11
+        'LUM13
         '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(868, 48)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(0, 13)
-        Me.Label11.TabIndex = 42
-        Me.Label11.Visible = False
+        Me.LUM13.AutoSize = True
+        Me.LUM13.Location = New System.Drawing.Point(868, 48)
+        Me.LUM13.Name = "LUM13"
+        Me.LUM13.Size = New System.Drawing.Size(0, 13)
+        Me.LUM13.TabIndex = 0
+        Me.LUM13.Visible = False
         '
-        'Label12
+        'LUM14
         '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(868, 153)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(0, 13)
-        Me.Label12.TabIndex = 43
-        Me.Label12.Visible = False
+        Me.LUM14.AutoSize = True
+        Me.LUM14.Location = New System.Drawing.Point(868, 153)
+        Me.LUM14.Name = "LUM14"
+        Me.LUM14.Size = New System.Drawing.Size(0, 13)
+        Me.LUM14.TabIndex = 0
+        Me.LUM14.Visible = False
         '
         'LI4
         '
@@ -2880,251 +2909,251 @@ Partial Class ODC
         Me.LI4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.LI4.Visible = False
         '
-        'Label14
+        'IDP16
         '
-        Me.Label14.AutoSize = True
-        Me.Label14.BackColor = System.Drawing.Color.Transparent
-        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(626, 409)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(0, 15)
-        Me.Label14.TabIndex = 45
-        Me.Label14.Visible = False
+        Me.IDP16.AutoSize = True
+        Me.IDP16.BackColor = System.Drawing.Color.Transparent
+        Me.IDP16.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.IDP16.Location = New System.Drawing.Point(626, 409)
+        Me.IDP16.Name = "IDP16"
+        Me.IDP16.Size = New System.Drawing.Size(0, 15)
+        Me.IDP16.TabIndex = 0
+        Me.IDP16.Visible = False
         '
-        'Label15
+        'LAP16
         '
-        Me.Label15.AutoSize = True
-        Me.Label15.BackColor = System.Drawing.Color.Transparent
-        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(35, 409)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(100, 15)
-        Me.Label15.TabIndex = 47
-        Me.Label15.Text = "Asignar Producto"
-        Me.Label15.Visible = False
+        Me.LAP16.AutoSize = True
+        Me.LAP16.BackColor = System.Drawing.Color.Transparent
+        Me.LAP16.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LAP16.Location = New System.Drawing.Point(35, 409)
+        Me.LAP16.Name = "LAP16"
+        Me.LAP16.Size = New System.Drawing.Size(100, 15)
+        Me.LAP16.TabIndex = 0
+        Me.LAP16.Text = "Asignar Producto"
+        Me.LAP16.Visible = False
         '
-        'TextBox1
+        'TxtAP16
         '
-        Me.TextBox1.Location = New System.Drawing.Point(163, 410)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.ReadOnly = True
-        Me.TextBox1.Size = New System.Drawing.Size(448, 20)
-        Me.TextBox1.TabIndex = 61
-        Me.TextBox1.Visible = False
+        Me.TxtAP16.Location = New System.Drawing.Point(163, 410)
+        Me.TxtAP16.Name = "TxtAP16"
+        Me.TxtAP16.ReadOnly = True
+        Me.TxtAP16.Size = New System.Drawing.Size(448, 20)
+        Me.TxtAP16.TabIndex = 0
+        Me.TxtAP16.Visible = False
         '
-        'Button1
+        'BB16
         '
-        Me.Button1.BackColor = System.Drawing.Color.Transparent
-        Me.Button1.BackgroundImage = Global.NucleosAve.My.Resources.Resources.list_3
-        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Button1.Location = New System.Drawing.Point(135, 405)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(24, 28)
-        Me.Button1.TabIndex = 48
-        Me.Button1.UseVisualStyleBackColor = False
-        Me.Button1.Visible = False
+        Me.BB16.BackColor = System.Drawing.Color.Transparent
+        Me.BB16.BackgroundImage = Global.NucleosAve.My.Resources.Resources.list_3
+        Me.BB16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.BB16.Location = New System.Drawing.Point(135, 405)
+        Me.BB16.Name = "BB16"
+        Me.BB16.Size = New System.Drawing.Size(24, 28)
+        Me.BB16.TabIndex = 0
+        Me.BB16.UseVisualStyleBackColor = False
+        Me.BB16.Visible = False
         '
-        'TextBox2
+        'TxtObser16
         '
-        Me.TextBox2.Location = New System.Drawing.Point(340, 359)
-        Me.TextBox2.Multiline = True
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.ReadOnly = True
-        Me.TextBox2.Size = New System.Drawing.Size(272, 39)
-        Me.TextBox2.TabIndex = 49
-        Me.TextBox2.Visible = False
+        Me.TxtObser16.Location = New System.Drawing.Point(340, 359)
+        Me.TxtObser16.Multiline = True
+        Me.TxtObser16.Name = "TxtObser16"
+        Me.TxtObser16.ReadOnly = True
+        Me.TxtObser16.Size = New System.Drawing.Size(272, 39)
+        Me.TxtObser16.TabIndex = 0
+        Me.TxtObser16.Visible = False
         '
-        'Panel1
+        'P12
         '
-        Me.Panel1.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Panel1.BackColor = System.Drawing.Color.SteelBlue
-        Me.Panel1.Location = New System.Drawing.Point(29, 334)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(900, 5)
-        Me.Panel1.TabIndex = 50
-        Me.Panel1.Visible = False
+        Me.P12.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.P12.BackColor = System.Drawing.Color.SteelBlue
+        Me.P12.Location = New System.Drawing.Point(29, 334)
+        Me.P12.Name = "P12"
+        Me.P12.Size = New System.Drawing.Size(900, 5)
+        Me.P12.TabIndex = 0
+        Me.P12.Visible = False
         '
-        'Label16
+        'IDP15
         '
-        Me.Label16.AutoSize = True
-        Me.Label16.BackColor = System.Drawing.Color.Transparent
-        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(626, 306)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(0, 15)
-        Me.Label16.TabIndex = 51
-        Me.Label16.Visible = False
+        Me.IDP15.AutoSize = True
+        Me.IDP15.BackColor = System.Drawing.Color.Transparent
+        Me.IDP15.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.IDP15.Location = New System.Drawing.Point(626, 306)
+        Me.IDP15.Name = "IDP15"
+        Me.IDP15.Size = New System.Drawing.Size(0, 15)
+        Me.IDP15.TabIndex = 0
+        Me.IDP15.Visible = False
         '
-        'Label17
+        'LAP15
         '
-        Me.Label17.AutoSize = True
-        Me.Label17.BackColor = System.Drawing.Color.Transparent
-        Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.Location = New System.Drawing.Point(35, 304)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(100, 15)
-        Me.Label17.TabIndex = 52
-        Me.Label17.Text = "Asignar Producto"
-        Me.Label17.Visible = False
+        Me.LAP15.AutoSize = True
+        Me.LAP15.BackColor = System.Drawing.Color.Transparent
+        Me.LAP15.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LAP15.Location = New System.Drawing.Point(35, 304)
+        Me.LAP15.Name = "LAP15"
+        Me.LAP15.Size = New System.Drawing.Size(100, 15)
+        Me.LAP15.TabIndex = 0
+        Me.LAP15.Text = "Asignar Producto"
+        Me.LAP15.Visible = False
         '
-        'TextBox3
+        'TxtAP15
         '
-        Me.TextBox3.Location = New System.Drawing.Point(163, 305)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.ReadOnly = True
-        Me.TextBox3.Size = New System.Drawing.Size(448, 20)
-        Me.TextBox3.TabIndex = 53
-        Me.TextBox3.Visible = False
+        Me.TxtAP15.Location = New System.Drawing.Point(163, 305)
+        Me.TxtAP15.Name = "TxtAP15"
+        Me.TxtAP15.ReadOnly = True
+        Me.TxtAP15.Size = New System.Drawing.Size(448, 20)
+        Me.TxtAP15.TabIndex = 0
+        Me.TxtAP15.Visible = False
         '
-        'Button2
+        'BB15
         '
-        Me.Button2.BackColor = System.Drawing.Color.Transparent
-        Me.Button2.BackgroundImage = Global.NucleosAve.My.Resources.Resources.list_3
-        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Button2.Location = New System.Drawing.Point(135, 300)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(24, 28)
-        Me.Button2.TabIndex = 54
-        Me.Button2.UseVisualStyleBackColor = False
-        Me.Button2.Visible = False
+        Me.BB15.BackColor = System.Drawing.Color.Transparent
+        Me.BB15.BackgroundImage = Global.NucleosAve.My.Resources.Resources.list_3
+        Me.BB15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.BB15.Location = New System.Drawing.Point(135, 300)
+        Me.BB15.Name = "BB15"
+        Me.BB15.Size = New System.Drawing.Size(24, 28)
+        Me.BB15.TabIndex = 0
+        Me.BB15.UseVisualStyleBackColor = False
+        Me.BB15.Visible = False
         '
-        'TextBox4
+        'TxtObser15
         '
-        Me.TextBox4.Location = New System.Drawing.Point(340, 254)
-        Me.TextBox4.Multiline = True
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.ReadOnly = True
-        Me.TextBox4.Size = New System.Drawing.Size(272, 39)
-        Me.TextBox4.TabIndex = 55
-        Me.TextBox4.Visible = False
+        Me.TxtObser15.Location = New System.Drawing.Point(340, 254)
+        Me.TxtObser15.Multiline = True
+        Me.TxtObser15.Name = "TxtObser15"
+        Me.TxtObser15.ReadOnly = True
+        Me.TxtObser15.Size = New System.Drawing.Size(272, 39)
+        Me.TxtObser15.TabIndex = 0
+        Me.TxtObser15.Visible = False
         '
-        'Panel2
+        'P11
         '
-        Me.Panel2.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Panel2.BackColor = System.Drawing.Color.SteelBlue
-        Me.Panel2.Location = New System.Drawing.Point(29, 229)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(900, 5)
-        Me.Panel2.TabIndex = 56
-        Me.Panel2.Visible = False
+        Me.P11.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.P11.BackColor = System.Drawing.Color.SteelBlue
+        Me.P11.Location = New System.Drawing.Point(29, 229)
+        Me.P11.Name = "P11"
+        Me.P11.Size = New System.Drawing.Size(900, 5)
+        Me.P11.TabIndex = 0
+        Me.P11.Visible = False
         '
-        'Label18
+        'IDP14
         '
-        Me.Label18.AutoSize = True
-        Me.Label18.BackColor = System.Drawing.Color.Transparent
-        Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.Location = New System.Drawing.Point(626, 199)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(0, 15)
-        Me.Label18.TabIndex = 57
-        Me.Label18.Visible = False
+        Me.IDP14.AutoSize = True
+        Me.IDP14.BackColor = System.Drawing.Color.Transparent
+        Me.IDP14.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.IDP14.Location = New System.Drawing.Point(626, 199)
+        Me.IDP14.Name = "IDP14"
+        Me.IDP14.Size = New System.Drawing.Size(0, 15)
+        Me.IDP14.TabIndex = 0
+        Me.IDP14.Visible = False
         '
-        'Label19
+        'LAP14
         '
-        Me.Label19.AutoSize = True
-        Me.Label19.BackColor = System.Drawing.Color.Transparent
-        Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.Location = New System.Drawing.Point(35, 199)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(100, 15)
-        Me.Label19.TabIndex = 58
-        Me.Label19.Text = "Asignar Producto"
-        Me.Label19.Visible = False
+        Me.LAP14.AutoSize = True
+        Me.LAP14.BackColor = System.Drawing.Color.Transparent
+        Me.LAP14.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LAP14.Location = New System.Drawing.Point(35, 199)
+        Me.LAP14.Name = "LAP14"
+        Me.LAP14.Size = New System.Drawing.Size(100, 15)
+        Me.LAP14.TabIndex = 0
+        Me.LAP14.Text = "Asignar Producto"
+        Me.LAP14.Visible = False
         '
-        'TextBox5
+        'TxtAP14
         '
-        Me.TextBox5.Location = New System.Drawing.Point(163, 200)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.ReadOnly = True
-        Me.TextBox5.Size = New System.Drawing.Size(448, 20)
-        Me.TextBox5.TabIndex = 59
-        Me.TextBox5.Visible = False
+        Me.TxtAP14.Location = New System.Drawing.Point(163, 200)
+        Me.TxtAP14.Name = "TxtAP14"
+        Me.TxtAP14.ReadOnly = True
+        Me.TxtAP14.Size = New System.Drawing.Size(448, 20)
+        Me.TxtAP14.TabIndex = 0
+        Me.TxtAP14.Visible = False
         '
-        'Button3
+        'BB14
         '
-        Me.Button3.BackColor = System.Drawing.Color.Transparent
-        Me.Button3.BackgroundImage = Global.NucleosAve.My.Resources.Resources.list_3
-        Me.Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Button3.Location = New System.Drawing.Point(135, 195)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(24, 28)
-        Me.Button3.TabIndex = 60
-        Me.Button3.UseVisualStyleBackColor = False
-        Me.Button3.Visible = False
+        Me.BB14.BackColor = System.Drawing.Color.Transparent
+        Me.BB14.BackgroundImage = Global.NucleosAve.My.Resources.Resources.list_3
+        Me.BB14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.BB14.Location = New System.Drawing.Point(135, 195)
+        Me.BB14.Name = "BB14"
+        Me.BB14.Size = New System.Drawing.Size(24, 28)
+        Me.BB14.TabIndex = 0
+        Me.BB14.UseVisualStyleBackColor = False
+        Me.BB14.Visible = False
         '
-        'TextBox6
+        'TxtObser14
         '
-        Me.TextBox6.Location = New System.Drawing.Point(340, 149)
-        Me.TextBox6.Multiline = True
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.ReadOnly = True
-        Me.TextBox6.Size = New System.Drawing.Size(272, 39)
-        Me.TextBox6.TabIndex = 32
-        Me.TextBox6.Visible = False
+        Me.TxtObser14.Location = New System.Drawing.Point(340, 149)
+        Me.TxtObser14.Multiline = True
+        Me.TxtObser14.Name = "TxtObser14"
+        Me.TxtObser14.ReadOnly = True
+        Me.TxtObser14.Size = New System.Drawing.Size(272, 39)
+        Me.TxtObser14.TabIndex = 0
+        Me.TxtObser14.Visible = False
         '
-        'Panel3
+        'P10
         '
-        Me.Panel3.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Panel3.BackColor = System.Drawing.Color.SteelBlue
-        Me.Panel3.Location = New System.Drawing.Point(29, 124)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(900, 5)
-        Me.Panel3.TabIndex = 31
-        Me.Panel3.Visible = False
+        Me.P10.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.P10.BackColor = System.Drawing.Color.SteelBlue
+        Me.P10.Location = New System.Drawing.Point(29, 124)
+        Me.P10.Name = "P10"
+        Me.P10.Size = New System.Drawing.Size(900, 5)
+        Me.P10.TabIndex = 0
+        Me.P10.Visible = False
         '
-        'Label20
+        'IDP13
         '
-        Me.Label20.AutoSize = True
-        Me.Label20.BackColor = System.Drawing.Color.Transparent
-        Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label20.Location = New System.Drawing.Point(626, 96)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(0, 15)
-        Me.Label20.TabIndex = 30
-        Me.Label20.Visible = False
+        Me.IDP13.AutoSize = True
+        Me.IDP13.BackColor = System.Drawing.Color.Transparent
+        Me.IDP13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.IDP13.Location = New System.Drawing.Point(626, 96)
+        Me.IDP13.Name = "IDP13"
+        Me.IDP13.Size = New System.Drawing.Size(0, 15)
+        Me.IDP13.TabIndex = 0
+        Me.IDP13.Visible = False
         '
-        'Label21
+        'LAP13
         '
-        Me.Label21.AutoSize = True
-        Me.Label21.BackColor = System.Drawing.Color.Transparent
-        Me.Label21.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label21.Location = New System.Drawing.Point(35, 94)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(100, 15)
-        Me.Label21.TabIndex = 29
-        Me.Label21.Text = "Asignar Producto"
-        Me.Label21.Visible = False
+        Me.LAP13.AutoSize = True
+        Me.LAP13.BackColor = System.Drawing.Color.Transparent
+        Me.LAP13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LAP13.Location = New System.Drawing.Point(35, 94)
+        Me.LAP13.Name = "LAP13"
+        Me.LAP13.Size = New System.Drawing.Size(100, 15)
+        Me.LAP13.TabIndex = 0
+        Me.LAP13.Text = "Asignar Producto"
+        Me.LAP13.Visible = False
         '
-        'TextBox7
+        'TxtAP13
         '
-        Me.TextBox7.Location = New System.Drawing.Point(163, 95)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.ReadOnly = True
-        Me.TextBox7.Size = New System.Drawing.Size(448, 20)
-        Me.TextBox7.TabIndex = 2
-        Me.TextBox7.Visible = False
+        Me.TxtAP13.Location = New System.Drawing.Point(163, 95)
+        Me.TxtAP13.Name = "TxtAP13"
+        Me.TxtAP13.ReadOnly = True
+        Me.TxtAP13.Size = New System.Drawing.Size(448, 20)
+        Me.TxtAP13.TabIndex = 0
+        Me.TxtAP13.Visible = False
         '
-        'Button4
+        'BB13
         '
-        Me.Button4.BackColor = System.Drawing.Color.Transparent
-        Me.Button4.BackgroundImage = Global.NucleosAve.My.Resources.Resources.list_3
-        Me.Button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Button4.Location = New System.Drawing.Point(135, 90)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(24, 28)
-        Me.Button4.TabIndex = 3
-        Me.Button4.UseVisualStyleBackColor = False
-        Me.Button4.Visible = False
+        Me.BB13.BackColor = System.Drawing.Color.Transparent
+        Me.BB13.BackgroundImage = Global.NucleosAve.My.Resources.Resources.list_3
+        Me.BB13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.BB13.Location = New System.Drawing.Point(135, 90)
+        Me.BB13.Name = "BB13"
+        Me.BB13.Size = New System.Drawing.Size(24, 28)
+        Me.BB13.TabIndex = 0
+        Me.BB13.UseVisualStyleBackColor = False
+        Me.BB13.Visible = False
         '
-        'TextBox8
+        'TxtObser13
         '
-        Me.TextBox8.Location = New System.Drawing.Point(340, 44)
-        Me.TextBox8.Multiline = True
-        Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.ReadOnly = True
-        Me.TextBox8.Size = New System.Drawing.Size(272, 39)
-        Me.TextBox8.TabIndex = 4
-        Me.TextBox8.Visible = False
+        Me.TxtObser13.Location = New System.Drawing.Point(340, 44)
+        Me.TxtObser13.Multiline = True
+        Me.TxtObser13.Name = "TxtObser13"
+        Me.TxtObser13.ReadOnly = True
+        Me.TxtObser13.Size = New System.Drawing.Size(272, 39)
+        Me.TxtObser13.TabIndex = 0
+        Me.TxtObser13.Visible = False
         '
         'LObserv4
         '
@@ -3189,225 +3218,225 @@ Partial Class ODC
         Me.LPr4.Text = "Producto"
         Me.LPr4.Visible = False
         '
-        'ID4
+        'LID4
         '
-        Me.ID4.AutoSize = True
-        Me.ID4.BackColor = System.Drawing.Color.Transparent
-        Me.ID4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ID4.Location = New System.Drawing.Point(19, 16)
-        Me.ID4.Name = "ID4"
-        Me.ID4.Size = New System.Drawing.Size(19, 15)
-        Me.ID4.TabIndex = 0
-        Me.ID4.Text = "ID"
-        Me.ID4.Visible = False
+        Me.LID4.AutoSize = True
+        Me.LID4.BackColor = System.Drawing.Color.Transparent
+        Me.LID4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LID4.Location = New System.Drawing.Point(19, 16)
+        Me.LID4.Name = "LID4"
+        Me.LID4.Size = New System.Drawing.Size(19, 15)
+        Me.LID4.TabIndex = 0
+        Me.LID4.Text = "ID"
+        Me.LID4.Visible = False
         '
-        'TextBox9
+        'CEnt16
         '
-        Me.TextBox9.Location = New System.Drawing.Point(804, 359)
-        Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.ReadOnly = True
-        Me.TextBox9.Size = New System.Drawing.Size(56, 20)
-        Me.TextBox9.TabIndex = 11
-        Me.TextBox9.Text = "0"
-        Me.TextBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox9.Visible = False
+        Me.CEnt16.Location = New System.Drawing.Point(804, 359)
+        Me.CEnt16.Name = "CEnt16"
+        Me.CEnt16.ReadOnly = True
+        Me.CEnt16.Size = New System.Drawing.Size(56, 20)
+        Me.CEnt16.TabIndex = 0
+        Me.CEnt16.Text = "0"
+        Me.CEnt16.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.CEnt16.Visible = False
         '
-        'TextBox10
+        'CEnt15
         '
-        Me.TextBox10.Location = New System.Drawing.Point(804, 254)
-        Me.TextBox10.Name = "TextBox10"
-        Me.TextBox10.ReadOnly = True
-        Me.TextBox10.Size = New System.Drawing.Size(56, 20)
-        Me.TextBox10.TabIndex = 12
-        Me.TextBox10.Text = "0"
-        Me.TextBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox10.Visible = False
+        Me.CEnt15.Location = New System.Drawing.Point(804, 254)
+        Me.CEnt15.Name = "CEnt15"
+        Me.CEnt15.ReadOnly = True
+        Me.CEnt15.Size = New System.Drawing.Size(56, 20)
+        Me.CEnt15.TabIndex = 0
+        Me.CEnt15.Text = "0"
+        Me.CEnt15.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.CEnt15.Visible = False
         '
-        'TextBox11
+        'CEnt14
         '
-        Me.TextBox11.Location = New System.Drawing.Point(804, 149)
-        Me.TextBox11.Name = "TextBox11"
-        Me.TextBox11.ReadOnly = True
-        Me.TextBox11.Size = New System.Drawing.Size(56, 20)
-        Me.TextBox11.TabIndex = 13
-        Me.TextBox11.Text = "0"
-        Me.TextBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox11.Visible = False
+        Me.CEnt14.Location = New System.Drawing.Point(804, 149)
+        Me.CEnt14.Name = "CEnt14"
+        Me.CEnt14.ReadOnly = True
+        Me.CEnt14.Size = New System.Drawing.Size(56, 20)
+        Me.CEnt14.TabIndex = 0
+        Me.CEnt14.Text = "0"
+        Me.CEnt14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.CEnt14.Visible = False
         '
-        'TextBox12
+        'CEnt13
         '
-        Me.TextBox12.Location = New System.Drawing.Point(804, 44)
-        Me.TextBox12.Name = "TextBox12"
-        Me.TextBox12.ReadOnly = True
-        Me.TextBox12.Size = New System.Drawing.Size(56, 20)
-        Me.TextBox12.TabIndex = 14
-        Me.TextBox12.Text = "0"
-        Me.TextBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox12.Visible = False
+        Me.CEnt13.Location = New System.Drawing.Point(804, 44)
+        Me.CEnt13.Name = "CEnt13"
+        Me.CEnt13.ReadOnly = True
+        Me.CEnt13.Size = New System.Drawing.Size(56, 20)
+        Me.CEnt13.TabIndex = 0
+        Me.CEnt13.Text = "0"
+        Me.CEnt13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.CEnt13.Visible = False
         '
-        'TextBox13
+        'CEntra16
         '
-        Me.TextBox13.Location = New System.Drawing.Point(739, 359)
-        Me.TextBox13.Name = "TextBox13"
-        Me.TextBox13.ReadOnly = True
-        Me.TextBox13.Size = New System.Drawing.Size(49, 20)
-        Me.TextBox13.TabIndex = 15
-        Me.TextBox13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox13.Visible = False
+        Me.CEntra16.Location = New System.Drawing.Point(739, 359)
+        Me.CEntra16.Name = "CEntra16"
+        Me.CEntra16.ReadOnly = True
+        Me.CEntra16.Size = New System.Drawing.Size(49, 20)
+        Me.CEntra16.TabIndex = 0
+        Me.CEntra16.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.CEntra16.Visible = False
         '
-        'TextBox14
+        'CEntra15
         '
-        Me.TextBox14.Location = New System.Drawing.Point(739, 254)
-        Me.TextBox14.Name = "TextBox14"
-        Me.TextBox14.ReadOnly = True
-        Me.TextBox14.Size = New System.Drawing.Size(49, 20)
-        Me.TextBox14.TabIndex = 16
-        Me.TextBox14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox14.Visible = False
+        Me.CEntra15.Location = New System.Drawing.Point(739, 254)
+        Me.CEntra15.Name = "CEntra15"
+        Me.CEntra15.ReadOnly = True
+        Me.CEntra15.Size = New System.Drawing.Size(49, 20)
+        Me.CEntra15.TabIndex = 0
+        Me.CEntra15.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.CEntra15.Visible = False
         '
-        'TextBox15
+        'CEntra14
         '
-        Me.TextBox15.Location = New System.Drawing.Point(739, 149)
-        Me.TextBox15.Name = "TextBox15"
-        Me.TextBox15.ReadOnly = True
-        Me.TextBox15.Size = New System.Drawing.Size(49, 20)
-        Me.TextBox15.TabIndex = 17
-        Me.TextBox15.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox15.Visible = False
+        Me.CEntra14.Location = New System.Drawing.Point(739, 149)
+        Me.CEntra14.Name = "CEntra14"
+        Me.CEntra14.ReadOnly = True
+        Me.CEntra14.Size = New System.Drawing.Size(49, 20)
+        Me.CEntra14.TabIndex = 0
+        Me.CEntra14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.CEntra14.Visible = False
         '
-        'TextBox16
+        'CEntra13
         '
-        Me.TextBox16.Location = New System.Drawing.Point(739, 44)
-        Me.TextBox16.Name = "TextBox16"
-        Me.TextBox16.ReadOnly = True
-        Me.TextBox16.Size = New System.Drawing.Size(49, 20)
-        Me.TextBox16.TabIndex = 18
-        Me.TextBox16.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox16.Visible = False
+        Me.CEntra13.Location = New System.Drawing.Point(739, 44)
+        Me.CEntra13.Name = "CEntra13"
+        Me.CEntra13.ReadOnly = True
+        Me.CEntra13.Size = New System.Drawing.Size(49, 20)
+        Me.CEntra13.TabIndex = 0
+        Me.CEntra13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.CEntra13.Visible = False
         '
-        'TextBox17
+        'CantidadS16
         '
-        Me.TextBox17.Location = New System.Drawing.Point(629, 359)
-        Me.TextBox17.Multiline = True
-        Me.TextBox17.Name = "TextBox17"
-        Me.TextBox17.ReadOnly = True
-        Me.TextBox17.Size = New System.Drawing.Size(86, 45)
-        Me.TextBox17.TabIndex = 19
-        Me.TextBox17.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox17.Visible = False
+        Me.CantidadS16.Location = New System.Drawing.Point(629, 359)
+        Me.CantidadS16.Multiline = True
+        Me.CantidadS16.Name = "CantidadS16"
+        Me.CantidadS16.ReadOnly = True
+        Me.CantidadS16.Size = New System.Drawing.Size(86, 45)
+        Me.CantidadS16.TabIndex = 0
+        Me.CantidadS16.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.CantidadS16.Visible = False
         '
-        'TextBox18
+        'CantidadS15
         '
-        Me.TextBox18.Location = New System.Drawing.Point(629, 254)
-        Me.TextBox18.Multiline = True
-        Me.TextBox18.Name = "TextBox18"
-        Me.TextBox18.ReadOnly = True
-        Me.TextBox18.Size = New System.Drawing.Size(86, 45)
-        Me.TextBox18.TabIndex = 20
-        Me.TextBox18.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox18.Visible = False
+        Me.CantidadS15.Location = New System.Drawing.Point(629, 254)
+        Me.CantidadS15.Multiline = True
+        Me.CantidadS15.Name = "CantidadS15"
+        Me.CantidadS15.ReadOnly = True
+        Me.CantidadS15.Size = New System.Drawing.Size(86, 45)
+        Me.CantidadS15.TabIndex = 0
+        Me.CantidadS15.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.CantidadS15.Visible = False
         '
-        'TextBox19
+        'CantidadS14
         '
-        Me.TextBox19.Location = New System.Drawing.Point(629, 149)
-        Me.TextBox19.Multiline = True
-        Me.TextBox19.Name = "TextBox19"
-        Me.TextBox19.ReadOnly = True
-        Me.TextBox19.Size = New System.Drawing.Size(86, 45)
-        Me.TextBox19.TabIndex = 21
-        Me.TextBox19.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox19.Visible = False
+        Me.CantidadS14.Location = New System.Drawing.Point(629, 149)
+        Me.CantidadS14.Multiline = True
+        Me.CantidadS14.Name = "CantidadS14"
+        Me.CantidadS14.ReadOnly = True
+        Me.CantidadS14.Size = New System.Drawing.Size(86, 45)
+        Me.CantidadS14.TabIndex = 0
+        Me.CantidadS14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.CantidadS14.Visible = False
         '
-        'LCS
+        'CantidadS13
         '
-        Me.LCS.Location = New System.Drawing.Point(629, 44)
-        Me.LCS.Multiline = True
-        Me.LCS.Name = "LCS"
-        Me.LCS.ReadOnly = True
-        Me.LCS.Size = New System.Drawing.Size(86, 45)
-        Me.LCS.TabIndex = 22
-        Me.LCS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.LCS.Visible = False
+        Me.CantidadS13.Location = New System.Drawing.Point(629, 44)
+        Me.CantidadS13.Multiline = True
+        Me.CantidadS13.Name = "CantidadS13"
+        Me.CantidadS13.ReadOnly = True
+        Me.CantidadS13.Size = New System.Drawing.Size(86, 45)
+        Me.CantidadS13.TabIndex = 0
+        Me.CantidadS13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.CantidadS13.Visible = False
         '
-        'TextBox21
+        'Producto16
         '
-        Me.TextBox21.Location = New System.Drawing.Point(63, 359)
-        Me.TextBox21.Multiline = True
-        Me.TextBox21.Name = "TextBox21"
-        Me.TextBox21.ReadOnly = True
-        Me.TextBox21.Size = New System.Drawing.Size(272, 39)
-        Me.TextBox21.TabIndex = 23
-        Me.TextBox21.Visible = False
+        Me.Producto16.Location = New System.Drawing.Point(63, 359)
+        Me.Producto16.Multiline = True
+        Me.Producto16.Name = "Producto16"
+        Me.Producto16.ReadOnly = True
+        Me.Producto16.Size = New System.Drawing.Size(272, 39)
+        Me.Producto16.TabIndex = 0
+        Me.Producto16.Visible = False
         '
-        'TextBox22
+        'Producto15
         '
-        Me.TextBox22.Location = New System.Drawing.Point(63, 254)
-        Me.TextBox22.Multiline = True
-        Me.TextBox22.Name = "TextBox22"
-        Me.TextBox22.ReadOnly = True
-        Me.TextBox22.Size = New System.Drawing.Size(272, 39)
-        Me.TextBox22.TabIndex = 24
-        Me.TextBox22.Visible = False
+        Me.Producto15.Location = New System.Drawing.Point(63, 254)
+        Me.Producto15.Multiline = True
+        Me.Producto15.Name = "Producto15"
+        Me.Producto15.ReadOnly = True
+        Me.Producto15.Size = New System.Drawing.Size(272, 39)
+        Me.Producto15.TabIndex = 0
+        Me.Producto15.Visible = False
         '
-        'TextBox23
+        'Producto14
         '
-        Me.TextBox23.Location = New System.Drawing.Point(63, 149)
-        Me.TextBox23.Multiline = True
-        Me.TextBox23.Name = "TextBox23"
-        Me.TextBox23.ReadOnly = True
-        Me.TextBox23.Size = New System.Drawing.Size(272, 39)
-        Me.TextBox23.TabIndex = 25
-        Me.TextBox23.Visible = False
+        Me.Producto14.Location = New System.Drawing.Point(63, 149)
+        Me.Producto14.Multiline = True
+        Me.Producto14.Name = "Producto14"
+        Me.Producto14.ReadOnly = True
+        Me.Producto14.Size = New System.Drawing.Size(272, 39)
+        Me.Producto14.TabIndex = 0
+        Me.Producto14.Visible = False
         '
-        'TextBox24
+        'Producto13
         '
-        Me.TextBox24.Location = New System.Drawing.Point(63, 44)
-        Me.TextBox24.Multiline = True
-        Me.TextBox24.Name = "TextBox24"
-        Me.TextBox24.ReadOnly = True
-        Me.TextBox24.Size = New System.Drawing.Size(272, 39)
-        Me.TextBox24.TabIndex = 26
-        Me.TextBox24.Visible = False
+        Me.Producto13.Location = New System.Drawing.Point(63, 44)
+        Me.Producto13.Multiline = True
+        Me.Producto13.Name = "Producto13"
+        Me.Producto13.ReadOnly = True
+        Me.Producto13.Size = New System.Drawing.Size(272, 39)
+        Me.Producto13.TabIndex = 0
+        Me.Producto13.Visible = False
         '
-        'TextBox25
+        'ID16
         '
-        Me.TextBox25.Location = New System.Drawing.Point(5, 359)
-        Me.TextBox25.Name = "TextBox25"
-        Me.TextBox25.ReadOnly = True
-        Me.TextBox25.Size = New System.Drawing.Size(46, 20)
-        Me.TextBox25.TabIndex = 27
-        Me.TextBox25.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox25.Visible = False
+        Me.ID16.Location = New System.Drawing.Point(5, 359)
+        Me.ID16.Name = "ID16"
+        Me.ID16.ReadOnly = True
+        Me.ID16.Size = New System.Drawing.Size(46, 20)
+        Me.ID16.TabIndex = 0
+        Me.ID16.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ID16.Visible = False
         '
-        'TextBox26
+        'ID15
         '
-        Me.TextBox26.Location = New System.Drawing.Point(5, 254)
-        Me.TextBox26.Name = "TextBox26"
-        Me.TextBox26.ReadOnly = True
-        Me.TextBox26.Size = New System.Drawing.Size(46, 20)
-        Me.TextBox26.TabIndex = 28
-        Me.TextBox26.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox26.Visible = False
+        Me.ID15.Location = New System.Drawing.Point(5, 254)
+        Me.ID15.Name = "ID15"
+        Me.ID15.ReadOnly = True
+        Me.ID15.Size = New System.Drawing.Size(46, 20)
+        Me.ID15.TabIndex = 0
+        Me.ID15.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ID15.Visible = False
         '
-        'TextBox27
+        'ID14
         '
-        Me.TextBox27.Location = New System.Drawing.Point(5, 149)
-        Me.TextBox27.Name = "TextBox27"
-        Me.TextBox27.ReadOnly = True
-        Me.TextBox27.Size = New System.Drawing.Size(46, 20)
-        Me.TextBox27.TabIndex = 46
-        Me.TextBox27.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox27.Visible = False
+        Me.ID14.Location = New System.Drawing.Point(5, 149)
+        Me.ID14.Name = "ID14"
+        Me.ID14.ReadOnly = True
+        Me.ID14.Size = New System.Drawing.Size(46, 20)
+        Me.ID14.TabIndex = 0
+        Me.ID14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ID14.Visible = False
         '
-        'TextBox28
+        'ID13
         '
-        Me.TextBox28.Location = New System.Drawing.Point(5, 44)
-        Me.TextBox28.Name = "TextBox28"
-        Me.TextBox28.ReadOnly = True
-        Me.TextBox28.Size = New System.Drawing.Size(46, 20)
-        Me.TextBox28.TabIndex = 62
-        Me.TextBox28.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox28.Visible = False
+        Me.ID13.Location = New System.Drawing.Point(5, 44)
+        Me.ID13.Name = "ID13"
+        Me.ID13.ReadOnly = True
+        Me.ID13.Size = New System.Drawing.Size(46, 20)
+        Me.ID13.TabIndex = 0
+        Me.ID13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ID13.Visible = False
         '
         'TabPage2
         '
@@ -4151,12 +4180,238 @@ Partial Class ODC
         Me.ID17.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.ID17.Visible = False
         '
+        'LFinalizar
+        '
+        Me.LFinalizar.AutoSize = True
+        Me.LFinalizar.BackColor = System.Drawing.Color.Transparent
+        Me.LFinalizar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LFinalizar.Location = New System.Drawing.Point(903, 125)
+        Me.LFinalizar.Name = "LFinalizar"
+        Me.LFinalizar.Size = New System.Drawing.Size(54, 15)
+        Me.LFinalizar.TabIndex = 25
+        Me.LFinalizar.Text = "Finalizar"
+        Me.LFinalizar.Visible = False
+        '
+        'BTerminar
+        '
+        Me.BTerminar.BackColor = System.Drawing.Color.Transparent
+        Me.BTerminar.BackgroundImage = Global.NucleosAve.My.Resources.Resources.icons8_cancelar_suscripción_64
+        Me.BTerminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.BTerminar.Location = New System.Drawing.Point(906, 77)
+        Me.BTerminar.Name = "BTerminar"
+        Me.BTerminar.Size = New System.Drawing.Size(50, 50)
+        Me.BTerminar.TabIndex = 27
+        Me.BTerminar.UseVisualStyleBackColor = False
+        Me.BTerminar.Visible = False
+        '
+        'BGuardar
+        '
+        Me.BGuardar.BackColor = System.Drawing.Color.Transparent
+        Me.BGuardar.BackgroundImage = Global.NucleosAve.My.Resources.Resources.list_3
+        Me.BGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.BGuardar.Location = New System.Drawing.Point(850, 77)
+        Me.BGuardar.Name = "BGuardar"
+        Me.BGuardar.Size = New System.Drawing.Size(50, 50)
+        Me.BGuardar.TabIndex = 26
+        Me.BGuardar.UseVisualStyleBackColor = False
+        Me.BGuardar.Visible = False
+        '
+        'POC
+        '
+        Me.POC.BackColor = System.Drawing.Color.Transparent
+        Me.POC.Controls.Add(Me.TxtBOC)
+        Me.POC.Controls.Add(Me.GroupBox1)
+        Me.POC.Controls.Add(Me.LBOD)
+        Me.POC.Controls.Add(Me.LBusqueda)
+        Me.POC.Controls.Add(Me.DGOCA)
+        Me.POC.Location = New System.Drawing.Point(15, 78)
+        Me.POC.Name = "POC"
+        Me.POC.Size = New System.Drawing.Size(963, 533)
+        Me.POC.TabIndex = 28
+        Me.POC.Visible = False
+        '
+        'TxtBOC
+        '
+        Me.TxtBOC.Location = New System.Drawing.Point(613, 121)
+        Me.TxtBOC.Name = "TxtBOC"
+        Me.TxtBOC.Size = New System.Drawing.Size(104, 20)
+        Me.TxtBOC.TabIndex = 74
+        Me.TxtBOC.Text = "-"
+        Me.TxtBOC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.BBOC1)
+        Me.GroupBox1.Controls.Add(Me.DTF2)
+        Me.GroupBox1.Controls.Add(Me.DTF1)
+        Me.GroupBox1.Location = New System.Drawing.Point(194, 69)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(409, 112)
+        Me.GroupBox1.TabIndex = 73
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Búsqueda por Fecha"
+        '
+        'BBOC1
+        '
+        Me.BBOC1.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(254, Byte), Integer))
+        Me.BBOC1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.BBOC1.Location = New System.Drawing.Point(169, 75)
+        Me.BBOC1.Name = "BBOC1"
+        Me.BBOC1.Size = New System.Drawing.Size(75, 23)
+        Me.BBOC1.TabIndex = 72
+        Me.BBOC1.Text = "Buscar"
+        Me.BBOC1.UseVisualStyleBackColor = False
+        '
+        'DTF2
+        '
+        Me.DTF2.Location = New System.Drawing.Point(208, 43)
+        Me.DTF2.Name = "DTF2"
+        Me.DTF2.Size = New System.Drawing.Size(200, 20)
+        Me.DTF2.TabIndex = 71
+        '
+        'DTF1
+        '
+        Me.DTF1.Location = New System.Drawing.Point(5, 43)
+        Me.DTF1.Name = "DTF1"
+        Me.DTF1.Size = New System.Drawing.Size(200, 20)
+        Me.DTF1.TabIndex = 70
+        '
+        'LBOD
+        '
+        Me.LBOD.AutoSize = True
+        Me.LBOD.BackColor = System.Drawing.Color.Transparent
+        Me.LBOD.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LBOD.Location = New System.Drawing.Point(608, 100)
+        Me.LBOD.Name = "LBOD"
+        Me.LBOD.Size = New System.Drawing.Size(115, 16)
+        Me.LBOD.TabIndex = 75
+        Me.LBOD.Text = "Orden de Compra"
+        '
+        'LBusqueda
+        '
+        Me.LBusqueda.AutoSize = True
+        Me.LBusqueda.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LBusqueda.Location = New System.Drawing.Point(350, 41)
+        Me.LBusqueda.Name = "LBusqueda"
+        Me.LBusqueda.Size = New System.Drawing.Size(104, 24)
+        Me.LBusqueda.TabIndex = 1
+        Me.LBusqueda.Text = "Búsqueda"
+        '
+        'DGOCA
+        '
+        Me.DGOCA.AllowUserToAddRows = False
+        Me.DGOCA.AllowUserToDeleteRows = False
+        Me.DGOCA.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGOCA.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.COC, Me.COrden, Me.Codis, Me.Proveedor, Me.PS})
+        Me.DGOCA.Location = New System.Drawing.Point(150, 187)
+        Me.DGOCA.Name = "DGOCA"
+        Me.DGOCA.ReadOnly = True
+        Me.DGOCA.Size = New System.Drawing.Size(608, 219)
+        Me.DGOCA.TabIndex = 0
+        '
+        'ID
+        '
+        Me.ID.DataPropertyName = "id_orden"
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.ID.DefaultCellStyle = DataGridViewCellStyle5
+        Me.ID.HeaderText = "ID"
+        Me.ID.Name = "ID"
+        Me.ID.ReadOnly = True
+        Me.ID.Width = 50
+        '
+        'COC
+        '
+        Me.COC.DataPropertyName = "codigo"
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.COC.DefaultCellStyle = DataGridViewCellStyle6
+        Me.COC.HeaderText = "Codigo"
+        Me.COC.Name = "COC"
+        Me.COC.ReadOnly = True
+        Me.COC.Visible = False
+        '
+        'COrden
+        '
+        Me.COrden.DataPropertyName = "purchase_order"
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.COrden.DefaultCellStyle = DataGridViewCellStyle7
+        Me.COrden.HeaderText = "Orden de Compra"
+        Me.COrden.Name = "COrden"
+        Me.COrden.ReadOnly = True
+        '
+        'Codis
+        '
+        Me.Codis.DataPropertyName = "CodiS"
+        Me.Codis.HeaderText = "Codis"
+        Me.Codis.Name = "Codis"
+        Me.Codis.ReadOnly = True
+        Me.Codis.Visible = False
+        '
+        'Proveedor
+        '
+        Me.Proveedor.DataPropertyName = "nombre"
+        Me.Proveedor.HeaderText = "Proveedor"
+        Me.Proveedor.Name = "Proveedor"
+        Me.Proveedor.ReadOnly = True
+        Me.Proveedor.Width = 290
+        '
+        'PS
+        '
+        Me.PS.DataPropertyName = "Productos Solicitados"
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.PS.DefaultCellStyle = DataGridViewCellStyle8
+        Me.PS.HeaderText = "Productos Solicitados"
+        Me.PS.Name = "PS"
+        Me.PS.ReadOnly = True
+        '
+        'IDOC
+        '
+        Me.IDOC.AutoSize = True
+        Me.IDOC.Location = New System.Drawing.Point(358, 17)
+        Me.IDOC.Name = "IDOC"
+        Me.IDOC.Size = New System.Drawing.Size(0, 13)
+        Me.IDOC.TabIndex = 0
+        Me.IDOC.Visible = False
+        '
+        'COCS
+        '
+        Me.COCS.AutoSize = True
+        Me.COCS.Location = New System.Drawing.Point(327, 37)
+        Me.COCS.Name = "COCS"
+        Me.COCS.Size = New System.Drawing.Size(0, 13)
+        Me.COCS.TabIndex = 0
+        Me.COCS.Visible = False
+        '
+        'CodS
+        '
+        Me.CodS.AutoSize = True
+        Me.CodS.Location = New System.Drawing.Point(319, 5)
+        Me.CodS.Name = "CodS"
+        Me.CodS.Size = New System.Drawing.Size(0, 13)
+        Me.CodS.TabIndex = 0
+        Me.CodS.Visible = False
+        '
+        'LUsuario
+        '
+        Me.LUsuario.AutoSize = True
+        Me.LUsuario.Location = New System.Drawing.Point(486, 13)
+        Me.LUsuario.Name = "LUsuario"
+        Me.LUsuario.Size = New System.Drawing.Size(0, 13)
+        Me.LUsuario.TabIndex = 0
+        Me.LUsuario.Visible = False
+        '
         'ODC
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.NucleosAve.My.Resources.Resources.Fondo
         Me.ClientSize = New System.Drawing.Size(987, 617)
+        Me.Controls.Add(Me.LUsuario)
+        Me.Controls.Add(Me.CodS)
+        Me.Controls.Add(Me.COCS)
+        Me.Controls.Add(Me.IDOC)
+        Me.Controls.Add(Me.LFinalizar)
+        Me.Controls.Add(Me.BTerminar)
+        Me.Controls.Add(Me.BGuardar)
         Me.Controls.Add(Me.Productos1)
         Me.Controls.Add(Me.LProd)
         Me.Controls.Add(Me.BBOCompra)
@@ -4165,6 +4420,7 @@ Partial Class ODC
         Me.Controls.Add(Me.BCerrar)
         Me.Controls.Add(Me.LOrdenC)
         Me.Controls.Add(Me.POpc)
+        Me.Controls.Add(Me.POC)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "ODC"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -4180,6 +4436,10 @@ Partial Class ODC
         Me.TP4.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
+        Me.POC.ResumeLayout(False)
+        Me.POC.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        CType(Me.DGOCA, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -4260,266 +4520,275 @@ Partial Class ODC
     Friend WithEvents ID18 As TextBox
     Friend WithEvents ID17 As TextBox
 
-    Private Sub BMinimizar_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub BCerrar_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub CEnt9_TextChanged(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Friend WithEvents Label82 As Label
-    Friend WithEvents Label83 As Label
+    Friend WithEvents LA1 As Label
+    Friend WithEvents LA2 As Label
     Friend WithEvents IDS2 As Label
     Friend WithEvents IDS1 As Label
-    Friend WithEvents Label86 As Label
+    Friend WithEvents LA3 As Label
     Friend WithEvents IDS3 As Label
-    Friend WithEvents Label88 As Label
+    Friend WithEvents LA4 As Label
     Friend WithEvents IDS4 As Label
-    Friend WithEvents Label90 As Label
-    Friend WithEvents Label91 As Label
-    Friend WithEvents Label92 As Label
-    Friend WithEvents Label93 As Label
+    Friend WithEvents LUM4 As Label
+    Friend WithEvents LUM3 As Label
+    Friend WithEvents LUM1 As Label
+    Friend WithEvents LUM2 As Label
     Friend WithEvents LI1 As Label
-    Friend WithEvents Label95 As Label
-    Friend WithEvents Label96 As Label
-    Friend WithEvents TextBox85 As TextBox
-    Friend WithEvents Button13 As Button
-    Friend WithEvents TextBox86 As TextBox
-    Friend WithEvents Panel10 As Panel
-    Friend WithEvents Label97 As Label
-    Friend WithEvents Label98 As Label
-    Friend WithEvents TextBox87 As TextBox
-    Friend WithEvents Button14 As Button
-    Friend WithEvents TextBox88 As TextBox
-    Friend WithEvents Panel11 As Panel
-    Friend WithEvents Label99 As Label
-    Friend WithEvents Label100 As Label
-    Friend WithEvents TextBox89 As TextBox
-    Friend WithEvents Button15 As Button
-    Friend WithEvents TextBox90 As TextBox
-    Friend WithEvents Panel12 As Panel
-    Friend WithEvents Label101 As Label
-    Friend WithEvents Label102 As Label
-    Friend WithEvents TextBox91 As TextBox
-    Friend WithEvents Button16 As Button
-    Friend WithEvents TextBox92 As TextBox
+    Friend WithEvents IDP4 As Label
+    Friend WithEvents LAP4 As Label
+    Friend WithEvents TxtAP4 As TextBox
+    Friend WithEvents BB4 As Button
+    Friend WithEvents TxtObser4 As TextBox
+    Friend WithEvents P3 As Panel
+    Friend WithEvents IDP3 As Label
+    Friend WithEvents LAP3 As Label
+    Friend WithEvents TxtAP3 As TextBox
+    Friend WithEvents BB3 As Button
+    Friend WithEvents TxtObser3 As TextBox
+    Friend WithEvents P2 As Panel
+    Friend WithEvents IDP2 As Label
+    Friend WithEvents LAP2 As Label
+    Friend WithEvents TxtAP2 As TextBox
+    Friend WithEvents BB2 As Button
+    Friend WithEvents TxtObser2 As TextBox
+    Friend WithEvents P1 As Panel
+    Friend WithEvents IDP1 As Label
+    Friend WithEvents LAP1 As Label
+    Friend WithEvents TxtAP1 As TextBox
+    Friend WithEvents BB1 As Button
+    Friend WithEvents TxtObser1 As TextBox
     Friend WithEvents LObserv1 As Label
     Friend WithEvents LCE1 As Label
     Friend WithEvents LCEn1 As Label
     Friend WithEvents LCS1 As Label
     Friend WithEvents LPr1 As Label
-    Friend WithEvents ID1 As Label
-    Friend WithEvents TextBox93 As TextBox
-    Friend WithEvents TextBox94 As TextBox
-    Friend WithEvents TextBox95 As TextBox
-    Friend WithEvents TextBox96 As TextBox
-    Friend WithEvents TextBox97 As TextBox
-    Friend WithEvents TextBox98 As TextBox
-    Friend WithEvents TextBox99 As TextBox
-    Friend WithEvents TextBox100 As TextBox
-    Friend WithEvents TextBox101 As TextBox
-    Friend WithEvents TextBox102 As TextBox
-    Friend WithEvents TextBox103 As TextBox
-    Friend WithEvents TextBox104 As TextBox
-    Friend WithEvents TextBox105 As TextBox
-    Friend WithEvents TextBox106 As TextBox
-    Friend WithEvents TextBox107 As TextBox
-    Friend WithEvents TextBox108 As TextBox
-    Friend WithEvents TextBox109 As TextBox
-    Friend WithEvents TextBox110 As TextBox
-    Friend WithEvents TextBox111 As TextBox
-    Friend WithEvents TextBox112 As TextBox
-    Friend WithEvents Label55 As Label
-    Friend WithEvents Label56 As Label
-    Friend WithEvents Label57 As Label
-    Friend WithEvents Label58 As Label
-    Friend WithEvents Label59 As Label
-    Friend WithEvents Label60 As Label
-    Friend WithEvents Label61 As Label
-    Friend WithEvents Label62 As Label
-    Friend WithEvents Label63 As Label
-    Friend WithEvents Label64 As Label
-    Friend WithEvents Label65 As Label
-    Friend WithEvents Label66 As Label
+    Friend WithEvents LID1 As Label
+    Friend WithEvents CEnt4 As TextBox
+    Friend WithEvents CEnt3 As TextBox
+    Friend WithEvents CEnt2 As TextBox
+    Friend WithEvents CEnt1 As TextBox
+    Friend WithEvents CEntra4 As TextBox
+    Friend WithEvents CEntra3 As TextBox
+    Friend WithEvents CEntra2 As TextBox
+    Friend WithEvents CEntra1 As TextBox
+    Friend WithEvents CantidadS4 As TextBox
+    Friend WithEvents CantidadS3 As TextBox
+    Friend WithEvents CantidadS2 As TextBox
+    Friend WithEvents CantidadS1 As TextBox
+    Friend WithEvents Producto4 As TextBox
+    Friend WithEvents Producto3 As TextBox
+    Friend WithEvents Producto2 As TextBox
+    Friend WithEvents Producto1 As TextBox
+    Friend WithEvents ID4 As TextBox
+    Friend WithEvents ID3 As TextBox
+    Friend WithEvents ID2 As TextBox
+    Friend WithEvents ID1 As TextBox
+    Friend WithEvents LA5 As Label
+    Friend WithEvents LA6 As Label
+    Friend WithEvents IDS6 As Label
+    Friend WithEvents IDS5 As Label
+    Friend WithEvents LA7 As Label
+    Friend WithEvents IDS7 As Label
+    Friend WithEvents LA8 As Label
+    Friend WithEvents IDS8 As Label
+    Friend WithEvents LUM8 As Label
+    Friend WithEvents LUM7 As Label
+    Friend WithEvents LUM5 As Label
+    Friend WithEvents LUM6 As Label
     Friend WithEvents LI2 As Label
-    Friend WithEvents Label68 As Label
-    Friend WithEvents Label69 As Label
-    Friend WithEvents TextBox57 As TextBox
-    Friend WithEvents Button9 As Button
-    Friend WithEvents TextBox58 As TextBox
-    Friend WithEvents Panel7 As Panel
-    Friend WithEvents Label70 As Label
-    Friend WithEvents Label71 As Label
-    Friend WithEvents TextBox59 As TextBox
-    Friend WithEvents Button10 As Button
-    Friend WithEvents TextBox60 As TextBox
-    Friend WithEvents Panel8 As Panel
-    Friend WithEvents Label72 As Label
-    Friend WithEvents Label73 As Label
-    Friend WithEvents TextBox61 As TextBox
-    Friend WithEvents Button11 As Button
-    Friend WithEvents TextBox62 As TextBox
-    Friend WithEvents Panel9 As Panel
-    Friend WithEvents Label74 As Label
-    Friend WithEvents Label75 As Label
-    Friend WithEvents TextBox63 As TextBox
-    Friend WithEvents Button12 As Button
-    Friend WithEvents TextBox64 As TextBox
+    Friend WithEvents IDP8 As Label
+    Friend WithEvents LAP8 As Label
+    Friend WithEvents TxtAP8 As TextBox
+    Friend WithEvents BB8 As Button
+    Friend WithEvents TxtObser8 As TextBox
+    Friend WithEvents P6 As Panel
+    Friend WithEvents IDP7 As Label
+    Friend WithEvents LAP7 As Label
+    Friend WithEvents TxtAP7 As TextBox
+    Friend WithEvents BB7 As Button
+    Friend WithEvents TxtObser7 As TextBox
+    Friend WithEvents P5 As Panel
+    Friend WithEvents IDP6 As Label
+    Friend WithEvents LAP6 As Label
+    Friend WithEvents TxtAP6 As TextBox
+    Friend WithEvents BB6 As Button
+    Friend WithEvents TxtObser6 As TextBox
+    Friend WithEvents P4 As Panel
+    Friend WithEvents IDP5 As Label
+    Friend WithEvents LAP5 As Label
+    Friend WithEvents TxtAP5 As TextBox
+    Friend WithEvents BB5 As Button
+    Friend WithEvents TxtObser5 As TextBox
     Friend WithEvents LObserv2 As Label
     Friend WithEvents LCE2 As Label
     Friend WithEvents LCEn2 As Label
     Friend WithEvents LCS2 As Label
     Friend WithEvents LPr2 As Label
-    Friend WithEvents ID2 As Label
-    Friend WithEvents TextBox65 As TextBox
-    Friend WithEvents TextBox66 As TextBox
-    Friend WithEvents TextBox67 As TextBox
-    Friend WithEvents TextBox68 As TextBox
-    Friend WithEvents TextBox69 As TextBox
-    Friend WithEvents TextBox70 As TextBox
-    Friend WithEvents TextBox71 As TextBox
-    Friend WithEvents TextBox72 As TextBox
-    Friend WithEvents TextBox73 As TextBox
-    Friend WithEvents TextBox74 As TextBox
-    Friend WithEvents TextBox75 As TextBox
-    Friend WithEvents TextBox76 As TextBox
-    Friend WithEvents TextBox77 As TextBox
-    Friend WithEvents TextBox78 As TextBox
-    Friend WithEvents TextBox79 As TextBox
-    Friend WithEvents TextBox80 As TextBox
-    Friend WithEvents TextBox81 As TextBox
-    Friend WithEvents TextBox82 As TextBox
-    Friend WithEvents TextBox83 As TextBox
-    Friend WithEvents TextBox84 As TextBox
-    Friend WithEvents Label28 As Label
-    Friend WithEvents Label29 As Label
-    Friend WithEvents Label30 As Label
-    Friend WithEvents Label31 As Label
-    Friend WithEvents Label32 As Label
-    Friend WithEvents Label33 As Label
-    Friend WithEvents Label34 As Label
-    Friend WithEvents Label35 As Label
-    Friend WithEvents Label36 As Label
-    Friend WithEvents Label37 As Label
-    Friend WithEvents Label38 As Label
-    Friend WithEvents Label39 As Label
+    Friend WithEvents LID2 As Label
+    Friend WithEvents CEnt8 As TextBox
+    Friend WithEvents CEnt7 As TextBox
+    Friend WithEvents CEnt6 As TextBox
+    Friend WithEvents CEnt5 As TextBox
+    Friend WithEvents CEntra8 As TextBox
+    Friend WithEvents CEntra7 As TextBox
+    Friend WithEvents CEntra6 As TextBox
+    Friend WithEvents CEntra5 As TextBox
+    Friend WithEvents CantidadS8 As TextBox
+    Friend WithEvents CantidadS7 As TextBox
+    Friend WithEvents CantidadS6 As TextBox
+    Friend WithEvents CantidadS5 As TextBox
+    Friend WithEvents Producto8 As TextBox
+    Friend WithEvents Producto7 As TextBox
+    Friend WithEvents Producto6 As TextBox
+    Friend WithEvents Producto5 As TextBox
+    Friend WithEvents ID8 As TextBox
+    Friend WithEvents ID7 As TextBox
+    Friend WithEvents ID6 As TextBox
+    Friend WithEvents ID5 As TextBox
+    Friend WithEvents LA9 As Label
+    Friend WithEvents LA10 As Label
+    Friend WithEvents IDS10 As Label
+    Friend WithEvents IDS9 As Label
+    Friend WithEvents LA11 As Label
+    Friend WithEvents IDS11 As Label
+    Friend WithEvents LA12 As Label
+    Friend WithEvents IDS12 As Label
+    Friend WithEvents LUM12 As Label
+    Friend WithEvents LUM11 As Label
+    Friend WithEvents LUM9 As Label
+    Friend WithEvents LUM10 As Label
     Friend WithEvents LI3 As Label
-    Friend WithEvents Label41 As Label
-    Friend WithEvents Label42 As Label
-    Friend WithEvents TextBox29 As TextBox
-    Friend WithEvents Button5 As Button
-    Friend WithEvents TextBox30 As TextBox
-    Friend WithEvents Panel4 As Panel
-    Friend WithEvents Label43 As Label
-    Friend WithEvents Label44 As Label
-    Friend WithEvents TextBox31 As TextBox
-    Friend WithEvents Button6 As Button
-    Friend WithEvents TextBox32 As TextBox
-    Friend WithEvents Panel5 As Panel
-    Friend WithEvents Label45 As Label
-    Friend WithEvents Label46 As Label
-    Friend WithEvents TextBox33 As TextBox
-    Friend WithEvents Button7 As Button
-    Friend WithEvents TextBox34 As TextBox
-    Friend WithEvents Panel6 As Panel
-    Friend WithEvents Label47 As Label
-    Friend WithEvents Label48 As Label
-    Friend WithEvents TextBox35 As TextBox
-    Friend WithEvents Button8 As Button
-    Friend WithEvents TextBox36 As TextBox
+    Friend WithEvents IDP12 As Label
+    Friend WithEvents LAP12 As Label
+    Friend WithEvents TxtAP12 As TextBox
+    Friend WithEvents BB12 As Button
+    Friend WithEvents TxtObser12 As TextBox
+    Friend WithEvents P9 As Panel
+    Friend WithEvents IDP11 As Label
+    Friend WithEvents LAP11 As Label
+    Friend WithEvents TxtAP11 As TextBox
+    Friend WithEvents BB11 As Button
+    Friend WithEvents TxtObser11 As TextBox
+    Friend WithEvents P8 As Panel
+    Friend WithEvents IDP10 As Label
+    Friend WithEvents LAP10 As Label
+    Friend WithEvents TxtAP10 As TextBox
+    Friend WithEvents BB10 As Button
+    Friend WithEvents TxtObser10 As TextBox
+    Friend WithEvents P7 As Panel
+    Friend WithEvents IDP9 As Label
+    Friend WithEvents LAP9 As Label
+    Friend WithEvents TxtAP9 As TextBox
+    Friend WithEvents BB9 As Button
+    Friend WithEvents TxtObser9 As TextBox
     Friend WithEvents LObserv3 As Label
     Friend WithEvents LCE3 As Label
     Friend WithEvents LCEn3 As Label
     Friend WithEvents LCS3 As Label
     Friend WithEvents LPr3 As Label
-    Friend WithEvents ID3 As Label
-    Friend WithEvents TextBox37 As TextBox
-    Friend WithEvents TextBox38 As TextBox
-    Friend WithEvents TextBox39 As TextBox
-    Friend WithEvents TextBox40 As TextBox
-    Friend WithEvents TextBox41 As TextBox
-    Friend WithEvents TextBox42 As TextBox
-    Friend WithEvents TextBox43 As TextBox
-    Friend WithEvents TextBox44 As TextBox
-    Friend WithEvents TextBox45 As TextBox
-    Friend WithEvents TextBox46 As TextBox
-    Friend WithEvents TextBox47 As TextBox
-    Friend WithEvents TextBox48 As TextBox
-    Friend WithEvents TextBox49 As TextBox
-    Friend WithEvents TextBox50 As TextBox
-    Friend WithEvents TextBox51 As TextBox
-    Friend WithEvents TextBox52 As TextBox
-    Friend WithEvents TextBox53 As TextBox
-    Friend WithEvents TextBox54 As TextBox
-    Friend WithEvents TextBox55 As TextBox
-    Friend WithEvents TextBox56 As TextBox
+    Friend WithEvents LID3 As Label
+    Friend WithEvents CEnt12 As TextBox
+    Friend WithEvents CEnt11 As TextBox
+    Friend WithEvents CEnt10 As TextBox
+    Friend WithEvents CEnt9 As TextBox
+    Friend WithEvents CEntra12 As TextBox
+    Friend WithEvents CEntra11 As TextBox
+    Friend WithEvents CEntra10 As TextBox
+    Friend WithEvents CEntra9 As TextBox
+    Friend WithEvents CantidadS12 As TextBox
+    Friend WithEvents CantidadS11 As TextBox
+    Friend WithEvents CantidadS10 As TextBox
+    Friend WithEvents CantidadS9 As TextBox
+    Friend WithEvents Producto12 As TextBox
+    Friend WithEvents Producto11 As TextBox
+    Friend WithEvents Producto10 As TextBox
+    Friend WithEvents Producto9 As TextBox
+    Friend WithEvents ID12 As TextBox
+    Friend WithEvents ID11 As TextBox
+    Friend WithEvents ID10 As TextBox
+    Friend WithEvents ID9 As TextBox
     Friend WithEvents TP4 As TabPage
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Label6 As Label
-    Friend WithEvents Label7 As Label
-    Friend WithEvents Label8 As Label
-    Friend WithEvents Label9 As Label
-    Friend WithEvents Label10 As Label
-    Friend WithEvents Label11 As Label
-    Friend WithEvents Label12 As Label
+    Friend WithEvents LA13 As Label
+    Friend WithEvents LA14 As Label
+    Friend WithEvents IDS14 As Label
+    Friend WithEvents IDS13 As Label
+    Friend WithEvents LA15 As Label
+    Friend WithEvents IDS15 As Label
+    Friend WithEvents LA16 As Label
+    Friend WithEvents IDS16 As Label
+    Friend WithEvents LUM16 As Label
+    Friend WithEvents LUM15 As Label
+    Friend WithEvents LUM13 As Label
+    Friend WithEvents LUM14 As Label
     Friend WithEvents LI4 As Label
-    Friend WithEvents Label14 As Label
-    Friend WithEvents Label15 As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Button1 As Button
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents Label16 As Label
-    Friend WithEvents Label17 As Label
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents Button2 As Button
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents Panel2 As Panel
-    Friend WithEvents Label18 As Label
-    Friend WithEvents Label19 As Label
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents Button3 As Button
-    Friend WithEvents TextBox6 As TextBox
-    Friend WithEvents Panel3 As Panel
-    Friend WithEvents Label20 As Label
-    Friend WithEvents Label21 As Label
-    Friend WithEvents TextBox7 As TextBox
-    Friend WithEvents Button4 As Button
-    Friend WithEvents TextBox8 As TextBox
+    Friend WithEvents IDP16 As Label
+    Friend WithEvents LAP16 As Label
+    Friend WithEvents TxtAP16 As TextBox
+    Friend WithEvents BB16 As Button
+    Friend WithEvents TxtObser16 As TextBox
+    Friend WithEvents P12 As Panel
+    Friend WithEvents IDP15 As Label
+    Friend WithEvents LAP15 As Label
+    Friend WithEvents TxtAP15 As TextBox
+    Friend WithEvents BB15 As Button
+    Friend WithEvents TxtObser15 As TextBox
+    Friend WithEvents P11 As Panel
+    Friend WithEvents IDP14 As Label
+    Friend WithEvents LAP14 As Label
+    Friend WithEvents TxtAP14 As TextBox
+    Friend WithEvents BB14 As Button
+    Friend WithEvents TxtObser14 As TextBox
+    Friend WithEvents P10 As Panel
+    Friend WithEvents IDP13 As Label
+    Friend WithEvents LAP13 As Label
+    Friend WithEvents TxtAP13 As TextBox
+    Friend WithEvents BB13 As Button
+    Friend WithEvents TxtObser13 As TextBox
     Friend WithEvents LObserv4 As Label
     Friend WithEvents LCE4 As Label
     Friend WithEvents LCEn4 As Label
     Friend WithEvents LCS4 As Label
     Friend WithEvents LPr4 As Label
-    Friend WithEvents ID4 As Label
-    Friend WithEvents TextBox9 As TextBox
-    Friend WithEvents TextBox10 As TextBox
-    Friend WithEvents TextBox11 As TextBox
-    Friend WithEvents TextBox12 As TextBox
-    Friend WithEvents TextBox13 As TextBox
-    Friend WithEvents TextBox14 As TextBox
-    Friend WithEvents TextBox15 As TextBox
-    Friend WithEvents TextBox16 As TextBox
-    Friend WithEvents TextBox17 As TextBox
-    Friend WithEvents TextBox18 As TextBox
-    Friend WithEvents TextBox19 As TextBox
-    Friend WithEvents LCS As TextBox
-    Friend WithEvents TextBox21 As TextBox
-    Friend WithEvents TextBox22 As TextBox
-    Friend WithEvents TextBox23 As TextBox
-    Friend WithEvents TextBox24 As TextBox
-    Friend WithEvents TextBox25 As TextBox
-    Friend WithEvents TextBox26 As TextBox
-    Friend WithEvents TextBox27 As TextBox
-    Friend WithEvents TextBox28 As TextBox
-
+    Friend WithEvents LID4 As Label
+    Friend WithEvents CEnt16 As TextBox
+    Friend WithEvents CEnt15 As TextBox
+    Friend WithEvents CEnt14 As TextBox
+    Friend WithEvents CEnt13 As TextBox
+    Friend WithEvents CEntra16 As TextBox
+    Friend WithEvents CEntra15 As TextBox
+    Friend WithEvents CEntra14 As TextBox
+    Friend WithEvents CEntra13 As TextBox
+    Friend WithEvents CantidadS16 As TextBox
+    Friend WithEvents CantidadS15 As TextBox
+    Friend WithEvents CantidadS14 As TextBox
+    Friend WithEvents CantidadS13 As TextBox
+    Friend WithEvents Producto16 As TextBox
+    Friend WithEvents Producto15 As TextBox
+    Friend WithEvents Producto14 As TextBox
+    Friend WithEvents Producto13 As TextBox
+    Friend WithEvents ID16 As TextBox
+    Friend WithEvents ID15 As TextBox
+    Friend WithEvents ID14 As TextBox
+    Friend WithEvents ID13 As TextBox
+    Friend WithEvents LFinalizar As Label
+    Friend WithEvents BTerminar As Button
+    Friend WithEvents BGuardar As Button
+    Friend WithEvents POC As Panel
+    Friend WithEvents TxtBOC As TextBox
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents BBOC1 As Button
+    Friend WithEvents DTF2 As DateTimePicker
+    Friend WithEvents DTF1 As DateTimePicker
+    Friend WithEvents LBOD As Label
+    Friend WithEvents LBusqueda As Label
+    Friend WithEvents DGOCA As DataGridView
+    Friend WithEvents ID As DataGridViewLinkColumn
+    Friend WithEvents COC As DataGridViewTextBoxColumn
+    Friend WithEvents COrden As DataGridViewTextBoxColumn
+    Friend WithEvents Codis As DataGridViewTextBoxColumn
+    Friend WithEvents Proveedor As DataGridViewTextBoxColumn
+    Friend WithEvents PS As DataGridViewTextBoxColumn
+    Friend WithEvents IDOC As Label
+    Friend WithEvents COCS As Label
+    Friend WithEvents CodS As Label
+    Friend WithEvents LUsuario As Label
 End Class
