@@ -12,14 +12,14 @@
         End Set
     End Property
 
-    'Public Property GL_ID
-    '    Get
-    '        Return L_ID
-    '    End Get
-    '    Set(value)
-    '        L_ID = value
-    '    End Set
-    'End Property
+    Public Property GL_ID
+        Get
+            Return L_ID
+        End Get
+        Set(value)
+            L_ID = value
+        End Set
+    End Property
 
     Public Property GCEnt
         Get
@@ -39,23 +39,23 @@
         End Set
     End Property
 
-    'Public Property GCOrdenC
-    '    Get
-    '        Return COrdenC
-    '    End Get
-    '    Set(value)
-    '        COrdenC = value
-    '    End Set
-    'End Property
+    Public Property GCOrdenC
+        Get
+            Return COrdenC
+        End Get
+        Set(value)
+            COrdenC = value
+        End Set
+    End Property
 
-    'Public Property GLUsuario
-    '    Get
-    '        Return LUsuario
-    '    End Get
-    '    Set(value)
-    '        LUsuario = value
-    '    End Set
-    'End Property
+    Public Property GLUsuario
+        Get
+            Return LUsuario
+        End Get
+        Set(value)
+            LUsuario = value
+        End Set
+    End Property
 
     Public Property GCOrdenT
         Get

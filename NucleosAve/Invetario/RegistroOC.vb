@@ -27,9 +27,9 @@ Public Class RegistroOC
             GDatos1.Parameters.AddWithValue("@PUUSD", 0)
             GDatos1.Parameters.AddWithValue("@FUSD", 0)
             GDatos1.Parameters.AddWithValue("@TUSD", 0)
-            GDatos1.Parameters.AddWithValue("@Id_Empleado", 0) 'dts.GL_ID)
-            GDatos1.Parameters.AddWithValue("@Empleado", 0) 'dts.GLUsuario)
-            GDatos1.Parameters.AddWithValue("@CodiS", 0) 'dts.GCOrdenC)
+            GDatos1.Parameters.AddWithValue("@Id_Empleado", dts.GL_ID)
+            GDatos1.Parameters.AddWithValue("@Empleado", dts.GLUsuario)
+            GDatos1.Parameters.AddWithValue("@CodiS", dts.GCOrdenC)
 
 
             If GDatos1.ExecuteNonQuery Then

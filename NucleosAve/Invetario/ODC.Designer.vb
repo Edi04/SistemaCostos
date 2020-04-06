@@ -22,10 +22,10 @@ Partial Class ODC
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.BBOCompra = New System.Windows.Forms.Button()
         Me.OCompra = New System.Windows.Forms.TextBox()
         Me.BMinimizar = New System.Windows.Forms.Button()
@@ -371,6 +371,13 @@ Partial Class ODC
         Me.COCS = New System.Windows.Forms.Label()
         Me.CodS = New System.Windows.Forms.Label()
         Me.LUsuario = New System.Windows.Forms.Label()
+        Me.PMaterial = New System.Windows.Forms.Panel()
+        Me.TxtBMaterial = New System.Windows.Forms.TextBox()
+        Me.DGProducto = New System.Windows.Forms.DataGridView()
+        Me.LDGP = New System.Windows.Forms.Label()
+        Me.IDPP = New System.Windows.Forms.DataGridViewLinkColumn()
+        Me.Produto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CodigoP = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Productos1.SuspendLayout()
         Me.TP1.SuspendLayout()
         Me.TP2.SuspendLayout()
@@ -380,6 +387,8 @@ Partial Class ODC
         Me.POC.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DGOCA, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PMaterial.SuspendLayout()
+        CType(Me.DGProducto, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BBOCompra
@@ -4312,8 +4321,8 @@ Partial Class ODC
         'ID
         '
         Me.ID.DataPropertyName = "id_orden"
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.ID.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.ID.DefaultCellStyle = DataGridViewCellStyle9
         Me.ID.HeaderText = "ID"
         Me.ID.Name = "ID"
         Me.ID.ReadOnly = True
@@ -4322,8 +4331,8 @@ Partial Class ODC
         'COC
         '
         Me.COC.DataPropertyName = "codigo"
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.COC.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.COC.DefaultCellStyle = DataGridViewCellStyle10
         Me.COC.HeaderText = "Codigo"
         Me.COC.Name = "COC"
         Me.COC.ReadOnly = True
@@ -4332,8 +4341,8 @@ Partial Class ODC
         'COrden
         '
         Me.COrden.DataPropertyName = "purchase_order"
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.COrden.DefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.COrden.DefaultCellStyle = DataGridViewCellStyle11
         Me.COrden.HeaderText = "Orden de Compra"
         Me.COrden.Name = "COrden"
         Me.COrden.ReadOnly = True
@@ -4357,8 +4366,8 @@ Partial Class ODC
         'PS
         '
         Me.PS.DataPropertyName = "Productos Solicitados"
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.PS.DefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.PS.DefaultCellStyle = DataGridViewCellStyle12
         Me.PS.HeaderText = "Productos Solicitados"
         Me.PS.Name = "PS"
         Me.PS.ReadOnly = True
@@ -4399,12 +4408,82 @@ Partial Class ODC
         Me.LUsuario.TabIndex = 0
         Me.LUsuario.Visible = False
         '
+        'PMaterial
+        '
+        Me.PMaterial.BackColor = System.Drawing.Color.Transparent
+        Me.PMaterial.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PMaterial.Controls.Add(Me.TxtBMaterial)
+        Me.PMaterial.Controls.Add(Me.DGProducto)
+        Me.PMaterial.Location = New System.Drawing.Point(377, 23)
+        Me.PMaterial.Name = "PMaterial"
+        Me.PMaterial.Size = New System.Drawing.Size(307, 212)
+        Me.PMaterial.TabIndex = 29
+        Me.PMaterial.Visible = False
+        '
+        'TxtBMaterial
+        '
+        Me.TxtBMaterial.BackColor = System.Drawing.Color.Gainsboro
+        Me.TxtBMaterial.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
+        Me.TxtBMaterial.Location = New System.Drawing.Point(9, 10)
+        Me.TxtBMaterial.Multiline = True
+        Me.TxtBMaterial.Name = "TxtBMaterial"
+        Me.TxtBMaterial.Size = New System.Drawing.Size(288, 31)
+        Me.TxtBMaterial.TabIndex = 1
+        '
+        'DGProducto
+        '
+        Me.DGProducto.AllowUserToAddRows = False
+        Me.DGProducto.AllowUserToDeleteRows = False
+        Me.DGProducto.BackgroundColor = System.Drawing.Color.SteelBlue
+        Me.DGProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGProducto.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IDPP, Me.Produto, Me.CodigoP})
+        Me.DGProducto.Location = New System.Drawing.Point(3, 46)
+        Me.DGProducto.Name = "DGProducto"
+        Me.DGProducto.ReadOnly = True
+        Me.DGProducto.Size = New System.Drawing.Size(301, 162)
+        Me.DGProducto.TabIndex = 2
+        '
+        'LDGP
+        '
+        Me.LDGP.AutoSize = True
+        Me.LDGP.Location = New System.Drawing.Point(690, 33)
+        Me.LDGP.Name = "LDGP"
+        Me.LDGP.Size = New System.Drawing.Size(0, 13)
+        Me.LDGP.TabIndex = 30
+        Me.LDGP.Visible = False
+        '
+        'IDPP
+        '
+        Me.IDPP.DataPropertyName = "Id_Producto"
+        Me.IDPP.HeaderText = "ID"
+        Me.IDPP.Name = "IDPP"
+        Me.IDPP.ReadOnly = True
+        Me.IDPP.Width = 40
+        '
+        'Produto
+        '
+        Me.Produto.DataPropertyName = "Nombre_Producto"
+        Me.Produto.HeaderText = "Producto"
+        Me.Produto.Name = "Produto"
+        Me.Produto.ReadOnly = True
+        Me.Produto.Width = 250
+        '
+        'CodigoP
+        '
+        Me.CodigoP.DataPropertyName = "Clave_Producto"
+        Me.CodigoP.HeaderText = "Codigo"
+        Me.CodigoP.Name = "CodigoP"
+        Me.CodigoP.ReadOnly = True
+        Me.CodigoP.Visible = False
+        '
         'ODC
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.NucleosAve.My.Resources.Resources.Fondo
         Me.ClientSize = New System.Drawing.Size(987, 617)
+        Me.Controls.Add(Me.PMaterial)
+        Me.Controls.Add(Me.LDGP)
         Me.Controls.Add(Me.LUsuario)
         Me.Controls.Add(Me.CodS)
         Me.Controls.Add(Me.COCS)
@@ -4440,6 +4519,9 @@ Partial Class ODC
         Me.POC.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         CType(Me.DGOCA, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PMaterial.ResumeLayout(False)
+        Me.PMaterial.PerformLayout()
+        CType(Me.DGProducto, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -4791,4 +4873,11 @@ Partial Class ODC
     Friend WithEvents COCS As Label
     Friend WithEvents CodS As Label
     Friend WithEvents LUsuario As Label
+    Friend WithEvents PMaterial As Panel
+    Friend WithEvents TxtBMaterial As TextBox
+    Friend WithEvents DGProducto As DataGridView
+    Friend WithEvents LDGP As Label
+    Friend WithEvents IDPP As DataGridViewLinkColumn
+    Friend WithEvents Produto As DataGridViewTextBoxColumn
+    Friend WithEvents CodigoP As DataGridViewTextBoxColumn
 End Class

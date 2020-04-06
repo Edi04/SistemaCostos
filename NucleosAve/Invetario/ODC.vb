@@ -29,19 +29,19 @@ Public Class ODC
 
     Private Sub BBOC1_Click(sender As Object, e As EventArgs) Handles BBOC1.Click
         Dim Consulta As String = "SELECT OC.id_orden, OC.codigo, OC.purchase_order, OC.CodiS, PR.nombre, COUNT(OD.descripcion) AS 'Productos Solicitados'
-                                  FROM TB_Ordenes_Compra AS OC
-                                       INNER JOIN Tb_Proveedores AS Pr ON Pr.id_p = OC.id_pro
-                                       INNER JOIN TB_Ordenes_Detalle AS OD ON OC.codigo = OD.codigo
-                                  WHERE OC.estado ='Activo' AND
-                                        OC.CodiS <> ''  AND
-                                        OD.descripcion NOT LIKE '%SILICIO%' AND
-                                        OD.descripcion NOT LIKE '%GRAIN ORIENTED%' AND
-                                        OD.descripcion NOT LIKE '%STEEL%' AND
-                                        OD.descripcion NOT LIKE '%GRADE%' AND
-                                        OD.descripcion NOT LIKE '%HERST%' AND
-                                        OD.um NOT LIKE '%Servicio%' AND
-                                        OC.fecha2_nota BETWEEN @Fech1 and @Fech2
-                                  GROUP BY OC.id_orden, OC.codigo, OC.purchase_order, OC.CodiS, Pr.nombre"
+                                          FROM TB_Ordenes_Compra AS OC
+                                               INNER JOIN Tb_Proveedores AS Pr ON Pr.id_p = OC.id_pro
+                                               INNER JOIN TB_Ordenes_Detalle AS OD ON OC.codigo = OD.codigo
+                                          WHERE OC.estado ='Activo' AND
+                                                OC.CodiS <> ''  AND
+                                                OD.descripcion NOT LIKE '%SILICIO%' AND
+                                                OD.descripcion NOT LIKE '%GRAIN ORIENTED%' AND
+                                                OD.descripcion NOT LIKE '%STEEL%' AND
+                                                OD.descripcion NOT LIKE '%GRADE%' AND
+                                                OD.descripcion NOT LIKE '%HERST%' AND
+                                                OD.um NOT LIKE '%Servicio%' AND
+                                                OC.fecha2_nota BETWEEN @Fech1 and @Fech2
+                                          GROUP BY OC.id_orden, OC.codigo, OC.purchase_order, OC.CodiS, Pr.nombre"
 
         Dim cmd As New SqlCommand(Consulta, Conex)
         cmd.Parameters.AddWithValue("@Fech1", DTF1.Value)
@@ -85,476 +85,957 @@ Public Class ODC
         BGuardar.Visible = True
         BTerminar.Visible = True
         LFinalizar.Visible = True
-        CodS.Visible = True
     End Sub
 
-    Private Sub BGuardar_Click(sender As Object, e As EventArgs) Handles BGuardar.Click
-        If CEnt1.Text = "0" Then
-        Else
+    '    '    Private Sub BGuardar_Click(sender As Object, e As EventArgs) Handles BGuardar.Click
+    '    '        If CEnt1.Text = "0" Then
+    '    '        Else
+    '    '            MsgBox(CodS.Text)
+    '    '            Try
+    '    '                Dim Funcion As New RegistroOC
+    '    '                Dim Datos As New CRegistroOC
+
+    '    '                Datos.GID = IDP1.Text
+    '    '                Datos.GCEnt = CEnt1.Text
+    '    '                Datos.GProducto = TxtAP1.Text
+    '    '                Datos.GL_ID = Index.L_ID.Text
+    '    '                Datos.GLUsuario = LUsuario.Text
+    '    '                Datos.GCOrdenT = COCS.Text
+    '    '                Datos.GCOrdenC = CodS.Text
+
+    '    '                If Funcion.R(Datos) Then
+    '    '                    CEnt1.Text = "0"
+    '    '                End If
+
+    '    '            Catch ex As Exception
+    '    '                MsgBox(ex.Message)
+    '    '            End Try
+
+    '    '        End If
+
+    '    '        If CEnt2.Text = "0" Then
+    '    '        Else
+
+    '    '            Try
+    '    '                Dim Funcion As New RegistroOC
+    '    '                Dim Datos As New CRegistroOC
+
+    '    '                Datos.GID = IDP2.Text
+    '    '                Datos.GCEnt = CEnt2.Text
+    '    '                Datos.GProducto = TxtAP2.Text
+    '    '                Datos.GL_ID = Index.L_ID.Text
+    '    '                Datos.GLUsuario = LUsuario.Text
+    '    '                Datos.GCOrdenT = COCS.Text
+    '    '                Datos.GCOrdenC = CodS.Text
+
+    '    '                If Funcion.R(Datos) Then
+    '    '                    CEnt2.Text = "0"
+    '    '                End If
+
+    '    '            Catch ex As Exception
+    '    '                MsgBox(ex.Message)
+    '    '            End Try
+
+    '    '        End If
+
+    '    '        If CEnt3.Text = "0" Then
+    '    '        Else
+
+    '    '            Try
+    '    '                Dim Funcion As New RegistroOC
+    '    '                Dim Datos As New CRegistroOC
+
+    '    '                Datos.GID = IDP3.Text
+    '    '                Datos.GCEnt = CEnt3.Text
+    '    '                Datos.GProducto = TxtAP3.Text
+    '    '                Datos.GL_ID = Index.L_ID.Text
+    '    '                Datos.GLUsuario = LUsuario.Text
+    '    '                Datos.GCOrdenT = COCS.Text
+    '    '                Datos.GCOrdenC = CodS.Text
+
+    '    '                If Funcion.R(Datos) Then
+    '    '                    CEnt3.Text = "0"
+    '    '                End If
+
+    '    '            Catch ex As Exception
+    '    '                MsgBox(ex.Message)
+    '    '            End Try
+
+    '    '        End If
+
+    '    '        If CEnt4.Text = "0" Then
+    '    '        Else
+
+    '    '            Try
+    '    '                Dim Funcion As New RegistroOC
+    '    '                Dim Datos As New CRegistroOC
+
+    '    '                Datos.GID = IDP4.Text
+    '    '                Datos.GCEnt = CEnt4.Text
+    '    '                Datos.GProducto = TxtAP4.Text
+    '    '                Datos.GL_ID = Index.L_ID.Text
+    '    '                Datos.GLUsuario = LUsuario.Text
+    '    '                Datos.GCOrdenT = COCS.Text
+    '    '                Datos.GCOrdenC = CodS.Text
+
+    '    '                If Funcion.R(Datos) Then
+    '    '                    CEnt4.Text = "0"
+    '    '                End If
+
+    '    '            Catch ex As Exception
+    '    '                MsgBox(ex.Message)
+    '    '            End Try
+
+    '    '        End If
+
+    '    '        If CEnt5.Text = "0" Then
+    '    '        Else
+    '    '            Try
 
-            Try
-                Dim Funcion As New RegistroOC
-                Dim Datos As New CRegistroOC
-
-                Datos.GID = IDP1.Text
-                Datos.GCEnt = CEnt1.Text
-                Datos.GProducto = TxtAP1.Text
-                'Datos.GL_ID = Index.L_ID.Text
-                'Datos.GLUsuario = LUsuario.Text
-                Datos.GCOrdenT = CodS.Text
-                'Datos.GCOrdenC = COCS.Text
-
-                If Funcion.R(Datos) Then
-                    CEnt1.Text = "0"
-                End If
+    '    '                Dim Funcion As New RegistroOC
+    '    '                Dim Datos As New CRegistroOC
 
-            Catch ex As Exception
-                MsgBox(ex.Message)
-            End Try
+    '    '                Datos.GID = IDP5.Text
+    '    '                Datos.GCEnt = CEnt5.Text
+    '    '                Datos.GProducto = TxtAP5.Text
+    '    '                Datos.GL_ID = Index.L_ID.Text
+    '    '                Datos.GLUsuario = LUsuario.Text
+    '    '                Datos.GCOrdenT = COCS.Text
+    '    '                Datos.GCOrdenC = CodS.Text
+
+    '    '                If Funcion.R(Datos) Then
+    '    '                    CEnt5.Text = "0"
+    '    '                End If
+
+    '    '            Catch ex As Exception
+    '    '                MsgBox(ex.Message)
+    '    '            End Try
+
+    '    '        End If
+
+    '    '        If CEnt6.Text = "0" Then
+    '    '        Else
+    '    '            Try
+
+    '    '                Dim Funcion As New RegistroOC
+    '    '                Dim Datos As New CRegistroOC
 
-        End If
+    '    '                Datos.GID = IDP6.Text
+    '    '                Datos.GCEnt = CEnt6.Text
+    '    '                Datos.GProducto = TxtAP6.Text
+    '    '                Datos.GL_ID = Index.L_ID.Text
+    '    '                Datos.GLUsuario = LUsuario.Text
+    '    '                Datos.GCOrdenT = COCS.Text
+    '    '                Datos.GCOrdenC = CodS.Text
+
+
+    '    '                If Funcion.R(Datos) Then
+    '    '                    CEnt6.Text = "0"
+    '    '                End If
+
+    '    '            Catch ex As Exception
+    '    '                MsgBox(ex.Message)
+    '    '            End Try
+
+    '    '        End If
+
+    '    '        If CEnt7.Text = "0" Then
+    '    '        Else
+    '    '            Try
 
-        'If CEnt2.Text = "0" Then
-        'Else
+    '    '                Dim Funcion As New RegistroOC
+    '    '                Dim Datos As New CRegistroOC
+
+    '    '                Datos.GID = IDP7.Text
+    '    '                Datos.GCEnt = CEnt7.Text
+    '    '                Datos.GProducto = TxtAP7.Text
+    '    '                Datos.GL_ID = Index.L_ID.Text
+    '    '                Datos.GLUsuario = LUsuario.Text
+    '    '                Datos.GCOrdenT = COCS.Text
+    '    '                Datos.GCOrdenC = CodS.Text
+
+    '    '                If Funcion.R(Datos) Then
+    '    '                    CEnt7.Text = "0"
+    '    '                End If
+
+    '    '            Catch ex As Exception
+    '    '                MsgBox(ex.Message)
+    '    '            End Try
+
+    '    '        End If
+
+    '    '        If CEnt8.Text = "0" Then
+    '    '        Else
+    '    '            Try
 
-        '    Try
-        '        Dim Funcion As New RegistroOC
-        '        Dim Datos As New CRegistroOC
-
-        '        Datos.GID = ID2.Text
-        '        Datos.GCEnt = CEnt2.Text
-        '        Datos.GProducto = Producto2.Text
-        '        Datos.GL_ID = Index.L_ID.Text
-        '        Datos.GLUsuario = LUsuario.Text
-
-        '        If Funcion.R(Datos) Then
-        '            CEnt2.Text = "0"
-        '        End If
-
-        '    Catch ex As Exception
-        '        MsgBox(ex.Message)
-        '    End Try
-
-        'End If
-
-        'If CEnt3.Text = "0" Then
-        'Else
-
-        '    Try
-        '        Dim Funcion As New RegistroOC
-        '        Dim Datos As New CRegistroOC
-
-        '        Datos.GID = ID3.Text
-        '        Datos.GCEnt = CEnt3.Text
-        '        Datos.GProducto = Producto3.Text
-        '        Datos.GL_ID = Index.L_ID.Text
-        '        Datos.GLUsuario = LUsuario.Text
-
-        '        If Funcion.R(Datos) Then
-        '            CEnt3.Text = "0"
-        '        End If
-
-        '    Catch ex As Exception
-        '        MsgBox(ex.Message)
-        '    End Try
-
-        'End If
-
-        'If CEnt4.Text = "0" Then
-        'Else
-
-        '    Try
-        '        Dim Funcion As New RegistroOC
-        '        Dim Datos As New CRegistroOC
-
-        '        Datos.GID = ID4.Text
-        '        Datos.GCEnt = CEnt4.Text
-        '        Datos.GProducto = Producto4.Text
-        '        Datos.GL_ID = Index.L_ID.Text
-        '        Datos.GLUsuario = LUsuario.Text
-
-        '        If Funcion.R(Datos) Then
-        '            CEnt4.Text = "0"
-        '        End If
-
-        '    Catch ex As Exception
-        '        MsgBox(ex.Message)
-        '    End Try
-
-        'End If
-
-        'If CEnt5.Text = "0" Then
-        'Else
-        '    Try
-
-        '        Dim Funcion As New RegistroOC
-        '        Dim Datos As New CRegistroOC
-
-        '        Datos.GID = ID5.Text
-        '        Datos.GCEnt = CEnt5.Text
-        '        Datos.GProducto = Producto5.Text
-        '        Datos.GL_ID = Index.L_ID.Text
-        '        Datos.GLUsuario = LUsuario.Text
-
-        '        If Funcion.R(Datos) Then
-        '            CEnt5.Text = "0"
-        '        End If
-
-        '    Catch ex As Exception
-        '        MsgBox(ex.Message)
-        '    End Try
-
-        'End If
-
-        'If CEnt6.Text = "0" Then
-        'Else
-        '    Try
-
-        '        Dim Funcion As New RegistroOC
-        '        Dim Datos As New CRegistroOC
-
-        '        Datos.GID = ID6.Text
-        '        Datos.GCEnt = CEnt6.Text
-        '        Datos.GProducto = Producto6.Text
-        '        Datos.GL_ID = Index.L_ID.Text
-        '        Datos.GLUsuario = LUsuario.Text
-
-
-        '        If Funcion.R(Datos) Then
-        '            CEnt6.Text = "0"
-        '        End If
-
-        '    Catch ex As Exception
-        '        MsgBox(ex.Message)
-        '    End Try
-
-        'End If
-
-        'If CEnt7.Text = "0" Then
-        'Else
-        '    Try
-
-        '        Dim Funcion As New RegistroOC
-        '        Dim Datos As New CRegistroOC
-
-        '        Datos.GID = ID7.Text
-        '        Datos.GCEnt = CEnt7.Text
-        '        Datos.GProducto = Producto7.Text
-        '        Datos.GL_ID = Index.L_ID.Text
-        '        Datos.GLUsuario = LUsuario.Text
-
-        '        If Funcion.R(Datos) Then
-        '            CEnt7.Text = "0"
-        '        End If
-
-        '    Catch ex As Exception
-        '        MsgBox(ex.Message)
-        '    End Try
-
-        'End If
-
-        'If CEnt8.Text = "0" Then
-        'Else
-        '    Try
-
-        '        Dim Funcion As New RegistroOC
-        '        Dim Datos As New CRegistroOC
-
-        '        Datos.GID = ID8.Text
-        '        Datos.GCEnt = CEnt8.Text
-        '        Datos.GProducto = Producto8.Text
-        '        Datos.GL_ID = Index.L_ID.Text
-        '        Datos.GLUsuario = LUsuario.Text
-
-        '        If Funcion.R(Datos) Then
-        '            CEnt8.Text = "0"
-        '        End If
-
-        '    Catch ex As Exception
-        '        MsgBox(ex.Message)
-        '    End Try
-
-        'End If
-
-        'If CEnt9.Text = "0" Then
-        'Else
-        '    Try
-
-        '        Dim Funcion As New RegistroOC
-        '        Dim Datos As New CRegistroOC
-
-        '        Datos.GID = ID9.Text
-        '        Datos.GCEnt = CEnt9.Text
-        '        Datos.GProducto = Producto9.Text
-        '        Datos.GL_ID = Index.L_ID.Text
-        '        Datos.GLUsuario = LUsuario.Text
-
-        '        If Funcion.R(Datos) Then
-        '            CEnt9.Text = "0"
-        '        End If
-
-        '    Catch ex As Exception
-        '        MsgBox(ex.Message)
-        '    End Try
-
-        'End If
-
-        'If CEnt10.Text = "0" Then
-        'Else
-
-        '    Try
-        '        Dim Funcion As New RegistroOC
-        '        Dim Datos As New CRegistroOC
-
-        '        Datos.GID = ID10.Text
-        '        Datos.GCEnt = CEnt10.Text
-        '        Datos.GProducto = Producto10.Text
-        '        Datos.GL_ID = Index.L_ID.Text
-        '        Datos.GLUsuario = LUsuario.Text
-
-        '        If Funcion.R(Datos) Then
-        '            CEnt10.Text = "0"
-        '        End If
-
-        '    Catch ex As Exception
-        '        MsgBox(ex.Message)
-        '    End Try
-
-        'End If
-
-        'If CEnt11.Text = "0" Then
-        'Else
-
-        '    Try
-        '        Dim Funcion As New RegistroOC
-        '        Dim Datos As New CRegistroOC
-
-        '        Datos.GID = ID11.Text
-        '        Datos.GCEnt = CEnt11.Text
-        '        Datos.GProducto = Producto11.Text
-        '        Datos.GL_ID = Index.L_ID.Text
-        '        Datos.GLUsuario = LUsuario.Text
-
-        '        If Funcion.R(Datos) Then
-        '            CEnt11.Text = "0"
-        '        End If
-
-        '    Catch ex As Exception
-        '        MsgBox(ex.Message)
-        '    End Try
-
-        'End If
-
-        'If CEnt12.Text = "0" Then
-        'Else
-
-        '    Try
-        '        Dim Funcion As New RegistroOC
-        '        Dim Datos As New CRegistroOC
-
-        '        Datos.GID = ID12.Text
-        '        Datos.GCEnt = CEnt12.Text
-        '        Datos.GProducto = Producto12.Text
-        '        Datos.GL_ID = Index.L_ID.Text
-        '        Datos.GLUsuario = LUsuario.Text
-
-        '        If Funcion.R(Datos) Then
-        '            CEnt12.Text = "0"
-        '        End If
-
-        '    Catch ex As Exception
-        '        MsgBox(ex.Message)
-        '    End Try
-
-        'End If
-
-        'If CEnt13.Text = "0" Then
-        'Else
-
-        '    Try
-        '        Dim Funcion As New RegistroOC
-        '        Dim Datos As New CRegistroOC
-
-        '        Datos.GID = ID13.Text
-        '        Datos.GCEnt = CEnt13.Text
-        '        Datos.GProducto = Producto13.Text
-        '        Datos.GL_ID = Index.L_ID.Text
-        '        Datos.GLUsuario = LUsuario.Text
-
-        '        If Funcion.R(Datos) Then
-        '            CEnt13.Text = "0"
-        '        End If
-
-        '    Catch ex As Exception
-        '        MsgBox(ex.Message)
-        '    End Try
-
-        'End If
-
-        'If CEnt14.Text = "0" Then
-        'Else
-
-        '    Try
-        '        Dim Funcion As New RegistroOC
-        '        Dim Datos As New CRegistroOC
-
-        '        Datos.GID = ID14.Text
-        '        Datos.GCEnt = CEnt14.Text
-        '        Datos.GProducto = Producto14.Text
-        '        Datos.GL_ID = Index.L_ID.Text
-        '        Datos.GLUsuario = LUsuario.Text
-
-        '        If Funcion.R(Datos) Then
-        '            CEnt14.Text = "0"
-        '        End If
-
-        '    Catch ex As Exception
-        '        MsgBox(ex.Message)
-        '    End Try
-
-        'End If
-
-        'If CEnt15.Text = "0" Then
-        'Else
-
-        '    Try
-        '        Dim Funcion As New RegistroOC
-        '        Dim Datos As New CRegistroOC
-
-        '        Datos.GID = ID15.Text
-        '        Datos.GCEnt = CEnt15.Text
-        '        Datos.GProducto = Producto15.Text
-        '        Datos.GL_ID = Index.L_ID.Text
-        '        Datos.GLUsuario = LUsuario.Text
-
-        '        If Funcion.R(Datos) Then
-        '            CEnt15.Text = "0"
-        '        End If
-
-        '    Catch ex As Exception
-        '        MsgBox(ex.Message)
-        '    End Try
-
-        'End If
-
-        'If CEnt16.Text = "0" Then
-        'Else
-
-        '    Try
-        '        Dim Funcion As New RegistroOC
-        '        Dim Datos As New CRegistroOC
-
-        '        Datos.GID = ID16.Text
-        '        Datos.GCEnt = CEnt16.Text
-        '        Datos.GProducto = Producto16.Text
-        '        Datos.GL_ID = Index.L_ID.Text
-        '        Datos.GLUsuario = LUsuario.Text
-
-        '        If Funcion.R(Datos) Then
-        '            CEnt16.Text = "0"
-        '        End If
-
-        '    Catch ex As Exception
-        '        MsgBox(ex.Message)
-        '    End Try
-
-        'End If
-
-        'If CEnt17.Text = "0" Then
-        'Else
-
-        '    Try
-        '        Dim Funcion As New RegistroOC
-        '        Dim Datos As New CRegistroOC
-
-        '        Datos.GID = ID17.Text
-        '        Datos.GCEnt = CEnt17.Text
-        '        Datos.GProducto = Producto17.Text
-        '        Datos.GL_ID = Index.L_ID.Text
-        '        Datos.GLUsuario = LUsuario.Text
-
-        '        If Funcion.R(Datos) Then
-        '            CEnt17.Text = "0"
-        '        End If
-
-        '    Catch ex As Exception
-        '        MsgBox(ex.Message)
-        '    End Try
-
-        'End If
-
-        'If CEnt18.Text = "0" Then
-        'Else
-
-        '    Try
-        '        Dim Funcion As New RegistroOC
-        '        Dim Datos As New CRegistroOC
-
-        '        Datos.GID = ID18.Text
-        '        Datos.GCEnt = CEnt18.Text
-        '        Datos.GProducto = Producto18.Text
-        '        Datos.GL_ID = Index.L_ID.Text
-        '        Datos.GLUsuario = LUsuario.Text
-
-        '        If Funcion.R(Datos) Then
-        '            CEnt18.Text = "0"
-        '        End If
-
-        '    Catch ex As Exception
-        '        MsgBox(ex.Message)
-        '    End Try
-
-        'End If
-
-        'If CEnt19.Text = "0" Then
-        'Else
-
-        '    Try
-        '        Dim Funcion As New RegistroOC
-        '        Dim Datos As New CRegistroOC
-
-        '        Datos.GID = ID19.Text
-        '        Datos.GCEnt = CEnt19.Text
-        '        Datos.GProducto = Producto19.Text
-        '        Datos.GL_ID = Index.L_ID.Text
-        '        Datos.GLUsuario = LUsuario.Text
-
-        '        If Funcion.R(Datos) Then
-        '            CEnt19.Text = "0"
-        '        End If
-
-        '    Catch ex As Exception
-        '        MsgBox(ex.Message)
-        '    End Try
-
-        'End If
-
-        'If CEnt20.Text = "0" Then
-        'Else
-
-        '    Try
-        '        Dim Funcion As New RegistroOC
-        '        Dim Datos As New CRegistroOC
-
-        '        Datos.GID = ID20.Text
-        '        Datos.GCEnt = CEnt20.Text
-        '        Datos.GProducto = Producto20.Text
-        '        Datos.GL_ID = Index.L_ID.Text
-        '        Datos.GLUsuario = LUsuario.Text
-
-        '        If Funcion.R(Datos) Then
-        '            CEnt20.Text = "0"
-        '        End If
-
-        '    Catch ex As Exception
-        '        MsgBox(ex.Message)
-        '    End Try
-
-        'End If
-
-        MR()
-        Productos()
-    End Sub
+    '    '                Dim Funcion As New RegistroOC
+    '    '                Dim Datos As New CRegistroOC
+
+    '    '                Datos.GID = IDP8.Text
+    '    '                Datos.GCEnt = CEnt8.Text
+    '    '                Datos.GProducto = TxtAP8.Text
+    '    '                Datos.GL_ID = Index.L_ID.Text
+    '    '                Datos.GLUsuario = LUsuario.Text
+    '    '                Datos.GCOrdenT = COCS.Text
+    '    '                Datos.GCOrdenC = CodS.Text
+
+    '    '                If Funcion.R(Datos) Then
+    '    '                    CEnt8.Text = "0"
+    '    '                End If
+
+    '    '            Catch ex As Exception
+    '    '                MsgBox(ex.Message)
+    '    '            End Try
+
+    '    '        End If
+
+    '    '        If CEnt9.Text = "0" Then
+    '    '        Else
+    '    '            Try
+
+    '    '                Dim Funcion As New RegistroOC
+    '    '                Dim Datos As New CRegistroOC
+
+    '    '                Datos.GID = IDP9.Text
+    '    '                Datos.GCEnt = CEnt9.Text
+    '    '                Datos.GProducto = TxtAP9.Text
+    '    '                Datos.GL_ID = Index.L_ID.Text
+    '    '                Datos.GLUsuario = LUsuario.Text
+    '    '                Datos.GCOrdenT = COCS.Text
+    '    '                Datos.GCOrdenC = CodS.Text
+
+    '    '                If Funcion.R(Datos) Then
+    '    '                    CEnt9.Text = "0"
+    '    '                End If
+
+    '    '            Catch ex As Exception
+    '    '                MsgBox(ex.Message)
+    '    '            End Try
+
+    '    '        End If
+
+    '    '        If CEnt10.Text = "0" Then
+    '    '        Else
+
+    '    '            Try
+    '    '                Dim Funcion As New RegistroOC
+    '    '                Dim Datos As New CRegistroOC
+
+    '    '                Datos.GID = IDP10.Text
+    '    '                Datos.GCEnt = CEnt10.Text
+    '    '                Datos.GProducto = TxtAP10.Text
+    '    '                Datos.GL_ID = Index.L_ID.Text
+    '    '                Datos.GLUsuario = LUsuario.Text
+    '    '                Datos.GCOrdenT = COCS.Text
+    '    '                Datos.GCOrdenC = CodS.Text
+
+    '    '                If Funcion.R(Datos) Then
+    '    '                    CEnt10.Text = "0"
+    '    '                End If
+
+    '    '            Catch ex As Exception
+    '    '                MsgBox(ex.Message)
+    '    '            End Try
+
+    '    '        End If
+
+    '    '        If CEnt11.Text = "0" Then
+    '    '        Else
+
+    '    '            Try
+    '    '                Dim Funcion As New RegistroOC
+    '    '                Dim Datos As New CRegistroOC
+
+    '    '                Datos.GID = IDP11.Text
+    '    '                Datos.GCEnt = CEnt11.Text
+    '    '                Datos.GProducto = TxtAP11.Text
+    '    '                Datos.GL_ID = Index.L_ID.Text
+    '    '                Datos.GLUsuario = LUsuario.Text
+    '    '                Datos.GCOrdenT = COCS.Text
+    '    '                Datos.GCOrdenC = CodS.Text
+
+    '    '                If Funcion.R(Datos) Then
+    '    '                    CEnt11.Text = "0"
+    '    '                End If
+
+    '    '            Catch ex As Exception
+    '    '                MsgBox(ex.Message)
+    '    '            End Try
+
+    '    '        End If
+
+    '    '        If CEnt12.Text = "0" Then
+    '    '        Else
+
+    '    '            Try
+    '    '                Dim Funcion As New RegistroOC
+    '    '                Dim Datos As New CRegistroOC
+
+    '    '                Datos.GID = IDP12.Text
+    '    '                Datos.GCEnt = CEnt12.Text
+    '    '                Datos.GProducto = TxtAP12.Text
+    '    '                Datos.GL_ID = Index.L_ID.Text
+    '    '                Datos.GLUsuario = LUsuario.Text
+    '    '                Datos.GCOrdenT = COCS.Text
+    '    '                Datos.GCOrdenC = CodS.Text
+
+    '    '                If Funcion.R(Datos) Then
+    '    '                    CEnt12.Text = "0"
+    '    '                End If
+
+    '    '            Catch ex As Exception
+    '    '                MsgBox(ex.Message)
+    '    '            End Try
+
+    '    '        End If
+
+    '    '        If CEnt13.Text = "0" Then
+    '    '        Else
+
+    '    '            Try
+    '    '                Dim Funcion As New RegistroOC
+    '    '                Dim Datos As New CRegistroOC
+
+    '    '                Datos.GID = IDP13.Text
+    '    '                Datos.GCEnt = CEnt13.Text
+    '    '                Datos.GProducto = TxtAP13.Text
+    '    '                Datos.GL_ID = Index.L_ID.Text
+    '    '                Datos.GLUsuario = LUsuario.Text
+    '    '                Datos.GCOrdenT = COCS.Text
+    '    '                Datos.GCOrdenC = CodS.Text
+
+    '    '                If Funcion.R(Datos) Then
+    '    '                    CEnt13.Text = "0"
+    '    '                End If
+
+    '    '            Catch ex As Exception
+    '    '                MsgBox(ex.Message)
+    '    '            End Try
+
+    '    '        End If
+
+    '    '        If CEnt14.Text = "0" Then
+    '    '        Else
+
+    '    '            Try
+    '    '                Dim Funcion As New RegistroOC
+    '    '                Dim Datos As New CRegistroOC
+
+    '    '                Datos.GID = IDP14.Text
+    '    '                Datos.GCEnt = CEnt14.Text
+    '    '                Datos.GProducto = TxtAP14.Text
+    '    '                Datos.GL_ID = Index.L_ID.Text
+    '    '                Datos.GLUsuario = LUsuario.Text
+    '    '                Datos.GCOrdenT = COCS.Text
+    '    '                Datos.GCOrdenC = CodS.Text
+
+    '    '                If Funcion.R(Datos) Then
+    '    '                    CEnt14.Text = "0"
+    '    '                End If
+
+    '    '            Catch ex As Exception
+    '    '                MsgBox(ex.Message)
+    '    '            End Try
+
+    '    '        End If
+
+    '    '        If CEnt15.Text = "0" Then
+    '    '        Else
+
+    '    '            Try
+    '    '                Dim Funcion As New RegistroOC
+    '    '                Dim Datos As New CRegistroOC
+
+    '    '                Datos.GID = IDP15.Text
+    '    '                Datos.GCEnt = CEnt15.Text
+    '    '                Datos.GProducto = TxtAP15.Text
+    '    '                Datos.GL_ID = Index.L_ID.Text
+    '    '                Datos.GLUsuario = LUsuario.Text
+    '    '                Datos.GCOrdenT = COCS.Text
+    '    '                Datos.GCOrdenC = CodS.Text
+
+    '    '                If Funcion.R(Datos) Then
+    '    '                    CEnt15.Text = "0"
+    '    '                End If
+
+    '    '            Catch ex As Exception
+    '    '                MsgBox(ex.Message)
+    '    '            End Try
+
+    '    '        End If
+
+    '    '        If CEnt16.Text = "0" Then
+    '    '        Else
+
+    '    '            Try
+    '    '                Dim Funcion As New RegistroOC
+    '    '                Dim Datos As New CRegistroOC
+
+    '    '                Datos.GID = IDP16.Text
+    '    '                Datos.GCEnt = CEnt16.Text
+    '    '                Datos.GProducto = TxtAP16.Text
+    '    '                Datos.GL_ID = Index.L_ID.Text
+    '    '                Datos.GLUsuario = LUsuario.Text
+    '    '                Datos.GCOrdenT = COCS.Text
+    '    '                Datos.GCOrdenC = CodS.Text
+
+    '    '                If Funcion.R(Datos) Then
+    '    '                    CEnt16.Text = "0"
+    '    '                End If
+
+    '    '            Catch ex As Exception
+    '    '                MsgBox(ex.Message)
+    '    '            End Try
+
+    '    '        End If
+
+    '    '        If CEnt17.Text = "0" Then
+    '    '        Else
+
+    '    '            Try
+    '    '                Dim Funcion As New RegistroOC
+    '    '                Dim Datos As New CRegistroOC
+
+    '    '                Datos.GID = IDP17.Text
+    '    '                Datos.GCEnt = CEnt17.Text
+    '    '                Datos.GProducto = TxtAP17.Text
+    '    '                Datos.GL_ID = Index.L_ID.Text
+    '    '                Datos.GLUsuario = LUsuario.Text
+    '    '                Datos.GCOrdenT = COCS.Text
+    '    '                Datos.GCOrdenC = CodS.Text
+
+    '    '                If Funcion.R(Datos) Then
+    '    '                    CEnt17.Text = "0"
+    '    '                End If
+
+    '    '            Catch ex As Exception
+    '    '                MsgBox(ex.Message)
+    '    '            End Try
+
+    '    '        End If
+
+    '    '        If CEnt18.Text = "0" Then
+    '    '        Else
+
+    '    '            Try
+    '    '                Dim Funcion As New RegistroOC
+    '    '                Dim Datos As New CRegistroOC
+
+    '    '                Datos.GID = IDP18.Text
+    '    '                Datos.GCEnt = CEnt18.Text
+    '    '                Datos.GProducto = TxtAP18.Text
+    '    '                Datos.GL_ID = Index.L_ID.Text
+    '    '                Datos.GLUsuario = LUsuario.Text
+    '    '                Datos.GCOrdenT = COCS.Text
+    '    '                Datos.GCOrdenC = CodS.Text
+
+    '    '                If Funcion.R(Datos) Then
+    '    '                    CEnt18.Text = "0"
+    '    '                End If
+
+    '    '            Catch ex As Exception
+    '    '                MsgBox(ex.Message)
+    '    '            End Try
+
+    '    '        End If
+
+    '    '        If CEnt19.Text = "0" Then
+    '    '        Else
+
+    '    '            Try
+    '    '                Dim Funcion As New RegistroOC
+    '    '                Dim Datos As New CRegistroOC
+
+    '    '                Datos.GID = IDP19.Text
+    '    '                Datos.GCEnt = CEnt19.Text
+    '    '                Datos.GProducto = TxtAP19.Text
+    '    '                Datos.GL_ID = Index.L_ID.Text
+    '    '                Datos.GLUsuario = LUsuario.Text
+    '    '                Datos.GCOrdenT = COCS.Text
+    '    '                Datos.GCOrdenC = CodS.Text
+
+    '    '                If Funcion.R(Datos) Then
+    '    '                    CEnt19.Text = "0"
+    '    '                End If
+
+    '    '            Catch ex As Exception
+    '    '                MsgBox(ex.Message)
+    '    '            End Try
+
+    '    '        End If
+
+    '    '        If CEnt20.Text = "0" Then
+    '    '        Else
+
+    '    '            Try
+    '    '                Dim Funcion As New RegistroOC
+    '    '                Dim Datos As New CRegistroOC
+
+    '    '                Datos.GID = IDP20.Text
+    '    '                Datos.GCEnt = CEnt20.Text
+    '    '                Datos.GProducto = TxtAP20.Text
+    '    '                Datos.GL_ID = Index.L_ID.Text
+    '    '                Datos.GLUsuario = LUsuario.Text
+    '    '                Datos.GCOrdenT = COCS.Text
+    '    '                Datos.GCOrdenC = CodS.Text
+
+    '    '                If Funcion.R(Datos) Then
+    '    '                    CEnt20.Text = "0"
+    '    '                End If
+
+    '    '            Catch ex As Exception
+    '    '                MsgBox(ex.Message)
+    '    '            End Try
+
+    '    '        End If
+
+    '    '        MR()
+    '    '        Productos()
+    '    '    End Sub
+
+    '    '    Private Sub BTerminar_Click(sender As Object, e As EventArgs) Handles BTerminar.Click
+    '    '        Dim CodSs As String = CodS.Text
+
+    '    '        Conex.Open()
+    '    '        Dim CONSULTA As String = "UPDATE TB_Ordenes_Compra 
+    '    '                                    SET estado = 'Finalizado'
+    '    '                                    WHERE codigo = '" & CodSs & "'"
+
+    '    '        Dim COMANDO As New SqlCommand(CONSULTA, Conex)
+
+    '    '        COMANDO.ExecuteNonQuery()
+
+    '    '        B1()
+    '    '        B2()
+    '    '        B3()
+    '    '        B4()
+    '    '        B5()
+    '    '        B6()
+    '    '        B7()
+    '    '        B8()
+    '    '        B9()
+    '    '        B10()
+    '    '        B11()
+    '    '        B12()
+    '    '        B13()
+    '    '        B14()
+    '    '        B15()
+    '    '        B16()
+    '    '        B17()
+    '    '        B18()
+    '    '        B19()
+    '    '        B20()
+    '    '        Conex.Close()
+
+    '    '        POC.Visible = True
+    '    '    End Sub
+
+    '    '    Private Sub BB1_Click(sender As Object, e As EventArgs) Handles BB1.Click
+    '    '        If PMaterial.Visible = True Then
+    '    '            PMaterial.Visible = False
+    '    '            LDGP.Text = ""
+    '    '        ElseIf PMaterial.Visible = False Then
+    '    '            PMaterial.Visible = True
+    '    '            LDGP.Text = "1"
+    '    '        End If
+    '    '    End Sub
+
+    '    '    Private Sub BB2_Click(sender As Object, e As EventArgs) Handles BB2.Click
+    '    '        If PMaterial.Visible = True Then
+    '    '            PMaterial.Visible = False
+    '    '            LDGP.Text = ""
+    '    '        ElseIf PMaterial.Visible = False Then
+    '    '            PMaterial.Visible = True
+    '    '            LDGP.Text = "2"
+    '    '        End If
+    '    '    End Sub
+
+    '    '    Private Sub BB3_Click(sender As Object, e As EventArgs) Handles BB3.Click
+    '    '        If PMaterial.Visible = True Then
+    '    '            PMaterial.Visible = False
+    '    '            LDGP.Text = ""
+    '    '        ElseIf PMaterial.Visible = False Then
+    '    '            PMaterial.Visible = True
+    '    '            LDGP.Text = "3"
+    '    '        End If
+    '    '    End Sub
+
+    '    '    Private Sub BB4_Click(sender As Object, e As EventArgs) Handles BB4.Click
+    '    '        If PMaterial.Visible = True Then
+    '    '            PMaterial.Visible = False
+    '    '            LDGP.Text = ""
+    '    '        ElseIf PMaterial.Visible = False Then
+    '    '            PMaterial.Visible = True
+    '    '            LDGP.Text = "4"
+    '    '        End If
+    '    '    End Sub
+
+    '    '    Private Sub BB5_Click(sender As Object, e As EventArgs) Handles BB5.Click
+    '    '        If PMaterial.Visible = True Then
+    '    '            PMaterial.Visible = False
+    '    '            LDGP.Text = ""
+    '    '        ElseIf PMaterial.Visible = False Then
+    '    '            PMaterial.Visible = True
+    '    '            LDGP.Text = "5"
+    '    '        End If
+    '    '    End Sub
+
+    '    '    Private Sub BB6_Click(sender As Object, e As EventArgs) Handles BB6.Click
+    '    '        If PMaterial.Visible = True Then
+    '    '            PMaterial.Visible = False
+    '    '            LDGP.Text = ""
+    '    '        ElseIf PMaterial.Visible = False Then
+    '    '            PMaterial.Visible = True
+    '    '            LDGP.Text = "6"
+    '    '        End If
+    '    '    End Sub
+
+    '    '    Private Sub BB7_Click(sender As Object, e As EventArgs) Handles BB7.Click
+    '    '        If PMaterial.Visible = True Then
+    '    '            PMaterial.Visible = False
+    '    '            LDGP.Text = ""
+    '    '        ElseIf PMaterial.Visible = False Then
+    '    '            PMaterial.Visible = True
+    '    '            LDGP.Text = "7"
+    '    '        End If
+    '    '    End Sub
+
+    '    '    Private Sub BB8_Click(sender As Object, e As EventArgs) Handles BB8.Click
+    '    '        If PMaterial.Visible = True Then
+    '    '            PMaterial.Visible = False
+    '    '            LDGP.Text = ""
+    '    '        ElseIf PMaterial.Visible = False Then
+    '    '            PMaterial.Visible = True
+    '    '            LDGP.Text = "8"
+    '    '        End If
+    '    '    End Sub
+
+    '    '    Private Sub BB9_Click(sender As Object, e As EventArgs) Handles BB9.Click
+    '    '        If PMaterial.Visible = True Then
+    '    '            PMaterial.Visible = False
+    '    '            LDGP.Text = ""
+    '    '        ElseIf PMaterial.Visible = False Then
+    '    '            PMaterial.Visible = True
+    '    '            LDGP.Text = "9"
+    '    '        End If
+    '    '    End Sub
+
+    '    '    Private Sub BB10_Click(sender As Object, e As EventArgs) Handles BB10.Click
+    '    '        If PMaterial.Visible = True Then
+    '    '            PMaterial.Visible = False
+    '    '            LDGP.Text = ""
+    '    '        ElseIf PMaterial.Visible = False Then
+    '    '            PMaterial.Visible = True
+    '    '            LDGP.Text = "10"
+    '    '        End If
+    '    '    End Sub
+
+    '    '    Private Sub BB11_Click(sender As Object, e As EventArgs) Handles BB11.Click
+    '    '        If PMaterial.Visible = True Then
+    '    '            PMaterial.Visible = False
+    '    '            LDGP.Text = ""
+    '    '        ElseIf PMaterial.Visible = False Then
+    '    '            PMaterial.Visible = True
+    '    '            LDGP.Text = "11"
+    '    '        End If
+    '    '    End Sub
+
+    '    '    Private Sub BB12_Click(sender As Object, e As EventArgs) Handles BB12.Click
+    '    '        If PMaterial.Visible = True Then
+    '    '            PMaterial.Visible = False
+    '    '            LDGP.Text = ""
+    '    '        ElseIf PMaterial.Visible = False Then
+    '    '            PMaterial.Visible = True
+    '    '            LDGP.Text = "12"
+    '    '        End If
+    '    '    End Sub
+
+    '    '    Private Sub BB13_Click(sender As Object, e As EventArgs) Handles BB13.Click
+    '    '        If PMaterial.Visible = True Then
+    '    '            PMaterial.Visible = False
+    '    '            LDGP.Text = ""
+    '    '        ElseIf PMaterial.Visible = False Then
+    '    '            PMaterial.Visible = True
+    '    '            LDGP.Text = "13"
+    '    '        End If
+    '    '    End Sub
+
+    '    '    Private Sub BB14_Click(sender As Object, e As EventArgs) Handles BB14.Click
+    '    '        If PMaterial.Visible = True Then
+    '    '            PMaterial.Visible = False
+    '    '            LDGP.Text = ""
+    '    '        ElseIf PMaterial.Visible = False Then
+    '    '            PMaterial.Visible = True
+    '    '            LDGP.Text = "14"
+    '    '        End If
+    '    '    End Sub
+
+    '    '    Private Sub BB15_Click(sender As Object, e As EventArgs) Handles BB15.Click
+    '    '        If PMaterial.Visible = True Then
+    '    '            PMaterial.Visible = False
+    '    '            LDGP.Text = ""
+    '    '        ElseIf PMaterial.Visible = False Then
+    '    '            PMaterial.Visible = True
+    '    '            LDGP.Text = "15"
+    '    '        End If
+    '    '    End Sub
+
+    '    '    Private Sub BB16_Click(sender As Object, e As EventArgs) Handles BB16.Click
+    '    '        If PMaterial.Visible = True Then
+    '    '            PMaterial.Visible = False
+    '    '            LDGP.Text = ""
+    '    '        ElseIf PMaterial.Visible = False Then
+    '    '            PMaterial.Visible = True
+    '    '            LDGP.Text = "16"
+    '    '        End If
+    '    '    End Sub
+
+    '    '    Private Sub BB17_Click(sender As Object, e As EventArgs) Handles BB17.Click
+    '    '        If PMaterial.Visible = True Then
+    '    '            PMaterial.Visible = False
+    '    '            LDGP.Text = ""
+    '    '        ElseIf PMaterial.Visible = False Then
+    '    '            PMaterial.Visible = True
+    '    '            LDGP.Text = "17"
+    '    '        End If
+    '    '    End Sub
+
+    '    '    Private Sub BB18_Click(sender As Object, e As EventArgs) Handles BB18.Click
+    '    '        If PMaterial.Visible = True Then
+    '    '            PMaterial.Visible = False
+    '    '            LDGP.Text = ""
+    '    '        ElseIf PMaterial.Visible = False Then
+    '    '            PMaterial.Visible = True
+    '    '            LDGP.Text = "18"
+    '    '        End If
+    '    '    End Sub
+
+    '    '    Private Sub BB19_Click(sender As Object, e As EventArgs) Handles BB19.Click
+    '    '        If PMaterial.Visible = True Then
+    '    '            PMaterial.Visible = False
+    '    '            LDGP.Text = ""
+    '    '        ElseIf PMaterial.Visible = False Then
+    '    '            PMaterial.Visible = True
+    '    '            LDGP.Text = "19"
+    '    '        End If
+    '    '    End Sub
+
+    '    '    Private Sub BB20_Click(sender As Object, e As EventArgs) Handles BB20.Click
+    '    '        If PMaterial.Visible = True Then
+    '    '            PMaterial.Visible = False
+    '    '            LDGP.Text = ""
+    '    '        ElseIf PMaterial.Visible = False Then
+    '    '            PMaterial.Visible = True
+    '    '            LDGP.Text = "20"
+    '    '        End If
+    '    '    End Sub
+
+    '    '    Private Sub DGProducto_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGProducto.CellContentClick
+    '    '        Dim FilaID As Integer
+    '    '        Dim FilaP As String
+    '    '        Dim row As DataGridViewRow = DGProducto.Rows(e.RowIndex)
+
+    '    '        If LDGP.Text = "1" Then
+    '    '            FilaID = row.Cells(0).Value
+    '    '            IDP1.Text = FilaID
+
+    '    '            FilaP = row.Cells(1).Value
+    '    '            TxtAP1.Text = FilaP
+
+    '    '            BP1()
+    '    '            PMaterial.Visible = False
+
+    '    '        ElseIf LDGP.Text = "2" Then
+    '    '            FilaID = row.Cells(0).Value
+    '    '            IDP2.Text = FilaID
+
+    '    '            FilaP = row.Cells(1).Value
+    '    '            TxtAP2.Text = FilaP
+
+    '    '            BP2()
+    '    '            PMaterial.Visible = False
+
+    '    '        ElseIf LDGP.Text = "3" Then
+    '    '            FilaID = row.Cells(0).Value
+    '    '            IDP3.Text = FilaID
+
+    '    '            FilaP = row.Cells(1).Value
+    '    '            TxtAP3.Text = FilaP
+
+    '    '            BP3()
+    '    '            PMaterial.Visible = False
+
+    '    '        ElseIf LDGP.Text = "4" Then
+    '    '            FilaID = row.Cells(0).Value
+    '    '            IDP4.Text = FilaID
+
+    '    '            FilaP = row.Cells(1).Value
+    '    '            TxtAP4.Text = FilaP
+
+    '    '            BP4()
+    '    '            PMaterial.Visible = False
+
+    '    '        ElseIf LDGP.Text = "5" Then
+    '    '            FilaID = row.Cells(0).Value
+    '    '            IDP5.Text = FilaID
+
+    '    '            FilaP = row.Cells(1).Value
+    '    '            TxtAP5.Text = FilaP
+
+    '    '            BP5()
+    '    '            PMaterial.Visible = False
+
+    '    '        ElseIf LDGP.Text = "6" Then
+    '    '            FilaID = row.Cells(0).Value
+    '    '            IDP6.Text = FilaID
+
+    '    '            FilaP = row.Cells(1).Value
+    '    '            TxtAP6.Text = FilaP
+
+    '    '            BP6()
+    '    '            PMaterial.Visible = False
+
+    '    '        ElseIf LDGP.Text = "7" Then
+    '    '            FilaID = row.Cells(0).Value
+    '    '            IDP7.Text = FilaID
+
+    '    '            FilaP = row.Cells(1).Value
+    '    '            TxtAP7.Text = FilaP
+
+    '    '            BP7()
+    '    '            PMaterial.Visible = False
+
+    '    '        ElseIf LDGP.Text = "8" Then
+    '    '            FilaID = row.Cells(0).Value
+    '    '            IDP8.Text = FilaID
+
+    '    '            FilaP = row.Cells(1).Value
+    '    '            TxtAP8.Text = FilaP
+
+    '    '            BP8()
+    '    '            PMaterial.Visible = False
+
+    '    '        ElseIf LDGP.Text = "9" Then
+    '    '            FilaID = row.Cells(0).Value
+    '    '            IDP9.Text = FilaID
+
+    '    '            FilaP = row.Cells(1).Value
+    '    '            TxtAP9.Text = FilaP
+
+    '    '            BP9()
+    '    '            PMaterial.Visible = False
+
+    '    '        ElseIf LDGP.Text = "10" Then
+    '    '            FilaID = row.Cells(0).Value
+    '    '            IDP10.Text = FilaID
+
+    '    '            FilaP = row.Cells(1).Value
+    '    '            TxtAP10.Text = FilaP
+
+    '    '            BP10()
+    '    '            PMaterial.Visible = False
+
+    '    '        ElseIf LDGP.Text = "11" Then
+    '    '            FilaID = row.Cells(0).Value
+    '    '            IDP11.Text = FilaID
+
+    '    '            FilaP = row.Cells(1).Value
+    '    '            TxtAP11.Text = FilaP
+
+    '    '            BP11()
+    '    '            PMaterial.Visible = False
+
+    '    '        ElseIf LDGP.Text = "12" Then
+    '    '            FilaID = row.Cells(0).Value
+    '    '            IDP12.Text = FilaID
+
+    '    '            FilaP = row.Cells(1).Value
+    '    '            TxtAP12.Text = FilaP
+
+    '    '            BP12()
+    '    '            PMaterial.Visible = False
+
+    '    '        ElseIf LDGP.Text = "13" Then
+    '    '            FilaID = row.Cells(0).Value
+    '    '            IDP13.Text = FilaID
+
+    '    '            FilaP = row.Cells(1).Value
+    '    '            TxtAP13.Text = FilaP
+
+    '    '            BP13()
+    '    '            PMaterial.Visible = False
+
+    '    '        ElseIf LDGP.Text = "14" Then
+    '    '            FilaID = row.Cells(0).Value
+    '    '            IDP14.Text = FilaID
+
+    '    '            FilaP = row.Cells(1).Value
+    '    '            TxtAP14.Text = FilaP
+
+    '    '            BP14()
+    '    '            PMaterial.Visible = False
+
+    '    '        ElseIf LDGP.Text = "15" Then
+    '    '            FilaID = row.Cells(0).Value
+    '    '            IDP15.Text = FilaID
+
+    '    '            FilaP = row.Cells(1).Value
+    '    '            TxtAP15.Text = FilaP
+
+    '    '            BP15()
+    '    '            PMaterial.Visible = False
+
+    '    '        ElseIf LDGP.Text = "16" Then
+    '    '            FilaID = row.Cells(0).Value
+    '    '            IDP16.Text = FilaID
+
+    '    '            FilaP = row.Cells(1).Value
+    '    '            TxtAP16.Text = FilaP
+
+    '    '            BP16()
+    '    '            PMaterial.Visible = False
+
+    '    '        ElseIf LDGP.Text = "17" Then
+    '    '            FilaID = row.Cells(0).Value
+    '    '            IDP17.Text = FilaID
+
+    '    '            FilaP = row.Cells(1).Value
+    '    '            TxtAP17.Text = FilaP
+
+    '    '            BP17()
+    '    '            PMaterial.Visible = False
+
+    '    '        ElseIf LDGP.Text = "18" Then
+    '    '            FilaID = row.Cells(0).Value
+    '    '            IDP18.Text = FilaID
+
+    '    '            FilaP = row.Cells(1).Value
+    '    '            TxtAP18.Text = FilaP
+
+    '    '            BP18()
+    '    '            PMaterial.Visible = False
+
+    '    '        ElseIf LDGP.Text = "19" Then
+    '    '            FilaID = row.Cells(0).Value
+    '    '            IDP19.Text = FilaID
+
+    '    '            FilaP = row.Cells(1).Value
+    '    '            TxtAP19.Text = FilaP
+
+    '    '            BP19()
+    '    '            PMaterial.Visible = False
+
+    '    '        ElseIf LDGP.Text = "20" Then
+    '    '            FilaID = row.Cells(0).Value
+    '    '            IDP20.Text = FilaID
+
+    '    '            FilaP = row.Cells(1).Value
+    '    '            TxtAP20.Text = FilaP
+
+    '    '            BP20()
+    '    '            PMaterial.Visible = False
+    '    '        End If
+    '    '    End Sub
 
 
     'Text
@@ -562,19 +1043,19 @@ Public Class ODC
         If TxtBOC.Text = "" Then
         Else
             Dim Consulta As String = "SELECT OC.id_orden, OC.codigo, OC.purchase_order, OC.CodiS, PR.nombre, COUNT(OD.descripcion) AS 'Productos Solicitados'
-                                                FROM TB_Ordenes_Compra AS OC
-                                                    INNER JOIN Tb_Proveedores AS Pr ON Pr.id_p = OC.id_pro
-                                                    INNER JOIN TB_Ordenes_Detalle AS OD ON OC.codigo = OD.codigo
-                                                WHERE OC.estado ='Activo' AND
-                                                    OC.CodiS <> ''  AND
-                                                    OC.purchase_order like '%'+@Busqueda+'%' AND
-                                                    OD.descripcion NOT LIKE '%SILICIO%' AND
-                                                    OD.descripcion NOT LIKE '%GRAIN ORIENTED%' AND
-                                                    OD.descripcion NOT LIKE '%STEEL%' AND
-                                                    OD.descripcion NOT LIKE '%GRADE%' AND
-                                                    OD.descripcion NOT LIKE '%HERST%' AND
-                                                    OD.um NOT LIKE '%Servicio%'
-                                                GROUP BY OC.id_orden, OC.codigo, OC.purchase_order, OC.CodiS, Pr.nombre"
+                                                        FROM TB_Ordenes_Compra AS OC
+                                                            INNER JOIN Tb_Proveedores AS Pr ON Pr.id_p = OC.id_pro
+                                                            INNER JOIN TB_Ordenes_Detalle AS OD ON OC.codigo = OD.codigo
+                                                        WHERE OC.estado ='Activo' AND
+                                                            OC.CodiS <> ''  AND
+                                                            OC.purchase_order like '%'+@Busqueda+'%' AND
+                                                            OD.descripcion NOT LIKE '%SILICIO%' AND
+                                                            OD.descripcion NOT LIKE '%GRAIN ORIENTED%' AND
+                                                            OD.descripcion NOT LIKE '%STEEL%' AND
+                                                            OD.descripcion NOT LIKE '%GRADE%' AND
+                                                            OD.descripcion NOT LIKE '%HERST%' AND
+                                                            OD.um NOT LIKE '%Servicio%'
+                                                        GROUP BY OC.id_orden, OC.codigo, OC.purchase_order, OC.CodiS, Pr.nombre"
 
             Dim cmd As New SqlCommand(Consulta, Conex)
             cmd.Parameters.AddWithValue("@Busqueda", Trim(TxtBOC.Text))
@@ -601,6 +1082,620 @@ Public Class ODC
         Productos()
     End Sub
 
+    '    '    Private Sub CEnt1_TextChanged(sender As Object, e As EventArgs) Handles CEnt1.TextChanged
+    '    '        If CEnt1.Text <> "0" Then
+    '    '            Dim Prod As String = TxtAP1.Text
+    '    '            Dim CodSs As String = CodS.Text
+    '    '            Dim CanS As String = CantidadS1.Text
+
+    '    '            Conex.Open()
+    '    '            Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
+    '    '                                         INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
+    '    '                                                                       VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS & "', 0)"
+
+    '    '            Dim COMANDO As New SqlCommand(CONSULTA, Conex)
+
+    '    '            COMANDO.ExecuteNonQuery()
+
+    '    '            Conex.Close()
+    '    '        End If
+    '    '    End Sub
+
+    '    '    Private Sub CEnt2_TextChanged(sender As Object, e As EventArgs) Handles CEnt2.TextChanged
+    '    '        If CEnt2.Text <> "0" Then
+    '    '            Dim Prod As String = TxtAP2.Text
+    '    '            Dim CodSs As String = CodS.Text
+    '    '            Dim CanS As String = CantidadS2.Text
+
+    '    '            Conex.Open()
+    '    '            Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
+    '    '                                         INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
+    '    '                                                                       VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS & "', 0)"
+
+    '    '            Dim COMANDO As New SqlCommand(CONSULTA, Conex)
+
+    '    '            COMANDO.ExecuteNonQuery()
+
+    '    '            Conex.Close()
+    '    '        End If
+    '    '    End Sub
+
+    '    '    Private Sub CEnt3_TextChanged(sender As Object, e As EventArgs) Handles CEnt3.TextChanged
+    '    '        If CEnt3.Text <> "0" Then
+    '    '            Dim Prod As String = TxtAP3.Text
+    '    '            Dim CodSs As String = CodS.Text
+    '    '            Dim CanS As String = CantidadS3.Text
+
+    '    '            Conex.Open()
+    '    '            Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
+    '    '                                         INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
+    '    '                                                                       VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS & "', 0)"
+
+    '    '            Dim COMANDO As New SqlCommand(CONSULTA, Conex)
+
+    '    '            COMANDO.ExecuteNonQuery()
+
+    '    '            Conex.Close()
+    '    '        End If
+    '    '    End Sub
+
+    '    '    Private Sub CEnt4_TextChanged(sender As Object, e As EventArgs) Handles CEnt4.TextChanged
+    '    '        If CEnt4.Text <> "0" Then
+    '    '            Dim Prod As String = TxtAP4.Text
+    '    '            Dim CodSs As String = CodS.Text
+    '    '            Dim CanS As String = CantidadS4.Text
+
+    '    '            Conex.Open()
+    '    '            Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
+    '    '                                         INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
+    '    '                                                                       VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS & "', 0)"
+
+    '    '            Dim COMANDO As New SqlCommand(CONSULTA, Conex)
+
+    '    '            COMANDO.ExecuteNonQuery()
+
+    '    '            Conex.Close()
+    '    '        End If
+    '    '    End Sub
+
+    '    '    Private Sub CEnt5_TextChanged(sender As Object, e As EventArgs) Handles CEnt5.TextChanged
+    '    '        If CEnt5.Text <> "0" Then
+    '    '            Dim Prod As String = TxtAP5.Text
+    '    '            Dim CodSs As String = CodS.Text
+    '    '            Dim CanS As String = CantidadS5.Text
+
+    '    '            Conex.Open()
+    '    '            Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
+    '    '                                         INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
+    '    '                                                                       VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS & "', 0)"
+
+    '    '            Dim COMANDO As New SqlCommand(CONSULTA, Conex)
+
+    '    '            COMANDO.ExecuteNonQuery()
+
+    '    '            Conex.Close()
+    '    '        End If
+    '    '    End Sub
+
+    '    '    Private Sub CEnt6_TextChanged(sender As Object, e As EventArgs) Handles CEnt6.TextChanged
+    '    '        If CEnt6.Text <> "0" Then
+    '    '            Dim Prod As String = TxtAP6.Text
+    '    '            Dim CodSs As String = CodS.Text
+    '    '            Dim CanS As String = CantidadS6.Text
+
+    '    '            Conex.Open()
+    '    '            Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
+    '    '                                         INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
+    '    '                                                                       VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS & "', 0)"
+
+    '    '            Dim COMANDO As New SqlCommand(CONSULTA, Conex)
+
+    '    '            COMANDO.ExecuteNonQuery()
+
+    '    '            Conex.Close()
+    '    '        End If
+    '    '    End Sub
+
+    '    '    Private Sub CEnt7_TextChanged(sender As Object, e As EventArgs) Handles CEnt7.TextChanged
+    '    '        If CEnt7.Text <> "0" Then
+    '    '            Dim Prod As String = TxtAP7.Text
+    '    '            Dim CodSs As String = CodS.Text
+    '    '            Dim CanS As String = CantidadS7.Text
+
+    '    '            Conex.Open()
+    '    '            Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
+    '    '                                         INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
+    '    '                                                                       VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS & "', 0)"
+
+    '    '            Dim COMANDO As New SqlCommand(CONSULTA, Conex)
+
+    '    '            COMANDO.ExecuteNonQuery()
+
+    '    '            Conex.Close()
+    '    '        End If
+    '    '    End Sub
+
+    '    '    Private Sub CEnt8_TextChanged(sender As Object, e As EventArgs) Handles CEnt8.TextChanged
+    '    '        If CEnt8.Text <> "0" Then
+    '    '            Dim Prod As String = TxtAP8.Text
+    '    '            Dim CodSs As String = CodS.Text
+    '    '            Dim CanS As String = CantidadS8.Text
+
+    '    '            Conex.Open()
+    '    '            Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
+    '    '                                         INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
+    '    '                                                                       VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS & "', 0)"
+
+    '    '            Dim COMANDO As New SqlCommand(CONSULTA, Conex)
+
+    '    '            COMANDO.ExecuteNonQuery()
+
+    '    '            Conex.Close()
+    '    '        End If
+    '    '    End Sub
+
+    '    '    Private Sub CEnt9_TextChanged(sender As Object, e As EventArgs) Handles CEnt9.TextChanged
+    '    '        If CEnt9.Text <> "0" Then
+    '    '            Dim Prod As String = TxtAP9.Text
+    '    '            Dim CodSs As String = CodS.Text
+    '    '            Dim CanS As String = CantidadS9.Text
+
+    '    '            Conex.Open()
+    '    '            Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
+    '    '                                         INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
+    '    '                                                                       VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS & "', 0)"
+
+    '    '            Dim COMANDO As New SqlCommand(CONSULTA, Conex)
+
+    '    '            COMANDO.ExecuteNonQuery()
+
+    '    '            Conex.Close()
+    '    '        End If
+    '    '    End Sub
+
+    '    '    Private Sub CEnt10_TextChanged(sender As Object, e As EventArgs) Handles CEnt10.TextChanged
+    '    '        If CEnt10.Text <> "0" Then
+    '    '            Dim Prod As String = TxtAP10.Text
+    '    '            Dim CodSs As String = CodS.Text
+    '    '            Dim CanS As String = CantidadS10.Text
+
+    '    '            Conex.Open()
+    '    '            Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
+    '    '                                         INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
+    '    '                                                                       VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS & "', 0)"
+
+    '    '            Dim COMANDO As New SqlCommand(CONSULTA, Conex)
+
+    '    '            COMANDO.ExecuteNonQuery()
+
+    '    '            Conex.Close()
+    '    '        End If
+    '    '    End Sub
+
+    '    '    Private Sub CEnt11_TextChanged(sender As Object, e As EventArgs) Handles CEnt11.TextChanged
+    '    '        If CEnt11.Text <> "0" Then
+    '    '            Dim Prod As String = TxtAP11.Text
+    '    '            Dim CodSs As String = CodS.Text
+    '    '            Dim CanS As String = CantidadS11.Text
+
+    '    '            Conex.Open()
+    '    '            Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
+    '    '                                         INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
+    '    '                                                                       VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS & "', 0)"
+
+    '    '            Dim COMANDO As New SqlCommand(CONSULTA, Conex)
+
+    '    '            COMANDO.ExecuteNonQuery()
+
+    '    '            Conex.Close()
+    '    '        End If
+    '    '    End Sub
+
+    '    '    Private Sub CEnt12_TextChanged(sender As Object, e As EventArgs) Handles CEnt12.TextChanged
+    '    '        If CEnt12.Text <> "0" Then
+    '    '            Dim Prod As String = TxtAP12.Text
+    '    '            Dim CodSs As String = CodS.Text
+    '    '            Dim CanS As String = CantidadS12.Text
+
+    '    '            Conex.Open()
+    '    '            Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
+    '    '                                         INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
+    '    '                                                                       VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS & "', 0)"
+
+    '    '            Dim COMANDO As New SqlCommand(CONSULTA, Conex)
+
+    '    '            COMANDO.ExecuteNonQuery()
+
+    '    '            Conex.Close()
+    '    '        End If
+    '    '    End Sub
+
+    '    '    Private Sub CEnt13_TextChanged(sender As Object, e As EventArgs) Handles CEnt13.TextChanged
+    '    '        If CEnt13.Text <> "0" Then
+    '    '            Dim Prod As String = TxtAP13.Text
+    '    '            Dim CodSs As String = CodS.Text
+    '    '            Dim CanS As String = CantidadS13.Text
+
+    '    '            Conex.Open()
+    '    '            Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
+    '    '                                         INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
+    '    '                                                                       VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS & "', 0)"
+
+    '    '            Dim COMANDO As New SqlCommand(CONSULTA, Conex)
+
+    '    '            COMANDO.ExecuteNonQuery()
+
+    '    '            Conex.Close()
+    '    '        End If
+    '    '    End Sub
+
+    '    '    Private Sub CEnt14_TextChanged(sender As Object, e As EventArgs) Handles CEnt14.TextChanged
+    '    '        If CEnt14.Text <> "0" Then
+    '    '            Dim Prod As String = TxtAP14.Text
+    '    '            Dim CodSs As String = CodS.Text
+    '    '            Dim CanS As String = CantidadS14.Text
+
+    '    '            Conex.Open()
+    '    '            Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
+    '    '                                         INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
+    '    '                                                                       VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS & "', 0)"
+
+    '    '            Dim COMANDO As New SqlCommand(CONSULTA, Conex)
+
+    '    '            COMANDO.ExecuteNonQuery()
+
+    '    '            Conex.Close()
+    '    '        End If
+    '    '    End Sub
+
+    '    '    Private Sub CEnt15_TextChanged(sender As Object, e As EventArgs) Handles CEnt15.TextChanged
+    '    '        If CEnt15.Text <> "0" Then
+    '    '            Dim Prod As String = TxtAP15.Text
+    '    '            Dim CodSs As String = CodS.Text
+    '    '            Dim CanS As String = CantidadS15.Text
+
+    '    '            Conex.Open()
+    '    '            Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
+    '    '                                         INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
+    '    '                                                                       VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS & "', 0)"
+
+    '    '            Dim COMANDO As New SqlCommand(CONSULTA, Conex)
+
+    '    '            COMANDO.ExecuteNonQuery()
+
+    '    '            Conex.Close()
+    '    '        End If
+    '    '    End Sub
+
+    '    '    Private Sub CEnt16_TextChanged(sender As Object, e As EventArgs) Handles CEnt16.TextChanged
+    '    '        If CEnt16.Text <> "0" Then
+    '    '            Dim Prod As String = TxtAP16.Text
+    '    '            Dim CodSs As String = CodS.Text
+    '    '            Dim CanS As String = CantidadS16.Text
+
+    '    '            Conex.Open()
+    '    '            Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
+    '    '                                         INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
+    '    '                                                                       VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS & "', 0)"
+
+    '    '            Dim COMANDO As New SqlCommand(CONSULTA, Conex)
+
+    '    '            COMANDO.ExecuteNonQuery()
+
+    '    '            Conex.Close()
+    '    '        End If
+    '    '    End Sub
+
+    '    '    Private Sub CEnt17_TextChanged(sender As Object, e As EventArgs) Handles CEnt17.TextChanged
+    '    '        If CEnt17.Text <> "0" Then
+    '    '            Dim Prod As String = TxtAP17.Text
+    '    '            Dim CodSs As String = CodS.Text
+    '    '            Dim CanS As String = CantidadS17.Text
+
+    '    '            Conex.Open()
+    '    '            Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
+    '    '                                         INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanE)
+    '    '                                                                       VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS & "', 0)"
+
+    '    '            Dim COMANDO As New SqlCommand(CONSULTA, Conex)
+
+    '    '            COMANDO.ExecuteNonQuery()
+
+    '    '            Conex.Close()
+    '    '        End If
+    '    '    End Sub
+
+    '    '    Private Sub CEnt18_TextChanged(sender As Object, e As EventArgs) Handles CEnt18.TextChanged
+    '    '        If CEnt18.Text <> "0" Then
+    '    '            Dim Prod As String = TxtAP18.Text
+    '    '            Dim CodSs As String = CodS.Text
+    '    '            Dim CanS As String = CantidadS18.Text
+
+    '    '            Conex.Open()
+    '    '            Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
+    '    '                                         INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
+    '    '                                                                       VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS & "', 0)"
+
+    '    '            Dim COMANDO As New SqlCommand(CONSULTA, Conex)
+
+    '    '            COMANDO.ExecuteNonQuery()
+
+    '    '            Conex.Close()
+    '    '        End If
+    '    '    End Sub
+
+    '    '    Private Sub CEnt19_TextChanged(sender As Object, e As EventArgs) Handles CEnt19.TextChanged
+    '    '        If CEnt19.Text <> "0" Then
+    '    '            Dim Prod As String = TxtAP19.Text
+    '    '            Dim CodSs As String = CodS.Text
+    '    '            Dim CanS As String = CantidadS19.Text
+
+    '    '            Conex.Open()
+    '    '            Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
+    '    '                                         INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
+    '    '                                                                       VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS & "', 0)"
+
+    '    '            Dim COMANDO As New SqlCommand(CONSULTA, Conex)
+
+    '    '            COMANDO.ExecuteNonQuery()
+
+    '    '            Conex.Close()
+    '    '        End If
+    '    '    End Sub
+
+    '    '    Private Sub CEnt20_TextChanged(sender As Object, e As EventArgs) Handles CEnt20.TextChanged
+    '    '        If CEnt20.Text <> "0" Then
+    '    '            Dim Prod As String = TxtAP20.Text
+    '    '            Dim CodSs As String = CodS.Text
+    '    '            Dim CanS As String = CantidadS20.Text
+
+    '    '            Conex.Open()
+    '    '            Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
+    '    '                                         INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
+    '    '                                                                       VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS & "', 0)"
+
+    '    '            Dim COMANDO As New SqlCommand(CONSULTA, Conex)
+
+    '    '            COMANDO.ExecuteNonQuery()
+
+    '    '            Conex.Close()
+    '    '        End If
+    '    '    End Sub
+
+    '    '    Private Sub TxtBMaterial_TextChanged(sender As Object, e As EventArgs) Handles TxtBMaterial.TextChanged
+    '    '        If TxtBMaterial.Text = "" Then
+    '    '            Dim Consulta As String = "SELECT Id_Producto, Nombre_Producto, Clave_Producto, Existencia
+    '    '                                  FROM TB_Productos
+    '    '                                  WHERE Estado = 'Activo' AND
+    '    '									    Existencia > 0
+    '    '                                  ORDER BY Nombre_Producto ASC"
+
+    '    '            Dim cmd As New SqlCommand(Consulta, Conex)
+    '    '            Dim Da As New SqlDataAdapter(cmd)
+    '    '            Dim Ds As New DataSet
+
+    '    '            Try
+    '    '                Conex.Open()
+
+    '    '                Da.Fill(Ds)
+    '    '                DGProducto.DataSource = Ds.Tables(0)
+    '    '                Da.Dispose()
+
+    '    '            Catch ex As Exception
+    '    '                MessageBox.Show(Err.Description.ToString(), "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
+    '    '            End Try
+
+    '    '            Conex.Close()
+    '    '        Else
+    '    '            Dim Consulta As String = "SELECT Id_Producto, Nombre_Producto, Clave_Producto, Existencia
+    '    '                                        FROM TB_Productos
+    '    '                                        WHERE Estado = 'Activo' AND
+    '    '                                                (Nombre_Producto  LIKE '%'+@Busqueda+'%' OR
+    '    '                                                Clave_Producto  LIKE '%'+@Busqueda+'%' OR
+    '    '                                                Codigo_Barras LIKE '%'+@Busqueda+'%') AND
+    '    '									            Existencia > 0
+    '    '                                        ORDER BY Nombre_Producto ASC"
+
+    '    '            Dim cmd As New SqlCommand(Consulta, Conex)
+    '    '            cmd.Parameters.AddWithValue("@Busqueda", Trim(TxtBMaterial.Text))
+    '    '            Dim Da As New SqlDataAdapter(cmd)
+    '    '            Dim Ds As New DataSet
+
+    '    '            Try
+    '    '                Conex.Open()
+
+    '    '                Da.Fill(Ds)
+    '    '                DGProducto.DataSource = Ds.Tables(0)
+    '    '                Da.Dispose()
+
+    '    '            Catch ex As Exception
+    '    '                MessageBox.Show(Err.Description.ToString(), "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
+    '    '            End Try
+
+    '    '            Conex.Close()
+    '    '        End If
+    '    '    End Sub
+
+    'Private Sub IDP1_TextChanged(sender As Object, e As EventArgs) Handles IDP1.TextChanged
+    '    If IDP1.Text <> "" And LUM1.Text <> "" Then
+    '        BB1.Visible = False
+    '        LA1.Visible = False
+    '    ElseIf IDP1.Text <> "" And LUM1.Text = "" Then
+    '        LA1.Visible = True
+    '    End If
+    'End Sub
+
+    'Private Sub IDP2_TextChanged(sender As Object, e As EventArgs) Handles IDP2.TextChanged
+    '    If IDP2.Text <> "" And LUM2.Text <> "" Then
+    '        BB2.Visible = False
+    '        LA2.Visible = False
+    '    ElseIf IDP2.Text <> "" And LUM2.Text = "" Then
+    '        LA2.Visible = True
+    '    End If
+    'End Sub
+
+    '    '    Private Sub IDP3_TextChanged(sender As Object, e As EventArgs) Handles IDP3.TextChanged
+    '    '        If IDP3.Text <> "" And LUM3.Text <> "" Then
+    '    '            BB3.Visible = False
+    '    '            LA3.Visible = False
+    '    '        ElseIf IDP3.Text <> "" And LUM3.Text = "" Then
+    '    '            LA3.Visible = True
+    '    '        End If
+    '    '    End Sub
+
+    '    '    Private Sub IDP4_TextChanged(sender As Object, e As EventArgs) Handles IDP4.TextChanged
+    '    '        If IDP4.Text <> "" And LUM4.Text <> "" Then
+    '    '            BB4.Visible = False
+    '    '            LA4.Visible = False
+    '    '        ElseIf IDP4.Text <> "" And LUM4.Text = "" Then
+    '    '            LA4.Visible = True
+    '    '        End If
+    '    '    End Sub
+
+    '    '    Private Sub IDP5_TextChanged(sender As Object, e As EventArgs) Handles IDP5.TextChanged
+    '    '        If IDP5.Text <> "" And LUM5.Text <> "" Then
+    '    '            BB5.Visible = False
+    '    '            LA5.Visible = False
+    '    '        ElseIf IDP5.Text <> "" And LUM5.Text = "" Then
+    '    '            LA5.Visible = True
+    '    '        End If
+    '    '    End Sub
+
+    '    '    Private Sub IDP6_TextChanged(sender As Object, e As EventArgs) Handles IDP6.TextChanged
+    '    '        If IDP6.Text <> "" And LUM6.Text <> "" Then
+    '    '            BB6.Visible = False
+    '    '            LA6.Visible = False
+    '    '        ElseIf IDP6.Text <> "" And LUM6.Text = "" Then
+    '    '            LA6.Visible = True
+    '    '        End If
+    '    '    End Sub
+
+    '    '    Private Sub IDP7_TextChanged(sender As Object, e As EventArgs) Handles IDP7.TextChanged
+    '    '        If IDP7.Text <> "" And LUM7.Text <> "" Then
+    '    '            BB7.Visible = False
+    '    '            LA7.Visible = False
+    '    '        ElseIf IDP7.Text <> "" And LUM7.Text = "" Then
+    '    '            LA7.Visible = True
+    '    '        End If
+    '    '    End Sub
+
+    '    '    Private Sub IDP8_TextChanged(sender As Object, e As EventArgs) Handles IDP8.TextChanged
+    '    '        If IDP8.Text <> "" And LUM8.Text <> "" Then
+    '    '            BB8.Visible = False
+    '    '            LA8.Visible = False
+    '    '        ElseIf IDP8.Text <> "" And LUM8.Text = "" Then
+    '    '            LA8.Visible = True
+    '    '        End If
+    '    '    End Sub
+
+    '    '    Private Sub IDP9_TextChanged(sender As Object, e As EventArgs) Handles IDP9.TextChanged
+    '    '        If IDP9.Text <> "" And LUM9.Text <> "" Then
+    '    '            BB9.Visible = False
+    '    '            LA9.Visible = False
+    '    '        ElseIf IDP9.Text <> "" And LUM9.Text = "" Then
+    '    '            LA9.Visible = True
+    '    '        End If
+    '    '    End Sub
+
+    '    '    Private Sub IDP10_TextChanged(sender As Object, e As EventArgs) Handles IDP10.TextChanged
+    '    '        If IDP10.Text <> "" And LUM10.Text <> "" Then
+    '    '            BB10.Visible = False
+    '    '            LA10.Visible = False
+    '    '        ElseIf IDP10.Text <> "" And LUM10.Text = "" Then
+    '    '            LA10.Visible = True
+    '    '        End If
+    '    '    End Sub
+
+    '    '    Private Sub IDP11_TextChanged(sender As Object, e As EventArgs) Handles IDP11.TextChanged
+    '    '        If IDP11.Text <> "" And LUM11.Text <> "" Then
+    '    '            BB11.Visible = False
+    '    '            LA11.Visible = False
+    '    '        ElseIf IDP11.Text <> "" And LUM11.Text = "" Then
+    '    '            LA11.Visible = True
+    '    '        End If
+    '    '    End Sub
+
+    '    '    Private Sub IDP12_TextChanged(sender As Object, e As EventArgs) Handles IDP12.TextChanged
+    '    '        If IDP12.Text <> "" And LUM12.Text <> "" Then
+    '    '            BB12.Visible = False
+    '    '            LA12.Visible = False
+    '    '        ElseIf IDP12.Text <> "" And LUM12.Text = "" Then
+    '    '            LA12.Visible = True
+    '    '        End If
+    '    '    End Sub
+
+    '    '    Private Sub IDP13_TextChanged(sender As Object, e As EventArgs) Handles IDP13.TextChanged
+    '    '        If IDP13.Text <> "" And LUM13.Text <> "" Then
+    '    '            BB13.Visible = False
+    '    '            LA13.Visible = False
+    '    '        ElseIf IDP13.Text <> "" And LUM13.Text = "" Then
+    '    '            LA13.Visible = True
+    '    '        End If
+    '    '    End Sub
+
+    '    '    Private Sub IDP14_TextChanged(sender As Object, e As EventArgs) Handles IDP14.TextChanged
+    '    '        If IDP14.Text <> "" And LUM14.Text <> "" Then
+    '    '            BB14.Visible = False
+    '    '            LA14.Visible = False
+    '    '        ElseIf IDP14.Text <> "" And LUM14.Text = "" Then
+    '    '            LA14.Visible = True
+    '    '        End If
+    '    '    End Sub
+
+    '    '    Private Sub IDP15_TextChanged(sender As Object, e As EventArgs) Handles IDP15.TextChanged
+    '    '        If IDP15.Text <> "" And LUM15.Text <> "" Then
+    '    '            BB15.Visible = False
+    '    '            LA15.Visible = False
+    '    '        ElseIf IDP15.Text <> "" And LUM15.Text = "" Then
+    '    '            LA15.Visible = True
+    '    '        End If
+    '    '    End Sub
+
+    '    '    Private Sub IDP16_TextChanged(sender As Object, e As EventArgs) Handles IDP16.TextChanged
+    '    '        If IDP16.Text <> "" And LUM16.Text <> "" Then
+    '    '            BB16.Visible = False
+    '    '            LA16.Visible = False
+    '    '        ElseIf IDP16.Text <> "" And LUM16.Text = "" Then
+    '    '            LA16.Visible = True
+    '    '        End If
+    '    '    End Sub
+
+    '    '    Private Sub IDP17_TextChanged(sender As Object, e As EventArgs) Handles IDP17.TextChanged
+    '    '        If IDP17.Text <> "" And LUM17.Text <> "" Then
+    '    '            BB17.Visible = False
+    '    '            LA17.Visible = False
+    '    '        ElseIf IDP17.Text <> "" And LUM17.Text = "" Then
+    '    '            LA17.Visible = True
+    '    '        End If
+    '    '    End Sub
+
+    '    '    Private Sub IDP18_TextChanged(sender As Object, e As EventArgs) Handles IDP18.TextChanged
+    '    '        If IDP18.Text <> "" And LUM18.Text <> "" Then
+    '    '            BB18.Visible = False
+    '    '            LA18.Visible = False
+    '    '        ElseIf IDP18.Text <> "" And LUM18.Text = "" Then
+    '    '            LA18.Visible = True
+    '    '        End If
+    '    '    End Sub
+
+    '    '    Private Sub IDP19_TextChanged(sender As Object, e As EventArgs) Handles IDP19.TextChanged
+    '    '        If IDP19.Text <> "" And LUM19.Text <> "" Then
+    '    '            BB19.Visible = False
+    '    '            LA19.Visible = False
+    '    '        ElseIf IDP19.Text <> "" And LUM19.Text = "" Then
+    '    '            LA19.Visible = True
+    '    '        End If
+    '    '    End Sub
+
+    '    '    Private Sub IDP20_TextChanged(sender As Object, e As EventArgs) Handles IDP20.TextChanged
+    '    '        If IDP20.Text <> "" And LUM20.Text <> "" Then
+    '    '            BB20.Visible = False
+    '    '            LA20.Visible = False
+    '    '        ElseIf IDP20.Text <> "" And LUM20.Text = "" Then
+    '    '            LA20.Visible = True
+    '    '        End If
+    '    '    End Sub
+
 
     'Consultas
     Private Sub Productos()
@@ -609,8 +1704,8 @@ Public Class ODC
         Dim Da As New SqlDataAdapter
 
         Dim Consulta As New SqlCommand("SELECT OD.id_pro, OD.descripcion, (Convert(Varchar,OD.cantidad) + ' ' + OD.Um), OD.estatus, OD.estado, OD.detalles
-                                        FROM TB_Ordenes_Detalle AS OD
-                                        WHERE OD.codigo =  '" + Busqueda + "' ", Conex)
+                                                FROM TB_Ordenes_Detalle AS OD
+                                                WHERE OD.codigo =  '" + Busqueda + "' ", Conex)
         Da.SelectCommand = Consulta
         Da.Fill(Tabla)
 
@@ -625,6 +1720,7 @@ Public Class ODC
                 LCEn1.Visible = True
                 LCE1.Visible = True
                 LI1.Visible = True
+                LBusqueda.Visible = True
 
                 P1.Visible = True
                 IDS1.Visible = True
@@ -635,7 +1731,6 @@ Public Class ODC
                 CEnt1.Visible = True
                 LUM1.Visible = True
                 LAP1.Visible = True
-                BB1.Visible = True
                 TxtAP1.Visible = True
 
                 ID1.Text = Tabla.Rows(0)(0).ToString
@@ -676,7 +1771,6 @@ Public Class ODC
                 CEnt2.Visible = True
                 LUM2.Visible = True
                 LAP2.Visible = True
-                BB2.Visible = True
                 TxtAP2.Visible = True
 
                 ID2.Text = Tabla.Rows(1)(0).ToString
@@ -716,7 +1810,6 @@ Public Class ODC
                 CEnt3.Visible = True
                 LUM3.Visible = True
                 LAP3.Visible = True
-                BB3.Visible = True
                 TxtAP3.Visible = True
 
                 ID3.Text = Tabla.Rows(2)(0).ToString
@@ -756,7 +1849,6 @@ Public Class ODC
                 CEnt4.Visible = True
                 LUM4.Visible = True
                 LAP4.Visible = True
-                BB4.Visible = True
                 TxtAP4.Visible = True
 
                 ID4.Text = Tabla.Rows(3)(0).ToString
@@ -801,7 +1893,6 @@ Public Class ODC
                 CEnt5.Visible = True
                 LUM5.Visible = True
                 LAP5.Visible = True
-                BB5.Visible = True
                 TxtAP5.Visible = True
 
                 ID5.Text = Tabla.Rows(4)(0).ToString
@@ -838,7 +1929,6 @@ Public Class ODC
                 CEnt6.Visible = True
                 LUM6.Visible = True
                 LAP6.Visible = True
-                BB6.Visible = True
                 TxtAP6.Visible = True
 
                 ID6.Text = Tabla.Rows(5)(0).ToString
@@ -874,7 +1964,6 @@ Public Class ODC
                 CEnt7.Visible = True
                 LUM7.Visible = True
                 LAP7.Visible = True
-                BB7.Visible = True
                 TxtAP7.Visible = True
 
                 ID7.Text = Tabla.Rows(6)(0).ToString
@@ -909,7 +1998,6 @@ Public Class ODC
                 CEnt8.Visible = True
                 LUM8.Visible = True
                 LAP8.Visible = True
-                BB8.Visible = True
                 TxtAP8.Visible = True
 
                 ID8.Text = Tabla.Rows(7)(0).ToString
@@ -950,7 +2038,6 @@ Public Class ODC
                 CEnt9.Visible = True
                 LUM9.Visible = True
                 LAP9.Visible = True
-                BB9.Visible = True
                 TxtAP9.Visible = True
 
                 ID9.Text = Tabla.Rows(8)(0).ToString
@@ -983,7 +2070,6 @@ Public Class ODC
                 CEnt10.Visible = True
                 LUM10.Visible = True
                 LAP10.Visible = True
-                BB10.Visible = True
                 TxtAP10.Visible = True
 
                 ID10.Text = Tabla.Rows(9)(0).ToString
@@ -1015,7 +2101,6 @@ Public Class ODC
                 CEnt11.Visible = True
                 LUM11.Visible = True
                 LAP11.Visible = True
-                BB11.Visible = True
                 TxtAP11.Visible = True
 
                 ID11.Text = Tabla.Rows(10)(0).ToString
@@ -1046,7 +2131,6 @@ Public Class ODC
                 CEnt12.Visible = True
                 LUM12.Visible = True
                 LAP12.Visible = True
-                BB12.Visible = True
                 TxtAP12.Visible = True
 
                 ID12.Text = Tabla.Rows(11)(0).ToString
@@ -1083,7 +2167,6 @@ Public Class ODC
                 CEnt13.Visible = True
                 LUM13.Visible = True
                 LAP13.Visible = True
-                BB13.Visible = True
                 TxtAP13.Visible = True
 
                 ID13.Text = Tabla.Rows(12)(0).ToString
@@ -1112,7 +2195,6 @@ Public Class ODC
                 CEnt14.Visible = True
                 LUM14.Visible = True
                 LAP14.Visible = True
-                BB14.Visible = True
                 TxtAP14.Visible = True
 
                 ID14.Text = Tabla.Rows(13)(0).ToString
@@ -1140,7 +2222,6 @@ Public Class ODC
                 CEnt15.Visible = True
                 LUM15.Visible = True
                 LAP15.Visible = True
-                BB15.Visible = True
                 TxtAP15.Visible = True
 
                 ID15.Text = Tabla.Rows(14)(0).ToString
@@ -1167,7 +2248,6 @@ Public Class ODC
                 CEnt16.Visible = True
                 LUM16.Visible = True
                 LAP16.Visible = True
-                BB16.Visible = True
                 TxtAP16.Visible = True
 
                 ID16.Text = Tabla.Rows(15)(0).ToString
@@ -1200,7 +2280,6 @@ Public Class ODC
                 CEnt17.Visible = True
                 LUM17.Visible = True
                 LAP17.Visible = True
-                BB17.Visible = True
                 TxtAP17.Visible = True
 
                 ID17.Text = Tabla.Rows(16)(0).ToString
@@ -1225,7 +2304,6 @@ Public Class ODC
                 CEnt18.Visible = True
                 LUM18.Visible = True
                 LAP18.Visible = True
-                BB18.Visible = True
                 TxtAP18.Visible = True
 
                 ID18.Text = Tabla.Rows(17)(0).ToString
@@ -1250,7 +2328,6 @@ Public Class ODC
                 CEnt19.Visible = True
                 LUM19.Visible = True
                 LAP19.Visible = True
-                BB19.Visible = True
                 TxtAP19.Visible = True
 
                 ID19.Text = Tabla.Rows(18)(0).ToString
@@ -1273,7 +2350,6 @@ Public Class ODC
                 CEnt20.Visible = True
                 LUM20.Visible = True
                 LAP20.Visible = True
-                BB20.Visible = True
                 TxtAP20.Visible = True
 
                 ID20.Text = Tabla.Rows(19)(0).ToString
@@ -1297,7 +2373,7 @@ Public Class ODC
             Else
                 LA1.Visible = True
             End If
-        ElseIf Producto1.Text <> "" Then
+        ElseIf TxtAP1.Text = "" Then
             BB1.Visible = True
         End If
 
@@ -1308,7 +2384,7 @@ Public Class ODC
             Else
                 LA2.Visible = True
             End If
-        ElseIf Producto2.Text <> "" Then
+        ElseIf TxtAP2.Text = "" Then
             BB2.Visible = True
         End If
 
@@ -1319,7 +2395,7 @@ Public Class ODC
             Else
                 LA3.Visible = True
             End If
-        ElseIf Producto3.Text <> "" Then
+        ElseIf TxtAP3.Text = "" Then
             BB3.Visible = True
         End If
 
@@ -1329,8 +2405,9 @@ Public Class ODC
                 CEnt4.ReadOnly = False
             Else
                 LA4.Visible = True
+                BB4.Visible = True
             End If
-        ElseIf Producto4.Text <> "" Then
+        ElseIf TxtAP4.Text = "" Then
             BB4.Visible = True
         End If
 
@@ -1340,8 +2417,9 @@ Public Class ODC
                 CEnt5.ReadOnly = False
             Else
                 LA5.Visible = True
+                BB5.Visible = True
             End If
-        ElseIf Producto5.Text <> "" Then
+        ElseIf TxtAP5.Text = "" Then
             BB5.Visible = True
         End If
 
@@ -1351,8 +2429,9 @@ Public Class ODC
                 CEnt6.ReadOnly = False
             Else
                 LA6.Visible = True
+                BB6.Visible = True
             End If
-        ElseIf Producto6.Text <> "" Then
+        ElseIf TxtAP6.Text = "" Then
             BB6.Visible = True
         End If
 
@@ -1362,8 +2441,9 @@ Public Class ODC
                 CEnt7.ReadOnly = False
             Else
                 LA7.Visible = True
+                BB7.Visible = True
             End If
-        ElseIf Producto7.Text <> "" Then
+        ElseIf TxtAP7.Text = "" Then
             BB7.Visible = True
         End If
 
@@ -1373,8 +2453,9 @@ Public Class ODC
                 CEnt8.ReadOnly = False
             Else
                 LA8.Visible = True
+                BB8.Visible = True
             End If
-        ElseIf Producto8.Text <> "" Then
+        ElseIf TxtAP8.Text = "" Then
             BB8.Visible = True
         End If
 
@@ -1384,8 +2465,9 @@ Public Class ODC
                 CEnt9.ReadOnly = False
             Else
                 LA9.Visible = True
+                BB9.Visible = True
             End If
-        ElseIf Producto9.Text <> "" Then
+        ElseIf TxtAP9.Text = "" Then
             BB9.Visible = True
         End If
 
@@ -1395,8 +2477,9 @@ Public Class ODC
                 CEnt10.ReadOnly = False
             Else
                 LA10.Visible = True
+                BB10.Visible = True
             End If
-        ElseIf Producto10.Text <> "" Then
+        ElseIf TxtAP10.Text = "" Then
             BB10.Visible = True
         End If
 
@@ -1406,8 +2489,9 @@ Public Class ODC
                 CEnt11.ReadOnly = False
             Else
                 LA11.Visible = True
+                BB11.Visible = True
             End If
-        ElseIf Producto11.Text <> "" Then
+        ElseIf TxtAP11.Text = "" Then
             BB11.Visible = True
         End If
 
@@ -1417,8 +2501,9 @@ Public Class ODC
                 CEnt12.ReadOnly = False
             Else
                 LA12.Visible = True
+                BB12.Visible = True
             End If
-        ElseIf Producto12.Text <> "" Then
+        ElseIf TxtAP12.Text = "" Then
             BB12.Visible = True
         End If
 
@@ -1428,8 +2513,9 @@ Public Class ODC
                 CEnt13.ReadOnly = False
             Else
                 LA13.Visible = True
+                BB13.Visible = True
             End If
-        ElseIf Producto13.Text <> "" Then
+        ElseIf TxtAP13.Text = "" Then
             BB13.Visible = True
         End If
 
@@ -1439,8 +2525,9 @@ Public Class ODC
                 CEnt14.ReadOnly = False
             Else
                 LA14.Visible = True
+                BB14.Visible = True
             End If
-        ElseIf Producto14.Text <> "" Then
+        ElseIf TxtAP14.Text = "" Then
             BB14.Visible = True
         End If
 
@@ -1450,8 +2537,9 @@ Public Class ODC
                 CEnt15.ReadOnly = False
             Else
                 LA15.Visible = True
+                BB15.Visible = True
             End If
-        ElseIf Producto15.Text <> "" Then
+        ElseIf TxtAP15.Text = "" Then
             BB15.Visible = True
         End If
 
@@ -1461,8 +2549,9 @@ Public Class ODC
                 CEnt16.ReadOnly = False
             Else
                 LA16.Visible = True
+                BB16.Visible = True
             End If
-        ElseIf Producto16.Text <> "" Then
+        ElseIf TxtAP16.Text = "" Then
             BB16.Visible = True
         End If
 
@@ -1472,8 +2561,9 @@ Public Class ODC
                 CEnt17.ReadOnly = False
             Else
                 LA17.Visible = True
+                BB18.Visible = True
             End If
-        ElseIf Producto17.Text <> "" Then
+        ElseIf TxtAP17.Text = "" Then
             BB17.Visible = True
         End If
 
@@ -1483,8 +2573,9 @@ Public Class ODC
                 CEnt18.ReadOnly = False
             Else
                 LA18.Visible = True
+                BB18.Visible = True
             End If
-        ElseIf Producto18.Text <> "" Then
+        ElseIf TxtAP18.Text = "" Then
             BB18.Visible = True
         End If
 
@@ -1494,8 +2585,9 @@ Public Class ODC
                 CEnt19.ReadOnly = False
             Else
                 LA19.Visible = True
+                BB19.Visible = True
             End If
-        ElseIf Producto19.Text <> "" Then
+        ElseIf TxtAP19.Text = "" Then
             BB19.Visible = True
         End If
 
@@ -1505,8 +2597,9 @@ Public Class ODC
                 CEnt20.ReadOnly = False
             Else
                 LA20.Visible = True
+                BB20.Visible = True
             End If
-        ElseIf Producto20.Text <> "" Then
+        ElseIf TxtAP20.Text = "" Then
             BB20.Visible = True
         End If
     End Sub
@@ -1514,9 +2607,9 @@ Public Class ODC
     '   Relación de Productos
     Private Sub BP1()
         Dim Consulta As String = "SELECT P.Nombre_Producto, M.Medida
-                                  FROM TB_Productos AS P
-                                    INNER JOIN TB_Medidas AS M ON P.Id_Medida = M.Id_Medida
-                                  WHERE  P.Id_Producto = @Busqueda"
+                                          FROM TB_Productos AS P
+                                            INNER JOIN TB_Medidas AS M ON P.Id_Medida = M.Id_Medida
+                                          WHERE  P.Id_Producto = @Busqueda"
 
         Dim cmd As New SqlCommand(Consulta, Conex)
         cmd.Parameters.AddWithValue("@Busqueda", CInt(IDP1.Text))
@@ -1536,9 +2629,9 @@ Public Class ODC
 
     Private Sub BP2()
         Dim Consulta As String = "SELECT P.Nombre_Producto, M.Medida
-                                  FROM TB_Productos AS P
-                                    INNER JOIN TB_Medidas AS M ON P.Id_Medida = M.Id_Medida
-                                  WHERE  P.Id_Producto = @Busqueda"
+                                          FROM TB_Productos AS P
+                                            INNER JOIN TB_Medidas AS M ON P.Id_Medida = M.Id_Medida
+                                          WHERE  P.Id_Producto = @Busqueda"
 
         Dim cmd As New SqlCommand(Consulta, Conex)
         cmd.Parameters.AddWithValue("@Busqueda", CInt(IDP2.Text))
@@ -1558,9 +2651,9 @@ Public Class ODC
 
     Private Sub BP3()
         Dim Consulta As String = "SELECT P.Nombre_Producto, M.Medida
-                                  FROM TB_Productos AS P
-                                    INNER JOIN TB_Medidas AS M ON P.Id_Medida = M.Id_Medida
-                                  WHERE  P.Id_Producto = @Busqueda"
+                                          FROM TB_Productos AS P
+                                            INNER JOIN TB_Medidas AS M ON P.Id_Medida = M.Id_Medida
+                                          WHERE  P.Id_Producto = @Busqueda"
 
         Dim cmd As New SqlCommand(Consulta, Conex)
         cmd.Parameters.AddWithValue("@Busqueda", CInt(IDP3.Text))
@@ -1580,9 +2673,9 @@ Public Class ODC
 
     Private Sub BP4()
         Dim Consulta As String = "SELECT P.Nombre_Producto, M.Medida
-                                  FROM TB_Productos AS P
-                                    INNER JOIN TB_Medidas AS M ON P.Id_Medida = M.Id_Medida
-                                  WHERE  P.Id_Producto = @Busqueda"
+                                          FROM TB_Productos AS P
+                                            INNER JOIN TB_Medidas AS M ON P.Id_Medida = M.Id_Medida
+                                          WHERE  P.Id_Producto = @Busqueda"
 
         Dim cmd As New SqlCommand(Consulta, Conex)
         cmd.Parameters.AddWithValue("@Busqueda", CInt(IDP4.Text))
@@ -1602,9 +2695,9 @@ Public Class ODC
 
     Private Sub BP5()
         Dim Consulta As String = "SELECT P.Nombre_Producto, M.Medida
-                                  FROM TB_Productos AS P
-                                    INNER JOIN TB_Medidas AS M ON P.Id_Medida = M.Id_Medida
-                                  WHERE  P.Id_Producto = @Busqueda"
+                                          FROM TB_Productos AS P
+                                            INNER JOIN TB_Medidas AS M ON P.Id_Medida = M.Id_Medida
+                                          WHERE  P.Id_Producto = @Busqueda"
 
         Dim cmd As New SqlCommand(Consulta, Conex)
         cmd.Parameters.AddWithValue("@Busqueda", CInt(IDP5.Text))
@@ -1624,9 +2717,9 @@ Public Class ODC
 
     Private Sub BP6()
         Dim Consulta As String = "SELECT P.Nombre_Producto, M.Medida
-                                  FROM TB_Productos AS P
-                                    INNER JOIN TB_Medidas AS M ON P.Id_Medida = M.Id_Medida
-                                  WHERE  P.Id_Producto = @Busqueda"
+                                          FROM TB_Productos AS P
+                                            INNER JOIN TB_Medidas AS M ON P.Id_Medida = M.Id_Medida
+                                          WHERE  P.Id_Producto = @Busqueda"
 
         Dim cmd As New SqlCommand(Consulta, Conex)
         cmd.Parameters.AddWithValue("@Busqueda", CInt(IDP6.Text))
@@ -1646,9 +2739,9 @@ Public Class ODC
 
     Private Sub BP7()
         Dim Consulta As String = "SELECT P.Nombre_Producto, M.Medida
-                                  FROM TB_Productos AS P
-                                    INNER JOIN TB_Medidas AS M ON P.Id_Medida = M.Id_Medida
-                                  WHERE  P.Id_Producto = @Busqueda"
+                                          FROM TB_Productos AS P
+                                            INNER JOIN TB_Medidas AS M ON P.Id_Medida = M.Id_Medida
+                                          WHERE  P.Id_Producto = @Busqueda"
 
         Dim cmd As New SqlCommand(Consulta, Conex)
         cmd.Parameters.AddWithValue("@Busqueda", CInt(IDP7.Text))
@@ -1668,9 +2761,9 @@ Public Class ODC
 
     Private Sub BP8()
         Dim Consulta As String = "SELECT P.Nombre_Producto, M.Medida
-                                  FROM TB_Productos AS P
-                                    INNER JOIN TB_Medidas AS M ON P.Id_Medida = M.Id_Medida
-                                  WHERE  P.Id_Producto = @Busqueda"
+                                          FROM TB_Productos AS P
+                                            INNER JOIN TB_Medidas AS M ON P.Id_Medida = M.Id_Medida
+                                          WHERE  P.Id_Producto = @Busqueda"
 
         Dim cmd As New SqlCommand(Consulta, Conex)
         cmd.Parameters.AddWithValue("@Busqueda", CInt(IDP8.Text))
@@ -1690,9 +2783,9 @@ Public Class ODC
 
     Private Sub BP9()
         Dim Consulta As String = "SELECT P.Nombre_Producto, M.Medida
-                                  FROM TB_Productos AS P
-                                    INNER JOIN TB_Medidas AS M ON P.Id_Medida = M.Id_Medida
-                                  WHERE  P.Id_Producto = @Busqueda"
+                                          FROM TB_Productos AS P
+                                            INNER JOIN TB_Medidas AS M ON P.Id_Medida = M.Id_Medida
+                                          WHERE  P.Id_Producto = @Busqueda"
 
         Dim cmd As New SqlCommand(Consulta, Conex)
         cmd.Parameters.AddWithValue("@Busqueda", CInt(IDP9.Text))
@@ -1712,9 +2805,9 @@ Public Class ODC
 
     Private Sub BP10()
         Dim Consulta As String = "SELECT P.Nombre_Producto, M.Medida
-                                  FROM TB_Productos AS P
-                                    INNER JOIN TB_Medidas AS M ON P.Id_Medida = M.Id_Medida
-                                  WHERE  P.Id_Producto = @Busqueda"
+                                          FROM TB_Productos AS P
+                                            INNER JOIN TB_Medidas AS M ON P.Id_Medida = M.Id_Medida
+                                          WHERE  P.Id_Producto = @Busqueda"
 
         Dim cmd As New SqlCommand(Consulta, Conex)
         cmd.Parameters.AddWithValue("@Busqueda", CInt(IDP10.Text))
@@ -1734,9 +2827,9 @@ Public Class ODC
 
     Private Sub BP11()
         Dim Consulta As String = "SELECT P.Nombre_Producto, M.Medida
-                                  FROM TB_Productos AS P
-                                    INNER JOIN TB_Medidas AS M ON P.Id_Medida = M.Id_Medida
-                                  WHERE  P.Id_Producto = @Busqueda"
+                                          FROM TB_Productos AS P
+                                            INNER JOIN TB_Medidas AS M ON P.Id_Medida = M.Id_Medida
+                                          WHERE  P.Id_Producto = @Busqueda"
 
         Dim cmd As New SqlCommand(Consulta, Conex)
         cmd.Parameters.AddWithValue("@Busqueda", CInt(IDP11.Text))
@@ -1756,9 +2849,9 @@ Public Class ODC
 
     Private Sub BP12()
         Dim Consulta As String = "SELECT P.Nombre_Producto, M.Medida
-                                  FROM TB_Productos AS P
-                                    INNER JOIN TB_Medidas AS M ON P.Id_Medida = M.Id_Medida
-                                  WHERE  P.Id_Producto = @Busqueda"
+                                          FROM TB_Productos AS P
+                                            INNER JOIN TB_Medidas AS M ON P.Id_Medida = M.Id_Medida
+                                          WHERE  P.Id_Producto = @Busqueda"
 
         Dim cmd As New SqlCommand(Consulta, Conex)
         cmd.Parameters.AddWithValue("@Busqueda", CInt(IDP12.Text))
@@ -1778,9 +2871,9 @@ Public Class ODC
 
     Private Sub BP13()
         Dim Consulta As String = "SELECT P.Nombre_Producto, M.Medida
-                                  FROM TB_Productos AS P
-                                    INNER JOIN TB_Medidas AS M ON P.Id_Medida = M.Id_Medida
-                                  WHERE  P.Id_Producto = @Busqueda"
+                                          FROM TB_Productos AS P
+                                            INNER JOIN TB_Medidas AS M ON P.Id_Medida = M.Id_Medida
+                                          WHERE  P.Id_Producto = @Busqueda"
 
         Dim cmd As New SqlCommand(Consulta, Conex)
         cmd.Parameters.AddWithValue("@Busqueda", CInt(IDP13.Text))
@@ -1800,9 +2893,9 @@ Public Class ODC
 
     Private Sub BP14()
         Dim Consulta As String = "SELECT P.Nombre_Producto, M.Medida
-                                  FROM TB_Productos AS P
-                                    INNER JOIN TB_Medidas AS M ON P.Id_Medida = M.Id_Medida
-                                  WHERE  P.Id_Producto = @Busqueda"
+                                          FROM TB_Productos AS P
+                                            INNER JOIN TB_Medidas AS M ON P.Id_Medida = M.Id_Medida
+                                          WHERE  P.Id_Producto = @Busqueda"
 
         Dim cmd As New SqlCommand(Consulta, Conex)
         cmd.Parameters.AddWithValue("@Busqueda", CInt(IDP14.Text))
@@ -1822,9 +2915,9 @@ Public Class ODC
 
     Private Sub BP15()
         Dim Consulta As String = "SELECT P.Nombre_Producto, M.Medida
-                                  FROM TB_Productos AS P
-                                    INNER JOIN TB_Medidas AS M ON P.Id_Medida = M.Id_Medida
-                                  WHERE  P.Id_Producto = @Busqueda"
+                                          FROM TB_Productos AS P
+                                            INNER JOIN TB_Medidas AS M ON P.Id_Medida = M.Id_Medida
+                                          WHERE  P.Id_Producto = @Busqueda"
 
         Dim cmd As New SqlCommand(Consulta, Conex)
         cmd.Parameters.AddWithValue("@Busqueda", CInt(IDP15.Text))
@@ -1844,9 +2937,9 @@ Public Class ODC
 
     Private Sub BP16()
         Dim Consulta As String = "SELECT P.Nombre_Producto, M.Medida
-                                  FROM TB_Productos AS P
-                                    INNER JOIN TB_Medidas AS M ON P.Id_Medida = M.Id_Medida
-                                  WHERE  P.Id_Producto = @Busqueda"
+                                          FROM TB_Productos AS P
+                                            INNER JOIN TB_Medidas AS M ON P.Id_Medida = M.Id_Medida
+                                          WHERE  P.Id_Producto = @Busqueda"
 
         Dim cmd As New SqlCommand(Consulta, Conex)
         cmd.Parameters.AddWithValue("@Busqueda", CInt(IDP16.Text))
@@ -1866,9 +2959,9 @@ Public Class ODC
 
     Private Sub BP17()
         Dim Consulta As String = "SELECT P.Nombre_Producto, M.Medida
-                                  FROM TB_Productos AS P
-                                    INNER JOIN TB_Medidas AS M ON P.Id_Medida = M.Id_Medida
-                                  WHERE  P.Id_Producto = @Busqueda"
+                                          FROM TB_Productos AS P
+                                            INNER JOIN TB_Medidas AS M ON P.Id_Medida = M.Id_Medida
+                                          WHERE  P.Id_Producto = @Busqueda"
 
         Dim cmd As New SqlCommand(Consulta, Conex)
         cmd.Parameters.AddWithValue("@Busqueda", CInt(IDP17.Text))
@@ -1888,9 +2981,9 @@ Public Class ODC
 
     Private Sub BP18()
         Dim Consulta As String = "SELECT P.Nombre_Producto, M.Medida
-                                  FROM TB_Productos AS P
-                                    INNER JOIN TB_Medidas AS M ON P.Id_Medida = M.Id_Medida
-                                  WHERE  P.Id_Producto = @Busqueda"
+                                          FROM TB_Productos AS P
+                                            INNER JOIN TB_Medidas AS M ON P.Id_Medida = M.Id_Medida
+                                          WHERE  P.Id_Producto = @Busqueda"
 
         Dim cmd As New SqlCommand(Consulta, Conex)
         cmd.Parameters.AddWithValue("@Busqueda", CInt(IDP18.Text))
@@ -1910,9 +3003,9 @@ Public Class ODC
 
     Private Sub BP19()
         Dim Consulta As String = "SELECT P.Nombre_Producto, M.Medida
-                                  FROM TB_Productos AS P
-                                    INNER JOIN TB_Medidas AS M ON P.Id_Medida = M.Id_Medida
-                                  WHERE  P.Id_Producto = @Busqueda"
+                                          FROM TB_Productos AS P
+                                            INNER JOIN TB_Medidas AS M ON P.Id_Medida = M.Id_Medida
+                                          WHERE  P.Id_Producto = @Busqueda"
 
         Dim cmd As New SqlCommand(Consulta, Conex)
         cmd.Parameters.AddWithValue("@Busqueda", CInt(IDP19.Text))
@@ -1932,9 +3025,9 @@ Public Class ODC
 
     Private Sub BP20()
         Dim Consulta As String = "SELECT P.Nombre_Producto, M.Medida
-                                  FROM TB_Productos AS P
-                                    INNER JOIN TB_Medidas AS M ON P.Id_Medida = M.Id_Medida
-                                  WHERE  P.Id_Producto = @Busqueda"
+                                          FROM TB_Productos AS P
+                                            INNER JOIN TB_Medidas AS M ON P.Id_Medida = M.Id_Medida
+                                          WHERE  P.Id_Producto = @Busqueda"
 
         Dim cmd As New SqlCommand(Consulta, Conex)
         cmd.Parameters.AddWithValue("@Busqueda", CInt(IDP20.Text))
@@ -1952,42 +3045,42 @@ Public Class ODC
         Conex.Close()
     End Sub
 
-    Private Sub MR()
-        Dim DateTime As Date = DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt")
-        Dim CodSs As String = CodS.Text
-        Dim Emple As String = LUsuario.Text
-        Dim OrdenCompr As String = OCompra.Text
+    '    Private Sub MR()
+    '        Dim DateTime As Date = DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt")
+    '        Dim CodSs As String = CodS.Text
+    '        Dim Emple As String = LUsuario.Text
+    '        Dim OrdenCompr As String = OCompra.Text
 
-        Conex.Open()
-        Dim CONSULTA As String = "INSERT INTO TB_MovimientoRastreo (Codigo, Tipo, Estado, Responsable, CodiS , Created)
-                                                            VALUES ('" & OrdenCompr & "', 'Entrada', 'Entrada', '" & Emple & "', '" & CodSs & "',SYSDATETIME() )"
-        Dim COMANDO As New SqlCommand(CONSULTA, Conex)
+    '        Conex.Open()
+    '        Dim CONSULTA As String = "INSERT INTO TB_MovimientoRastreo (Codigo, Tipo, Estado, Responsable, CodiS , Created)
+    '                                                            VALUES ('" & OrdenCompr & "', 'Entrada', 'Entrada', '" & Emple & "', '" & CodSs & "',SYSDATETIME() )"
+    '        Dim COMANDO As New SqlCommand(CONSULTA, Conex)
 
-        COMANDO.ExecuteNonQuery()
+    '        COMANDO.ExecuteNonQuery()
 
-        Conex.Close()
-    End Sub
+    '        Conex.Close()
+    '    End Sub
 
-    Private Sub Nombres()
-        Dim Consulta As String = "SELECT ( E.Nombre_Empleado+ ' ' + E.Ape_Paterno+' ' +  E.Ape_Materno) AS Nombre
-                                  FROM TB_Usuarios AS U
-                                    INNER JOIN TB_Empleados AS E ON U.Id_Empleado = E.Id_Empleado
-                                  WHERE  U.Id_Usuario = @Busqueda"
+    '    Private Sub Nombres()
+    '        Dim Consulta As String = "SELECT ( E.Nombre_Empleado+ ' ' + E.Ape_Paterno+' ' +  E.Ape_Materno) AS Nombre
+    '                                  FROM TB_Usuarios AS U
+    '                                    INNER JOIN TB_Empleados AS E ON U.Id_Empleado = E.Id_Empleado
+    '                                  WHERE  U.Id_Usuario = @Busqueda"
 
-        Dim cmd As New SqlCommand(Consulta, Conex)
-        cmd.Parameters.AddWithValue("@Busqueda", Trim(Index.L_ID.Text))
+    '        Dim cmd As New SqlCommand(Consulta, Conex)
+    '        cmd.Parameters.AddWithValue("@Busqueda", Trim(Index.L_ID.Text))
 
-        Dim Da As SqlDataReader
-        Conex.Open()
-        Da = cmd.ExecuteReader()
+    '        Dim Da As SqlDataReader
+    '        Conex.Open()
+    '        Da = cmd.ExecuteReader()
 
-        If Da.Read() Then
-            LUsuario.Text = Da.Item("Nombre").ToString()
-        End If
+    '        If Da.Read() Then
+    '            LUsuario.Text = Da.Item("Nombre").ToString()
+    '        End If
 
-        Da.Close()
-        Conex.Close()
-    End Sub
+    '        Da.Close()
+    '        Conex.Close()
+    '    End Sub
 
 
     'Blanco
@@ -2567,509 +3660,74 @@ Public Class ODC
     End Sub
 
 
-
-    '    ''Private Sub BTerminar_Click(sender As Object, e As EventArgs) Handles BTerminar.Click
-    '    ''    Dim CodS As String = COrdenC.Text
-
-    '    ''    Conex.Open()
-    '    ''    Dim CONSULTA As String = "UPDATE TB_Ordenes_Compra 
-    '    ''                                SET estado = 'Finalizado'
-    '    ''                                WHERE codigo = '" & CodS & "'"
-
-    '    ''    Dim COMANDO As New SqlCommand(CONSULTA, Conex)
-
-    '    ''    COMANDO.ExecuteNonQuery()
-
-    '    ''    B1()
-    '    ''    B2()
-    '    ''    B3()
-    '    ''    B4()
-    '    ''    B5()
-    '    ''    B6()
-    '    ''    B7()
-    '    ''    B8()
-    '    ''    B9()
-    '    ''    B10()
-    '    ''    B11()
-    '    ''    B12()
-    '    ''    B13()
-    '    ''    B14()
-    '    ''    B15()
-    '    ''    B16()
-    '    ''    B17()
-    '    ''    B18()
-    '    ''    B19()
-    '    ''    B20()
-    '    ''    Conex.Close()
-
-    '    ''    OrdenCompra()
-    '    ''End Sub
-
-
-
-    '    ''Private Sub COrdenC_SelectedIndexChanged(sender As Object, e As EventArgs)
-    '    ''    Productos()
-    '    ''End Sub
-
-
-
-    '    '''//////////////////
-    '    ''Private Sub CEnt1_TextChanged(sender As Object, e As EventArgs) Handles CEnt1.TextChanged
-    '    ''    If CEnt1.Text <> "0" Then
-    '    ''        Dim Prod As String = Producto1.Text
-    '    ''        Dim CodS As String = COrdenC.SelectedValue
-    '    ''        Dim CanS As Double = CDec(CantidadS1.Text)
-
-    '    ''        Conex.Open()
-    '    ''        Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodS & "' AND Producto = '" & Prod & "')
-    '    ''                                     INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
-    '    ''                                                                   VALUES ('" & CodS & "', '" & Prod & "', '" & CanS & "', 0)"
-
-    '    ''        Dim COMANDO As New SqlCommand(CONSULTA, Conex)
-
-    '    ''        COMANDO.ExecuteNonQuery()
-
-    '    ''        Conex.Close()
-    '    ''    End If
-    '    ''End Sub
-
-    '    ''Private Sub CEnt2_TextChanged(sender As Object, e As EventArgs) Handles CEnt2.TextChanged
-    '    ''    If CEnt2.Text <> "0" Then
-    '    ''        Dim Prod As String = Producto2.Text
-    '    ''        Dim CodS As String = COrdenC.SelectedValue
-
-    '    ''        Dim CanS As Double = CDec(CantidadS2.Text)
-
-    '    ''        Conex.Open()
-    '    ''        Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodS & "' AND Producto = '" & Prod & "')
-    '    ''                                     INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
-    '    ''                                                                   VALUES ('" & CodS & "', '" & Prod & "', '" & CanS & "', 0)"
-
-    '    ''        Dim COMANDO As New SqlCommand(CONSULTA, Conex)
-
-    '    ''        COMANDO.ExecuteNonQuery()
-
-    '    ''        Conex.Close()
-    '    ''    End If
-    '    ''End Sub
-
-    '    ''Private Sub CEnt3_TextChanged(sender As Object, e As EventArgs) Handles CEnt3.TextChanged
-    '    ''    If CEnt3.Text <> "0" Then
-    '    ''        Dim Prod As String = Producto3.Text
-    '    ''        Dim CodS As String = COrdenC.SelectedValue
-    '    ''        Dim CanS As Double = CDec(CantidadS3.Text)
-
-    '    ''        Conex.Open()
-    '    ''        Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodS & "' AND Producto = '" & Prod & "')
-    '    ''                                     INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
-    '    ''                                                                   VALUES ('" & CodS & "', '" & Prod & "', '" & CanS & "', 0)"
-
-    '    ''        Dim COMANDO As New SqlCommand(CONSULTA, Conex)
-
-    '    ''        COMANDO.ExecuteNonQuery()
-
-    '    ''        Conex.Close()
-    '    ''    End If
-    '    ''End Sub
-
-    '    ''Private Sub CEnt4_TextChanged(sender As Object, e As EventArgs) Handles CEnt4.TextChanged
-    '    ''    If CEnt4.Text <> "0" Then
-    '    ''        Dim Prod As String = Producto4.Text
-    '    ''        Dim CodS As String = COrdenC.SelectedValue
-    '    ''        Dim CanS As Double = CDec(CantidadS4.Text)
-
-    '    ''        Conex.Open()
-    '    ''        Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodS & "' AND Producto = '" & Prod & "')
-    '    ''                                     INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
-    '    ''                                                                   VALUES ('" & CodS & "', '" & Prod & "', '" & CanS & "', 0)"
-
-    '    ''        Dim COMANDO As New SqlCommand(CONSULTA, Conex)
-
-    '    ''        COMANDO.ExecuteNonQuery()
-
-    '    ''        Conex.Close()
-    '    ''    End If
-    '    ''End Sub
-
-    '    ''Private Sub CEnt5_TextChanged(sender As Object, e As EventArgs) Handles CEnt5.TextChanged
-    '    ''    If CEnt5.Text <> "0" Then
-    '    ''        Dim Prod As String = Producto5.Text
-    '    ''        Dim CodS As String = COrdenC.SelectedValue
-    '    ''        Dim CanS As Double = CDec(CantidadS5.Text)
-
-    '    ''        Conex.Open()
-    '    ''        Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodS & "' AND Producto = '" & Prod & "')
-    '    ''                                     INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
-    '    ''                                                                   VALUES ('" & CodS & "', '" & Prod & "', '" & CanS & "', 0)"
-
-    '    ''        Dim COMANDO As New SqlCommand(CONSULTA, Conex)
-
-    '    ''        COMANDO.ExecuteNonQuery()
-
-    '    ''        Conex.Close()
-    '    ''    End If
-    '    ''End Sub
-
-    '    ''Private Sub CEnt6_TextChanged(sender As Object, e As EventArgs) Handles CEnt6.TextChanged
-    '    ''    If CEnt6.Text <> "0" Then
-    '    ''        Dim Prod As String = Producto6.Text
-    '    ''        Dim CodS As String = COrdenC.SelectedValue
-    '    ''        Dim CanS As Double = CDec(CantidadS6.Text)
-
-    '    ''        Conex.Open()
-    '    ''        Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodS & "' AND Producto = '" & Prod & "')
-    '    ''                                     INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
-    '    ''                                                                   VALUES ('" & CodS & "', '" & Prod & "', '" & CanS & "', 0)"
-
-    '    ''        Dim COMANDO As New SqlCommand(CONSULTA, Conex)
-
-    '    ''        COMANDO.ExecuteNonQuery()
-
-    '    ''        Conex.Close()
-    '    ''    End If
-    '    ''End Sub
-
-    '    ''Private Sub CEnt7_TextChanged(sender As Object, e As EventArgs) Handles CEnt7.TextChanged
-    '    ''    If CEnt7.Text <> "0" Then
-    '    ''        Dim Prod As String = Producto7.Text
-    '    ''        Dim CodS As String = COrdenC.SelectedValue
-    '    ''        Dim CanS As Double = CDec(CantidadS7.Text)
-
-    '    ''        Conex.Open()
-    '    ''        Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodS & "' AND Producto = '" & Prod & "')
-    '    ''                                     INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
-    '    ''                                                                   VALUES ('" & CodS & "', '" & Prod & "', '" & CanS & "', 0)"
-
-    '    ''        Dim COMANDO As New SqlCommand(CONSULTA, Conex)
-
-    '    ''        COMANDO.ExecuteNonQuery()
-
-    '    ''        Conex.Close()
-    '    ''    End If
-    '    ''End Sub
-
-    '    ''Private Sub CEnt8_TextChanged(sender As Object, e As EventArgs) Handles CEnt8.TextChanged
-    '    ''    If CEnt8.Text <> "0" Then
-    '    ''        Dim Prod As String = Producto8.Text
-    '    ''        Dim CodS As String = COrdenC.SelectedValue
-    '    ''        Dim CanS As Double = CDec(CantidadS8.Text)
-
-    '    ''        Conex.Open()
-    '    ''        Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodS & "' AND Producto = '" & Prod & "')
-    '    ''                                     INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
-    '    ''                                                                   VALUES ('" & CodS & "', '" & Prod & "', '" & CanS & "', 0)"
-
-    '    ''        Dim COMANDO As New SqlCommand(CONSULTA, Conex)
-
-    '    ''        COMANDO.ExecuteNonQuery()
-
-    '    ''        Conex.Close()
-    '    ''    End If
-    '    ''End Sub
-
-    '    ''Private Sub CEnt9_TextChanged(sender As Object, e As EventArgs) Handles CEnt9.TextChanged
-    '    ''    If CEnt9.Text <> "0" Then
-    '    ''        Dim Prod As String = Producto9.Text
-    '    ''        Dim CodS As String = COrdenC.SelectedValue
-    '    ''        Dim CanS As Double = CDec(CantidadS9.Text)
-
-    '    ''        Conex.Open()
-    '    ''        Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodS & "' AND Producto = '" & Prod & "')
-    '    ''                                     INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
-    '    ''                                                                   VALUES ('" & CodS & "', '" & Prod & "', '" & CanS & "', 0)"
-
-    '    ''        Dim COMANDO As New SqlCommand(CONSULTA, Conex)
-
-    '    ''        COMANDO.ExecuteNonQuery()
-
-    '    ''        Conex.Close()
-    '    ''    End If
-    '    ''End Sub
-
-    '    ''Private Sub CEnt10_TextChanged(sender As Object, e As EventArgs) Handles CEnt10.TextChanged
-    '    ''    If CEnt10.Text <> "0" Then
-    '    ''        Dim Prod As String = Producto10.Text
-    '    ''        Dim CodS As String = COrdenC.SelectedValue
-    '    ''        Dim CanS As Double = CDec(CantidadS10.Text)
-
-    '    ''        Conex.Open()
-    '    ''        Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodS & "' AND Producto = '" & Prod & "')
-    '    ''                                     INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
-    '    ''                                                                   VALUES ('" & CodS & "', '" & Prod & "', '" & CanS & "', 0)"
-
-    '    ''        Dim COMANDO As New SqlCommand(CONSULTA, Conex)
-
-    '    ''        COMANDO.ExecuteNonQuery()
-
-    '    ''        Conex.Close()
-    '    ''    End If
-    '    ''End Sub
-
-    '    ''Private Sub CEnt11_TextChanged(sender As Object, e As EventArgs) Handles CEnt11.TextChanged
-    '    ''    If CEnt11.Text <> "0" Then
-    '    ''        Dim Prod As String = Producto11.Text
-    '    ''        Dim CodS As String = COrdenC.SelectedValue
-    '    ''        Dim CanS As Double = CDec(CantidadS11.Text)
-
-    '    ''        Conex.Open()
-    '    ''        Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodS & "' AND Producto = '" & Prod & "')
-    '    ''                                     INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
-    '    ''                                                                   VALUES ('" & CodS & "', '" & Prod & "', '" & CanS & "', 0)"
-
-    '    ''        Dim COMANDO As New SqlCommand(CONSULTA, Conex)
-
-    '    ''        COMANDO.ExecuteNonQuery()
-
-    '    ''        Conex.Close()
-    '    ''    End If
-    '    ''End Sub
-
-    '    ''Private Sub CEnt12_TextChanged(sender As Object, e As EventArgs) Handles CEnt12.TextChanged
-    '    ''    If CEnt12.Text <> "0" Then
-    '    ''        Dim Prod As String = Producto12.Text
-    '    ''        Dim CodS As String = COrdenC.SelectedValue
-    '    ''        Dim CanS As Double = CDec(CantidadS12.Text)
-
-    '    ''        Conex.Open()
-    '    ''        Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodS & "' AND Producto = '" & Prod & "')
-    '    ''                                     INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
-    '    ''                                                                   VALUES ('" & CodS & "', '" & Prod & "', '" & CanS & "', 0)"
-
-    '    ''        Dim COMANDO As New SqlCommand(CONSULTA, Conex)
-
-    '    ''        COMANDO.ExecuteNonQuery()
-
-    '    ''        Conex.Close()
-    '    ''    End If
-    '    ''End Sub
-
-    '    ''Private Sub CEnt13_TextChanged(sender As Object, e As EventArgs) Handles CEnt13.TextChanged
-    '    ''    If CEnt13.Text <> "0" Then
-    '    ''        Dim Prod As String = Producto13.Text
-    '    ''        Dim CodS As String = COrdenC.SelectedValue
-    '    ''        Dim CanS As Double = CDec(CantidadS13.Text)
-
-    '    ''        Conex.Open()
-    '    ''        Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodS & "' AND Producto = '" & Prod & "')
-    '    ''                                     INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
-    '    ''                                                                   VALUES ('" & CodS & "', '" & Prod & "', '" & CanS & "', 0)"
-
-    '    ''        Dim COMANDO As New SqlCommand(CONSULTA, Conex)
-
-    '    ''        COMANDO.ExecuteNonQuery()
-
-    '    ''        Conex.Close()
-    '    ''    End If
-    '    ''End Sub
-
-    '    ''Private Sub CEnt14_TextChanged(sender As Object, e As EventArgs) Handles CEnt14.TextChanged
-    '    ''    If CEnt14.Text <> "0" Then
-    '    ''        Dim Prod As String = Producto14.Text
-    '    ''        Dim CodS As String = COrdenC.SelectedValue
-    '    ''        Dim CanS As Double = CDec(CantidadS14.Text)
-
-    '    ''        Conex.Open()
-    '    ''        Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodS & "' AND Producto = '" & Prod & "')
-    '    ''                                     INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
-    '    ''                                                                   VALUES ('" & CodS & "', '" & Prod & "', '" & CanS & "', 0)"
-
-    '    ''        Dim COMANDO As New SqlCommand(CONSULTA, Conex)
-
-    '    ''        COMANDO.ExecuteNonQuery()
-
-    '    ''        Conex.Close()
-    '    ''    End If
-    '    ''End Sub
-
-    '    ''Private Sub CEnt15_TextChanged(sender As Object, e As EventArgs) Handles CEnt15.TextChanged
-    '    ''    If CEnt15.Text <> "0" Then
-    '    ''        Dim Prod As String = Producto15.Text
-    '    ''        Dim CodS As String = COrdenC.SelectedValue
-    '    ''        Dim CanS As Double = CDec(CantidadS15.Text)
-
-    '    ''        Conex.Open()
-    '    ''        Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodS & "' AND Producto = '" & Prod & "')
-    '    ''                                     INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
-    '    ''                                                                   VALUES ('" & CodS & "', '" & Prod & "', '" & CanS & "', 0)"
-
-    '    ''        Dim COMANDO As New SqlCommand(CONSULTA, Conex)
-
-    '    ''        COMANDO.ExecuteNonQuery()
-
-    '    ''        Conex.Close()
-    '    ''    End If
-    '    ''End Sub
-
-    '    ''Private Sub CEnt16_TextChanged(sender As Object, e As EventArgs) Handles CEnt16.TextChanged
-    '    ''    If CEnt16.Text <> "0" Then
-    '    ''        Dim Prod As String = Producto16.Text
-    '    ''        Dim CodS As String = COrdenC.SelectedValue
-    '    ''        Dim CanS As Double = CDec(CantidadS16.Text)
-
-    '    ''        Conex.Open()
-    '    ''        Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodS & "' AND Producto = '" & Prod & "')
-    '    ''                                     INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
-    '    ''                                                                   VALUES ('" & CodS & "', '" & Prod & "', '" & CanS & "', 0)"
-
-    '    ''        Dim COMANDO As New SqlCommand(CONSULTA, Conex)
-
-    '    ''        COMANDO.ExecuteNonQuery()
-
-    '    ''        Conex.Close()
-    '    ''    End If
-    '    ''End Sub
-
-    '    ''Private Sub CEnt17_TextChanged(sender As Object, e As EventArgs) Handles CEnt17.TextChanged
-    '    ''    If CEnt17.Text <> "0" Then
-    '    ''        Dim Prod As String = Producto17.Text
-    '    ''        Dim CodS As String = COrdenC.SelectedValue
-    '    ''        Dim CanS As Double = CDec(CantidadS17.Text)
-
-    '    ''        Conex.Open()
-    '    ''        Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodS & "' AND Producto = '" & Prod & "')
-    '    ''                                     INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanE)
-    '    ''                                                                   VALUES ('" & CodS & "', '" & Prod & "', '" & CanS & "', 0)"
-
-    '    ''        Dim COMANDO As New SqlCommand(CONSULTA, Conex)
-
-    '    ''        COMANDO.ExecuteNonQuery()
-
-    '    ''        Conex.Close()
-    '    ''    End If
-    '    ''End Sub
-
-    '    ''Private Sub CEnt18_TextChanged(sender As Object, e As EventArgs) Handles CEnt18.TextChanged
-    '    ''    If CEnt18.Text <> "0" Then
-    '    ''        Dim Prod As String = Producto18.Text
-    '    ''        Dim CodS As String = COrdenC.SelectedValue
-    '    ''        Dim CanS As Double = CDec(CantidadS18.Text)
-
-    '    ''        Conex.Open()
-    '    ''        Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodS & "' AND Producto = '" & Prod & "')
-    '    ''                                     INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
-    '    ''                                                                   VALUES ('" & CodS & "', '" & Prod & "', '" & CanS & "', 0)"
-
-    '    ''        Dim COMANDO As New SqlCommand(CONSULTA, Conex)
-
-    '    ''        COMANDO.ExecuteNonQuery()
-
-    '    ''        Conex.Close()
-    '    ''    End If
-    '    ''End Sub
-
-    '    ''Private Sub CEnt19_TextChanged(sender As Object, e As EventArgs) Handles CEnt19.TextChanged
-    '    ''    If CEnt19.Text <> "0" Then
-    '    ''        Dim Prod As String = Producto19.Text
-    '    ''        Dim CodS As String = COrdenC.SelectedValue
-    '    ''        Dim CanS As Double = CDec(CantidadS19.Text)
-
-    '    ''        Conex.Open()
-    '    ''        Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodS & "' AND Producto = '" & Prod & "')
-    '    ''                                     INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
-    '    ''                                                                   VALUES ('" & CodS & "', '" & Prod & "', '" & CanS & "', 0)"
-
-    '    ''        Dim COMANDO As New SqlCommand(CONSULTA, Conex)
-
-    '    ''        COMANDO.ExecuteNonQuery()
-
-    '    ''        Conex.Close()
-    '    ''    End If
-    '    ''End Sub
-
-    '    ''Private Sub CEnt20_TextChanged(sender As Object, e As EventArgs) Handles CEnt20.TextChanged
-    '    ''    If CEnt20.Text <> "0" Then
-    '    ''        Dim Prod As String = Producto20.Text
-    '    ''        Dim CodS As String = COrdenC.SelectedValue
-    '    ''        Dim CanS As Double = CDec(CantidadS20.Text)
-
-    '    ''        Conex.Open()
-    '    ''        Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodS & "' AND Producto = '" & Prod & "')
-    '    ''                                     INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
-    '    ''                                                                   VALUES ('" & CodS & "', '" & Prod & "', '" & CanS & "', 0)"
-
-    '    ''        Dim COMANDO As New SqlCommand(CONSULTA, Conex)
-
-    '    ''        COMANDO.ExecuteNonQuery()
-
-    '    ''        Conex.Close()
-    '    ''    End If
-    '    ''End Sub
-
-
-    '    'Consultas
-
-
-
-    '    ''
-
-    '    ''Validaciones
-    '    'Private Sub CE(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles CEnt1.KeyPress, CEnt2.KeyPress, CEnt3.KeyPress, CEnt4.KeyPress, CEnt5.KeyPress
-    '    '    NumerosyDecimal(CEnt1, e)
-    '    '    NumerosyDecimal(CEnt2, e)
-    '    '    NumerosyDecimal(CEnt3, e)
-    '    '    NumerosyDecimal(CEnt4, e)
-    '    '    NumerosyDecimal(CEnt5, e)
-    '    'End Sub
-
-    '    'Private Sub CEn2(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles CEnt6.KeyPress, CEnt7.KeyPress, CEnt8.KeyPress, CEnt9.KeyPress, CEnt10.KeyPress
-    '    '    NumerosyDecimal(CEnt6, e)
-    '    '    NumerosyDecimal(CEnt7, e)
-    '    '    NumerosyDecimal(CEnt8, e)
-    '    '    NumerosyDecimal(CEnt9, e)
-    '    '    NumerosyDecimal(CEnt10, e)
-    '    'End Sub
-
-    '    'Private Sub CEn3(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles CEnt11.KeyPress, CEnt12.KeyPress, CEnt13.KeyPress, CEnt14.KeyPress, CEnt15.KeyPress
-    '    '    NumerosyDecimal(CEnt11, e)
-    '    '    NumerosyDecimal(CEnt12, e)
-    '    '    NumerosyDecimal(CEnt13, e)
-    '    '    NumerosyDecimal(CEnt14, e)
-    '    '    NumerosyDecimal(CEnt15, e)
-    '    'End Sub
-
-    '    'Private Sub CEn4(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles CEnt16.KeyPress, CEnt17.KeyPress, CEnt18.KeyPress, CEnt19.KeyPress, CEnt20.KeyPress
-    '    '    NumerosyDecimal(CEnt16, e)
-    '    '    NumerosyDecimal(CEnt17, e)
-    '    '    NumerosyDecimal(CEnt18, e)
-    '    '    NumerosyDecimal(CEnt19, e)
-    '    '    NumerosyDecimal(CEnt20, e)
-    '    'End Sub
-
-    '    ''   Numeros y Punto Decimal
-    '    'Public Sub NumerosyDecimal(ByVal CajaTexto As Windows.Forms.TextBox, ByVal e As System.Windows.Forms.KeyPressEventArgs)
-    '    '    If Char.IsDigit(e.KeyChar) Then
-    '    '        e.Handled = False
-    '    '    ElseIf Char.IsControl(e.KeyChar) Then
-    '    '        e.Handled = False
-    '    '    ElseIf e.KeyChar = "." And Not CajaTexto.Text.IndexOf(".") Then
-    '    '        e.Handled = True
-    '    '    ElseIf e.KeyChar = "." Then
-    '    '        e.Handled = False
-    '    '    Else
-    '    '        e.Handled = True
-    '    '    End If
-    '    'End Sub
-
-
-    '    'Movimiento
-    '    Dim ex, ey As Integer
-    '    Dim Arrastre As Boolean
-
-    '    Private Sub Form1_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles MyBase.MouseDown
-    '        ex = e.X
-    '        ey = e.Y
-    '        Arrastre = True
-    '    End Sub
-
-    '    Private Sub Form1_MouseUp(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles MyBase.MouseUp
-    '        Arrastre = False
-    '    End Sub
-
-    '    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
-
-    '    End Sub
-
-    '    Private Sub Form1_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles MyBase.MouseMove
-    '        If Arrastre Then Me.Location = Me.PointToScreen(New Point(MousePosition.X - Me.Location.X - ex, MousePosition.Y - Me.Location.Y - ey))
-    '    End Sub
+    '    '    'Validaciones
+    '    '    Private Sub CE(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles CEnt1.KeyPress, CEnt2.KeyPress, CEnt3.KeyPress, CEnt4.KeyPress, CEnt5.KeyPress
+    '    '        NumerosyDecimal(CEnt1, e)
+    '    '        NumerosyDecimal(CEnt2, e)
+    '    '        NumerosyDecimal(CEnt3, e)
+    '    '        NumerosyDecimal(CEnt4, e)
+    '    '        NumerosyDecimal(CEnt5, e)
+    '    '    End Sub
+
+    '    '    Private Sub CEn2(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles CEnt6.KeyPress, CEnt7.KeyPress, CEnt8.KeyPress, CEnt9.KeyPress, CEnt10.KeyPress
+    '    '        NumerosyDecimal(CEnt6, e)
+    '    '        NumerosyDecimal(CEnt7, e)
+    '    '        NumerosyDecimal(CEnt8, e)
+    '    '        NumerosyDecimal(CEnt9, e)
+    '    '        NumerosyDecimal(CEnt10, e)
+    '    '    End Sub
+
+    '    '    Private Sub CEn3(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles CEnt11.KeyPress, CEnt12.KeyPress, CEnt13.KeyPress, CEnt14.KeyPress, CEnt15.KeyPress
+    '    '        NumerosyDecimal(CEnt11, e)
+    '    '        NumerosyDecimal(CEnt12, e)
+    '    '        NumerosyDecimal(CEnt13, e)
+    '    '        NumerosyDecimal(CEnt14, e)
+    '    '        NumerosyDecimal(CEnt15, e)
+    '    '    End Sub
+
+    '    '    Private Sub CEn4(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles CEnt16.KeyPress, CEnt17.KeyPress, CEnt18.KeyPress, CEnt19.KeyPress, CEnt20.KeyPress
+    '    '        NumerosyDecimal(CEnt16, e)
+    '    '        NumerosyDecimal(CEnt17, e)
+    '    '        NumerosyDecimal(CEnt18, e)
+    '    '        NumerosyDecimal(CEnt19, e)
+    '    '        NumerosyDecimal(CEnt20, e)
+    '    '    End Sub
+
+    '    '    '   Numeros y Punto Decimal
+    '    '    Public Sub NumerosyDecimal(ByVal CajaTexto As Windows.Forms.TextBox, ByVal e As System.Windows.Forms.KeyPressEventArgs)
+    '    '        If Char.IsDigit(e.KeyChar) Then
+    '    '            e.Handled = False
+    '    '        ElseIf Char.IsControl(e.KeyChar) Then
+    '    '            e.Handled = False
+    '    '        ElseIf e.KeyChar = "." And Not CajaTexto.Text.IndexOf(".") Then
+    '    '            e.Handled = True
+    '    '        ElseIf e.KeyChar = "." Then
+    '    '            e.Handled = False
+    '    '        Else
+    '    '            e.Handled = True
+    '    '        End If
+    '    '    End Sub
+
+
+    'Movimiento
+    Dim ex, ey As Integer
+    Dim Arrastre As Boolean
+
+Private Sub Form1_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles MyBase.MouseDown
+    ex = e.X
+    ey = e.Y
+    Arrastre = True
+End Sub
+
+Private Sub Form1_MouseUp(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles MyBase.MouseUp
+    Arrastre = False
+End Sub
+
+Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
+
+End Sub
+
+Private Sub Form1_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles MyBase.MouseMove
+    If Arrastre Then Me.Location = Me.PointToScreen(New Point(MousePosition.X - Me.Location.X - ex, MousePosition.Y - Me.Location.Y - ey))
+End Sub
 End Class
