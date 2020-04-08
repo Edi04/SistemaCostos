@@ -3,6 +3,10 @@
 Public Class Entregas
     Dim Conex As New SqlConnection(My.Settings.Conexxx)
 
+    Dim PProceso As New SqlCommand
+    Dim DTProceso As DataTable
+    Dim DAProceso As New SqlDataAdapter
+
     Private Sub Entregas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         DatosGV()
         DatosGVP()
@@ -27,6 +31,7 @@ Public Class Entregas
     End Sub
 
     Private Sub BNuevoPrestamo_Click(sender As Object, e As EventArgs) Handles BNuevoPrestamo.Click
+        Consultas()
         If Tickets.LCS.Text <> Nothing Then
             LCS.Text = Tickets.LCS.Text
         Else
@@ -76,6 +81,7 @@ Public Class Entregas
         BRIngreso.Visible = True
         BBProducto.Visible = True
         BBTrabajador.Visible = True
+        CProceso.Visible = True
 
         DatosB()
         TxtBMaterial.Text = ""
@@ -191,7 +197,7 @@ Public Class Entregas
     End Sub
 
     Private Sub DatosPM_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DatosPM.CellContentClick
-        Dim row As DataGridViewRow = DatosPM.Rows(e.RowIndex)
+        Dim row As DataGridViewRow = DatosPM.CurrentRow()
 
         'Mostrar Inf en TextBox
         IDD.Text = row.Cells(0).Value
@@ -202,6 +208,7 @@ Public Class Entregas
         TxtFEntrega.Text = row.Cells(5).Value
         TxtDescripcion.Text = row.Cells(6).Value
         txtResponsable.Text = row.Cells(7).Value
+        TxtProceso.Text = row.Cells(8).Value
 
         BEliminar.Visible = True
         BRIngreso.Visible = False
@@ -216,6 +223,7 @@ Public Class Entregas
         BBProducto.Visible = False
         PTrabajador.Visible = False
         BBTrabajador.Visible = False
+        CProceso.Visible = False
     End Sub
 
     Private Sub ANuevoT_Click(sender As Object, e As EventArgs) Handles ANuevoT.Click
@@ -292,6 +300,12 @@ Public Class Entregas
     End Sub
 
 
+    'Combo
+    Private Sub CProceso_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CProceso.SelectedValueChanged
+        TxtProceso.Text = CProceso.Text
+    End Sub
+
+
     'Procedimientos
     '   Llenar DataView
     Private Sub DatosGV()
@@ -338,7 +352,7 @@ Public Class Entregas
 
     '   Guardar
     Public Sub Datos()
-        Dim GDatos As New SqlCommand("SP_GNEntrega", Conex)
+        Dim GDatos As New SqlCommand("SP_GNEEntrega", Conex)
         Dim DateA = DateTime.Now
         Dim Fecha = DateTime.Now.ToString("yyyy/MM/dd")
 
@@ -350,6 +364,7 @@ Public Class Entregas
         GDatos.Parameters.AddWithValue("@Fecha_Entrega", Fecha)
         GDatos.Parameters.AddWithValue("@Descripcion ", Trim(TxtDescripcion.Text))
         GDatos.Parameters.AddWithValue("@ResponsableS", Trim(txtResponsable.Text))
+        GDatos.Parameters.AddWithValue("@IdProceso", CProceso.SelectedValue)
         GDatos.Parameters.AddWithValue("@Created", DateA)
 
         Dim RData As SqlDataReader
@@ -384,6 +399,7 @@ Public Class Entregas
             TxtCantidad.BackColor = Color.Gainsboro
             TxtCantidad.ReadOnly = True
             TxtDescripcion.ReadOnly = True
+            CProceso.Visible = False
 
             TxtTrabajador.Visible = True
             BBProducto.Visible = False
@@ -476,12 +492,14 @@ Public Class Entregas
             DatosGV()
         Else
             Dim Consulta As String = "SELECT E.Id_Entrega, Em.Numero_Nomina, (Em.Nombre_Empleado + ' ' + 
-			                                        Em.Ape_Paterno + ' ' + Em.Ape_Materno) AS Nombre,
-			                                        P.Nombre_Producto ,E.Cantidad, E.Fecha_Entrega,
-			                                        E.Descripcion, E.ResponsableS
+			                                    Em.Ape_Paterno + ' ' + Em.Ape_Materno ) AS Nombre,
+			                                    P.Nombre_Producto ,E.Cantidad, E.Fecha_Entrega,
+			                                    E.Descripcion, E.ResponsableS, Pr.Nombre_Proceso
+  
                                       FROM TB_Entregas AS E
-                                              INNER JOIN TB_Empleados AS Em ON E.Id_Empleado = Em.Id_Empleado
-                                              INNER JOIN TB_Productos AS P ON e.Id_Producto = P.Id_Producto
+                                      INNER JOIN TB_Empleados AS Em ON E.Id_Empleado = Em.Id_Empleado
+                                      inner join TB_Productos AS P ON e.Id_Producto = P.Id_Producto
+                                      inner join TB_Procesos AS Pr ON e.Proceso = Pr.Id_Proceso
                                       WHERE E.Estado = 'Activo' AND
                                             (Em.Numero_Nomina LIKE '%'+@Busqueda+'%' OR
                                             P.Nombre_Producto LIKE '%'+@Busqueda+'%' OR
@@ -653,6 +671,26 @@ Public Class Entregas
         Conex.Close()
     End Sub
 
+    Private Sub Consultas()
+        With PProceso
+            .CommandType = CommandType.Text
+            .CommandText = "SELECT *
+                            FROM TB_Procesos
+                            WHERE Estado = 'Activo'
+                            ORDER BY Nombre_Proceso ASC"
+            .Connection = Conex
+        End With
+
+        DAProceso.SelectCommand = PProceso
+        DTProceso = New DataTable
+        DAProceso.Fill(DTProceso)
+        With CProceso
+            .DataSource = DTProceso
+            .DisplayMember = "Nombre_Proceso"
+            .ValueMember = "Id_Proceso"
+        End With
+    End Sub
+
 
     'Otros
     Public Sub Ticktss()
@@ -695,6 +733,7 @@ Public Class Entregas
         TxtMaterial.Text = ""
         TxtCantidad.Text = ""
         TxtDescripcion.Text = ""
+        TxtProceso.Text = ""
     End Sub
 
 
@@ -716,4 +755,3 @@ Public Class Entregas
         If Arrastre Then Me.Location = Me.PointToScreen(New Point(MousePosition.X - Me.Location.X - ex, MousePosition.Y - Me.Location.Y - ey))
     End Sub
 End Class
-

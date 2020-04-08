@@ -32,12 +32,16 @@ Partial Class Entregas
         Me.FEntrega = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Descr = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.RespS = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Proceso = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.LTitulo = New System.Windows.Forms.Label()
         Me.GBusqueda = New System.Windows.Forms.GroupBox()
         Me.LEspecific = New System.Windows.Forms.Label()
         Me.PBusqueda = New System.Windows.Forms.PictureBox()
         Me.TxtBusqueda = New System.Windows.Forms.TextBox()
         Me.PDatos = New System.Windows.Forms.Panel()
+        Me.CProceso = New System.Windows.Forms.ComboBox()
+        Me.LProceso = New System.Windows.Forms.Label()
+        Me.TxtProceso = New System.Windows.Forms.TextBox()
         Me.BBProducto = New System.Windows.Forms.Button()
         Me.BBTrabajador = New System.Windows.Forms.Button()
         Me.IDE = New System.Windows.Forms.Label()
@@ -117,7 +121,7 @@ Partial Class Entregas
         Me.DatosPM.AllowUserToDeleteRows = False
         Me.DatosPM.BackgroundColor = System.Drawing.Color.SteelBlue
         Me.DatosPM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DatosPM.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.NumNomina, Me.NombreE, Me.NombreP, Me.Cantid, Me.FEntrega, Me.Descr, Me.RespS})
+        Me.DatosPM.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.NumNomina, Me.NombreE, Me.NombreP, Me.Cantid, Me.FEntrega, Me.Descr, Me.RespS, Me.Proceso})
         Me.DatosPM.Location = New System.Drawing.Point(372, 117)
         Me.DatosPM.Name = "DatosPM"
         Me.DatosPM.ReadOnly = True
@@ -185,6 +189,13 @@ Partial Class Entregas
         Me.RespS.Name = "RespS"
         Me.RespS.ReadOnly = True
         '
+        'Proceso
+        '
+        Me.Proceso.DataPropertyName = "Nombre_Proceso"
+        Me.Proceso.HeaderText = "Proceso"
+        Me.Proceso.Name = "Proceso"
+        Me.Proceso.ReadOnly = True
+        '
         'LTitulo
         '
         Me.LTitulo.AutoSize = True
@@ -248,6 +259,9 @@ Partial Class Entregas
         'PDatos
         '
         Me.PDatos.BackColor = System.Drawing.Color.Transparent
+        Me.PDatos.Controls.Add(Me.CProceso)
+        Me.PDatos.Controls.Add(Me.LProceso)
+        Me.PDatos.Controls.Add(Me.TxtProceso)
         Me.PDatos.Controls.Add(Me.BBProducto)
         Me.PDatos.Controls.Add(Me.BBTrabajador)
         Me.PDatos.Controls.Add(Me.IDE)
@@ -271,6 +285,38 @@ Partial Class Entregas
         Me.PDatos.Name = "PDatos"
         Me.PDatos.Size = New System.Drawing.Size(306, 331)
         Me.PDatos.TabIndex = 3
+        '
+        'CProceso
+        '
+        Me.CProceso.FormattingEnabled = True
+        Me.CProceso.Location = New System.Drawing.Point(136, 264)
+        Me.CProceso.Name = "CProceso"
+        Me.CProceso.Size = New System.Drawing.Size(154, 21)
+        Me.CProceso.TabIndex = 7
+        Me.CProceso.Visible = False
+        '
+        'LProceso
+        '
+        Me.LProceso.AutoSize = True
+        Me.LProceso.BackColor = System.Drawing.Color.Transparent
+        Me.LProceso.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LProceso.Location = New System.Drawing.Point(70, 267)
+        Me.LProceso.Name = "LProceso"
+        Me.LProceso.Size = New System.Drawing.Size(59, 16)
+        Me.LProceso.TabIndex = 0
+        Me.LProceso.Text = "Proceso"
+        '
+        'TxtProceso
+        '
+        Me.TxtProceso.BackColor = System.Drawing.Color.Gainsboro
+        Me.TxtProceso.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TxtProceso.Location = New System.Drawing.Point(135, 265)
+        Me.TxtProceso.Multiline = True
+        Me.TxtProceso.Name = "TxtProceso"
+        Me.TxtProceso.ReadOnly = True
+        Me.TxtProceso.Size = New System.Drawing.Size(155, 20)
+        Me.TxtProceso.TabIndex = 0
+        Me.TxtProceso.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'BBProducto
         '
@@ -423,7 +469,7 @@ Partial Class Entregas
         Me.TxtDescripcion.Multiline = True
         Me.TxtDescripcion.Name = "TxtDescripcion"
         Me.TxtDescripcion.ReadOnly = True
-        Me.TxtDescripcion.Size = New System.Drawing.Size(155, 108)
+        Me.TxtDescripcion.Size = New System.Drawing.Size(155, 83)
         Me.TxtDescripcion.TabIndex = 8
         '
         'LNombre
@@ -856,11 +902,11 @@ Partial Class Entregas
         Me.Controls.Add(Me.BNuevoPrestamo)
         Me.Controls.Add(Me.PMaterial)
         Me.Controls.Add(Me.PTrabajador)
-        Me.Controls.Add(Me.PDatos)
         Me.Controls.Add(Me.GBusqueda)
         Me.Controls.Add(Me.LTitulo)
         Me.Controls.Add(Me.DatosPM)
         Me.Controls.Add(Me.PLinea)
+        Me.Controls.Add(Me.PDatos)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Entregas"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -939,6 +985,12 @@ Partial Class Entregas
     Friend WithEvents BGEntrega As Button
     Friend WithEvents BRIngreso As Button
     Friend WithEvents ANuevoT As Button
+    Friend WithEvents LCS As Label
+    Friend WithEvents IDPP As DataGridViewLinkColumn
+    Friend WithEvents Produto As DataGridViewTextBoxColumn
+    Friend WithEvents CodigoP As DataGridViewTextBoxColumn
+    Friend WithEvents Existencia As DataGridViewTextBoxColumn
+    Friend WithEvents LEx As Label
     Friend WithEvents ID As DataGridViewLinkColumn
     Friend WithEvents NumNomina As DataGridViewTextBoxColumn
     Friend WithEvents NombreE As DataGridViewTextBoxColumn
@@ -947,10 +999,8 @@ Partial Class Entregas
     Friend WithEvents FEntrega As DataGridViewTextBoxColumn
     Friend WithEvents Descr As DataGridViewTextBoxColumn
     Friend WithEvents RespS As DataGridViewTextBoxColumn
-    Friend WithEvents LCS As Label
-    Friend WithEvents IDPP As DataGridViewLinkColumn
-    Friend WithEvents Produto As DataGridViewTextBoxColumn
-    Friend WithEvents CodigoP As DataGridViewTextBoxColumn
-    Friend WithEvents Existencia As DataGridViewTextBoxColumn
-    Friend WithEvents LEx As Label
+    Friend WithEvents Proceso As DataGridViewTextBoxColumn
+    Friend WithEvents CProceso As ComboBox
+    Friend WithEvents LProceso As Label
+    Friend WithEvents TxtProceso As TextBox
 End Class

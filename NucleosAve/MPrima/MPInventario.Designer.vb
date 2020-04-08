@@ -366,6 +366,12 @@ Partial Class MPInventario
         Me.TRollos = New System.Windows.Forms.TabControl()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.BTerminar = New System.Windows.Forms.Button()
+        Me.LMT1 = New System.Windows.Forms.Label()
+        Me.TxtMetro1 = New System.Windows.Forms.TextBox()
+        Me.LMetro1 = New System.Windows.Forms.Label()
+        Me.LMTEE = New System.Windows.Forms.Label()
+        Me.TxtMTE = New System.Windows.Forms.TextBox()
+        Me.LMTE = New System.Windows.Forms.Label()
         Me.POpc.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -440,11 +446,12 @@ Partial Class MPInventario
         Me.LMateriaPrimaA.AutoSize = True
         Me.LMateriaPrimaA.BackColor = System.Drawing.Color.Transparent
         Me.LMateriaPrimaA.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LMateriaPrimaA.Location = New System.Drawing.Point(256, 69)
+        Me.LMateriaPrimaA.Location = New System.Drawing.Point(243, 69)
         Me.LMateriaPrimaA.Name = "LMateriaPrimaA"
         Me.LMateriaPrimaA.Size = New System.Drawing.Size(124, 24)
         Me.LMateriaPrimaA.TabIndex = 0
         Me.LMateriaPrimaA.Text = "Materia Prima"
+        Me.LMateriaPrimaA.Visible = False
         '
         'LFLL
         '
@@ -454,22 +461,26 @@ Partial Class MPInventario
         Me.LFLL.Location = New System.Drawing.Point(126, 100)
         Me.LFLL.Name = "LFLL"
         Me.LFLL.Size = New System.Drawing.Size(118, 16)
-        Me.LFLL.TabIndex = 5
+        Me.LFLL.TabIndex = 0
         Me.LFLL.Text = "Fecha de Llegada"
+        Me.LFLL.Visible = False
         '
         'DTFechaLl
         '
         Me.DTFechaLl.Location = New System.Drawing.Point(86, 119)
         Me.DTFechaLl.Name = "DTFechaLl"
         Me.DTFechaLl.Size = New System.Drawing.Size(200, 20)
-        Me.DTFechaLl.TabIndex = 2
+        Me.DTFechaLl.TabIndex = 4
+        Me.DTFechaLl.Visible = False
         '
         'DTFechaR
         '
+        Me.DTFechaR.Enabled = False
         Me.DTFechaR.Location = New System.Drawing.Point(306, 119)
         Me.DTFechaR.Name = "DTFechaR"
         Me.DTFechaR.Size = New System.Drawing.Size(200, 20)
-        Me.DTFechaR.TabIndex = 3
+        Me.DTFechaR.TabIndex = 0
+        Me.DTFechaR.Visible = False
         '
         'LFR
         '
@@ -479,8 +490,9 @@ Partial Class MPInventario
         Me.LFR.Location = New System.Drawing.Point(346, 100)
         Me.LFR.Name = "LFR"
         Me.LFR.Size = New System.Drawing.Size(119, 16)
-        Me.LFR.TabIndex = 7
+        Me.LFR.TabIndex = 0
         Me.LFR.Text = "Fecha de Registro"
+        Me.LFR.Visible = False
         '
         'LProveedor
         '
@@ -490,24 +502,28 @@ Partial Class MPInventario
         Me.LProveedor.Location = New System.Drawing.Point(258, 154)
         Me.LProveedor.Name = "LProveedor"
         Me.LProveedor.Size = New System.Drawing.Size(72, 16)
-        Me.LProveedor.TabIndex = 9
+        Me.LProveedor.TabIndex = 0
         Me.LProveedor.Text = "Proveedor"
+        Me.LProveedor.Visible = False
         '
         'TxtMaterial
         '
         Me.TxtMaterial.Location = New System.Drawing.Point(86, 215)
         Me.TxtMaterial.Name = "TxtMaterial"
+        Me.TxtMaterial.ReadOnly = True
         Me.TxtMaterial.Size = New System.Drawing.Size(422, 20)
         Me.TxtMaterial.TabIndex = 0
         Me.TxtMaterial.Text = "Acero al Silicio"
         Me.TxtMaterial.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TxtMaterial.Visible = False
         '
         'TxtCS
         '
         Me.TxtCS.Location = New System.Drawing.Point(175, 30)
         Me.TxtCS.Name = "TxtCS"
+        Me.TxtCS.ReadOnly = True
         Me.TxtCS.Size = New System.Drawing.Size(96, 20)
-        Me.TxtCS.TabIndex = 52
+        Me.TxtCS.TabIndex = 0
         Me.TxtCS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'LCanS
@@ -527,9 +543,10 @@ Partial Class MPInventario
         Me.TxtCE.Name = "TxtCE"
         Me.TxtCE.ReadOnly = True
         Me.TxtCE.Size = New System.Drawing.Size(96, 20)
-        Me.TxtCE.TabIndex = 54
+        Me.TxtCE.TabIndex = 0
         Me.TxtCE.Text = "0"
         Me.TxtCE.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TxtCE.Visible = False
         '
         'LCanE
         '
@@ -539,8 +556,9 @@ Partial Class MPInventario
         Me.LCanE.Location = New System.Drawing.Point(438, 329)
         Me.LCanE.Name = "LCanE"
         Me.LCanE.Size = New System.Drawing.Size(114, 16)
-        Me.LCanE.TabIndex = 53
+        Me.LCanE.TabIndex = 0
         Me.LCanE.Text = "Cantidad Entrante"
+        Me.LCanE.Visible = False
         '
         'TxtProveedor
         '
@@ -548,14 +566,17 @@ Partial Class MPInventario
         Me.TxtProveedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtProveedor.Location = New System.Drawing.Point(86, 179)
         Me.TxtProveedor.Name = "TxtProveedor"
+        Me.TxtProveedor.ReadOnly = True
         Me.TxtProveedor.Size = New System.Drawing.Size(422, 20)
         Me.TxtProveedor.TabIndex = 0
         Me.TxtProveedor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TxtProveedor.Visible = False
         '
         'TxtOC
         '
         Me.TxtOC.Location = New System.Drawing.Point(10, 32)
         Me.TxtOC.Name = "TxtOC"
+        Me.TxtOC.ReadOnly = True
         Me.TxtOC.Size = New System.Drawing.Size(104, 20)
         Me.TxtOC.TabIndex = 0
         Me.TxtOC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -579,7 +600,7 @@ Partial Class MPInventario
         Me.LKGS.Location = New System.Drawing.Point(270, 32)
         Me.LKGS.Name = "LKGS"
         Me.LKGS.Size = New System.Drawing.Size(26, 16)
-        Me.LKGS.TabIndex = 51
+        Me.LKGS.TabIndex = 0
         Me.LKGS.Text = "KG"
         Me.LKGS.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
@@ -591,8 +612,9 @@ Partial Class MPInventario
         Me.LKGE.Location = New System.Drawing.Point(540, 285)
         Me.LKGE.Name = "LKGE"
         Me.LKGE.Size = New System.Drawing.Size(26, 16)
-        Me.LKGE.TabIndex = 58
+        Me.LKGE.TabIndex = 0
         Me.LKGE.Text = "KG"
+        Me.LKGE.Visible = False
         '
         'BBOC
         '
@@ -616,7 +638,7 @@ Partial Class MPInventario
         Me.Panel1.Controls.Add(Me.DVOC)
         Me.Panel1.Location = New System.Drawing.Point(8, 73)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(552, 375)
+        Me.Panel1.Size = New System.Drawing.Size(552, 425)
         Me.Panel1.TabIndex = 61
         '
         'TxtBOC
@@ -696,7 +718,7 @@ Partial Class MPInventario
         Me.DVOC.GridColor = System.Drawing.Color.White
         Me.DVOC.Location = New System.Drawing.Point(3, 172)
         Me.DVOC.Name = "DVOC"
-        Me.DVOC.Size = New System.Drawing.Size(546, 198)
+        Me.DVOC.Size = New System.Drawing.Size(546, 248)
         Me.DVOC.TabIndex = 67
         '
         'ID
@@ -793,7 +815,7 @@ Partial Class MPInventario
         Me.Panel2.BackColor = System.Drawing.Color.SteelBlue
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Panel2.Controls.Add(Me.Panel1)
-        Me.Panel2.Location = New System.Drawing.Point(586, 100)
+        Me.Panel2.Location = New System.Drawing.Point(582, 128)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(575, 505)
         Me.Panel2.TabIndex = 62
@@ -805,9 +827,10 @@ Partial Class MPInventario
         Me.TxtCR.Name = "TxtCR"
         Me.TxtCR.ReadOnly = True
         Me.TxtCR.Size = New System.Drawing.Size(96, 20)
-        Me.TxtCR.TabIndex = 64
+        Me.TxtCR.TabIndex = 0
         Me.TxtCR.Text = "0"
         Me.TxtCR.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TxtCR.Visible = False
         '
         'LCR
         '
@@ -817,8 +840,9 @@ Partial Class MPInventario
         Me.LCR.Location = New System.Drawing.Point(438, 264)
         Me.LCR.Name = "LCR"
         Me.LCR.Size = New System.Drawing.Size(119, 16)
-        Me.LCR.TabIndex = 63
+        Me.LCR.TabIndex = 0
         Me.LCR.Text = "Cantidad Restante"
+        Me.LCR.Visible = False
         '
         'BGMP
         '
@@ -830,6 +854,7 @@ Partial Class MPInventario
         Me.BGMP.Size = New System.Drawing.Size(50, 50)
         Me.BGMP.TabIndex = 65
         Me.BGMP.UseVisualStyleBackColor = False
+        Me.BGMP.Visible = False
         '
         'TxtResponsable
         '
@@ -856,6 +881,7 @@ Partial Class MPInventario
         Me.LOCN.Name = "LOCN"
         Me.LOCN.Size = New System.Drawing.Size(0, 13)
         Me.LOCN.TabIndex = 68
+        Me.LOCN.Visible = False
         '
         'LIDO
         '
@@ -883,8 +909,9 @@ Partial Class MPInventario
         Me.LKGCE.Location = New System.Drawing.Point(540, 349)
         Me.LKGCE.Name = "LKGCE"
         Me.LKGCE.Size = New System.Drawing.Size(26, 16)
-        Me.LKGCE.TabIndex = 51
+        Me.LKGCE.TabIndex = 0
         Me.LKGCE.Text = "KG"
+        Me.LKGCE.Visible = False
         '
         'Rollo20
         '
@@ -3758,6 +3785,9 @@ Partial Class MPInventario
         'Rollo1
         '
         Me.Rollo1.BackColor = System.Drawing.Color.White
+        Me.Rollo1.Controls.Add(Me.LMT1)
+        Me.Rollo1.Controls.Add(Me.TxtMetro1)
+        Me.Rollo1.Controls.Add(Me.LMetro1)
         Me.Rollo1.Controls.Add(Me.LKG1)
         Me.Rollo1.Controls.Add(Me.TxtObser1)
         Me.Rollo1.Controls.Add(Me.TxtNRolI1)
@@ -3783,42 +3813,42 @@ Partial Class MPInventario
         Me.LKG1.AutoSize = True
         Me.LKG1.BackColor = System.Drawing.Color.White
         Me.LKG1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LKG1.Location = New System.Drawing.Point(320, 33)
+        Me.LKG1.Location = New System.Drawing.Point(278, 33)
         Me.LKG1.Name = "LKG1"
         Me.LKG1.Size = New System.Drawing.Size(26, 16)
-        Me.LKG1.TabIndex = 43
+        Me.LKG1.TabIndex = 0
         Me.LKG1.Text = "KG"
         '
         'TxtObser1
         '
-        Me.TxtObser1.Location = New System.Drawing.Point(63, 144)
+        Me.TxtObser1.Location = New System.Drawing.Point(62, 144)
         Me.TxtObser1.Multiline = True
         Me.TxtObser1.Name = "TxtObser1"
         Me.TxtObser1.ReadOnly = True
         Me.TxtObser1.Size = New System.Drawing.Size(284, 139)
-        Me.TxtObser1.TabIndex = 6
+        Me.TxtObser1.TabIndex = 7
         '
         'TxtNRolI1
         '
-        Me.TxtNRolI1.Location = New System.Drawing.Point(213, 87)
+        Me.TxtNRolI1.Location = New System.Drawing.Point(225, 87)
         Me.TxtNRolI1.Name = "TxtNRolI1"
         Me.TxtNRolI1.ReadOnly = True
-        Me.TxtNRolI1.Size = New System.Drawing.Size(122, 20)
-        Me.TxtNRolI1.TabIndex = 5
+        Me.TxtNRolI1.Size = New System.Drawing.Size(112, 20)
+        Me.TxtNRolI1.TabIndex = 6
         Me.TxtNRolI1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TxtNumRollo1
         '
-        Me.TxtNumRollo1.Location = New System.Drawing.Point(73, 87)
+        Me.TxtNumRollo1.Location = New System.Drawing.Point(81, 87)
         Me.TxtNumRollo1.Name = "TxtNumRollo1"
         Me.TxtNumRollo1.ReadOnly = True
         Me.TxtNumRollo1.Size = New System.Drawing.Size(112, 20)
-        Me.TxtNumRollo1.TabIndex = 4
+        Me.TxtNumRollo1.TabIndex = 5
         Me.TxtNumRollo1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TxtPeso1
         '
-        Me.TxtPeso1.Location = New System.Drawing.Point(261, 31)
+        Me.TxtPeso1.Location = New System.Drawing.Point(219, 31)
         Me.TxtPeso1.Name = "TxtPeso1"
         Me.TxtPeso1.ReadOnly = True
         Me.TxtPeso1.Size = New System.Drawing.Size(68, 20)
@@ -3827,7 +3857,7 @@ Partial Class MPInventario
         '
         'TxtCalibre1
         '
-        Me.TxtCalibre1.Location = New System.Drawing.Point(164, 31)
+        Me.TxtCalibre1.Location = New System.Drawing.Point(122, 31)
         Me.TxtCalibre1.Name = "TxtCalibre1"
         Me.TxtCalibre1.ReadOnly = True
         Me.TxtCalibre1.Size = New System.Drawing.Size(77, 20)
@@ -3836,7 +3866,7 @@ Partial Class MPInventario
         '
         'TxtAncho1
         '
-        Me.TxtAncho1.Location = New System.Drawing.Point(66, 31)
+        Me.TxtAncho1.Location = New System.Drawing.Point(24, 31)
         Me.TxtAncho1.Name = "TxtAncho1"
         Me.TxtAncho1.ReadOnly = True
         Me.TxtAncho1.Size = New System.Drawing.Size(77, 20)
@@ -3848,7 +3878,7 @@ Partial Class MPInventario
         Me.LObservac1.AutoSize = True
         Me.LObservac1.BackColor = System.Drawing.Color.Transparent
         Me.LObservac1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LObservac1.Location = New System.Drawing.Point(155, 125)
+        Me.LObservac1.Location = New System.Drawing.Point(154, 125)
         Me.LObservac1.Name = "LObservac1"
         Me.LObservac1.Size = New System.Drawing.Size(100, 16)
         Me.LObservac1.TabIndex = 49
@@ -3859,10 +3889,10 @@ Partial Class MPInventario
         Me.LNRI1.AutoSize = True
         Me.LNRI1.BackColor = System.Drawing.Color.Transparent
         Me.LNRI1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LNRI1.Location = New System.Drawing.Point(218, 67)
+        Me.LNRI1.Location = New System.Drawing.Point(226, 67)
         Me.LNRI1.Name = "LNRI1"
         Me.LNRI1.Size = New System.Drawing.Size(117, 16)
-        Me.LNRI1.TabIndex = 39
+        Me.LNRI1.TabIndex = 0
         Me.LNRI1.Text = "Núm. Rollo Interno"
         '
         'LCalibre1
@@ -3870,10 +3900,10 @@ Partial Class MPInventario
         Me.LCalibre1.AutoSize = True
         Me.LCalibre1.BackColor = System.Drawing.Color.Transparent
         Me.LCalibre1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LCalibre1.Location = New System.Drawing.Point(179, 12)
+        Me.LCalibre1.Location = New System.Drawing.Point(137, 12)
         Me.LCalibre1.Name = "LCalibre1"
         Me.LCalibre1.Size = New System.Drawing.Size(51, 16)
-        Me.LCalibre1.TabIndex = 45
+        Me.LCalibre1.TabIndex = 0
         Me.LCalibre1.Text = "Calibre"
         '
         'LPeso1
@@ -3881,10 +3911,10 @@ Partial Class MPInventario
         Me.LPeso1.AutoSize = True
         Me.LPeso1.BackColor = System.Drawing.Color.Transparent
         Me.LPeso1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LPeso1.Location = New System.Drawing.Point(281, 12)
+        Me.LPeso1.Location = New System.Drawing.Point(236, 12)
         Me.LPeso1.Name = "LPeso1"
         Me.LPeso1.Size = New System.Drawing.Size(40, 16)
-        Me.LPeso1.TabIndex = 44
+        Me.LPeso1.TabIndex = 0
         Me.LPeso1.Text = "Peso"
         '
         'LAncho1
@@ -3892,10 +3922,10 @@ Partial Class MPInventario
         Me.LAncho1.AutoSize = True
         Me.LAncho1.BackColor = System.Drawing.Color.Transparent
         Me.LAncho1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LAncho1.Location = New System.Drawing.Point(83, 12)
+        Me.LAncho1.Location = New System.Drawing.Point(41, 12)
         Me.LAncho1.Name = "LAncho1"
         Me.LAncho1.Size = New System.Drawing.Size(46, 16)
-        Me.LAncho1.TabIndex = 42
+        Me.LAncho1.TabIndex = 0
         Me.LAncho1.Text = "Ancho"
         '
         'LNRollo1
@@ -3903,11 +3933,11 @@ Partial Class MPInventario
         Me.LNRollo1.AutoSize = True
         Me.LNRollo1.BackColor = System.Drawing.Color.Transparent
         Me.LNRollo1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LNRollo1.Location = New System.Drawing.Point(95, 67)
+        Me.LNRollo1.Location = New System.Drawing.Point(67, 67)
         Me.LNRollo1.Name = "LNRollo1"
-        Me.LNRollo1.Size = New System.Drawing.Size(74, 16)
-        Me.LNRollo1.TabIndex = 38
-        Me.LNRollo1.Text = "Núm. Rollo"
+        Me.LNRollo1.Size = New System.Drawing.Size(141, 16)
+        Me.LNRollo1.TabIndex = 0
+        Me.LNRollo1.Text = "Núm. Rollo Proveedor"
         '
         'TRollos
         '
@@ -3935,7 +3965,8 @@ Partial Class MPInventario
         Me.TRollos.Name = "TRollos"
         Me.TRollos.SelectedIndex = 0
         Me.TRollos.Size = New System.Drawing.Size(420, 319)
-        Me.TRollos.TabIndex = 29
+        Me.TRollos.TabIndex = 5
+        Me.TRollos.Visible = False
         '
         'Label1
         '
@@ -3947,6 +3978,7 @@ Partial Class MPInventario
         Me.Label1.Size = New System.Drawing.Size(54, 15)
         Me.Label1.TabIndex = 92
         Me.Label1.Text = "Finalizar"
+        Me.Label1.Visible = False
         '
         'BTerminar
         '
@@ -3958,6 +3990,73 @@ Partial Class MPInventario
         Me.BTerminar.Size = New System.Drawing.Size(50, 50)
         Me.BTerminar.TabIndex = 91
         Me.BTerminar.UseVisualStyleBackColor = False
+        Me.BTerminar.Visible = False
+        '
+        'LMT1
+        '
+        Me.LMT1.AutoSize = True
+        Me.LMT1.BackColor = System.Drawing.Color.White
+        Me.LMT1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LMT1.Location = New System.Drawing.Point(369, 31)
+        Me.LMT1.Name = "LMT1"
+        Me.LMT1.Size = New System.Drawing.Size(28, 16)
+        Me.LMT1.TabIndex = 0
+        Me.LMT1.Text = "MT"
+        '
+        'TxtMetro1
+        '
+        Me.TxtMetro1.Location = New System.Drawing.Point(310, 29)
+        Me.TxtMetro1.Name = "TxtMetro1"
+        Me.TxtMetro1.ReadOnly = True
+        Me.TxtMetro1.Size = New System.Drawing.Size(68, 20)
+        Me.TxtMetro1.TabIndex = 4
+        Me.TxtMetro1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'LMetro1
+        '
+        Me.LMetro1.AutoSize = True
+        Me.LMetro1.BackColor = System.Drawing.Color.Transparent
+        Me.LMetro1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LMetro1.Location = New System.Drawing.Point(330, 10)
+        Me.LMetro1.Name = "LMetro1"
+        Me.LMetro1.Size = New System.Drawing.Size(49, 16)
+        Me.LMetro1.TabIndex = 0
+        Me.LMetro1.Text = "Metros"
+        '
+        'LMTEE
+        '
+        Me.LMTEE.AutoSize = True
+        Me.LMTEE.BackColor = System.Drawing.Color.White
+        Me.LMTEE.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LMTEE.Location = New System.Drawing.Point(540, 349)
+        Me.LMTEE.Name = "LMTEE"
+        Me.LMTEE.Size = New System.Drawing.Size(28, 16)
+        Me.LMTEE.TabIndex = 0
+        Me.LMTEE.Text = "MT"
+        Me.LMTEE.Visible = False
+        '
+        'TxtMTE
+        '
+        Me.TxtMTE.Location = New System.Drawing.Point(444, 348)
+        Me.TxtMTE.Name = "TxtMTE"
+        Me.TxtMTE.ReadOnly = True
+        Me.TxtMTE.Size = New System.Drawing.Size(96, 20)
+        Me.TxtMTE.TabIndex = 0
+        Me.TxtMTE.Text = "0"
+        Me.TxtMTE.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TxtMTE.Visible = False
+        '
+        'LMTE
+        '
+        Me.LMTE.AutoSize = True
+        Me.LMTE.BackColor = System.Drawing.Color.Transparent
+        Me.LMTE.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LMTE.Location = New System.Drawing.Point(438, 329)
+        Me.LMTE.Name = "LMTE"
+        Me.LMTE.Size = New System.Drawing.Size(114, 16)
+        Me.LMTE.TabIndex = 0
+        Me.LMTE.Text = "Cantidad Entrante"
+        Me.LMTE.Visible = False
         '
         'MPInventario
         '
@@ -3965,6 +4064,9 @@ Partial Class MPInventario
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.NucleosAve.My.Resources.Resources.Fondo
         Me.ClientSize = New System.Drawing.Size(594, 608)
+        Me.Controls.Add(Me.LMTEE)
+        Me.Controls.Add(Me.TxtMTE)
+        Me.Controls.Add(Me.LMTE)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.BTerminar)
@@ -4050,9 +4152,9 @@ Partial Class MPInventario
         Me.Rollo1.PerformLayout()
         Me.TRollos.ResumeLayout(False)
         Me.ResumeLayout(False)
-        Me.PerformLayout
+        Me.PerformLayout()
 
-End Sub
+    End Sub
 
     Friend WithEvents BMinimizar As Button
     Friend WithEvents BCerrar As Button
@@ -4374,6 +4476,9 @@ End Sub
     Friend WithEvents LAncho1 As Label
     Friend WithEvents LNRollo1 As Label
     Friend WithEvents TRollos As TabControl
+    Friend WithEvents Label1 As Label
+    Friend WithEvents BTerminar As Button
+    Public WithEvents TxtCS As TextBox
     Friend WithEvents ID As DataGridViewLinkColumn
     Friend WithEvents PurchaseOrder As DataGridViewTextBoxColumn
     Friend WithEvents OC As DataGridViewTextBoxColumn
@@ -4384,7 +4489,10 @@ End Sub
     Friend WithEvents Material As DataGridViewTextBoxColumn
     Friend WithEvents IDDP As DataGridViewTextBoxColumn
     Friend WithEvents Faltante As DataGridViewTextBoxColumn
-    Friend WithEvents Label1 As Label
-    Friend WithEvents BTerminar As Button
-    Public WithEvents TxtCS As TextBox
+    Friend WithEvents LMT1 As Label
+    Friend WithEvents TxtMetro1 As TextBox
+    Friend WithEvents LMetro1 As Label
+    Friend WithEvents LMTEE As Label
+    Friend WithEvents TxtMTE As TextBox
+    Friend WithEvents LMTE As Label
 End Class

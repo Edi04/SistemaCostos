@@ -1,7 +1,7 @@
 ﻿Public Class CRegistroOC
     Dim ID, L_ID As Integer
     Dim CEnt As Double
-    Dim Producto, COrdenC, LUsuario, COrdenT As String
+    Dim Producto, COrdenC, LUsuario, CodS As String
 
     Public Property GID
         Get
@@ -59,10 +59,10 @@
 
     Public Property GCOrdenT
         Get
-            Return COrdenT
+            Return CodS
         End Get
         Set(value)
-            COrdenT = value
+            CodS = value
         End Set
     End Property
 End Class
