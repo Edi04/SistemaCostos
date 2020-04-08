@@ -842,4 +842,31 @@ Public Class Funcion_Registros
         End Try
     End Function
     '_________________________________________________________________________________________________
+    '----------------------------Eliminar Pedimentos----------------------------
+    Public Function FN_EliminarPedimentos(ByVal dts As ClassPedimentos) As Boolean
+        Try
+
+
+            Dim conexxo As New SqlConnection(conexioncita)
+            conexxo.Open()
+            comando = New SqlCommand("SP_EliminarPedimentos")
+            comando.CommandType = CommandType.StoredProcedure
+            comando.Connection = conexxo
+
+            comando.Parameters.AddWithValue("@id", dts.Peid)
+            comando.Parameters.AddWithValue("@Estado", "Inactivo")
+
+            If comando.ExecuteNonQuery Then
+                Return True
+            Else
+                Return False
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        Finally
+            con.Close()
+        End Try
+    End Function
 End Class

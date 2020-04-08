@@ -293,6 +293,8 @@ Public Class RegistrosPedimentos
         da.SelectCommand = comando
         da.Fill(tabla)
         If (tabla.Rows.Count <> 0) Then
+            TextBox_id.Text = tabla.Rows(0)(0).ToString
+            codigo_eliminar.Text = tabla.Rows(0)(1).ToString
             Pedimentos.TextIDPEdimento.Text = tabla.Rows(0)(0).ToString
             Pedimentos.txtCodigoPedimento.Text = tabla.Rows(0)(1).ToString
             Pedimentos.textprove.Text = tabla.Rows(0)(3).ToString
@@ -1554,9 +1556,6 @@ Public Class RegistrosPedimentos
     Private Sub Inicio_Od_MouseUp(sender As Object, e As MouseEventArgs) Handles MyBase.MouseUp
         Arrastre = False
     End Sub
-
-
-
     Private Sub Inicio_Od_MouseMove(sender As Object, e As MouseEventArgs) Handles MyBase.MouseMove
         'Si el formulario no tiene borde (FormBorderStyle = none) la siguiente linea funciona bien
         If Arrastre Then Me.Location = Me.PointToScreen(New Point(Me.MousePosition.X - Me.Location.X - ex, Me.MousePosition.Y - Me.Location.Y - ey))
@@ -1564,4 +1563,25 @@ Public Class RegistrosPedimentos
         'If Arrastre Then Me.Location = Me.PointToScreen(New Point(Me.MousePosition.X - Me.Location.X - ex - 8, Me.MousePosition.Y - Me.Location.Y - ey - 60))
     End Sub
 
+    Private Sub DataGridRegistrosPedimentos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridRegistrosPedimentos.CellContentClick
+
+    End Sub
+
+    Private Sub btn_eliminnar_Click(sender As Object, e As EventArgs) Handles btn_eliminnar.Click
+        If MessageBox.Show("Estas Seguro Que Quieres Eliminar " + codigo_eliminar.Text, "Eliminar Pedimentos", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
+            Try
+                Dim funciones As New Funcion_Registros
+                Dim logica As New ClassPedimentos
+
+                logica.Peid = Me.TextBox_id.Text
+
+                If funciones.FN_EliminarPedimentos(logica) Then
+                    MsgBox("Pedimento Eliminado Correctamente", MessageBoxIcon.Information)
+                     MostrarRegPedimentos()
+                End If
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        End If
+    End Sub
 End Class

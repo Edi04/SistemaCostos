@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Fletes_y_Entregas
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Fletes_y_Entregas
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Fletes_y_Entregas))
         Me.btn_minimizar = New System.Windows.Forms.PictureBox()
@@ -397,7 +397,7 @@ Partial Class Fletes_y_Entregas
         'Label25
         '
         Me.Label25.AutoSize = True
-        Me.Label25.Location = New System.Drawing.Point(121, 175)
+        Me.Label25.Location = New System.Drawing.Point(259, 154)
         Me.Label25.Name = "Label25"
         Me.Label25.Size = New System.Drawing.Size(71, 13)
         Me.Label25.TabIndex = 119
@@ -405,7 +405,7 @@ Partial Class Fletes_y_Entregas
         '
         'TextBox_total_a_pagar
         '
-        Me.TextBox_total_a_pagar.Location = New System.Drawing.Point(124, 192)
+        Me.TextBox_total_a_pagar.Location = New System.Drawing.Point(262, 171)
         Me.TextBox_total_a_pagar.Name = "TextBox_total_a_pagar"
         Me.TextBox_total_a_pagar.Size = New System.Drawing.Size(136, 20)
         Me.TextBox_total_a_pagar.TabIndex = 118
@@ -413,9 +413,9 @@ Partial Class Fletes_y_Entregas
         'btn_ot
         '
         Me.btn_ot.Image = Global.NucleosAve.My.Resources.Resources.icons8_google_web_search_512
-        Me.btn_ot.Location = New System.Drawing.Point(266, 31)
+        Me.btn_ot.Location = New System.Drawing.Point(210, 167)
         Me.btn_ot.Name = "btn_ot"
-        Me.btn_ot.Size = New System.Drawing.Size(19, 20)
+        Me.btn_ot.Size = New System.Drawing.Size(34, 32)
         Me.btn_ot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.btn_ot.TabIndex = 117
         Me.btn_ot.TabStop = False
@@ -423,16 +423,16 @@ Partial Class Fletes_y_Entregas
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(121, 14)
+        Me.Label11.Location = New System.Drawing.Point(22, 17)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(22, 13)
+        Me.Label11.Size = New System.Drawing.Size(201, 13)
         Me.Label11.TabIndex = 19
-        Me.Label11.Text = "OT"
+        Me.Label11.Text = "Coloca las OT Que Entrego Esta Entrega"
         '
         'Label29
         '
         Me.Label29.AutoSize = True
-        Me.Label29.Location = New System.Drawing.Point(121, 137)
+        Me.Label29.Location = New System.Drawing.Point(259, 116)
         Me.Label29.Name = "Label29"
         Me.Label29.Size = New System.Drawing.Size(100, 13)
         Me.Label29.TabIndex = 13
@@ -440,7 +440,7 @@ Partial Class Fletes_y_Entregas
         '
         'TextBox_retencion_aplicada
         '
-        Me.TextBox_retencion_aplicada.Location = New System.Drawing.Point(124, 154)
+        Me.TextBox_retencion_aplicada.Location = New System.Drawing.Point(262, 133)
         Me.TextBox_retencion_aplicada.Name = "TextBox_retencion_aplicada"
         Me.TextBox_retencion_aplicada.Size = New System.Drawing.Size(136, 20)
         Me.TextBox_retencion_aplicada.TabIndex = 12
@@ -448,7 +448,7 @@ Partial Class Fletes_y_Entregas
         'Label30
         '
         Me.Label30.AutoSize = True
-        Me.Label30.Location = New System.Drawing.Point(121, 96)
+        Me.Label30.Location = New System.Drawing.Point(259, 75)
         Me.Label30.Name = "Label30"
         Me.Label30.Size = New System.Drawing.Size(66, 13)
         Me.Label30.TabIndex = 11
@@ -456,14 +456,15 @@ Partial Class Fletes_y_Entregas
         '
         'TextBox_Ot
         '
-        Me.TextBox_Ot.Location = New System.Drawing.Point(124, 31)
+        Me.TextBox_Ot.Location = New System.Drawing.Point(25, 33)
+        Me.TextBox_Ot.Multiline = True
         Me.TextBox_Ot.Name = "TextBox_Ot"
-        Me.TextBox_Ot.Size = New System.Drawing.Size(136, 20)
+        Me.TextBox_Ot.Size = New System.Drawing.Size(219, 128)
         Me.TextBox_Ot.TabIndex = 18
         '
         'TextBox_iva_aplicado
         '
-        Me.TextBox_iva_aplicado.Location = New System.Drawing.Point(124, 113)
+        Me.TextBox_iva_aplicado.Location = New System.Drawing.Point(262, 92)
         Me.TextBox_iva_aplicado.Name = "TextBox_iva_aplicado"
         Me.TextBox_iva_aplicado.Size = New System.Drawing.Size(136, 20)
         Me.TextBox_iva_aplicado.TabIndex = 10
@@ -471,7 +472,7 @@ Partial Class Fletes_y_Entregas
         'Label31
         '
         Me.Label31.AutoSize = True
-        Me.Label31.Location = New System.Drawing.Point(121, 55)
+        Me.Label31.Location = New System.Drawing.Point(259, 34)
         Me.Label31.Name = "Label31"
         Me.Label31.Size = New System.Drawing.Size(92, 13)
         Me.Label31.TabIndex = 9
@@ -479,7 +480,7 @@ Partial Class Fletes_y_Entregas
         '
         'TextBox_costo_servicion
         '
-        Me.TextBox_costo_servicion.Location = New System.Drawing.Point(124, 72)
+        Me.TextBox_costo_servicion.Location = New System.Drawing.Point(262, 51)
         Me.TextBox_costo_servicion.Name = "TextBox_costo_servicion"
         Me.TextBox_costo_servicion.Size = New System.Drawing.Size(136, 20)
         Me.TextBox_costo_servicion.TabIndex = 8

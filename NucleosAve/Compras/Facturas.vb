@@ -411,6 +411,8 @@ Public Class factura
                     If Not cancelado Then
                         System.IO.File.Copy(.FileName, fichero.FullName)
                         MsgBox("Archivo Almacenado Correctamente", MessageBoxIcon.Exclamation)
+                        btn_SubirArchivo.Enabled = True
+
                     End If
                 End If
             End With
@@ -422,47 +424,47 @@ Public Class factura
 
     End Sub
 
-    Private Sub btn_xml_Click(sender As Object, e As EventArgs) Handles btn_xml.Click
-        Try
-            Dim cancelado As Boolean = False
-            Dim openFD As New OpenFileDialog()
-            With openFD
-                .Title = "Factura XML"
-                .Filter = "Factura Digital (*.xml)|*.xml"
-                .Multiselect = False
-                '.InitialDirectory = My.Computer.FileSystem.CurrentDirectory //abrir en carpeta de ejecucion del programa
-                .InitialDirectory = "c:\"
-                If .ShowDialog = Windows.Forms.DialogResult.OK Then
-                    text_xml.Text = IO.Path.GetFileName(.FileName)
-                    Dim pathDefinitivo As String = "\\ANTUA-PC\Servidor_de_Archivos\Documentos\XML"
-                    Dim fichero As New System.IO.FileInfo(pathDefinitivo & "\" & text_xml.Text)
-                    If fichero.Exists Then
-                        If MessageBox.Show("El archivo seleccionado ya está incluido" & ControlChars.NewLine & "¿Desea sobreescribirlo?", "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then
-                            cancelado = True
-                        Else
-                            System.IO.File.Delete(fichero.FullName)
-                        End If
-                    End If
-                    If Not cancelado Then
-                        MsgBox("Archivo Almacenado Correctamente", MessageBoxIcon.Exclamation)
-                        System.IO.File.Copy(.FileName, fichero.FullName)
-                    End If
-                End If
-                btn_SubirArchivo.Enabled = True
-            End With
+    'Private Sub btn_xml_Click(sender As Object, e As EventArgs) Handles btn_xml.Click
+    '    Try
+    '        Dim cancelado As Boolean = False
+    '        Dim openFD As New OpenFileDialog()
+    '        With openFD
+    '            .Title = "Factura XML"
+    '            .Filter = "Factura Digital (*.xml)|*.xml"
+    '            .Multiselect = False
+    '            '.InitialDirectory = My.Computer.FileSystem.CurrentDirectory //abrir en carpeta de ejecucion del programa
+    '            .InitialDirectory = "c:\"
+    '            If .ShowDialog = Windows.Forms.DialogResult.OK Then
+    '                text_xml.Text = IO.Path.GetFileName(.FileName)
+    '                Dim pathDefinitivo As String = "\\ANTUA-PC\Servidor_de_Archivos\Documentos\XML"
+    '                Dim fichero As New System.IO.FileInfo(pathDefinitivo & "\" & text_xml.Text)
+    '                If fichero.Exists Then
+    '                    If MessageBox.Show("El archivo seleccionado ya está incluido" & ControlChars.NewLine & "¿Desea sobreescribirlo?", "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then
+    '                        cancelado = True
+    '                    Else
+    '                        System.IO.File.Delete(fichero.FullName)
+    '                    End If
+    '                End If
+    '                If Not cancelado Then
+    '                    MsgBox("Archivo Almacenado Correctamente", MessageBoxIcon.Exclamation)
+    '                    System.IO.File.Copy(.FileName, fichero.FullName)
+    '                End If
+    '            End If
+    '            btn_SubirArchivo.Enabled = True
+    '        End With
 
-        Catch ex As Exception
-            MsgBox(ex.Message, MessageBoxIcon.Warning)
-        End Try
+    '    Catch ex As Exception
+    '        MsgBox(ex.Message, MessageBoxIcon.Warning)
+    '    End Try
 
-    End Sub
+    'End Sub
 
     Private Sub btn_descargapdf_Click(sender As Object, e As EventArgs) Handles btn_descargapdf.Click
-        ArchivosPDF.ShowDialog()
+        ArchivosPDF.Show()
     End Sub
 
     Private Sub btn_descargaxml_Click(sender As Object, e As EventArgs) Handles btn_descargaxml.Click
-        ArchivosXML.ShowDialog()
+        ArchivosXML.Show()
     End Sub
 
 
@@ -508,43 +510,43 @@ Public Class factura
 
                 If funciones.FN_InsertarFacturas(logica) Then
                     MsgBox("Factura Agregada Correctamente", MessageBoxIcon.Information)
+                    '----------------------------limpiar Cajas ---------------------------------
+                    txtCodigo.Clear()
+                    NombreEmLab.ResetText()
+                    RfcEmisorLab.ResetText()
+                    RegFiscalLab.ResetText()
+                    FolioFIscal.ResetText()
+                    ncertificadolab.ResetText()
+                    FechaLab.ResetText()
+                    LugarExpLab.ResetText()
+                    LugarExpLab.ResetText()
+                    RFCReceptorLab.ResetText()
+                    UsoCFDIlab.ResetText()
+                    tasacuotalab.ResetText()
+                    TipofactorLAb.ResetText()
+                    impuestolab.ResetText()
+                    TComprobanteLab.ResetText()
+                    fpagolab.ResetText()
+                    MetodoPLab.ResetText()
+                    CondicionesLab.ResetText()
+                    MonedaLab.ResetText()
+                    FolioLab.ResetText()
+                    versionlab.ResetText()
+                    sellolab.ResetText()
+                    CertificadoLab.ResetText()
+                    txtOrdenCompra.ResetText()
+                    TipoCambioLab.ResetText()
+                    SubtotalLab.ResetText()
+                    impurestrosTrasladosLAB.ResetText()
+                    TotalLab.ResetText()
+                    NombreRecLab.ResetText()
+                    GenerarCodigo()
+                    '---------------------------------------------------------------------------
                 End If
             Catch ex As Exception
                 MsgBox(ex.Message)
             End Try
-            '----------------------------limpiar Cajas ---------------------------------
-            txtCodigo.Clear()
-            NombreEmLab.ResetText()
-            RfcEmisorLab.ResetText()
-            RegFiscalLab.ResetText()
-            FolioFIscal.ResetText()
-            ncertificadolab.ResetText()
-            FechaLab.ResetText()
-            LugarExpLab.ResetText()
-            LugarExpLab.ResetText()
-            RFCReceptorLab.ResetText()
-            UsoCFDIlab.ResetText()
-            tasacuotalab.ResetText()
-            TipofactorLAb.ResetText()
-            impuestolab.ResetText()
-            TComprobanteLab.ResetText()
-            fpagolab.ResetText()
-            MetodoPLab.ResetText()
-            CondicionesLab.ResetText()
-            MonedaLab.ResetText()
-            FolioLab.ResetText()
-            versionlab.ResetText()
-            sellolab.ResetText()
-            CertificadoLab.ResetText()
-            txtOrdenCompra.ResetText()
-            TipoCambioLab.ResetText()
-            SubtotalLab.ResetText()
-            impurestrosTrasladosLAB.ResetText()
-            TotalLab.ResetText()
-            NombreRecLab.ResetText()
-            GenerarCodigo()
 
-            '---------------------------------------------------------------------------
         End If
     End Sub
     '<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<

@@ -1,11 +1,21 @@
 ﻿Public Class ClassPedimentos
     Dim fecha As Date
+    Dim id As Integer
     Dim cove, codigo_pedimento, orden_compra, pedimento, clave, aduana, tipo, t_cantidad, id_provedor, unidad, id_factura As String
     Dim cantidad, precioP, total, valor_Aduana,
         tipo_cambio, peso_bruto, iva_RG_terceros1,
         total_RG_terceros1, iva_custombokerage, total_custombokerage,
         importeTGAG, ivaTGAG, TotalTGAG, importeRC, pesoRC, costoRC, tcRC, mxn1RC, mxn2RC, otrosgastos, importeCT, ivaCT, idpedimento As Double
 
+
+    Public Property Peid
+        Get
+            Return id
+        End Get
+        Set(value)
+            id = value
+        End Set
+    End Property
     Public Property Peidpedimento
         Get
             Return idpedimento

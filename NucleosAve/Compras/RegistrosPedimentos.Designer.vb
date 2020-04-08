@@ -36,11 +36,15 @@ Partial Class RegistrosPedimentos
         Me.Label2 = New System.Windows.Forms.Label()
         Me.textBuscar = New System.Windows.Forms.TextBox()
         Me.btn_BuscarOc = New System.Windows.Forms.PictureBox()
+        Me.btn_eliminnar = New System.Windows.Forms.PictureBox()
+        Me.codigo_eliminar = New System.Windows.Forms.TextBox()
+        Me.TextBox_id = New System.Windows.Forms.TextBox()
         CType(Me.btn_minimizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_Cerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridRegistrosPedimentos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_BuscarOc, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btn_eliminnar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btn_minimizar
@@ -87,7 +91,7 @@ Partial Class RegistrosPedimentos
         Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBuscar.ForeColor = System.Drawing.Color.Cornsilk
-        Me.btnBuscar.Location = New System.Drawing.Point(334, 118)
+        Me.btnBuscar.Location = New System.Drawing.Point(55, 127)
         Me.btnBuscar.Name = "btnBuscar"
         Me.btnBuscar.Size = New System.Drawing.Size(172, 33)
         Me.btnBuscar.TabIndex = 182
@@ -167,7 +171,7 @@ Partial Class RegistrosPedimentos
         'textBuscar
         '
         Me.textBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.25!)
-        Me.textBuscar.Location = New System.Drawing.Point(566, 81)
+        Me.textBuscar.Location = New System.Drawing.Point(326, 81)
         Me.textBuscar.Name = "textBuscar"
         Me.textBuscar.Size = New System.Drawing.Size(172, 23)
         Me.textBuscar.TabIndex = 186
@@ -176,12 +180,39 @@ Partial Class RegistrosPedimentos
         '
         Me.btn_BuscarOc.BackColor = System.Drawing.Color.Transparent
         Me.btn_BuscarOc.Image = Global.NucleosAve.My.Resources.Resources.icons8_google_web_search_512
-        Me.btn_BuscarOc.Location = New System.Drawing.Point(744, 80)
+        Me.btn_BuscarOc.Location = New System.Drawing.Point(504, 80)
         Me.btn_BuscarOc.Name = "btn_BuscarOc"
         Me.btn_BuscarOc.Size = New System.Drawing.Size(28, 26)
         Me.btn_BuscarOc.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.btn_BuscarOc.TabIndex = 191
         Me.btn_BuscarOc.TabStop = False
+        '
+        'btn_eliminnar
+        '
+        Me.btn_eliminnar.BackColor = System.Drawing.Color.Transparent
+        Me.btn_eliminnar.Image = Global.NucleosAve.My.Resources.Resources.icons8_basura_100
+        Me.btn_eliminnar.Location = New System.Drawing.Point(749, 127)
+        Me.btn_eliminnar.Name = "btn_eliminnar"
+        Me.btn_eliminnar.Size = New System.Drawing.Size(39, 37)
+        Me.btn_eliminnar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_eliminnar.TabIndex = 192
+        Me.btn_eliminnar.TabStop = False
+        '
+        'codigo_eliminar
+        '
+        Me.codigo_eliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.25!)
+        Me.codigo_eliminar.Location = New System.Drawing.Point(571, 131)
+        Me.codigo_eliminar.Name = "codigo_eliminar"
+        Me.codigo_eliminar.Size = New System.Drawing.Size(172, 23)
+        Me.codigo_eliminar.TabIndex = 193
+        '
+        'TextBox_id
+        '
+        Me.TextBox_id.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.25!)
+        Me.TextBox_id.Location = New System.Drawing.Point(393, 131)
+        Me.TextBox_id.Name = "TextBox_id"
+        Me.TextBox_id.Size = New System.Drawing.Size(172, 23)
+        Me.TextBox_id.TabIndex = 194
         '
         'RegistrosPedimentos
         '
@@ -189,6 +220,9 @@ Partial Class RegistrosPedimentos
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.TextBox_id)
+        Me.Controls.Add(Me.codigo_eliminar)
+        Me.Controls.Add(Me.btn_eliminnar)
         Me.Controls.Add(Me.btn_BuscarOc)
         Me.Controls.Add(Me.textBuscar)
         Me.Controls.Add(Me.Label2)
@@ -208,6 +242,7 @@ Partial Class RegistrosPedimentos
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridRegistrosPedimentos, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btn_BuscarOc, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_eliminnar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -222,4 +257,7 @@ Partial Class RegistrosPedimentos
     Friend WithEvents Label2 As Label
     Friend WithEvents textBuscar As TextBox
     Friend WithEvents btn_BuscarOc As PictureBox
+    Friend WithEvents btn_eliminnar As PictureBox
+    Friend WithEvents codigo_eliminar As TextBox
+    Friend WithEvents TextBox_id As TextBox
 End Class

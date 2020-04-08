@@ -273,6 +273,22 @@ Public Class Fletes_y_Entregas
         registros_fletes_y_entregas.Show()
     End Sub
 
+    Private Sub btn_ot2_Click(sender As Object, e As EventArgs)
+        Entregas_diarias.Show()
+    End Sub
+
+    Private Sub btn_ot3_Click(sender As Object, e As EventArgs)
+        Entregas_diarias.Show()
+    End Sub
+
+    Private Sub btn_ot4_Click(sender As Object, e As EventArgs)
+        Entregas_diarias.Show()
+    End Sub
+
+    Private Sub btn_ot5_Click(sender As Object, e As EventArgs)
+        Entregas_diarias.Show()
+    End Sub
+
     Sub limpiar()
         GenerarCodigo()
         TextBox_vehiculo.Clear()

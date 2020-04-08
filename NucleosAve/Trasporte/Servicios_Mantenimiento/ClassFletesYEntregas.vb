@@ -1,12 +1,43 @@
 ﻿Public Class ClassFletesYEntregas
-    Dim vehiculo, dias_viaje, ot, chofer, codigo As String
+    Dim vehiculo, dias_viaje, ot, chofer, codigo, ot2, ot3, ot4, ot5 As String
     Dim salida, regreso As Date
     Dim km_recorridos, mantenimiento_promedio, depresiacion, sueldo,
         costo_diesel, litros, total_diesel, casetas, fumigacion, gastos_varios,
         comidas, varios, sueldo2, mantenimiento, depresiacion2, total_gastos_variable_mas_fijos,
         utilidad_entre_facturado_de_gastos, Utilidad_diaria, costo_servicion, iva_aplicado, retencion_aplicada, total_a_pagar, porcentaje As Double
 
-
+    Public Property FE_ot5
+        Get
+            Return ot5
+        End Get
+        Set(value)
+            ot5 = value
+        End Set
+    End Property
+    Public Property FE_ot4
+        Get
+            Return ot4
+        End Get
+        Set(value)
+            ot4 = value
+        End Set
+    End Property
+    Public Property FE_ot3
+        Get
+            Return ot3
+        End Get
+        Set(value)
+            ot3 = value
+        End Set
+    End Property
+    Public Property FE_ot2
+        Get
+            Return ot2
+        End Get
+        Set(value)
+            ot2 = value
+        End Set
+    End Property
 
     Public Property FE_total_a_pagar
         Get

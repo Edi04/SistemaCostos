@@ -211,7 +211,7 @@ Partial Class factura
         '
         Me.versionlab.AutoSize = True
         Me.versionlab.BackColor = System.Drawing.Color.Transparent
-        Me.versionlab.Location = New System.Drawing.Point(728, 509)
+        Me.versionlab.Location = New System.Drawing.Point(685, 509)
         Me.versionlab.Name = "versionlab"
         Me.versionlab.Size = New System.Drawing.Size(34, 13)
         Me.versionlab.TabIndex = 117
@@ -222,7 +222,7 @@ Partial Class factura
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.Label4.Location = New System.Drawing.Point(686, 509)
+        Me.Label4.Location = New System.Drawing.Point(643, 509)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(53, 13)
         Me.Label4.TabIndex = 116
@@ -251,7 +251,7 @@ Partial Class factura
         '
         Me.FolioLab.AutoSize = True
         Me.FolioLab.BackColor = System.Drawing.Color.Transparent
-        Me.FolioLab.Location = New System.Drawing.Point(622, 509)
+        Me.FolioLab.Location = New System.Drawing.Point(579, 509)
         Me.FolioLab.Name = "FolioLab"
         Me.FolioLab.Size = New System.Drawing.Size(34, 13)
         Me.FolioLab.TabIndex = 121
@@ -262,7 +262,7 @@ Partial Class factura
         Me.asfdsf.AutoSize = True
         Me.asfdsf.BackColor = System.Drawing.Color.Transparent
         Me.asfdsf.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.asfdsf.Location = New System.Drawing.Point(592, 509)
+        Me.asfdsf.Location = New System.Drawing.Point(549, 509)
         Me.asfdsf.Name = "asfdsf"
         Me.asfdsf.Size = New System.Drawing.Size(38, 13)
         Me.asfdsf.TabIndex = 120
@@ -843,13 +843,13 @@ Partial Class factura
         Me.txtCodigo.ReadOnly = True
         Me.txtCodigo.Size = New System.Drawing.Size(100, 20)
         Me.txtCodigo.TabIndex = 179
+        Me.txtCodigo.Visible = False
         '
         'txtOrdenCompra
         '
         Me.txtOrdenCompra.Cursor = System.Windows.Forms.Cursors.No
         Me.txtOrdenCompra.Location = New System.Drawing.Point(119, 53)
         Me.txtOrdenCompra.Name = "txtOrdenCompra"
-        Me.txtOrdenCompra.ReadOnly = True
         Me.txtOrdenCompra.Size = New System.Drawing.Size(100, 20)
         Me.txtOrdenCompra.TabIndex = 180
         '
@@ -860,9 +860,9 @@ Partial Class factura
         Me.Button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Button1.Location = New System.Drawing.Point(225, 51)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(162, 25)
+        Me.Button1.Size = New System.Drawing.Size(97, 25)
         Me.Button1.TabIndex = 181
-        Me.Button1.Text = "Asignar Orden de Compra"
+        Me.Button1.Text = "Asignar OC"
         Me.Button1.UseVisualStyleBackColor = False
         '
         'btnCerrarPrograma
@@ -893,10 +893,10 @@ Partial Class factura
         Me.btnBuscar.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.btnBuscar.BackColor = System.Drawing.Color.Transparent
         Me.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnBuscar.Image = Global.NucleosAve.My.Resources.Resources.file_1911
-        Me.btnBuscar.Location = New System.Drawing.Point(584, 32)
+        Me.btnBuscar.Image = Global.NucleosAve.My.Resources.Resources.icons8_google_web_search_512
+        Me.btnBuscar.Location = New System.Drawing.Point(622, 32)
         Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(46, 41)
+        Me.btnBuscar.Size = New System.Drawing.Size(43, 41)
         Me.btnBuscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.btnBuscar.TabIndex = 184
         Me.btnBuscar.TabStop = False
@@ -905,9 +905,9 @@ Partial Class factura
         '
         Me.btn_pdf.BackColor = System.Drawing.Color.Transparent
         Me.btn_pdf.Image = Global.NucleosAve.My.Resources.Resources.icons8_pdf_100
-        Me.btn_pdf.Location = New System.Drawing.Point(428, 319)
+        Me.btn_pdf.Location = New System.Drawing.Point(436, 292)
         Me.btn_pdf.Name = "btn_pdf"
-        Me.btn_pdf.Size = New System.Drawing.Size(45, 44)
+        Me.btn_pdf.Size = New System.Drawing.Size(68, 71)
         Me.btn_pdf.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.btn_pdf.TabIndex = 185
         Me.btn_pdf.TabStop = False
@@ -922,6 +922,7 @@ Partial Class factura
         Me.btn_xml.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.btn_xml.TabIndex = 186
         Me.btn_xml.TabStop = False
+        Me.btn_xml.Visible = False
         '
         'textpdf
         '
@@ -955,12 +956,13 @@ Partial Class factura
         Me.btn_descargaxml.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.btn_descargaxml.TabIndex = 190
         Me.btn_descargaxml.TabStop = False
+        Me.btn_descargaxml.Visible = False
         '
         'btn_descargapdf
         '
         Me.btn_descargapdf.BackColor = System.Drawing.Color.Transparent
         Me.btn_descargapdf.Image = Global.NucleosAve.My.Resources.Resources.icons8_exportar_pdf_100
-        Me.btn_descargapdf.Location = New System.Drawing.Point(268, 481)
+        Me.btn_descargapdf.Location = New System.Drawing.Point(738, 484)
         Me.btn_descargapdf.Name = "btn_descargapdf"
         Me.btn_descargapdf.Size = New System.Drawing.Size(45, 44)
         Me.btn_descargapdf.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage

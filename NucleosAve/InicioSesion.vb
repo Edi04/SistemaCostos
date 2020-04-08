@@ -83,6 +83,23 @@ Public Class InicioSesion
                         Index.BA_R.Visible = True
                         Index.Label6.Visible = True
 
+                        'Costos - TRASPORTE  
+                    ElseIf Proceso(CUsuarios.Text) = 31 Then
+                        Index.PTransporte.Location = New Point(30, 138)
+                        Index.PAGasolina.Location = New Point(97, 138)
+                        'Index.PMCompras.Visible = 
+
+                        Index.PTransporte.Visible = True
+                        Index.PCompras.Visible = False
+                        Index.PCostos.Visible = False
+                        Index.PAlmacen.Visible = False
+                        Index.PMass.Visible = False
+                        Index.PAGasolina.Visible = True
+                        Index.PPedidos.Visible = False
+                        Index.PMaPrima.Visible = False
+                        Index.BA_R.Visible = False
+                        Index.Label6.Visible = False
+
                         'Mass
                     ElseIf Proceso(CUsuarios.Text) = 36 Then
                         Index.PMass.Location = New Point(30, 138)

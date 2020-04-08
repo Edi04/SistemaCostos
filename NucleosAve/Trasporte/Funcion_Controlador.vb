@@ -33,7 +33,7 @@ Public Class Funcion_Controlador
             comando.Parameters.AddWithValue("@Monto_Actual_Del_Activo", dts.T_Monto_Actual_Del_Activo)
             comando.Parameters.AddWithValue("@Estado", "Activo")
             comando.Parameters.AddWithValue("@DateTime", DateTime.Now)
-            comando.Parameters.AddWithValue("@oc", dts.T_oc)
+            comando.Parameters.AddWithValue("@oc", "N/A")
             If AltaTrasportes.Text_Url_Pdf.Text = "" Then
                 comando.Parameters.AddWithValue("@factura_trasporte", "Ningun Archivo Seleccionado")
             Else

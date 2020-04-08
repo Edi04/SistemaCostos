@@ -55,6 +55,7 @@ Partial Class ServiciosMantenimiento
         Me.T_Recibio_Recomendaciones = New System.Windows.Forms.TextBox()
         Me.Label31 = New System.Windows.Forms.Label()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
+        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.T_Reviciones_Programadas = New System.Windows.Forms.ComboBox()
         Me.Label23 = New System.Windows.Forms.Label()
@@ -173,7 +174,6 @@ Partial Class ServiciosMantenimiento
         Me.DateTimerango2 = New System.Windows.Forms.DateTimePicker()
         Me.btnBuscar = New System.Windows.Forms.Button()
         Me.Label41 = New System.Windows.Forms.Label()
-        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         CType(Me.btn_minimizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_Cerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -182,6 +182,7 @@ Partial Class ServiciosMantenimiento
         Me.Panel7.SuspendLayout()
         Me.Panel8.SuspendLayout()
         Me.TabPage5.SuspendLayout()
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel4.SuspendLayout()
         Me.Detalles.SuspendLayout()
         Me.Panel5.SuspendLayout()
@@ -203,7 +204,6 @@ Partial Class ServiciosMantenimiento
         Me.GroupBox3.SuspendLayout()
         CType(Me.btn_pdf, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Registros_Mantenimientos, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btn_minimizar
@@ -538,6 +538,16 @@ Partial Class ServiciosMantenimiento
         Me.TabPage5.TabIndex = 4
         Me.TabPage5.Text = "Reviciones Programadas"
         Me.TabPage5.UseVisualStyleBackColor = True
+        '
+        'PictureBox7
+        '
+        Me.PictureBox7.Image = Global.NucleosAve.My.Resources.Resources.autonomouse_sfm_driving_by_gleb__1_
+        Me.PictureBox7.Location = New System.Drawing.Point(17, 44)
+        Me.PictureBox7.Name = "PictureBox7"
+        Me.PictureBox7.Size = New System.Drawing.Size(334, 375)
+        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox7.TabIndex = 209
+        Me.PictureBox7.TabStop = False
         '
         'Panel4
         '
@@ -1645,7 +1655,9 @@ Partial Class ServiciosMantenimiento
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.btn_guardar)
         Me.TabPage1.Controls.Add(Me.GroupBox3)
+        Me.TabPage1.Controls.Add(Me.Btn_modificar)
         Me.TabPage1.Controls.Add(Me.Label40)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
@@ -1717,7 +1729,7 @@ Partial Class ServiciosMantenimiento
         Me.btn_guardar.Enabled = False
         Me.btn_guardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btn_guardar.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btn_guardar.Location = New System.Drawing.Point(1059, 493)
+        Me.btn_guardar.Location = New System.Drawing.Point(415, 359)
         Me.btn_guardar.Name = "btn_guardar"
         Me.btn_guardar.Size = New System.Drawing.Size(170, 39)
         Me.btn_guardar.TabIndex = 189
@@ -1730,7 +1742,7 @@ Partial Class ServiciosMantenimiento
         Me.Btn_modificar.Enabled = False
         Me.Btn_modificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Btn_modificar.ForeColor = System.Drawing.Color.Cornsilk
-        Me.Btn_modificar.Location = New System.Drawing.Point(798, 493)
+        Me.Btn_modificar.Location = New System.Drawing.Point(154, 359)
         Me.Btn_modificar.Name = "Btn_modificar"
         Me.Btn_modificar.Size = New System.Drawing.Size(170, 39)
         Me.Btn_modificar.TabIndex = 193
@@ -1786,16 +1798,6 @@ Partial Class ServiciosMantenimiento
         Me.Label41.TabIndex = 194
         Me.Label41.Text = "Rangos de Fecha"
         '
-        'PictureBox7
-        '
-        Me.PictureBox7.Image = Global.NucleosAve.My.Resources.Resources.autonomouse_sfm_driving_by_gleb__1_
-        Me.PictureBox7.Location = New System.Drawing.Point(17, 44)
-        Me.PictureBox7.Name = "PictureBox7"
-        Me.PictureBox7.Size = New System.Drawing.Size(334, 375)
-        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox7.TabIndex = 209
-        Me.PictureBox7.TabStop = False
-        '
         'ServiciosMantenimiento
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1803,9 +1805,7 @@ Partial Class ServiciosMantenimiento
         Me.BackgroundImage = Global.NucleosAve.My.Resources.Resources.Fondo
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1271, 544)
-        Me.Controls.Add(Me.btn_guardar)
         Me.Controls.Add(Me.Label41)
-        Me.Controls.Add(Me.Btn_modificar)
         Me.Controls.Add(Me.btnBuscar)
         Me.Controls.Add(Me.DateTimerango2)
         Me.Controls.Add(Me.DateTimerango1)
@@ -1833,6 +1833,7 @@ Partial Class ServiciosMantenimiento
         Me.Panel8.PerformLayout()
         Me.TabPage5.ResumeLayout(False)
         Me.TabPage5.PerformLayout()
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
         Me.Detalles.ResumeLayout(False)
@@ -1866,7 +1867,6 @@ Partial Class ServiciosMantenimiento
         Me.GroupBox3.PerformLayout()
         CType(Me.btn_pdf, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Registros_Mantenimientos, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

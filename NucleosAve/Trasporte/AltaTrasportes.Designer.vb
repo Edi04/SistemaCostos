@@ -38,7 +38,6 @@ Partial Class AltaTrasportes
         Me.btn_ventanita_close = New System.Windows.Forms.PictureBox()
         Me.Btn_nueva_marca = New System.Windows.Forms.Button()
         Me.btn_Buscar = New System.Windows.Forms.PictureBox()
-        Me.Label22 = New System.Windows.Forms.Label()
         Me.btn_xml = New System.Windows.Forms.PictureBox()
         Me.btn_pdf = New System.Windows.Forms.PictureBox()
         Me.TextOC = New System.Windows.Forms.TextBox()
@@ -170,11 +169,8 @@ Partial Class AltaTrasportes
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.White
-        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Panel1.Controls.Add(Me.PanelP_Servicio)
         Me.Panel1.Controls.Add(Me.Btn_nueva_marca)
         Me.Panel1.Controls.Add(Me.btn_Buscar)
-        Me.Panel1.Controls.Add(Me.Label22)
         Me.Panel1.Controls.Add(Me.btn_xml)
         Me.Panel1.Controls.Add(Me.btn_pdf)
         Me.Panel1.Controls.Add(Me.TextOC)
@@ -191,6 +187,7 @@ Partial Class AltaTrasportes
         Me.Panel1.Controls.Add(Me.Label6)
         Me.Panel1.Controls.Add(Me.TextDAcumulada)
         Me.Panel1.Controls.Add(Me.TextAno)
+        Me.Panel1.Controls.Add(Me.btn_modificar)
         Me.Panel1.Controls.Add(Me.Label18)
         Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.TextModelo)
@@ -230,7 +227,7 @@ Partial Class AltaTrasportes
         Me.PanelP_Servicio.Controls.Add(Me.Label42)
         Me.PanelP_Servicio.Controls.Add(Me.TextBox_marca)
         Me.PanelP_Servicio.Controls.Add(Me.btn_ventanita_close)
-        Me.PanelP_Servicio.Location = New System.Drawing.Point(23, 72)
+        Me.PanelP_Servicio.Location = New System.Drawing.Point(484, 204)
         Me.PanelP_Servicio.Name = "PanelP_Servicio"
         Me.PanelP_Servicio.Size = New System.Drawing.Size(342, 133)
         Me.PanelP_Servicio.TabIndex = 214
@@ -309,7 +306,7 @@ Partial Class AltaTrasportes
         '
         Me.Btn_nueva_marca.BackColor = System.Drawing.Color.SpringGreen
         Me.Btn_nueva_marca.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Btn_nueva_marca.Location = New System.Drawing.Point(156, 43)
+        Me.Btn_nueva_marca.Location = New System.Drawing.Point(156, 9)
         Me.Btn_nueva_marca.Name = "Btn_nueva_marca"
         Me.Btn_nueva_marca.Size = New System.Drawing.Size(31, 21)
         Me.Btn_nueva_marca.TabIndex = 207
@@ -320,30 +317,19 @@ Partial Class AltaTrasportes
         '
         Me.btn_Buscar.BackColor = System.Drawing.Color.Transparent
         Me.btn_Buscar.Image = Global.NucleosAve.My.Resources.Resources.icons8_google_web_search_512
-        Me.btn_Buscar.Location = New System.Drawing.Point(110, 22)
+        Me.btn_Buscar.Location = New System.Drawing.Point(110, -12)
         Me.btn_Buscar.Name = "btn_Buscar"
         Me.btn_Buscar.Size = New System.Drawing.Size(28, 26)
         Me.btn_Buscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.btn_Buscar.TabIndex = 188
         Me.btn_Buscar.TabStop = False
-        '
-        'Label22
-        '
-        Me.Label22.AutoSize = True
-        Me.Label22.BackColor = System.Drawing.Color.Transparent
-        Me.Label22.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label22.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label22.Location = New System.Drawing.Point(20, 5)
-        Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(60, 16)
-        Me.Label22.TabIndex = 206
-        Me.Label22.Text = "Factura"
+        Me.btn_Buscar.Visible = False
         '
         'btn_xml
         '
         Me.btn_xml.BackColor = System.Drawing.Color.Transparent
         Me.btn_xml.Image = Global.NucleosAve.My.Resources.Resources.icons8_archivo_xml_100
-        Me.btn_xml.Location = New System.Drawing.Point(46, 495)
+        Me.btn_xml.Location = New System.Drawing.Point(322, 453)
         Me.btn_xml.Name = "btn_xml"
         Me.btn_xml.Size = New System.Drawing.Size(34, 29)
         Me.btn_xml.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -354,7 +340,7 @@ Partial Class AltaTrasportes
         '
         Me.btn_pdf.BackColor = System.Drawing.Color.Transparent
         Me.btn_pdf.Image = Global.NucleosAve.My.Resources.Resources.icons8_pdf_100
-        Me.btn_pdf.Location = New System.Drawing.Point(4, 495)
+        Me.btn_pdf.Location = New System.Drawing.Point(280, 453)
         Me.btn_pdf.Name = "btn_pdf"
         Me.btn_pdf.Size = New System.Drawing.Size(36, 29)
         Me.btn_pdf.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -363,15 +349,16 @@ Partial Class AltaTrasportes
         '
         'TextOC
         '
-        Me.TextOC.Location = New System.Drawing.Point(20, 25)
+        Me.TextOC.Location = New System.Drawing.Point(20, -9)
         Me.TextOC.Name = "TextOC"
         Me.TextOC.Size = New System.Drawing.Size(84, 20)
         Me.TextOC.TabIndex = 205
         Me.TextOC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TextOC.Visible = False
         '
         'txtCargaKG
         '
-        Me.txtCargaKG.Location = New System.Drawing.Point(20, 261)
+        Me.txtCargaKG.Location = New System.Drawing.Point(20, 227)
         Me.txtCargaKG.Name = "txtCargaKG"
         Me.txtCargaKG.Size = New System.Drawing.Size(165, 20)
         Me.txtCargaKG.TabIndex = 203
@@ -383,7 +370,7 @@ Partial Class AltaTrasportes
         Me.Label21.BackColor = System.Drawing.Color.Transparent
         Me.Label21.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label21.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label21.Location = New System.Drawing.Point(20, 238)
+        Me.Label21.Location = New System.Drawing.Point(20, 204)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(72, 16)
         Me.Label21.TabIndex = 204
@@ -395,7 +382,7 @@ Partial Class AltaTrasportes
         Me.Label20.BackColor = System.Drawing.Color.Transparent
         Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label20.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label20.Location = New System.Drawing.Point(193, 439)
+        Me.Label20.Location = New System.Drawing.Point(193, 405)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(172, 16)
         Me.Label20.TabIndex = 202
@@ -403,7 +390,7 @@ Partial Class AltaTrasportes
         '
         'TextTipo
         '
-        Me.TextTipo.Location = New System.Drawing.Point(20, 118)
+        Me.TextTipo.Location = New System.Drawing.Point(20, 84)
         Me.TextTipo.Name = "TextTipo"
         Me.TextTipo.Size = New System.Drawing.Size(168, 20)
         Me.TextTipo.TabIndex = 184
@@ -415,7 +402,7 @@ Partial Class AltaTrasportes
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label3.Location = New System.Drawing.Point(17, 50)
+        Me.Label3.Location = New System.Drawing.Point(17, 16)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(51, 16)
         Me.Label3.TabIndex = 126
@@ -423,7 +410,7 @@ Partial Class AltaTrasportes
         '
         'TextMAACtivo
         '
-        Me.TextMAACtivo.Location = New System.Drawing.Point(194, 460)
+        Me.TextMAACtivo.Location = New System.Drawing.Point(194, 426)
         Me.TextMAACtivo.Name = "TextMAACtivo"
         Me.TextMAACtivo.Size = New System.Drawing.Size(174, 20)
         Me.TextMAACtivo.TabIndex = 201
@@ -435,7 +422,7 @@ Partial Class AltaTrasportes
         Me.Label10.BackColor = System.Drawing.Color.Transparent
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label10.Location = New System.Drawing.Point(17, 97)
+        Me.Label10.Location = New System.Drawing.Point(17, 63)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(40, 16)
         Me.Label10.TabIndex = 128
@@ -444,7 +431,7 @@ Partial Class AltaTrasportes
         'ComboMarca
         '
         Me.ComboMarca.FormattingEnabled = True
-        Me.ComboMarca.Location = New System.Drawing.Point(20, 71)
+        Me.ComboMarca.Location = New System.Drawing.Point(20, 37)
         Me.ComboMarca.Name = "ComboMarca"
         Me.ComboMarca.Size = New System.Drawing.Size(168, 21)
         Me.ComboMarca.TabIndex = 113
@@ -455,7 +442,7 @@ Partial Class AltaTrasportes
         Me.Label19.BackColor = System.Drawing.Color.Transparent
         Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label19.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label19.Location = New System.Drawing.Point(22, 437)
+        Me.Label19.Location = New System.Drawing.Point(22, 403)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(104, 16)
         Me.Label19.TabIndex = 200
@@ -467,9 +454,9 @@ Partial Class AltaTrasportes
         Me.BtnGuardarFac.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnGuardarFac.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.BtnGuardarFac.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnGuardarFac.Location = New System.Drawing.Point(132, 486)
+        Me.BtnGuardarFac.Location = New System.Drawing.Point(0, 488)
         Me.BtnGuardarFac.Name = "BtnGuardarFac"
-        Me.BtnGuardarFac.Size = New System.Drawing.Size(118, 38)
+        Me.BtnGuardarFac.Size = New System.Drawing.Size(386, 45)
         Me.BtnGuardarFac.TabIndex = 183
         Me.BtnGuardarFac.Text = "Guardar"
         Me.BtnGuardarFac.UseVisualStyleBackColor = False
@@ -480,7 +467,7 @@ Partial Class AltaTrasportes
         Me.Label6.BackColor = System.Drawing.Color.Transparent
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label6.Location = New System.Drawing.Point(194, 97)
+        Me.Label6.Location = New System.Drawing.Point(194, 63)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(35, 16)
         Me.Label6.TabIndex = 119
@@ -488,7 +475,7 @@ Partial Class AltaTrasportes
         '
         'TextDAcumulada
         '
-        Me.TextDAcumulada.Location = New System.Drawing.Point(20, 458)
+        Me.TextDAcumulada.Location = New System.Drawing.Point(20, 424)
         Me.TextDAcumulada.Name = "TextDAcumulada"
         Me.TextDAcumulada.Size = New System.Drawing.Size(163, 20)
         Me.TextDAcumulada.TabIndex = 199
@@ -496,7 +483,7 @@ Partial Class AltaTrasportes
         '
         'TextAno
         '
-        Me.TextAno.Location = New System.Drawing.Point(194, 118)
+        Me.TextAno.Location = New System.Drawing.Point(194, 84)
         Me.TextAno.Name = "TextAno"
         Me.TextAno.Size = New System.Drawing.Size(174, 20)
         Me.TextAno.TabIndex = 118
@@ -508,7 +495,7 @@ Partial Class AltaTrasportes
         Me.Label18.BackColor = System.Drawing.Color.Transparent
         Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label18.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label18.Location = New System.Drawing.Point(190, 384)
+        Me.Label18.Location = New System.Drawing.Point(190, 350)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(141, 16)
         Me.Label18.TabIndex = 198
@@ -520,7 +507,7 @@ Partial Class AltaTrasportes
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label4.Location = New System.Drawing.Point(195, 51)
+        Me.Label4.Location = New System.Drawing.Point(195, 17)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(60, 16)
         Me.Label4.TabIndex = 115
@@ -528,7 +515,7 @@ Partial Class AltaTrasportes
         '
         'TextModelo
         '
-        Me.TextModelo.Location = New System.Drawing.Point(194, 72)
+        Me.TextModelo.Location = New System.Drawing.Point(194, 38)
         Me.TextModelo.Name = "TextModelo"
         Me.TextModelo.Size = New System.Drawing.Size(174, 20)
         Me.TextModelo.TabIndex = 114
@@ -536,7 +523,7 @@ Partial Class AltaTrasportes
         '
         'TextM_CDEp
         '
-        Me.TextM_CDEp.Location = New System.Drawing.Point(193, 405)
+        Me.TextM_CDEp.Location = New System.Drawing.Point(193, 371)
         Me.TextM_CDEp.Name = "TextM_CDEp"
         Me.TextM_CDEp.Size = New System.Drawing.Size(175, 20)
         Me.TextM_CDEp.TabIndex = 197
@@ -544,7 +531,7 @@ Partial Class AltaTrasportes
         '
         'TextPlacas
         '
-        Me.TextPlacas.Location = New System.Drawing.Point(194, 164)
+        Me.TextPlacas.Location = New System.Drawing.Point(194, 130)
         Me.TextPlacas.Name = "TextPlacas"
         Me.TextPlacas.Size = New System.Drawing.Size(174, 20)
         Me.TextPlacas.TabIndex = 120
@@ -556,7 +543,7 @@ Partial Class AltaTrasportes
         Me.Label7.BackColor = System.Drawing.Color.Transparent
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label7.Location = New System.Drawing.Point(194, 143)
+        Me.Label7.Location = New System.Drawing.Point(194, 109)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(56, 16)
         Me.Label7.TabIndex = 121
@@ -568,7 +555,7 @@ Partial Class AltaTrasportes
         Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label5.Location = New System.Drawing.Point(20, 143)
+        Me.Label5.Location = New System.Drawing.Point(20, 109)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(73, 16)
         Me.Label5.TabIndex = 117
@@ -580,7 +567,7 @@ Partial Class AltaTrasportes
         Me.Label17.BackColor = System.Drawing.Color.Transparent
         Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label17.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label17.Location = New System.Drawing.Point(22, 384)
+        Me.Label17.Location = New System.Drawing.Point(22, 350)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(116, 16)
         Me.Label17.TabIndex = 196
@@ -588,7 +575,7 @@ Partial Class AltaTrasportes
         '
         'TextNserie
         '
-        Me.TextNserie.Location = New System.Drawing.Point(20, 164)
+        Me.TextNserie.Location = New System.Drawing.Point(20, 130)
         Me.TextNserie.Name = "TextNserie"
         Me.TextNserie.Size = New System.Drawing.Size(168, 20)
         Me.TextNserie.TabIndex = 116
@@ -596,7 +583,7 @@ Partial Class AltaTrasportes
         '
         'TextNseguro
         '
-        Me.TextNseguro.Location = New System.Drawing.Point(20, 210)
+        Me.TextNseguro.Location = New System.Drawing.Point(20, 176)
         Me.TextNseguro.Name = "TextNseguro"
         Me.TextNseguro.Size = New System.Drawing.Size(168, 20)
         Me.TextNseguro.TabIndex = 122
@@ -604,7 +591,7 @@ Partial Class AltaTrasportes
         '
         'TextMdAcumu
         '
-        Me.TextMdAcumu.Location = New System.Drawing.Point(20, 405)
+        Me.TextMdAcumu.Location = New System.Drawing.Point(20, 371)
         Me.TextMdAcumu.Name = "TextMdAcumu"
         Me.TextMdAcumu.Size = New System.Drawing.Size(163, 20)
         Me.TextMdAcumu.TabIndex = 195
@@ -612,7 +599,7 @@ Partial Class AltaTrasportes
         '
         'DateTimePicker1
         '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(194, 210)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(194, 176)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(174, 20)
         Me.DateTimePicker1.TabIndex = 125
@@ -623,7 +610,7 @@ Partial Class AltaTrasportes
         Me.Label16.BackColor = System.Drawing.Color.Transparent
         Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label16.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label16.Location = New System.Drawing.Point(191, 335)
+        Me.Label16.Location = New System.Drawing.Point(191, 301)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(108, 16)
         Me.Label16.TabIndex = 194
@@ -631,14 +618,14 @@ Partial Class AltaTrasportes
         '
         'DateTimePicker2
         '
-        Me.DateTimePicker2.Location = New System.Drawing.Point(20, 310)
+        Me.DateTimePicker2.Location = New System.Drawing.Point(20, 276)
         Me.DateTimePicker2.Name = "DateTimePicker2"
         Me.DateTimePicker2.Size = New System.Drawing.Size(165, 20)
         Me.DateTimePicker2.TabIndex = 187
         '
         'TextMoMaxDed
         '
-        Me.TextMoMaxDed.Location = New System.Drawing.Point(193, 357)
+        Me.TextMoMaxDed.Location = New System.Drawing.Point(193, 323)
         Me.TextMoMaxDed.Name = "TextMoMaxDed"
         Me.TextMoMaxDed.Size = New System.Drawing.Size(175, 20)
         Me.TextMoMaxDed.TabIndex = 193
@@ -650,7 +637,7 @@ Partial Class AltaTrasportes
         Me.Label9.BackColor = System.Drawing.Color.Transparent
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label9.Location = New System.Drawing.Point(193, 189)
+        Me.Label9.Location = New System.Drawing.Point(193, 155)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(69, 16)
         Me.Label9.TabIndex = 125
@@ -662,7 +649,7 @@ Partial Class AltaTrasportes
         Me.Label15.BackColor = System.Drawing.Color.Transparent
         Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label15.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label15.Location = New System.Drawing.Point(22, 335)
+        Me.Label15.Location = New System.Drawing.Point(22, 301)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(108, 16)
         Me.Label15.TabIndex = 192
@@ -674,7 +661,7 @@ Partial Class AltaTrasportes
         Me.Label8.BackColor = System.Drawing.Color.Transparent
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label8.Location = New System.Drawing.Point(17, 189)
+        Me.Label8.Location = New System.Drawing.Point(17, 155)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(86, 16)
         Me.Label8.TabIndex = 123
@@ -682,7 +669,7 @@ Partial Class AltaTrasportes
         '
         'TextPnDeducible
         '
-        Me.TextPnDeducible.Location = New System.Drawing.Point(20, 357)
+        Me.TextPnDeducible.Location = New System.Drawing.Point(20, 323)
         Me.TextPnDeducible.Name = "TextPnDeducible"
         Me.TextPnDeducible.Size = New System.Drawing.Size(163, 20)
         Me.TextPnDeducible.TabIndex = 191
@@ -694,7 +681,7 @@ Partial Class AltaTrasportes
         Me.Label14.BackColor = System.Drawing.Color.Transparent
         Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label14.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label14.Location = New System.Drawing.Point(191, 289)
+        Me.Label14.Location = New System.Drawing.Point(191, 255)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(124, 16)
         Me.Label14.TabIndex = 190
@@ -702,7 +689,7 @@ Partial Class AltaTrasportes
         '
         'Textdepreciacion
         '
-        Me.Textdepreciacion.Location = New System.Drawing.Point(194, 261)
+        Me.Textdepreciacion.Location = New System.Drawing.Point(194, 227)
         Me.Textdepreciacion.Name = "Textdepreciacion"
         Me.Textdepreciacion.Size = New System.Drawing.Size(174, 20)
         Me.Textdepreciacion.TabIndex = 185
@@ -710,7 +697,7 @@ Partial Class AltaTrasportes
         '
         'TextMoInversion
         '
-        Me.TextMoInversion.Location = New System.Drawing.Point(193, 310)
+        Me.TextMoInversion.Location = New System.Drawing.Point(193, 276)
         Me.TextMoInversion.Name = "TextMoInversion"
         Me.TextMoInversion.Size = New System.Drawing.Size(175, 20)
         Me.TextMoInversion.TabIndex = 189
@@ -722,7 +709,7 @@ Partial Class AltaTrasportes
         Me.Label12.BackColor = System.Drawing.Color.Transparent
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label12.Location = New System.Drawing.Point(190, 238)
+        Me.Label12.Location = New System.Drawing.Point(190, 204)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(141, 16)
         Me.Label12.TabIndex = 186
@@ -734,7 +721,7 @@ Partial Class AltaTrasportes
         Me.Label13.BackColor = System.Drawing.Color.Transparent
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label13.Location = New System.Drawing.Point(22, 288)
+        Me.Label13.Location = New System.Drawing.Point(22, 254)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(144, 16)
         Me.Label13.TabIndex = 188
@@ -745,9 +732,9 @@ Partial Class AltaTrasportes
         Me.btn_modificar.BackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(76, Byte), Integer), CType(CType(60, Byte), Integer))
         Me.btn_modificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_modificar.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btn_modificar.Location = New System.Drawing.Point(672, 489)
+        Me.btn_modificar.Location = New System.Drawing.Point(-1, 489)
         Me.btn_modificar.Name = "btn_modificar"
-        Me.btn_modificar.Size = New System.Drawing.Size(113, 32)
+        Me.btn_modificar.Size = New System.Drawing.Size(386, 45)
         Me.btn_modificar.TabIndex = 182
         Me.btn_modificar.Text = "Modificar"
         Me.btn_modificar.UseVisualStyleBackColor = False
@@ -757,12 +744,11 @@ Partial Class AltaTrasportes
         '
         Me.Label11.AutoSize = True
         Me.Label11.BackColor = System.Drawing.Color.Transparent
-        Me.Label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label11.Location = New System.Drawing.Point(12, 33)
+        Me.Label11.Location = New System.Drawing.Point(12, 27)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(175, 27)
+        Me.Label11.Size = New System.Drawing.Size(173, 25)
         Me.Label11.TabIndex = 113
         Me.Label11.Text = "Nuevo Trasporte"
         '
@@ -830,7 +816,7 @@ Partial Class AltaTrasportes
         Me.DataGridViewtrasport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridViewtrasport.Location = New System.Drawing.Point(404, 119)
         Me.DataGridViewtrasport.Name = "DataGridViewtrasport"
-        Me.DataGridViewtrasport.Size = New System.Drawing.Size(576, 300)
+        Me.DataGridViewtrasport.Size = New System.Drawing.Size(576, 348)
         Me.DataGridViewtrasport.TabIndex = 185
         '
         'btn_Todos
@@ -860,11 +846,11 @@ Partial Class AltaTrasportes
         Me.btn_Limpiar.BackColor = System.Drawing.Color.DodgerBlue
         Me.btn_Limpiar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_Limpiar.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btn_Limpiar.Location = New System.Drawing.Point(543, 489)
+        Me.btn_Limpiar.Location = New System.Drawing.Point(578, 492)
         Me.btn_Limpiar.Name = "btn_Limpiar"
-        Me.btn_Limpiar.Size = New System.Drawing.Size(123, 32)
+        Me.btn_Limpiar.Size = New System.Drawing.Size(191, 48)
         Me.btn_Limpiar.TabIndex = 188
-        Me.btn_Limpiar.Text = "Limpiar"
+        Me.btn_Limpiar.Text = "Limpiar Formulario"
         Me.btn_Limpiar.UseVisualStyleBackColor = False
         '
         'text_xml
@@ -918,6 +904,7 @@ Partial Class AltaTrasportes
         Me.BackgroundImage = Global.NucleosAve.My.Resources.Resources.Fondo
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.ClientSize = New System.Drawing.Size(991, 599)
+        Me.Controls.Add(Me.PanelP_Servicio)
         Me.Controls.Add(Me.Text_Url_Xml)
         Me.Controls.Add(Me.Text_Url_Pdf)
         Me.Controls.Add(Me.text_xml)
@@ -935,7 +922,6 @@ Partial Class AltaTrasportes
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.btn_minimizar)
         Me.Controls.Add(Me.btn_Cerrar)
-        Me.Controls.Add(Me.btn_modificar)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "AltaTrasportes"
@@ -1019,7 +1005,6 @@ Partial Class AltaTrasportes
     Friend WithEvents DataGridViewtrasport As DataGridView
     Friend WithEvents btn_Todos As Button
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents Label22 As Label
     Friend WithEvents TextOC As TextBox
     Friend WithEvents btn_Buscar As PictureBox
     Friend WithEvents btn_Limpiar As Button

@@ -458,6 +458,7 @@ Partial Class Pedimentos
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.Label54 = New System.Windows.Forms.Label()
         Me.otrosgastos = New System.Windows.Forms.TextBox()
+        Me.BtnGuardarFac = New System.Windows.Forms.Button()
         Me.GroupBox8 = New System.Windows.Forms.GroupBox()
         Me.Label45 = New System.Windows.Forms.Label()
         Me.mxn2RC = New System.Windows.Forms.TextBox()
@@ -471,6 +472,7 @@ Partial Class Pedimentos
         Me.pesoRC = New System.Windows.Forms.TextBox()
         Me.Label48 = New System.Windows.Forms.Label()
         Me.importeRC = New System.Windows.Forms.TextBox()
+        Me.btn_modificar = New System.Windows.Forms.Button()
         Me.GroupBox9 = New System.Windows.Forms.GroupBox()
         Me.Label49 = New System.Windows.Forms.Label()
         Me.TotalTGAG = New System.Windows.Forms.TextBox()
@@ -478,10 +480,7 @@ Partial Class Pedimentos
         Me.ivaTGAG = New System.Windows.Forms.TextBox()
         Me.Label51 = New System.Windows.Forms.Label()
         Me.importeTGAG = New System.Windows.Forms.TextBox()
-        Me.BtnGuardarFac = New System.Windows.Forms.Button()
         Me.btn_Buscar = New System.Windows.Forms.PictureBox()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.btn_modificar = New System.Windows.Forms.Button()
         Me.btn_clean = New System.Windows.Forms.Button()
         CType(Me.btn_minimizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_Cerrar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -521,7 +520,6 @@ Partial Class Pedimentos
         Me.GroupBox8.SuspendLayout()
         Me.GroupBox9.SuspendLayout()
         CType(Me.btn_Buscar, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btn_minimizar
@@ -626,6 +624,7 @@ Partial Class Pedimentos
         Me.TextIDPEdimento.ReadOnly = True
         Me.TextIDPEdimento.Size = New System.Drawing.Size(100, 20)
         Me.TextIDPEdimento.TabIndex = 129
+        Me.TextIDPEdimento.Visible = False
         '
         'PictureBox1
         '
@@ -5205,6 +5204,19 @@ Partial Class Pedimentos
         Me.otrosgastos.TabIndex = 125
         Me.otrosgastos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
+        'BtnGuardarFac
+        '
+        Me.BtnGuardarFac.BackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(113, Byte), Integer))
+        Me.BtnGuardarFac.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnGuardarFac.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.BtnGuardarFac.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnGuardarFac.Location = New System.Drawing.Point(522, 293)
+        Me.BtnGuardarFac.Name = "BtnGuardarFac"
+        Me.BtnGuardarFac.Size = New System.Drawing.Size(123, 32)
+        Me.BtnGuardarFac.TabIndex = 181
+        Me.BtnGuardarFac.Text = "Guardar"
+        Me.BtnGuardarFac.UseVisualStyleBackColor = False
+        '
         'GroupBox8
         '
         Me.GroupBox8.BackColor = System.Drawing.Color.White
@@ -5355,6 +5367,19 @@ Partial Class Pedimentos
         Me.importeRC.TabIndex = 125
         Me.importeRC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
+        'btn_modificar
+        '
+        Me.btn_modificar.BackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(76, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.btn_modificar.Enabled = False
+        Me.btn_modificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_modificar.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btn_modificar.Location = New System.Drawing.Point(397, 293)
+        Me.btn_modificar.Name = "btn_modificar"
+        Me.btn_modificar.Size = New System.Drawing.Size(119, 32)
+        Me.btn_modificar.TabIndex = 180
+        Me.btn_modificar.Text = "Modificar"
+        Me.btn_modificar.UseVisualStyleBackColor = False
+        '
         'GroupBox9
         '
         Me.GroupBox9.BackColor = System.Drawing.Color.White
@@ -5436,19 +5461,6 @@ Partial Class Pedimentos
         Me.importeTGAG.TabIndex = 125
         Me.importeTGAG.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'BtnGuardarFac
-        '
-        Me.BtnGuardarFac.BackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(113, Byte), Integer))
-        Me.BtnGuardarFac.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnGuardarFac.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.BtnGuardarFac.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnGuardarFac.Location = New System.Drawing.Point(522, 293)
-        Me.BtnGuardarFac.Name = "BtnGuardarFac"
-        Me.BtnGuardarFac.Size = New System.Drawing.Size(123, 32)
-        Me.BtnGuardarFac.TabIndex = 181
-        Me.BtnGuardarFac.Text = "Guardar"
-        Me.BtnGuardarFac.UseVisualStyleBackColor = False
-        '
         'btn_Buscar
         '
         Me.btn_Buscar.BackColor = System.Drawing.Color.Transparent
@@ -5459,31 +5471,6 @@ Partial Class Pedimentos
         Me.btn_Buscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.btn_Buscar.TabIndex = 129
         Me.btn_Buscar.TabStop = False
-        '
-        'PictureBox3
-        '
-        Me.PictureBox3.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox3.Image = Global.NucleosAve.My.Resources.Resources.icons8_basura_100
-        Me.PictureBox3.Location = New System.Drawing.Point(855, 12)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(39, 37)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox3.TabIndex = 182
-        Me.PictureBox3.TabStop = False
-        Me.PictureBox3.Visible = False
-        '
-        'btn_modificar
-        '
-        Me.btn_modificar.BackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(76, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.btn_modificar.Enabled = False
-        Me.btn_modificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_modificar.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btn_modificar.Location = New System.Drawing.Point(397, 293)
-        Me.btn_modificar.Name = "btn_modificar"
-        Me.btn_modificar.Size = New System.Drawing.Size(119, 32)
-        Me.btn_modificar.TabIndex = 180
-        Me.btn_modificar.Text = "Modificar"
-        Me.btn_modificar.UseVisualStyleBackColor = False
         '
         'btn_clean
         '
@@ -5504,7 +5491,6 @@ Partial Class Pedimentos
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(1033, 504)
         Me.Controls.Add(Me.btn_clean)
-        Me.Controls.Add(Me.PictureBox3)
         Me.Controls.Add(Me.btn_Buscar)
         Me.Controls.Add(Me.TabControlPedimentos)
         Me.Controls.Add(Me.Label2)
@@ -5567,7 +5553,6 @@ Partial Class Pedimentos
         Me.GroupBox9.ResumeLayout(False)
         Me.GroupBox9.PerformLayout()
         CType(Me.btn_Buscar, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -5904,7 +5889,6 @@ Partial Class Pedimentos
     Friend WithEvents btn_masSF As PictureBox
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents btn_Buscar As PictureBox
-    Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents btn_modificar As Button
     Friend WithEvents TextIDPEdimento As TextBox
     Friend WithEvents Textid1_10 As TextBox
