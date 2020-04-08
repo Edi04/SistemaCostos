@@ -2328,8 +2328,7 @@ Public Class ODC
                                             WHERE Estado = 'Activo' AND
                                                     (Nombre_Producto  LIKE '%'+@Busqueda+'%' OR
                                                     Clave_Producto  LIKE '%'+@Busqueda+'%' OR
-                                                    Codigo_Barras LIKE '%'+@Busqueda+'%') AND
-    									            Existencia > 0
+                                                    Codigo_Barras LIKE '%'+@Busqueda+'%') 
                                             ORDER BY Nombre_Producto ASC"
 
             Dim cmd As New SqlCommand(Consulta, Conex)

@@ -894,7 +894,7 @@ Partial Class Inventario
         Me.AgregarExistencias.Controls.Add(Me.GNExistencia)
         Me.AgregarExistencias.Controls.Add(Me.LEntraP)
         Me.AgregarExistencias.Controls.Add(Me.PSeparador)
-        Me.AgregarExistencias.Location = New System.Drawing.Point(77, 534)
+        Me.AgregarExistencias.Location = New System.Drawing.Point(75, 534)
         Me.AgregarExistencias.Name = "AgregarExistencias"
         Me.AgregarExistencias.Size = New System.Drawing.Size(897, 190)
         Me.AgregarExistencias.TabIndex = 9

@@ -134,8 +134,8 @@ Public Class Entregas
             ETickets.Show()
             If IDE.Text = "" Or IDP.Text = "" Then
                 MessageBox.Show("Seleccione al Trabajador y/o Material", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-                'ElseIf LEx.Text < TxtCantidad.Text Then
-                '    MessageBox.Show("Verifique Existencias", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            ElseIf LEx.Text < TxtCantidad.Text Then
+                MessageBox.Show("Verifique Existencias", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Else
                 Datos()
             End If
@@ -145,16 +145,16 @@ Public Class Entregas
                 ETickets.Show()
                 If IDE.Text = "" Or IDP.Text = "" Then
                     MessageBox.Show("Seleccione al Trabajador y/o Material", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-                    'ElseIf LEx.Text < TxtCantidad.Text Then
-                    '    MessageBox.Show("Verifique Existencias", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                ElseIf LEx.Text < TxtCantidad.Text Then
+                    MessageBox.Show("Verifique Existencias", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 Else
                     Datos()
                 End If
             ElseIf ETickets.LTrabajador.Text = Nombre Then
                 If IDE.Text = "" Or IDP.Text = "" Then
                     MessageBox.Show("Seleccione al Trabajador y/o Material", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-                    'ElseIf LEx.Text < TxtCantidad.Text Then
-                    '    MessageBox.Show("Verifique Existencias", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                ElseIf LEx.Text < TxtCantidad.Text Then
+                    MessageBox.Show("Verifique Existencias", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 Else
                     Datos()
                 End If
@@ -352,7 +352,7 @@ Public Class Entregas
 
     '   Guardar
     Public Sub Datos()
-        Dim GDatos As New SqlCommand("SP_GNEntrega", Conex)
+        Dim GDatos As New SqlCommand("SP_GNEEntrega", Conex)
         Dim DateA = DateTime.Now
         Dim Fecha = DateTime.Now.ToString("yyyy/MM/dd")
 
@@ -755,185 +755,3 @@ Public Class Entregas
         If Arrastre Then Me.Location = Me.PointToScreen(New Point(MousePosition.X - Me.Location.X - ex, MousePosition.Y - Me.Location.Y - ey))
     End Sub
 End Class
-
-'Base de Datos
-'Agregar a TB_Entregas campo proceso
-
-'USE [SISUT021]
-'GO
-'/****** Object:  StoredProcedure [dbo].[SP_BEntregas]    Script Date: 08/04/2020 12:56:04 a. m. ******/
-'SET ANSI_NULLS ON
-'GO
-'SET QUOTED_IDENTIFIER ON
-'GO
-'ALTER PROCEDURE [dbo].[SP_BEntregas]
-'AS
-'BEGIN
-'	SELECT E.Id_Entrega, Em.Numero_Nomina, (Em.Nombre_Empleado + ' ' + 
-'			Em.Ape_Paterno + ' ' + Em.Ape_Materno ) AS Nombre,
-'			P.Nombre_Producto ,E.Cantidad, E.Fecha_Entrega,
-'			E.Descripcion, E.ResponsableS, Pr.Nombre_Proceso
-
-'  FROM TB_Entregas AS E
-'  INNER JOIN TB_Empleados AS Em ON E.Id_Empleado = Em.Id_Empleado
-'  inner join TB_Productos AS P ON e.Id_Producto = P.Id_Producto
-'  inner join TB_Procesos AS Pr ON e.Proceso = Pr.Id_Proceso
-
-'  WHERE E.Estado = 'Activo'
-'  Order by E.Fecha_Entrega asc
-
-'end
-
-'USE [SISUT021]
-'GO
-'/****** Object:  StoredProcedure [dbo].[SP_GNEntrega]    Script Date: 08/04/2020 01:07:21 a. m. ******/
-'SET ANSI_NULLS ON
-'GO
-'SET QUOTED_IDENTIFIER ON
-'GO
-'ALTER PROCEDURE [dbo].[SP_GNEntrega]
-
-'	@Id_Empleado int,
-'	@Id_Producto int,
-'    @Cantidad float,
-'    @Fecha_Entrega date,
-'    @Descripcion varchar(200),
-'    @ResponsableS Varchar(50),
-'    @Created datetime,
-'	@IdProceso int
-
-'AS
-'BEGIN
-'	INSERT INTO TB_Entregas
-'           (Id_Empleado
-'			,Id_Producto
-'			,Cantidad
-'			,Fecha_Entrega
-'			,Descripcion
-'			,Estado
-'			,Created
-'			,ResponsableS
-'			,ExiA
-'			,ExiD
-'			,Proceso
-'           )
-'     VALUES
-'           (@Id_Empleado,
-'            @Id_Producto,
-'            @Cantidad,
-'            @Fecha_Entrega,
-'            @Descripcion,
-'            'Activo',
-'            @Created,
-'            @ResponsableS,
-'           (SELECT TOP 1 Existencia FROM TB_Productos Where Id_Producto = @Id_Producto ORDER BY Id_Producto DESC),
-'           (SELECT TOP 1 (Existencia - @Cantidad) FROM TB_Productos Where Id_Producto = @Id_Producto ORDER BY Id_Producto DESC),
-'		   @IdProceso
-'    )
-
-'	SET NOCOUNT ON;
-'	UPDATE Tb_productos
-'		Set Existencia = (SELECT TOP 1 (Existencia - @Cantidad) FROM TB_Productos Where Id_Producto = @Id_Producto ORDER BY Id_Producto DESC)
-'		Where   Id_Producto = @Id_Producto
-'END
-
-
-'USE [SISUT021]
-'GO
-'/****** Object:  StoredProcedure [dbo].[SP_GDEProductos]    Script Date: 07/04/2020 10:57:51 p. m. ******/
-'SET ANSI_NULLS ON
-'GO
-'SET QUOTED_IDENTIFIER ON
-'GO
-'ALTER PROCEDURE [dbo].[SP_GDEProductos]
-
-'	@Id_Producto INT,
-'	@Cantidad float,
-'	@Precio_Unitario_PZA FLOAT,
-'    @Tipo_Cambio FLOAT,
-'    @PU_Corte_PZA FLOAT,
-'    @PU_Total FLOAT,
-'    @Precio_Total FLOAT,
-'    @Created DATETIME,
-'    @Orden_Compra VARCHAR(50),
-'    @PUUSD FLOAT,
-'    @FUSD FLOAT,
-'    @TUSD FLOAT,
-'    @Id_Empleado FLOAT,
-'    @CodiS varchar(50),
-'    @Producto varchar(250),
-'    @Empleado varchar(50)
-
-'AS
-'BEGIN
-'	INSERT INTO TB_EDetalleProductos
-'	(Id_Producto
-'	  ,Cantidad
-'      ,Precio_Unitario_PZA
-'      ,Tipo_Cambio
-'      ,PU_Corte_PZA
-'      ,PU_Total
-'      ,Precio_Total
-'      ,Created
-'      ,Orden_Compra
-'      ,PUUSD
-'      ,FUSD
-'      ,TUSD
-'      ,Id_Empleado
-'      ,CodiS)
-
-'     VALUES
-'           (@Id_Producto,
-'			@Cantidad,
-'			@Precio_Unitario_PZA,
-'			@Tipo_Cambio,
-'			@PU_Corte_PZA,
-'			@PU_Total,
-'			@Precio_Total,
-'			@Created,
-'			@Orden_Compra,
-'			@PUUSD,
-'			@FUSD,
-'			@TUSD,
-'			@Id_Empleado,
-'			@CodiS
-'    )
-
-
-'    SET NOCOUNT ON;
-'	UPDATE Tb_productos
-'		set Existencia = (SELECT (Existencia + @Cantidad)
-'							FROM TB_Productos
-'							Where Id_Producto = @Id_Producto), 
-'		PU_Total = @PU_Total,
-'		Updated = @Created
-'		Where   Id_Producto = @Id_Producto
-
-
-
-'    SET NOCOUNT ON;
-'	If not exists (Select CodS From TB_CodigS WHERE CodS = @CodiS)
-
-'	INSERT INTO TB_CodigS
-'	(CodS
-'	,Created)
-
-'     VALUES
-'           (@CodiS,
-'			@Created)
-
-
-
-
-'	If exists(Select CodiS, Producto From TB_DetalleSeguimiento WHERE CodiS = @CodiS AND Producto = @Producto)
-'	Update TB_DetalleSeguimiento Set
-'	CanE = (Select (CanE + @Cantidad)From TB_DetalleSeguimiento WHERE CodiS = @CodiS AND Producto = @Producto)
-'	WHERE CodiS = @CodiS AND Producto = @Producto
-
-'SET NOCOUNT ON;
-'update TB_Ordenes_Detalle SET
-'estatus = (Select (COALESCE(estatus, 0) + @Cantidad) From TB_Ordenes_Detalle WHERE codigo = @Orden_Compra and estado = @Id_Producto)
-'WHERE codigo = @Orden_Compra and estado = @Id_Producto
-'END
-
-
