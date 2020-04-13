@@ -1,6 +1,6 @@
 ﻿Public Class CRegistroOC
     Dim ID, L_ID As Integer
-    Dim CEnt As Double
+    Dim CEnt, Prec As Double
     Dim Producto, COrdenC, LUsuario, CodS As String
 
     Public Property GID
@@ -63,6 +63,15 @@
         End Get
         Set(value)
             CodS = value
+        End Set
+    End Property
+
+    Public Property GPrecio
+        Get
+            Return Prec
+        End Get
+        Set(value)
+            Prec = value
         End Set
     End Property
 End Class

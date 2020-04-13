@@ -94,6 +94,9 @@ Partial Class Index
         Me.BMPrima = New System.Windows.Forms.PictureBox()
         Me.LMP = New System.Windows.Forms.Label()
         Me.PMMPrima = New System.Windows.Forms.Panel()
+        Me.PBMHR = New System.Windows.Forms.Panel()
+        Me.BMOHR = New System.Windows.Forms.PictureBox()
+        Me.LHR = New System.Windows.Forms.Label()
         Me.PBMPr = New System.Windows.Forms.Panel()
         Me.BPMPr = New System.Windows.Forms.PictureBox()
         Me.LPMMP = New System.Windows.Forms.Label()
@@ -159,6 +162,8 @@ Partial Class Index
         Me.PMaPrima.SuspendLayout()
         CType(Me.BMPrima, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PMMPrima.SuspendLayout()
+        Me.PBMHR.SuspendLayout()
+        CType(Me.BMOHR, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PBMPr.SuspendLayout()
         CType(Me.BPMPr, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PAGasolina.SuspendLayout()
@@ -1059,12 +1064,49 @@ Partial Class Index
         'PMMPrima
         '
         Me.PMMPrima.BackColor = System.Drawing.Color.Transparent
+        Me.PMMPrima.Controls.Add(Me.PBMHR)
         Me.PMMPrima.Controls.Add(Me.PBMPr)
         Me.PMMPrima.Location = New System.Drawing.Point(30, 250)
         Me.PMMPrima.Name = "PMMPrima"
         Me.PMMPrima.Size = New System.Drawing.Size(570, 130)
         Me.PMMPrima.TabIndex = 75
         Me.PMMPrima.Visible = False
+        '
+        'PBMHR
+        '
+        Me.PBMHR.BackColor = System.Drawing.Color.Transparent
+        Me.PBMHR.Controls.Add(Me.BMOHR)
+        Me.PBMHR.Controls.Add(Me.LHR)
+        Me.PBMHR.Location = New System.Drawing.Point(75, 9)
+        Me.PBMHR.Name = "PBMHR"
+        Me.PBMHR.Size = New System.Drawing.Size(82, 85)
+        Me.PBMHR.TabIndex = 68
+        '
+        'BMOHR
+        '
+        Me.BMOHR.AccessibleDescription = "dfghdfgdfhdhfd"
+        Me.BMOHR.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.BMOHR.BackColor = System.Drawing.Color.Transparent
+        Me.BMOHR.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BMOHR.Image = Global.NucleosAve.My.Resources.Resources.icons8_historial_de_pedidos_64
+        Me.BMOHR.Location = New System.Drawing.Point(13, 2)
+        Me.BMOHR.Name = "BMOHR"
+        Me.BMOHR.Size = New System.Drawing.Size(55, 52)
+        Me.BMOHR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.BMOHR.TabIndex = 35
+        Me.BMOHR.TabStop = False
+        '
+        'LHR
+        '
+        Me.LHR.AutoSize = True
+        Me.LHR.BackColor = System.Drawing.Color.Transparent
+        Me.LHR.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LHR.ForeColor = System.Drawing.Color.Black
+        Me.LHR.Location = New System.Drawing.Point(6, 57)
+        Me.LHR.Name = "LHR"
+        Me.LHR.Size = New System.Drawing.Size(75, 26)
+        Me.LHR.TabIndex = 36
+        Me.LHR.Text = "Historial de " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Rollos"
         '
         'PBMPr
         '
@@ -1098,9 +1140,9 @@ Partial Class Index
         Me.LPMMP.ForeColor = System.Drawing.Color.Black
         Me.LPMMP.Location = New System.Drawing.Point(6, 57)
         Me.LPMMP.Name = "LPMMP"
-        Me.LPMMP.Size = New System.Drawing.Size(49, 26)
+        Me.LPMMP.Size = New System.Drawing.Size(53, 26)
         Me.LPMMP.TabIndex = 36
-        Me.LPMMP.Text = "Materia" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " Prima"
+        Me.LPMMP.Text = "Ingresar" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Material"
         '
         'PAGasolina
         '
@@ -1339,12 +1381,12 @@ Partial Class Index
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.NucleosAve.My.Resources.Resources.Fondo
         Me.ClientSize = New System.Drawing.Size(715, 425)
+        Me.Controls.Add(Me.PMMPrima)
         Me.Controls.Add(Me.PMTransporte)
         Me.Controls.Add(Me.PMGasolina)
         Me.Controls.Add(Me.PM_Armado_Rectangular)
         Me.Controls.Add(Me.PA_R)
         Me.Controls.Add(Me.PAGasolina)
-        Me.Controls.Add(Me.PMMPrima)
         Me.Controls.Add(Me.PMaPrima)
         Me.Controls.Add(Me.PMCostos)
         Me.Controls.Add(Me.PMCompras)
@@ -1425,6 +1467,9 @@ Partial Class Index
         Me.PMaPrima.PerformLayout()
         CType(Me.BMPrima, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PMMPrima.ResumeLayout(False)
+        Me.PBMHR.ResumeLayout(False)
+        Me.PBMHR.PerformLayout()
+        CType(Me.BMOHR, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PBMPr.ResumeLayout(False)
         Me.PBMPr.PerformLayout()
         CType(Me.BPMPr, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1540,4 +1585,7 @@ Partial Class Index
     Friend WithEvents btn_entregas As PictureBox
     Friend WithEvents Label10 As Label
     Friend WithEvents btn_fletesyentregas As PictureBox
+    Friend WithEvents PBMHR As Panel
+    Friend WithEvents BMOHR As PictureBox
+    Friend WithEvents LHR As Label
 End Class

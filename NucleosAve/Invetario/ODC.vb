@@ -123,6 +123,7 @@ Public Class ODC
                 Datos.GLUsuario = LUsuario.Text
                 Datos.GCOrdenT = COCS.Text
                 Datos.GCOrdenC = CodS.Text
+                Datos.GPrecio = TxtPS1.Text
 
                 If Funcion.R(Datos) Then
                     CEnt1.Text = "0"
@@ -148,6 +149,7 @@ Public Class ODC
                 Datos.GLUsuario = LUsuario.Text
                 Datos.GCOrdenT = COCS.Text
                 Datos.GCOrdenC = CodS.Text
+                Datos.GPrecio = TxtPS2.Text
 
                 If Funcion.R(Datos) Then
                     CEnt2.Text = "0"
@@ -173,6 +175,7 @@ Public Class ODC
                 Datos.GLUsuario = LUsuario.Text
                 Datos.GCOrdenT = COCS.Text
                 Datos.GCOrdenC = CodS.Text
+                Datos.GPrecio = TxtPS3.Text
 
                 If Funcion.R(Datos) Then
                     CEnt3.Text = "0"
@@ -198,6 +201,7 @@ Public Class ODC
                 Datos.GLUsuario = LUsuario.Text
                 Datos.GCOrdenT = COCS.Text
                 Datos.GCOrdenC = CodS.Text
+                Datos.GPrecio = TxtPS4.Text
 
                 If Funcion.R(Datos) Then
                     CEnt4.Text = "0"
@@ -223,6 +227,7 @@ Public Class ODC
                 Datos.GLUsuario = LUsuario.Text
                 Datos.GCOrdenT = COCS.Text
                 Datos.GCOrdenC = CodS.Text
+                Datos.GPrecio = TxtPS5.Text
 
                 If Funcion.R(Datos) Then
                     CEnt5.Text = "0"
@@ -248,6 +253,7 @@ Public Class ODC
                 Datos.GLUsuario = LUsuario.Text
                 Datos.GCOrdenT = COCS.Text
                 Datos.GCOrdenC = CodS.Text
+                Datos.GPrecio = TxtPS6.Text
 
 
                 If Funcion.R(Datos) Then
@@ -274,6 +280,7 @@ Public Class ODC
                 Datos.GLUsuario = LUsuario.Text
                 Datos.GCOrdenT = COCS.Text
                 Datos.GCOrdenC = CodS.Text
+                Datos.GPrecio = TxtPS7.Text
 
                 If Funcion.R(Datos) Then
                     CEnt7.Text = "0"
@@ -299,6 +306,7 @@ Public Class ODC
                 Datos.GLUsuario = LUsuario.Text
                 Datos.GCOrdenT = COCS.Text
                 Datos.GCOrdenC = CodS.Text
+                Datos.GPrecio = TxtPS8.Text
 
                 If Funcion.R(Datos) Then
                     CEnt8.Text = "0"
@@ -324,6 +332,7 @@ Public Class ODC
                 Datos.GLUsuario = LUsuario.Text
                 Datos.GCOrdenT = COCS.Text
                 Datos.GCOrdenC = CodS.Text
+                Datos.GPrecio = TxtPS9.Text
 
                 If Funcion.R(Datos) Then
                     CEnt9.Text = "0"
@@ -349,6 +358,7 @@ Public Class ODC
                 Datos.GLUsuario = LUsuario.Text
                 Datos.GCOrdenT = COCS.Text
                 Datos.GCOrdenC = CodS.Text
+                Datos.GPrecio = TxtPS10.Text
 
                 If Funcion.R(Datos) Then
                     CEnt10.Text = "0"
@@ -374,6 +384,7 @@ Public Class ODC
                 Datos.GLUsuario = LUsuario.Text
                 Datos.GCOrdenT = COCS.Text
                 Datos.GCOrdenC = CodS.Text
+                Datos.GPrecio = TxtPS11.Text
 
                 If Funcion.R(Datos) Then
                     CEnt11.Text = "0"
@@ -399,6 +410,7 @@ Public Class ODC
                 Datos.GLUsuario = LUsuario.Text
                 Datos.GCOrdenT = COCS.Text
                 Datos.GCOrdenC = CodS.Text
+                Datos.GPrecio = TxtPS12.Text
 
                 If Funcion.R(Datos) Then
                     CEnt12.Text = "0"
@@ -424,6 +436,7 @@ Public Class ODC
                 Datos.GLUsuario = LUsuario.Text
                 Datos.GCOrdenT = COCS.Text
                 Datos.GCOrdenC = CodS.Text
+                Datos.GPrecio = TxtPS13.Text
 
                 If Funcion.R(Datos) Then
                     CEnt13.Text = "0"
@@ -449,6 +462,7 @@ Public Class ODC
                 Datos.GLUsuario = LUsuario.Text
                 Datos.GCOrdenT = COCS.Text
                 Datos.GCOrdenC = CodS.Text
+                Datos.GPrecio = TxtPS14.Text
 
                 If Funcion.R(Datos) Then
                     CEnt14.Text = "0"
@@ -474,6 +488,7 @@ Public Class ODC
                 Datos.GLUsuario = LUsuario.Text
                 Datos.GCOrdenT = COCS.Text
                 Datos.GCOrdenC = CodS.Text
+                Datos.GPrecio = TxtPS15.Text
 
                 If Funcion.R(Datos) Then
                     CEnt15.Text = "0"
@@ -499,6 +514,7 @@ Public Class ODC
                 Datos.GLUsuario = LUsuario.Text
                 Datos.GCOrdenT = COCS.Text
                 Datos.GCOrdenC = CodS.Text
+                Datos.GPrecio = TxtPS16.Text
 
                 If Funcion.R(Datos) Then
                     CEnt16.Text = "0"
@@ -524,6 +540,7 @@ Public Class ODC
                 Datos.GLUsuario = LUsuario.Text
                 Datos.GCOrdenT = COCS.Text
                 Datos.GCOrdenC = CodS.Text
+                Datos.GPrecio = TxtPS17.Text
 
                 If Funcion.R(Datos) Then
                     CEnt17.Text = "0"
@@ -549,6 +566,7 @@ Public Class ODC
                 Datos.GLUsuario = LUsuario.Text
                 Datos.GCOrdenT = COCS.Text
                 Datos.GCOrdenC = CodS.Text
+                Datos.GPrecio = TxtPS18.Text
 
                 If Funcion.R(Datos) Then
                     CEnt18.Text = "0"
@@ -574,6 +592,7 @@ Public Class ODC
                 Datos.GLUsuario = LUsuario.Text
                 Datos.GCOrdenT = COCS.Text
                 Datos.GCOrdenC = CodS.Text
+                Datos.GPrecio = TxtPS19.Text
 
                 If Funcion.R(Datos) Then
                     CEnt19.Text = "0"
@@ -599,6 +618,7 @@ Public Class ODC
                 Datos.GLUsuario = LUsuario.Text
                 Datos.GCOrdenT = COCS.Text
                 Datos.GCOrdenC = CodS.Text
+                Datos.GPrecio = TxtPS20.Text
 
                 If Funcion.R(Datos) Then
                     CEnt20.Text = "0"
@@ -1925,11 +1945,12 @@ Public Class ODC
             Dim CodSs As String = CodS.Text
             Dim Can As String = CantidadS1.Text
             Dim CanS As String() = Can.Split(" ")
+            Dim Pre As String = TxtPS1.Text
 
             Conex.Open()
             Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
-                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
-                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0)"
+                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE, PrecioS)
+                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0, '" & Pre & "')"
 
             Dim COMANDO As New SqlCommand(CONSULTA, Conex)
 
@@ -1945,11 +1966,12 @@ Public Class ODC
             Dim CodSs As String = CodS.Text
             Dim Can As String = CantidadS2.Text
             Dim CanS As String() = Can.Split(" ")
+            Dim Pre As String = TxtPS2.Text
 
             Conex.Open()
             Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
-                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
-                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0)"
+                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE, PrecioS)
+                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0, '" & Pre & "')"
 
             Dim COMANDO As New SqlCommand(CONSULTA, Conex)
 
@@ -1965,11 +1987,12 @@ Public Class ODC
             Dim CodSs As String = CodS.Text
             Dim Can As String = CantidadS3.Text
             Dim CanS As String() = Can.Split(" ")
+            Dim Pre As String = TxtPS3.Text
 
             Conex.Open()
             Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
-                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
-                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0)"
+                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE, PrecioS)
+                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0, '" & Pre & "')"
 
             Dim COMANDO As New SqlCommand(CONSULTA, Conex)
 
@@ -1985,11 +2008,12 @@ Public Class ODC
             Dim CodSs As String = CodS.Text
             Dim Can As String = CantidadS4.Text
             Dim CanS As String() = Can.Split(" ")
+            Dim Pre As String = TxtPS4.Text
 
             Conex.Open()
             Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
-                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
-                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0)"
+                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE, PrecioS)
+                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0, '" & Pre & "')"
 
             Dim COMANDO As New SqlCommand(CONSULTA, Conex)
 
@@ -2005,11 +2029,12 @@ Public Class ODC
             Dim CodSs As String = CodS.Text
             Dim Can As String = CantidadS5.Text
             Dim CanS As String() = Can.Split(" ")
+            Dim Pre As String = TxtPS5.Text
 
             Conex.Open()
             Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
-                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
-                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0)"
+                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE, PrecioS)
+                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0, '" & Pre & "')"
 
             Dim COMANDO As New SqlCommand(CONSULTA, Conex)
 
@@ -2025,11 +2050,12 @@ Public Class ODC
             Dim CodSs As String = CodS.Text
             Dim Can As String = CantidadS6.Text
             Dim CanS As String() = Can.Split(" ")
+            Dim Pre As String = TxtPS6.Text
 
             Conex.Open()
             Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
-                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
-                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0)"
+                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE, PrecioS)
+                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0, '" & Pre & "')"
 
             Dim COMANDO As New SqlCommand(CONSULTA, Conex)
 
@@ -2045,11 +2071,12 @@ Public Class ODC
             Dim CodSs As String = CodS.Text
             Dim Can As String = CantidadS7.Text
             Dim CanS As String() = Can.Split(" ")
+            Dim Pre As String = TxtPS7.Text
 
             Conex.Open()
             Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
-                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
-                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0)"
+                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE, PrecioS)
+                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0, '" & Pre & "')"
 
             Dim COMANDO As New SqlCommand(CONSULTA, Conex)
 
@@ -2065,11 +2092,12 @@ Public Class ODC
             Dim CodSs As String = CodS.Text
             Dim Can As String = CantidadS8.Text
             Dim CanS As String() = Can.Split(" ")
+            Dim Pre As String = TxtPS8.Text
 
             Conex.Open()
             Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
-                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
-                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0)"
+                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE, PrecioS)
+                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0, '" & Pre & "')"
 
             Dim COMANDO As New SqlCommand(CONSULTA, Conex)
 
@@ -2085,11 +2113,12 @@ Public Class ODC
             Dim CodSs As String = CodS.Text
             Dim Can As String = CantidadS9.Text
             Dim CanS As String() = Can.Split(" ")
+            Dim Pre As String = TxtPS9.Text
 
             Conex.Open()
             Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
-                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
-                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0)"
+                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE, PrecioS)
+                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0, '" & Pre & "')"
 
             Dim COMANDO As New SqlCommand(CONSULTA, Conex)
 
@@ -2105,11 +2134,12 @@ Public Class ODC
             Dim CodSs As String = CodS.Text
             Dim Can As String = CantidadS10.Text
             Dim CanS As String() = Can.Split(" ")
+            Dim Pre As String = TxtPS10.Text
 
             Conex.Open()
             Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
-                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
-                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0)"
+                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE, PrecioS)
+                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0, '" & Pre & "')"
 
             Dim COMANDO As New SqlCommand(CONSULTA, Conex)
 
@@ -2125,11 +2155,12 @@ Public Class ODC
             Dim CodSs As String = CodS.Text
             Dim Can As String = CantidadS11.Text
             Dim CanS As String() = Can.Split(" ")
+            Dim Pre As String = TxtPS11.Text
 
             Conex.Open()
             Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
-                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
-                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0)"
+                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE, PrecioS)
+                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0, '" & Pre & "')"
 
             Dim COMANDO As New SqlCommand(CONSULTA, Conex)
 
@@ -2145,11 +2176,12 @@ Public Class ODC
             Dim CodSs As String = CodS.Text
             Dim Can As String = CantidadS12.Text
             Dim CanS As String() = Can.Split(" ")
+            Dim Pre As String = TxtPS12.Text
 
             Conex.Open()
             Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
-                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
-                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0)"
+                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE, PrecioS)
+                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0, '" & Pre & "')"
 
             Dim COMANDO As New SqlCommand(CONSULTA, Conex)
 
@@ -2165,11 +2197,12 @@ Public Class ODC
             Dim CodSs As String = CodS.Text
             Dim Can As String = CantidadS13.Text
             Dim CanS As String() = Can.Split(" ")
+            Dim Pre As String = TxtPS13.Text
 
             Conex.Open()
             Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
-                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
-                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0)"
+                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE, PrecioS)
+                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0, '" & Pre & "')"
 
             Dim COMANDO As New SqlCommand(CONSULTA, Conex)
 
@@ -2185,11 +2218,12 @@ Public Class ODC
             Dim CodSs As String = CodS.Text
             Dim Can As String = CantidadS14.Text
             Dim CanS As String() = Can.Split(" ")
+            Dim Pre As String = TxtPS14.Text
 
             Conex.Open()
             Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
-                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
-                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0)"
+                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE, PrecioS)
+                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0, '" & Pre & "')"
 
             Dim COMANDO As New SqlCommand(CONSULTA, Conex)
 
@@ -2205,11 +2239,12 @@ Public Class ODC
             Dim CodSs As String = CodS.Text
             Dim Can As String = CantidadS15.Text
             Dim CanS As String() = Can.Split(" ")
+            Dim Pre As String = TxtPS15.Text
 
             Conex.Open()
             Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
-                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
-                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0)"
+                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE, PrecioS)
+                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0, '" & Pre & "')"
 
             Dim COMANDO As New SqlCommand(CONSULTA, Conex)
 
@@ -2225,11 +2260,12 @@ Public Class ODC
             Dim CodSs As String = CodS.Text
             Dim Can As String = CantidadS16.Text
             Dim CanS As String() = Can.Split(" ")
+            Dim Pre As String = TxtPS16.Text
 
             Conex.Open()
             Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
-                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
-                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0)"
+                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE, PrecioS)
+                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0, '" & Pre & "')"
 
             Dim COMANDO As New SqlCommand(CONSULTA, Conex)
 
@@ -2245,11 +2281,12 @@ Public Class ODC
             Dim CodSs As String = CodS.Text
             Dim Can As String = CantidadS17.Text
             Dim CanS As String() = Can.Split(" ")
+            Dim Pre As String = TxtPS17.Text
 
             Conex.Open()
             Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
-                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanE)
-                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0)"
+                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE, PrecioS)
+                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0, '" & Pre & "')"
 
             Dim COMANDO As New SqlCommand(CONSULTA, Conex)
 
@@ -2265,11 +2302,12 @@ Public Class ODC
             Dim CodSs As String = CodS.Text
             Dim Can As String = CantidadS18.Text
             Dim CanS As String() = Can.Split(" ")
+            Dim Pre As String = TxtPS18.Text
 
             Conex.Open()
             Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
-                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
-                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0)"
+                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE, PrecioS)
+                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0, '" & Pre & "')"
 
             Dim COMANDO As New SqlCommand(CONSULTA, Conex)
 
@@ -2285,11 +2323,12 @@ Public Class ODC
             Dim CodSs As String = CodS.Text
             Dim Can As String = CantidadS19.Text
             Dim CanS As String() = Can.Split(" ")
+            Dim Pre As String = TxtPS19.Text
 
             Conex.Open()
             Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
-                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
-                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0)"
+                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE, PrecioS)
+                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0, '" & Pre & "')"
 
             Dim COMANDO As New SqlCommand(CONSULTA, Conex)
 
@@ -2305,11 +2344,12 @@ Public Class ODC
             Dim CodSs As String = CodS.Text
             Dim Can As String = CantidadS20.Text
             Dim CanS As String() = Can.Split(" ")
+            Dim Pre As String = TxtPS20.Text
 
             Conex.Open()
             Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
-                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
-                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0)"
+                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE, PrecioS)
+                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0, '" & Pre & "')"
 
             Dim COMANDO As New SqlCommand(CONSULTA, Conex)
 
@@ -2359,7 +2399,7 @@ Public Class ODC
         Dim Busqueda As String = COCS.Text
         Dim Da As New SqlDataAdapter
 
-        Dim Consulta As New SqlCommand("SELECT OD.id_pro, OD.descripcion, (Convert(Varchar,OD.cantidad) + ' ' + OD.Um), OD.estatus, OD.estado, OD.detalles
+        Dim Consulta As New SqlCommand("SELECT OD.id_pro, OD.descripcion, (Convert(Varchar,OD.cantidad) + ' ' + OD.Um), OD.estatus, OD.estado, OD.detalles, OD.precio
                                         FROM TB_Ordenes_Detalle AS OD
                                         WHERE OD.codigo =  '" + Busqueda + "' ", Conex)
         Da.SelectCommand = Consulta
@@ -2377,6 +2417,7 @@ Public Class ODC
                 LCE1.Visible = True
                 LI1.Visible = True
                 LBusqueda.Visible = True
+                LP1.Visible = True
 
                 P1.Visible = True
                 IDS1.Visible = True
@@ -2388,6 +2429,7 @@ Public Class ODC
                 LUM1.Visible = True
                 LAP1.Visible = True
                 TxtAP1.Visible = True
+                TxtPS1.Visible = True
 
                 ID1.Text = Tabla.Rows(0)(0).ToString
                 Producto1.Text = Tabla.Rows(0)(1).ToString
@@ -2395,6 +2437,7 @@ Public Class ODC
                 CantidadS1.Text = Tabla.Rows(0)(2).ToString
                 CEntra1.Text = Tabla.Rows(0)(3).ToString
                 IDP1.Text = Tabla.Rows(0)(4).ToString
+                TxtPS1.Text = Tabla.Rows(0)(6).ToString
             End If
 
             If (Tabla.Rows.Count > 1) Then
@@ -2408,6 +2451,7 @@ Public Class ODC
                 LUM2.Visible = True
                 LAP2.Visible = True
                 TxtAP2.Visible = True
+                TxtPS2.Visible = True
 
                 ID2.Text = Tabla.Rows(1)(0).ToString
                 Producto2.Text = Tabla.Rows(1)(1).ToString
@@ -2415,6 +2459,7 @@ Public Class ODC
                 CantidadS2.Text = Tabla.Rows(1)(2).ToString
                 CEntra2.Text = Tabla.Rows(1)(3).ToString
                 IDP2.Text = Tabla.Rows(1)(4).ToString
+                TxtPS2.Text = Tabla.Rows(1)(6).ToString
             End If
 
             If (Tabla.Rows.Count > 2) Then
@@ -2428,6 +2473,7 @@ Public Class ODC
                 LUM3.Visible = True
                 LAP3.Visible = True
                 TxtAP3.Visible = True
+                TxtPS3.Visible = True
 
                 ID3.Text = Tabla.Rows(2)(0).ToString
                 Producto3.Text = Tabla.Rows(2)(1).ToString
@@ -2435,6 +2481,7 @@ Public Class ODC
                 CantidadS3.Text = Tabla.Rows(2)(2).ToString
                 CEntra3.Text = Tabla.Rows(2)(3).ToString
                 IDP3.Text = Tabla.Rows(2)(4).ToString
+                TxtPS3.Text = Tabla.Rows(2)(6).ToString
             End If
 
             If (Tabla.Rows.Count > 3) Then
@@ -2449,6 +2496,7 @@ Public Class ODC
                 LUM4.Visible = True
                 LAP4.Visible = True
                 TxtAP4.Visible = True
+                TxtPS4.Visible = True
 
                 ID4.Text = Tabla.Rows(3)(0).ToString
                 Producto4.Text = Tabla.Rows(3)(1).ToString
@@ -2456,6 +2504,7 @@ Public Class ODC
                 CantidadS4.Text = Tabla.Rows(3)(2).ToString
                 CEntra4.Text = Tabla.Rows(3)(3).ToString
                 IDP4.Text = Tabla.Rows(3)(4).ToString
+                TxtPS4.Text = Tabla.Rows(3)(6).ToString
             End If
 
             If (Tabla.Rows.Count > 4) Then
@@ -2476,6 +2525,7 @@ Public Class ODC
                 LUM5.Visible = True
                 LAP5.Visible = True
                 TxtAP5.Visible = True
+                TxtPS5.Visible = True
 
                 ID5.Text = Tabla.Rows(4)(0).ToString
                 Producto5.Text = Tabla.Rows(4)(1).ToString
@@ -2483,6 +2533,7 @@ Public Class ODC
                 CantidadS5.Text = Tabla.Rows(4)(2).ToString
                 CEntra5.Text = Tabla.Rows(4)(3).ToString
                 IDP5.Text = Tabla.Rows(4)(4).ToString
+                TxtPS5.Text = Tabla.Rows(4)(6).ToString
             End If
 
             If (Tabla.Rows.Count > 5) Then
@@ -2496,6 +2547,7 @@ Public Class ODC
                 LUM6.Visible = True
                 LAP6.Visible = True
                 TxtAP6.Visible = True
+                TxtPS6.Visible = True
 
                 ID6.Text = Tabla.Rows(5)(0).ToString
                 Producto6.Text = Tabla.Rows(5)(1).ToString
@@ -2503,6 +2555,7 @@ Public Class ODC
                 CantidadS6.Text = Tabla.Rows(5)(2).ToString
                 CEntra6.Text = Tabla.Rows(5)(3).ToString
                 IDP6.Text = Tabla.Rows(5)(4).ToString
+                TxtPS6.Text = Tabla.Rows(5)(6).ToString
             End If
 
             If (Tabla.Rows.Count > 6) Then
@@ -2516,6 +2569,7 @@ Public Class ODC
                 LUM7.Visible = True
                 LAP7.Visible = True
                 TxtAP7.Visible = True
+                TxtPS7.Visible = True
 
                 ID7.Text = Tabla.Rows(6)(0).ToString
                 Producto7.Text = Tabla.Rows(6)(1).ToString
@@ -2523,6 +2577,7 @@ Public Class ODC
                 CantidadS7.Text = Tabla.Rows(6)(2).ToString
                 CEntra7.Text = Tabla.Rows(6)(3).ToString
                 IDP7.Text = Tabla.Rows(6)(4).ToString
+                TxtPS7.Text = Tabla.Rows(6)(6).ToString
             End If
 
             If (Tabla.Rows.Count > 7) Then
@@ -2536,6 +2591,7 @@ Public Class ODC
                 LUM8.Visible = True
                 LAP8.Visible = True
                 TxtAP8.Visible = True
+                TxtPS8.Visible = True
 
                 ID8.Text = Tabla.Rows(7)(0).ToString
                 Producto8.Text = Tabla.Rows(7)(1).ToString
@@ -2543,6 +2599,7 @@ Public Class ODC
                 CantidadS8.Text = Tabla.Rows(7)(2).ToString
                 CEntra8.Text = Tabla.Rows(7)(3).ToString
                 IDP8.Text = Tabla.Rows(7)(4).ToString
+                TxtPS8.Text = Tabla.Rows(7)(6).ToString
             End If
 
             If (Tabla.Rows.Count > 8) Then
@@ -2553,6 +2610,7 @@ Public Class ODC
                 LCEn3.Visible = True
                 LCE3.Visible = True
                 LI3.Visible = True
+                LP4.Visible = True
 
                 IDS9.Visible = True
                 Producto9.Visible = True
@@ -2563,6 +2621,7 @@ Public Class ODC
                 LUM9.Visible = True
                 LAP9.Visible = True
                 TxtAP9.Visible = True
+                TxtPS9.Visible = True
 
                 ID9.Text = Tabla.Rows(8)(0).ToString
                 Producto9.Text = Tabla.Rows(8)(1).ToString
@@ -2570,6 +2629,7 @@ Public Class ODC
                 CantidadS9.Text = Tabla.Rows(8)(2).ToString
                 CEntra9.Text = Tabla.Rows(8)(3).ToString
                 IDP9.Text = Tabla.Rows(8)(4).ToString
+                TxtPS9.Text = Tabla.Rows(8)(6).ToString
             End If
 
             If (Tabla.Rows.Count > 9) Then
@@ -2583,6 +2643,7 @@ Public Class ODC
                 LUM10.Visible = True
                 LAP10.Visible = True
                 TxtAP10.Visible = True
+                TxtPS10.Visible = True
 
                 ID10.Text = Tabla.Rows(9)(0).ToString
                 Producto10.Text = Tabla.Rows(9)(1).ToString
@@ -2590,6 +2651,7 @@ Public Class ODC
                 CantidadS10.Text = Tabla.Rows(9)(2).ToString
                 CEntra10.Text = Tabla.Rows(9)(3).ToString
                 IDP10.Text = Tabla.Rows(9)(4).ToString
+                TxtPS10.Text = Tabla.Rows(9)(6).ToString
             End If
 
             If (Tabla.Rows.Count > 10) Then
@@ -2603,6 +2665,7 @@ Public Class ODC
                 LUM11.Visible = True
                 LAP11.Visible = True
                 TxtAP11.Visible = True
+                TxtPS11.Visible = True
 
                 ID11.Text = Tabla.Rows(10)(0).ToString
                 Producto11.Text = Tabla.Rows(10)(1).ToString
@@ -2610,6 +2673,7 @@ Public Class ODC
                 CantidadS11.Text = Tabla.Rows(10)(2).ToString
                 CEntra11.Text = Tabla.Rows(10)(3).ToString
                 IDP11.Text = Tabla.Rows(10)(4).ToString
+                TxtPS11.Text = Tabla.Rows(10)(6).ToString
             End If
 
             If (Tabla.Rows.Count > 11) Then
@@ -2623,6 +2687,7 @@ Public Class ODC
                 LUM12.Visible = True
                 LAP12.Visible = True
                 TxtAP12.Visible = True
+                TxtPS12.Visible = True
 
                 ID12.Text = Tabla.Rows(11)(0).ToString
                 Producto12.Text = Tabla.Rows(11)(1).ToString
@@ -2630,6 +2695,7 @@ Public Class ODC
                 CantidadS12.Text = Tabla.Rows(11)(2).ToString
                 CEntra12.Text = Tabla.Rows(11)(3).ToString
                 IDP12.Text = Tabla.Rows(11)(4).ToString
+                TxtPS12.Text = Tabla.Rows(11)(6).ToString
             End If
 
             If (Tabla.Rows.Count > 12) Then
@@ -2640,6 +2706,7 @@ Public Class ODC
                 LCEn4.Visible = True
                 LCE4.Visible = True
                 LI4.Visible = True
+                LP4.Visible = True
 
                 IDS13.Visible = True
                 Producto13.Visible = True
@@ -2650,6 +2717,7 @@ Public Class ODC
                 LUM13.Visible = True
                 LAP13.Visible = True
                 TxtAP13.Visible = True
+                TxtPS13.Visible = True
 
                 ID13.Text = Tabla.Rows(12)(0).ToString
                 Producto13.Text = Tabla.Rows(12)(1).ToString
@@ -2670,6 +2738,7 @@ Public Class ODC
                 LUM14.Visible = True
                 LAP14.Visible = True
                 TxtAP14.Visible = True
+                TxtPS14.Visible = True
 
                 ID14.Text = Tabla.Rows(13)(0).ToString
                 Producto14.Text = Tabla.Rows(13)(1).ToString
@@ -2677,6 +2746,7 @@ Public Class ODC
                 CantidadS14.Text = Tabla.Rows(13)(2).ToString
                 CEntra14.Text = Tabla.Rows(13)(3).ToString
                 IDP14.Text = Tabla.Rows(13)(4).ToString
+                TxtPS14.Text = Tabla.Rows(13)(6).ToString
             End If
 
             If (Tabla.Rows.Count > 14) Then
@@ -2690,6 +2760,7 @@ Public Class ODC
                 LUM15.Visible = True
                 LAP15.Visible = True
                 TxtAP15.Visible = True
+                TxtPS15.Visible = True
 
                 ID15.Text = Tabla.Rows(14)(0).ToString
                 Producto15.Text = Tabla.Rows(14)(1).ToString
@@ -2697,6 +2768,7 @@ Public Class ODC
                 CantidadS15.Text = Tabla.Rows(14)(2).ToString
                 CEntra15.Text = Tabla.Rows(14)(3).ToString
                 IDP15.Text = Tabla.Rows(14)(4).ToString
+                TxtPS15.Text = Tabla.Rows(14)(6).ToString
             End If
 
             If (Tabla.Rows.Count > 15) Then
@@ -2710,6 +2782,7 @@ Public Class ODC
                 LUM16.Visible = True
                 LAP16.Visible = True
                 TxtAP16.Visible = True
+                TxtPS16.Visible = True
 
                 ID16.Text = Tabla.Rows(15)(0).ToString
                 Producto16.Text = Tabla.Rows(15)(1).ToString
@@ -2717,6 +2790,7 @@ Public Class ODC
                 CantidadS16.Text = Tabla.Rows(15)(2).ToString
                 CEntra16.Text = Tabla.Rows(15)(3).ToString
                 IDP16.Text = Tabla.Rows(15)(4).ToString
+                TxtPS16.Text = Tabla.Rows(15)(6).ToString
             End If
 
             If (Tabla.Rows.Count > 16) Then
@@ -2727,6 +2801,7 @@ Public Class ODC
                 LCEn5.Visible = True
                 LCE5.Visible = True
                 LI5.Visible = True
+                LP5.Visible = True
 
                 IDS17.Visible = True
                 Producto17.Visible = True
@@ -2737,6 +2812,7 @@ Public Class ODC
                 LUM17.Visible = True
                 LAP17.Visible = True
                 TxtAP17.Visible = True
+                TxtPS17.Visible = True
 
                 ID17.Text = Tabla.Rows(16)(0).ToString
                 Producto17.Text = Tabla.Rows(16)(1).ToString
@@ -2744,6 +2820,7 @@ Public Class ODC
                 CantidadS17.Text = Tabla.Rows(16)(2).ToString
                 CEntra17.Text = Tabla.Rows(16)(3).ToString
                 IDP17.Text = Tabla.Rows(16)(4).ToString
+                TxtPS17.Text = Tabla.Rows(16)(6).ToString
             End If
 
             If (Tabla.Rows.Count > 17) Then
@@ -2757,6 +2834,7 @@ Public Class ODC
                 LUM18.Visible = True
                 LAP18.Visible = True
                 TxtAP18.Visible = True
+                TxtPS18.Visible = True
 
                 ID18.Text = Tabla.Rows(17)(0).ToString
                 Producto18.Text = Tabla.Rows(17)(1).ToString
@@ -2764,6 +2842,7 @@ Public Class ODC
                 CantidadS18.Text = Tabla.Rows(17)(2).ToString
                 CEntra18.Text = Tabla.Rows(17)(3).ToString
                 IDP18.Text = Tabla.Rows(17)(4).ToString
+                TxtPS18.Text = Tabla.Rows(17)(6).ToString
             End If
 
             If (Tabla.Rows.Count > 18) Then
@@ -2777,6 +2856,7 @@ Public Class ODC
                 LUM19.Visible = True
                 LAP19.Visible = True
                 TxtAP19.Visible = True
+                TxtPS19.Visible = True
 
                 ID19.Text = Tabla.Rows(18)(0).ToString
                 Producto19.Text = Tabla.Rows(18)(1).ToString
@@ -2784,6 +2864,7 @@ Public Class ODC
                 CantidadS19.Text = Tabla.Rows(18)(2).ToString
                 CEntra19.Text = Tabla.Rows(18)(3).ToString
                 IDP19.Text = Tabla.Rows(18)(4).ToString
+                TxtPS19.Text = Tabla.Rows(18)(6).ToString
             End If
 
             If (Tabla.Rows.Count > 19) Then
@@ -2797,6 +2878,7 @@ Public Class ODC
                 LUM20.Visible = True
                 LAP20.Visible = True
                 TxtAP20.Visible = True
+                TxtPS20.Visible = True
 
                 ID20.Text = Tabla.Rows(19)(0).ToString
                 Producto20.Text = Tabla.Rows(19)(1).ToString
@@ -2804,6 +2886,7 @@ Public Class ODC
                 CantidadS20.Text = Tabla.Rows(19)(2).ToString
                 CEntra20.Text = Tabla.Rows(19)(3).ToString
                 IDP20.Text = Tabla.Rows(19)(4).ToString
+                TxtPS20.Text = Tabla.Rows(19)(6).ToString
             End If
 
         Catch ex As Exception
@@ -3826,6 +3909,7 @@ Public Class ODC
         LCEn1.Visible = False
         LCE1.Visible = False
         LI1.Visible = False
+        LP1.Visible = False
 
         IDS1.Visible = False
         ID1.Visible = False
@@ -3841,6 +3925,7 @@ Public Class ODC
         IDP1.Visible = False
         LA1.Visible = False
         BE1.Visible = False
+        TxtPS1.Visible = False
 
         ID1.Text = ""
         Producto1.Text = ""
@@ -3851,6 +3936,7 @@ Public Class ODC
         LUM1.Text = ""
         TxtAP1.Text = ""
         IDP1.Text = ""
+        TxtPS1.Text = ""
     End Sub
 
     Private Sub B2()
@@ -3869,6 +3955,7 @@ Public Class ODC
         IDP2.Visible = False
         LA2.Visible = False
         BE2.Visible = False
+        TxtPS2.Visible = False
 
         ID2.Text = ""
         Producto2.Text = ""
@@ -3879,6 +3966,7 @@ Public Class ODC
         LUM2.Text = ""
         TxtAP2.Text = ""
         IDP2.Text = ""
+        TxtPS2.Text = ""
     End Sub
 
     Private Sub B3()
@@ -3897,6 +3985,7 @@ Public Class ODC
         IDP3.Visible = False
         LA3.Visible = False
         BE3.Visible = False
+        TxtPS3.Visible = False
 
         ID3.Text = ""
         Producto3.Text = ""
@@ -3907,6 +3996,7 @@ Public Class ODC
         LUM3.Text = ""
         TxtAP3.Text = ""
         IDP3.Text = ""
+        TxtPS3.Text = ""
     End Sub
 
     Private Sub B4()
@@ -3925,6 +4015,7 @@ Public Class ODC
         IDP4.Visible = False
         LA4.Visible = False
         BE4.Visible = False
+        TxtPS4.Visible = False
 
         ID4.Text = ""
         Producto4.Text = ""
@@ -3935,6 +4026,7 @@ Public Class ODC
         LUM4.Text = ""
         TxtAP4.Text = ""
         IDP4.Text = ""
+        TxtPS4.Text = ""
     End Sub
 
     Private Sub B5()
@@ -3945,6 +4037,7 @@ Public Class ODC
         LCEn2.Visible = False
         LCE2.Visible = False
         LI2.Visible = False
+        LP2.Visible = False
 
         IDS5.Visible = False
         ID5.Visible = False
@@ -3960,6 +4053,7 @@ Public Class ODC
         IDP5.Visible = False
         LA5.Visible = False
         BE5.Visible = False
+        TxtPS5.Visible = False
 
         ID5.Text = ""
         Producto5.Text = ""
@@ -3970,6 +4064,7 @@ Public Class ODC
         LUM5.Text = ""
         TxtAP5.Text = ""
         IDP5.Text = ""
+        TxtPS5.Text = ""
     End Sub
 
     Private Sub B6()
@@ -3988,6 +4083,7 @@ Public Class ODC
         IDP6.Visible = False
         LA6.Visible = False
         BE6.Visible = False
+        TxtPS6.Visible = False
 
         ID6.Text = ""
         Producto6.Text = ""
@@ -3998,6 +4094,7 @@ Public Class ODC
         LUM6.Text = ""
         TxtAP6.Text = ""
         IDP6.Text = ""
+        TxtPS6.Text = ""
     End Sub
 
     Private Sub B7()
@@ -4016,6 +4113,7 @@ Public Class ODC
         IDP7.Visible = False
         LA7.Visible = False
         BE7.Visible = False
+        TxtPS7.Visible = False
 
         ID7.Text = ""
         Producto7.Text = ""
@@ -4026,6 +4124,7 @@ Public Class ODC
         LUM7.Text = ""
         TxtAP7.Text = ""
         IDP7.Text = ""
+        TxtPS7.Text = ""
     End Sub
 
     Private Sub B8()
@@ -4044,6 +4143,7 @@ Public Class ODC
         IDP8.Visible = False
         LA8.Visible = False
         BE8.Visible = False
+        TxtPS8.Visible = False
 
         ID8.Text = ""
         Producto8.Text = ""
@@ -4054,6 +4154,7 @@ Public Class ODC
         LUM8.Text = ""
         TxtAP8.Text = ""
         IDP8.Text = ""
+        TxtPS8.Text = ""
     End Sub
 
     Private Sub B9()
@@ -4064,6 +4165,7 @@ Public Class ODC
         LCEn3.Visible = False
         LCE3.Visible = False
         LI3.Visible = False
+        LP3.Visible = False
 
         IDS9.Visible = False
         ID9.Visible = False
@@ -4079,6 +4181,7 @@ Public Class ODC
         IDP9.Visible = False
         LA9.Visible = False
         BE9.Visible = False
+        TxtPS9.Visible = False
 
         ID9.Text = ""
         Producto9.Text = ""
@@ -4089,6 +4192,7 @@ Public Class ODC
         LUM9.Text = ""
         TxtAP9.Text = ""
         IDP9.Text = ""
+        TxtPS9.Text = ""
     End Sub
 
     Private Sub B10()
@@ -4107,6 +4211,7 @@ Public Class ODC
         IDP10.Visible = False
         LA10.Visible = False
         BE10.Visible = False
+        TxtPS10.Visible = False
 
         ID10.Text = ""
         Producto10.Text = ""
@@ -4117,6 +4222,7 @@ Public Class ODC
         LUM10.Text = ""
         TxtAP10.Text = ""
         IDP10.Text = ""
+        TxtPS10.Text = ""
     End Sub
 
     Private Sub B11()
@@ -4135,6 +4241,7 @@ Public Class ODC
         IDP11.Visible = False
         LA11.Visible = False
         BE11.Visible = False
+        TxtPS11.Visible = False
 
         ID11.Text = ""
         Producto11.Text = ""
@@ -4145,6 +4252,7 @@ Public Class ODC
         LUM11.Text = ""
         TxtAP11.Text = ""
         IDP11.Text = ""
+        TxtPS11.Text = ""
     End Sub
 
     Private Sub B12()
@@ -4163,6 +4271,7 @@ Public Class ODC
         IDP12.Visible = False
         LA12.Visible = False
         BE12.Visible = False
+        TxtPS12.Visible = False
 
         ID12.Text = ""
         Producto12.Text = ""
@@ -4173,6 +4282,7 @@ Public Class ODC
         LUM12.Text = ""
         TxtAP12.Text = ""
         IDP12.Text = ""
+        TxtPS12.Text = ""
     End Sub
 
     Private Sub B13()
@@ -4183,6 +4293,7 @@ Public Class ODC
         LCEn4.Visible = False
         LCE4.Visible = False
         LI4.Visible = False
+        LP4.Visible = False
 
         IDS13.Visible = False
         ID13.Visible = False
@@ -4198,6 +4309,7 @@ Public Class ODC
         IDP13.Visible = False
         LA13.Visible = False
         BE13.Visible = False
+        TxtPS13.Visible = False
 
         ID13.Text = ""
         Producto13.Text = ""
@@ -4208,6 +4320,7 @@ Public Class ODC
         LUM13.Text = ""
         TxtAP13.Text = ""
         IDP13.Text = ""
+        TxtPS13.Text = ""
     End Sub
 
     Private Sub B14()
@@ -4226,6 +4339,7 @@ Public Class ODC
         IDP14.Visible = False
         LA14.Visible = False
         BE14.Visible = False
+        TxtPS14.Visible = False
 
         ID14.Text = ""
         Producto14.Text = ""
@@ -4236,6 +4350,7 @@ Public Class ODC
         LUM14.Text = ""
         TxtAP14.Text = ""
         IDP14.Text = ""
+        TxtPS14.Text = ""
     End Sub
 
     Private Sub B15()
@@ -4254,6 +4369,7 @@ Public Class ODC
         IDP15.Visible = False
         LA15.Visible = False
         BE15.Visible = False
+        TxtPS15.Visible = False
 
         ID15.Text = ""
         Producto15.Text = ""
@@ -4264,6 +4380,7 @@ Public Class ODC
         LUM15.Text = ""
         TxtAP15.Text = ""
         IDP15.Text = ""
+        TxtPS15.Text = ""
     End Sub
 
     Private Sub B16()
@@ -4282,6 +4399,7 @@ Public Class ODC
         IDP16.Visible = False
         LA16.Visible = False
         BE16.Visible = False
+        TxtPS16.Visible = False
 
         ID16.Text = ""
         Producto16.Text = ""
@@ -4292,6 +4410,7 @@ Public Class ODC
         LUM16.Text = ""
         TxtAP16.Text = ""
         IDP16.Text = ""
+        TxtPS16.Text = ""
     End Sub
 
     Private Sub B17()
@@ -4302,6 +4421,7 @@ Public Class ODC
         LCEn5.Visible = False
         LCE5.Visible = False
         LI5.Visible = False
+        LP5.Visible = False
 
         IDS17.Visible = False
         ID17.Visible = False
@@ -4317,6 +4437,7 @@ Public Class ODC
         IDP17.Visible = False
         LA17.Visible = False
         BE17.Visible = False
+        TxtPS17.Visible = False
 
         ID17.Text = ""
         Producto17.Text = ""
@@ -4327,6 +4448,7 @@ Public Class ODC
         LUM17.Text = ""
         TxtAP17.Text = ""
         IDP17.Text = ""
+        TxtPS17.Text = ""
     End Sub
 
     Private Sub B18()
@@ -4345,6 +4467,7 @@ Public Class ODC
         IDP18.Visible = False
         LA18.Visible = False
         BE18.Visible = False
+        TxtPS18.Visible = False
 
         ID18.Text = ""
         Producto18.Text = ""
@@ -4355,6 +4478,7 @@ Public Class ODC
         LUM18.Text = ""
         TxtAP18.Text = ""
         IDP18.Text = ""
+        TxtPS18.Text = ""
     End Sub
 
     Private Sub B19()
@@ -4373,6 +4497,7 @@ Public Class ODC
         IDP19.Visible = False
         LA19.Visible = False
         BE19.Visible = False
+        TxtPS19.Visible = False
 
         ID19.Text = ""
         Producto19.Text = ""
@@ -4383,6 +4508,7 @@ Public Class ODC
         LUM19.Text = ""
         TxtAP19.Text = ""
         IDP19.Text = ""
+        TxtPS19.Text = ""
     End Sub
 
     Private Sub B20()
@@ -4401,6 +4527,7 @@ Public Class ODC
         IDP20.Visible = False
         LA20.Visible = False
         BE20.Visible = False
+        TxtPS20.Visible = False
 
         ID20.Text = ""
         Producto20.Text = ""
@@ -4411,6 +4538,7 @@ Public Class ODC
         LUM20.Text = ""
         TxtAP20.Text = ""
         IDP20.Text = ""
+        TxtPS20.Text = ""
     End Sub
 
 

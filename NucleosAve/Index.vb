@@ -190,6 +190,17 @@
         End If
     End Sub
 
+    Private Sub BPMPr_Click(sender As Object, e As EventArgs) Handles BPMPr.Click
+        MPInventario.Show()
+        WindowState = FormWindowState.Minimized
+    End Sub
+
+    Private Sub BMOHR_Click(sender As Object, e As EventArgs) Handles BMOHR.Click
+        MPHistorial.Show()
+        WindowState = FormWindowState.Minimized
+    End Sub
+
+
     'Gasolina
     Private Sub btn_gas_Click_1(sender As Object, e As EventArgs) Handles btn_gas.Click
         If PMGasolina.Visible = True Then
@@ -206,12 +217,6 @@
             PMMPrima.Visible = False
         End If
     End Sub
-
-
-    Private Sub BPMPr_Click(sender As Object, e As EventArgs) Handles BPMPr.Click
-        MPInventario.Show()
-    End Sub
-
 
 
     Dim ex, ey As Integer
