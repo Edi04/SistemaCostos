@@ -2427,38 +2427,3 @@ Public Class MPInventario
         If Arrastre Then Me.Location = Me.PointToScreen(New Point(MousePosition.X - Me.Location.X - ex, MousePosition.Y - Me.Location.Y - ey))
     End Sub
 End Class
-
-'USE [SISUT021]
-'GO
-'/****** Object:  StoredProcedure [dbo].[SP_BOCMPrima]    Script Date: 12/04/2020 05:27:55 p. m. ******/
-'SET ANSI_NULLS ON
-'GO
-'SET QUOTED_IDENTIFIER ON
-'GO
-'ALTER PROCEDURE [dbo].[SP_BOCMPrima]
-'@Fech1 date,
-'@Fech2 date
-'AS
-'BEGIN
-'	SELECT OC.id_orden
-'      ,OC.purchase_order
-'      ,OC.codigo
-'      ,P.nombre
-'      ,OD.cantidad
-'      ,OD.Um
-'      ,OC.CodiS
-'      ,OD.descripcion
-'      ,OD.id_pro
-'	  ,case OD.Um 
-'		When 'MT'
-'		Then OD.cantidad * 1000 - IsNull(Od.estatus, 0)
-'		When 'TON'
-'		Then OD.cantidad * 1000 - IsNull(Od.estatus, 0)
-'		WHEN 'KG'
-'		THEN OD.cantidad - IsNull(Od.estatus, 0)
-'		END AS 'Faltante'
-'  FROM TB_Ordenes_Compra as OC
-'  INNER JOIN Tb_Proveedores AS P ON P.id_p = OC.id_pro
-'  INNER JOIN TB_Ordenes_Detalle AS OD ON OD.codigo = OC.codigo
-'  WHERE OC.estado = 'Activo' AND OC.fecha2_nota between @Fech1 and @Fech2 AND OD.descripcion LIKE '%SILICIO%'
-'END

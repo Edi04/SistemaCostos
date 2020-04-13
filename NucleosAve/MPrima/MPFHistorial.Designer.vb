@@ -65,9 +65,9 @@ Partial Class MPFHistorial
         '
         Me.DGHR.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGHR.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.OCompra, Me.Proveedor, Me.Num_Interno, Me.Num_Externo, Me.Calibre, Me.Ancho, Me.Peso, Me.UMedida, Me.Descripcion, Me.FechaLlegada, Me.FechaRegistro, Me.CSeguimiento})
-        Me.DGHR.Location = New System.Drawing.Point(28, 191)
+        Me.DGHR.Location = New System.Drawing.Point(6, 194)
         Me.DGHR.Name = "DGHR"
-        Me.DGHR.Size = New System.Drawing.Size(1228, 381)
+        Me.DGHR.Size = New System.Drawing.Size(1034, 381)
         Me.DGHR.TabIndex = 74
         '
         'ID
@@ -186,7 +186,7 @@ Partial Class MPFHistorial
         Me.GBusqueda.Controls.Add(Me.TxtBusqueda)
         Me.GBusqueda.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GBusqueda.ForeColor = System.Drawing.Color.Black
-        Me.GBusqueda.Location = New System.Drawing.Point(173, 119)
+        Me.GBusqueda.Location = New System.Drawing.Point(55, 119)
         Me.GBusqueda.Name = "GBusqueda"
         Me.GBusqueda.Size = New System.Drawing.Size(938, 65)
         Me.GBusqueda.TabIndex = 73
@@ -251,7 +251,7 @@ Partial Class MPFHistorial
         Me.LBOC.AutoSize = True
         Me.LBOC.BackColor = System.Drawing.Color.Transparent
         Me.LBOC.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LBOC.Location = New System.Drawing.Point(513, 81)
+        Me.LBOC.Location = New System.Drawing.Point(441, 81)
         Me.LBOC.Name = "LBOC"
         Me.LBOC.Size = New System.Drawing.Size(200, 24)
         Me.LBOC.TabIndex = 72
@@ -262,7 +262,7 @@ Partial Class MPFHistorial
         Me.BMinimizar.BackColor = System.Drawing.Color.Transparent
         Me.BMinimizar.BackgroundImage = Global.NucleosAve.My.Resources.Resources.icons8_minimizar_la_ventana_5001
         Me.BMinimizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.BMinimizar.Location = New System.Drawing.Point(1160, 14)
+        Me.BMinimizar.Location = New System.Drawing.Point(939, 6)
         Me.BMinimizar.Name = "BMinimizar"
         Me.BMinimizar.Size = New System.Drawing.Size(50, 50)
         Me.BMinimizar.TabIndex = 69
@@ -273,7 +273,7 @@ Partial Class MPFHistorial
         Me.BCerrar.BackColor = System.Drawing.Color.Transparent
         Me.BCerrar.BackgroundImage = Global.NucleosAve.My.Resources.Resources.icons8_cerrar_ventana_5001
         Me.BCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.BCerrar.Location = New System.Drawing.Point(1216, 14)
+        Me.BCerrar.Location = New System.Drawing.Point(991, 6)
         Me.BCerrar.Name = "BCerrar"
         Me.BCerrar.Size = New System.Drawing.Size(50, 50)
         Me.BCerrar.TabIndex = 70
@@ -284,7 +284,7 @@ Partial Class MPFHistorial
         Me.POpc.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.POpc.BackColor = System.Drawing.Color.SteelBlue
         Me.POpc.Controls.Add(Me.LCS)
-        Me.POpc.Location = New System.Drawing.Point(14, 68)
+        Me.POpc.Location = New System.Drawing.Point(-104, 68)
         Me.POpc.Name = "POpc"
         Me.POpc.Size = New System.Drawing.Size(1252, 10)
         Me.POpc.TabIndex = 71
@@ -303,7 +303,7 @@ Partial Class MPFHistorial
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.NucleosAve.My.Resources.Resources.Fondo
-        Me.ClientSize = New System.Drawing.Size(1280, 587)
+        Me.ClientSize = New System.Drawing.Size(1044, 587)
         Me.Controls.Add(Me.DGHR)
         Me.Controls.Add(Me.GBusqueda)
         Me.Controls.Add(Me.LBOC)
