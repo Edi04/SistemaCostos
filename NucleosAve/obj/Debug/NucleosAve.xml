@@ -257,6 +257,11 @@ NucleosAve
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:NucleosAve.My.Resources.Resources.icons8_historial_de_pedidos_64">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:NucleosAve.My.Resources.Resources.icons8_imprimir_481">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
