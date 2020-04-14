@@ -285,12 +285,6 @@
     <Compile Include="Invetario\EtiquetasCB.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Invetario\ICostos.Designer.vb">
-      <DependentUpon>ICostos.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Invetario\ICostos.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Invetario\Inventario.designer.vb">
       <DependentUpon>Inventario.vb</DependentUpon>
     </Compile>
@@ -364,18 +358,6 @@
       <DependentUpon>mostrarTrasportes.xsd</DependentUpon>
     </Compile>
     <Compile Include="MPrima\CRegistroMP.vb" />
-    <Compile Include="MPrima\MPFHistorial.Designer.vb">
-      <DependentUpon>MPFHistorial.vb</DependentUpon>
-    </Compile>
-    <Compile Include="MPrima\MPFHistorial.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MPrima\MPHistorial.Designer.vb">
-      <DependentUpon>MPHistorial.vb</DependentUpon>
-    </Compile>
-    <Compile Include="MPrima\MPHistorial.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="MPrima\MPInventario.designer.vb">
       <DependentUpon>MPInventario.vb</DependentUpon>
     </Compile>
@@ -549,9 +531,6 @@
     <EmbeddedResource Include="Invetario\EtiquetasCB.resx">
       <DependentUpon>EtiquetasCB.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Invetario\ICostos.resx">
-      <DependentUpon>ICostos.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Invetario\Inventario.resx">
       <DependentUpon>Inventario.vb</DependentUpon>
     </EmbeddedResource>
@@ -584,12 +563,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mass\NMMarca.resx">
       <DependentUpon>NMMarca.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MPrima\MPFHistorial.resx">
-      <DependentUpon>MPFHistorial.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MPrima\MPHistorial.resx">
-      <DependentUpon>MPHistorial.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MPrima\MPInventario.resx">
       <DependentUpon>MPInventario.vb</DependentUpon>
@@ -824,8 +797,6 @@
     <None Include="Resources\icons8-delivery-truck-96.png" />
     <None Include="Resources\icons8-carretilla-elevadora-80.png" />
     <None Include="Resources\icons8-remolque-240.png" />
-    <None Include="Resources\icons8-historial-de-pedidos-64.png" />
-    <Content Include="Resources\icons8-rollo-de-papel-para-empapelar-96.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
