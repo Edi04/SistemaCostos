@@ -1,8 +1,16 @@
 ﻿Public Class ClassGastosTerceros2
-    Dim descripcion, concepto, pedimento, codigoPed As String
+    Dim descripcion, concepto, pedimento, codigoPed, codigo_bueno As String
     Dim exento, gravado, iva, total As Double
     Dim idgastos2 As Integer
 
+    Public Property GT2_codigo_bueno
+        Get
+            Return codigo_bueno
+        End Get
+        Set(value)
+            codigo_bueno = value
+        End Set
+    End Property
     Public Property GT2_codigoPed
         Get
             Return codigoPed

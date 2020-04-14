@@ -118,6 +118,12 @@ Partial Class Index
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btn_rh_abre = New System.Windows.Forms.PictureBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.PM_recursos_Humanos = New System.Windows.Forms.Panel()
+        Me.btn_recursos_humanos = New System.Windows.Forms.PictureBox()
+        Me.Label15 = New System.Windows.Forms.Label()
         CType(Me.B_Minimizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.B_Cerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_mantenimientos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -177,6 +183,10 @@ Partial Class Index
         Me.PM_Armado_Rectangular.SuspendLayout()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
+        CType(Me.btn_rh_abre, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PM_recursos_Humanos.SuspendLayout()
+        CType(Me.btn_recursos_humanos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'B_Minimizar
@@ -187,7 +197,7 @@ Partial Class Index
         Me.B_Minimizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.B_Minimizar.Image = CType(resources.GetObject("B_Minimizar.Image"), System.Drawing.Image)
         Me.B_Minimizar.InitialImage = Global.NucleosAve.My.Resources.Resources.icons8_minimizar_la_ventana_5001
-        Me.B_Minimizar.Location = New System.Drawing.Point(584, 17)
+        Me.B_Minimizar.Location = New System.Drawing.Point(652, 1)
         Me.B_Minimizar.Name = "B_Minimizar"
         Me.B_Minimizar.Size = New System.Drawing.Size(53, 52)
         Me.B_Minimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -201,7 +211,7 @@ Partial Class Index
         Me.B_Cerrar.BackColor = System.Drawing.Color.Transparent
         Me.B_Cerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.B_Cerrar.Image = Global.NucleosAve.My.Resources.Resources.icons8_cerrar_ventana_5001
-        Me.B_Cerrar.Location = New System.Drawing.Point(638, 17)
+        Me.B_Cerrar.Location = New System.Drawing.Point(706, 1)
         Me.B_Cerrar.Name = "B_Cerrar"
         Me.B_Cerrar.Size = New System.Drawing.Size(55, 52)
         Me.B_Cerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -1278,7 +1288,7 @@ Partial Class Index
         Me.PA_R.BackColor = System.Drawing.Color.Transparent
         Me.PA_R.Controls.Add(Me.BA_R)
         Me.PA_R.Controls.Add(Me.Label6)
-        Me.PA_R.Location = New System.Drawing.Point(570, 141)
+        Me.PA_R.Location = New System.Drawing.Point(639, 140)
         Me.PA_R.Name = "PA_R"
         Me.PA_R.Size = New System.Drawing.Size(61, 72)
         Me.PA_R.TabIndex = 77
@@ -1375,11 +1385,88 @@ Partial Class Index
         Me.Label9.TabIndex = 70
         Me.Label9.Text = "Asignar OT."
         '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.Transparent
+        Me.Panel1.Controls.Add(Me.btn_rh_abre)
+        Me.Panel1.Controls.Add(Me.Label11)
+        Me.Panel1.Location = New System.Drawing.Point(572, 141)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(61, 82)
+        Me.Panel1.TabIndex = 79
+        '
+        'btn_rh_abre
+        '
+        Me.btn_rh_abre.AccessibleDescription = "dfghdfgdfhdhfd"
+        Me.btn_rh_abre.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btn_rh_abre.BackColor = System.Drawing.Color.Transparent
+        Me.btn_rh_abre.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn_rh_abre.Image = Global.NucleosAve.My.Resources.Resources.icons8_apretón_de_manos_80__1_
+        Me.btn_rh_abre.Location = New System.Drawing.Point(3, 6)
+        Me.btn_rh_abre.Name = "btn_rh_abre"
+        Me.btn_rh_abre.Size = New System.Drawing.Size(55, 52)
+        Me.btn_rh_abre.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_rh_abre.TabIndex = 35
+        Me.btn_rh_abre.TabStop = False
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.BackColor = System.Drawing.Color.Transparent
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.ForeColor = System.Drawing.Color.Black
+        Me.Label11.Location = New System.Drawing.Point(13, 61)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(25, 13)
+        Me.Label11.TabIndex = 36
+        Me.Label11.Text = "RH"
+        Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'PM_recursos_Humanos
+        '
+        Me.PM_recursos_Humanos.BackColor = System.Drawing.Color.Transparent
+        Me.PM_recursos_Humanos.Controls.Add(Me.btn_recursos_humanos)
+        Me.PM_recursos_Humanos.Controls.Add(Me.Label15)
+        Me.PM_recursos_Humanos.Location = New System.Drawing.Point(30, 250)
+        Me.PM_recursos_Humanos.Name = "PM_recursos_Humanos"
+        Me.PM_recursos_Humanos.Size = New System.Drawing.Size(570, 130)
+        Me.PM_recursos_Humanos.TabIndex = 77
+        Me.PM_recursos_Humanos.Visible = False
+        '
+        'btn_recursos_humanos
+        '
+        Me.btn_recursos_humanos.AccessibleDescription = "dfghdfgdfhdhfd"
+        Me.btn_recursos_humanos.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btn_recursos_humanos.BackColor = System.Drawing.Color.Transparent
+        Me.btn_recursos_humanos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn_recursos_humanos.Image = Global.NucleosAve.My.Resources.Resources.icons8_apretón_de_manos_80__1_
+        Me.btn_recursos_humanos.Location = New System.Drawing.Point(45, 9)
+        Me.btn_recursos_humanos.Name = "btn_recursos_humanos"
+        Me.btn_recursos_humanos.Size = New System.Drawing.Size(65, 65)
+        Me.btn_recursos_humanos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_recursos_humanos.TabIndex = 67
+        Me.btn_recursos_humanos.TabStop = False
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.BackColor = System.Drawing.Color.Transparent
+        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.ForeColor = System.Drawing.Color.Black
+        Me.Label15.Location = New System.Drawing.Point(11, 78)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(132, 15)
+        Me.Label15.TabIndex = 68
+        Me.Label15.Text = "Recursos Humanos"
+        '
         'Index
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.NucleosAve.My.Resources.Resources.Fondo
+        Me.ClientSize = New System.Drawing.Size(762, 425)
+        Me.Controls.Add(Me.PM_recursos_Humanos)
+        Me.Controls.Add(Me.Panel1)
         Me.ClientSize = New System.Drawing.Size(715, 425)
         Me.Controls.Add(Me.PMMPrima)
         Me.Controls.Add(Me.PMAlmacen)
@@ -1488,6 +1575,12 @@ Partial Class Index
         Me.PM_Armado_Rectangular.PerformLayout()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        CType(Me.btn_rh_abre, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PM_recursos_Humanos.ResumeLayout(False)
+        Me.PM_recursos_Humanos.PerformLayout()
+        CType(Me.btn_recursos_humanos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1585,6 +1678,12 @@ Partial Class Index
     Friend WithEvents btn_entregas As PictureBox
     Friend WithEvents Label10 As Label
     Friend WithEvents btn_fletesyentregas As PictureBox
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents btn_rh_abre As PictureBox
+    Friend WithEvents Label11 As Label
+    Friend WithEvents PM_recursos_Humanos As Panel
+    Friend WithEvents btn_recursos_humanos As PictureBox
+    Friend WithEvents Label15 As Label
     Friend WithEvents PBMHR As Panel
     Friend WithEvents BMOHR As PictureBox
     Friend WithEvents LHR As Label

@@ -410,8 +410,9 @@ Public Class Funcion_Registros
             comando.Parameters.AddWithValue("@otrosgastos", dts.Peotrosgastos)
             comando.Parameters.AddWithValue("@importeCT", dts.PeimporteCT)
             comando.Parameters.AddWithValue("@ivaCT", dts.PeivaCT)
-
             comando.Parameters.AddWithValue("@pedimentoclave", dts.Pecodigo_pedimento)
+            comando.Parameters.AddWithValue("@Estado", "Activo")
+            comando.Parameters.AddWithValue("@CodigoBueno", dts.Pecodigobueno)
 
             If comando.ExecuteNonQuery Then
                 Return True
@@ -438,6 +439,7 @@ Public Class Funcion_Registros
             comando.Parameters.AddWithValue("@fraccion", dts.Merc_fraccion)
             comando.Parameters.AddWithValue("@pedimento", dts.Merc_pedimento)
             comando.Parameters.AddWithValue("@codigoPed", dts.Merc_codigoPed)
+            comando.Parameters.AddWithValue("@codigo_bueno", dts.Merc_codigo_bueno)
 
             If comando.ExecuteNonQuery Then
                 Return True
@@ -468,6 +470,7 @@ Public Class Funcion_Registros
             comando.Parameters.AddWithValue("@seccion", "Relacion de Gastos por Terceros 1")
             comando.Parameters.AddWithValue("@codigoPed", dts.GT_codigoPed)
             comando.Parameters.AddWithValue("@iva", dts.GT_iva)
+            comando.Parameters.AddWithValue("@codigo_bueno", dts.GT_codigo_bueno)
 
             If comando.ExecuteNonQuery Then
                 Return True
@@ -500,6 +503,7 @@ Public Class Funcion_Registros
             comando.Parameters.AddWithValue("@total", dts.GT2_total)
             comando.Parameters.AddWithValue("@seccion", "Relacion de Gastos por Terceros 2")
             comando.Parameters.AddWithValue("@codigoPed", dts.GT2_codigoPed)
+            comando.Parameters.AddWithValue("@codigo_bueno", dts.GT2_codigo_bueno)
 
             If comando.ExecuteNonQuery Then
                 Return True
@@ -528,6 +532,7 @@ Public Class Funcion_Registros
             comando.Parameters.AddWithValue("@importe", dts.CB_importe)
             comando.Parameters.AddWithValue("@seccion", "Customs Brokerage")
             comando.Parameters.AddWithValue("@codigoPed", dts.CB_codigoPed)
+            comando.Parameters.AddWithValue("@codigo_bueno", dts.CB_codigo_bueno)
 
             If comando.ExecuteNonQuery Then
                 Return True
@@ -561,6 +566,7 @@ Public Class Funcion_Registros
             comando.Parameters.AddWithValue("@retenciones", dts.FS_retenciones)
             comando.Parameters.AddWithValue("@tc", dts.FS_tc)
             comando.Parameters.AddWithValue("@usd", dts.FS_usd)
+            comando.Parameters.AddWithValue("@codigo_bueno", dts.FS_codigo_bueno)
 
 
             If comando.ExecuteNonQuery Then

@@ -1,7 +1,15 @@
 ﻿Public Class ClassGastosTerceros1
-    Dim codigo, descripcion, pedimento, codigoPed As String
+    Dim codigo, descripcion, pedimento, codigoPed, codigo_bueno As String
     Dim importe, iva, total As Double
     Dim idgastos1 As Integer
+    Public Property GT_codigo_bueno
+        Get
+            Return codigo_bueno
+        End Get
+        Set(value)
+            codigo_bueno = value
+        End Set
+    End Property
     Public Property GT_codigoPed
         Get
             Return codigoPed

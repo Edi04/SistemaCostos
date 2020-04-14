@@ -1,7 +1,15 @@
 ﻿Public Class ClassCustomsBrokerage
-    Dim pedimento, descripcion, seccion, codigoPed As String
+    Dim pedimento, descripcion, seccion, codigoPed, codigo_bueno As String
     Dim importe, total, iva As Double
     Dim idcustoms As Integer
+    Public Property CB_codigo_bueno
+        Get
+            Return codigo_bueno
+        End Get
+        Set(value)
+            codigo_bueno = value
+        End Set
+    End Property
     Public Property CB_codigoPed
         Get
             Return codigoPed

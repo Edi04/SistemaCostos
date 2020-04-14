@@ -156,6 +156,8 @@ Public Class RegistrosPedimentos
         Pedimentos.textgravado10.Clear()
         Pedimentos.textIva_GT2_10.Clear()
         Pedimentos.txtTotalGT_10.Clear()
+
+        Pedimentos.Textbox_codigo_pedimento.Clear()
         '------------------------------------------------------------------------
         '------------------------------Custom Brokerage--------------------------
         Pedimentos.textDescripcion1.Clear()
@@ -245,6 +247,7 @@ Public Class RegistrosPedimentos
         Dim tabla As New DataTable
         Pedimentos.txtCodigoPedimento1.Text = DataGridRegistrosPedimentos.CurrentRow.Cells(1).Value
         Pedimentos.txtCodigoPedimento.Text = DataGridRegistrosPedimentos.CurrentRow.Cells(0).Value
+        Pedimentos.Textbox_codigo_pedimento.Text = DataGridRegistrosPedimentos.CurrentRow.Cells(34).Value
         Dim codigo_principal As String
         Dim codigo As String
         codigo_principal = Pedimentos.txtCodigoPedimento.Text
@@ -329,6 +332,8 @@ Public Class RegistrosPedimentos
             Dim codigo As String
             Dim codigo_principal As String
             Dim tabla2 As New DataTable
+            Dim codigo_bueno As String
+            codigo_bueno = Pedimentos.Textbox_codigo_pedimento.Text
             codigo = Pedimentos.txtCodigoPedimento1.Text
             codigo_principal = Pedimentos.txtCodigoPedimento.Text
             Dim conexxo As New SqlConnection(conexioncita)
@@ -341,7 +346,7 @@ Public Class RegistrosPedimentos
             MP.id_productos,
             MP.codigoPed
             from TB_Mercancia_Pedimentos as MP
-            where MP.pedimento='" + codigo + "' and MP.codigoPed='" + codigo_principal + "'", conexxo)
+            where MP.codigo_bueno='" + codigo_bueno + "' and MP.pedimento='" + codigo + "' and MP.codigoPed='" + codigo_principal + "'", conexxo)
             da2.SelectCommand = comando2
             da2.Fill(tabla2)
 
@@ -355,111 +360,46 @@ Public Class RegistrosPedimentos
                 Pedimentos.txtMercancia2.Text = tabla2.Rows(1)(0).ToString
                 Pedimentos.txtfraccion2.Text = tabla2.Rows(1)(1).ToString
                 Pedimentos.Textid1_2.Text = tabla2.Rows(1)(2).ToString
-                Pedimentos.TextNum2.Visible = True
-                Pedimentos.txtMercancia2.Visible = True
-                Pedimentos.txtfraccion2.Visible = True
-
-            Else
-                Pedimentos.TextNum2.Visible = False
-                Pedimentos.txtMercancia2.Visible = False
-                Pedimentos.txtfraccion2.Visible = False
             End If
             If (tabla2.Rows.Count >= 3) Then
                 Pedimentos.txtMercancia3.Text = tabla2.Rows(2)(0).ToString
                 Pedimentos.txtfraccion3.Text = tabla2.Rows(2)(1).ToString
                 Pedimentos.Textid1_3.Text = tabla2.Rows(2)(2).ToString
-                Pedimentos.TextNum3.Visible = True
-                Pedimentos.txtMercancia3.Visible = True
-                Pedimentos.txtfraccion3.Visible = True
-
-            Else
-                Pedimentos.TextNum3.Visible = False
-                Pedimentos.txtMercancia3.Visible = False
-                Pedimentos.txtfraccion3.Visible = False
             End If
             If (tabla2.Rows.Count >= 4) Then
                 Pedimentos.txtMercancia4.Text = tabla2.Rows(3)(0).ToString
                 Pedimentos.txtfraccion4.Text = tabla2.Rows(3)(1).ToString
                 Pedimentos.Textid1_4.Text = tabla2.Rows(3)(2).ToString
-                Pedimentos.TextNum4.Visible = True
-                Pedimentos.txtMercancia4.Visible = True
-                Pedimentos.txtfraccion4.Visible = True
-            Else
-                Pedimentos.TextNum4.Visible = False
-                Pedimentos.txtMercancia4.Visible = False
-                Pedimentos.txtfraccion4.Visible = False
             End If
             If (tabla2.Rows.Count >= 5) Then
                 Pedimentos.txtMercancia5.Text = tabla2.Rows(4)(0).ToString
                 Pedimentos.txtfraccion5.Text = tabla2.Rows(4)(1).ToString
                 Pedimentos.Textid1_5.Text = tabla2.Rows(4)(2).ToString
-                Pedimentos.txtMercancia5.Visible = True
-                Pedimentos.txtfraccion5.Visible = True
-                Pedimentos.TextNum5.Visible = True
-            Else
-                Pedimentos.TextNum5.Visible = False
-                Pedimentos.txtMercancia5.Visible = False
-                Pedimentos.txtfraccion5.Visible = False
             End If
             If (tabla2.Rows.Count >= 6) Then
                 Pedimentos.txtMercancia6.Text = tabla2.Rows(5)(0).ToString
                 Pedimentos.txtfraccion6.Text = tabla2.Rows(5)(1).ToString
                 Pedimentos.Textid1_6.Text = tabla2.Rows(5)(2).ToString
-                Pedimentos.TextNum6.Visible = True
-                Pedimentos.txtMercancia6.Visible = True
-                Pedimentos.txtfraccion6.Visible = True
-            Else
-                Pedimentos.TextNum6.Visible = False
-                Pedimentos.txtMercancia6.Visible = False
-                Pedimentos.txtfraccion6.Visible = False
             End If
             If (tabla2.Rows.Count >= 7) Then
                 Pedimentos.txtMercancia7.Text = tabla2.Rows(6)(0).ToString
                 Pedimentos.txtfraccion7.Text = tabla2.Rows(6)(1).ToString
                 Pedimentos.Textid1_7.Text = tabla2.Rows(6)(2).ToString
-                Pedimentos.TextNum7.Visible = True
-                Pedimentos.txtMercancia7.Visible = True
-                Pedimentos.txtfraccion7.Visible = True
-            Else
-                Pedimentos.TextNum7.Visible = False
-                Pedimentos.txtMercancia7.Visible = False
-                Pedimentos.txtfraccion7.Visible = False
             End If
             If (tabla2.Rows.Count >= 8) Then
                 Pedimentos.txtMercancia8.Text = tabla2.Rows(7)(0).ToString
                 Pedimentos.txtfraccion8.Text = tabla2.Rows(7)(1).ToString
                 Pedimentos.Textid1_8.Text = tabla2.Rows(7)(2).ToString
-                Pedimentos.TextNum8.Visible = True
-                Pedimentos.txtMercancia8.Visible = True
-                Pedimentos.txtfraccion8.Visible = True
-            Else
-                Pedimentos.TextNum8.Visible = False
-                Pedimentos.txtMercancia8.Visible = False
-                Pedimentos.txtfraccion8.Visible = False
             End If
             If (tabla2.Rows.Count >= 9) Then
                 Pedimentos.txtMercancia9.Text = tabla2.Rows(8)(0).ToString
                 Pedimentos.txtfraccion9.Text = tabla2.Rows(8)(1).ToString
                 Pedimentos.Textid1_9.Text = tabla2.Rows(8)(2).ToString
-                Pedimentos.TextNum9.Visible = True
-                Pedimentos.txtMercancia9.Visible = True
-                Pedimentos.txtfraccion9.Visible = True
-            Else
-                Pedimentos.TextNum9.Visible = False
-                Pedimentos.txtMercancia9.Visible = False
-                Pedimentos.txtfraccion9.Visible = False
             End If
             If (tabla2.Rows.Count >= 10) Then
                 Pedimentos.txtMercancia10.Text = tabla2.Rows(9)(0).ToString
                 Pedimentos.txtfraccion10.Text = tabla2.Rows(9)(1).ToString
                 Pedimentos.Textid1_10.Text = tabla2.Rows(9)(2).ToString
-                Pedimentos.TextNum10.Visible = True
-                Pedimentos.txtMercancia10.Visible = True
-                Pedimentos.txtfraccion10.Visible = True
-            Else
-                Pedimentos.TextNum10.Visible = False
-                Pedimentos.txtMercancia10.Visible = False
-                Pedimentos.txtfraccion10.Visible = False
             End If
             conexxo.Close()
         Catch ex As Exception
@@ -475,6 +415,8 @@ Public Class RegistrosPedimentos
             Dim tabla2 As New DataTable
             codigo = Pedimentos.txtCodigoPedimento1.Text
             codigo_principal = Pedimentos.txtCodigoPedimento.Text
+            Dim codigo_bueno As String
+            codigo_bueno = Pedimentos.Textbox_codigo_pedimento.Text
             Dim conexxo As New SqlConnection(conexioncita)
             Dim da2 As New SqlDataAdapter
             conexxo.Open()
@@ -486,7 +428,7 @@ Public Class RegistrosPedimentos
             CP.id_concepto,
             CP.iva
             from TB_Conceptos_Ped as CP
-            where CP.seccion='Relacion de Gastos por Terceros 1' and CP.pedimento='" + codigo + "' and CP.codigoPed='" + codigo_principal + "'", conexxo)
+            where CP.codigo_bueno='" + codigo_bueno + "' and CP.seccion='Relacion de Gastos por Terceros 1' and CP.pedimento='" + codigo + "' and CP.codigoPed='" + codigo_principal + "'", conexxo)
             da2.SelectCommand = comando2
             da2.Fill(tabla2)
 
@@ -512,18 +454,6 @@ Public Class RegistrosPedimentos
                     Pedimentos.iVACheck1.Checked = True
                     Pedimentos.TexIvaOp1.Text = tabla2.Rows(1)(4).ToString
                 End If
-                Pedimentos.txtcodigo2.Visible = True
-                Pedimentos.txtdescripcion2.Visible = True
-                Pedimentos.txtimporte2.Visible = True
-                Pedimentos.TexIvaOp1.Visible = True
-                Pedimentos.iVACheck1.Visible = True
-            Else
-                Pedimentos.txtcodigo2.Visible = False
-                Pedimentos.txtdescripcion2.Visible = False
-                Pedimentos.txtimporte2.Visible = False
-                Pedimentos.TexIvaOp1.Visible = False
-                Pedimentos.iVACheck1.Visible = False
-
             End If
             If (tabla2.Rows.Count >= 3) Then
                 Pedimentos.txtcodigo3.Text = tabla2.Rows(2)(0).ToString
@@ -538,20 +468,7 @@ Public Class RegistrosPedimentos
                     Pedimentos.iVACheck2.Checked = True
                     Pedimentos.TexIvaOp2.Text = tabla2.Rows(2)(4).ToString
                 End If
-                ':::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-                Pedimentos.txtcodigo3.Visible = True
-                Pedimentos.txtdescripcion3.Visible = True
-                Pedimentos.txtimporte3.Visible = True
-                Pedimentos.TexIvaOp2.Visible = True
-                Pedimentos.iVACheck2.Visible = True
-
-            Else
-                Pedimentos.txtcodigo3.Visible = False
-                Pedimentos.txtdescripcion3.Visible = False
-                Pedimentos.txtimporte3.Visible = False
-                Pedimentos.TexIvaOp2.Visible = False
-                Pedimentos.iVACheck2.Visible = False
-
+                ':::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::               
             End If
             If (tabla2.Rows.Count >= 4) Then
                 Pedimentos.txtcodigo4.Text = tabla2.Rows(3)(0).ToString
@@ -567,19 +484,6 @@ Public Class RegistrosPedimentos
                     Pedimentos.TexIvaOp3.Text = tabla2.Rows(3)(4).ToString
                 End If
                 ':::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-                Pedimentos.txtcodigo4.Visible = True
-                Pedimentos.txtdescripcion4.Visible = True
-                Pedimentos.txtimporte4.Visible = True
-                Pedimentos.TexIvaOp3.Visible = True
-                Pedimentos.iVACheck3.Visible = True
-
-            Else
-                Pedimentos.txtcodigo4.Visible = False
-                Pedimentos.txtdescripcion4.Visible = False
-                Pedimentos.txtimporte4.Visible = False
-                Pedimentos.TexIvaOp1.Visible = False
-                Pedimentos.iVACheck1.Visible = False
-
             End If
             If (tabla2.Rows.Count >= 5) Then
                 Pedimentos.txtcodigo5.Text = tabla2.Rows(4)(0).ToString
@@ -595,19 +499,6 @@ Public Class RegistrosPedimentos
                     Pedimentos.TexIvaOp4.Text = tabla2.Rows(4)(4).ToString
                 End If
                 ':::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-                Pedimentos.txtcodigo5.Visible = True
-                Pedimentos.txtdescripcion5.Visible = True
-                Pedimentos.txtimporte5.Visible = True
-                Pedimentos.TexIvaOp4.Visible = True
-                Pedimentos.iVACheck4.Visible = True
-
-            Else
-                Pedimentos.txtcodigo5.Visible = False
-                Pedimentos.txtdescripcion5.Visible = False
-                Pedimentos.txtimporte5.Visible = False
-                Pedimentos.TexIvaOp4.Visible = False
-                Pedimentos.iVACheck4.Visible = False
-
             End If
             If (tabla2.Rows.Count >= 6) Then
                 Pedimentos.txtcodigo6.Text = tabla2.Rows(5)(0).ToString
@@ -623,19 +514,6 @@ Public Class RegistrosPedimentos
                     Pedimentos.TexIvaOp5.Text = tabla2.Rows(5)(4).ToString
                 End If
                 ':::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-                Pedimentos.txtcodigo6.Visible = True
-                Pedimentos.txtdescripcion6.Visible = True
-                Pedimentos.txtimporte6.Visible = True
-                Pedimentos.TexIvaOp5.Visible = True
-                Pedimentos.iVACheck5.Visible = True
-
-            Else
-                Pedimentos.txtcodigo6.Visible = False
-                Pedimentos.txtdescripcion6.Visible = False
-                Pedimentos.txtimporte6.Visible = False
-                Pedimentos.TexIvaOp5.Visible = False
-                Pedimentos.iVACheck5.Visible = False
-
             End If
             If (tabla2.Rows.Count >= 7) Then
                 Pedimentos.txtcodigo7.Text = tabla2.Rows(6)(0).ToString
@@ -651,19 +529,6 @@ Public Class RegistrosPedimentos
                     Pedimentos.TexIvaOp6.Text = tabla2.Rows(6)(4).ToString
                 End If
                 ':::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-                Pedimentos.txtcodigo7.Visible = True
-                Pedimentos.txtdescripcion7.Visible = True
-                Pedimentos.txtimporte7.Visible = True
-                Pedimentos.TexIvaOp6.Visible = True
-                Pedimentos.iVACheck6.Visible = True
-
-            Else
-                Pedimentos.txtcodigo7.Visible = False
-                Pedimentos.txtdescripcion7.Visible = False
-                Pedimentos.txtimporte7.Visible = False
-                Pedimentos.TexIvaOp6.Visible = False
-                Pedimentos.iVACheck6.Visible = False
-
             End If
             If (tabla2.Rows.Count >= 8) Then
                 Pedimentos.txtcodigo8.Text = tabla2.Rows(7)(0).ToString
@@ -679,19 +544,6 @@ Public Class RegistrosPedimentos
                     Pedimentos.TexIvaOp7.Text = tabla2.Rows(7)(4).ToString
                 End If
                 ':::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-                Pedimentos.txtcodigo8.Visible = True
-                Pedimentos.txtdescripcion8.Visible = True
-                Pedimentos.txtimporte8.Visible = True
-                Pedimentos.TexIvaOp7.Visible = True
-                Pedimentos.iVACheck7.Visible = True
-
-            Else
-                Pedimentos.txtcodigo8.Visible = False
-                Pedimentos.txtdescripcion8.Visible = False
-                Pedimentos.txtimporte8.Visible = False
-                Pedimentos.TexIvaOp7.Visible = False
-                Pedimentos.iVACheck7.Visible = False
-
             End If
             If (tabla2.Rows.Count >= 9) Then
                 Pedimentos.txtcodigo9.Text = tabla2.Rows(8)(0).ToString
@@ -707,19 +559,6 @@ Public Class RegistrosPedimentos
                     Pedimentos.TexIvaOp8.Text = tabla2.Rows(8)(4).ToString
                 End If
                 ':::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-                Pedimentos.txtcodigo9.Visible = True
-                Pedimentos.txtdescripcion9.Visible = True
-                Pedimentos.txtimporte9.Visible = True
-                Pedimentos.TexIvaOp8.Visible = True
-                Pedimentos.iVACheck8.Visible = True
-
-            Else
-                Pedimentos.txtcodigo9.Visible = False
-                Pedimentos.txtdescripcion9.Visible = False
-                Pedimentos.txtimporte9.Visible = False
-                Pedimentos.TexIvaOp8.Visible = False
-                Pedimentos.iVACheck8.Visible = False
-
             End If
             If (tabla2.Rows.Count >= 10) Then
                 Pedimentos.txtcodigo10.Text = tabla2.Rows(9)(0).ToString
@@ -734,20 +573,7 @@ Public Class RegistrosPedimentos
                     Pedimentos.iVACheck9.Checked = True
                     Pedimentos.TexIvaOp9.Text = tabla2.Rows(9)(4).ToString
                 End If
-                ':::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-                Pedimentos.txtcodigo10.Visible = True
-                Pedimentos.txtdescripcion10.Visible = True
-                Pedimentos.txtimporte10.Visible = True
-                Pedimentos.TexIvaOp9.Visible = True
-                Pedimentos.iVACheck9.Visible = True
-
-            Else
-                Pedimentos.txtcodigo10.Visible = False
-                Pedimentos.txtdescripcion10.Visible = False
-                Pedimentos.txtimporte10.Visible = False
-                Pedimentos.TexIvaOp9.Visible = True
-                Pedimentos.iVACheck9.Visible = True
-
+                ':::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::             
             End If
             conexxo.Close()
         Catch ex As Exception
@@ -764,6 +590,8 @@ Public Class RegistrosPedimentos
             Dim tabla2 As New DataTable
             codigo = Pedimentos.txtCodigoPedimento1.Text
             codigo_principal = Pedimentos.txtCodigoPedimento.Text
+            Dim codigo_bueno As String
+            codigo_bueno = Pedimentos.Textbox_codigo_pedimento.Text
             Dim conexxo As New SqlConnection(conexioncita)
             Dim da2 As New SqlDataAdapter
             conexxo.Open()
@@ -778,7 +606,7 @@ Public Class RegistrosPedimentos
             CP.seccion,
             CP.id_concepto
             from TB_Conceptos_Ped as CP
-            where CP.seccion='Relacion de Gastos por Terceros 2' and CP.pedimento='" + codigo + "' and CP.codigoPed='" + codigo_principal + "'", conexxo)
+            where CP.codigo_bueno='" + codigo_bueno + "' and CP.seccion='Relacion de Gastos por Terceros 2' and CP.pedimento='" + codigo + "' and CP.codigoPed='" + codigo_principal + "'", conexxo)
             da2.SelectCommand = comando2
             da2.Fill(tabla2)
 
@@ -800,21 +628,6 @@ Public Class RegistrosPedimentos
                 Pedimentos.textIva_GT2_2.Text = tabla2.Rows(1)(4).ToString
                 Pedimentos.txtTotalGT_2.Text = tabla2.Rows(1)(5).ToString
                 Pedimentos.Textid3_2.Text = tabla2.Rows(1)(7).ToString
-                Pedimentos.numtext2.Visible = True
-                Pedimentos.txtdesc2.Visible = True
-                Pedimentos.txtconcepto2.Visible = True
-                Pedimentos.txtexento2.Visible = True
-                Pedimentos.textgravado2.Visible = True
-                Pedimentos.textIva_GT2_2.Visible = True
-                Pedimentos.txtTotalGT_2.Visible = True
-            Else
-                Pedimentos.numtext2.Visible = False
-                Pedimentos.txtdesc2.Visible = False
-                Pedimentos.txtconcepto2.Visible = False
-                Pedimentos.txtexento2.Visible = False
-                Pedimentos.textgravado2.Visible = False
-                Pedimentos.textIva_GT2_2.Visible = False
-                Pedimentos.txtTotalGT_2.Visible = False
             End If
             If (tabla2.Rows.Count >= 3) Then
                 Pedimentos.txtdesc3.Text = tabla2.Rows(2)(0).ToString
@@ -824,21 +637,6 @@ Public Class RegistrosPedimentos
                 Pedimentos.textIva_GT2_3.Text = tabla2.Rows(2)(4).ToString
                 Pedimentos.txtTotalGT_3.Text = tabla2.Rows(2)(5).ToString
                 Pedimentos.Textid3_3.Text = tabla2.Rows(2)(7).ToString
-                Pedimentos.numtext3.Visible = True
-                Pedimentos.txtdesc3.Visible = True
-                Pedimentos.txtconcepto3.Visible = True
-                Pedimentos.txtexento3.Visible = True
-                Pedimentos.textgravado3.Visible = True
-                Pedimentos.textIva_GT2_3.Visible = True
-                Pedimentos.txtTotalGT_3.Visible = True
-            Else
-                Pedimentos.numtext3.Visible = False
-                Pedimentos.txtdesc3.Visible = False
-                Pedimentos.txtconcepto3.Visible = False
-                Pedimentos.txtexento3.Visible = False
-                Pedimentos.textgravado3.Visible = False
-                Pedimentos.textIva_GT2_3.Visible = False
-                Pedimentos.txtTotalGT_3.Visible = False
             End If
             If (tabla2.Rows.Count >= 4) Then
                 Pedimentos.txtdesc4.Text = tabla2.Rows(3)(0).ToString
@@ -848,21 +646,6 @@ Public Class RegistrosPedimentos
                 Pedimentos.textIva_GT2_4.Text = tabla2.Rows(3)(4).ToString
                 Pedimentos.txtTotalGT_4.Text = tabla2.Rows(3)(5).ToString
                 Pedimentos.Textid3_4.Text = tabla2.Rows(3)(7).ToString
-                Pedimentos.numtext4.Visible = True
-                Pedimentos.txtdesc4.Visible = True
-                Pedimentos.txtconcepto4.Visible = True
-                Pedimentos.txtexento4.Visible = True
-                Pedimentos.textgravado4.Visible = True
-                Pedimentos.textIva_GT2_4.Visible = True
-                Pedimentos.txtTotalGT_4.Visible = True
-            Else
-                Pedimentos.numtext4.Visible = False
-                Pedimentos.txtdesc4.Visible = False
-                Pedimentos.txtconcepto4.Visible = False
-                Pedimentos.txtexento4.Visible = False
-                Pedimentos.textgravado4.Visible = False
-                Pedimentos.textIva_GT2_4.Visible = False
-                Pedimentos.txtTotalGT_4.Visible = False
             End If
             If (tabla2.Rows.Count >= 5) Then
                 Pedimentos.txtdesc5.Text = tabla2.Rows(4)(0).ToString
@@ -871,22 +654,7 @@ Public Class RegistrosPedimentos
                 Pedimentos.textgravado5.Text = tabla2.Rows(4)(3).ToString
                 Pedimentos.textIva_GT2_5.Text = tabla2.Rows(4)(4).ToString
                 Pedimentos.txtTotalGT_5.Text = tabla2.Rows(4)(5).ToString
-                 Pedimentos.Textid3_5.Text = tabla2.Rows(4)(7).ToString
-                Pedimentos.numtext5.Visible = True
-                Pedimentos.txtdesc5.Visible = True
-                Pedimentos.txtconcepto5.Visible = True
-                Pedimentos.txtexento5.Visible = True
-                Pedimentos.textgravado5.Visible = True
-                Pedimentos.textIva_GT2_5.Visible = True
-                Pedimentos.txtTotalGT_5.Visible = True
-            Else
-                Pedimentos.numtext5.Visible = False
-                Pedimentos.txtdesc5.Visible = False
-                Pedimentos.txtconcepto5.Visible = False
-                Pedimentos.txtexento5.Visible = False
-                Pedimentos.textgravado5.Visible = False
-                Pedimentos.textIva_GT2_5.Visible = False
-                Pedimentos.txtTotalGT_5.Visible = False
+                Pedimentos.Textid3_5.Text = tabla2.Rows(4)(7).ToString
             End If
             If (tabla2.Rows.Count >= 6) Then
                 Pedimentos.txtdesc6.Text = tabla2.Rows(5)(0).ToString
@@ -896,21 +664,6 @@ Public Class RegistrosPedimentos
                 Pedimentos.textIva_GT2_6.Text = tabla2.Rows(5)(4).ToString
                 Pedimentos.txtTotalGT_6.Text = tabla2.Rows(5)(5).ToString
                 Pedimentos.Textid3_6.Text = tabla2.Rows(5)(7).ToString
-                Pedimentos.numtext6.Visible = True
-                Pedimentos.txtdesc6.Visible = True
-                Pedimentos.txtconcepto6.Visible = True
-                Pedimentos.txtexento6.Visible = True
-                Pedimentos.textgravado6.Visible = True
-                Pedimentos.textIva_GT2_6.Visible = True
-                Pedimentos.txtTotalGT_6.Visible = True
-            Else
-                Pedimentos.numtext6.Visible = False
-                Pedimentos.txtdesc6.Visible = False
-                Pedimentos.txtconcepto6.Visible = False
-                Pedimentos.txtexento6.Visible = False
-                Pedimentos.textgravado6.Visible = False
-                Pedimentos.textIva_GT2_6.Visible = False
-                Pedimentos.txtTotalGT_6.Visible = False
             End If
             If (tabla2.Rows.Count >= 7) Then
                 Pedimentos.txtdesc7.Text = tabla2.Rows(6)(0).ToString
@@ -920,21 +673,6 @@ Public Class RegistrosPedimentos
                 Pedimentos.textIva_GT2_7.Text = tabla2.Rows(6)(4).ToString
                 Pedimentos.txtTotalGT_7.Text = tabla2.Rows(6)(5).ToString
                 Pedimentos.Textid3_7.Text = tabla2.Rows(6)(7).ToString
-                Pedimentos.numtext7.Visible = True
-                Pedimentos.txtdesc7.Visible = True
-                Pedimentos.txtconcepto7.Visible = True
-                Pedimentos.txtexento7.Visible = True
-                Pedimentos.textgravado7.Visible = True
-                Pedimentos.textIva_GT2_7.Visible = True
-                Pedimentos.txtTotalGT_7.Visible = True
-            Else
-                Pedimentos.numtext7.Visible = False
-                Pedimentos.txtdesc7.Visible = False
-                Pedimentos.txtconcepto7.Visible = False
-                Pedimentos.txtexento7.Visible = False
-                Pedimentos.textgravado7.Visible = False
-                Pedimentos.textIva_GT2_7.Visible = False
-                Pedimentos.txtTotalGT_7.Visible = False
             End If
             If (tabla2.Rows.Count >= 8) Then
                 Pedimentos.txtdesc8.Text = tabla2.Rows(7)(0).ToString
@@ -944,21 +682,6 @@ Public Class RegistrosPedimentos
                 Pedimentos.textIva_GT2_8.Text = tabla2.Rows(7)(4).ToString
                 Pedimentos.txtTotalGT_8.Text = tabla2.Rows(7)(5).ToString
                 Pedimentos.Textid3_8.Text = tabla2.Rows(7)(7).ToString
-                Pedimentos.numtext8.Visible = True
-                Pedimentos.txtdesc8.Visible = True
-                Pedimentos.txtconcepto8.Visible = True
-                Pedimentos.txtexento8.Visible = True
-                Pedimentos.textgravado8.Visible = True
-                Pedimentos.textIva_GT2_8.Visible = True
-                Pedimentos.txtTotalGT_8.Visible = True
-            Else
-                Pedimentos.numtext8.Visible = False
-                Pedimentos.txtdesc8.Visible = False
-                Pedimentos.txtconcepto8.Visible = False
-                Pedimentos.txtexento8.Visible = False
-                Pedimentos.textgravado8.Visible = False
-                Pedimentos.textIva_GT2_8.Visible = False
-                Pedimentos.txtTotalGT_8.Visible = False
             End If
             If (tabla2.Rows.Count >= 9) Then
                 Pedimentos.txtdesc9.Text = tabla2.Rows(8)(0).ToString
@@ -968,21 +691,6 @@ Public Class RegistrosPedimentos
                 Pedimentos.textIva_GT2_9.Text = tabla2.Rows(8)(4).ToString
                 Pedimentos.txtTotalGT_9.Text = tabla2.Rows(8)(5).ToString
                 Pedimentos.Textid3_9.Text = tabla2.Rows(8)(7).ToString
-                Pedimentos.numtext9.Visible = True
-                Pedimentos.txtdesc9.Visible = True
-                Pedimentos.txtconcepto9.Visible = True
-                Pedimentos.txtexento9.Visible = True
-                Pedimentos.textgravado9.Visible = True
-                Pedimentos.textIva_GT2_9.Visible = True
-                Pedimentos.txtTotalGT_9.Visible = True
-            Else
-                Pedimentos.numtext9.Visible = False
-                Pedimentos.txtdesc9.Visible = False
-                Pedimentos.txtconcepto9.Visible = False
-                Pedimentos.txtexento9.Visible = False
-                Pedimentos.textgravado9.Visible = False
-                Pedimentos.textIva_GT2_9.Visible = False
-                Pedimentos.txtTotalGT_9.Visible = False
             End If
             If (tabla2.Rows.Count >= 10) Then
                 Pedimentos.txtdesc10.Text = tabla2.Rows(9)(0).ToString
@@ -992,21 +700,6 @@ Public Class RegistrosPedimentos
                 Pedimentos.textIva_GT2_10.Text = tabla2.Rows(9)(4).ToString
                 Pedimentos.txtTotalGT_10.Text = tabla2.Rows(9)(5).ToString
                 Pedimentos.Textid3_10.Text = tabla2.Rows(9)(7).ToString
-                Pedimentos.numtext10.Visible = True
-                Pedimentos.txtdesc10.Visible = True
-                Pedimentos.txtconcepto10.Visible = True
-                Pedimentos.txtexento10.Visible = True
-                Pedimentos.textgravado10.Visible = True
-                Pedimentos.textIva_GT2_10.Visible = True
-                Pedimentos.txtTotalGT_10.Visible = True
-            Else
-                Pedimentos.numtext10.Visible = False
-                Pedimentos.txtdesc10.Visible = False
-                Pedimentos.txtconcepto10.Visible = False
-                Pedimentos.txtexento10.Visible = False
-                Pedimentos.textgravado10.Visible = False
-                Pedimentos.textIva_GT2_10.Visible = False
-                Pedimentos.txtTotalGT_10.Visible = False
             End If
             conexxo.Close()
         Catch ex As Exception
@@ -1027,6 +720,8 @@ Public Class RegistrosPedimentos
             Dim tabla2 As New DataTable
             codigo = Pedimentos.txtCodigoPedimento1.Text
             codigo_principal = Pedimentos.txtCodigoPedimento.Text
+            Dim codigo_bueno As String
+            codigo_bueno = Pedimentos.Textbox_codigo_pedimento.Text
             Dim conexxo As New SqlConnection(conexioncita)
             Dim da2 As New SqlDataAdapter
             conexxo.Open()
@@ -1036,7 +731,7 @@ Public Class RegistrosPedimentos
             CP.importe,
             CP.id_concepto
             from TB_Conceptos_Ped as CP
-            where CP.seccion='Customs Brokerage' and CP.pedimento='" + codigo + "' and CP.codigoPed='" + codigo_principal + "'", conexxo)
+            where CP.codigo_bueno='" + codigo_bueno + "' and CP.seccion='Customs Brokerage' and CP.pedimento='" + codigo + "' and CP.codigoPed='" + codigo_principal + "'", conexxo)
             da2.SelectCommand = comando2
             da2.Fill(tabla2)
 
@@ -1049,109 +744,46 @@ Public Class RegistrosPedimentos
                 Pedimentos.textDescripcion2.Text = tabla2.Rows(1)(0).ToString
                 Pedimentos.textimporte2.Text = tabla2.Rows(1)(1).ToString
                 Pedimentos.Textid4_2.Text = tabla2.Rows(1)(2).ToString
-                Pedimentos.txtNumero2.Visible = True
-                Pedimentos.textDescripcion2.Visible = True
-                Pedimentos.textimporte2.Visible = True
-            Else
-                Pedimentos.txtNumero2.Visible = False
-                Pedimentos.textDescripcion2.Visible = False
-                Pedimentos.textimporte2.Visible = False
             End If
             If (tabla2.Rows.Count >= 3) Then
                 Pedimentos.textDescripcion3.Text = tabla2.Rows(2)(0).ToString
                 Pedimentos.textimporte3.Text = tabla2.Rows(2)(1).ToString
                 Pedimentos.Textid4_3.Text = tabla2.Rows(2)(2).ToString
-                Pedimentos.txtNumero3.Visible = True
-                Pedimentos.textDescripcion3.Visible = True
-                Pedimentos.textimporte3.Visible = True
-            Else
-                Pedimentos.txtNumero3.Visible = False
-                Pedimentos.textDescripcion3.Visible = False
-                Pedimentos.textimporte3.Visible = False
             End If
             If (tabla2.Rows.Count >= 4) Then
                 Pedimentos.textDescripcion4.Text = tabla2.Rows(3)(0).ToString
                 Pedimentos.textimporte4.Text = tabla2.Rows(3)(1).ToString
                 Pedimentos.Textid4_4.Text = tabla2.Rows(3)(2).ToString
-                Pedimentos.txtNumero4.Visible = True
-                Pedimentos.textDescripcion4.Visible = True
-                Pedimentos.textimporte4.Visible = True
-            Else
-                Pedimentos.txtNumero4.Visible = False
-                Pedimentos.textDescripcion4.Visible = False
-                Pedimentos.textimporte4.Visible = False
             End If
             If (tabla2.Rows.Count >= 5) Then
                 Pedimentos.textDescripcion5.Text = tabla2.Rows(4)(0).ToString
                 Pedimentos.textimporte5.Text = tabla2.Rows(4)(1).ToString
                 Pedimentos.Textid4_5.Text = tabla2.Rows(4)(2).ToString
-                Pedimentos.txtNumero5.Visible = True
-                Pedimentos.textDescripcion5.Visible = True
-                Pedimentos.textimporte5.Visible = True
-            Else
-                Pedimentos.txtNumero5.Visible = False
-                Pedimentos.textDescripcion5.Visible = False
-                Pedimentos.textimporte5.Visible = False
             End If
             If (tabla2.Rows.Count >= 6) Then
                 Pedimentos.textDescripcion6.Text = tabla2.Rows(5)(0).ToString
                 Pedimentos.textimporte6.Text = tabla2.Rows(5)(1).ToString
                 Pedimentos.Textid4_6.Text = tabla2.Rows(5)(2).ToString
-                Pedimentos.txtNumero6.Visible = True
-                Pedimentos.textDescripcion6.Visible = True
-                Pedimentos.textimporte6.Visible = True
-            Else
-                Pedimentos.txtNumero6.Visible = False
-                Pedimentos.textDescripcion6.Visible = False
-                Pedimentos.textimporte6.Visible = False
             End If
             If (tabla2.Rows.Count >= 7) Then
                 Pedimentos.textDescripcion7.Text = tabla2.Rows(6)(0).ToString
                 Pedimentos.textimporte7.Text = tabla2.Rows(6)(1).ToString
                 Pedimentos.Textid4_7.Text = tabla2.Rows(6)(2).ToString
-                Pedimentos.txtNumero7.Visible = True
-                Pedimentos.textDescripcion7.Visible = True
-                Pedimentos.textimporte7.Visible = True
-            Else
-                Pedimentos.txtNumero7.Visible = False
-                Pedimentos.textDescripcion7.Visible = False
-                Pedimentos.textimporte7.Visible = False
             End If
             If (tabla2.Rows.Count >= 8) Then
                 Pedimentos.textDescripcion8.Text = tabla2.Rows(7)(0).ToString
                 Pedimentos.textimporte8.Text = tabla2.Rows(7)(1).ToString
                 Pedimentos.Textid4_8.Text = tabla2.Rows(7)(2).ToString
-                Pedimentos.txtNumero8.Visible = True
-                Pedimentos.textDescripcion8.Visible = True
-                Pedimentos.textimporte8.Visible = True
-            Else
-                Pedimentos.txtNumero8.Visible = False
-                Pedimentos.textDescripcion8.Visible = False
-                Pedimentos.textimporte8.Visible = False
             End If
             If (tabla2.Rows.Count >= 9) Then
                 Pedimentos.textDescripcion9.Text = tabla2.Rows(8)(0).ToString
                 Pedimentos.textimporte9.Text = tabla2.Rows(8)(1).ToString
                 Pedimentos.Textid4_9.Text = tabla2.Rows(8)(2).ToString
-                Pedimentos.txtNumero9.Visible = True
-                Pedimentos.textDescripcion9.Visible = True
-                Pedimentos.textimporte9.Visible = True
-            Else
-                Pedimentos.txtNumero9.Visible = False
-                Pedimentos.textDescripcion9.Visible = False
-                Pedimentos.textimporte9.Visible = False
             End If
             If (tabla2.Rows.Count >= 10) Then
                 Pedimentos.textDescripcion10.Text = tabla2.Rows(9)(0).ToString
                 Pedimentos.textimporte10.Text = tabla2.Rows(9)(1).ToString
                 Pedimentos.Textid4_10.Text = tabla2.Rows(9)(2).ToString
-                Pedimentos.txtNumero10.Visible = True
-                Pedimentos.textDescripcion10.Visible = True
-                Pedimentos.textimporte10.Visible = True
-            Else
-                Pedimentos.txtNumero10.Visible = False
-                Pedimentos.textDescripcion10.Visible = False
-                Pedimentos.textimporte10.Visible = False
             End If
             conexxo.Close()
         Catch ex As Exception
@@ -1167,368 +799,214 @@ Public Class RegistrosPedimentos
             Dim tabla2 As New DataTable
             codigo_principal = Pedimentos.txtCodigoPedimento.Text
             codigo = Pedimentos.txtCodigoPedimento1.Text
+            Dim codigo_bueno As String
+            codigo_bueno = Pedimentos.Textbox_codigo_pedimento.Text
             Dim conexxo As New SqlConnection(conexioncita)
             Dim da2 As New SqlDataAdapter
             conexxo.Open()
 
             Dim comando2 As New SqlCommand("select
             CP.descripcion,
-            CP.importe,
-            CP.id_concepto,
-            CP.retenciones,
             CP.tc_flete,
-            CP.usd_flete
+            CP.usd_flete,
+            CP.importe,
+            CP.iva,
+            CP.retenciones,
+            CP.total,
+            CP.id_concepto   
             from TB_Conceptos_Ped as CP
-            where CP.seccion='Fletes y Seguros' and CP.pedimento='" + codigo + "' and CP.codigoPed='" + codigo_principal + "'", conexxo)
+            where CP.codigo_bueno='" + codigo_bueno + "' and CP.seccion='Fletes y Seguros' and CP.pedimento='" + codigo + "' and CP.codigoPed='" + codigo_principal + "'", conexxo)
             da2.SelectCommand = comando2
             da2.Fill(tabla2)
-
             If (tabla2.Rows.Count >= 1) Then
                 Pedimentos.textdescripFS1.Text = tabla2.Rows(0)(0).ToString
-                Pedimentos.txtimporteFS1.Text = tabla2.Rows(0)(1).ToString
-                Pedimentos.Textid5_1.Text = tabla2.Rows(0)(2).ToString
+                Pedimentos.txtTCFlete1.Text = tabla2.Rows(0)(1).ToString
+                Pedimentos.TextUSDFLE1.Text = tabla2.Rows(0)(2).ToString
+                Pedimentos.txtimporteFS1.Text = tabla2.Rows(0)(3).ToString
+                Pedimentos.txtIvaFS1.Text = tabla2.Rows(0)(4).ToString
                 ':::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-                If tabla2.Rows(0)(3).ToString = 0 Then
+                If tabla2.Rows(0)(5).ToString = 0 Then
                     Pedimentos.retencionCheck1.Checked = False
-                    Pedimentos.txtRetenciones1.Text = tabla2.Rows(0)(3).ToString
+                    Pedimentos.txtRetenciones1.Text = tabla2.Rows(0)(5).ToString
                 Else
                     Pedimentos.retencionCheck1.Checked = True
-                    Pedimentos.txtRetenciones1.Text = tabla2.Rows(0)(3).ToString
+                    Pedimentos.txtRetenciones1.Text = tabla2.Rows(0)(5).ToString
                 End If
-                ':::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-                Pedimentos.txtTCFlete1.Text = tabla2.Rows(0)(4).ToString
-                Pedimentos.TextUSDFLE1.Text = tabla2.Rows(0)(5).ToString
+                '::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: 
+                Pedimentos.txtTotalFS1.Text = tabla2.Rows(0)(6).ToString
+                Pedimentos.Textid5_1.Text = tabla2.Rows(0)(7).ToString
             End If
-
             If (tabla2.Rows.Count >= 2) Then
                 Pedimentos.textdescripFS2.Text = tabla2.Rows(1)(0).ToString
-                Pedimentos.txtimporteFS2.Text = tabla2.Rows(1)(1).ToString
-                Pedimentos.Textid5_2.Text = tabla2.Rows(1)(2).ToString
+                Pedimentos.txtTCFlete2.Text = tabla2.Rows(1)(1).ToString
+                Pedimentos.TextUSDFLE2.Text = tabla2.Rows(1)(2).ToString
+                Pedimentos.txtimporteFS2.Text = tabla2.Rows(1)(3).ToString
+                Pedimentos.txtIvaFS2.Text = tabla2.Rows(1)(4).ToString
                 ':::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-                If tabla2.Rows(1)(3).ToString = 0 Then
+                If tabla2.Rows(1)(5).ToString = 0 Then
                     Pedimentos.retencionCheck2.Checked = False
-                    Pedimentos.txtRetenciones2.Text = tabla2.Rows(1)(3).ToString
-
+                    Pedimentos.txtRetenciones2.Text = tabla2.Rows(1)(5).ToString
                 Else
                     Pedimentos.retencionCheck2.Checked = True
-                    Pedimentos.txtRetenciones2.Text = tabla2.Rows(1)(3).ToString
+                    Pedimentos.txtRetenciones2.Text = tabla2.Rows(1)(5).ToString
                 End If
-                ':::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-                Pedimentos.txtTCFlete2.Text = tabla2.Rows(1)(4).ToString
-                Pedimentos.TextUSDFLE2.Text = tabla2.Rows(1)(5).ToString
-                Pedimentos.textNumFS2.Visible = True
-                Pedimentos.textdescripFS2.Visible = True
-                Pedimentos.txtimporteFS2.Visible = True
-                Pedimentos.txtIvaFS2.Visible = True
-                Pedimentos.txtTotalFS2.Visible = True
-                Pedimentos.txtRetenciones2.Visible = True
-                Pedimentos.txtTCFlete2.Visible = True
-                Pedimentos.TextUSDFLE2.Visible = True
-                Pedimentos.retencionCheck2.Visible = True
-            Else
-                Pedimentos.textNumFS2.Visible = False
-                Pedimentos.textdescripFS2.Visible = False
-                Pedimentos.txtimporteFS2.Visible = False
-                Pedimentos.txtIvaFS2.Visible = False
-                Pedimentos.txtTotalFS2.Visible = False
-                Pedimentos.txtRetenciones2.Visible = False
-                Pedimentos.txtTCFlete2.Visible = False
-                Pedimentos.TextUSDFLE2.Visible = False
-                Pedimentos.retencionCheck2.Visible = False
-            End If
+                '::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: 
+                Pedimentos.txtTotalFS2.Text = tabla2.Rows(1)(6).ToString
+                Pedimentos.Textid5_2.Text = tabla2.Rows(1)(7).ToString
 
+            End If
             If (tabla2.Rows.Count >= 3) Then
                 Pedimentos.textdescripFS3.Text = tabla2.Rows(2)(0).ToString
-                Pedimentos.txtimporteFS3.Text = tabla2.Rows(2)(1).ToString
-                Pedimentos.Textid5_3.Text = tabla2.Rows(2)(2).ToString
+                Pedimentos.txtTCFlete3.Text = tabla2.Rows(2)(1).ToString
+                Pedimentos.TextUSDFLE3.Text = tabla2.Rows(2)(2).ToString
+                Pedimentos.txtimporteFS3.Text = tabla2.Rows(2)(3).ToString
+                Pedimentos.txtIvaFS3.Text = tabla2.Rows(2)(4).ToString
                 ':::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-                If tabla2.Rows(2)(3).ToString = 0 Then
+                If tabla2.Rows(2)(5).ToString = 0 Then
                     Pedimentos.retencionCheck3.Checked = False
-                    Pedimentos.txtRetenciones3.Text = tabla2.Rows(2)(3).ToString
+                    Pedimentos.txtRetenciones3.Text = tabla2.Rows(2)(5).ToString
                 Else
                     Pedimentos.retencionCheck3.Checked = True
-                    Pedimentos.txtRetenciones3.Text = tabla2.Rows(2)(3).ToString
+                    Pedimentos.txtRetenciones3.Text = tabla2.Rows(2)(5).ToString
                 End If
-                ':::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-                ' Pedimentos.txtRetenciones3.Text = tabla2.Rows(2)(3).ToString
-                Pedimentos.txtTCFlete3.Text = tabla2.Rows(2)(4).ToString
-                Pedimentos.TextUSDFLE3.Text = tabla2.Rows(2)(5).ToString
-                Pedimentos.textNumFS3.Visible = True
-                Pedimentos.textdescripFS3.Visible = True
-                Pedimentos.txtimporteFS3.Visible = True
-                Pedimentos.txtIvaFS3.Visible = True
-                Pedimentos.txtTotalFS3.Visible = True
-                Pedimentos.txtRetenciones3.Visible = True
-                Pedimentos.txtTCFlete3.Visible = True
-                Pedimentos.TextUSDFLE3.Visible = True
-                Pedimentos.retencionCheck3.Visible = True
-            Else
-                Pedimentos.textNumFS3.Visible = False
-                Pedimentos.textdescripFS3.Visible = False
-                Pedimentos.txtimporteFS3.Visible = False
-                Pedimentos.txtIvaFS3.Visible = False
-                Pedimentos.txtTotalFS3.Visible = False
-                Pedimentos.txtRetenciones3.Visible = False
-                Pedimentos.txtTCFlete3.Visible = False
-                Pedimentos.TextUSDFLE3.Visible = False
-                Pedimentos.retencionCheck3.Visible = False
-            End If
+                '::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: 
+                Pedimentos.txtTotalFS3.Text = tabla2.Rows(2)(6).ToString
+                Pedimentos.Textid5_3.Text = tabla2.Rows(2)(7).ToString
 
+            End If
             If (tabla2.Rows.Count >= 4) Then
                 Pedimentos.textdescripFS4.Text = tabla2.Rows(3)(0).ToString
-                Pedimentos.txtimporteFS4.Text = tabla2.Rows(3)(1).ToString
-                Pedimentos.Textid5_4.Text = tabla2.Rows(3)(2).ToString
+                Pedimentos.txtTCFlete4.Text = tabla2.Rows(3)(1).ToString
+                Pedimentos.TextUSDFLE4.Text = tabla2.Rows(3)(2).ToString
+                Pedimentos.txtimporteFS4.Text = tabla2.Rows(3)(3).ToString
+                Pedimentos.txtIvaFS4.Text = tabla2.Rows(3)(4).ToString
                 ':::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-                If tabla2.Rows(3)(3).ToString = 0 Then
+                If tabla2.Rows(3)(5).ToString = 0 Then
                     Pedimentos.retencionCheck4.Checked = False
-                    Pedimentos.txtRetenciones4.Text = tabla2.Rows(3)(3).ToString
+                    Pedimentos.txtRetenciones4.Text = tabla2.Rows(3)(5).ToString
                 Else
                     Pedimentos.retencionCheck4.Checked = True
-                    Pedimentos.txtRetenciones4.Text = tabla2.Rows(3)(3).ToString
+                    Pedimentos.txtRetenciones4.Text = tabla2.Rows(3)(5).ToString
                 End If
-                ':::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-                'Pedimentos.txtRetenciones4.Text = tabla2.Rows(3)(3).ToString
-                Pedimentos.txtTCFlete4.Text = tabla2.Rows(3)(4).ToString
-                Pedimentos.TextUSDFLE4.Text = tabla2.Rows(3)(5).ToString
-                Pedimentos.textNumFS4.Visible = True
-                Pedimentos.textdescripFS4.Visible = True
-                Pedimentos.txtimporteFS4.Visible = True
-                Pedimentos.txtIvaFS4.Visible = True
-                Pedimentos.txtTotalFS4.Visible = True
-                Pedimentos.txtRetenciones4.Visible = True
-                Pedimentos.txtTCFlete4.Visible = True
-                Pedimentos.TextUSDFLE4.Visible = True
-                Pedimentos.retencionCheck4.Visible = True
-            Else
-                Pedimentos.textNumFS4.Visible = False
-                Pedimentos.textdescripFS4.Visible = False
-                Pedimentos.txtimporteFS4.Visible = False
-                Pedimentos.txtIvaFS4.Visible = False
-                Pedimentos.txtTotalFS4.Visible = False
-                Pedimentos.txtRetenciones4.Visible = False
-                Pedimentos.txtTCFlete4.Visible = False
-                Pedimentos.TextUSDFLE4.Visible = False
-                Pedimentos.retencionCheck4.Visible = False
+                '::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: 
+                Pedimentos.txtTotalFS4.Text = tabla2.Rows(3)(6).ToString
+                Pedimentos.Textid5_4.Text = tabla2.Rows(3)(7).ToString
+
             End If
 
             If (tabla2.Rows.Count >= 5) Then
                 Pedimentos.textdescripFS5.Text = tabla2.Rows(4)(0).ToString
-                Pedimentos.txtimporteFS5.Text = tabla2.Rows(4)(1).ToString
-                Pedimentos.Textid5_5.Text = tabla2.Rows(4)(2).ToString
+                Pedimentos.txtTCFlete5.Text = tabla2.Rows(4)(1).ToString
+                Pedimentos.TextUSDFLE5.Text = tabla2.Rows(4)(2).ToString
+                Pedimentos.txtimporteFS5.Text = tabla2.Rows(4)(3).ToString
+                Pedimentos.txtIvaFS5.Text = tabla2.Rows(4)(4).ToString
                 ':::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-                If tabla2.Rows(4)(3).ToString = 0 Then
+                If tabla2.Rows(4)(5).ToString = 0 Then
                     Pedimentos.retencionCheck5.Checked = False
-                    Pedimentos.txtRetenciones5.Text = tabla2.Rows(4)(3).ToString
+                    Pedimentos.txtRetenciones5.Text = tabla2.Rows(4)(5).ToString
                 Else
                     Pedimentos.retencionCheck5.Checked = True
-                    Pedimentos.txtRetenciones5.Text = tabla2.Rows(4)(3).ToString
+                    Pedimentos.txtRetenciones5.Text = tabla2.Rows(4)(5).ToString
                 End If
-                ':::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-                'Pedimentos.txtRetenciones5.Text = tabla2.Rows(4)(3).ToString
-                Pedimentos.txtTCFlete5.Text = tabla2.Rows(4)(4).ToString
-                Pedimentos.TextUSDFLE5.Text = tabla2.Rows(4)(5).ToString
-                Pedimentos.textNumFS5.Visible = True
-                Pedimentos.textdescripFS5.Visible = True
-                Pedimentos.txtimporteFS5.Visible = True
-                Pedimentos.txtIvaFS5.Visible = True
-                Pedimentos.txtTotalFS5.Visible = True
-                Pedimentos.txtRetenciones5.Visible = True
-                Pedimentos.txtTCFlete5.Visible = True
-                Pedimentos.TextUSDFLE5.Visible = True
-                Pedimentos.retencionCheck5.Visible = True
-            Else
-                Pedimentos.textNumFS5.Visible = False
-                Pedimentos.textdescripFS5.Visible = False
-                Pedimentos.txtimporteFS5.Visible = False
-                Pedimentos.txtIvaFS5.Visible = False
-                Pedimentos.txtTotalFS5.Visible = False
-                Pedimentos.txtRetenciones5.Visible = False
-                Pedimentos.txtTCFlete5.Visible = False
-                Pedimentos.TextUSDFLE5.Visible = False
-                Pedimentos.retencionCheck5.Visible = False
+                '::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: 
+                Pedimentos.txtTotalFS5.Text = tabla2.Rows(4)(6).ToString
+                Pedimentos.Textid5_5.Text = tabla2.Rows(4)(7).ToString
+
             End If
+
             If (tabla2.Rows.Count >= 6) Then
                 Pedimentos.textdescripFS6.Text = tabla2.Rows(5)(0).ToString
-                Pedimentos.txtimporteFS6.Text = tabla2.Rows(5)(1).ToString
-                Pedimentos.Textid5_6.Text = tabla2.Rows(5)(2).ToString
+                Pedimentos.txtTCFlete6.Text = tabla2.Rows(5)(1).ToString
+                Pedimentos.TextUSDFLE6.Text = tabla2.Rows(5)(2).ToString
+                Pedimentos.txtimporteFS6.Text = tabla2.Rows(5)(3).ToString
+                Pedimentos.txtIvaFS6.Text = tabla2.Rows(5)(4).ToString
                 ':::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-                If tabla2.Rows(5)(3).ToString = 0 Then
+                If tabla2.Rows(5)(5).ToString = 0 Then
                     Pedimentos.retencionCheck6.Checked = False
-                    Pedimentos.txtRetenciones6.Text = tabla2.Rows(5)(3).ToString
+                    Pedimentos.txtRetenciones6.Text = tabla2.Rows(5)(5).ToString
                 Else
                     Pedimentos.retencionCheck6.Checked = True
-                    Pedimentos.txtRetenciones6.Text = tabla2.Rows(5)(3).ToString
+                    Pedimentos.txtRetenciones6.Text = tabla2.Rows(5)(5).ToString
                 End If
-                ':::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-                'Pedimentos.txtRetenciones6.Text = tabla2.Rows(5)(3).ToString
-                Pedimentos.txtTCFlete6.Text = tabla2.Rows(5)(4).ToString
-                Pedimentos.TextUSDFLE6.Text = tabla2.Rows(5)(5).ToString
-                Pedimentos.textNumFS6.Visible = True
-                Pedimentos.textdescripFS6.Visible = True
-                Pedimentos.txtimporteFS6.Visible = True
-                Pedimentos.txtIvaFS6.Visible = True
-                Pedimentos.txtTotalFS6.Visible = True
-                Pedimentos.txtRetenciones6.Visible = True
-                Pedimentos.txtTCFlete6.Visible = True
-                Pedimentos.TextUSDFLE6.Visible = True
-                Pedimentos.retencionCheck6.Visible = True
-            Else
-                Pedimentos.textNumFS6.Visible = False
-                Pedimentos.textdescripFS6.Visible = False
-                Pedimentos.txtimporteFS6.Visible = False
-                Pedimentos.txtIvaFS6.Visible = False
-                Pedimentos.txtTotalFS6.Visible = False
-                Pedimentos.txtRetenciones6.Visible = False
-                Pedimentos.txtTCFlete6.Visible = False
-                Pedimentos.TextUSDFLE6.Visible = False
-                Pedimentos.retencionCheck6.Visible = False
+                '::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: 
+                Pedimentos.txtTotalFS6.Text = tabla2.Rows(5)(6).ToString
+                Pedimentos.Textid5_6.Text = tabla2.Rows(5)(7).ToString
             End If
-
             If (tabla2.Rows.Count >= 7) Then
                 Pedimentos.textdescripFS7.Text = tabla2.Rows(6)(0).ToString
-                Pedimentos.txtimporteFS7.Text = tabla2.Rows(6)(1).ToString
-                Pedimentos.Textid5_7.Text = tabla2.Rows(6)(2).ToString
+                Pedimentos.txtTCFlete7.Text = tabla2.Rows(6)(1).ToString
+                Pedimentos.TextUSDFLE7.Text = tabla2.Rows(6)(2).ToString
+                Pedimentos.txtimporteFS7.Text = tabla2.Rows(6)(3).ToString
+                Pedimentos.txtIvaFS7.Text = tabla2.Rows(6)(4).ToString
                 ':::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-                If tabla2.Rows(6)(3).ToString = 0 Then
+                If tabla2.Rows(6)(5).ToString = 0 Then
                     Pedimentos.retencionCheck7.Checked = False
-                    Pedimentos.txtRetenciones7.Text = tabla2.Rows(6)(3).ToString
+                    Pedimentos.txtRetenciones7.Text = tabla2.Rows(6)(5).ToString
                 Else
                     Pedimentos.retencionCheck7.Checked = True
-                    Pedimentos.txtRetenciones7.Text = tabla2.Rows(6)(3).ToString
+                    Pedimentos.txtRetenciones7.Text = tabla2.Rows(6)(5).ToString
                 End If
-                ':::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-                ' Pedimentos.txtRetenciones7.Text = tabla2.Rows(6)(3).ToString
-                Pedimentos.txtTCFlete7.Text = tabla2.Rows(6)(4).ToString
-                Pedimentos.TextUSDFLE7.Text = tabla2.Rows(6)(5).ToString
-                Pedimentos.textNumFS7.Visible = True
-                Pedimentos.textdescripFS7.Visible = True
-                Pedimentos.txtimporteFS7.Visible = True
-                Pedimentos.txtIvaFS7.Visible = True
-                Pedimentos.txtTotalFS7.Visible = True
-                Pedimentos.txtRetenciones7.Visible = True
-                Pedimentos.txtTCFlete7.Visible = True
-                Pedimentos.TextUSDFLE7.Visible = True
-                Pedimentos.retencionCheck7.Visible = True
-            Else
-                Pedimentos.textNumFS7.Visible = False
-                Pedimentos.textdescripFS7.Visible = False
-                Pedimentos.txtimporteFS7.Visible = False
-                Pedimentos.txtIvaFS7.Visible = False
-                Pedimentos.txtTotalFS7.Visible = False
-                Pedimentos.txtRetenciones7.Visible = False
-                Pedimentos.txtTCFlete7.Visible = False
-                Pedimentos.TextUSDFLE7.Visible = False
-                Pedimentos.retencionCheck7.Visible = False
-            End If
+                '::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: 
+                Pedimentos.txtTotalFS7.Text = tabla2.Rows(6)(6).ToString
+                Pedimentos.Textid5_7.Text = tabla2.Rows(6)(7).ToString
 
+            End If
             If (tabla2.Rows.Count >= 8) Then
                 Pedimentos.textdescripFS8.Text = tabla2.Rows(7)(0).ToString
-                Pedimentos.txtimporteFS8.Text = tabla2.Rows(7)(1).ToString
-                Pedimentos.Textid5_8.Text = tabla2.Rows(7)(2).ToString
+                Pedimentos.txtTCFlete8.Text = tabla2.Rows(7)(1).ToString
+                Pedimentos.TextUSDFLE8.Text = tabla2.Rows(7)(2).ToString
+                Pedimentos.txtimporteFS8.Text = tabla2.Rows(7)(3).ToString
+                Pedimentos.txtIvaFS8.Text = tabla2.Rows(7)(4).ToString
                 ':::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-                If tabla2.Rows(7)(3).ToString = 0 Then
+                If tabla2.Rows(7)(5).ToString = 0 Then
                     Pedimentos.retencionCheck8.Checked = False
-                    Pedimentos.txtRetenciones8.Text = tabla2.Rows(7)(3).ToString
+                    Pedimentos.txtRetenciones8.Text = tabla2.Rows(7)(5).ToString
                 Else
                     Pedimentos.retencionCheck8.Checked = True
-                    Pedimentos.txtRetenciones8.Text = tabla2.Rows(7)(3).ToString
+                    Pedimentos.txtRetenciones8.Text = tabla2.Rows(7)(5).ToString
                 End If
-                ':::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-                ' Pedimentos.txtRetenciones8.Text = tabla2.Rows(7)(3).ToString
-                Pedimentos.txtTCFlete8.Text = tabla2.Rows(7)(4).ToString
-                Pedimentos.TextUSDFLE8.Text = tabla2.Rows(7)(5).ToString
-                Pedimentos.textNumFS8.Visible = True
-                Pedimentos.textdescripFS8.Visible = True
-                Pedimentos.txtimporteFS8.Visible = True
-                Pedimentos.txtIvaFS8.Visible = True
-                Pedimentos.txtTotalFS8.Visible = True
-                Pedimentos.txtRetenciones8.Visible = True
-                Pedimentos.txtTCFlete8.Visible = True
-                Pedimentos.TextUSDFLE8.Visible = True
-                Pedimentos.retencionCheck8.Visible = True
-            Else
-                Pedimentos.textNumFS8.Visible = False
-                Pedimentos.textdescripFS8.Visible = False
-                Pedimentos.txtimporteFS8.Visible = False
-                Pedimentos.txtIvaFS8.Visible = False
-                Pedimentos.txtTotalFS8.Visible = False
-                Pedimentos.txtRetenciones8.Visible = False
-                Pedimentos.txtTCFlete8.Visible = False
-                Pedimentos.TextUSDFLE8.Visible = False
-                Pedimentos.retencionCheck8.Visible = False
-            End If
+                '::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: 
+                Pedimentos.txtTotalFS8.Text = tabla2.Rows(7)(6).ToString
+                Pedimentos.Textid5_8.Text = tabla2.Rows(7)(7).ToString
 
+            End If
             If (tabla2.Rows.Count >= 9) Then
                 Pedimentos.textdescripFS9.Text = tabla2.Rows(8)(0).ToString
-                Pedimentos.txtimporteFS9.Text = tabla2.Rows(8)(1).ToString
-                Pedimentos.Textid5_9.Text = tabla2.Rows(8)(2).ToString
+                Pedimentos.txtTCFlete9.Text = tabla2.Rows(8)(1).ToString
+                Pedimentos.TextUSDFLE9.Text = tabla2.Rows(8)(2).ToString
+                Pedimentos.txtimporteFS9.Text = tabla2.Rows(8)(3).ToString
+                Pedimentos.txtIvaFS9.Text = tabla2.Rows(8)(4).ToString
                 ':::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-                If tabla2.Rows(8)(3).ToString = 0 Then
+                If tabla2.Rows(8)(5).ToString = 0 Then
                     Pedimentos.retencionCheck9.Checked = False
-                    Pedimentos.txtRetenciones9.Text = tabla2.Rows(8)(3).ToString
+                    Pedimentos.txtRetenciones9.Text = tabla2.Rows(8)(5).ToString
                 Else
                     Pedimentos.retencionCheck9.Checked = True
-                    Pedimentos.txtRetenciones9.Text = tabla2.Rows(8)(3).ToString
+                    Pedimentos.txtRetenciones9.Text = tabla2.Rows(8)(5).ToString
                 End If
-                ':::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-                Pedimentos.txtRetenciones9.Text = tabla2.Rows(8)(3).ToString
-                Pedimentos.txtTCFlete9.Text = tabla2.Rows(8)(4).ToString
-                Pedimentos.TextUSDFLE9.Text = tabla2.Rows(8)(5).ToString
-                Pedimentos.textNumFS9.Visible = True
-                Pedimentos.textdescripFS9.Visible = True
-                Pedimentos.txtimporteFS9.Visible = True
-                Pedimentos.txtIvaFS9.Visible = True
-                Pedimentos.txtTotalFS9.Visible = True
-                Pedimentos.txtRetenciones9.Visible = True
-                Pedimentos.txtTCFlete9.Visible = True
-                Pedimentos.TextUSDFLE9.Visible = True
-                Pedimentos.retencionCheck9.Visible = True
-            Else
-                Pedimentos.textNumFS9.Visible = False
-                Pedimentos.textdescripFS9.Visible = False
-                Pedimentos.txtimporteFS9.Visible = False
-                Pedimentos.txtIvaFS9.Visible = False
-                Pedimentos.txtTotalFS9.Visible = False
-                Pedimentos.txtRetenciones9.Visible = False
-                Pedimentos.txtTCFlete9.Visible = False
-                Pedimentos.TextUSDFLE9.Visible = False
-                Pedimentos.retencionCheck9.Visible = False
+                '::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: 
+                Pedimentos.txtTotalFS9.Text = tabla2.Rows(8)(6).ToString
+                Pedimentos.Textid5_9.Text = tabla2.Rows(8)(7).ToString
+
             End If
             If (tabla2.Rows.Count >= 10) Then
                 Pedimentos.textdescripFS10.Text = tabla2.Rows(9)(0).ToString
-                Pedimentos.txtimporteFS10.Text = tabla2.Rows(9)(1).ToString
-                Pedimentos.Textid5_10.Text = tabla2.Rows(9)(2).ToString
+                Pedimentos.txtTCFlete10.Text = tabla2.Rows(9)(1).ToString
+                Pedimentos.TextUSDFLE10.Text = tabla2.Rows(9)(2).ToString
+                Pedimentos.txtimporteFS10.Text = tabla2.Rows(9)(3).ToString
+                Pedimentos.txtIvaFS10.Text = tabla2.Rows(9)(4).ToString
                 ':::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-                If tabla2.Rows(9)(3).ToString = 0 Then
+                If tabla2.Rows(9)(5).ToString = 0 Then
                     Pedimentos.retencionCheck10.Checked = False
-                    Pedimentos.txtRetenciones10.Text = tabla2.Rows(9)(3).ToString
+                    Pedimentos.txtRetenciones10.Text = tabla2.Rows(9)(5).ToString
                 Else
                     Pedimentos.retencionCheck10.Checked = True
-                    Pedimentos.txtRetenciones10.Text = tabla2.Rows(9)(3).ToString
+                    Pedimentos.txtRetenciones10.Text = tabla2.Rows(9)(5).ToString
                 End If
-                ':::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-                Pedimentos.txtRetenciones10.Text = tabla2.Rows(9)(3).ToString
-                Pedimentos.txtTCFlete10.Text = tabla2.Rows(9)(4).ToString
-                Pedimentos.TextUSDFLE10.Text = tabla2.Rows(9)(5).ToString
-                Pedimentos.textNumFS10.Visible = True
-                Pedimentos.textdescripFS10.Visible = True
-                Pedimentos.txtimporteFS10.Visible = True
-                Pedimentos.txtIvaFS10.Visible = True
-                Pedimentos.txtTotalFS10.Visible = True
-                Pedimentos.txtRetenciones10.Visible = True
-                Pedimentos.txtTCFlete10.Visible = True
-                Pedimentos.TextUSDFLE10.Visible = True
-                Pedimentos.retencionCheck10.Visible = True
-            Else
-                Pedimentos.textNumFS10.Visible = False
-                Pedimentos.textdescripFS10.Visible = False
-                Pedimentos.txtimporteFS10.Visible = False
-                Pedimentos.txtIvaFS10.Visible = False
-                Pedimentos.txtTotalFS10.Visible = False
-                Pedimentos.txtRetenciones10.Visible = False
-                Pedimentos.txtTCFlete10.Visible = False
-                Pedimentos.TextUSDFLE10.Visible = False
-                Pedimentos.retencionCheck10.Visible = False
+                '::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: 
+                Pedimentos.txtTotalFS10.Text = tabla2.Rows(9)(6).ToString
+                Pedimentos.Textid5_10.Text = tabla2.Rows(9)(7).ToString
+
             End If
             conexxo.Close()
         Catch ex As Exception
@@ -1538,7 +1016,7 @@ Public Class RegistrosPedimentos
     End Sub
 
     Private Sub btn_BuscarOc_Click(sender As Object, e As EventArgs) Handles btn_BuscarOc.Click
-        RegistrosOrdCom.ShowDialog()
+        RegistrosOrdCom.Show()
     End Sub
     '-----------------------------Botonera minimizar y Cerrar-------------------------------
     Private Sub btn_Cerrar_Click(sender As Object, e As EventArgs) Handles btn_Cerrar.Click

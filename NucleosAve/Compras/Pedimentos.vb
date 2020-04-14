@@ -11,7 +11,7 @@ Public Class Pedimentos
     Dim conexioncita As String = My.Settings.Conexxx
     '<--directivas termino-->
     Private Sub Pedimentos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        Generarcodigo()
     End Sub
     '-----------------------------Botonera minimizar y Cerrar-------------------------------
     Private Sub btn_Cerrar_Click(sender As Object, e As EventArgs) Handles btn_Cerrar.Click
@@ -138,9 +138,11 @@ Public Class Pedimentos
                 logica.Peotrosgastos = Me.otrosgastos.Text
                 logica.PeimporteCT = Me.importeCT.Text
                 logica.PeivaCT = Me.ivaCT.Text
+                logica.Pecodigobueno = Me.Textbox_codigo_pedimento.Text
 
                 If funciones.FN_InsertarPedimentos(logica) Then
                     MsgBox("Datos Insertados Correctamente pedimento", MessageBoxIcon.Information)
+                    Generarcodigo()
                 End If
             Catch ex As Exception
                 MsgBox(ex.Message)
@@ -158,10 +160,12 @@ Public Class Pedimentos
                     Dim funciones As New Funcion_Registros
                     Dim mercancia As New ClassPedimentosMercancias
 
+
                     mercancia.Merc_pedimento = Me.txtCodigoPedimento1.Text
                     mercancia.Merc_mercancia = Me.txtMercancia1.Text
                     mercancia.Merc_fraccion = Me.txtfraccion1.Text
                     mercancia.Merc_codigoPed = Me.txtCodigoPedimento.Text
+                    mercancia.Merc_codigo_bueno = Me.Textbox_codigo_pedimento.Text
 
                     If funciones.FN_InsertarPedimentosMercancia(mercancia) Then
                         'MsgBox("Datos Insertados Correctamente")
@@ -186,6 +190,7 @@ Public Class Pedimentos
                     mercancia.Merc_mercancia = Me.txtMercancia2.Text
                     mercancia.Merc_fraccion = Me.txtfraccion2.Text
                     mercancia.Merc_codigoPed = Me.txtCodigoPedimento.Text
+                    mercancia.Merc_codigo_bueno = Me.Textbox_codigo_pedimento.Text
 
                     If funciones.FN_InsertarPedimentosMercancia(mercancia) Then
                         'MsgBox("Datos Insertados Correctamente")
@@ -210,6 +215,7 @@ Public Class Pedimentos
                     mercancia.Merc_mercancia = Me.txtMercancia3.Text
                     mercancia.Merc_fraccion = Me.txtfraccion3.Text
                     mercancia.Merc_codigoPed = Me.txtCodigoPedimento.Text
+                    mercancia.Merc_codigo_bueno = Me.Textbox_codigo_pedimento.Text
 
                     If funciones.FN_InsertarPedimentosMercancia(mercancia) Then
                         'MsgBox("Datos Insertados Correctamente")
@@ -231,9 +237,10 @@ Public Class Pedimentos
                     Dim mercancia As New ClassPedimentosMercancias
 
                     mercancia.Merc_pedimento = Me.txtCodigoPedimento1.Text
-                    mercancia.Merc_mercancia = Me.txtMercancia3.Text
-                    mercancia.Merc_fraccion = Me.txtfraccion3.Text
+                    mercancia.Merc_mercancia = Me.txtMercancia4.Text
+                    mercancia.Merc_fraccion = Me.txtfraccion4.Text
                     mercancia.Merc_codigoPed = Me.txtCodigoPedimento.Text
+                    mercancia.Merc_codigo_bueno = Me.Textbox_codigo_pedimento.Text
 
                     If funciones.FN_InsertarPedimentosMercancia(mercancia) Then
                         'MsgBox("Datos Insertados Correctamente")
@@ -255,9 +262,10 @@ Public Class Pedimentos
                     Dim mercancia As New ClassPedimentosMercancias
 
                     mercancia.Merc_pedimento = Me.txtCodigoPedimento1.Text
-                    mercancia.Merc_mercancia = Me.txtMercancia3.Text
-                    mercancia.Merc_fraccion = Me.txtfraccion3.Text
+                    mercancia.Merc_mercancia = Me.txtMercancia5.Text
+                    mercancia.Merc_fraccion = Me.txtfraccion5.Text
                     mercancia.Merc_codigoPed = Me.txtCodigoPedimento.Text
+                    mercancia.Merc_codigo_bueno = Me.Textbox_codigo_pedimento.Text
 
                     If funciones.FN_InsertarPedimentosMercancia(mercancia) Then
                         ' MsgBox("Datos Insertados Correctamente")
@@ -282,6 +290,7 @@ Public Class Pedimentos
                     mercancia.Merc_mercancia = Me.txtMercancia6.Text
                     mercancia.Merc_fraccion = Me.txtfraccion6.Text
                     mercancia.Merc_codigoPed = Me.txtCodigoPedimento.Text
+                    mercancia.Merc_codigo_bueno = Me.Textbox_codigo_pedimento.Text
 
                     If funciones.FN_InsertarPedimentosMercancia(mercancia) Then
                         'MsgBox("Datos Insertados Correctamente")
@@ -306,6 +315,7 @@ Public Class Pedimentos
                     mercancia.Merc_mercancia = Me.txtMercancia7.Text
                     mercancia.Merc_fraccion = Me.txtfraccion7.Text
                     mercancia.Merc_codigoPed = Me.txtCodigoPedimento.Text
+                    mercancia.Merc_codigo_bueno = Me.Textbox_codigo_pedimento.Text
 
                     If funciones.FN_InsertarPedimentosMercancia(mercancia) Then
                         'MsgBox("Datos Insertados Correctamente")
@@ -327,9 +337,10 @@ Public Class Pedimentos
                     Dim mercancia As New ClassPedimentosMercancias
 
                     mercancia.Merc_pedimento = Me.txtCodigoPedimento1.Text
-                    mercancia.Merc_mercancia = Me.txtMercancia3.Text
-                    mercancia.Merc_fraccion = Me.txtfraccion3.Text
+                    mercancia.Merc_mercancia = Me.txtMercancia8.Text
+                    mercancia.Merc_fraccion = Me.txtfraccion8.Text
                     mercancia.Merc_codigoPed = Me.txtCodigoPedimento.Text
+                    mercancia.Merc_codigo_bueno = Me.Textbox_codigo_pedimento.Text
 
                     If funciones.FN_InsertarPedimentosMercancia(mercancia) Then
                         'MsgBox("Datos Insertados Correctamente")
@@ -354,6 +365,7 @@ Public Class Pedimentos
                     mercancia.Merc_mercancia = Me.txtMercancia9.Text
                     mercancia.Merc_fraccion = Me.txtfraccion9.Text
                     mercancia.Merc_codigoPed = Me.txtCodigoPedimento.Text
+                    mercancia.Merc_codigo_bueno = Me.Textbox_codigo_pedimento.Text
 
                     If funciones.FN_InsertarPedimentosMercancia(mercancia) Then
                         ' MsgBox("Datos Insertados Correctamente")
@@ -378,6 +390,7 @@ Public Class Pedimentos
                     mercancia.Merc_mercancia = Me.txtMercancia10.Text
                     mercancia.Merc_fraccion = Me.txtfraccion10.Text
                     mercancia.Merc_codigoPed = Me.txtCodigoPedimento.Text
+                    mercancia.Merc_codigo_bueno = Me.Textbox_codigo_pedimento.Text
 
                     If funciones.FN_InsertarPedimentosMercancia(mercancia) Then
                         'MsgBox("Datos Insertados Correctamente")
@@ -409,6 +422,7 @@ Public Class Pedimentos
                     gastos.GT_importe = Me.txtimporte1.Text
                     gastos.GT_codigoPed = Me.txtCodigoPedimento.Text
                     gastos.GT_iva = Me.txtIva_gastosterceros.Text
+                    gastos.GT_codigo_bueno = Me.Textbox_codigo_pedimento.Text
 
                     If funciones.FN_InsertarGastosTerceros1(gastos) Then
                         'MsgBox("Datos Insertados Correctamente")
@@ -464,6 +478,7 @@ Public Class Pedimentos
                     gastos.GT_importe = Me.txtimporte3.Text
                     gastos.GT_codigoPed = Me.txtCodigoPedimento.Text
                     gastos.GT_iva = Me.TexIvaOp2.Text
+                    gastos.GT_codigo_bueno = Me.Textbox_codigo_pedimento.Text
 
                     If funciones.FN_InsertarGastosTerceros1(gastos) Then
                         'MsgBox("Datos Insertados Correctamente")
@@ -491,6 +506,7 @@ Public Class Pedimentos
                     gastos.GT_importe = Me.txtimporte4.Text
                     gastos.GT_codigoPed = Me.txtCodigoPedimento.Text
                     gastos.GT_iva = Me.TexIvaOp3.Text
+                    gastos.GT_codigo_bueno = Me.Textbox_codigo_pedimento.Text
 
                     If funciones.FN_InsertarGastosTerceros1(gastos) Then
                         ' MsgBox("Datos Insertados Correctamente")
@@ -518,6 +534,7 @@ Public Class Pedimentos
                     gastos.GT_importe = Me.txtimporte5.Text
                     gastos.GT_codigoPed = Me.txtCodigoPedimento.Text
                     gastos.GT_iva = Me.TexIvaOp4.Text
+                    gastos.GT_codigo_bueno = Me.Textbox_codigo_pedimento.Text
 
                     If funciones.FN_InsertarGastosTerceros1(gastos) Then
                         'MsgBox("Datos Insertados Correctamente")
@@ -545,6 +562,7 @@ Public Class Pedimentos
                     gastos.GT_importe = Me.txtimporte6.Text
                     gastos.GT_codigoPed = Me.txtCodigoPedimento.Text
                     gastos.GT_iva = Me.TexIvaOp5.Text
+                    gastos.GT_codigo_bueno = Me.Textbox_codigo_pedimento.Text
 
                     If funciones.FN_InsertarGastosTerceros1(gastos) Then
                         ' MsgBox("Datos Insertados Correctamente")
@@ -572,6 +590,7 @@ Public Class Pedimentos
                     gastos.GT_importe = Me.txtimporte7.Text
                     gastos.GT_codigoPed = Me.txtCodigoPedimento.Text
                     gastos.GT_iva = Me.TexIvaOp6.Text
+                    gastos.GT_codigo_bueno = Me.Textbox_codigo_pedimento.Text
 
                     If funciones.FN_InsertarGastosTerceros1(gastos) Then
                         'MsgBox("Datos Insertados Correctamente")
@@ -599,6 +618,7 @@ Public Class Pedimentos
                     gastos.GT_importe = Me.txtimporte8.Text
                     gastos.GT_codigoPed = Me.txtCodigoPedimento.Text
                     gastos.GT_iva = Me.TexIvaOp7.Text
+                    gastos.GT_codigo_bueno = Me.Textbox_codigo_pedimento.Text
 
                     If funciones.FN_InsertarGastosTerceros1(gastos) Then
                         ' MsgBox("Datos Insertados Correctamente")
@@ -626,6 +646,7 @@ Public Class Pedimentos
                     gastos.GT_importe = Me.txtimporte9.Text
                     gastos.GT_codigoPed = Me.txtCodigoPedimento.Text
                     gastos.GT_iva = Me.TexIvaOp8.Text
+                    gastos.GT_codigo_bueno = Me.Textbox_codigo_pedimento.Text
 
                     If funciones.FN_InsertarGastosTerceros1(gastos) Then
                         'MsgBox("Datos Insertados Correctamente")
@@ -653,6 +674,7 @@ Public Class Pedimentos
                     gastos.GT_importe = Me.txtimporte10.Text
                     gastos.GT_codigoPed = Me.txtCodigoPedimento.Text
                     gastos.GT_iva = Me.TexIvaOp9.Text
+                    gastos.GT_codigo_bueno = Me.Textbox_codigo_pedimento.Text
 
                     If funciones.FN_InsertarGastosTerceros1(gastos) Then
                         'MsgBox("Datos Insertados Correctamente")
@@ -685,6 +707,7 @@ Public Class Pedimentos
                     gastos.GT2_iva = Me.textIva_GT2_1.Text
                     gastos.GT2_total = Me.txtTotalGT_1.Text
                     gastos.GT2_codigoPed = Me.txtCodigoPedimento.Text
+                    gastos.GT2_codigo_bueno = Me.Textbox_codigo_pedimento.Text
 
 
                     If funciones.FN_InsertarGastosTerceros2(gastos) Then
@@ -719,6 +742,7 @@ Public Class Pedimentos
                     gastos.GT2_iva = Me.textIva_GT2_2.Text
                     gastos.GT2_total = Me.txtTotalGT_2.Text
                     gastos.GT2_codigoPed = Me.txtCodigoPedimento.Text
+                    gastos.GT2_codigo_bueno = Me.Textbox_codigo_pedimento.Text
 
                     If funciones.FN_InsertarGastosTerceros2(gastos) Then
                         'MsgBox("Datos Insertados Correctamente")
@@ -751,6 +775,7 @@ Public Class Pedimentos
                     gastos.GT2_iva = Me.textIva_GT2_3.Text
                     gastos.GT2_total = Me.txtTotalGT_3.Text
                     gastos.GT2_codigoPed = Me.txtCodigoPedimento.Text
+                    gastos.GT2_codigo_bueno = Me.Textbox_codigo_pedimento.Text
 
                     If funciones.FN_InsertarGastosTerceros2(gastos) Then
                         ' MsgBox("Datos Insertados Correctamente")
@@ -783,6 +808,7 @@ Public Class Pedimentos
                     gastos.GT2_iva = Me.textIva_GT2_4.Text
                     gastos.GT2_total = Me.txtTotalGT_4.Text
                     gastos.GT2_codigoPed = Me.txtCodigoPedimento.Text
+                    gastos.GT2_codigo_bueno = Me.Textbox_codigo_pedimento.Text
 
                     If funciones.FN_InsertarGastosTerceros2(gastos) Then
                         'MsgBox("Datos Insertados Correctamente")
@@ -815,6 +841,7 @@ Public Class Pedimentos
                     gastos.GT2_iva = Me.textIva_GT2_5.Text
                     gastos.GT2_total = Me.txtTotalGT_5.Text
                     gastos.GT2_codigoPed = Me.txtCodigoPedimento.Text
+                    gastos.GT2_codigo_bueno = Me.Textbox_codigo_pedimento.Text
 
                     If funciones.FN_InsertarGastosTerceros2(gastos) Then
                         ' MsgBox("Datos Insertados Correctamente")
@@ -847,6 +874,7 @@ Public Class Pedimentos
                     gastos.GT2_iva = Me.textIva_GT2_6.Text
                     gastos.GT2_total = Me.txtTotalGT_6.Text
                     gastos.GT2_codigoPed = Me.txtCodigoPedimento.Text
+                    gastos.GT2_codigo_bueno = Me.Textbox_codigo_pedimento.Text
 
                     If funciones.FN_InsertarGastosTerceros2(gastos) Then
                         'MsgBox("Datos Insertados Correctamente")
@@ -879,6 +907,7 @@ Public Class Pedimentos
                     gastos.GT2_iva = Me.textIva_GT2_7.Text
                     gastos.GT2_total = Me.txtTotalGT_7.Text
                     gastos.GT2_codigoPed = Me.txtCodigoPedimento.Text
+                    gastos.GT2_codigo_bueno = Me.Textbox_codigo_pedimento.Text
 
                     If funciones.FN_InsertarGastosTerceros2(gastos) Then
                         'MsgBox("Datos Insertados Correctamente")
@@ -911,6 +940,7 @@ Public Class Pedimentos
                     gastos.GT2_iva = Me.textIva_GT2_8.Text
                     gastos.GT2_total = Me.txtTotalGT_8.Text
                     gastos.GT2_codigoPed = Me.txtCodigoPedimento.Text
+                    gastos.GT2_codigo_bueno = Me.Textbox_codigo_pedimento.Text
 
                     If funciones.FN_InsertarGastosTerceros2(gastos) Then
                         ' MsgBox("Datos Insertados Correctamente")
@@ -943,6 +973,7 @@ Public Class Pedimentos
                     gastos.GT2_iva = Me.textIva_GT2_9.Text
                     gastos.GT2_total = Me.txtTotalGT_9.Text
                     gastos.GT2_codigoPed = Me.txtCodigoPedimento.Text
+                    gastos.GT2_codigo_bueno = Me.Textbox_codigo_pedimento.Text
 
                     If funciones.FN_InsertarGastosTerceros2(gastos) Then
                         ' MsgBox("Datos Insertados Correctamente")
@@ -975,6 +1006,7 @@ Public Class Pedimentos
                     gastos.GT2_iva = Me.textIva_GT2_10.Text
                     gastos.GT2_total = Me.txtTotalGT_10.Text
                     gastos.GT2_codigoPed = Me.txtCodigoPedimento.Text
+                    gastos.GT2_codigo_bueno = Me.Textbox_codigo_pedimento.Text
 
                     If funciones.FN_InsertarGastosTerceros2(gastos) Then
                         ' MsgBox("Datos Insertados Correctamente")
@@ -1009,6 +1041,7 @@ Public Class Pedimentos
                     gastos.CB_descripcion = Me.textDescripcion1.Text
                     gastos.CB_importe = Me.textimporte1.Text
                     gastos.CB_codigoPed = Me.txtCodigoPedimento.Text
+                    gastos.CB_codigo_bueno = Me.Textbox_codigo_pedimento.Text
 
                     If funciones.FN_InsertarCustomsBrokerage(gastos) Then
                         ' MsgBox("Datos Insertados Correctamente")
@@ -1034,6 +1067,7 @@ Public Class Pedimentos
                     gastos.CB_descripcion = Me.textDescripcion2.Text
                     gastos.CB_importe = Me.textimporte2.Text
                     gastos.CB_codigoPed = Me.txtCodigoPedimento.Text
+                    gastos.CB_codigo_bueno = Me.Textbox_codigo_pedimento.Text
 
                     If funciones.FN_InsertarCustomsBrokerage(gastos) Then
                         'MsgBox("Datos Insertados Correctamente")
@@ -1059,6 +1093,7 @@ Public Class Pedimentos
                     gastos.CB_descripcion = Me.textDescripcion3.Text
                     gastos.CB_importe = Me.textimporte3.Text
                     gastos.CB_codigoPed = Me.txtCodigoPedimento.Text
+                    gastos.CB_codigo_bueno = Me.Textbox_codigo_pedimento.Text
 
                     If funciones.FN_InsertarCustomsBrokerage(gastos) Then
                         'MsgBox("Datos Insertados Correctamente")
@@ -1084,6 +1119,7 @@ Public Class Pedimentos
                     gastos.CB_descripcion = Me.textDescripcion4.Text
                     gastos.CB_importe = Me.textimporte4.Text
                     gastos.CB_codigoPed = Me.txtCodigoPedimento.Text
+                    gastos.CB_codigo_bueno = Me.Textbox_codigo_pedimento.Text
 
                     If funciones.FN_InsertarCustomsBrokerage(gastos) Then
                         ' MsgBox("Datos Insertados Correctamente")
@@ -1109,6 +1145,7 @@ Public Class Pedimentos
                     gastos.CB_descripcion = Me.textDescripcion5.Text
                     gastos.CB_importe = Me.textimporte5.Text
                     gastos.CB_codigoPed = Me.txtCodigoPedimento.Text
+                    gastos.CB_codigo_bueno = Me.Textbox_codigo_pedimento.Text
 
                     If funciones.FN_InsertarCustomsBrokerage(gastos) Then
                         ' MsgBox("Datos Insertados Correctamente")
@@ -1134,6 +1171,7 @@ Public Class Pedimentos
                     gastos.CB_descripcion = Me.textDescripcion6.Text
                     gastos.CB_importe = Me.textimporte6.Text
                     gastos.CB_codigoPed = Me.txtCodigoPedimento.Text
+                    gastos.CB_codigo_bueno = Me.Textbox_codigo_pedimento.Text
 
                     If funciones.FN_InsertarCustomsBrokerage(gastos) Then
                         'MsgBox("Datos Insertados Correctamente")
@@ -1159,6 +1197,7 @@ Public Class Pedimentos
                     gastos.CB_descripcion = Me.textDescripcion7.Text
                     gastos.CB_importe = Me.textimporte7.Text
                     gastos.CB_codigoPed = Me.txtCodigoPedimento.Text
+                    gastos.CB_codigo_bueno = Me.Textbox_codigo_pedimento.Text
 
                     If funciones.FN_InsertarCustomsBrokerage(gastos) Then
                         'MsgBox("Datos Insertados Correctamente")
@@ -1184,6 +1223,7 @@ Public Class Pedimentos
                     gastos.CB_descripcion = Me.textDescripcion8.Text
                     gastos.CB_importe = Me.textimporte8.Text
                     gastos.CB_codigoPed = Me.txtCodigoPedimento.Text
+                    gastos.CB_codigo_bueno = Me.Textbox_codigo_pedimento.Text
 
                     If funciones.FN_InsertarCustomsBrokerage(gastos) Then
                         'MsgBox("Datos Insertados Correctamente")
@@ -1209,6 +1249,7 @@ Public Class Pedimentos
                     gastos.CB_descripcion = Me.textDescripcion9.Text
                     gastos.CB_importe = Me.textimporte9.Text
                     gastos.CB_codigoPed = Me.txtCodigoPedimento.Text
+                    gastos.CB_codigo_bueno = Me.Textbox_codigo_pedimento.Text
 
                     If funciones.FN_InsertarCustomsBrokerage(gastos) Then
                         ' MsgBox("Datos Insertados Correctamente")
@@ -1234,6 +1275,7 @@ Public Class Pedimentos
                     gastos.CB_descripcion = Me.textDescripcion10.Text
                     gastos.CB_importe = Me.textimporte10.Text
                     gastos.CB_codigoPed = Me.txtCodigoPedimento.Text
+                    gastos.CB_codigo_bueno = Me.Textbox_codigo_pedimento.Text
 
                     If funciones.FN_InsertarCustomsBrokerage(gastos) Then
                         ' MsgBox("Datos Insertados Correctamente")
@@ -1263,6 +1305,7 @@ Public Class Pedimentos
                     gastos.FS_iva = Me.txtIvaFS1.Text
                     gastos.FS_total = Me.txtTotalFS1.Text
                     gastos.FS_codigoPed = Me.txtCodigoPedimento.Text
+                    gastos.FS_codigo_bueno = Me.Textbox_codigo_pedimento.Text
                     If txtRetenciones1.Text = "" Then
                         gastos.FS_retenciones = "0"
                     Else
@@ -1311,6 +1354,7 @@ Public Class Pedimentos
                     gastos.FS_iva = Me.txtIvaFS2.Text
                     gastos.FS_total = Me.txtTotalFS2.Text
                     gastos.FS_codigoPed = Me.txtCodigoPedimento.Text
+                    gastos.FS_codigo_bueno = Me.Textbox_codigo_pedimento.Text
                     If txtRetenciones2.Text = "" Then
                         gastos.FS_retenciones = "0"
                     Else
@@ -1363,6 +1407,7 @@ Public Class Pedimentos
                     gastos.FS_iva = Me.txtIvaFS3.Text
                     gastos.FS_total = Me.txtTotalFS3.Text
                     gastos.FS_codigoPed = Me.txtCodigoPedimento.Text
+                    gastos.FS_codigo_bueno = Me.Textbox_codigo_pedimento.Text
                     If txtRetenciones3.Text = "" Then
                         gastos.FS_retenciones = "0"
                     Else
@@ -1414,6 +1459,7 @@ Public Class Pedimentos
                     gastos.FS_iva = Me.txtIvaFS4.Text
                     gastos.FS_total = Me.txtTotalFS4.Text
                     gastos.FS_codigoPed = Me.txtCodigoPedimento.Text
+                    gastos.FS_codigo_bueno = Me.Textbox_codigo_pedimento.Text
                     If txtRetenciones4.Text = "" Then
                         gastos.FS_retenciones = "0"
                     Else
@@ -1465,6 +1511,7 @@ Public Class Pedimentos
                     gastos.FS_iva = Me.txtIvaFS5.Text
                     gastos.FS_total = Me.txtTotalFS5.Text
                     gastos.FS_codigoPed = Me.txtCodigoPedimento.Text
+                    gastos.FS_codigo_bueno = Me.Textbox_codigo_pedimento.Text
                     If txtRetenciones5.Text = "" Then
                         gastos.FS_retenciones = "0"
                     Else
@@ -1516,6 +1563,7 @@ Public Class Pedimentos
                     gastos.FS_iva = Me.txtIvaFS6.Text
                     gastos.FS_total = Me.txtTotalFS6.Text
                     gastos.FS_codigoPed = Me.txtCodigoPedimento.Text
+                    gastos.FS_codigo_bueno = Me.Textbox_codigo_pedimento.Text
                     If txtRetenciones6.Text = "" Then
                         gastos.FS_retenciones = "0"
                     Else
@@ -1566,6 +1614,7 @@ Public Class Pedimentos
                     gastos.FS_iva = Me.txtIvaFS7.Text
                     gastos.FS_total = Me.txtTotalFS7.Text
                     gastos.FS_codigoPed = Me.txtCodigoPedimento.Text
+                    gastos.FS_codigo_bueno = Me.Textbox_codigo_pedimento.Text
                     If txtRetenciones7.Text = "" Then
                         gastos.FS_retenciones = "0"
                     Else
@@ -1617,6 +1666,7 @@ Public Class Pedimentos
                     gastos.FS_iva = Me.txtIvaFS8.Text
                     gastos.FS_total = Me.txtTotalFS8.Text
                     gastos.FS_codigoPed = Me.txtCodigoPedimento.Text
+                    gastos.FS_codigo_bueno = Me.Textbox_codigo_pedimento.Text
                     If txtRetenciones8.Text = "" Then
                         gastos.FS_retenciones = "0"
                     Else
@@ -1668,6 +1718,7 @@ Public Class Pedimentos
                     gastos.FS_iva = Me.txtIvaFS9.Text
                     gastos.FS_total = Me.txtTotalFS9.Text
                     gastos.FS_codigoPed = Me.txtCodigoPedimento.Text
+                    gastos.FS_codigo_bueno = Me.Textbox_codigo_pedimento.Text
                     If txtRetenciones9.Text = "" Then
                         gastos.FS_retenciones = "0"
                     Else
@@ -1719,6 +1770,7 @@ Public Class Pedimentos
                     gastos.FS_iva = Me.txtIvaFS10.Text
                     gastos.FS_total = Me.txtTotalFS10.Text
                     gastos.FS_codigoPed = Me.txtCodigoPedimento.Text
+                    gastos.FS_codigo_bueno = Me.Textbox_codigo_pedimento.Text
                     If txtRetenciones10.Text = "" Then
                         gastos.FS_retenciones = "0"
                     Else
@@ -4039,7 +4091,7 @@ Public Class Pedimentos
         End If
 
         If textIva_GT2_10.Text <> Nothing Then
-            cu10 = (textIva_GT2_9.Text)
+            cu10 = (textIva_GT2_10.Text)
         End If
 
         '----------------------GASTOS TERCEROS
@@ -4681,6 +4733,7 @@ Public Class Pedimentos
         txtMercancia10.Clear()
         txtfraccion10.Clear()
         Textid1_10.Clear()
+        Generarcodigo()
         '--------------------gastos terceros 1----------------------------------------
         'txtcodigo1.Clear()
         'txtdescripcion1.Clear()
@@ -4956,6 +5009,7 @@ Public Class Pedimentos
 
                 If funciones.FN_ModificarPedimentos(logica) Then
                     MsgBox("Pedimento Modificado Correctamente", MessageBoxIcon.Information)
+                    Generarcodigo()
                 End If
             Catch ex As Exception
                 MsgBox(ex.Message)
@@ -6772,5 +6826,16 @@ Public Class Pedimentos
     End Sub
 
     '::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+    Sub Generarcodigo()
+        Dim conexxo As New SqlConnection(conexioncita)
+        Dim cmd As New SqlCommand("select MAX(id_pedimento)from TB_Pedimentos", conexxo)
+        Dim strCodigo As String
+        conexxo.Open()
+        strCodigo = cmd.ExecuteScalar
+        conexxo.Close()
 
+        Dim id As Integer = CType(strCodigo.Substring(0), Integer)
+
+        Textbox_codigo_pedimento.Text = "PED-" + Format(id + 1, "0000") + "/20"
+    End Sub
 End Class

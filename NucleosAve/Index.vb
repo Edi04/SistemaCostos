@@ -206,7 +206,7 @@
         If PMGasolina.Visible = True Then
             PMGasolina.Visible = False
         ElseIf PMGasolina.Visible = False Then
-             PMGasolina.Visible = True
+            PMGasolina.Visible = True
 
             PA_R.Visible = False
             PMCompras.Visible = False
@@ -217,6 +217,26 @@
             PMMPrima.Visible = False
         End If
     End Sub
+
+    'recursos_humanos
+    Private Sub btn_rh_abre_Click(sender As Object, e As EventArgs) Handles btn_rh_abre.Click
+
+        If PM_recursos_Humanos.Visible = True Then
+            PM_recursos_Humanos.Visible = False
+        ElseIf PM_recursos_Humanos.Visible = False Then
+            PM_recursos_Humanos.Visible = True
+
+            PA_R.Visible = False
+            PMCompras.Visible = False
+            PMCompras.Visible = False
+            PMTransporte.Visible = False
+            PMAlmacen.Visible = False
+            PMMass.Visible = False
+            PMMPrima.Visible = False
+            PMGasolina.Visible = False
+        End If
+    End Sub
+
 
 
     Dim ex, ey As Integer
@@ -305,6 +325,9 @@
         Fletes_y_Entregas.Show()
     End Sub
 
+    Private Sub btn_recursos_humanos_Click(sender As Object, e As EventArgs) Handles btn_recursos_humanos.Click
+        Rh.Show()
+    End Sub
     Private Sub btn_gas_por_mucho_Click(sender As Object, e As EventArgs) Handles btn_gas_por_mucho.Click
         Compra_Conbustible.Show()
     End Sub

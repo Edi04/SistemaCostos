@@ -1,8 +1,16 @@
 ﻿Public Class ClassFletesSeguros
-    Dim pedimento, descripcion, seccion, codigoPed As String
+    Dim pedimento, descripcion, seccion, codigoPed, codigo_bueno As String
     Dim importe, total, iva, retenciones, tc, usd As Double
     Dim idflete As Integer
 
+    Public Property FS_codigo_bueno
+        Get
+            Return codigo_bueno
+        End Get
+        Set(value)
+            codigo_bueno = value
+        End Set
+    End Property
     Public Property FS_usd
         Get
             Return usd
