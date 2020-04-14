@@ -17,7 +17,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <PublishUrl>\\CHECADOR_AVE-PC\Users\Public\iconos\Versiones Sistemas\v25\</PublishUrl>
+    <PublishUrl>\\ANTUA-PC\archivos compartidos\sistema\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -29,7 +29,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <WebPage>publish.htm</WebPage>
     <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>41</ApplicationRevision>
+    <ApplicationRevision>44</ApplicationRevision>
     <ApplicationVersion>1.3.3.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -361,9 +361,7 @@
     <Compile Include="MPrima\MPInventario.designer.vb">
       <DependentUpon>MPInventario.vb</DependentUpon>
     </Compile>
-    <Compile Include="MPrima\MPInventario.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="MPrima\MPInventario.vb" />
     <Compile Include="MPrima\RegistroMP.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -429,6 +427,20 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>traerproductos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Rh\ClassRh.vb" />
+    <Compile Include="Rh\FuncionRh.vb" />
+    <Compile Include="Rh\RegistrosRH.Designer.vb">
+      <DependentUpon>RegistrosRH.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Rh\RegistrosRH.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rh\Rh.Designer.vb">
+      <DependentUpon>Rh.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Rh\Rh.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="SISUT020DataSet3.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -588,6 +600,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Compras\reportes.resx">
       <DependentUpon>reportes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rh\RegistrosRH.resx">
+      <DependentUpon>RegistrosRH.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rh\Rh.resx">
+      <DependentUpon>Rh.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Trasporte\AltaTrasportes.resx">
       <DependentUpon>AltaTrasportes.vb</DependentUpon>
@@ -797,6 +815,7 @@
     <None Include="Resources\icons8-delivery-truck-96.png" />
     <None Include="Resources\icons8-carretilla-elevadora-80.png" />
     <None Include="Resources\icons8-remolque-240.png" />
+    <None Include="Resources\icons8-apretón-de-manos-80 %281%29.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
