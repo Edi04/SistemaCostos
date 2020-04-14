@@ -1283,3 +1283,4 @@ C:\Users\ANTUA\Desktop\Sistema_Costos\SistemaCostos\NucleosAve\obj\Debug\Nucleos
 C:\Users\ANTUA\Desktop\Sistema_Costos\SistemaCostos\NucleosAve\obj\Debug\NucleosAve.xml
 C:\Users\ANTUA\Desktop\Sistema_Costos\SistemaCostos\NucleosAve\obj\Debug\NucleosAve.pdb
 C:\Users\ANTUA\Desktop\Sistema_Costos\SistemaCostos\NucleosAve\obj\Debug\NucleosAve.Rh.resources
+C:\Users\ANTUA\Desktop\Sistema_Costos\SistemaCostos\NucleosAve\obj\Debug\NucleosAve.RegistrosRH.resources

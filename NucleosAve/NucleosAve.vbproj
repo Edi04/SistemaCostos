@@ -361,7 +361,9 @@
     <Compile Include="MPrima\MPInventario.designer.vb">
       <DependentUpon>MPInventario.vb</DependentUpon>
     </Compile>
-    <Compile Include="MPrima\MPInventario.vb" />
+    <Compile Include="MPrima\MPInventario.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MPrima\RegistroMP.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
