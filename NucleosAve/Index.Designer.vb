@@ -1098,7 +1098,7 @@ Partial Class Index
         Me.BMOHR.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.BMOHR.BackColor = System.Drawing.Color.Transparent
         Me.BMOHR.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BMOHR.Image = Global.NucleosAve.My.Resources.Resources.icons8_historial_de_pedidos_64
+        Me.BMOHR.Image = Global.NucleosAve.My.Resources.Resources.calendar_281
         Me.BMOHR.Location = New System.Drawing.Point(13, 2)
         Me.BMOHR.Name = "BMOHR"
         Me.BMOHR.Size = New System.Drawing.Size(55, 52)
