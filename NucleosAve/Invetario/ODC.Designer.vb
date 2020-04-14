@@ -64,6 +64,11 @@ Partial Class ODC
         Me.CodigoP = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.LDGP = New System.Windows.Forms.Label()
         Me.TP4 = New System.Windows.Forms.TabPage()
+        Me.TxtPS16 = New System.Windows.Forms.TextBox()
+        Me.TxtPS15 = New System.Windows.Forms.TextBox()
+        Me.TxtPS14 = New System.Windows.Forms.TextBox()
+        Me.TxtPS13 = New System.Windows.Forms.TextBox()
+        Me.LP4 = New System.Windows.Forms.Label()
         Me.BE16 = New System.Windows.Forms.Button()
         Me.BE15 = New System.Windows.Forms.Button()
         Me.BE14 = New System.Windows.Forms.Button()
@@ -131,6 +136,11 @@ Partial Class ODC
         Me.LPr4 = New System.Windows.Forms.Label()
         Me.LID4 = New System.Windows.Forms.Label()
         Me.TP3 = New System.Windows.Forms.TabPage()
+        Me.TxtPS12 = New System.Windows.Forms.TextBox()
+        Me.TxtPS11 = New System.Windows.Forms.TextBox()
+        Me.TxtPS10 = New System.Windows.Forms.TextBox()
+        Me.TxtPS9 = New System.Windows.Forms.TextBox()
+        Me.LP3 = New System.Windows.Forms.Label()
         Me.BE12 = New System.Windows.Forms.Button()
         Me.BE11 = New System.Windows.Forms.Button()
         Me.BE10 = New System.Windows.Forms.Button()
@@ -198,6 +208,11 @@ Partial Class ODC
         Me.LPr3 = New System.Windows.Forms.Label()
         Me.LID3 = New System.Windows.Forms.Label()
         Me.TP2 = New System.Windows.Forms.TabPage()
+        Me.TxtPS8 = New System.Windows.Forms.TextBox()
+        Me.TxtPS7 = New System.Windows.Forms.TextBox()
+        Me.TxtPS6 = New System.Windows.Forms.TextBox()
+        Me.TxtPS5 = New System.Windows.Forms.TextBox()
+        Me.LP2 = New System.Windows.Forms.Label()
         Me.BE8 = New System.Windows.Forms.Button()
         Me.BE7 = New System.Windows.Forms.Button()
         Me.BE6 = New System.Windows.Forms.Button()
@@ -265,6 +280,12 @@ Partial Class ODC
         Me.LPr2 = New System.Windows.Forms.Label()
         Me.LID2 = New System.Windows.Forms.Label()
         Me.TP1 = New System.Windows.Forms.TabPage()
+        Me.TxtPS4 = New System.Windows.Forms.TextBox()
+        Me.TxtPS3 = New System.Windows.Forms.TextBox()
+        Me.TxtPS2 = New System.Windows.Forms.TextBox()
+        Me.TxtPS1 = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.LP1 = New System.Windows.Forms.Label()
         Me.BE4 = New System.Windows.Forms.Button()
         Me.BE3 = New System.Windows.Forms.Button()
         Me.BE2 = New System.Windows.Forms.Button()
@@ -332,6 +353,11 @@ Partial Class ODC
         Me.LPr1 = New System.Windows.Forms.Label()
         Me.LID1 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.TxtPS20 = New System.Windows.Forms.TextBox()
+        Me.TxtPS19 = New System.Windows.Forms.TextBox()
+        Me.TxtPS18 = New System.Windows.Forms.TextBox()
+        Me.TxtPS17 = New System.Windows.Forms.TextBox()
+        Me.LP5 = New System.Windows.Forms.Label()
         Me.BE20 = New System.Windows.Forms.Button()
         Me.BE19 = New System.Windows.Forms.Button()
         Me.BE18 = New System.Windows.Forms.Button()
@@ -437,7 +463,7 @@ Partial Class ODC
         Me.BMinimizar.BackColor = System.Drawing.Color.Transparent
         Me.BMinimizar.BackgroundImage = Global.NucleosAve.My.Resources.Resources.icons8_minimizar_la_ventana_5001
         Me.BMinimizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.BMinimizar.Location = New System.Drawing.Point(872, 2)
+        Me.BMinimizar.Location = New System.Drawing.Point(938, 2)
         Me.BMinimizar.Name = "BMinimizar"
         Me.BMinimizar.Size = New System.Drawing.Size(50, 50)
         Me.BMinimizar.TabIndex = 2
@@ -448,7 +474,7 @@ Partial Class ODC
         Me.BCerrar.BackColor = System.Drawing.Color.Transparent
         Me.BCerrar.BackgroundImage = Global.NucleosAve.My.Resources.Resources.icons8_cerrar_ventana_5001
         Me.BCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.BCerrar.Location = New System.Drawing.Point(924, 2)
+        Me.BCerrar.Location = New System.Drawing.Point(990, 2)
         Me.BCerrar.Name = "BCerrar"
         Me.BCerrar.Size = New System.Drawing.Size(50, 50)
         Me.BCerrar.TabIndex = 3
@@ -469,7 +495,7 @@ Partial Class ODC
         '
         Me.POpc.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.POpc.BackColor = System.Drawing.Color.SteelBlue
-        Me.POpc.Location = New System.Drawing.Point(16, 53)
+        Me.POpc.Location = New System.Drawing.Point(45, 53)
         Me.POpc.Name = "POpc"
         Me.POpc.Size = New System.Drawing.Size(968, 10)
         Me.POpc.TabIndex = 0
@@ -491,7 +517,7 @@ Partial Class ODC
         Me.LFinalizar.AutoSize = True
         Me.LFinalizar.BackColor = System.Drawing.Color.Transparent
         Me.LFinalizar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LFinalizar.Location = New System.Drawing.Point(903, 125)
+        Me.LFinalizar.Location = New System.Drawing.Point(990, 125)
         Me.LFinalizar.Name = "LFinalizar"
         Me.LFinalizar.Size = New System.Drawing.Size(54, 15)
         Me.LFinalizar.TabIndex = 25
@@ -503,7 +529,7 @@ Partial Class ODC
         Me.BTerminar.BackColor = System.Drawing.Color.Transparent
         Me.BTerminar.BackgroundImage = Global.NucleosAve.My.Resources.Resources.icons8_cancelar_suscripción_64
         Me.BTerminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.BTerminar.Location = New System.Drawing.Point(906, 77)
+        Me.BTerminar.Location = New System.Drawing.Point(993, 77)
         Me.BTerminar.Name = "BTerminar"
         Me.BTerminar.Size = New System.Drawing.Size(50, 50)
         Me.BTerminar.TabIndex = 27
@@ -515,7 +541,7 @@ Partial Class ODC
         Me.BGuardar.BackColor = System.Drawing.Color.Transparent
         Me.BGuardar.BackgroundImage = Global.NucleosAve.My.Resources.Resources.list_3
         Me.BGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.BGuardar.Location = New System.Drawing.Point(850, 77)
+        Me.BGuardar.Location = New System.Drawing.Point(937, 77)
         Me.BGuardar.Name = "BGuardar"
         Me.BGuardar.Size = New System.Drawing.Size(50, 50)
         Me.BGuardar.TabIndex = 26
@@ -530,15 +556,15 @@ Partial Class ODC
         Me.POC.Controls.Add(Me.LBOD)
         Me.POC.Controls.Add(Me.LBusqueda)
         Me.POC.Controls.Add(Me.DGOCA)
-        Me.POC.Location = New System.Drawing.Point(15, 78)
+        Me.POC.Location = New System.Drawing.Point(-1, 76)
         Me.POC.Name = "POC"
-        Me.POC.Size = New System.Drawing.Size(963, 533)
+        Me.POC.Size = New System.Drawing.Size(1071, 533)
         Me.POC.TabIndex = 28
         Me.POC.Visible = False
         '
         'TxtBOC
         '
-        Me.TxtBOC.Location = New System.Drawing.Point(613, 121)
+        Me.TxtBOC.Location = New System.Drawing.Point(674, 126)
         Me.TxtBOC.Name = "TxtBOC"
         Me.TxtBOC.Size = New System.Drawing.Size(104, 20)
         Me.TxtBOC.TabIndex = 74
@@ -550,7 +576,7 @@ Partial Class ODC
         Me.GroupBox1.Controls.Add(Me.BBOC1)
         Me.GroupBox1.Controls.Add(Me.DTF2)
         Me.GroupBox1.Controls.Add(Me.DTF1)
-        Me.GroupBox1.Location = New System.Drawing.Point(194, 69)
+        Me.GroupBox1.Location = New System.Drawing.Point(255, 74)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(409, 112)
         Me.GroupBox1.TabIndex = 73
@@ -587,7 +613,7 @@ Partial Class ODC
         Me.LBOD.AutoSize = True
         Me.LBOD.BackColor = System.Drawing.Color.Transparent
         Me.LBOD.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LBOD.Location = New System.Drawing.Point(608, 100)
+        Me.LBOD.Location = New System.Drawing.Point(669, 105)
         Me.LBOD.Name = "LBOD"
         Me.LBOD.Size = New System.Drawing.Size(115, 16)
         Me.LBOD.TabIndex = 75
@@ -597,7 +623,7 @@ Partial Class ODC
         '
         Me.LBusqueda.AutoSize = True
         Me.LBusqueda.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LBusqueda.Location = New System.Drawing.Point(350, 41)
+        Me.LBusqueda.Location = New System.Drawing.Point(411, 46)
         Me.LBusqueda.Name = "LBusqueda"
         Me.LBusqueda.Size = New System.Drawing.Size(104, 24)
         Me.LBusqueda.TabIndex = 1
@@ -609,7 +635,7 @@ Partial Class ODC
         Me.DGOCA.AllowUserToDeleteRows = False
         Me.DGOCA.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGOCA.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.COC, Me.COrden, Me.Codis, Me.Proveedor, Me.PS})
-        Me.DGOCA.Location = New System.Drawing.Point(150, 187)
+        Me.DGOCA.Location = New System.Drawing.Point(211, 192)
         Me.DGOCA.Name = "DGOCA"
         Me.DGOCA.ReadOnly = True
         Me.DGOCA.Size = New System.Drawing.Size(608, 219)
@@ -788,6 +814,11 @@ Partial Class ODC
         'TP4
         '
         Me.TP4.BackColor = System.Drawing.Color.White
+        Me.TP4.Controls.Add(Me.TxtPS16)
+        Me.TP4.Controls.Add(Me.TxtPS15)
+        Me.TP4.Controls.Add(Me.TxtPS14)
+        Me.TP4.Controls.Add(Me.TxtPS13)
+        Me.TP4.Controls.Add(Me.LP4)
         Me.TP4.Controls.Add(Me.BE16)
         Me.TP4.Controls.Add(Me.BE15)
         Me.TP4.Controls.Add(Me.BE14)
@@ -857,9 +888,66 @@ Partial Class ODC
         Me.TP4.Location = New System.Drawing.Point(4, 22)
         Me.TP4.Name = "TP4"
         Me.TP4.Padding = New System.Windows.Forms.Padding(3)
-        Me.TP4.Size = New System.Drawing.Size(949, 434)
+        Me.TP4.Size = New System.Drawing.Size(1054, 434)
         Me.TP4.TabIndex = 3
         Me.TP4.Text = "Productos"
+        '
+        'TxtPS16
+        '
+        Me.TxtPS16.Location = New System.Drawing.Point(970, 360)
+        Me.TxtPS16.Name = "TxtPS16"
+        Me.TxtPS16.ReadOnly = True
+        Me.TxtPS16.Size = New System.Drawing.Size(56, 20)
+        Me.TxtPS16.TabIndex = 17
+        Me.TxtPS16.Text = "0"
+        Me.TxtPS16.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TxtPS16.Visible = False
+        '
+        'TxtPS15
+        '
+        Me.TxtPS15.Location = New System.Drawing.Point(970, 250)
+        Me.TxtPS15.Name = "TxtPS15"
+        Me.TxtPS15.ReadOnly = True
+        Me.TxtPS15.Size = New System.Drawing.Size(56, 20)
+        Me.TxtPS15.TabIndex = 16
+        Me.TxtPS15.Text = "0"
+        Me.TxtPS15.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TxtPS15.Visible = False
+        '
+        'TxtPS14
+        '
+        Me.TxtPS14.Location = New System.Drawing.Point(970, 150)
+        Me.TxtPS14.Name = "TxtPS14"
+        Me.TxtPS14.ReadOnly = True
+        Me.TxtPS14.Size = New System.Drawing.Size(56, 20)
+        Me.TxtPS14.TabIndex = 15
+        Me.TxtPS14.Text = "0"
+        Me.TxtPS14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TxtPS14.Visible = False
+        '
+        'TxtPS13
+        '
+        Me.TxtPS13.Location = New System.Drawing.Point(970, 45)
+        Me.TxtPS13.Name = "TxtPS13"
+        Me.TxtPS13.ReadOnly = True
+        Me.TxtPS13.Size = New System.Drawing.Size(56, 20)
+        Me.TxtPS13.TabIndex = 14
+        Me.TxtPS13.Text = "0"
+        Me.TxtPS13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TxtPS13.Visible = False
+        '
+        'LP4
+        '
+        Me.LP4.AutoSize = True
+        Me.LP4.BackColor = System.Drawing.Color.Transparent
+        Me.LP4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LP4.Location = New System.Drawing.Point(973, 10)
+        Me.LP4.Name = "LP4"
+        Me.LP4.Size = New System.Drawing.Size(66, 30)
+        Me.LP4.TabIndex = 13
+        Me.LP4.Text = "Precio por " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Unidad"
+        Me.LP4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.LP4.Visible = False
         '
         'BE16
         '
@@ -1373,7 +1461,7 @@ Partial Class ODC
         '
         Me.P12.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.P12.BackColor = System.Drawing.Color.SteelBlue
-        Me.P12.Location = New System.Drawing.Point(29, 334)
+        Me.P12.Location = New System.Drawing.Point(82, 334)
         Me.P12.Name = "P12"
         Me.P12.Size = New System.Drawing.Size(900, 5)
         Me.P12.TabIndex = 0
@@ -1418,7 +1506,7 @@ Partial Class ODC
         '
         Me.P11.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.P11.BackColor = System.Drawing.Color.SteelBlue
-        Me.P11.Location = New System.Drawing.Point(29, 229)
+        Me.P11.Location = New System.Drawing.Point(82, 229)
         Me.P11.Name = "P11"
         Me.P11.Size = New System.Drawing.Size(900, 5)
         Me.P11.TabIndex = 0
@@ -1463,7 +1551,7 @@ Partial Class ODC
         '
         Me.P10.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.P10.BackColor = System.Drawing.Color.SteelBlue
-        Me.P10.Location = New System.Drawing.Point(29, 124)
+        Me.P10.Location = New System.Drawing.Point(82, 124)
         Me.P10.Name = "P10"
         Me.P10.Size = New System.Drawing.Size(900, 5)
         Me.P10.TabIndex = 0
@@ -1582,6 +1670,11 @@ Partial Class ODC
         'TP3
         '
         Me.TP3.BackColor = System.Drawing.Color.White
+        Me.TP3.Controls.Add(Me.TxtPS12)
+        Me.TP3.Controls.Add(Me.TxtPS11)
+        Me.TP3.Controls.Add(Me.TxtPS10)
+        Me.TP3.Controls.Add(Me.TxtPS9)
+        Me.TP3.Controls.Add(Me.LP3)
         Me.TP3.Controls.Add(Me.BE12)
         Me.TP3.Controls.Add(Me.BE11)
         Me.TP3.Controls.Add(Me.BE10)
@@ -1651,9 +1744,66 @@ Partial Class ODC
         Me.TP3.Location = New System.Drawing.Point(4, 22)
         Me.TP3.Name = "TP3"
         Me.TP3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TP3.Size = New System.Drawing.Size(949, 434)
+        Me.TP3.Size = New System.Drawing.Size(1054, 434)
         Me.TP3.TabIndex = 2
         Me.TP3.Text = "Productos"
+        '
+        'TxtPS12
+        '
+        Me.TxtPS12.Location = New System.Drawing.Point(970, 360)
+        Me.TxtPS12.Name = "TxtPS12"
+        Me.TxtPS12.ReadOnly = True
+        Me.TxtPS12.Size = New System.Drawing.Size(56, 20)
+        Me.TxtPS12.TabIndex = 17
+        Me.TxtPS12.Text = "0"
+        Me.TxtPS12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TxtPS12.Visible = False
+        '
+        'TxtPS11
+        '
+        Me.TxtPS11.Location = New System.Drawing.Point(970, 250)
+        Me.TxtPS11.Name = "TxtPS11"
+        Me.TxtPS11.ReadOnly = True
+        Me.TxtPS11.Size = New System.Drawing.Size(56, 20)
+        Me.TxtPS11.TabIndex = 16
+        Me.TxtPS11.Text = "0"
+        Me.TxtPS11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TxtPS11.Visible = False
+        '
+        'TxtPS10
+        '
+        Me.TxtPS10.Location = New System.Drawing.Point(970, 150)
+        Me.TxtPS10.Name = "TxtPS10"
+        Me.TxtPS10.ReadOnly = True
+        Me.TxtPS10.Size = New System.Drawing.Size(56, 20)
+        Me.TxtPS10.TabIndex = 15
+        Me.TxtPS10.Text = "0"
+        Me.TxtPS10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TxtPS10.Visible = False
+        '
+        'TxtPS9
+        '
+        Me.TxtPS9.Location = New System.Drawing.Point(970, 45)
+        Me.TxtPS9.Name = "TxtPS9"
+        Me.TxtPS9.ReadOnly = True
+        Me.TxtPS9.Size = New System.Drawing.Size(56, 20)
+        Me.TxtPS9.TabIndex = 14
+        Me.TxtPS9.Text = "0"
+        Me.TxtPS9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TxtPS9.Visible = False
+        '
+        'LP3
+        '
+        Me.LP3.AutoSize = True
+        Me.LP3.BackColor = System.Drawing.Color.Transparent
+        Me.LP3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LP3.Location = New System.Drawing.Point(973, 10)
+        Me.LP3.Name = "LP3"
+        Me.LP3.Size = New System.Drawing.Size(66, 30)
+        Me.LP3.TabIndex = 13
+        Me.LP3.Text = "Precio por " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Unidad"
+        Me.LP3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.LP3.Visible = False
         '
         'BE12
         '
@@ -2167,7 +2317,7 @@ Partial Class ODC
         '
         Me.P9.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.P9.BackColor = System.Drawing.Color.SteelBlue
-        Me.P9.Location = New System.Drawing.Point(29, 334)
+        Me.P9.Location = New System.Drawing.Point(82, 334)
         Me.P9.Name = "P9"
         Me.P9.Size = New System.Drawing.Size(900, 5)
         Me.P9.TabIndex = 0
@@ -2212,7 +2362,7 @@ Partial Class ODC
         '
         Me.P8.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.P8.BackColor = System.Drawing.Color.SteelBlue
-        Me.P8.Location = New System.Drawing.Point(29, 229)
+        Me.P8.Location = New System.Drawing.Point(82, 229)
         Me.P8.Name = "P8"
         Me.P8.Size = New System.Drawing.Size(900, 5)
         Me.P8.TabIndex = 0
@@ -2257,7 +2407,7 @@ Partial Class ODC
         '
         Me.P7.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.P7.BackColor = System.Drawing.Color.SteelBlue
-        Me.P7.Location = New System.Drawing.Point(29, 124)
+        Me.P7.Location = New System.Drawing.Point(82, 124)
         Me.P7.Name = "P7"
         Me.P7.Size = New System.Drawing.Size(900, 5)
         Me.P7.TabIndex = 0
@@ -2376,6 +2526,11 @@ Partial Class ODC
         'TP2
         '
         Me.TP2.BackColor = System.Drawing.Color.White
+        Me.TP2.Controls.Add(Me.TxtPS8)
+        Me.TP2.Controls.Add(Me.TxtPS7)
+        Me.TP2.Controls.Add(Me.TxtPS6)
+        Me.TP2.Controls.Add(Me.TxtPS5)
+        Me.TP2.Controls.Add(Me.LP2)
         Me.TP2.Controls.Add(Me.BE8)
         Me.TP2.Controls.Add(Me.BE7)
         Me.TP2.Controls.Add(Me.BE6)
@@ -2445,9 +2600,66 @@ Partial Class ODC
         Me.TP2.Location = New System.Drawing.Point(4, 22)
         Me.TP2.Name = "TP2"
         Me.TP2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TP2.Size = New System.Drawing.Size(949, 434)
+        Me.TP2.Size = New System.Drawing.Size(1054, 434)
         Me.TP2.TabIndex = 1
         Me.TP2.Text = "Productos"
+        '
+        'TxtPS8
+        '
+        Me.TxtPS8.Location = New System.Drawing.Point(970, 360)
+        Me.TxtPS8.Name = "TxtPS8"
+        Me.TxtPS8.ReadOnly = True
+        Me.TxtPS8.Size = New System.Drawing.Size(56, 20)
+        Me.TxtPS8.TabIndex = 17
+        Me.TxtPS8.Text = "0"
+        Me.TxtPS8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TxtPS8.Visible = False
+        '
+        'TxtPS7
+        '
+        Me.TxtPS7.Location = New System.Drawing.Point(970, 250)
+        Me.TxtPS7.Name = "TxtPS7"
+        Me.TxtPS7.ReadOnly = True
+        Me.TxtPS7.Size = New System.Drawing.Size(56, 20)
+        Me.TxtPS7.TabIndex = 16
+        Me.TxtPS7.Text = "0"
+        Me.TxtPS7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TxtPS7.Visible = False
+        '
+        'TxtPS6
+        '
+        Me.TxtPS6.Location = New System.Drawing.Point(970, 150)
+        Me.TxtPS6.Name = "TxtPS6"
+        Me.TxtPS6.ReadOnly = True
+        Me.TxtPS6.Size = New System.Drawing.Size(56, 20)
+        Me.TxtPS6.TabIndex = 15
+        Me.TxtPS6.Text = "0"
+        Me.TxtPS6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TxtPS6.Visible = False
+        '
+        'TxtPS5
+        '
+        Me.TxtPS5.Location = New System.Drawing.Point(970, 45)
+        Me.TxtPS5.Name = "TxtPS5"
+        Me.TxtPS5.ReadOnly = True
+        Me.TxtPS5.Size = New System.Drawing.Size(56, 20)
+        Me.TxtPS5.TabIndex = 14
+        Me.TxtPS5.Text = "0"
+        Me.TxtPS5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TxtPS5.Visible = False
+        '
+        'LP2
+        '
+        Me.LP2.AutoSize = True
+        Me.LP2.BackColor = System.Drawing.Color.Transparent
+        Me.LP2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LP2.Location = New System.Drawing.Point(973, 10)
+        Me.LP2.Name = "LP2"
+        Me.LP2.Size = New System.Drawing.Size(66, 30)
+        Me.LP2.TabIndex = 13
+        Me.LP2.Text = "Precio por " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Unidad"
+        Me.LP2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.LP2.Visible = False
         '
         'BE8
         '
@@ -2961,7 +3173,7 @@ Partial Class ODC
         '
         Me.P6.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.P6.BackColor = System.Drawing.Color.SteelBlue
-        Me.P6.Location = New System.Drawing.Point(29, 334)
+        Me.P6.Location = New System.Drawing.Point(82, 334)
         Me.P6.Name = "P6"
         Me.P6.Size = New System.Drawing.Size(900, 5)
         Me.P6.TabIndex = 0
@@ -3006,7 +3218,7 @@ Partial Class ODC
         '
         Me.P5.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.P5.BackColor = System.Drawing.Color.SteelBlue
-        Me.P5.Location = New System.Drawing.Point(29, 229)
+        Me.P5.Location = New System.Drawing.Point(82, 229)
         Me.P5.Name = "P5"
         Me.P5.Size = New System.Drawing.Size(900, 5)
         Me.P5.TabIndex = 0
@@ -3051,7 +3263,7 @@ Partial Class ODC
         '
         Me.P4.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.P4.BackColor = System.Drawing.Color.SteelBlue
-        Me.P4.Location = New System.Drawing.Point(29, 124)
+        Me.P4.Location = New System.Drawing.Point(82, 124)
         Me.P4.Name = "P4"
         Me.P4.Size = New System.Drawing.Size(900, 5)
         Me.P4.TabIndex = 0
@@ -3170,6 +3382,12 @@ Partial Class ODC
         'TP1
         '
         Me.TP1.BackColor = System.Drawing.Color.White
+        Me.TP1.Controls.Add(Me.TxtPS4)
+        Me.TP1.Controls.Add(Me.TxtPS3)
+        Me.TP1.Controls.Add(Me.TxtPS2)
+        Me.TP1.Controls.Add(Me.TxtPS1)
+        Me.TP1.Controls.Add(Me.Label2)
+        Me.TP1.Controls.Add(Me.LP1)
         Me.TP1.Controls.Add(Me.BE4)
         Me.TP1.Controls.Add(Me.BE3)
         Me.TP1.Controls.Add(Me.BE2)
@@ -3239,9 +3457,79 @@ Partial Class ODC
         Me.TP1.Location = New System.Drawing.Point(4, 22)
         Me.TP1.Name = "TP1"
         Me.TP1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TP1.Size = New System.Drawing.Size(949, 434)
+        Me.TP1.Size = New System.Drawing.Size(1054, 434)
         Me.TP1.TabIndex = 0
         Me.TP1.Text = "Productos"
+        '
+        'TxtPS4
+        '
+        Me.TxtPS4.Location = New System.Drawing.Point(970, 359)
+        Me.TxtPS4.Name = "TxtPS4"
+        Me.TxtPS4.ReadOnly = True
+        Me.TxtPS4.Size = New System.Drawing.Size(56, 20)
+        Me.TxtPS4.TabIndex = 12
+        Me.TxtPS4.Text = "0"
+        Me.TxtPS4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TxtPS4.Visible = False
+        '
+        'TxtPS3
+        '
+        Me.TxtPS3.Location = New System.Drawing.Point(970, 249)
+        Me.TxtPS3.Name = "TxtPS3"
+        Me.TxtPS3.ReadOnly = True
+        Me.TxtPS3.Size = New System.Drawing.Size(56, 20)
+        Me.TxtPS3.TabIndex = 11
+        Me.TxtPS3.Text = "0"
+        Me.TxtPS3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TxtPS3.Visible = False
+        '
+        'TxtPS2
+        '
+        Me.TxtPS2.Location = New System.Drawing.Point(970, 149)
+        Me.TxtPS2.Name = "TxtPS2"
+        Me.TxtPS2.ReadOnly = True
+        Me.TxtPS2.Size = New System.Drawing.Size(56, 20)
+        Me.TxtPS2.TabIndex = 10
+        Me.TxtPS2.Text = "0"
+        Me.TxtPS2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TxtPS2.Visible = False
+        '
+        'TxtPS1
+        '
+        Me.TxtPS1.Location = New System.Drawing.Point(970, 44)
+        Me.TxtPS1.Name = "TxtPS1"
+        Me.TxtPS1.ReadOnly = True
+        Me.TxtPS1.Size = New System.Drawing.Size(56, 20)
+        Me.TxtPS1.TabIndex = 9
+        Me.TxtPS1.Text = "0"
+        Me.TxtPS1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TxtPS1.Visible = False
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(508, 210)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(55, 30)
+        Me.Label2.TabIndex = 8
+        Me.Label2.Text = "Ingresar " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "por:"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.Label2.Visible = False
+        '
+        'LP1
+        '
+        Me.LP1.AutoSize = True
+        Me.LP1.BackColor = System.Drawing.Color.Transparent
+        Me.LP1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LP1.Location = New System.Drawing.Point(973, 9)
+        Me.LP1.Name = "LP1"
+        Me.LP1.Size = New System.Drawing.Size(66, 30)
+        Me.LP1.TabIndex = 7
+        Me.LP1.Text = "Precio por " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Unidad"
+        Me.LP1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.LP1.Visible = False
         '
         'BE4
         '
@@ -3755,7 +4043,7 @@ Partial Class ODC
         '
         Me.P3.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.P3.BackColor = System.Drawing.Color.SteelBlue
-        Me.P3.Location = New System.Drawing.Point(29, 334)
+        Me.P3.Location = New System.Drawing.Point(82, 334)
         Me.P3.Name = "P3"
         Me.P3.Size = New System.Drawing.Size(900, 5)
         Me.P3.TabIndex = 0
@@ -3800,7 +4088,7 @@ Partial Class ODC
         '
         Me.P2.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.P2.BackColor = System.Drawing.Color.SteelBlue
-        Me.P2.Location = New System.Drawing.Point(29, 229)
+        Me.P2.Location = New System.Drawing.Point(82, 229)
         Me.P2.Name = "P2"
         Me.P2.Size = New System.Drawing.Size(900, 5)
         Me.P2.TabIndex = 0
@@ -3845,7 +4133,7 @@ Partial Class ODC
         '
         Me.P1.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.P1.BackColor = System.Drawing.Color.SteelBlue
-        Me.P1.Location = New System.Drawing.Point(29, 124)
+        Me.P1.Location = New System.Drawing.Point(82, 124)
         Me.P1.Name = "P1"
         Me.P1.Size = New System.Drawing.Size(900, 5)
         Me.P1.TabIndex = 0
@@ -3964,6 +4252,11 @@ Partial Class ODC
         'TabPage2
         '
         Me.TabPage2.BackColor = System.Drawing.Color.White
+        Me.TabPage2.Controls.Add(Me.TxtPS20)
+        Me.TabPage2.Controls.Add(Me.TxtPS19)
+        Me.TabPage2.Controls.Add(Me.TxtPS18)
+        Me.TabPage2.Controls.Add(Me.TxtPS17)
+        Me.TabPage2.Controls.Add(Me.LP5)
         Me.TabPage2.Controls.Add(Me.BE20)
         Me.TabPage2.Controls.Add(Me.BE19)
         Me.TabPage2.Controls.Add(Me.BE18)
@@ -4033,9 +4326,66 @@ Partial Class ODC
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(949, 434)
+        Me.TabPage2.Size = New System.Drawing.Size(1054, 434)
         Me.TabPage2.TabIndex = 4
         Me.TabPage2.Text = "Productos"
+        '
+        'TxtPS20
+        '
+        Me.TxtPS20.Location = New System.Drawing.Point(970, 361)
+        Me.TxtPS20.Name = "TxtPS20"
+        Me.TxtPS20.ReadOnly = True
+        Me.TxtPS20.Size = New System.Drawing.Size(56, 20)
+        Me.TxtPS20.TabIndex = 17
+        Me.TxtPS20.Text = "0"
+        Me.TxtPS20.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TxtPS20.Visible = False
+        '
+        'TxtPS19
+        '
+        Me.TxtPS19.Location = New System.Drawing.Point(970, 251)
+        Me.TxtPS19.Name = "TxtPS19"
+        Me.TxtPS19.ReadOnly = True
+        Me.TxtPS19.Size = New System.Drawing.Size(56, 20)
+        Me.TxtPS19.TabIndex = 16
+        Me.TxtPS19.Text = "0"
+        Me.TxtPS19.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TxtPS19.Visible = False
+        '
+        'TxtPS18
+        '
+        Me.TxtPS18.Location = New System.Drawing.Point(970, 151)
+        Me.TxtPS18.Name = "TxtPS18"
+        Me.TxtPS18.ReadOnly = True
+        Me.TxtPS18.Size = New System.Drawing.Size(56, 20)
+        Me.TxtPS18.TabIndex = 15
+        Me.TxtPS18.Text = "0"
+        Me.TxtPS18.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TxtPS18.Visible = False
+        '
+        'TxtPS17
+        '
+        Me.TxtPS17.Location = New System.Drawing.Point(970, 46)
+        Me.TxtPS17.Name = "TxtPS17"
+        Me.TxtPS17.ReadOnly = True
+        Me.TxtPS17.Size = New System.Drawing.Size(56, 20)
+        Me.TxtPS17.TabIndex = 14
+        Me.TxtPS17.Text = "0"
+        Me.TxtPS17.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TxtPS17.Visible = False
+        '
+        'LP5
+        '
+        Me.LP5.AutoSize = True
+        Me.LP5.BackColor = System.Drawing.Color.Transparent
+        Me.LP5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LP5.Location = New System.Drawing.Point(973, 11)
+        Me.LP5.Name = "LP5"
+        Me.LP5.Size = New System.Drawing.Size(66, 30)
+        Me.LP5.TabIndex = 13
+        Me.LP5.Text = "Precio por " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Unidad"
+        Me.LP5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.LP5.Visible = False
         '
         'BE20
         '
@@ -4549,7 +4899,7 @@ Partial Class ODC
         '
         Me.P15.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.P15.BackColor = System.Drawing.Color.SteelBlue
-        Me.P15.Location = New System.Drawing.Point(30, 335)
+        Me.P15.Location = New System.Drawing.Point(82, 335)
         Me.P15.Name = "P15"
         Me.P15.Size = New System.Drawing.Size(900, 5)
         Me.P15.TabIndex = 0
@@ -4594,7 +4944,7 @@ Partial Class ODC
         '
         Me.P14.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.P14.BackColor = System.Drawing.Color.SteelBlue
-        Me.P14.Location = New System.Drawing.Point(30, 230)
+        Me.P14.Location = New System.Drawing.Point(82, 230)
         Me.P14.Name = "P14"
         Me.P14.Size = New System.Drawing.Size(900, 5)
         Me.P14.TabIndex = 0
@@ -4639,7 +4989,7 @@ Partial Class ODC
         '
         Me.P13.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.P13.BackColor = System.Drawing.Color.SteelBlue
-        Me.P13.Location = New System.Drawing.Point(30, 125)
+        Me.P13.Location = New System.Drawing.Point(82, 125)
         Me.P13.Name = "P13"
         Me.P13.Size = New System.Drawing.Size(900, 5)
         Me.P13.TabIndex = 0
@@ -4762,10 +5112,10 @@ Partial Class ODC
         Me.Productos1.Controls.Add(Me.TP3)
         Me.Productos1.Controls.Add(Me.TP4)
         Me.Productos1.Controls.Add(Me.TabPage2)
-        Me.Productos1.Location = New System.Drawing.Point(17, 153)
+        Me.Productos1.Location = New System.Drawing.Point(2, 153)
         Me.Productos1.Name = "Productos1"
         Me.Productos1.SelectedIndex = 0
-        Me.Productos1.Size = New System.Drawing.Size(957, 460)
+        Me.Productos1.Size = New System.Drawing.Size(1062, 460)
         Me.Productos1.TabIndex = 0
         Me.Productos1.Visible = False
         '
@@ -4774,7 +5124,8 @@ Partial Class ODC
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.NucleosAve.My.Resources.Resources.Fondo
-        Me.ClientSize = New System.Drawing.Size(987, 617)
+        Me.ClientSize = New System.Drawing.Size(1044, 617)
+        Me.Controls.Add(Me.POC)
         Me.Controls.Add(Me.PMaterial)
         Me.Controls.Add(Me.LProd)
         Me.Controls.Add(Me.LDGP)
@@ -4791,7 +5142,6 @@ Partial Class ODC
         Me.Controls.Add(Me.BCerrar)
         Me.Controls.Add(Me.LOrdenC)
         Me.Controls.Add(Me.POpc)
-        Me.Controls.Add(Me.POC)
         Me.Controls.Add(Me.Productos1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "ODC"
@@ -5193,4 +5543,30 @@ Partial Class ODC
     Friend WithEvents LPr5 As Label
     Friend WithEvents LID5 As Label
     Friend WithEvents Productos1 As TabControl
+    Friend WithEvents TxtPS16 As TextBox
+    Friend WithEvents TxtPS15 As TextBox
+    Friend WithEvents TxtPS14 As TextBox
+    Friend WithEvents TxtPS13 As TextBox
+    Friend WithEvents LP4 As Label
+    Friend WithEvents TxtPS12 As TextBox
+    Friend WithEvents TxtPS11 As TextBox
+    Friend WithEvents TxtPS10 As TextBox
+    Friend WithEvents TxtPS9 As TextBox
+    Friend WithEvents LP3 As Label
+    Friend WithEvents TxtPS8 As TextBox
+    Friend WithEvents TxtPS7 As TextBox
+    Friend WithEvents TxtPS6 As TextBox
+    Friend WithEvents TxtPS5 As TextBox
+    Friend WithEvents LP2 As Label
+    Friend WithEvents TxtPS4 As TextBox
+    Friend WithEvents TxtPS3 As TextBox
+    Friend WithEvents TxtPS2 As TextBox
+    Friend WithEvents TxtPS1 As TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents LP1 As Label
+    Friend WithEvents TxtPS20 As TextBox
+    Friend WithEvents TxtPS19 As TextBox
+    Friend WithEvents TxtPS18 As TextBox
+    Friend WithEvents TxtPS17 As TextBox
+    Friend WithEvents LP5 As Label
 End Class
