@@ -482,6 +482,7 @@ Partial Class Pedimentos
         Me.importeTGAG = New System.Windows.Forms.TextBox()
         Me.btn_Buscar = New System.Windows.Forms.PictureBox()
         Me.btn_clean = New System.Windows.Forms.Button()
+        Me.Textbox_codigo_pedimento = New System.Windows.Forms.TextBox()
         CType(Me.btn_minimizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_Cerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControlPedimentos.SuspendLayout()
@@ -529,7 +530,7 @@ Partial Class Pedimentos
         Me.btn_minimizar.BackColor = System.Drawing.Color.Transparent
         Me.btn_minimizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btn_minimizar.Image = Global.NucleosAve.My.Resources.Resources.icons8_minimizar_la_ventana_5001
-        Me.btn_minimizar.Location = New System.Drawing.Point(922, 0)
+        Me.btn_minimizar.Location = New System.Drawing.Point(925, 1)
         Me.btn_minimizar.Name = "btn_minimizar"
         Me.btn_minimizar.Size = New System.Drawing.Size(53, 52)
         Me.btn_minimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -543,7 +544,7 @@ Partial Class Pedimentos
         Me.btn_Cerrar.BackColor = System.Drawing.Color.Transparent
         Me.btn_Cerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btn_Cerrar.Image = Global.NucleosAve.My.Resources.Resources.icons8_cerrar_ventana_5001
-        Me.btn_Cerrar.Location = New System.Drawing.Point(981, 0)
+        Me.btn_Cerrar.Location = New System.Drawing.Point(981, 1)
         Me.btn_Cerrar.Name = "btn_Cerrar"
         Me.btn_Cerrar.Size = New System.Drawing.Size(55, 52)
         Me.btn_Cerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -592,6 +593,7 @@ Partial Class Pedimentos
         'TabPage1
         '
         Me.TabPage1.BackColor = System.Drawing.Color.White
+        Me.TabPage1.Controls.Add(Me.Textbox_codigo_pedimento)
         Me.TabPage1.Controls.Add(Me.textpdf)
         Me.TabPage1.Controls.Add(Me.TextIDPEdimento)
         Me.TabPage1.Controls.Add(Me.PictureBox1)
@@ -645,7 +647,7 @@ Partial Class Pedimentos
         Me.GroupBox4.Controls.Add(Me.txtcantidadt)
         Me.GroupBox4.Location = New System.Drawing.Point(405, 232)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(238, 55)
+        Me.GroupBox4.Size = New System.Drawing.Size(238, 60)
         Me.GroupBox4.TabIndex = 127
         Me.GroupBox4.TabStop = False
         '
@@ -820,14 +822,15 @@ Partial Class Pedimentos
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox1.Controls.Add(Me.Label7)
+        Me.GroupBox1.Controls.Add(Me.btn_BuscarOc)
         Me.GroupBox1.Controls.Add(Me.txtCodigoPedimento)
         Me.GroupBox1.Controls.Add(Me.Label18)
         Me.GroupBox1.Controls.Add(Me.Label17)
         Me.GroupBox1.Controls.Add(Me.txtCodigoPedimento1)
-        Me.GroupBox1.Controls.Add(Me.Label6)
         Me.GroupBox1.Controls.Add(Me.txtCove)
+        Me.GroupBox1.Controls.Add(Me.TexOrdenC)
         Me.GroupBox1.Controls.Add(Me.txtclave)
-        Me.GroupBox1.Controls.Add(Me.DateTimeFecha)
+        Me.GroupBox1.Controls.Add(Me.Label8)
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Location = New System.Drawing.Point(105, 32)
         Me.GroupBox1.Name = "GroupBox1"
@@ -840,7 +843,7 @@ Partial Class Pedimentos
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label7.Location = New System.Drawing.Point(12, 12)
+        Me.Label7.Location = New System.Drawing.Point(210, 12)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(109, 13)
         Me.Label7.TabIndex = 120
@@ -848,9 +851,9 @@ Partial Class Pedimentos
         '
         'txtCodigoPedimento
         '
-        Me.txtCodigoPedimento.Location = New System.Drawing.Point(15, 28)
+        Me.txtCodigoPedimento.Location = New System.Drawing.Point(208, 29)
         Me.txtCodigoPedimento.Name = "txtCodigoPedimento"
-        Me.txtCodigoPedimento.Size = New System.Drawing.Size(112, 20)
+        Me.txtCodigoPedimento.Size = New System.Drawing.Size(142, 20)
         Me.txtCodigoPedimento.TabIndex = 119
         '
         'Label18
@@ -858,7 +861,7 @@ Partial Class Pedimentos
         Me.Label18.AutoSize = True
         Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label18.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label18.Location = New System.Drawing.Point(130, 12)
+        Me.Label18.Location = New System.Drawing.Point(355, 12)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(66, 13)
         Me.Label18.TabIndex = 116
@@ -869,7 +872,7 @@ Partial Class Pedimentos
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label17.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label17.Location = New System.Drawing.Point(297, 12)
+        Me.Label17.Location = New System.Drawing.Point(518, 12)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(39, 13)
         Me.Label17.TabIndex = 117
@@ -877,7 +880,7 @@ Partial Class Pedimentos
         '
         'txtCodigoPedimento1
         '
-        Me.txtCodigoPedimento1.Location = New System.Drawing.Point(133, 28)
+        Me.txtCodigoPedimento1.Location = New System.Drawing.Point(356, 29)
         Me.txtCodigoPedimento1.Name = "txtCodigoPedimento1"
         Me.txtCodigoPedimento1.Size = New System.Drawing.Size(157, 20)
         Me.txtCodigoPedimento1.TabIndex = 1
@@ -887,7 +890,7 @@ Partial Class Pedimentos
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label6.Location = New System.Drawing.Point(584, 12)
+        Me.Label6.Location = New System.Drawing.Point(3, 12)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(42, 13)
         Me.Label6.TabIndex = 118
@@ -895,23 +898,23 @@ Partial Class Pedimentos
         '
         'txtCove
         '
-        Me.txtCove.Location = New System.Drawing.Point(417, 28)
+        Me.txtCove.Location = New System.Drawing.Point(640, 29)
         Me.txtCove.Name = "txtCove"
         Me.txtCove.Size = New System.Drawing.Size(164, 20)
         Me.txtCove.TabIndex = 116
         '
         'txtclave
         '
-        Me.txtclave.Location = New System.Drawing.Point(296, 28)
+        Me.txtclave.Location = New System.Drawing.Point(519, 29)
         Me.txtclave.Name = "txtclave"
         Me.txtclave.Size = New System.Drawing.Size(112, 20)
         Me.txtclave.TabIndex = 2
         '
         'DateTimeFecha
         '
-        Me.DateTimeFecha.Location = New System.Drawing.Point(587, 28)
+        Me.DateTimeFecha.Location = New System.Drawing.Point(6, 28)
         Me.DateTimeFecha.Name = "DateTimeFecha"
-        Me.DateTimeFecha.Size = New System.Drawing.Size(213, 20)
+        Me.DateTimeFecha.Size = New System.Drawing.Size(227, 20)
         Me.DateTimeFecha.TabIndex = 117
         '
         'Label5
@@ -919,7 +922,7 @@ Partial Class Pedimentos
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label5.Location = New System.Drawing.Point(414, 12)
+        Me.Label5.Location = New System.Drawing.Point(637, 13)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(36, 13)
         Me.Label5.TabIndex = 115
@@ -929,16 +932,15 @@ Partial Class Pedimentos
         '
         Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox2.Controls.Add(Me.ComboFactura)
-        Me.GroupBox2.Controls.Add(Me.btn_BuscarOc)
         Me.GroupBox2.Controls.Add(Me.btn_BuscarPdf)
         Me.GroupBox2.Controls.Add(Me.Label4)
         Me.GroupBox2.Controls.Add(Me.Label15)
-        Me.GroupBox2.Controls.Add(Me.TexOrdenC)
         Me.GroupBox2.Controls.Add(Me.Label16)
-        Me.GroupBox2.Controls.Add(Me.Label8)
+        Me.GroupBox2.Controls.Add(Me.Label6)
         Me.GroupBox2.Controls.Add(Me.txttipocambio)
         Me.GroupBox2.Controls.Add(Me.txtAduana)
         Me.GroupBox2.Controls.Add(Me.Label3)
+        Me.GroupBox2.Controls.Add(Me.DateTimeFecha)
         Me.GroupBox2.Controls.Add(Me.textprove)
         Me.GroupBox2.Location = New System.Drawing.Point(27, 102)
         Me.GroupBox2.Name = "GroupBox2"
@@ -949,7 +951,7 @@ Partial Class Pedimentos
         'ComboFactura
         '
         Me.ComboFactura.Cursor = System.Windows.Forms.Cursors.No
-        Me.ComboFactura.Location = New System.Drawing.Point(9, 28)
+        Me.ComboFactura.Location = New System.Drawing.Point(239, 28)
         Me.ComboFactura.Name = "ComboFactura"
         Me.ComboFactura.Size = New System.Drawing.Size(148, 20)
         Me.ComboFactura.TabIndex = 191
@@ -958,7 +960,7 @@ Partial Class Pedimentos
         '
         Me.btn_BuscarOc.BackColor = System.Drawing.Color.Transparent
         Me.btn_BuscarOc.Image = Global.NucleosAve.My.Resources.Resources.icons8_google_web_search_512
-        Me.btn_BuscarOc.Location = New System.Drawing.Point(375, 23)
+        Me.btn_BuscarOc.Location = New System.Drawing.Point(165, 24)
         Me.btn_BuscarOc.Name = "btn_BuscarOc"
         Me.btn_BuscarOc.Size = New System.Drawing.Size(28, 26)
         Me.btn_BuscarOc.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -969,7 +971,7 @@ Partial Class Pedimentos
         '
         Me.btn_BuscarPdf.BackColor = System.Drawing.Color.Transparent
         Me.btn_BuscarPdf.Image = Global.NucleosAve.My.Resources.Resources.icons8_pdf_100
-        Me.btn_BuscarPdf.Location = New System.Drawing.Point(163, 25)
+        Me.btn_BuscarPdf.Location = New System.Drawing.Point(393, 25)
         Me.btn_BuscarPdf.Name = "btn_BuscarPdf"
         Me.btn_BuscarPdf.Size = New System.Drawing.Size(28, 26)
         Me.btn_BuscarPdf.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -1001,7 +1003,7 @@ Partial Class Pedimentos
         'TexOrdenC
         '
         Me.TexOrdenC.Cursor = System.Windows.Forms.Cursors.No
-        Me.TexOrdenC.Location = New System.Drawing.Point(220, 28)
+        Me.TexOrdenC.Location = New System.Drawing.Point(10, 29)
         Me.TexOrdenC.Name = "TexOrdenC"
         Me.TexOrdenC.Size = New System.Drawing.Size(148, 20)
         Me.TexOrdenC.TabIndex = 121
@@ -1022,7 +1024,7 @@ Partial Class Pedimentos
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label8.Location = New System.Drawing.Point(217, 10)
+        Me.Label8.Location = New System.Drawing.Point(7, 11)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(87, 13)
         Me.Label8.TabIndex = 115
@@ -1047,7 +1049,7 @@ Partial Class Pedimentos
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label3.Location = New System.Drawing.Point(6, 12)
+        Me.Label3.Location = New System.Drawing.Point(236, 12)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(50, 13)
         Me.Label3.TabIndex = 113
@@ -1224,7 +1226,6 @@ Partial Class Pedimentos
         Me.txtfraccion10.Size = New System.Drawing.Size(100, 20)
         Me.txtfraccion10.TabIndex = 145
         Me.txtfraccion10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtfraccion10.Visible = False
         '
         'txtMercancia10
         '
@@ -1232,7 +1233,6 @@ Partial Class Pedimentos
         Me.txtMercancia10.Name = "txtMercancia10"
         Me.txtMercancia10.Size = New System.Drawing.Size(497, 20)
         Me.txtMercancia10.TabIndex = 144
-        Me.txtMercancia10.Visible = False
         '
         'TextNum10
         '
@@ -1244,7 +1244,6 @@ Partial Class Pedimentos
         Me.TextNum10.TabIndex = 143
         Me.TextNum10.Text = "10"
         Me.TextNum10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextNum10.Visible = False
         '
         'txtfraccion9
         '
@@ -1253,7 +1252,6 @@ Partial Class Pedimentos
         Me.txtfraccion9.Size = New System.Drawing.Size(100, 20)
         Me.txtfraccion9.TabIndex = 142
         Me.txtfraccion9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtfraccion9.Visible = False
         '
         'txtMercancia9
         '
@@ -1261,7 +1259,6 @@ Partial Class Pedimentos
         Me.txtMercancia9.Name = "txtMercancia9"
         Me.txtMercancia9.Size = New System.Drawing.Size(497, 20)
         Me.txtMercancia9.TabIndex = 141
-        Me.txtMercancia9.Visible = False
         '
         'TextNum9
         '
@@ -1273,7 +1270,6 @@ Partial Class Pedimentos
         Me.TextNum9.TabIndex = 140
         Me.TextNum9.Text = "9"
         Me.TextNum9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextNum9.Visible = False
         '
         'txtfraccion8
         '
@@ -1282,7 +1278,6 @@ Partial Class Pedimentos
         Me.txtfraccion8.Size = New System.Drawing.Size(100, 20)
         Me.txtfraccion8.TabIndex = 139
         Me.txtfraccion8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtfraccion8.Visible = False
         '
         'txtMercancia8
         '
@@ -1290,7 +1285,6 @@ Partial Class Pedimentos
         Me.txtMercancia8.Name = "txtMercancia8"
         Me.txtMercancia8.Size = New System.Drawing.Size(497, 20)
         Me.txtMercancia8.TabIndex = 138
-        Me.txtMercancia8.Visible = False
         '
         'TextNum8
         '
@@ -1302,7 +1296,6 @@ Partial Class Pedimentos
         Me.TextNum8.TabIndex = 137
         Me.TextNum8.Text = "8"
         Me.TextNum8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextNum8.Visible = False
         '
         'txtfraccion7
         '
@@ -1311,7 +1304,6 @@ Partial Class Pedimentos
         Me.txtfraccion7.Size = New System.Drawing.Size(100, 20)
         Me.txtfraccion7.TabIndex = 136
         Me.txtfraccion7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtfraccion7.Visible = False
         '
         'txtMercancia7
         '
@@ -1319,7 +1311,6 @@ Partial Class Pedimentos
         Me.txtMercancia7.Name = "txtMercancia7"
         Me.txtMercancia7.Size = New System.Drawing.Size(497, 20)
         Me.txtMercancia7.TabIndex = 135
-        Me.txtMercancia7.Visible = False
         '
         'TextNum7
         '
@@ -1331,7 +1322,6 @@ Partial Class Pedimentos
         Me.TextNum7.TabIndex = 134
         Me.TextNum7.Text = "7"
         Me.TextNum7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextNum7.Visible = False
         '
         'txtfraccion6
         '
@@ -1340,7 +1330,6 @@ Partial Class Pedimentos
         Me.txtfraccion6.Size = New System.Drawing.Size(100, 20)
         Me.txtfraccion6.TabIndex = 133
         Me.txtfraccion6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtfraccion6.Visible = False
         '
         'txtMercancia6
         '
@@ -1348,7 +1337,6 @@ Partial Class Pedimentos
         Me.txtMercancia6.Name = "txtMercancia6"
         Me.txtMercancia6.Size = New System.Drawing.Size(497, 20)
         Me.txtMercancia6.TabIndex = 132
-        Me.txtMercancia6.Visible = False
         '
         'TextNum6
         '
@@ -1360,7 +1348,6 @@ Partial Class Pedimentos
         Me.TextNum6.TabIndex = 131
         Me.TextNum6.Text = "6"
         Me.TextNum6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextNum6.Visible = False
         '
         'txtfraccion5
         '
@@ -1369,7 +1356,6 @@ Partial Class Pedimentos
         Me.txtfraccion5.Size = New System.Drawing.Size(100, 20)
         Me.txtfraccion5.TabIndex = 130
         Me.txtfraccion5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtfraccion5.Visible = False
         '
         'txtMercancia5
         '
@@ -1377,7 +1363,6 @@ Partial Class Pedimentos
         Me.txtMercancia5.Name = "txtMercancia5"
         Me.txtMercancia5.Size = New System.Drawing.Size(497, 20)
         Me.txtMercancia5.TabIndex = 129
-        Me.txtMercancia5.Visible = False
         '
         'TextNum5
         '
@@ -1389,7 +1374,6 @@ Partial Class Pedimentos
         Me.TextNum5.TabIndex = 128
         Me.TextNum5.Text = "5"
         Me.TextNum5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextNum5.Visible = False
         '
         'txtfraccion4
         '
@@ -1398,7 +1382,6 @@ Partial Class Pedimentos
         Me.txtfraccion4.Size = New System.Drawing.Size(100, 20)
         Me.txtfraccion4.TabIndex = 127
         Me.txtfraccion4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtfraccion4.Visible = False
         '
         'txtMercancia4
         '
@@ -1406,7 +1389,6 @@ Partial Class Pedimentos
         Me.txtMercancia4.Name = "txtMercancia4"
         Me.txtMercancia4.Size = New System.Drawing.Size(497, 20)
         Me.txtMercancia4.TabIndex = 126
-        Me.txtMercancia4.Visible = False
         '
         'TextNum4
         '
@@ -1418,7 +1400,6 @@ Partial Class Pedimentos
         Me.TextNum4.TabIndex = 125
         Me.TextNum4.Text = "4"
         Me.TextNum4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextNum4.Visible = False
         '
         'txtfraccion3
         '
@@ -1427,7 +1408,6 @@ Partial Class Pedimentos
         Me.txtfraccion3.Size = New System.Drawing.Size(100, 20)
         Me.txtfraccion3.TabIndex = 124
         Me.txtfraccion3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtfraccion3.Visible = False
         '
         'txtMercancia3
         '
@@ -1435,7 +1415,6 @@ Partial Class Pedimentos
         Me.txtMercancia3.Name = "txtMercancia3"
         Me.txtMercancia3.Size = New System.Drawing.Size(497, 20)
         Me.txtMercancia3.TabIndex = 123
-        Me.txtMercancia3.Visible = False
         '
         'TextNum3
         '
@@ -1447,7 +1426,6 @@ Partial Class Pedimentos
         Me.TextNum3.TabIndex = 122
         Me.TextNum3.Text = "3"
         Me.TextNum3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextNum3.Visible = False
         '
         'txtfraccion2
         '
@@ -1456,7 +1434,6 @@ Partial Class Pedimentos
         Me.txtfraccion2.Size = New System.Drawing.Size(100, 20)
         Me.txtfraccion2.TabIndex = 121
         Me.txtfraccion2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtfraccion2.Visible = False
         '
         'txtMercancia2
         '
@@ -1464,7 +1441,6 @@ Partial Class Pedimentos
         Me.txtMercancia2.Name = "txtMercancia2"
         Me.txtMercancia2.Size = New System.Drawing.Size(497, 20)
         Me.txtMercancia2.TabIndex = 120
-        Me.txtMercancia2.Visible = False
         '
         'TextNum2
         '
@@ -1476,7 +1452,6 @@ Partial Class Pedimentos
         Me.TextNum2.TabIndex = 119
         Me.TextNum2.Text = "2"
         Me.TextNum2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextNum2.Visible = False
         '
         'Label31
         '
@@ -1546,6 +1521,7 @@ Partial Class Pedimentos
         Me.imgMenosFila.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.imgMenosFila.TabIndex = 148
         Me.imgMenosFila.TabStop = False
+        Me.imgMenosFila.Visible = False
         '
         'ImgAgregarTxt
         '
@@ -1556,6 +1532,7 @@ Partial Class Pedimentos
         Me.ImgAgregarTxt.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.ImgAgregarTxt.TabIndex = 147
         Me.ImgAgregarTxt.TabStop = False
+        Me.ImgAgregarTxt.Visible = False
         '
         'TabPage3
         '
@@ -1655,7 +1632,6 @@ Partial Class Pedimentos
         Me.TexIvaOp9.Size = New System.Drawing.Size(100, 20)
         Me.TexIvaOp9.TabIndex = 366
         Me.TexIvaOp9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TexIvaOp9.Visible = False
         '
         'TexIvaOp8
         '
@@ -1665,7 +1641,6 @@ Partial Class Pedimentos
         Me.TexIvaOp8.Size = New System.Drawing.Size(100, 20)
         Me.TexIvaOp8.TabIndex = 365
         Me.TexIvaOp8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TexIvaOp8.Visible = False
         '
         'TexIvaOp7
         '
@@ -1675,7 +1650,6 @@ Partial Class Pedimentos
         Me.TexIvaOp7.Size = New System.Drawing.Size(100, 20)
         Me.TexIvaOp7.TabIndex = 364
         Me.TexIvaOp7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TexIvaOp7.Visible = False
         '
         'TexIvaOp6
         '
@@ -1685,7 +1659,6 @@ Partial Class Pedimentos
         Me.TexIvaOp6.Size = New System.Drawing.Size(100, 20)
         Me.TexIvaOp6.TabIndex = 363
         Me.TexIvaOp6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TexIvaOp6.Visible = False
         '
         'TexIvaOp5
         '
@@ -1695,7 +1668,6 @@ Partial Class Pedimentos
         Me.TexIvaOp5.Size = New System.Drawing.Size(100, 20)
         Me.TexIvaOp5.TabIndex = 362
         Me.TexIvaOp5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TexIvaOp5.Visible = False
         '
         'TexIvaOp4
         '
@@ -1705,7 +1677,6 @@ Partial Class Pedimentos
         Me.TexIvaOp4.Size = New System.Drawing.Size(100, 20)
         Me.TexIvaOp4.TabIndex = 361
         Me.TexIvaOp4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TexIvaOp4.Visible = False
         '
         'TexIvaOp3
         '
@@ -1715,7 +1686,6 @@ Partial Class Pedimentos
         Me.TexIvaOp3.Size = New System.Drawing.Size(100, 20)
         Me.TexIvaOp3.TabIndex = 360
         Me.TexIvaOp3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TexIvaOp3.Visible = False
         '
         'TexIvaOp2
         '
@@ -1725,7 +1695,6 @@ Partial Class Pedimentos
         Me.TexIvaOp2.Size = New System.Drawing.Size(100, 20)
         Me.TexIvaOp2.TabIndex = 359
         Me.TexIvaOp2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TexIvaOp2.Visible = False
         '
         'TexIvaOp1
         '
@@ -1735,7 +1704,6 @@ Partial Class Pedimentos
         Me.TexIvaOp1.Size = New System.Drawing.Size(100, 20)
         Me.TexIvaOp1.TabIndex = 358
         Me.TexIvaOp1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TexIvaOp1.Visible = False
         '
         'Label62
         '
@@ -1759,7 +1727,6 @@ Partial Class Pedimentos
         Me.Label61.Size = New System.Drawing.Size(47, 13)
         Me.Label61.TabIndex = 355
         Me.Label61.Text = "Activar"
-        Me.Label61.Visible = False
         '
         'iVACheck5
         '
@@ -1770,7 +1737,6 @@ Partial Class Pedimentos
         Me.iVACheck5.TabIndex = 354
         Me.iVACheck5.Text = "IVA"
         Me.iVACheck5.UseVisualStyleBackColor = True
-        Me.iVACheck5.Visible = False
         '
         'iVACheck6
         '
@@ -1781,7 +1747,6 @@ Partial Class Pedimentos
         Me.iVACheck6.TabIndex = 353
         Me.iVACheck6.Text = "IVA"
         Me.iVACheck6.UseVisualStyleBackColor = True
-        Me.iVACheck6.Visible = False
         '
         'iVACheck9
         '
@@ -1792,7 +1757,6 @@ Partial Class Pedimentos
         Me.iVACheck9.TabIndex = 351
         Me.iVACheck9.Text = "IVA"
         Me.iVACheck9.UseVisualStyleBackColor = True
-        Me.iVACheck9.Visible = False
         '
         'iVACheck8
         '
@@ -1803,7 +1767,6 @@ Partial Class Pedimentos
         Me.iVACheck8.TabIndex = 350
         Me.iVACheck8.Text = "IVA"
         Me.iVACheck8.UseVisualStyleBackColor = True
-        Me.iVACheck8.Visible = False
         '
         'iVACheck7
         '
@@ -1814,7 +1777,6 @@ Partial Class Pedimentos
         Me.iVACheck7.TabIndex = 349
         Me.iVACheck7.Text = "IVA"
         Me.iVACheck7.UseVisualStyleBackColor = True
-        Me.iVACheck7.Visible = False
         '
         'iVACheck4
         '
@@ -1825,7 +1787,6 @@ Partial Class Pedimentos
         Me.iVACheck4.TabIndex = 348
         Me.iVACheck4.Text = "IVA"
         Me.iVACheck4.UseVisualStyleBackColor = True
-        Me.iVACheck4.Visible = False
         '
         'iVACheck3
         '
@@ -1836,7 +1797,6 @@ Partial Class Pedimentos
         Me.iVACheck3.TabIndex = 347
         Me.iVACheck3.Text = "IVA"
         Me.iVACheck3.UseVisualStyleBackColor = True
-        Me.iVACheck3.Visible = False
         '
         'iVACheck2
         '
@@ -1847,7 +1807,6 @@ Partial Class Pedimentos
         Me.iVACheck2.TabIndex = 346
         Me.iVACheck2.Text = "IVA"
         Me.iVACheck2.UseVisualStyleBackColor = True
-        Me.iVACheck2.Visible = False
         '
         'iVACheck1
         '
@@ -1858,7 +1817,6 @@ Partial Class Pedimentos
         Me.iVACheck1.TabIndex = 345
         Me.iVACheck1.Text = "IVA"
         Me.iVACheck1.UseVisualStyleBackColor = True
-        Me.iVACheck1.Visible = False
         '
         'PictureBox4
         '
@@ -1959,6 +1917,7 @@ Partial Class Pedimentos
         Me.btn_quitar2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.btn_quitar2.TabIndex = 186
         Me.btn_quitar2.TabStop = False
+        Me.btn_quitar2.Visible = False
         '
         'btn_Agregar2
         '
@@ -1969,6 +1928,7 @@ Partial Class Pedimentos
         Me.btn_Agregar2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.btn_Agregar2.TabIndex = 185
         Me.btn_Agregar2.TabStop = False
+        Me.btn_Agregar2.Visible = False
         '
         'Label28
         '
@@ -2019,7 +1979,6 @@ Partial Class Pedimentos
         Me.txtimporte10.Size = New System.Drawing.Size(100, 20)
         Me.txtimporte10.TabIndex = 180
         Me.txtimporte10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtimporte10.Visible = False
         '
         'txtdescripcion10
         '
@@ -2027,7 +1986,6 @@ Partial Class Pedimentos
         Me.txtdescripcion10.Name = "txtdescripcion10"
         Me.txtdescripcion10.Size = New System.Drawing.Size(452, 20)
         Me.txtdescripcion10.TabIndex = 179
-        Me.txtdescripcion10.Visible = False
         '
         'txtcodigo10
         '
@@ -2036,7 +1994,6 @@ Partial Class Pedimentos
         Me.txtcodigo10.Size = New System.Drawing.Size(88, 20)
         Me.txtcodigo10.TabIndex = 178
         Me.txtcodigo10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtcodigo10.Visible = False
         '
         'txtimporte9
         '
@@ -2045,7 +2002,6 @@ Partial Class Pedimentos
         Me.txtimporte9.Size = New System.Drawing.Size(100, 20)
         Me.txtimporte9.TabIndex = 177
         Me.txtimporte9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtimporte9.Visible = False
         '
         'txtdescripcion9
         '
@@ -2053,7 +2009,6 @@ Partial Class Pedimentos
         Me.txtdescripcion9.Name = "txtdescripcion9"
         Me.txtdescripcion9.Size = New System.Drawing.Size(452, 20)
         Me.txtdescripcion9.TabIndex = 176
-        Me.txtdescripcion9.Visible = False
         '
         'txtcodigo9
         '
@@ -2062,7 +2017,6 @@ Partial Class Pedimentos
         Me.txtcodigo9.Size = New System.Drawing.Size(88, 20)
         Me.txtcodigo9.TabIndex = 175
         Me.txtcodigo9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtcodigo9.Visible = False
         '
         'txtimporte8
         '
@@ -2071,7 +2025,6 @@ Partial Class Pedimentos
         Me.txtimporte8.Size = New System.Drawing.Size(100, 20)
         Me.txtimporte8.TabIndex = 174
         Me.txtimporte8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtimporte8.Visible = False
         '
         'txtdescripcion8
         '
@@ -2079,7 +2032,6 @@ Partial Class Pedimentos
         Me.txtdescripcion8.Name = "txtdescripcion8"
         Me.txtdescripcion8.Size = New System.Drawing.Size(452, 20)
         Me.txtdescripcion8.TabIndex = 173
-        Me.txtdescripcion8.Visible = False
         '
         'txtcodigo8
         '
@@ -2088,7 +2040,6 @@ Partial Class Pedimentos
         Me.txtcodigo8.Size = New System.Drawing.Size(88, 20)
         Me.txtcodigo8.TabIndex = 172
         Me.txtcodigo8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtcodigo8.Visible = False
         '
         'txtimporte7
         '
@@ -2097,7 +2048,6 @@ Partial Class Pedimentos
         Me.txtimporte7.Size = New System.Drawing.Size(100, 20)
         Me.txtimporte7.TabIndex = 171
         Me.txtimporte7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtimporte7.Visible = False
         '
         'txtdescripcion7
         '
@@ -2105,7 +2055,6 @@ Partial Class Pedimentos
         Me.txtdescripcion7.Name = "txtdescripcion7"
         Me.txtdescripcion7.Size = New System.Drawing.Size(452, 20)
         Me.txtdescripcion7.TabIndex = 170
-        Me.txtdescripcion7.Visible = False
         '
         'txtcodigo7
         '
@@ -2114,7 +2063,6 @@ Partial Class Pedimentos
         Me.txtcodigo7.Size = New System.Drawing.Size(88, 20)
         Me.txtcodigo7.TabIndex = 169
         Me.txtcodigo7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtcodigo7.Visible = False
         '
         'txtimporte6
         '
@@ -2123,7 +2071,6 @@ Partial Class Pedimentos
         Me.txtimporte6.Size = New System.Drawing.Size(100, 20)
         Me.txtimporte6.TabIndex = 168
         Me.txtimporte6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtimporte6.Visible = False
         '
         'txtdescripcion6
         '
@@ -2131,7 +2078,6 @@ Partial Class Pedimentos
         Me.txtdescripcion6.Name = "txtdescripcion6"
         Me.txtdescripcion6.Size = New System.Drawing.Size(452, 20)
         Me.txtdescripcion6.TabIndex = 167
-        Me.txtdescripcion6.Visible = False
         '
         'txtcodigo6
         '
@@ -2140,7 +2086,6 @@ Partial Class Pedimentos
         Me.txtcodigo6.Size = New System.Drawing.Size(88, 20)
         Me.txtcodigo6.TabIndex = 166
         Me.txtcodigo6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtcodigo6.Visible = False
         '
         'txtimporte5
         '
@@ -2149,7 +2094,6 @@ Partial Class Pedimentos
         Me.txtimporte5.Size = New System.Drawing.Size(100, 20)
         Me.txtimporte5.TabIndex = 165
         Me.txtimporte5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtimporte5.Visible = False
         '
         'txtdescripcion5
         '
@@ -2157,7 +2101,6 @@ Partial Class Pedimentos
         Me.txtdescripcion5.Name = "txtdescripcion5"
         Me.txtdescripcion5.Size = New System.Drawing.Size(452, 20)
         Me.txtdescripcion5.TabIndex = 164
-        Me.txtdescripcion5.Visible = False
         '
         'txtcodigo5
         '
@@ -2166,7 +2109,6 @@ Partial Class Pedimentos
         Me.txtcodigo5.Size = New System.Drawing.Size(88, 20)
         Me.txtcodigo5.TabIndex = 163
         Me.txtcodigo5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtcodigo5.Visible = False
         '
         'txtimporte4
         '
@@ -2175,7 +2117,6 @@ Partial Class Pedimentos
         Me.txtimporte4.Size = New System.Drawing.Size(100, 20)
         Me.txtimporte4.TabIndex = 162
         Me.txtimporte4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtimporte4.Visible = False
         '
         'txtdescripcion4
         '
@@ -2183,7 +2124,6 @@ Partial Class Pedimentos
         Me.txtdescripcion4.Name = "txtdescripcion4"
         Me.txtdescripcion4.Size = New System.Drawing.Size(452, 20)
         Me.txtdescripcion4.TabIndex = 161
-        Me.txtdescripcion4.Visible = False
         '
         'txtcodigo4
         '
@@ -2192,7 +2132,6 @@ Partial Class Pedimentos
         Me.txtcodigo4.Size = New System.Drawing.Size(88, 20)
         Me.txtcodigo4.TabIndex = 160
         Me.txtcodigo4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtcodigo4.Visible = False
         '
         'txtimporte3
         '
@@ -2201,7 +2140,6 @@ Partial Class Pedimentos
         Me.txtimporte3.Size = New System.Drawing.Size(100, 20)
         Me.txtimporte3.TabIndex = 159
         Me.txtimporte3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtimporte3.Visible = False
         '
         'txtdescripcion3
         '
@@ -2209,7 +2147,6 @@ Partial Class Pedimentos
         Me.txtdescripcion3.Name = "txtdescripcion3"
         Me.txtdescripcion3.Size = New System.Drawing.Size(452, 20)
         Me.txtdescripcion3.TabIndex = 158
-        Me.txtdescripcion3.Visible = False
         '
         'txtcodigo3
         '
@@ -2218,7 +2155,6 @@ Partial Class Pedimentos
         Me.txtcodigo3.Size = New System.Drawing.Size(88, 20)
         Me.txtcodigo3.TabIndex = 157
         Me.txtcodigo3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtcodigo3.Visible = False
         '
         'txtimporte2
         '
@@ -2227,7 +2163,6 @@ Partial Class Pedimentos
         Me.txtimporte2.Size = New System.Drawing.Size(100, 20)
         Me.txtimporte2.TabIndex = 156
         Me.txtimporte2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtimporte2.Visible = False
         '
         'txtdescripcion2
         '
@@ -2235,7 +2170,6 @@ Partial Class Pedimentos
         Me.txtdescripcion2.Name = "txtdescripcion2"
         Me.txtdescripcion2.Size = New System.Drawing.Size(452, 20)
         Me.txtdescripcion2.TabIndex = 155
-        Me.txtdescripcion2.Visible = False
         '
         'txtcodigo2
         '
@@ -2244,7 +2178,6 @@ Partial Class Pedimentos
         Me.txtcodigo2.Size = New System.Drawing.Size(88, 20)
         Me.txtcodigo2.TabIndex = 154
         Me.txtcodigo2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtcodigo2.Visible = False
         '
         'Label29
         '
@@ -2508,6 +2441,7 @@ Partial Class Pedimentos
         Me.btn_agregarmenos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.btn_agregarmenos.TabIndex = 267
         Me.btn_agregarmenos.TabStop = False
+        Me.btn_agregarmenos.Visible = False
         '
         'btn_agregarmas
         '
@@ -2518,6 +2452,7 @@ Partial Class Pedimentos
         Me.btn_agregarmas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.btn_agregarmas.TabIndex = 266
         Me.btn_agregarmas.TabStop = False
+        Me.btn_agregarmas.Visible = False
         '
         'txtTotalGT_10
         '
@@ -2528,7 +2463,6 @@ Partial Class Pedimentos
         Me.txtTotalGT_10.Size = New System.Drawing.Size(71, 20)
         Me.txtTotalGT_10.TabIndex = 265
         Me.txtTotalGT_10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtTotalGT_10.Visible = False
         '
         'txtTotalGT_9
         '
@@ -2539,7 +2473,6 @@ Partial Class Pedimentos
         Me.txtTotalGT_9.Size = New System.Drawing.Size(71, 20)
         Me.txtTotalGT_9.TabIndex = 264
         Me.txtTotalGT_9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtTotalGT_9.Visible = False
         '
         'txtTotalGT_8
         '
@@ -2550,7 +2483,6 @@ Partial Class Pedimentos
         Me.txtTotalGT_8.Size = New System.Drawing.Size(71, 20)
         Me.txtTotalGT_8.TabIndex = 263
         Me.txtTotalGT_8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtTotalGT_8.Visible = False
         '
         'txtTotalGT_7
         '
@@ -2561,7 +2493,6 @@ Partial Class Pedimentos
         Me.txtTotalGT_7.Size = New System.Drawing.Size(71, 20)
         Me.txtTotalGT_7.TabIndex = 262
         Me.txtTotalGT_7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtTotalGT_7.Visible = False
         '
         'txtTotalGT_6
         '
@@ -2572,7 +2503,6 @@ Partial Class Pedimentos
         Me.txtTotalGT_6.Size = New System.Drawing.Size(71, 20)
         Me.txtTotalGT_6.TabIndex = 261
         Me.txtTotalGT_6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtTotalGT_6.Visible = False
         '
         'txtTotalGT_5
         '
@@ -2583,7 +2513,6 @@ Partial Class Pedimentos
         Me.txtTotalGT_5.Size = New System.Drawing.Size(71, 20)
         Me.txtTotalGT_5.TabIndex = 260
         Me.txtTotalGT_5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtTotalGT_5.Visible = False
         '
         'txtTotalGT_4
         '
@@ -2594,7 +2523,6 @@ Partial Class Pedimentos
         Me.txtTotalGT_4.Size = New System.Drawing.Size(71, 20)
         Me.txtTotalGT_4.TabIndex = 259
         Me.txtTotalGT_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtTotalGT_4.Visible = False
         '
         'txtTotalGT_3
         '
@@ -2605,7 +2533,6 @@ Partial Class Pedimentos
         Me.txtTotalGT_3.Size = New System.Drawing.Size(71, 20)
         Me.txtTotalGT_3.TabIndex = 258
         Me.txtTotalGT_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtTotalGT_3.Visible = False
         '
         'txtTotalGT_2
         '
@@ -2616,7 +2543,6 @@ Partial Class Pedimentos
         Me.txtTotalGT_2.Size = New System.Drawing.Size(71, 20)
         Me.txtTotalGT_2.TabIndex = 257
         Me.txtTotalGT_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtTotalGT_2.Visible = False
         '
         'Label52
         '
@@ -2648,7 +2574,6 @@ Partial Class Pedimentos
         Me.textIva_GT2_10.Size = New System.Drawing.Size(62, 20)
         Me.textIva_GT2_10.TabIndex = 254
         Me.textIva_GT2_10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.textIva_GT2_10.Visible = False
         '
         'textIva_GT2_9
         '
@@ -2659,7 +2584,6 @@ Partial Class Pedimentos
         Me.textIva_GT2_9.Size = New System.Drawing.Size(62, 20)
         Me.textIva_GT2_9.TabIndex = 253
         Me.textIva_GT2_9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.textIva_GT2_9.Visible = False
         '
         'textIva_GT2_8
         '
@@ -2670,7 +2594,6 @@ Partial Class Pedimentos
         Me.textIva_GT2_8.Size = New System.Drawing.Size(62, 20)
         Me.textIva_GT2_8.TabIndex = 252
         Me.textIva_GT2_8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.textIva_GT2_8.Visible = False
         '
         'textIva_GT2_7
         '
@@ -2681,7 +2604,6 @@ Partial Class Pedimentos
         Me.textIva_GT2_7.Size = New System.Drawing.Size(62, 20)
         Me.textIva_GT2_7.TabIndex = 251
         Me.textIva_GT2_7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.textIva_GT2_7.Visible = False
         '
         'textIva_GT2_6
         '
@@ -2692,7 +2614,6 @@ Partial Class Pedimentos
         Me.textIva_GT2_6.Size = New System.Drawing.Size(62, 20)
         Me.textIva_GT2_6.TabIndex = 250
         Me.textIva_GT2_6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.textIva_GT2_6.Visible = False
         '
         'textIva_GT2_5
         '
@@ -2703,7 +2624,6 @@ Partial Class Pedimentos
         Me.textIva_GT2_5.Size = New System.Drawing.Size(62, 20)
         Me.textIva_GT2_5.TabIndex = 249
         Me.textIva_GT2_5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.textIva_GT2_5.Visible = False
         '
         'textIva_GT2_4
         '
@@ -2714,7 +2634,6 @@ Partial Class Pedimentos
         Me.textIva_GT2_4.Size = New System.Drawing.Size(62, 20)
         Me.textIva_GT2_4.TabIndex = 248
         Me.textIva_GT2_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.textIva_GT2_4.Visible = False
         '
         'textIva_GT2_3
         '
@@ -2725,7 +2644,6 @@ Partial Class Pedimentos
         Me.textIva_GT2_3.Size = New System.Drawing.Size(62, 20)
         Me.textIva_GT2_3.TabIndex = 247
         Me.textIva_GT2_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.textIva_GT2_3.Visible = False
         '
         'textIva_GT2_2
         '
@@ -2736,7 +2654,6 @@ Partial Class Pedimentos
         Me.textIva_GT2_2.Size = New System.Drawing.Size(62, 20)
         Me.textIva_GT2_2.TabIndex = 246
         Me.textIva_GT2_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.textIva_GT2_2.Visible = False
         '
         'Label40
         '
@@ -2766,7 +2683,6 @@ Partial Class Pedimentos
         Me.textgravado10.Size = New System.Drawing.Size(75, 20)
         Me.textgravado10.TabIndex = 241
         Me.textgravado10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.textgravado10.Visible = False
         '
         'textgravado9
         '
@@ -2775,7 +2691,6 @@ Partial Class Pedimentos
         Me.textgravado9.Size = New System.Drawing.Size(75, 20)
         Me.textgravado9.TabIndex = 240
         Me.textgravado9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.textgravado9.Visible = False
         '
         'textgravado8
         '
@@ -2784,7 +2699,6 @@ Partial Class Pedimentos
         Me.textgravado8.Size = New System.Drawing.Size(75, 20)
         Me.textgravado8.TabIndex = 239
         Me.textgravado8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.textgravado8.Visible = False
         '
         'textgravado7
         '
@@ -2793,7 +2707,6 @@ Partial Class Pedimentos
         Me.textgravado7.Size = New System.Drawing.Size(75, 20)
         Me.textgravado7.TabIndex = 238
         Me.textgravado7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.textgravado7.Visible = False
         '
         'textgravado6
         '
@@ -2802,7 +2715,6 @@ Partial Class Pedimentos
         Me.textgravado6.Size = New System.Drawing.Size(75, 20)
         Me.textgravado6.TabIndex = 237
         Me.textgravado6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.textgravado6.Visible = False
         '
         'textgravado5
         '
@@ -2811,7 +2723,6 @@ Partial Class Pedimentos
         Me.textgravado5.Size = New System.Drawing.Size(75, 20)
         Me.textgravado5.TabIndex = 236
         Me.textgravado5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.textgravado5.Visible = False
         '
         'textgravado4
         '
@@ -2820,7 +2731,6 @@ Partial Class Pedimentos
         Me.textgravado4.Size = New System.Drawing.Size(75, 20)
         Me.textgravado4.TabIndex = 235
         Me.textgravado4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.textgravado4.Visible = False
         '
         'textgravado3
         '
@@ -2829,7 +2739,6 @@ Partial Class Pedimentos
         Me.textgravado3.Size = New System.Drawing.Size(75, 20)
         Me.textgravado3.TabIndex = 234
         Me.textgravado3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.textgravado3.Visible = False
         '
         'textgravado2
         '
@@ -2838,7 +2747,6 @@ Partial Class Pedimentos
         Me.textgravado2.Size = New System.Drawing.Size(75, 20)
         Me.textgravado2.TabIndex = 233
         Me.textgravado2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.textgravado2.Visible = False
         '
         'Label39
         '
@@ -2867,7 +2775,6 @@ Partial Class Pedimentos
         Me.txtexento10.TabIndex = 228
         Me.txtexento10.Text = "0"
         Me.txtexento10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtexento10.Visible = False
         '
         'txtexento9
         '
@@ -2877,7 +2784,6 @@ Partial Class Pedimentos
         Me.txtexento9.TabIndex = 227
         Me.txtexento9.Text = "0"
         Me.txtexento9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtexento9.Visible = False
         '
         'txtexento8
         '
@@ -2887,7 +2793,6 @@ Partial Class Pedimentos
         Me.txtexento8.TabIndex = 226
         Me.txtexento8.Text = "0"
         Me.txtexento8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtexento8.Visible = False
         '
         'txtexento7
         '
@@ -2897,7 +2802,6 @@ Partial Class Pedimentos
         Me.txtexento7.TabIndex = 225
         Me.txtexento7.Text = "0"
         Me.txtexento7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtexento7.Visible = False
         '
         'txtexento6
         '
@@ -2907,7 +2811,6 @@ Partial Class Pedimentos
         Me.txtexento6.TabIndex = 224
         Me.txtexento6.Text = "0"
         Me.txtexento6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtexento6.Visible = False
         '
         'txtexento5
         '
@@ -2917,7 +2820,6 @@ Partial Class Pedimentos
         Me.txtexento5.TabIndex = 223
         Me.txtexento5.Text = "0"
         Me.txtexento5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtexento5.Visible = False
         '
         'txtexento4
         '
@@ -2927,7 +2829,6 @@ Partial Class Pedimentos
         Me.txtexento4.TabIndex = 222
         Me.txtexento4.Text = "0"
         Me.txtexento4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtexento4.Visible = False
         '
         'txtexento3
         '
@@ -2937,7 +2838,6 @@ Partial Class Pedimentos
         Me.txtexento3.TabIndex = 221
         Me.txtexento3.Text = "0"
         Me.txtexento3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtexento3.Visible = False
         '
         'txtexento2
         '
@@ -2947,7 +2847,6 @@ Partial Class Pedimentos
         Me.txtexento2.TabIndex = 220
         Me.txtexento2.Text = "0"
         Me.txtexento2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtexento2.Visible = False
         '
         'Label38
         '
@@ -2976,7 +2875,6 @@ Partial Class Pedimentos
         Me.txtconcepto10.Size = New System.Drawing.Size(116, 20)
         Me.txtconcepto10.TabIndex = 215
         Me.txtconcepto10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtconcepto10.Visible = False
         '
         'txtdesc10
         '
@@ -2984,7 +2882,6 @@ Partial Class Pedimentos
         Me.txtdesc10.Name = "txtdesc10"
         Me.txtdesc10.Size = New System.Drawing.Size(315, 20)
         Me.txtdesc10.TabIndex = 214
-        Me.txtdesc10.Visible = False
         '
         'numtext10
         '
@@ -2996,7 +2893,6 @@ Partial Class Pedimentos
         Me.numtext10.TabIndex = 213
         Me.numtext10.Text = "10"
         Me.numtext10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.numtext10.Visible = False
         '
         'txtconcepto9
         '
@@ -3005,7 +2901,6 @@ Partial Class Pedimentos
         Me.txtconcepto9.Size = New System.Drawing.Size(116, 20)
         Me.txtconcepto9.TabIndex = 212
         Me.txtconcepto9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtconcepto9.Visible = False
         '
         'txtdesc9
         '
@@ -3013,7 +2908,6 @@ Partial Class Pedimentos
         Me.txtdesc9.Name = "txtdesc9"
         Me.txtdesc9.Size = New System.Drawing.Size(315, 20)
         Me.txtdesc9.TabIndex = 211
-        Me.txtdesc9.Visible = False
         '
         'numtext9
         '
@@ -3025,7 +2919,6 @@ Partial Class Pedimentos
         Me.numtext9.TabIndex = 210
         Me.numtext9.Text = "9"
         Me.numtext9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.numtext9.Visible = False
         '
         'txtconcepto8
         '
@@ -3034,7 +2927,6 @@ Partial Class Pedimentos
         Me.txtconcepto8.Size = New System.Drawing.Size(116, 20)
         Me.txtconcepto8.TabIndex = 209
         Me.txtconcepto8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtconcepto8.Visible = False
         '
         'txtdesc8
         '
@@ -3042,7 +2934,6 @@ Partial Class Pedimentos
         Me.txtdesc8.Name = "txtdesc8"
         Me.txtdesc8.Size = New System.Drawing.Size(315, 20)
         Me.txtdesc8.TabIndex = 208
-        Me.txtdesc8.Visible = False
         '
         'numtext8
         '
@@ -3054,7 +2945,6 @@ Partial Class Pedimentos
         Me.numtext8.TabIndex = 207
         Me.numtext8.Text = "8"
         Me.numtext8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.numtext8.Visible = False
         '
         'txtconcepto7
         '
@@ -3063,7 +2953,6 @@ Partial Class Pedimentos
         Me.txtconcepto7.Size = New System.Drawing.Size(116, 20)
         Me.txtconcepto7.TabIndex = 206
         Me.txtconcepto7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtconcepto7.Visible = False
         '
         'txtdesc7
         '
@@ -3071,7 +2960,6 @@ Partial Class Pedimentos
         Me.txtdesc7.Name = "txtdesc7"
         Me.txtdesc7.Size = New System.Drawing.Size(315, 20)
         Me.txtdesc7.TabIndex = 205
-        Me.txtdesc7.Visible = False
         '
         'numtext7
         '
@@ -3083,7 +2971,6 @@ Partial Class Pedimentos
         Me.numtext7.TabIndex = 204
         Me.numtext7.Text = "7"
         Me.numtext7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.numtext7.Visible = False
         '
         'txtconcepto6
         '
@@ -3092,7 +2979,6 @@ Partial Class Pedimentos
         Me.txtconcepto6.Size = New System.Drawing.Size(116, 20)
         Me.txtconcepto6.TabIndex = 203
         Me.txtconcepto6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtconcepto6.Visible = False
         '
         'txtdesc6
         '
@@ -3100,7 +2986,6 @@ Partial Class Pedimentos
         Me.txtdesc6.Name = "txtdesc6"
         Me.txtdesc6.Size = New System.Drawing.Size(315, 20)
         Me.txtdesc6.TabIndex = 202
-        Me.txtdesc6.Visible = False
         '
         'numtext6
         '
@@ -3112,7 +2997,6 @@ Partial Class Pedimentos
         Me.numtext6.TabIndex = 201
         Me.numtext6.Text = "6"
         Me.numtext6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.numtext6.Visible = False
         '
         'txtconcepto5
         '
@@ -3121,7 +3005,6 @@ Partial Class Pedimentos
         Me.txtconcepto5.Size = New System.Drawing.Size(116, 20)
         Me.txtconcepto5.TabIndex = 200
         Me.txtconcepto5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtconcepto5.Visible = False
         '
         'txtdesc5
         '
@@ -3129,7 +3012,6 @@ Partial Class Pedimentos
         Me.txtdesc5.Name = "txtdesc5"
         Me.txtdesc5.Size = New System.Drawing.Size(315, 20)
         Me.txtdesc5.TabIndex = 199
-        Me.txtdesc5.Visible = False
         '
         'numtext5
         '
@@ -3141,7 +3023,6 @@ Partial Class Pedimentos
         Me.numtext5.TabIndex = 198
         Me.numtext5.Text = "5"
         Me.numtext5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.numtext5.Visible = False
         '
         'txtconcepto4
         '
@@ -3150,7 +3031,6 @@ Partial Class Pedimentos
         Me.txtconcepto4.Size = New System.Drawing.Size(116, 20)
         Me.txtconcepto4.TabIndex = 197
         Me.txtconcepto4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtconcepto4.Visible = False
         '
         'txtdesc4
         '
@@ -3158,7 +3038,6 @@ Partial Class Pedimentos
         Me.txtdesc4.Name = "txtdesc4"
         Me.txtdesc4.Size = New System.Drawing.Size(315, 20)
         Me.txtdesc4.TabIndex = 196
-        Me.txtdesc4.Visible = False
         '
         'numtext4
         '
@@ -3170,7 +3049,6 @@ Partial Class Pedimentos
         Me.numtext4.TabIndex = 195
         Me.numtext4.Text = "4"
         Me.numtext4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.numtext4.Visible = False
         '
         'txtconcepto3
         '
@@ -3179,7 +3057,6 @@ Partial Class Pedimentos
         Me.txtconcepto3.Size = New System.Drawing.Size(116, 20)
         Me.txtconcepto3.TabIndex = 194
         Me.txtconcepto3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtconcepto3.Visible = False
         '
         'txtdesc3
         '
@@ -3187,7 +3064,6 @@ Partial Class Pedimentos
         Me.txtdesc3.Name = "txtdesc3"
         Me.txtdesc3.Size = New System.Drawing.Size(315, 20)
         Me.txtdesc3.TabIndex = 193
-        Me.txtdesc3.Visible = False
         '
         'numtext3
         '
@@ -3199,7 +3075,6 @@ Partial Class Pedimentos
         Me.numtext3.TabIndex = 192
         Me.numtext3.Text = "3"
         Me.numtext3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.numtext3.Visible = False
         '
         'txtconcepto2
         '
@@ -3208,7 +3083,6 @@ Partial Class Pedimentos
         Me.txtconcepto2.Size = New System.Drawing.Size(116, 20)
         Me.txtconcepto2.TabIndex = 191
         Me.txtconcepto2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtconcepto2.Visible = False
         '
         'txtdesc2
         '
@@ -3216,7 +3090,6 @@ Partial Class Pedimentos
         Me.txtdesc2.Name = "txtdesc2"
         Me.txtdesc2.Size = New System.Drawing.Size(315, 20)
         Me.txtdesc2.TabIndex = 190
-        Me.txtdesc2.Visible = False
         '
         'numtext2
         '
@@ -3228,7 +3101,6 @@ Partial Class Pedimentos
         Me.numtext2.TabIndex = 189
         Me.numtext2.Text = "2"
         Me.numtext2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.numtext2.Visible = False
         '
         'Label35
         '
@@ -3360,7 +3232,7 @@ Partial Class Pedimentos
         '
         'Textid4_10
         '
-        Me.Textid4_10.Location = New System.Drawing.Point(181, 259)
+        Me.Textid4_10.Location = New System.Drawing.Point(163, 259)
         Me.Textid4_10.Name = "Textid4_10"
         Me.Textid4_10.Size = New System.Drawing.Size(32, 20)
         Me.Textid4_10.TabIndex = 279
@@ -3369,7 +3241,7 @@ Partial Class Pedimentos
         '
         'Textid4_9
         '
-        Me.Textid4_9.Location = New System.Drawing.Point(181, 233)
+        Me.Textid4_9.Location = New System.Drawing.Point(163, 233)
         Me.Textid4_9.Name = "Textid4_9"
         Me.Textid4_9.Size = New System.Drawing.Size(32, 20)
         Me.Textid4_9.TabIndex = 278
@@ -3378,7 +3250,7 @@ Partial Class Pedimentos
         '
         'Textid4_8
         '
-        Me.Textid4_8.Location = New System.Drawing.Point(181, 207)
+        Me.Textid4_8.Location = New System.Drawing.Point(163, 207)
         Me.Textid4_8.Name = "Textid4_8"
         Me.Textid4_8.Size = New System.Drawing.Size(32, 20)
         Me.Textid4_8.TabIndex = 277
@@ -3387,7 +3259,7 @@ Partial Class Pedimentos
         '
         'Textid4_7
         '
-        Me.Textid4_7.Location = New System.Drawing.Point(181, 181)
+        Me.Textid4_7.Location = New System.Drawing.Point(163, 181)
         Me.Textid4_7.Name = "Textid4_7"
         Me.Textid4_7.Size = New System.Drawing.Size(32, 20)
         Me.Textid4_7.TabIndex = 276
@@ -3396,7 +3268,7 @@ Partial Class Pedimentos
         '
         'Textid4_6
         '
-        Me.Textid4_6.Location = New System.Drawing.Point(181, 155)
+        Me.Textid4_6.Location = New System.Drawing.Point(163, 155)
         Me.Textid4_6.Name = "Textid4_6"
         Me.Textid4_6.Size = New System.Drawing.Size(32, 20)
         Me.Textid4_6.TabIndex = 275
@@ -3405,7 +3277,7 @@ Partial Class Pedimentos
         '
         'Textid4_5
         '
-        Me.Textid4_5.Location = New System.Drawing.Point(181, 129)
+        Me.Textid4_5.Location = New System.Drawing.Point(163, 129)
         Me.Textid4_5.Name = "Textid4_5"
         Me.Textid4_5.Size = New System.Drawing.Size(32, 20)
         Me.Textid4_5.TabIndex = 274
@@ -3414,7 +3286,7 @@ Partial Class Pedimentos
         '
         'Textid4_4
         '
-        Me.Textid4_4.Location = New System.Drawing.Point(181, 103)
+        Me.Textid4_4.Location = New System.Drawing.Point(163, 103)
         Me.Textid4_4.Name = "Textid4_4"
         Me.Textid4_4.Size = New System.Drawing.Size(32, 20)
         Me.Textid4_4.TabIndex = 273
@@ -3423,7 +3295,7 @@ Partial Class Pedimentos
         '
         'Textid4_3
         '
-        Me.Textid4_3.Location = New System.Drawing.Point(181, 77)
+        Me.Textid4_3.Location = New System.Drawing.Point(163, 77)
         Me.Textid4_3.Name = "Textid4_3"
         Me.Textid4_3.Size = New System.Drawing.Size(32, 20)
         Me.Textid4_3.TabIndex = 272
@@ -3432,7 +3304,7 @@ Partial Class Pedimentos
         '
         'Textid4_2
         '
-        Me.Textid4_2.Location = New System.Drawing.Point(181, 51)
+        Me.Textid4_2.Location = New System.Drawing.Point(163, 51)
         Me.Textid4_2.Name = "Textid4_2"
         Me.Textid4_2.Size = New System.Drawing.Size(32, 20)
         Me.Textid4_2.TabIndex = 271
@@ -3441,7 +3313,7 @@ Partial Class Pedimentos
         '
         'Textid4_1
         '
-        Me.Textid4_1.Location = New System.Drawing.Point(181, 25)
+        Me.Textid4_1.Location = New System.Drawing.Point(163, 25)
         Me.Textid4_1.Name = "Textid4_1"
         Me.Textid4_1.Size = New System.Drawing.Size(32, 20)
         Me.Textid4_1.TabIndex = 270
@@ -3457,6 +3329,7 @@ Partial Class Pedimentos
         Me.Btn_CBrok_Menos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.Btn_CBrok_Menos.TabIndex = 269
         Me.Btn_CBrok_Menos.TabStop = False
+        Me.Btn_CBrok_Menos.Visible = False
         '
         'Btn_CBrok_Mas
         '
@@ -3467,13 +3340,14 @@ Partial Class Pedimentos
         Me.Btn_CBrok_Mas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.Btn_CBrok_Mas.TabIndex = 268
         Me.Btn_CBrok_Mas.TabStop = False
+        Me.Btn_CBrok_Mas.Visible = False
         '
         'Label53
         '
         Me.Label53.AutoSize = True
         Me.Label53.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label53.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label53.Location = New System.Drawing.Point(727, 314)
+        Me.Label53.Location = New System.Drawing.Point(709, 314)
         Me.Label53.Name = "Label53"
         Me.Label53.Size = New System.Drawing.Size(36, 13)
         Me.Label53.TabIndex = 219
@@ -3484,7 +3358,7 @@ Partial Class Pedimentos
         Me.Label32.AutoSize = True
         Me.Label32.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label32.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label32.Location = New System.Drawing.Point(738, 288)
+        Me.Label32.Location = New System.Drawing.Point(720, 288)
         Me.Label32.Name = "Label32"
         Me.Label32.Size = New System.Drawing.Size(27, 13)
         Me.Label32.TabIndex = 218
@@ -3493,7 +3367,7 @@ Partial Class Pedimentos
         'texttotalCB
         '
         Me.texttotalCB.Cursor = System.Windows.Forms.Cursors.No
-        Me.texttotalCB.Location = New System.Drawing.Point(771, 311)
+        Me.texttotalCB.Location = New System.Drawing.Point(753, 311)
         Me.texttotalCB.Name = "texttotalCB"
         Me.texttotalCB.ReadOnly = True
         Me.texttotalCB.Size = New System.Drawing.Size(100, 20)
@@ -3503,7 +3377,7 @@ Partial Class Pedimentos
         'textivaCB
         '
         Me.textivaCB.Cursor = System.Windows.Forms.Cursors.No
-        Me.textivaCB.Location = New System.Drawing.Point(771, 285)
+        Me.textivaCB.Location = New System.Drawing.Point(753, 285)
         Me.textivaCB.Name = "textivaCB"
         Me.textivaCB.ReadOnly = True
         Me.textivaCB.Size = New System.Drawing.Size(100, 20)
@@ -3512,264 +3386,237 @@ Partial Class Pedimentos
         '
         'textimporte10
         '
-        Me.textimporte10.Location = New System.Drawing.Point(771, 259)
+        Me.textimporte10.Location = New System.Drawing.Point(753, 259)
         Me.textimporte10.Name = "textimporte10"
         Me.textimporte10.Size = New System.Drawing.Size(100, 20)
         Me.textimporte10.TabIndex = 215
         Me.textimporte10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.textimporte10.Visible = False
         '
         'textDescripcion10
         '
-        Me.textDescripcion10.Location = New System.Drawing.Point(264, 259)
+        Me.textDescripcion10.Location = New System.Drawing.Point(246, 259)
         Me.textDescripcion10.Name = "textDescripcion10"
         Me.textDescripcion10.Size = New System.Drawing.Size(501, 20)
         Me.textDescripcion10.TabIndex = 214
-        Me.textDescripcion10.Visible = False
         '
         'txtNumero10
         '
         Me.txtNumero10.Cursor = System.Windows.Forms.Cursors.No
-        Me.txtNumero10.Location = New System.Drawing.Point(219, 259)
+        Me.txtNumero10.Location = New System.Drawing.Point(201, 259)
         Me.txtNumero10.Name = "txtNumero10"
         Me.txtNumero10.ReadOnly = True
         Me.txtNumero10.Size = New System.Drawing.Size(39, 20)
         Me.txtNumero10.TabIndex = 213
         Me.txtNumero10.Text = "10"
         Me.txtNumero10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtNumero10.Visible = False
         '
         'textimporte9
         '
-        Me.textimporte9.Location = New System.Drawing.Point(771, 233)
+        Me.textimporte9.Location = New System.Drawing.Point(753, 233)
         Me.textimporte9.Name = "textimporte9"
         Me.textimporte9.Size = New System.Drawing.Size(100, 20)
         Me.textimporte9.TabIndex = 212
         Me.textimporte9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.textimporte9.Visible = False
         '
         'textDescripcion9
         '
-        Me.textDescripcion9.Location = New System.Drawing.Point(264, 233)
+        Me.textDescripcion9.Location = New System.Drawing.Point(246, 233)
         Me.textDescripcion9.Name = "textDescripcion9"
         Me.textDescripcion9.Size = New System.Drawing.Size(501, 20)
         Me.textDescripcion9.TabIndex = 211
-        Me.textDescripcion9.Visible = False
         '
         'txtNumero9
         '
         Me.txtNumero9.Cursor = System.Windows.Forms.Cursors.No
-        Me.txtNumero9.Location = New System.Drawing.Point(219, 233)
+        Me.txtNumero9.Location = New System.Drawing.Point(201, 233)
         Me.txtNumero9.Name = "txtNumero9"
         Me.txtNumero9.ReadOnly = True
         Me.txtNumero9.Size = New System.Drawing.Size(39, 20)
         Me.txtNumero9.TabIndex = 210
         Me.txtNumero9.Text = "9"
         Me.txtNumero9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtNumero9.Visible = False
         '
         'textimporte8
         '
-        Me.textimporte8.Location = New System.Drawing.Point(771, 207)
+        Me.textimporte8.Location = New System.Drawing.Point(753, 207)
         Me.textimporte8.Name = "textimporte8"
         Me.textimporte8.Size = New System.Drawing.Size(100, 20)
         Me.textimporte8.TabIndex = 209
         Me.textimporte8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.textimporte8.Visible = False
         '
         'textDescripcion8
         '
-        Me.textDescripcion8.Location = New System.Drawing.Point(264, 207)
+        Me.textDescripcion8.Location = New System.Drawing.Point(246, 207)
         Me.textDescripcion8.Name = "textDescripcion8"
         Me.textDescripcion8.Size = New System.Drawing.Size(501, 20)
         Me.textDescripcion8.TabIndex = 208
-        Me.textDescripcion8.Visible = False
         '
         'txtNumero8
         '
         Me.txtNumero8.Cursor = System.Windows.Forms.Cursors.No
-        Me.txtNumero8.Location = New System.Drawing.Point(219, 207)
+        Me.txtNumero8.Location = New System.Drawing.Point(201, 207)
         Me.txtNumero8.Name = "txtNumero8"
         Me.txtNumero8.ReadOnly = True
         Me.txtNumero8.Size = New System.Drawing.Size(39, 20)
         Me.txtNumero8.TabIndex = 207
         Me.txtNumero8.Text = "8"
         Me.txtNumero8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtNumero8.Visible = False
         '
         'textimporte7
         '
-        Me.textimporte7.Location = New System.Drawing.Point(771, 181)
+        Me.textimporte7.Location = New System.Drawing.Point(753, 181)
         Me.textimporte7.Name = "textimporte7"
         Me.textimporte7.Size = New System.Drawing.Size(100, 20)
         Me.textimporte7.TabIndex = 206
         Me.textimporte7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.textimporte7.Visible = False
         '
         'textDescripcion7
         '
-        Me.textDescripcion7.Location = New System.Drawing.Point(264, 181)
+        Me.textDescripcion7.Location = New System.Drawing.Point(246, 181)
         Me.textDescripcion7.Name = "textDescripcion7"
         Me.textDescripcion7.Size = New System.Drawing.Size(501, 20)
         Me.textDescripcion7.TabIndex = 205
-        Me.textDescripcion7.Visible = False
         '
         'txtNumero7
         '
         Me.txtNumero7.Cursor = System.Windows.Forms.Cursors.No
-        Me.txtNumero7.Location = New System.Drawing.Point(219, 181)
+        Me.txtNumero7.Location = New System.Drawing.Point(201, 181)
         Me.txtNumero7.Name = "txtNumero7"
         Me.txtNumero7.ReadOnly = True
         Me.txtNumero7.Size = New System.Drawing.Size(39, 20)
         Me.txtNumero7.TabIndex = 204
         Me.txtNumero7.Text = "7"
         Me.txtNumero7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtNumero7.Visible = False
         '
         'textimporte6
         '
-        Me.textimporte6.Location = New System.Drawing.Point(771, 155)
+        Me.textimporte6.Location = New System.Drawing.Point(753, 155)
         Me.textimporte6.Name = "textimporte6"
         Me.textimporte6.Size = New System.Drawing.Size(100, 20)
         Me.textimporte6.TabIndex = 203
         Me.textimporte6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.textimporte6.Visible = False
         '
         'textDescripcion6
         '
-        Me.textDescripcion6.Location = New System.Drawing.Point(264, 155)
+        Me.textDescripcion6.Location = New System.Drawing.Point(246, 155)
         Me.textDescripcion6.Name = "textDescripcion6"
         Me.textDescripcion6.Size = New System.Drawing.Size(501, 20)
         Me.textDescripcion6.TabIndex = 202
-        Me.textDescripcion6.Visible = False
         '
         'txtNumero6
         '
         Me.txtNumero6.Cursor = System.Windows.Forms.Cursors.No
-        Me.txtNumero6.Location = New System.Drawing.Point(219, 155)
+        Me.txtNumero6.Location = New System.Drawing.Point(201, 155)
         Me.txtNumero6.Name = "txtNumero6"
         Me.txtNumero6.ReadOnly = True
         Me.txtNumero6.Size = New System.Drawing.Size(39, 20)
         Me.txtNumero6.TabIndex = 201
         Me.txtNumero6.Text = "6"
         Me.txtNumero6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtNumero6.Visible = False
         '
         'textimporte5
         '
-        Me.textimporte5.Location = New System.Drawing.Point(771, 129)
+        Me.textimporte5.Location = New System.Drawing.Point(753, 129)
         Me.textimporte5.Name = "textimporte5"
         Me.textimporte5.Size = New System.Drawing.Size(100, 20)
         Me.textimporte5.TabIndex = 200
         Me.textimporte5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.textimporte5.Visible = False
         '
         'textDescripcion5
         '
-        Me.textDescripcion5.Location = New System.Drawing.Point(264, 129)
+        Me.textDescripcion5.Location = New System.Drawing.Point(246, 129)
         Me.textDescripcion5.Name = "textDescripcion5"
         Me.textDescripcion5.Size = New System.Drawing.Size(501, 20)
         Me.textDescripcion5.TabIndex = 199
-        Me.textDescripcion5.Visible = False
         '
         'txtNumero5
         '
         Me.txtNumero5.Cursor = System.Windows.Forms.Cursors.No
-        Me.txtNumero5.Location = New System.Drawing.Point(219, 129)
+        Me.txtNumero5.Location = New System.Drawing.Point(201, 129)
         Me.txtNumero5.Name = "txtNumero5"
         Me.txtNumero5.ReadOnly = True
         Me.txtNumero5.Size = New System.Drawing.Size(39, 20)
         Me.txtNumero5.TabIndex = 198
         Me.txtNumero5.Text = "5"
         Me.txtNumero5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtNumero5.Visible = False
         '
         'textimporte4
         '
-        Me.textimporte4.Location = New System.Drawing.Point(771, 103)
+        Me.textimporte4.Location = New System.Drawing.Point(753, 103)
         Me.textimporte4.Name = "textimporte4"
         Me.textimporte4.Size = New System.Drawing.Size(100, 20)
         Me.textimporte4.TabIndex = 197
         Me.textimporte4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.textimporte4.Visible = False
         '
         'textDescripcion4
         '
-        Me.textDescripcion4.Location = New System.Drawing.Point(264, 103)
+        Me.textDescripcion4.Location = New System.Drawing.Point(246, 103)
         Me.textDescripcion4.Name = "textDescripcion4"
         Me.textDescripcion4.Size = New System.Drawing.Size(501, 20)
         Me.textDescripcion4.TabIndex = 196
-        Me.textDescripcion4.Visible = False
         '
         'txtNumero4
         '
         Me.txtNumero4.Cursor = System.Windows.Forms.Cursors.No
-        Me.txtNumero4.Location = New System.Drawing.Point(219, 103)
+        Me.txtNumero4.Location = New System.Drawing.Point(201, 103)
         Me.txtNumero4.Name = "txtNumero4"
         Me.txtNumero4.ReadOnly = True
         Me.txtNumero4.Size = New System.Drawing.Size(39, 20)
         Me.txtNumero4.TabIndex = 195
         Me.txtNumero4.Text = "4"
         Me.txtNumero4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtNumero4.Visible = False
         '
         'textimporte3
         '
-        Me.textimporte3.Location = New System.Drawing.Point(771, 77)
+        Me.textimporte3.Location = New System.Drawing.Point(753, 77)
         Me.textimporte3.Name = "textimporte3"
         Me.textimporte3.Size = New System.Drawing.Size(100, 20)
         Me.textimporte3.TabIndex = 194
         Me.textimporte3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.textimporte3.Visible = False
         '
         'textDescripcion3
         '
-        Me.textDescripcion3.Location = New System.Drawing.Point(264, 77)
+        Me.textDescripcion3.Location = New System.Drawing.Point(246, 77)
         Me.textDescripcion3.Name = "textDescripcion3"
         Me.textDescripcion3.Size = New System.Drawing.Size(501, 20)
         Me.textDescripcion3.TabIndex = 193
-        Me.textDescripcion3.Visible = False
         '
         'txtNumero3
         '
         Me.txtNumero3.Cursor = System.Windows.Forms.Cursors.No
-        Me.txtNumero3.Location = New System.Drawing.Point(219, 77)
+        Me.txtNumero3.Location = New System.Drawing.Point(201, 77)
         Me.txtNumero3.Name = "txtNumero3"
         Me.txtNumero3.ReadOnly = True
         Me.txtNumero3.Size = New System.Drawing.Size(39, 20)
         Me.txtNumero3.TabIndex = 192
         Me.txtNumero3.Text = "3"
         Me.txtNumero3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtNumero3.Visible = False
         '
         'textimporte2
         '
-        Me.textimporte2.Location = New System.Drawing.Point(771, 51)
+        Me.textimporte2.Location = New System.Drawing.Point(753, 51)
         Me.textimporte2.Name = "textimporte2"
         Me.textimporte2.Size = New System.Drawing.Size(100, 20)
         Me.textimporte2.TabIndex = 191
         Me.textimporte2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.textimporte2.Visible = False
         '
         'textDescripcion2
         '
-        Me.textDescripcion2.Location = New System.Drawing.Point(264, 51)
+        Me.textDescripcion2.Location = New System.Drawing.Point(246, 51)
         Me.textDescripcion2.Name = "textDescripcion2"
         Me.textDescripcion2.Size = New System.Drawing.Size(501, 20)
         Me.textDescripcion2.TabIndex = 190
-        Me.textDescripcion2.Visible = False
         '
         'txtNumero2
         '
         Me.txtNumero2.Cursor = System.Windows.Forms.Cursors.No
-        Me.txtNumero2.Location = New System.Drawing.Point(219, 51)
+        Me.txtNumero2.Location = New System.Drawing.Point(201, 51)
         Me.txtNumero2.Name = "txtNumero2"
         Me.txtNumero2.ReadOnly = True
         Me.txtNumero2.Size = New System.Drawing.Size(39, 20)
         Me.txtNumero2.TabIndex = 189
         Me.txtNumero2.Text = "2"
         Me.txtNumero2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtNumero2.Visible = False
         '
         'Label41
         '
@@ -3777,7 +3624,7 @@ Partial Class Pedimentos
         Me.Label41.BackColor = System.Drawing.Color.Transparent
         Me.Label41.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label41.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label41.Location = New System.Drawing.Point(789, 9)
+        Me.Label41.Location = New System.Drawing.Point(771, 9)
         Me.Label41.Name = "Label41"
         Me.Label41.Size = New System.Drawing.Size(49, 13)
         Me.Label41.TabIndex = 188
@@ -3789,7 +3636,7 @@ Partial Class Pedimentos
         Me.Label42.BackColor = System.Drawing.Color.Transparent
         Me.Label42.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label42.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label42.Location = New System.Drawing.Point(462, 9)
+        Me.Label42.Location = New System.Drawing.Point(444, 9)
         Me.Label42.Name = "Label42"
         Me.Label42.Size = New System.Drawing.Size(74, 13)
         Me.Label42.TabIndex = 187
@@ -3801,7 +3648,7 @@ Partial Class Pedimentos
         Me.Label43.BackColor = System.Drawing.Color.Transparent
         Me.Label43.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label43.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label43.Location = New System.Drawing.Point(227, 9)
+        Me.Label43.Location = New System.Drawing.Point(209, 9)
         Me.Label43.Name = "Label43"
         Me.Label43.Size = New System.Drawing.Size(24, 13)
         Me.Label43.TabIndex = 186
@@ -3809,7 +3656,7 @@ Partial Class Pedimentos
         '
         'textimporte1
         '
-        Me.textimporte1.Location = New System.Drawing.Point(771, 25)
+        Me.textimporte1.Location = New System.Drawing.Point(753, 25)
         Me.textimporte1.Name = "textimporte1"
         Me.textimporte1.Size = New System.Drawing.Size(100, 20)
         Me.textimporte1.TabIndex = 185
@@ -3817,7 +3664,7 @@ Partial Class Pedimentos
         '
         'textDescripcion1
         '
-        Me.textDescripcion1.Location = New System.Drawing.Point(264, 25)
+        Me.textDescripcion1.Location = New System.Drawing.Point(246, 25)
         Me.textDescripcion1.Name = "textDescripcion1"
         Me.textDescripcion1.Size = New System.Drawing.Size(501, 20)
         Me.textDescripcion1.TabIndex = 184
@@ -3825,7 +3672,7 @@ Partial Class Pedimentos
         'txtNumero1
         '
         Me.txtNumero1.Cursor = System.Windows.Forms.Cursors.No
-        Me.txtNumero1.Location = New System.Drawing.Point(219, 25)
+        Me.txtNumero1.Location = New System.Drawing.Point(201, 25)
         Me.txtNumero1.Name = "txtNumero1"
         Me.txtNumero1.ReadOnly = True
         Me.txtNumero1.Size = New System.Drawing.Size(39, 20)
@@ -3984,7 +3831,6 @@ Partial Class Pedimentos
         Me.txtTCFlete10.TabIndex = 375
         Me.txtTCFlete10.Text = "0"
         Me.txtTCFlete10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtTCFlete10.Visible = False
         '
         'TextUSDFLE10
         '
@@ -3994,7 +3840,6 @@ Partial Class Pedimentos
         Me.TextUSDFLE10.TabIndex = 374
         Me.TextUSDFLE10.Text = "0"
         Me.TextUSDFLE10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextUSDFLE10.Visible = False
         '
         'txtTCFlete9
         '
@@ -4004,7 +3849,6 @@ Partial Class Pedimentos
         Me.txtTCFlete9.TabIndex = 373
         Me.txtTCFlete9.Text = "0"
         Me.txtTCFlete9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtTCFlete9.Visible = False
         '
         'TextUSDFLE9
         '
@@ -4014,7 +3858,6 @@ Partial Class Pedimentos
         Me.TextUSDFLE9.TabIndex = 372
         Me.TextUSDFLE9.Text = "0"
         Me.TextUSDFLE9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextUSDFLE9.Visible = False
         '
         'txtTCFlete8
         '
@@ -4024,7 +3867,6 @@ Partial Class Pedimentos
         Me.txtTCFlete8.TabIndex = 371
         Me.txtTCFlete8.Text = "0"
         Me.txtTCFlete8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtTCFlete8.Visible = False
         '
         'TextUSDFLE8
         '
@@ -4034,7 +3876,6 @@ Partial Class Pedimentos
         Me.TextUSDFLE8.TabIndex = 370
         Me.TextUSDFLE8.Text = "0"
         Me.TextUSDFLE8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextUSDFLE8.Visible = False
         '
         'txtTCFlete7
         '
@@ -4044,7 +3885,6 @@ Partial Class Pedimentos
         Me.txtTCFlete7.TabIndex = 369
         Me.txtTCFlete7.Text = "0"
         Me.txtTCFlete7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtTCFlete7.Visible = False
         '
         'TextUSDFLE7
         '
@@ -4054,7 +3894,6 @@ Partial Class Pedimentos
         Me.TextUSDFLE7.TabIndex = 368
         Me.TextUSDFLE7.Text = "0"
         Me.TextUSDFLE7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextUSDFLE7.Visible = False
         '
         'txtTCFlete6
         '
@@ -4064,7 +3903,6 @@ Partial Class Pedimentos
         Me.txtTCFlete6.TabIndex = 367
         Me.txtTCFlete6.Text = "0"
         Me.txtTCFlete6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtTCFlete6.Visible = False
         '
         'TextUSDFLE6
         '
@@ -4074,7 +3912,6 @@ Partial Class Pedimentos
         Me.TextUSDFLE6.TabIndex = 366
         Me.TextUSDFLE6.Text = "0"
         Me.TextUSDFLE6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextUSDFLE6.Visible = False
         '
         'txtTCFlete5
         '
@@ -4084,7 +3921,6 @@ Partial Class Pedimentos
         Me.txtTCFlete5.TabIndex = 365
         Me.txtTCFlete5.Text = "0"
         Me.txtTCFlete5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtTCFlete5.Visible = False
         '
         'TextUSDFLE5
         '
@@ -4094,7 +3930,6 @@ Partial Class Pedimentos
         Me.TextUSDFLE5.TabIndex = 364
         Me.TextUSDFLE5.Text = "0"
         Me.TextUSDFLE5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextUSDFLE5.Visible = False
         '
         'txtTCFlete4
         '
@@ -4104,7 +3939,6 @@ Partial Class Pedimentos
         Me.txtTCFlete4.TabIndex = 363
         Me.txtTCFlete4.Text = "0"
         Me.txtTCFlete4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtTCFlete4.Visible = False
         '
         'TextUSDFLE4
         '
@@ -4114,7 +3948,6 @@ Partial Class Pedimentos
         Me.TextUSDFLE4.TabIndex = 362
         Me.TextUSDFLE4.Text = "0"
         Me.TextUSDFLE4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextUSDFLE4.Visible = False
         '
         'txtTCFlete3
         '
@@ -4124,7 +3957,6 @@ Partial Class Pedimentos
         Me.txtTCFlete3.TabIndex = 361
         Me.txtTCFlete3.Text = "0"
         Me.txtTCFlete3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtTCFlete3.Visible = False
         '
         'TextUSDFLE3
         '
@@ -4134,7 +3966,6 @@ Partial Class Pedimentos
         Me.TextUSDFLE3.TabIndex = 360
         Me.TextUSDFLE3.Text = "0"
         Me.TextUSDFLE3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextUSDFLE3.Visible = False
         '
         'txtTCFlete2
         '
@@ -4144,7 +3975,6 @@ Partial Class Pedimentos
         Me.txtTCFlete2.TabIndex = 359
         Me.txtTCFlete2.Text = "0"
         Me.txtTCFlete2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtTCFlete2.Visible = False
         '
         'TextUSDFLE2
         '
@@ -4154,7 +3984,6 @@ Partial Class Pedimentos
         Me.TextUSDFLE2.TabIndex = 358
         Me.TextUSDFLE2.Text = "0"
         Me.TextUSDFLE2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextUSDFLE2.Visible = False
         '
         'txtTCFlete1
         '
@@ -4184,7 +4013,6 @@ Partial Class Pedimentos
         Me.txtRetenciones10.TabIndex = 355
         Me.txtRetenciones10.Text = "0"
         Me.txtRetenciones10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtRetenciones10.Visible = False
         '
         'txtRetenciones9
         '
@@ -4196,7 +4024,6 @@ Partial Class Pedimentos
         Me.txtRetenciones9.TabIndex = 354
         Me.txtRetenciones9.Text = "0"
         Me.txtRetenciones9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtRetenciones9.Visible = False
         '
         'txtRetenciones8
         '
@@ -4208,7 +4035,6 @@ Partial Class Pedimentos
         Me.txtRetenciones8.TabIndex = 353
         Me.txtRetenciones8.Text = "0"
         Me.txtRetenciones8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtRetenciones8.Visible = False
         '
         'txtRetenciones7
         '
@@ -4220,7 +4046,6 @@ Partial Class Pedimentos
         Me.txtRetenciones7.TabIndex = 352
         Me.txtRetenciones7.Text = "0"
         Me.txtRetenciones7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtRetenciones7.Visible = False
         '
         'txtRetenciones6
         '
@@ -4232,7 +4057,6 @@ Partial Class Pedimentos
         Me.txtRetenciones6.TabIndex = 351
         Me.txtRetenciones6.Text = "0"
         Me.txtRetenciones6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtRetenciones6.Visible = False
         '
         'txtRetenciones5
         '
@@ -4244,7 +4068,6 @@ Partial Class Pedimentos
         Me.txtRetenciones5.TabIndex = 350
         Me.txtRetenciones5.Text = "0"
         Me.txtRetenciones5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtRetenciones5.Visible = False
         '
         'txtRetenciones4
         '
@@ -4256,7 +4079,6 @@ Partial Class Pedimentos
         Me.txtRetenciones4.TabIndex = 349
         Me.txtRetenciones4.Text = "0"
         Me.txtRetenciones4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtRetenciones4.Visible = False
         '
         'txtRetenciones3
         '
@@ -4268,7 +4090,6 @@ Partial Class Pedimentos
         Me.txtRetenciones3.TabIndex = 348
         Me.txtRetenciones3.Text = "0"
         Me.txtRetenciones3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtRetenciones3.Visible = False
         '
         'txtRetenciones2
         '
@@ -4280,7 +4101,6 @@ Partial Class Pedimentos
         Me.txtRetenciones2.TabIndex = 347
         Me.txtRetenciones2.Text = "0"
         Me.txtRetenciones2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtRetenciones2.Visible = False
         '
         'Label58
         '
@@ -4324,7 +4144,6 @@ Partial Class Pedimentos
         Me.retencionCheck5.TabIndex = 343
         Me.retencionCheck5.Text = "Retencion"
         Me.retencionCheck5.UseVisualStyleBackColor = True
-        Me.retencionCheck5.Visible = False
         '
         'retencionCheck6
         '
@@ -4335,7 +4154,6 @@ Partial Class Pedimentos
         Me.retencionCheck6.TabIndex = 342
         Me.retencionCheck6.Text = "Retencion"
         Me.retencionCheck6.UseVisualStyleBackColor = True
-        Me.retencionCheck6.Visible = False
         '
         'retencionCheck10
         '
@@ -4346,7 +4164,6 @@ Partial Class Pedimentos
         Me.retencionCheck10.TabIndex = 341
         Me.retencionCheck10.Text = "Retencion"
         Me.retencionCheck10.UseVisualStyleBackColor = True
-        Me.retencionCheck10.Visible = False
         '
         'retencionCheck9
         '
@@ -4357,7 +4174,6 @@ Partial Class Pedimentos
         Me.retencionCheck9.TabIndex = 340
         Me.retencionCheck9.Text = "Retencion"
         Me.retencionCheck9.UseVisualStyleBackColor = True
-        Me.retencionCheck9.Visible = False
         '
         'retencionCheck8
         '
@@ -4368,7 +4184,6 @@ Partial Class Pedimentos
         Me.retencionCheck8.TabIndex = 339
         Me.retencionCheck8.Text = "Retencion"
         Me.retencionCheck8.UseVisualStyleBackColor = True
-        Me.retencionCheck8.Visible = False
         '
         'retencionCheck7
         '
@@ -4379,7 +4194,6 @@ Partial Class Pedimentos
         Me.retencionCheck7.TabIndex = 338
         Me.retencionCheck7.Text = "Retencion"
         Me.retencionCheck7.UseVisualStyleBackColor = True
-        Me.retencionCheck7.Visible = False
         '
         'retencionCheck4
         '
@@ -4390,7 +4204,6 @@ Partial Class Pedimentos
         Me.retencionCheck4.TabIndex = 337
         Me.retencionCheck4.Text = "Retencion"
         Me.retencionCheck4.UseVisualStyleBackColor = True
-        Me.retencionCheck4.Visible = False
         '
         'retencionCheck3
         '
@@ -4401,7 +4214,6 @@ Partial Class Pedimentos
         Me.retencionCheck3.TabIndex = 336
         Me.retencionCheck3.Text = "Retencion"
         Me.retencionCheck3.UseVisualStyleBackColor = True
-        Me.retencionCheck3.Visible = False
         '
         'retencionCheck2
         '
@@ -4412,7 +4224,6 @@ Partial Class Pedimentos
         Me.retencionCheck2.TabIndex = 335
         Me.retencionCheck2.Text = "Retencion"
         Me.retencionCheck2.UseVisualStyleBackColor = True
-        Me.retencionCheck2.Visible = False
         '
         'retencionCheck1
         '
@@ -4513,6 +4324,7 @@ Partial Class Pedimentos
         Me.btn_menosSF.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.btn_menosSF.TabIndex = 323
         Me.btn_menosSF.TabStop = False
+        Me.btn_menosSF.Visible = False
         '
         'btn_masSF
         '
@@ -4523,6 +4335,7 @@ Partial Class Pedimentos
         Me.btn_masSF.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.btn_masSF.TabIndex = 322
         Me.btn_masSF.TabStop = False
+        Me.btn_masSF.Visible = False
         '
         'Label26
         '
@@ -4545,7 +4358,6 @@ Partial Class Pedimentos
         Me.txtTotalFS10.Size = New System.Drawing.Size(80, 20)
         Me.txtTotalFS10.TabIndex = 320
         Me.txtTotalFS10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtTotalFS10.Visible = False
         '
         'txtTotalFS9
         '
@@ -4556,7 +4368,6 @@ Partial Class Pedimentos
         Me.txtTotalFS9.Size = New System.Drawing.Size(80, 20)
         Me.txtTotalFS9.TabIndex = 319
         Me.txtTotalFS9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtTotalFS9.Visible = False
         '
         'txtTotalFS8
         '
@@ -4567,7 +4378,6 @@ Partial Class Pedimentos
         Me.txtTotalFS8.Size = New System.Drawing.Size(80, 20)
         Me.txtTotalFS8.TabIndex = 318
         Me.txtTotalFS8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtTotalFS8.Visible = False
         '
         'txtTotalFS7
         '
@@ -4578,7 +4388,6 @@ Partial Class Pedimentos
         Me.txtTotalFS7.Size = New System.Drawing.Size(80, 20)
         Me.txtTotalFS7.TabIndex = 317
         Me.txtTotalFS7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtTotalFS7.Visible = False
         '
         'txtTotalFS6
         '
@@ -4589,7 +4398,6 @@ Partial Class Pedimentos
         Me.txtTotalFS6.Size = New System.Drawing.Size(80, 20)
         Me.txtTotalFS6.TabIndex = 316
         Me.txtTotalFS6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtTotalFS6.Visible = False
         '
         'txtTotalFS5
         '
@@ -4600,7 +4408,6 @@ Partial Class Pedimentos
         Me.txtTotalFS5.Size = New System.Drawing.Size(80, 20)
         Me.txtTotalFS5.TabIndex = 315
         Me.txtTotalFS5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtTotalFS5.Visible = False
         '
         'txtTotalFS4
         '
@@ -4611,7 +4418,6 @@ Partial Class Pedimentos
         Me.txtTotalFS4.Size = New System.Drawing.Size(80, 20)
         Me.txtTotalFS4.TabIndex = 314
         Me.txtTotalFS4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtTotalFS4.Visible = False
         '
         'txtTotalFS3
         '
@@ -4622,7 +4428,6 @@ Partial Class Pedimentos
         Me.txtTotalFS3.Size = New System.Drawing.Size(80, 20)
         Me.txtTotalFS3.TabIndex = 313
         Me.txtTotalFS3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtTotalFS3.Visible = False
         '
         'txtTotalFS2
         '
@@ -4633,7 +4438,6 @@ Partial Class Pedimentos
         Me.txtTotalFS2.Size = New System.Drawing.Size(80, 20)
         Me.txtTotalFS2.TabIndex = 312
         Me.txtTotalFS2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtTotalFS2.Visible = False
         '
         'Label21
         '
@@ -4665,7 +4469,6 @@ Partial Class Pedimentos
         Me.txtIvaFS10.Size = New System.Drawing.Size(100, 20)
         Me.txtIvaFS10.TabIndex = 309
         Me.txtIvaFS10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtIvaFS10.Visible = False
         '
         'txtIvaFS9
         '
@@ -4676,7 +4479,6 @@ Partial Class Pedimentos
         Me.txtIvaFS9.Size = New System.Drawing.Size(100, 20)
         Me.txtIvaFS9.TabIndex = 308
         Me.txtIvaFS9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtIvaFS9.Visible = False
         '
         'txtIvaFS8
         '
@@ -4687,7 +4489,6 @@ Partial Class Pedimentos
         Me.txtIvaFS8.Size = New System.Drawing.Size(100, 20)
         Me.txtIvaFS8.TabIndex = 307
         Me.txtIvaFS8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtIvaFS8.Visible = False
         '
         'txtIvaFS7
         '
@@ -4698,7 +4499,6 @@ Partial Class Pedimentos
         Me.txtIvaFS7.Size = New System.Drawing.Size(100, 20)
         Me.txtIvaFS7.TabIndex = 306
         Me.txtIvaFS7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtIvaFS7.Visible = False
         '
         'txtIvaFS6
         '
@@ -4709,7 +4509,6 @@ Partial Class Pedimentos
         Me.txtIvaFS6.Size = New System.Drawing.Size(100, 20)
         Me.txtIvaFS6.TabIndex = 305
         Me.txtIvaFS6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtIvaFS6.Visible = False
         '
         'txtIvaFS5
         '
@@ -4720,7 +4519,6 @@ Partial Class Pedimentos
         Me.txtIvaFS5.Size = New System.Drawing.Size(100, 20)
         Me.txtIvaFS5.TabIndex = 304
         Me.txtIvaFS5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtIvaFS5.Visible = False
         '
         'txtIvaFS4
         '
@@ -4731,7 +4529,6 @@ Partial Class Pedimentos
         Me.txtIvaFS4.Size = New System.Drawing.Size(100, 20)
         Me.txtIvaFS4.TabIndex = 303
         Me.txtIvaFS4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtIvaFS4.Visible = False
         '
         'txtIvaFS3
         '
@@ -4742,7 +4539,6 @@ Partial Class Pedimentos
         Me.txtIvaFS3.Size = New System.Drawing.Size(100, 20)
         Me.txtIvaFS3.TabIndex = 302
         Me.txtIvaFS3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtIvaFS3.Visible = False
         '
         'txtIvaFS2
         '
@@ -4753,7 +4549,6 @@ Partial Class Pedimentos
         Me.txtIvaFS2.Size = New System.Drawing.Size(100, 20)
         Me.txtIvaFS2.TabIndex = 301
         Me.txtIvaFS2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtIvaFS2.Visible = False
         '
         'Label22
         '
@@ -4783,7 +4578,6 @@ Partial Class Pedimentos
         Me.txtimporteFS10.Size = New System.Drawing.Size(100, 20)
         Me.txtimporteFS10.TabIndex = 298
         Me.txtimporteFS10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtimporteFS10.Visible = False
         '
         'txtimporteFS9
         '
@@ -4792,7 +4586,6 @@ Partial Class Pedimentos
         Me.txtimporteFS9.Size = New System.Drawing.Size(100, 20)
         Me.txtimporteFS9.TabIndex = 297
         Me.txtimporteFS9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtimporteFS9.Visible = False
         '
         'txtimporteFS8
         '
@@ -4801,7 +4594,6 @@ Partial Class Pedimentos
         Me.txtimporteFS8.Size = New System.Drawing.Size(100, 20)
         Me.txtimporteFS8.TabIndex = 296
         Me.txtimporteFS8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtimporteFS8.Visible = False
         '
         'txtimporteFS7
         '
@@ -4810,7 +4602,6 @@ Partial Class Pedimentos
         Me.txtimporteFS7.Size = New System.Drawing.Size(100, 20)
         Me.txtimporteFS7.TabIndex = 295
         Me.txtimporteFS7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtimporteFS7.Visible = False
         '
         'txtimporteFS6
         '
@@ -4819,7 +4610,6 @@ Partial Class Pedimentos
         Me.txtimporteFS6.Size = New System.Drawing.Size(100, 20)
         Me.txtimporteFS6.TabIndex = 294
         Me.txtimporteFS6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtimporteFS6.Visible = False
         '
         'txtimporteFS5
         '
@@ -4828,7 +4618,6 @@ Partial Class Pedimentos
         Me.txtimporteFS5.Size = New System.Drawing.Size(100, 20)
         Me.txtimporteFS5.TabIndex = 293
         Me.txtimporteFS5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtimporteFS5.Visible = False
         '
         'txtimporteFS4
         '
@@ -4837,7 +4626,6 @@ Partial Class Pedimentos
         Me.txtimporteFS4.Size = New System.Drawing.Size(100, 20)
         Me.txtimporteFS4.TabIndex = 292
         Me.txtimporteFS4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtimporteFS4.Visible = False
         '
         'txtimporteFS3
         '
@@ -4846,7 +4634,6 @@ Partial Class Pedimentos
         Me.txtimporteFS3.Size = New System.Drawing.Size(100, 20)
         Me.txtimporteFS3.TabIndex = 291
         Me.txtimporteFS3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtimporteFS3.Visible = False
         '
         'txtimporteFS2
         '
@@ -4855,7 +4642,6 @@ Partial Class Pedimentos
         Me.txtimporteFS2.Size = New System.Drawing.Size(100, 20)
         Me.txtimporteFS2.TabIndex = 290
         Me.txtimporteFS2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtimporteFS2.Visible = False
         '
         'Label23
         '
@@ -4882,7 +4668,6 @@ Partial Class Pedimentos
         Me.textdescripFS10.Name = "textdescripFS10"
         Me.textdescripFS10.Size = New System.Drawing.Size(307, 20)
         Me.textdescripFS10.TabIndex = 286
-        Me.textdescripFS10.Visible = False
         '
         'textNumFS10
         '
@@ -4894,7 +4679,6 @@ Partial Class Pedimentos
         Me.textNumFS10.TabIndex = 285
         Me.textNumFS10.Text = "10"
         Me.textNumFS10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.textNumFS10.Visible = False
         '
         'textdescripFS9
         '
@@ -4902,7 +4686,6 @@ Partial Class Pedimentos
         Me.textdescripFS9.Name = "textdescripFS9"
         Me.textdescripFS9.Size = New System.Drawing.Size(307, 20)
         Me.textdescripFS9.TabIndex = 283
-        Me.textdescripFS9.Visible = False
         '
         'textNumFS9
         '
@@ -4914,7 +4697,6 @@ Partial Class Pedimentos
         Me.textNumFS9.TabIndex = 282
         Me.textNumFS9.Text = "9"
         Me.textNumFS9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.textNumFS9.Visible = False
         '
         'textdescripFS8
         '
@@ -4922,7 +4704,6 @@ Partial Class Pedimentos
         Me.textdescripFS8.Name = "textdescripFS8"
         Me.textdescripFS8.Size = New System.Drawing.Size(307, 20)
         Me.textdescripFS8.TabIndex = 280
-        Me.textdescripFS8.Visible = False
         '
         'textNumFS8
         '
@@ -4934,7 +4715,6 @@ Partial Class Pedimentos
         Me.textNumFS8.TabIndex = 279
         Me.textNumFS8.Text = "8"
         Me.textNumFS8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.textNumFS8.Visible = False
         '
         'textdescripFS7
         '
@@ -4942,7 +4722,6 @@ Partial Class Pedimentos
         Me.textdescripFS7.Name = "textdescripFS7"
         Me.textdescripFS7.Size = New System.Drawing.Size(307, 20)
         Me.textdescripFS7.TabIndex = 277
-        Me.textdescripFS7.Visible = False
         '
         'textNumFS7
         '
@@ -4954,7 +4733,6 @@ Partial Class Pedimentos
         Me.textNumFS7.TabIndex = 276
         Me.textNumFS7.Text = "7"
         Me.textNumFS7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.textNumFS7.Visible = False
         '
         'textdescripFS6
         '
@@ -4962,7 +4740,6 @@ Partial Class Pedimentos
         Me.textdescripFS6.Name = "textdescripFS6"
         Me.textdescripFS6.Size = New System.Drawing.Size(307, 20)
         Me.textdescripFS6.TabIndex = 274
-        Me.textdescripFS6.Visible = False
         '
         'textNumFS6
         '
@@ -4974,7 +4751,6 @@ Partial Class Pedimentos
         Me.textNumFS6.TabIndex = 273
         Me.textNumFS6.Text = "6"
         Me.textNumFS6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.textNumFS6.Visible = False
         '
         'textdescripFS5
         '
@@ -4982,7 +4758,6 @@ Partial Class Pedimentos
         Me.textdescripFS5.Name = "textdescripFS5"
         Me.textdescripFS5.Size = New System.Drawing.Size(307, 20)
         Me.textdescripFS5.TabIndex = 271
-        Me.textdescripFS5.Visible = False
         '
         'textNumFS5
         '
@@ -4994,7 +4769,6 @@ Partial Class Pedimentos
         Me.textNumFS5.TabIndex = 270
         Me.textNumFS5.Text = "5"
         Me.textNumFS5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.textNumFS5.Visible = False
         '
         'textdescripFS4
         '
@@ -5002,7 +4776,6 @@ Partial Class Pedimentos
         Me.textdescripFS4.Name = "textdescripFS4"
         Me.textdescripFS4.Size = New System.Drawing.Size(307, 20)
         Me.textdescripFS4.TabIndex = 268
-        Me.textdescripFS4.Visible = False
         '
         'textNumFS4
         '
@@ -5014,7 +4787,6 @@ Partial Class Pedimentos
         Me.textNumFS4.TabIndex = 267
         Me.textNumFS4.Text = "4"
         Me.textNumFS4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.textNumFS4.Visible = False
         '
         'textdescripFS3
         '
@@ -5022,7 +4794,6 @@ Partial Class Pedimentos
         Me.textdescripFS3.Name = "textdescripFS3"
         Me.textdescripFS3.Size = New System.Drawing.Size(307, 20)
         Me.textdescripFS3.TabIndex = 265
-        Me.textdescripFS3.Visible = False
         '
         'textNumFS3
         '
@@ -5034,7 +4805,6 @@ Partial Class Pedimentos
         Me.textNumFS3.TabIndex = 264
         Me.textNumFS3.Text = "3"
         Me.textNumFS3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.textNumFS3.Visible = False
         '
         'textdescripFS2
         '
@@ -5042,7 +4812,6 @@ Partial Class Pedimentos
         Me.textdescripFS2.Name = "textdescripFS2"
         Me.textdescripFS2.Size = New System.Drawing.Size(307, 20)
         Me.textdescripFS2.TabIndex = 262
-        Me.textdescripFS2.Visible = False
         '
         'textNumFS2
         '
@@ -5054,7 +4823,6 @@ Partial Class Pedimentos
         Me.textNumFS2.TabIndex = 261
         Me.textNumFS2.Text = "2"
         Me.textNumFS2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.textNumFS2.Visible = False
         '
         'Label25
         '
@@ -5088,6 +4856,7 @@ Partial Class Pedimentos
         'TabPage7
         '
         Me.TabPage7.BackColor = System.Drawing.Color.White
+        Me.TabPage7.Controls.Add(Me.btn_clean)
         Me.TabPage7.Controls.Add(Me.PictureBox7)
         Me.TabPage7.Controls.Add(Me.GroupBox6)
         Me.TabPage7.Controls.Add(Me.GroupBox5)
@@ -5210,7 +4979,7 @@ Partial Class Pedimentos
         Me.BtnGuardarFac.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnGuardarFac.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.BtnGuardarFac.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnGuardarFac.Location = New System.Drawing.Point(522, 293)
+        Me.BtnGuardarFac.Location = New System.Drawing.Point(345, 292)
         Me.BtnGuardarFac.Name = "BtnGuardarFac"
         Me.BtnGuardarFac.Size = New System.Drawing.Size(123, 32)
         Me.BtnGuardarFac.TabIndex = 181
@@ -5373,7 +5142,7 @@ Partial Class Pedimentos
         Me.btn_modificar.Enabled = False
         Me.btn_modificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_modificar.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btn_modificar.Location = New System.Drawing.Point(397, 293)
+        Me.btn_modificar.Location = New System.Drawing.Point(617, 292)
         Me.btn_modificar.Name = "btn_modificar"
         Me.btn_modificar.Size = New System.Drawing.Size(119, 32)
         Me.btn_modificar.TabIndex = 180
@@ -5465,7 +5234,7 @@ Partial Class Pedimentos
         '
         Me.btn_Buscar.BackColor = System.Drawing.Color.Transparent
         Me.btn_Buscar.Image = Global.NucleosAve.My.Resources.Resources.icons8_google_web_search_512
-        Me.btn_Buscar.Location = New System.Drawing.Point(985, 59)
+        Me.btn_Buscar.Location = New System.Drawing.Point(985, 58)
         Me.btn_Buscar.Name = "btn_Buscar"
         Me.btn_Buscar.Size = New System.Drawing.Size(37, 37)
         Me.btn_Buscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -5477,20 +5246,29 @@ Partial Class Pedimentos
         Me.btn_clean.BackColor = System.Drawing.Color.DodgerBlue
         Me.btn_clean.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_clean.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btn_clean.Location = New System.Drawing.Point(440, 454)
+        Me.btn_clean.Location = New System.Drawing.Point(474, 292)
         Me.btn_clean.Name = "btn_clean"
-        Me.btn_clean.Size = New System.Drawing.Size(141, 38)
+        Me.btn_clean.Size = New System.Drawing.Size(137, 32)
         Me.btn_clean.TabIndex = 183
         Me.btn_clean.Text = "Limpiar"
         Me.btn_clean.UseVisualStyleBackColor = False
+        '
+        'Textbox_codigo_pedimento
+        '
+        Me.Textbox_codigo_pedimento.Cursor = System.Windows.Forms.Cursors.No
+        Me.Textbox_codigo_pedimento.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Textbox_codigo_pedimento.Location = New System.Drawing.Point(870, 320)
+        Me.Textbox_codigo_pedimento.Name = "Textbox_codigo_pedimento"
+        Me.Textbox_codigo_pedimento.ReadOnly = True
+        Me.Textbox_codigo_pedimento.Size = New System.Drawing.Size(129, 20)
+        Me.Textbox_codigo_pedimento.TabIndex = 196
         '
         'Pedimentos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(1033, 504)
-        Me.Controls.Add(Me.btn_clean)
+        Me.ClientSize = New System.Drawing.Size(1033, 459)
         Me.Controls.Add(Me.btn_Buscar)
         Me.Controls.Add(Me.TabControlPedimentos)
         Me.Controls.Add(Me.Label2)
@@ -6017,4 +5795,5 @@ Partial Class Pedimentos
     Friend WithEvents TextIvaTotalll As TextBox
     Friend WithEvents Label27 As Label
     Friend WithEvents textpdf As TextBox
+    Friend WithEvents Textbox_codigo_pedimento As TextBox
 End Class

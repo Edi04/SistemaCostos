@@ -1,7 +1,15 @@
 ﻿Public Class ClassPedimentosMercancias
     Dim id_productos, idmercancia As Integer
-    Dim mercancia, fraccion, pedimento, codigoPed As String
+    Dim mercancia, fraccion, pedimento, codigoPed, codigo_bueno As String
 
+    Public Property Merc_codigo_bueno
+        Get
+            Return codigo_bueno
+        End Get
+        Set(value)
+            codigo_bueno = value
+        End Set
+    End Property
     Public Property Merc_codigoPed
         Get
             Return codigoPed

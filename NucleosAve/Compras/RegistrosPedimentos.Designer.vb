@@ -39,6 +39,7 @@ Partial Class RegistrosPedimentos
         Me.btn_eliminnar = New System.Windows.Forms.PictureBox()
         Me.codigo_eliminar = New System.Windows.Forms.TextBox()
         Me.TextBox_id = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         CType(Me.btn_minimizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_Cerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -91,11 +92,11 @@ Partial Class RegistrosPedimentos
         Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBuscar.ForeColor = System.Drawing.Color.Cornsilk
-        Me.btnBuscar.Location = New System.Drawing.Point(55, 127)
+        Me.btnBuscar.Location = New System.Drawing.Point(286, 121)
         Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(172, 33)
+        Me.btnBuscar.Size = New System.Drawing.Size(279, 33)
         Me.btnBuscar.TabIndex = 182
-        Me.btnBuscar.Text = "Buscar"
+        Me.btnBuscar.Text = "Buscar Pedimentos"
         Me.btnBuscar.UseVisualStyleBackColor = False
         '
         'DataGridRegistrosPedimentos
@@ -171,7 +172,7 @@ Partial Class RegistrosPedimentos
         'textBuscar
         '
         Me.textBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.25!)
-        Me.textBuscar.Location = New System.Drawing.Point(326, 81)
+        Me.textBuscar.Location = New System.Drawing.Point(326, 75)
         Me.textBuscar.Name = "textBuscar"
         Me.textBuscar.Size = New System.Drawing.Size(172, 23)
         Me.textBuscar.TabIndex = 186
@@ -180,7 +181,7 @@ Partial Class RegistrosPedimentos
         '
         Me.btn_BuscarOc.BackColor = System.Drawing.Color.Transparent
         Me.btn_BuscarOc.Image = Global.NucleosAve.My.Resources.Resources.icons8_google_web_search_512
-        Me.btn_BuscarOc.Location = New System.Drawing.Point(504, 80)
+        Me.btn_BuscarOc.Location = New System.Drawing.Point(504, 74)
         Me.btn_BuscarOc.Name = "btn_BuscarOc"
         Me.btn_BuscarOc.Size = New System.Drawing.Size(28, 26)
         Me.btn_BuscarOc.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -205,6 +206,7 @@ Partial Class RegistrosPedimentos
         Me.codigo_eliminar.Name = "codigo_eliminar"
         Me.codigo_eliminar.Size = New System.Drawing.Size(172, 23)
         Me.codigo_eliminar.TabIndex = 193
+        Me.codigo_eliminar.Visible = False
         '
         'TextBox_id
         '
@@ -213,6 +215,16 @@ Partial Class RegistrosPedimentos
         Me.TextBox_id.Name = "TextBox_id"
         Me.TextBox_id.Size = New System.Drawing.Size(172, 23)
         Me.TextBox_id.TabIndex = 194
+        Me.TextBox_id.Visible = False
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(362, 103)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(106, 13)
+        Me.Label3.TabIndex = 195
+        Me.Label3.Text = "Ejemplo : OC-000/20"
         '
         'RegistrosPedimentos
         '
@@ -220,6 +232,8 @@ Partial Class RegistrosPedimentos
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.btnBuscar)
         Me.Controls.Add(Me.TextBox_id)
         Me.Controls.Add(Me.codigo_eliminar)
         Me.Controls.Add(Me.btn_eliminnar)
@@ -228,7 +242,6 @@ Partial Class RegistrosPedimentos
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.DataGridRegistrosPedimentos)
-        Me.Controls.Add(Me.btnBuscar)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.btn_minimizar)
         Me.Controls.Add(Me.btn_Cerrar)
@@ -260,4 +273,5 @@ Partial Class RegistrosPedimentos
     Friend WithEvents btn_eliminnar As PictureBox
     Friend WithEvents codigo_eliminar As TextBox
     Friend WithEvents TextBox_id As TextBox
+    Friend WithEvents Label3 As Label
 End Class
