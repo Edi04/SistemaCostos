@@ -70,9 +70,7 @@ Public Class InicioSesion
 
                         'Costos - Finanza
                     ElseIf Proceso(CUsuarios.Text) = 44 Then
-                        Index.PCompras.Location = New Point(30, 138)
-                        'Index.PMCompras.Visible = 
-
+                        Index.PCompras.Visible = True
                         Index.PCostos.Visible = True
                         Index.PTransporte.Visible = True
                         Index.PAlmacen.Visible = True
@@ -82,6 +80,13 @@ Public Class InicioSesion
                         Index.PMaPrima.Visible = True
                         Index.BA_R.Visible = True
                         Index.Label6.Visible = True
+                        ''''
+                        Index.PContabilizar.Visible = False
+                        Index.PEntregas.Visible = False
+                        Index.PPrestamo.Visible = False
+                        Index.PCBarras.Visible = False
+                        Index.PBMPr.Visible = False
+                        MPHistorial.PBMPr.Visible = False
 
                         'Costos - TRASPORTE  
                     ElseIf Proceso(CUsuarios.Text) = 31 Then
@@ -115,15 +120,17 @@ Public Class InicioSesion
 
 
                         'Materia Prima
-                        'ElseIf Proceso(CUsuarios.Text) = 36 Then
-                        '    Index.PMass.Location = New Point(30, 138)
-                        'Index.PMMass.Visible = True
+                    ElseIf Proceso(CUsuarios.Text) = 50 Then
+                        Index.PMaPrima.Location = New Point(30, 138)
+                        Index.PMMPrima.Visible = True
 
-                        'Index.PCompras.Visible = False
-                        'Index.PTransporte.Visible = False
-                        'Index.PAlmacen.Visible = False
-                        'Index.PCostos.Visible = False
-                        'Index.PMPrima.Visible = False
+                        Index.PCompras.Visible = False
+                        Index.PTransporte.Visible = False
+                        Index.PAlmacen.Visible = False
+                        Index.PCostos.Visible = False
+                        Index.PAGasolina.Visible = False
+                        Index.PPedidos.Visible = False
+                        Index.PMass.Visible = False
                     End If
             Else
                     MsgBox("Contraseña Invalida", MsgBoxStyle.Critical)

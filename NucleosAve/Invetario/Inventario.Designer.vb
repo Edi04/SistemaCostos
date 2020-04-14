@@ -134,6 +134,7 @@ Partial Class Inventario
         Me.BOrdenC = New System.Windows.Forms.Button()
         Me.LUsuario = New System.Windows.Forms.Label()
         Me.LIDE = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         CType(Me.DataView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GBusqueda.SuspendLayout()
         CType(Me.PBusqueda, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -153,6 +154,7 @@ Partial Class Inventario
         Me.GNExistencia.SuspendLayout()
         CType(Me.PMenos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PSeparador.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'POpc
@@ -882,8 +884,8 @@ Partial Class Inventario
         'AgregarExistencias
         '
         Me.AgregarExistencias.BackColor = System.Drawing.Color.Transparent
+        Me.AgregarExistencias.Controls.Add(Me.Panel1)
         Me.AgregarExistencias.Controls.Add(Me.LCS)
-        Me.AgregarExistencias.Controls.Add(Me.BGExistencia)
         Me.AgregarExistencias.Controls.Add(Me.OrdenCompra)
         Me.AgregarExistencias.Controls.Add(Me.PUSD)
         Me.AgregarExistencias.Controls.Add(Me.LErrEP)
@@ -891,7 +893,6 @@ Partial Class Inventario
         Me.AgregarExistencias.Controls.Add(Me.DTTipoCambio)
         Me.AgregarExistencias.Controls.Add(Me.GTCambio)
         Me.AgregarExistencias.Controls.Add(Me.GPrecioUSD)
-        Me.AgregarExistencias.Controls.Add(Me.GNExistencia)
         Me.AgregarExistencias.Controls.Add(Me.LEntraP)
         Me.AgregarExistencias.Controls.Add(Me.PSeparador)
         Me.AgregarExistencias.Location = New System.Drawing.Point(75, 534)
@@ -914,7 +915,7 @@ Partial Class Inventario
         Me.BGExistencia.BackColor = System.Drawing.Color.Transparent
         Me.BGExistencia.BackgroundImage = Global.NucleosAve.My.Resources.Resources.file_1411
         Me.BGExistencia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.BGExistencia.Location = New System.Drawing.Point(823, 27)
+        Me.BGExistencia.Location = New System.Drawing.Point(344, 35)
         Me.BGExistencia.Name = "BGExistencia"
         Me.BGExistencia.Size = New System.Drawing.Size(50, 50)
         Me.BGExistencia.TabIndex = 84
@@ -1224,7 +1225,7 @@ Partial Class Inventario
         Me.GNExistencia.Controls.Add(Me.PMenos)
         Me.GNExistencia.Controls.Add(Me.TxtNExistencia)
         Me.GNExistencia.ForeColor = System.Drawing.Color.Black
-        Me.GNExistencia.Location = New System.Drawing.Point(26, 60)
+        Me.GNExistencia.Location = New System.Drawing.Point(206, 23)
         Me.GNExistencia.Name = "GNExistencia"
         Me.GNExistencia.Size = New System.Drawing.Size(104, 72)
         Me.GNExistencia.TabIndex = 10
@@ -1487,6 +1488,15 @@ Partial Class Inventario
         Me.LIDE.TabIndex = 85
         Me.LIDE.Visible = False
         '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.GNExistencia)
+        Me.Panel1.Controls.Add(Me.BGExistencia)
+        Me.Panel1.Location = New System.Drawing.Point(136, 60)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(720, 127)
+        Me.Panel1.TabIndex = 85
+        '
         'Inventario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1561,6 +1571,7 @@ Partial Class Inventario
         CType(Me.PMenos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PSeparador.ResumeLayout(False)
         Me.PSeparador.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1675,4 +1686,5 @@ Partial Class Inventario
     Friend WithEvents Nombre_Producto As DataGridViewTextBoxColumn
     Friend WithEvents Clave_Producto As DataGridViewTextBoxColumn
     Friend WithEvents Exis As DataGridViewTextBoxColumn
+    Friend WithEvents Panel1 As Panel
 End Class

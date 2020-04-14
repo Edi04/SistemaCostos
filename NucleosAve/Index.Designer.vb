@@ -1382,6 +1382,7 @@ Partial Class Index
         Me.BackgroundImage = Global.NucleosAve.My.Resources.Resources.Fondo
         Me.ClientSize = New System.Drawing.Size(715, 425)
         Me.Controls.Add(Me.PMMPrima)
+        Me.Controls.Add(Me.PMAlmacen)
         Me.Controls.Add(Me.PMTransporte)
         Me.Controls.Add(Me.PMGasolina)
         Me.Controls.Add(Me.PM_Armado_Rectangular)
@@ -1391,7 +1392,6 @@ Partial Class Index
         Me.Controls.Add(Me.PMCostos)
         Me.Controls.Add(Me.PMCompras)
         Me.Controls.Add(Me.PMMass)
-        Me.Controls.Add(Me.PMAlmacen)
         Me.Controls.Add(Me.PPedidos)
         Me.Controls.Add(Me.PMass)
         Me.Controls.Add(Me.PAlmacen)
