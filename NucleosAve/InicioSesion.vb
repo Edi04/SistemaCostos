@@ -86,7 +86,7 @@ Public Class InicioSesion
                         Index.PPrestamo.Visible = False
                         Index.PCBarras.Visible = False
                         Index.PBMPr.Visible = False
-                        MPHistorial.PBMPr.Visible = False
+                        'MPHistorial.PBMPr.Visible = False
 
                         'Costos - TRASPORTE  
                     ElseIf Proceso(CUsuarios.Text) = 31 Then
