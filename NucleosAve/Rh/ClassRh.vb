@@ -9,6 +9,16 @@
         sdi, inc, aus, uma_diaria, uma_mensual, factor_mensual, cuota_pat, cuota_diaria, cf, exc_pat,
         pd_pat, gmp_pat, rt, iv_pat, gps, retiro, cesantia_vejes, aportacion_patronal, total_carga_social,
         impuestos_nominas, mano_de_obra, horas_trabajadas_mes, costoxhora, costoxminuto As Double
+    Dim id As Integer
+
+    Public Property RH_id
+        Get
+            Return id
+        End Get
+        Set(value)
+            id = value
+        End Set
+    End Property
 
     Public Property RH_costoxminuto
         Get

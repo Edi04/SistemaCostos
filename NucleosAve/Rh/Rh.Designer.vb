@@ -31,6 +31,7 @@ Partial Class Rh
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.Empleado = New System.Windows.Forms.TabPage()
+        Me.TextBox_id = New System.Windows.Forms.TextBox()
         Me.DateTime_ingreso = New System.Windows.Forms.DateTimePicker()
         Me.ComboBox_proceso = New System.Windows.Forms.ComboBox()
         Me.ComboBox_departamento = New System.Windows.Forms.ComboBox()
@@ -237,6 +238,7 @@ Partial Class Rh
         Me.ComboBox_verificado_calidad.Items.AddRange(New Object() {"ACORAZADO", "ADMINISTRACION", "ADMINISTRATIVO CASA DE MATERIALES", "ALMACEN", "ALMACEN DE INSUMOS", "ALMACEN MATERIA PRIMA", "ARMADO RECTANGULAR", "ARMADO RECTANGULAR 4a. NAVE", "BARNIZADO CORTE Y RECTIFICADO", "CALIDAD", "CAPACITACION PRODUCCION", "CORTE 90", "EMBALAJE", "FACTURACION COMPRAS Y PROVEEDORES", "FINANZAS", "GERENCIA", "HERRAJE", "HORNEADO", "LABORATORIO", "MANTENIMIENTO", "MANTENIMIENTO GENERAL", "METALES ADMINISTRATIVO (RECICLADORA)", "MONTACARGUISTAS", "PRODUCCION", "RECURSOS HUMANOS Y MASS", "RECURSOS HUMANOS Y MASS VELADOR", "SERVICIO GENERAL", "SISTEMAS", "SLITTER", "TBA", "TOROIDE", "TRASPORTE"})
         Me.ComboBox_verificado_calidad.Location = New System.Drawing.Point(155, 55)
         Me.ComboBox_verificado_calidad.Name = "ComboBox_verificado_calidad"
+        Me.ComboBox_verificado_calidad.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.ComboBox_verificado_calidad.Size = New System.Drawing.Size(191, 21)
         Me.ComboBox_verificado_calidad.TabIndex = 115
         '
@@ -258,13 +260,14 @@ Partial Class Rh
         Me.TabControl1.Controls.Add(Me.ResumendeHoras)
         Me.TabControl1.Location = New System.Drawing.Point(12, 71)
         Me.TabControl1.Name = "TabControl1"
-        Me.TabControl1.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.TabControl1.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(748, 432)
         Me.TabControl1.TabIndex = 117
         '
         'Empleado
         '
+        Me.Empleado.Controls.Add(Me.TextBox_id)
         Me.Empleado.Controls.Add(Me.DateTime_ingreso)
         Me.Empleado.Controls.Add(Me.ComboBox_proceso)
         Me.Empleado.Controls.Add(Me.ComboBox_departamento)
@@ -293,6 +296,13 @@ Partial Class Rh
         Me.Empleado.Text = "   Empleado"
         Me.Empleado.UseVisualStyleBackColor = True
         '
+        'TextBox_id
+        '
+        Me.TextBox_id.Location = New System.Drawing.Point(634, 22)
+        Me.TextBox_id.Name = "TextBox_id"
+        Me.TextBox_id.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox_id.TabIndex = 163
+        '
         'DateTime_ingreso
         '
         Me.DateTime_ingreso.Location = New System.Drawing.Point(155, 353)
@@ -306,6 +316,7 @@ Partial Class Rh
         Me.ComboBox_proceso.Items.AddRange(New Object() {"ACORAZADO", "ALBAÑILES", "ALMACEN", "ALMACEN DE INSUMOS", "ALMACEN DE MATERIA PRIMA", "ARMADO", "ARMADO 4ta NAVE", "BARNIZADO CORTE Y RECTIFICADO", "CALIDAD", "CONTABILIDAD", "CORTE 90", "DIRECCION", "EMBALAJE", "GENERAL", "HERRAJE", "HERRERIA", "HORNEADO", "LABORATORIO", "MAECO", "MASS", "METALES", "MTTO EXTERNO", "MTTO PLANTA", "PRODUCCION", "RECURSOS HUMANOS", "SERVICIOS GENERALES", "SISTEMAS", "SLITTER", "TBA", "TOROIDE", "TRASPORTE"})
         Me.ComboBox_proceso.Location = New System.Drawing.Point(155, 266)
         Me.ComboBox_proceso.Name = "ComboBox_proceso"
+        Me.ComboBox_proceso.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.ComboBox_proceso.Size = New System.Drawing.Size(191, 21)
         Me.ComboBox_proceso.TabIndex = 138
         '
@@ -315,12 +326,14 @@ Partial Class Rh
         Me.ComboBox_departamento.Items.AddRange(New Object() {"ADMINISTRACION", "CALIDAD", "PRODUCCION"})
         Me.ComboBox_departamento.Location = New System.Drawing.Point(155, 183)
         Me.ComboBox_departamento.Name = "ComboBox_departamento"
+        Me.ComboBox_departamento.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.ComboBox_departamento.Size = New System.Drawing.Size(191, 21)
         Me.ComboBox_departamento.TabIndex = 137
         '
         'Label18
         '
         Me.Label18.AutoSize = True
+        Me.Label18.BackColor = System.Drawing.Color.Gainsboro
         Me.Label18.Location = New System.Drawing.Point(390, 81)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(84, 13)
@@ -331,12 +344,14 @@ Partial Class Rh
         '
         Me.TextBox_numseguro.Location = New System.Drawing.Point(393, 98)
         Me.TextBox_numseguro.Name = "TextBox_numseguro"
+        Me.TextBox_numseguro.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.TextBox_numseguro.Size = New System.Drawing.Size(191, 20)
         Me.TextBox_numseguro.TabIndex = 135
         '
         'Label19
         '
         Me.Label19.AutoSize = True
+        Me.Label19.BackColor = System.Drawing.Color.Gainsboro
         Me.Label19.Location = New System.Drawing.Point(390, 38)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(69, 13)
@@ -347,12 +362,14 @@ Partial Class Rh
         '
         Me.TextBox_salario_diaro.Location = New System.Drawing.Point(393, 55)
         Me.TextBox_salario_diaro.Name = "TextBox_salario_diaro"
+        Me.TextBox_salario_diaro.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.TextBox_salario_diaro.Size = New System.Drawing.Size(191, 20)
         Me.TextBox_salario_diaro.TabIndex = 133
         '
         'Label10
         '
         Me.Label10.AutoSize = True
+        Me.Label10.BackColor = System.Drawing.Color.Gainsboro
         Me.Label10.Location = New System.Drawing.Point(152, 336)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(42, 13)
@@ -362,6 +379,7 @@ Partial Class Rh
         'Label9
         '
         Me.Label9.AutoSize = True
+        Me.Label9.BackColor = System.Drawing.Color.Gainsboro
         Me.Label9.Location = New System.Drawing.Point(152, 292)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(78, 13)
@@ -372,12 +390,14 @@ Partial Class Rh
         '
         Me.TextBox_observaciones.Location = New System.Drawing.Point(155, 309)
         Me.TextBox_observaciones.Name = "TextBox_observaciones"
+        Me.TextBox_observaciones.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.TextBox_observaciones.Size = New System.Drawing.Size(191, 20)
         Me.TextBox_observaciones.TabIndex = 127
         '
         'Label8
         '
         Me.Label8.AutoSize = True
+        Me.Label8.BackColor = System.Drawing.Color.Gainsboro
         Me.Label8.Location = New System.Drawing.Point(152, 250)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(46, 13)
@@ -387,6 +407,7 @@ Partial Class Rh
         'Label7
         '
         Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.Color.Gainsboro
         Me.Label7.Location = New System.Drawing.Point(152, 207)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(40, 13)
@@ -397,12 +418,14 @@ Partial Class Rh
         '
         Me.TextBox_puesto.Location = New System.Drawing.Point(155, 224)
         Me.TextBox_puesto.Name = "TextBox_puesto"
+        Me.TextBox_puesto.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.TextBox_puesto.Size = New System.Drawing.Size(191, 20)
         Me.TextBox_puesto.TabIndex = 123
         '
         'Label6
         '
         Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.Gainsboro
         Me.Label6.Location = New System.Drawing.Point(152, 166)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(74, 13)
@@ -412,6 +435,7 @@ Partial Class Rh
         'Label5
         '
         Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.Color.Gainsboro
         Me.Label5.Location = New System.Drawing.Point(152, 124)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(94, 13)
@@ -422,12 +446,14 @@ Partial Class Rh
         '
         Me.TextBox_nombre.Location = New System.Drawing.Point(155, 141)
         Me.TextBox_nombre.Name = "TextBox_nombre"
+        Me.TextBox_nombre.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.TextBox_nombre.Size = New System.Drawing.Size(191, 20)
         Me.TextBox_nombre.TabIndex = 119
         '
         'Label4
         '
         Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.Gainsboro
         Me.Label4.Location = New System.Drawing.Point(152, 81)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(34, 13)
@@ -438,11 +464,13 @@ Partial Class Rh
         '
         Me.TextBox_clave.Location = New System.Drawing.Point(155, 98)
         Me.TextBox_clave.Name = "TextBox_clave"
+        Me.TextBox_clave.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.TextBox_clave.Size = New System.Drawing.Size(191, 20)
         Me.TextBox_clave.TabIndex = 117
         '
         'Panel9
         '
+        Me.Panel9.BackColor = System.Drawing.Color.Gainsboro
         Me.Panel9.Controls.Add(Me.Label3)
         Me.Panel9.Location = New System.Drawing.Point(118, 22)
         Me.Panel9.Name = "Panel9"
@@ -509,6 +537,7 @@ Partial Class Rh
         'Label36
         '
         Me.Label36.AutoSize = True
+        Me.Label36.BackColor = System.Drawing.Color.Gainsboro
         Me.Label36.Location = New System.Drawing.Point(495, 298)
         Me.Label36.Name = "Label36"
         Me.Label36.Size = New System.Drawing.Size(25, 13)
@@ -519,12 +548,14 @@ Partial Class Rh
         '
         Me.TextBox_aus.Location = New System.Drawing.Point(498, 315)
         Me.TextBox_aus.Name = "TextBox_aus"
+        Me.TextBox_aus.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.TextBox_aus.Size = New System.Drawing.Size(191, 20)
         Me.TextBox_aus.TabIndex = 181
         '
         'Label33
         '
         Me.Label33.AutoSize = True
+        Me.Label33.BackColor = System.Drawing.Color.Gainsboro
         Me.Label33.Location = New System.Drawing.Point(495, 254)
         Me.Label33.Name = "Label33"
         Me.Label33.Size = New System.Drawing.Size(25, 13)
@@ -535,12 +566,14 @@ Partial Class Rh
         '
         Me.TextBox_inc.Location = New System.Drawing.Point(498, 271)
         Me.TextBox_inc.Name = "TextBox_inc"
+        Me.TextBox_inc.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.TextBox_inc.Size = New System.Drawing.Size(191, 20)
         Me.TextBox_inc.TabIndex = 179
         '
         'Label34
         '
         Me.Label34.AutoSize = True
+        Me.Label34.BackColor = System.Drawing.Color.Gainsboro
         Me.Label34.Location = New System.Drawing.Point(495, 211)
         Me.Label34.Name = "Label34"
         Me.Label34.Size = New System.Drawing.Size(25, 13)
@@ -551,12 +584,14 @@ Partial Class Rh
         '
         Me.TextBox_sdi.Location = New System.Drawing.Point(498, 228)
         Me.TextBox_sdi.Name = "TextBox_sdi"
+        Me.TextBox_sdi.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.TextBox_sdi.Size = New System.Drawing.Size(191, 20)
         Me.TextBox_sdi.TabIndex = 177
         '
         'Label31
         '
         Me.Label31.AutoSize = True
+        Me.Label31.BackColor = System.Drawing.Color.Gainsboro
         Me.Label31.Location = New System.Drawing.Point(498, 168)
         Me.Label31.Name = "Label31"
         Me.Label31.Size = New System.Drawing.Size(28, 13)
@@ -567,12 +602,14 @@ Partial Class Rh
         '
         Me.TextBox_dias.Location = New System.Drawing.Point(501, 185)
         Me.TextBox_dias.Name = "TextBox_dias"
+        Me.TextBox_dias.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.TextBox_dias.Size = New System.Drawing.Size(191, 20)
         Me.TextBox_dias.TabIndex = 175
         '
         'Label32
         '
         Me.Label32.AutoSize = True
+        Me.Label32.BackColor = System.Drawing.Color.Gainsboro
         Me.Label32.Location = New System.Drawing.Point(498, 125)
         Me.Label32.Name = "Label32"
         Me.Label32.Size = New System.Drawing.Size(192, 13)
@@ -583,12 +620,14 @@ Partial Class Rh
         '
         Me.TextBox_total_persepciones_sinprestamo.Location = New System.Drawing.Point(501, 142)
         Me.TextBox_total_persepciones_sinprestamo.Name = "TextBox_total_persepciones_sinprestamo"
+        Me.TextBox_total_persepciones_sinprestamo.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.TextBox_total_persepciones_sinprestamo.Size = New System.Drawing.Size(191, 20)
         Me.TextBox_total_persepciones_sinprestamo.TabIndex = 173
         '
         'Label29
         '
         Me.Label29.AutoSize = True
+        Me.Label29.BackColor = System.Drawing.Color.Gainsboro
         Me.Label29.Location = New System.Drawing.Point(498, 77)
         Me.Label29.Name = "Label29"
         Me.Label29.Size = New System.Drawing.Size(151, 13)
@@ -599,12 +638,14 @@ Partial Class Rh
         '
         Me.TextBox_prestamo_personal_persepcion.Location = New System.Drawing.Point(501, 94)
         Me.TextBox_prestamo_personal_persepcion.Name = "TextBox_prestamo_personal_persepcion"
+        Me.TextBox_prestamo_personal_persepcion.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.TextBox_prestamo_personal_persepcion.Size = New System.Drawing.Size(191, 20)
         Me.TextBox_prestamo_personal_persepcion.TabIndex = 171
         '
         'Label30
         '
         Me.Label30.AutoSize = True
+        Me.Label30.BackColor = System.Drawing.Color.Gainsboro
         Me.Label30.Location = New System.Drawing.Point(498, 34)
         Me.Label30.Name = "Label30"
         Me.Label30.Size = New System.Drawing.Size(113, 13)
@@ -615,12 +656,14 @@ Partial Class Rh
         '
         Me.TextBox_premio_puntualidad.Location = New System.Drawing.Point(501, 51)
         Me.TextBox_premio_puntualidad.Name = "TextBox_premio_puntualidad"
+        Me.TextBox_premio_puntualidad.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.TextBox_premio_puntualidad.Size = New System.Drawing.Size(191, 20)
         Me.TextBox_premio_puntualidad.TabIndex = 169
         '
         'Label27
         '
         Me.Label27.AutoSize = True
+        Me.Label27.BackColor = System.Drawing.Color.Gainsboro
         Me.Label27.Location = New System.Drawing.Point(268, 341)
         Me.Label27.Name = "Label27"
         Me.Label27.Size = New System.Drawing.Size(104, 13)
@@ -631,12 +674,14 @@ Partial Class Rh
         '
         Me.TextBox_prima_antiguedad.Location = New System.Drawing.Point(271, 358)
         Me.TextBox_prima_antiguedad.Name = "TextBox_prima_antiguedad"
+        Me.TextBox_prima_antiguedad.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.TextBox_prima_antiguedad.Size = New System.Drawing.Size(191, 20)
         Me.TextBox_prima_antiguedad.TabIndex = 167
         '
         'Label28
         '
         Me.Label28.AutoSize = True
+        Me.Label28.BackColor = System.Drawing.Color.Gainsboro
         Me.Label28.Location = New System.Drawing.Point(268, 298)
         Me.Label28.Name = "Label28"
         Me.Label28.Size = New System.Drawing.Size(75, 13)
@@ -647,12 +692,14 @@ Partial Class Rh
         '
         Me.TextBox_indemnizacion.Location = New System.Drawing.Point(271, 315)
         Me.TextBox_indemnizacion.Name = "TextBox_indemnizacion"
+        Me.TextBox_indemnizacion.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.TextBox_indemnizacion.Size = New System.Drawing.Size(191, 20)
         Me.TextBox_indemnizacion.TabIndex = 165
         '
         'Label25
         '
         Me.Label25.AutoSize = True
+        Me.Label25.BackColor = System.Drawing.Color.Gainsboro
         Me.Label25.Location = New System.Drawing.Point(271, 254)
         Me.Label25.Name = "Label25"
         Me.Label25.Size = New System.Drawing.Size(96, 13)
@@ -663,12 +710,14 @@ Partial Class Rh
         '
         Me.TextBox_gratificacion_anual.Location = New System.Drawing.Point(274, 271)
         Me.TextBox_gratificacion_anual.Name = "TextBox_gratificacion_anual"
+        Me.TextBox_gratificacion_anual.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.TextBox_gratificacion_anual.Size = New System.Drawing.Size(191, 20)
         Me.TextBox_gratificacion_anual.TabIndex = 163
         '
         'Label26
         '
         Me.Label26.AutoSize = True
+        Me.Label26.BackColor = System.Drawing.Color.Gainsboro
         Me.Label26.Location = New System.Drawing.Point(271, 211)
         Me.Label26.Name = "Label26"
         Me.Label26.Size = New System.Drawing.Size(108, 13)
@@ -679,12 +728,14 @@ Partial Class Rh
         '
         Me.TextBox_vacaciones_pagadas.Location = New System.Drawing.Point(274, 228)
         Me.TextBox_vacaciones_pagadas.Name = "TextBox_vacaciones_pagadas"
+        Me.TextBox_vacaciones_pagadas.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.TextBox_vacaciones_pagadas.Size = New System.Drawing.Size(191, 20)
         Me.TextBox_vacaciones_pagadas.TabIndex = 161
         '
         'Label23
         '
         Me.Label23.AutoSize = True
+        Me.Label23.BackColor = System.Drawing.Color.Gainsboro
         Me.Label23.Location = New System.Drawing.Point(271, 168)
         Me.Label23.Name = "Label23"
         Me.Label23.Size = New System.Drawing.Size(95, 13)
@@ -695,12 +746,14 @@ Partial Class Rh
         '
         Me.TextBox_prestamo_personal.Location = New System.Drawing.Point(274, 185)
         Me.TextBox_prestamo_personal.Name = "TextBox_prestamo_personal"
+        Me.TextBox_prestamo_personal.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.TextBox_prestamo_personal.Size = New System.Drawing.Size(191, 20)
         Me.TextBox_prestamo_personal.TabIndex = 159
         '
         'Label24
         '
         Me.Label24.AutoSize = True
+        Me.Label24.BackColor = System.Drawing.Color.Gainsboro
         Me.Label24.Location = New System.Drawing.Point(271, 125)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(98, 13)
@@ -711,12 +764,14 @@ Partial Class Rh
         '
         Me.TextBox_sueldo_retroactivo.Location = New System.Drawing.Point(274, 142)
         Me.TextBox_sueldo_retroactivo.Name = "TextBox_sueldo_retroactivo"
+        Me.TextBox_sueldo_retroactivo.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.TextBox_sueldo_retroactivo.Size = New System.Drawing.Size(191, 20)
         Me.TextBox_sueldo_retroactivo.TabIndex = 157
         '
         'Label21
         '
         Me.Label21.AutoSize = True
+        Me.Label21.BackColor = System.Drawing.Color.Gainsboro
         Me.Label21.Location = New System.Drawing.Point(274, 77)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(127, 13)
@@ -727,12 +782,14 @@ Partial Class Rh
         '
         Me.TextBox_subcidio_incapaciodad.Location = New System.Drawing.Point(277, 94)
         Me.TextBox_subcidio_incapaciodad.Name = "TextBox_subcidio_incapaciodad"
+        Me.TextBox_subcidio_incapaciodad.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.TextBox_subcidio_incapaciodad.Size = New System.Drawing.Size(191, 20)
         Me.TextBox_subcidio_incapaciodad.TabIndex = 155
         '
         'Label22
         '
         Me.Label22.AutoSize = True
+        Me.Label22.BackColor = System.Drawing.Color.Gainsboro
         Me.Label22.Location = New System.Drawing.Point(274, 34)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(80, 13)
@@ -743,12 +800,14 @@ Partial Class Rh
         '
         Me.TextBox_prima_dominical.Location = New System.Drawing.Point(277, 51)
         Me.TextBox_prima_dominical.Name = "TextBox_prima_dominical"
+        Me.TextBox_prima_dominical.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.TextBox_prima_dominical.Size = New System.Drawing.Size(191, 20)
         Me.TextBox_prima_dominical.TabIndex = 153
         '
         'Label17
         '
         Me.Label17.AutoSize = True
+        Me.Label17.BackColor = System.Drawing.Color.Gainsboro
         Me.Label17.Location = New System.Drawing.Point(41, 341)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(114, 13)
@@ -759,12 +818,14 @@ Partial Class Rh
         '
         Me.TextBox_bono_productividad.Location = New System.Drawing.Point(44, 358)
         Me.TextBox_bono_productividad.Name = "TextBox_bono_productividad"
+        Me.TextBox_bono_productividad.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.TextBox_bono_productividad.Size = New System.Drawing.Size(191, 20)
         Me.TextBox_bono_productividad.TabIndex = 151
         '
         'Label20
         '
         Me.Label20.AutoSize = True
+        Me.Label20.BackColor = System.Drawing.Color.Gainsboro
         Me.Label20.Location = New System.Drawing.Point(41, 298)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(29, 13)
@@ -775,12 +836,14 @@ Partial Class Rh
         '
         Me.TextBox_ptu.Location = New System.Drawing.Point(44, 315)
         Me.TextBox_ptu.Name = "TextBox_ptu"
+        Me.TextBox_ptu.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.TextBox_ptu.Size = New System.Drawing.Size(191, 20)
         Me.TextBox_ptu.TabIndex = 149
         '
         'Label15
         '
         Me.Label15.AutoSize = True
+        Me.Label15.BackColor = System.Drawing.Color.Gainsboro
         Me.Label15.Location = New System.Drawing.Point(41, 254)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(88, 13)
@@ -791,12 +854,14 @@ Partial Class Rh
         '
         Me.TextBox_prima_vacacional.Location = New System.Drawing.Point(44, 271)
         Me.TextBox_prima_vacacional.Name = "TextBox_prima_vacacional"
+        Me.TextBox_prima_vacacional.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.TextBox_prima_vacacional.Size = New System.Drawing.Size(191, 20)
         Me.TextBox_prima_vacacional.TabIndex = 147
         '
         'Label16
         '
         Me.Label16.AutoSize = True
+        Me.Label16.BackColor = System.Drawing.Color.Gainsboro
         Me.Label16.Location = New System.Drawing.Point(41, 211)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(63, 13)
@@ -807,12 +872,14 @@ Partial Class Rh
         '
         Me.TextBox_vacaciones.Location = New System.Drawing.Point(44, 228)
         Me.TextBox_vacaciones.Name = "TextBox_vacaciones"
+        Me.TextBox_vacaciones.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.TextBox_vacaciones.Size = New System.Drawing.Size(191, 20)
         Me.TextBox_vacaciones.TabIndex = 145
         '
         'Label13
         '
         Me.Label13.AutoSize = True
+        Me.Label13.BackColor = System.Drawing.Color.Gainsboro
         Me.Label13.Location = New System.Drawing.Point(41, 168)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(54, 13)
@@ -823,12 +890,14 @@ Partial Class Rh
         '
         Me.TextBox_aguinaldo.Location = New System.Drawing.Point(44, 185)
         Me.TextBox_aguinaldo.Name = "TextBox_aguinaldo"
+        Me.TextBox_aguinaldo.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.TextBox_aguinaldo.Size = New System.Drawing.Size(191, 20)
         Me.TextBox_aguinaldo.TabIndex = 143
         '
         'Label14
         '
         Me.Label14.AutoSize = True
+        Me.Label14.BackColor = System.Drawing.Color.Gainsboro
         Me.Label14.Location = New System.Drawing.Point(41, 125)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(68, 13)
@@ -839,12 +908,14 @@ Partial Class Rh
         '
         Me.TextBox_tiempo_extra.Location = New System.Drawing.Point(44, 142)
         Me.TextBox_tiempo_extra.Name = "TextBox_tiempo_extra"
+        Me.TextBox_tiempo_extra.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.TextBox_tiempo_extra.Size = New System.Drawing.Size(191, 20)
         Me.TextBox_tiempo_extra.TabIndex = 141
         '
         'Label11
         '
         Me.Label11.AutoSize = True
+        Me.Label11.BackColor = System.Drawing.Color.Gainsboro
         Me.Label11.Location = New System.Drawing.Point(41, 77)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(77, 13)
@@ -855,12 +926,14 @@ Partial Class Rh
         '
         Me.TextBox_compensasion.Location = New System.Drawing.Point(44, 94)
         Me.TextBox_compensasion.Name = "TextBox_compensasion"
+        Me.TextBox_compensasion.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.TextBox_compensasion.Size = New System.Drawing.Size(191, 20)
         Me.TextBox_compensasion.TabIndex = 139
         '
         'Label12
         '
         Me.Label12.AutoSize = True
+        Me.Label12.BackColor = System.Drawing.Color.Gainsboro
         Me.Label12.Location = New System.Drawing.Point(41, 34)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(40, 13)
@@ -871,11 +944,13 @@ Partial Class Rh
         '
         Me.TextBox_sueldo.Location = New System.Drawing.Point(44, 51)
         Me.TextBox_sueldo.Name = "TextBox_sueldo"
+        Me.TextBox_sueldo.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.TextBox_sueldo.Size = New System.Drawing.Size(191, 20)
         Me.TextBox_sueldo.TabIndex = 137
         '
         'Panel8
         '
+        Me.Panel8.BackColor = System.Drawing.Color.Gainsboro
         Me.Panel8.Location = New System.Drawing.Point(18, 16)
         Me.Panel8.Name = "Panel8"
         Me.Panel8.Size = New System.Drawing.Size(696, 372)
@@ -893,6 +968,7 @@ Partial Class Rh
         '
         'Panel7
         '
+        Me.Panel7.BackColor = System.Drawing.Color.Gainsboro
         Me.Panel7.Controls.Add(Me.TextBox_uma_diaria)
         Me.Panel7.Controls.Add(Me.Label38)
         Me.Panel7.Controls.Add(Me.Label42)
@@ -912,6 +988,7 @@ Partial Class Rh
         '
         Me.TextBox_uma_diaria.Location = New System.Drawing.Point(14, 39)
         Me.TextBox_uma_diaria.Name = "TextBox_uma_diaria"
+        Me.TextBox_uma_diaria.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.TextBox_uma_diaria.Size = New System.Drawing.Size(191, 20)
         Me.TextBox_uma_diaria.TabIndex = 151
         '
@@ -937,6 +1014,7 @@ Partial Class Rh
         '
         Me.TextBox_cuota_diaria.Location = New System.Drawing.Point(14, 216)
         Me.TextBox_cuota_diaria.Name = "TextBox_cuota_diaria"
+        Me.TextBox_cuota_diaria.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.TextBox_cuota_diaria.Size = New System.Drawing.Size(191, 20)
         Me.TextBox_cuota_diaria.TabIndex = 159
         '
@@ -944,6 +1022,7 @@ Partial Class Rh
         '
         Me.TextBox_uma_mensual.Location = New System.Drawing.Point(14, 82)
         Me.TextBox_uma_mensual.Name = "TextBox_uma_mensual"
+        Me.TextBox_uma_mensual.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.TextBox_uma_mensual.Size = New System.Drawing.Size(191, 20)
         Me.TextBox_uma_mensual.TabIndex = 153
         '
@@ -969,6 +1048,7 @@ Partial Class Rh
         '
         Me.TextBox_cuotapat.Location = New System.Drawing.Point(14, 173)
         Me.TextBox_cuotapat.Name = "TextBox_cuotapat"
+        Me.TextBox_cuotapat.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.TextBox_cuotapat.Size = New System.Drawing.Size(191, 20)
         Me.TextBox_cuotapat.TabIndex = 157
         '
@@ -976,6 +1056,7 @@ Partial Class Rh
         '
         Me.TextBox_factor_mensual.Location = New System.Drawing.Point(14, 130)
         Me.TextBox_factor_mensual.Name = "TextBox_factor_mensual"
+        Me.TextBox_factor_mensual.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.TextBox_factor_mensual.Size = New System.Drawing.Size(191, 20)
         Me.TextBox_factor_mensual.TabIndex = 155
         '
@@ -1018,6 +1099,7 @@ Partial Class Rh
         '
         'Panel5
         '
+        Me.Panel5.BackColor = System.Drawing.Color.Gainsboro
         Me.Panel5.Controls.Add(Me.TextBox_impuestos_nominas)
         Me.Panel5.Location = New System.Drawing.Point(379, 332)
         Me.Panel5.Name = "Panel5"
@@ -1042,6 +1124,7 @@ Partial Class Rh
         '
         'Panel4
         '
+        Me.Panel4.BackColor = System.Drawing.Color.Gainsboro
         Me.Panel4.Controls.Add(Me.TextBox_TOTAL_cARGA_SOCIAL)
         Me.Panel4.Location = New System.Drawing.Point(380, 246)
         Me.Panel4.Name = "Panel4"
@@ -1066,6 +1149,7 @@ Partial Class Rh
         '
         'Panel3
         '
+        Me.Panel3.BackColor = System.Drawing.Color.Gainsboro
         Me.Panel3.Controls.Add(Me.TextBox_APORTACION_PATRONAL)
         Me.Panel3.Controls.Add(Me.Label55)
         Me.Panel3.Location = New System.Drawing.Point(380, 155)
@@ -1100,6 +1184,7 @@ Partial Class Rh
         '
         'Panel2
         '
+        Me.Panel2.BackColor = System.Drawing.Color.Gainsboro
         Me.Panel2.Controls.Add(Me.Label51)
         Me.Panel2.Controls.Add(Me.TextBox_RETIRO)
         Me.Panel2.Controls.Add(Me.TextBox_VEJESPATRONAL)
@@ -1143,6 +1228,7 @@ Partial Class Rh
         '
         'Panel1
         '
+        Me.Panel1.BackColor = System.Drawing.Color.Gainsboro
         Me.Panel1.Controls.Add(Me.Label47)
         Me.Panel1.Controls.Add(Me.TextBox_gps)
         Me.Panel1.Controls.Add(Me.Label48)
@@ -1304,6 +1390,7 @@ Partial Class Rh
         '
         'Panel10
         '
+        Me.Panel10.BackColor = System.Drawing.Color.Gainsboro
         Me.Panel10.Controls.Add(Me.btn_modificar)
         Me.Panel10.Controls.Add(Me.btn_clean)
         Me.Panel10.Controls.Add(Me.BtnGuardarFac)
@@ -1352,6 +1439,7 @@ Partial Class Rh
         '
         'Panel6
         '
+        Me.Panel6.BackColor = System.Drawing.Color.Gainsboro
         Me.Panel6.Controls.Add(Me.Label58)
         Me.Panel6.Controls.Add(Me.TextBox_costoxminuto)
         Me.Panel6.Controls.Add(Me.Label59)
@@ -1626,4 +1714,5 @@ Partial Class Rh
     Friend WithEvents btn_clean As Button
     Friend WithEvents BtnGuardarFac As Button
     Friend WithEvents btn_buscar As PictureBox
+    Friend WithEvents TextBox_id As TextBox
 End Class
