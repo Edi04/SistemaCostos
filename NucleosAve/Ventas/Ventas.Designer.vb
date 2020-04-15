@@ -212,7 +212,6 @@ Partial Class Ventas
         Me.Text_Url_Pdf.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Text_Url_Pdf.Location = New System.Drawing.Point(616, 40)
         Me.Text_Url_Pdf.Name = "Text_Url_Pdf"
-        Me.Text_Url_Pdf.ReadOnly = True
         Me.Text_Url_Pdf.Size = New System.Drawing.Size(114, 20)
         Me.Text_Url_Pdf.TabIndex = 196
         '
