@@ -197,7 +197,7 @@ Partial Class Index
         Me.B_Minimizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.B_Minimizar.Image = CType(resources.GetObject("B_Minimizar.Image"), System.Drawing.Image)
         Me.B_Minimizar.InitialImage = Global.NucleosAve.My.Resources.Resources.icons8_minimizar_la_ventana_5001
-        Me.B_Minimizar.Location = New System.Drawing.Point(652, 1)
+        Me.B_Minimizar.Location = New System.Drawing.Point(606, 1)
         Me.B_Minimizar.Name = "B_Minimizar"
         Me.B_Minimizar.Size = New System.Drawing.Size(53, 52)
         Me.B_Minimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -211,7 +211,7 @@ Partial Class Index
         Me.B_Cerrar.BackColor = System.Drawing.Color.Transparent
         Me.B_Cerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.B_Cerrar.Image = Global.NucleosAve.My.Resources.Resources.icons8_cerrar_ventana_5001
-        Me.B_Cerrar.Location = New System.Drawing.Point(706, 1)
+        Me.B_Cerrar.Location = New System.Drawing.Point(660, 1)
         Me.B_Cerrar.Name = "B_Cerrar"
         Me.B_Cerrar.Size = New System.Drawing.Size(55, 52)
         Me.B_Cerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -1464,10 +1464,9 @@ Partial Class Index
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.NucleosAve.My.Resources.Resources.Fondo
-        Me.ClientSize = New System.Drawing.Size(762, 425)
+        Me.ClientSize = New System.Drawing.Size(715, 425)
         Me.Controls.Add(Me.PM_recursos_Humanos)
         Me.Controls.Add(Me.Panel1)
-        Me.ClientSize = New System.Drawing.Size(715, 425)
         Me.Controls.Add(Me.PMMPrima)
         Me.Controls.Add(Me.PMAlmacen)
         Me.Controls.Add(Me.PMTransporte)
