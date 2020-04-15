@@ -451,6 +451,7 @@ Public Class Pedimentos
                     gastos.GT_importe = Me.txtimporte2.Text
                     gastos.GT_codigoPed = Me.txtCodigoPedimento.Text
                     gastos.GT_iva = Me.TexIvaOp1.Text
+                    gastos.GT_codigo_bueno = Me.Textbox_codigo_pedimento.Text
 
                     If funciones.FN_InsertarGastosTerceros1(gastos) Then
                         'MsgBox("Datos Insertados Correctamente")

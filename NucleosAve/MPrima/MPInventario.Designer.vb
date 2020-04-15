@@ -22,17 +22,17 @@ Partial Class MPInventario
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle21 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle22 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.BMinimizar = New System.Windows.Forms.Button()
         Me.BCerrar = New System.Windows.Forms.Button()
         Me.POpc = New System.Windows.Forms.Panel()
@@ -63,6 +63,16 @@ Partial Class MPInventario
         Me.LBOD = New System.Windows.Forms.Label()
         Me.LBOC = New System.Windows.Forms.Label()
         Me.DVOC = New System.Windows.Forms.DataGridView()
+        Me.ID = New System.Windows.Forms.DataGridViewLinkColumn()
+        Me.PurchaseOrder = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.OC = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Proveedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.UM = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CS = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Material = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IDDP = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Faltante = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.TxtCR = New System.Windows.Forms.TextBox()
         Me.LCR = New System.Windows.Forms.Label()
@@ -356,16 +366,9 @@ Partial Class MPInventario
         Me.TRollos = New System.Windows.Forms.TabControl()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.BTerminar = New System.Windows.Forms.Button()
-        Me.ID = New System.Windows.Forms.DataGridViewLinkColumn()
-        Me.PurchaseOrder = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.OC = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Proveedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.UM = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CS = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Material = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.IDDP = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Faltante = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TxtPedimento = New System.Windows.Forms.TextBox()
+        Me.LPedimento = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.POpc.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -693,8 +696,8 @@ Partial Class MPInventario
         '
         'DVOC
         '
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.DVOC.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DVOC.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle12
         Me.DVOC.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.DVOC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DVOC.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.PurchaseOrder, Me.OC, Me.Proveedor, Me.Cantidad, Me.UM, Me.CS, Me.Material, Me.IDDP, Me.Faltante})
@@ -703,6 +706,96 @@ Partial Class MPInventario
         Me.DVOC.Name = "DVOC"
         Me.DVOC.Size = New System.Drawing.Size(562, 248)
         Me.DVOC.TabIndex = 67
+        '
+        'ID
+        '
+        Me.ID.DataPropertyName = "id_orden"
+        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.ID.DefaultCellStyle = DataGridViewCellStyle13
+        Me.ID.HeaderText = "ID"
+        Me.ID.Name = "ID"
+        Me.ID.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.ID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.ID.Width = 50
+        '
+        'PurchaseOrder
+        '
+        Me.PurchaseOrder.DataPropertyName = "purchase_order"
+        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.PurchaseOrder.DefaultCellStyle = DataGridViewCellStyle14
+        Me.PurchaseOrder.HeaderText = "Orden de Compra"
+        Me.PurchaseOrder.Name = "PurchaseOrder"
+        Me.PurchaseOrder.Width = 60
+        '
+        'OC
+        '
+        Me.OC.DataPropertyName = "codigo"
+        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.OC.DefaultCellStyle = DataGridViewCellStyle15
+        Me.OC.HeaderText = "Orden de Compra"
+        Me.OC.Name = "OC"
+        Me.OC.Visible = False
+        '
+        'Proveedor
+        '
+        Me.Proveedor.DataPropertyName = "nombre"
+        DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        Me.Proveedor.DefaultCellStyle = DataGridViewCellStyle16
+        Me.Proveedor.HeaderText = "Proveedor"
+        Me.Proveedor.Name = "Proveedor"
+        Me.Proveedor.Width = 190
+        '
+        'Cantidad
+        '
+        Me.Cantidad.DataPropertyName = "cantidad"
+        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Cantidad.DefaultCellStyle = DataGridViewCellStyle17
+        Me.Cantidad.HeaderText = "Cantidad"
+        Me.Cantidad.Name = "Cantidad"
+        '
+        'UM
+        '
+        Me.UM.DataPropertyName = "Um"
+        DataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.UM.DefaultCellStyle = DataGridViewCellStyle18
+        Me.UM.HeaderText = "U.Medida"
+        Me.UM.Name = "UM"
+        Me.UM.Width = 60
+        '
+        'CS
+        '
+        Me.CS.DataPropertyName = "CodiS"
+        DataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.CS.DefaultCellStyle = DataGridViewCellStyle19
+        Me.CS.HeaderText = "CS"
+        Me.CS.Name = "CS"
+        Me.CS.Visible = False
+        '
+        'Material
+        '
+        Me.Material.DataPropertyName = "descripcion"
+        DataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Material.DefaultCellStyle = DataGridViewCellStyle20
+        Me.Material.HeaderText = "Material"
+        Me.Material.Name = "Material"
+        Me.Material.Visible = False
+        '
+        'IDDP
+        '
+        Me.IDDP.DataPropertyName = "id_pro"
+        DataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.IDDP.DefaultCellStyle = DataGridViewCellStyle21
+        Me.IDDP.HeaderText = "IDDP"
+        Me.IDDP.Name = "IDDP"
+        Me.IDDP.Visible = False
+        '
+        'Faltante
+        '
+        Me.Faltante.DataPropertyName = "Faltante"
+        DataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Faltante.DefaultCellStyle = DataGridViewCellStyle22
+        Me.Faltante.HeaderText = "Faltante"
+        Me.Faltante.Name = "Faltante"
         '
         'Panel2
         '
@@ -3879,95 +3972,36 @@ Partial Class MPInventario
         Me.BTerminar.TabIndex = 91
         Me.BTerminar.UseVisualStyleBackColor = False
         '
-        'ID
+        'TxtPedimento
         '
-        Me.ID.DataPropertyName = "id_orden"
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.ID.DefaultCellStyle = DataGridViewCellStyle2
-        Me.ID.HeaderText = "ID"
-        Me.ID.Name = "ID"
-        Me.ID.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.ID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.ID.Width = 50
+        Me.TxtPedimento.Location = New System.Drawing.Point(339, 29)
+        Me.TxtPedimento.Name = "TxtPedimento"
+        Me.TxtPedimento.ReadOnly = True
+        Me.TxtPedimento.Size = New System.Drawing.Size(96, 20)
+        Me.TxtPedimento.TabIndex = 93
+        Me.TxtPedimento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'PurchaseOrder
+        'LPedimento
         '
-        Me.PurchaseOrder.DataPropertyName = "purchase_order"
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.PurchaseOrder.DefaultCellStyle = DataGridViewCellStyle3
-        Me.PurchaseOrder.HeaderText = "Orden de Compra"
-        Me.PurchaseOrder.Name = "PurchaseOrder"
-        Me.PurchaseOrder.Width = 60
+        Me.LPedimento.AutoSize = True
+        Me.LPedimento.BackColor = System.Drawing.Color.Transparent
+        Me.LPedimento.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LPedimento.Location = New System.Drawing.Point(352, 10)
+        Me.LPedimento.Name = "LPedimento"
+        Me.LPedimento.Size = New System.Drawing.Size(73, 16)
+        Me.LPedimento.TabIndex = 94
+        Me.LPedimento.Text = "Pedimento"
         '
-        'OC
+        'Label2
         '
-        Me.OC.DataPropertyName = "codigo"
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.OC.DefaultCellStyle = DataGridViewCellStyle4
-        Me.OC.HeaderText = "Orden de Compra"
-        Me.OC.Name = "OC"
-        Me.OC.Visible = False
-        '
-        'Proveedor
-        '
-        Me.Proveedor.DataPropertyName = "nombre"
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        Me.Proveedor.DefaultCellStyle = DataGridViewCellStyle5
-        Me.Proveedor.HeaderText = "Proveedor"
-        Me.Proveedor.Name = "Proveedor"
-        Me.Proveedor.Width = 190
-        '
-        'Cantidad
-        '
-        Me.Cantidad.DataPropertyName = "cantidad"
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Cantidad.DefaultCellStyle = DataGridViewCellStyle6
-        Me.Cantidad.HeaderText = "Cantidad"
-        Me.Cantidad.Name = "Cantidad"
-        '
-        'UM
-        '
-        Me.UM.DataPropertyName = "Um"
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.UM.DefaultCellStyle = DataGridViewCellStyle7
-        Me.UM.HeaderText = "U.Medida"
-        Me.UM.Name = "UM"
-        Me.UM.Width = 60
-        '
-        'CS
-        '
-        Me.CS.DataPropertyName = "CodiS"
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.CS.DefaultCellStyle = DataGridViewCellStyle8
-        Me.CS.HeaderText = "CS"
-        Me.CS.Name = "CS"
-        Me.CS.Visible = False
-        '
-        'Material
-        '
-        Me.Material.DataPropertyName = "descripcion"
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Material.DefaultCellStyle = DataGridViewCellStyle9
-        Me.Material.HeaderText = "Material"
-        Me.Material.Name = "Material"
-        Me.Material.Visible = False
-        '
-        'IDDP
-        '
-        Me.IDDP.DataPropertyName = "id_pro"
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.IDDP.DefaultCellStyle = DataGridViewCellStyle10
-        Me.IDDP.HeaderText = "IDDP"
-        Me.IDDP.Name = "IDDP"
-        Me.IDDP.Visible = False
-        '
-        'Faltante
-        '
-        Me.Faltante.DataPropertyName = "Faltante"
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Faltante.DefaultCellStyle = DataGridViewCellStyle11
-        Me.Faltante.HeaderText = "Faltante"
-        Me.Faltante.Name = "Faltante"
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(334, 46)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(105, 13)
+        Me.Label2.TabIndex = 95
+        Me.Label2.Text = "Ejem: 3387-0000422"
         '
         'MPInventario
         '
@@ -3975,6 +4009,9 @@ Partial Class MPInventario
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.NucleosAve.My.Resources.Resources.Fondo
         Me.ClientSize = New System.Drawing.Size(594, 608)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.TxtPedimento)
+        Me.Controls.Add(Me.LPedimento)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.BTerminar)
@@ -4397,4 +4434,7 @@ Partial Class MPInventario
     Friend WithEvents Material As DataGridViewTextBoxColumn
     Friend WithEvents IDDP As DataGridViewTextBoxColumn
     Friend WithEvents Faltante As DataGridViewTextBoxColumn
+    Public WithEvents TxtPedimento As TextBox
+    Friend WithEvents LPedimento As Label
+    Friend WithEvents Label2 As Label
 End Class

@@ -28,6 +28,7 @@ Public Class RegistroMP
             GDatos1.Parameters.AddWithValue("@Empleado", dts.Trabaj)
             GDatos1.Parameters.AddWithValue("@CE", dts.CE_)
             GDatos1.Parameters.AddWithValue("@IDOD", dts.IDDO_)
+            GDatos1.Parameters.AddWithValue("@Pedimento", dts.Pedimento_)
 
             If GDatos1.ExecuteNonQuery Then
                 Return True
