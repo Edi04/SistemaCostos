@@ -124,6 +124,17 @@ Partial Class Index
         Me.PM_recursos_Humanos = New System.Windows.Forms.Panel()
         Me.btn_recursos_humanos = New System.Windows.Forms.PictureBox()
         Me.Label15 = New System.Windows.Forms.Label()
+        Me.PSCRAP = New System.Windows.Forms.Panel()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.LSCRAP = New System.Windows.Forms.Label()
+        Me.PProcesos = New System.Windows.Forms.Panel()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.PStatus = New System.Windows.Forms.Panel()
+        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
+        Me.LStatus = New System.Windows.Forms.Label()
+        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
+        Me.LVentas = New System.Windows.Forms.Label()
         CType(Me.B_Minimizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.B_Cerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_mantenimientos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -187,6 +198,13 @@ Partial Class Index
         CType(Me.btn_rh_abre, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PM_recursos_Humanos.SuspendLayout()
         CType(Me.btn_recursos_humanos, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PSCRAP.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PProcesos.SuspendLayout()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PStatus.SuspendLayout()
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'B_Minimizar
@@ -197,7 +215,9 @@ Partial Class Index
         Me.B_Minimizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.B_Minimizar.Image = CType(resources.GetObject("B_Minimizar.Image"), System.Drawing.Image)
         Me.B_Minimizar.InitialImage = Global.NucleosAve.My.Resources.Resources.icons8_minimizar_la_ventana_5001
-        Me.B_Minimizar.Location = New System.Drawing.Point(606, 1)
+
+        Me.B_Minimizar.Location = New System.Drawing.Point(816, 1)
+
         Me.B_Minimizar.Name = "B_Minimizar"
         Me.B_Minimizar.Size = New System.Drawing.Size(53, 52)
         Me.B_Minimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -211,9 +231,12 @@ Partial Class Index
         Me.B_Cerrar.BackColor = System.Drawing.Color.Transparent
         Me.B_Cerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.B_Cerrar.Image = Global.NucleosAve.My.Resources.Resources.icons8_cerrar_ventana_5001
+
         Me.B_Cerrar.Location = New System.Drawing.Point(660, 1)
+
+        Me.B_Cerrar.Location = New System.Drawing.Point(870, 1)
+
         Me.B_Cerrar.Name = "B_Cerrar"
-        Me.B_Cerrar.Size = New System.Drawing.Size(55, 52)
         Me.B_Cerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.B_Cerrar.TabIndex = 28
         Me.B_Cerrar.TabStop = False
@@ -570,6 +593,7 @@ Partial Class Index
         Me.PCompras.Name = "PCompras"
         Me.PCompras.Size = New System.Drawing.Size(61, 72)
         Me.PCompras.TabIndex = 63
+        Me.PCompras.Visible = False
         '
         'BCompras
         '
@@ -606,6 +630,7 @@ Partial Class Index
         Me.PCostos.Name = "PCostos"
         Me.PCostos.Size = New System.Drawing.Size(61, 72)
         Me.PCostos.TabIndex = 64
+        Me.PCostos.Visible = False
         '
         'BCost
         '
@@ -642,6 +667,7 @@ Partial Class Index
         Me.PTransporte.Name = "PTransporte"
         Me.PTransporte.Size = New System.Drawing.Size(69, 72)
         Me.PTransporte.TabIndex = 64
+        Me.PTransporte.Visible = False
         '
         'BTranspor
         '
@@ -678,6 +704,7 @@ Partial Class Index
         Me.PAlmacen.Name = "PAlmacen"
         Me.PAlmacen.Size = New System.Drawing.Size(61, 72)
         Me.PAlmacen.TabIndex = 64
+        Me.PAlmacen.Visible = False
         '
         'BAlmac
         '
@@ -805,6 +832,8 @@ Partial Class Index
         'PMCostos
         '
         Me.PMCostos.BackColor = System.Drawing.Color.Transparent
+        Me.PMCostos.Controls.Add(Me.PictureBox6)
+        Me.PMCostos.Controls.Add(Me.LVentas)
         Me.PMCostos.Controls.Add(Me.B_Facturas)
         Me.PMCostos.Controls.Add(Me.L_Facturas)
         Me.PMCostos.Controls.Add(Me.B_pedimentos)
@@ -931,10 +960,11 @@ Partial Class Index
         Me.PMass.BackColor = System.Drawing.Color.Transparent
         Me.PMass.Controls.Add(Me.BMass)
         Me.PMass.Controls.Add(Me.LMass)
-        Me.PMass.Location = New System.Drawing.Point(373, 139)
+        Me.PMass.Location = New System.Drawing.Point(373, 138)
         Me.PMass.Name = "PMass"
         Me.PMass.Size = New System.Drawing.Size(61, 72)
         Me.PMass.TabIndex = 65
+        Me.PMass.Visible = False
         '
         'BMass
         '
@@ -1004,10 +1034,11 @@ Partial Class Index
         Me.PPedidos.BackColor = System.Drawing.Color.Transparent
         Me.PPedidos.Controls.Add(Me.BPedidos)
         Me.PPedidos.Controls.Add(Me.LPedidos)
-        Me.PPedidos.Location = New System.Drawing.Point(440, 139)
+        Me.PPedidos.Location = New System.Drawing.Point(440, 138)
         Me.PPedidos.Name = "PPedidos"
         Me.PPedidos.Size = New System.Drawing.Size(61, 72)
         Me.PPedidos.TabIndex = 66
+        Me.PPedidos.Visible = False
         '
         'BPedidos
         '
@@ -1040,10 +1071,11 @@ Partial Class Index
         Me.PMaPrima.BackColor = System.Drawing.Color.Transparent
         Me.PMaPrima.Controls.Add(Me.BMPrima)
         Me.PMaPrima.Controls.Add(Me.LMP)
-        Me.PMaPrima.Location = New System.Drawing.Point(505, 140)
+        Me.PMaPrima.Location = New System.Drawing.Point(505, 138)
         Me.PMaPrima.Name = "PMaPrima"
         Me.PMaPrima.Size = New System.Drawing.Size(61, 85)
         Me.PMaPrima.TabIndex = 66
+        Me.PMaPrima.Visible = False
         '
         'BMPrima
         '
@@ -1159,10 +1191,11 @@ Partial Class Index
         Me.PAGasolina.BackColor = System.Drawing.Color.Transparent
         Me.PAGasolina.Controls.Add(Me.btn_gas)
         Me.PAGasolina.Controls.Add(Me.Label3)
-        Me.PAGasolina.Location = New System.Drawing.Point(239, 137)
+        Me.PAGasolina.Location = New System.Drawing.Point(239, 138)
         Me.PAGasolina.Name = "PAGasolina"
         Me.PAGasolina.Size = New System.Drawing.Size(61, 72)
         Me.PAGasolina.TabIndex = 76
+        Me.PAGasolina.Visible = False
         '
         'btn_gas
         '
@@ -1288,7 +1321,7 @@ Partial Class Index
         Me.PA_R.BackColor = System.Drawing.Color.Transparent
         Me.PA_R.Controls.Add(Me.BA_R)
         Me.PA_R.Controls.Add(Me.Label6)
-        Me.PA_R.Location = New System.Drawing.Point(639, 140)
+        Me.PA_R.Location = New System.Drawing.Point(639, 138)
         Me.PA_R.Name = "PA_R"
         Me.PA_R.Size = New System.Drawing.Size(61, 72)
         Me.PA_R.TabIndex = 77
@@ -1390,10 +1423,11 @@ Partial Class Index
         Me.Panel1.BackColor = System.Drawing.Color.Transparent
         Me.Panel1.Controls.Add(Me.btn_rh_abre)
         Me.Panel1.Controls.Add(Me.Label11)
-        Me.Panel1.Location = New System.Drawing.Point(572, 141)
+        Me.Panel1.Location = New System.Drawing.Point(572, 138)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(61, 82)
         Me.Panel1.TabIndex = 79
+        Me.Panel1.Visible = False
         '
         'btn_rh_abre
         '
@@ -1459,24 +1493,167 @@ Partial Class Index
         Me.Label15.TabIndex = 68
         Me.Label15.Text = "Recursos Humanos"
         '
+        'PSCRAP
+        '
+        Me.PSCRAP.BackColor = System.Drawing.Color.Transparent
+        Me.PSCRAP.Controls.Add(Me.PictureBox2)
+        Me.PSCRAP.Controls.Add(Me.LSCRAP)
+        Me.PSCRAP.Location = New System.Drawing.Point(706, 138)
+        Me.PSCRAP.Name = "PSCRAP"
+        Me.PSCRAP.Size = New System.Drawing.Size(61, 85)
+        Me.PSCRAP.TabIndex = 67
+        Me.PSCRAP.Visible = False
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.AccessibleDescription = "dfghdfgdfhdhfd"
+        Me.PictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.PictureBox2.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox2.Image = Global.NucleosAve.My.Resources.Resources.icons8_rollo_de_papel_para_empapelar_96
+        Me.PictureBox2.Location = New System.Drawing.Point(3, 2)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(55, 52)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 35
+        Me.PictureBox2.TabStop = False
+        '
+        'LSCRAP
+        '
+        Me.LSCRAP.AutoSize = True
+        Me.LSCRAP.BackColor = System.Drawing.Color.Transparent
+        Me.LSCRAP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LSCRAP.ForeColor = System.Drawing.Color.Black
+        Me.LSCRAP.Location = New System.Drawing.Point(6, 57)
+        Me.LSCRAP.Name = "LSCRAP"
+        Me.LSCRAP.Size = New System.Drawing.Size(48, 13)
+        Me.LSCRAP.TabIndex = 36
+        Me.LSCRAP.Text = "SCRAP"
+        '
+        'PProcesos
+        '
+        Me.PProcesos.BackColor = System.Drawing.Color.Transparent
+        Me.PProcesos.Controls.Add(Me.PictureBox3)
+        Me.PProcesos.Controls.Add(Me.Label12)
+        Me.PProcesos.Location = New System.Drawing.Point(773, 138)
+        Me.PProcesos.Name = "PProcesos"
+        Me.PProcesos.Size = New System.Drawing.Size(61, 85)
+        Me.PProcesos.TabIndex = 68
+        Me.PProcesos.Visible = False
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.AccessibleDescription = "dfghdfgdfhdhfd"
+        Me.PictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.PictureBox3.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox3.Image = Global.NucleosAve.My.Resources.Resources.icons8_rollo_de_papel_para_empapelar_96
+        Me.PictureBox3.Location = New System.Drawing.Point(3, 2)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(55, 52)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox3.TabIndex = 35
+        Me.PictureBox3.TabStop = False
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.BackColor = System.Drawing.Color.Transparent
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.ForeColor = System.Drawing.Color.Black
+        Me.Label12.Location = New System.Drawing.Point(5, 57)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(59, 13)
+        Me.Label12.TabIndex = 36
+        Me.Label12.Text = "Procesos"
+        '
+        'PStatus
+        '
+        Me.PStatus.BackColor = System.Drawing.Color.Transparent
+        Me.PStatus.Controls.Add(Me.PictureBox7)
+        Me.PStatus.Controls.Add(Me.LStatus)
+        Me.PStatus.Location = New System.Drawing.Point(846, 138)
+        Me.PStatus.Name = "PStatus"
+        Me.PStatus.Size = New System.Drawing.Size(61, 85)
+        Me.PStatus.TabIndex = 81
+        Me.PStatus.Visible = False
+        '
+        'PictureBox7
+        '
+        Me.PictureBox7.AccessibleDescription = "dfghdfgdfhdhfd"
+        Me.PictureBox7.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.PictureBox7.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox7.Image = Global.NucleosAve.My.Resources.Resources.icons8_rollo_de_papel_para_empapelar_96
+        Me.PictureBox7.Location = New System.Drawing.Point(3, 2)
+        Me.PictureBox7.Name = "PictureBox7"
+        Me.PictureBox7.Size = New System.Drawing.Size(55, 52)
+        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox7.TabIndex = 35
+        Me.PictureBox7.TabStop = False
+        '
+        'LStatus
+        '
+        Me.LStatus.AutoSize = True
+        Me.LStatus.BackColor = System.Drawing.Color.Transparent
+        Me.LStatus.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LStatus.ForeColor = System.Drawing.Color.Black
+        Me.LStatus.Location = New System.Drawing.Point(6, 57)
+        Me.LStatus.Name = "LStatus"
+        Me.LStatus.Size = New System.Drawing.Size(49, 13)
+        Me.LStatus.TabIndex = 36
+        Me.LStatus.Text = "Estatus"
+        '
+        'PictureBox6
+        '
+        Me.PictureBox6.AccessibleDescription = "dfghdfgdfhdhfd"
+        Me.PictureBox6.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.PictureBox6.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox6.Image = Global.NucleosAve.My.Resources.Resources.icons8_rollo_de_papel_para_empapelar_96
+        Me.PictureBox6.Location = New System.Drawing.Point(181, 9)
+        Me.PictureBox6.Name = "PictureBox6"
+        Me.PictureBox6.Size = New System.Drawing.Size(65, 65)
+        Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox6.TabIndex = 35
+        Me.PictureBox6.TabStop = False
+        '
+        'LVentas
+        '
+        Me.LVentas.AutoSize = True
+        Me.LVentas.BackColor = System.Drawing.Color.Transparent
+        Me.LVentas.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LVentas.ForeColor = System.Drawing.Color.Black
+        Me.LVentas.Location = New System.Drawing.Point(191, 76)
+        Me.LVentas.Name = "LVentas"
+        Me.LVentas.Size = New System.Drawing.Size(46, 13)
+        Me.LVentas.TabIndex = 36
+        Me.LVentas.Text = "Ventas"
+        '
         'Index
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.NucleosAve.My.Resources.Resources.Fondo
+
         Me.ClientSize = New System.Drawing.Size(715, 425)
+
+        Me.ClientSize = New System.Drawing.Size(926, 425)
+        Me.Controls.Add(Me.PMAlmacen)
+        Me.Controls.Add(Me.PMGasolina)
+        Me.Controls.Add(Me.PMTransporte)
+        Me.Controls.Add(Me.PMCompras)
+        Me.Controls.Add(Me.PMCostos)
+        Me.Controls.Add(Me.PStatus)
+        Me.Controls.Add(Me.PProcesos)
+        Me.Controls.Add(Me.PSCRAP)
         Me.Controls.Add(Me.PM_recursos_Humanos)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.PMMPrima)
-        Me.Controls.Add(Me.PMAlmacen)
-        Me.Controls.Add(Me.PMTransporte)
-        Me.Controls.Add(Me.PMGasolina)
         Me.Controls.Add(Me.PM_Armado_Rectangular)
         Me.Controls.Add(Me.PA_R)
         Me.Controls.Add(Me.PAGasolina)
         Me.Controls.Add(Me.PMaPrima)
-        Me.Controls.Add(Me.PMCostos)
-        Me.Controls.Add(Me.PMCompras)
         Me.Controls.Add(Me.PMMass)
         Me.Controls.Add(Me.PPedidos)
         Me.Controls.Add(Me.PMass)
@@ -1580,6 +1757,16 @@ Partial Class Index
         Me.PM_recursos_Humanos.ResumeLayout(False)
         Me.PM_recursos_Humanos.PerformLayout()
         CType(Me.btn_recursos_humanos, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PSCRAP.ResumeLayout(False)
+        Me.PSCRAP.PerformLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PProcesos.ResumeLayout(False)
+        Me.PProcesos.PerformLayout()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PStatus.ResumeLayout(False)
+        Me.PStatus.PerformLayout()
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1686,4 +1873,15 @@ Partial Class Index
     Friend WithEvents PBMHR As Panel
     Friend WithEvents BMOHR As PictureBox
     Friend WithEvents LHR As Label
+    Friend WithEvents PictureBox6 As PictureBox
+    Friend WithEvents LVentas As Label
+    Friend WithEvents PSCRAP As Panel
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents LSCRAP As Label
+    Friend WithEvents PProcesos As Panel
+    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents Label12 As Label
+    Friend WithEvents PStatus As Panel
+    Friend WithEvents PictureBox7 As PictureBox
+    Friend WithEvents LStatus As Label
 End Class
