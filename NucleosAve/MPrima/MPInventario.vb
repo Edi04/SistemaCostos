@@ -116,14 +116,17 @@ Public Class MPInventario
         COMANDO.ExecuteNonQuery()
 
         Conex.Close()
+
+        TxtPedimento.ReadOnly = False
+        TxtPedimento.Text = ""
     End Sub
 
     Private Sub BGMP_Click(sender As Object, e As EventArgs) Handles BGMP.Click
         If TxtOC.Text <> "" Then
             If TxtAncho1.Text = "" And TxtCalibre1.Text = "" And TxtPeso1.Text = "" And TxtNumRollo1.Text = "" And TxtNRolI1.Text = "" And TxtObser1.Text = "" Then
                 'Nothing
-            ElseIf TxtAncho1.Text = "" Or TxtCalibre1.Text = "" Or TxtPeso1.Text = "" Or TxtNRolI1.Text = "" Then
-                MessageBox.Show("Ingresar todos los datos en Rollo 1", "Advertencia", MessageBoxButtons.OK)
+            ElseIf TxtAncho1.Text = "" Or TxtCalibre1.Text = "" Or TxtPeso1.Text = "" Or TxtNRolI1.Text = "" Or TxtPedimento.Text = "" Then
+                MessageBox.Show("Ingresar todos los datos en Rollo 1 y/o Pedimento", "Advertencia", MessageBoxButtons.OK)
             Else
                 Try
                     Dim Funcion As New RegistroMP
@@ -143,6 +146,8 @@ Public Class MPInventario
                     Datos.Trabaj = TxtResponsable.Text
                     Datos.CE_ = TxtCE.Text
                     Datos.IDDO_ = ip_pro.Text
+                    Datos.Pedimento_ = TxtPedimento.Text
+
 
                     If Funcion.R(Datos) Then
                         Dim Prod As String = TxtNRolI1.Text
@@ -189,8 +194,8 @@ Public Class MPInventario
 
             If TxtAncho2.Text = "" And TxtCalibre2.Text = "" And TxtPeso2.Text = "" And TxtNumRollo2.Text = "" And TxtNRoll2.Text = "" And TxtObser2.Text = "" Then
                 'Nothing
-            ElseIf TxtAncho2.Text = "" Or TxtCalibre2.Text = "" Or TxtPeso2.Text = "" Or TxtNRoll2.Text = "" Then
-                MessageBox.Show("Ingresar todos los datos en Rollo 2", "Advertencia", MessageBoxButtons.OK)
+            ElseIf TxtAncho2.Text = "" Or TxtCalibre2.Text = "" Or TxtPeso2.Text = "" Or TxtNRoll2.Text = "" Or TxtPedimento.Text = "" Then
+                MessageBox.Show("Ingresar todos los datos en Rollo 2 y/o Pedimento", "Advertencia", MessageBoxButtons.OK)
             Else
                 Try
                     Dim Funcion As New RegistroMP
@@ -210,6 +215,7 @@ Public Class MPInventario
                     Datos.Trabaj = TxtResponsable.Text
                     Datos.CE_ = TxtCE.Text
                     Datos.IDDO_ = ip_pro.Text
+                    Datos.Pedimento_ = TxtPedimento.Text
 
                     If Funcion.R(Datos) Then
                         Dim Prod As String = TxtNRoll2.Text
@@ -257,8 +263,8 @@ Public Class MPInventario
 
             If TxtAncho3.Text = "" And TxtCalibre3.Text = "" And TxtPeso3.Text = "" And TxtNumRollo3.Text = "" And TxtNRoll3.Text = "" And TxtObser3.Text = "" Then
                 'Nothing
-            ElseIf TxtAncho3.Text = "" Or TxtCalibre3.Text = "" Or TxtPeso3.Text = "" Or TxtNRoll3.Text = "" Then
-                MessageBox.Show("Ingresar todos los datos en Rollo 3", "Advertencia", MessageBoxButtons.OK)
+            ElseIf TxtAncho3.Text = "" Or TxtCalibre3.Text = "" Or TxtPeso3.Text = "" Or TxtNRoll3.Text = "" Or TxtPedimento.Text = "" Then
+                MessageBox.Show("Ingresar todos los datos en Rollo 3 y/o Pedimento", "Advertencia", MessageBoxButtons.OK)
             Else
                 Try
                     Dim Funcion As New RegistroMP
@@ -278,6 +284,7 @@ Public Class MPInventario
                     Datos.Trabaj = TxtResponsable.Text
                     Datos.CE_ = TxtCE.Text
                     Datos.IDDO_ = ip_pro.Text
+                    Datos.Pedimento_ = TxtPedimento.Text
 
                     If Funcion.R(Datos) Then
                         Dim Prod As String = TxtNRoll3.Text
@@ -325,8 +332,8 @@ Public Class MPInventario
 
             If TxtAncho4.Text = "" And TxtCalibre4.Text = "" And TxtPeso4.Text = "" And TxtNumRollo4.Text = "" And TxtNRoll4.Text = "" And TxtObser4.Text = "" Then
                 'Nothing
-            ElseIf TxtAncho4.Text = "" Or TxtCalibre4.Text = "" Or TxtPeso4.Text = "" Or TxtNRoll4.Text = "" Then
-                MessageBox.Show("Ingresar todos los datos en Rollo 4", "Advertencia", MessageBoxButtons.OK)
+            ElseIf TxtAncho4.Text = "" Or TxtCalibre4.Text = "" Or TxtPeso4.Text = "" Or TxtNRoll4.Text = "" Or TxtPedimento.Text = "" Then
+                MessageBox.Show("Ingresar todos los datos en Rollo 4 y/o Pedimento", "Advertencia", MessageBoxButtons.OK)
             Else
                 Try
                     Dim Funcion As New RegistroMP
@@ -346,6 +353,7 @@ Public Class MPInventario
                     Datos.Trabaj = TxtResponsable.Text
                     Datos.CE_ = TxtCE.Text
                     Datos.IDDO_ = ip_pro.Text
+                    Datos.Pedimento_ = TxtPedimento.Text
 
                     If Funcion.R(Datos) Then
                         Dim Prod As String = TxtNRoll4.Text
@@ -393,8 +401,8 @@ Public Class MPInventario
 
             If TxtAncho5.Text = "" And TxtCalibre5.Text = "" And TxtPeso5.Text = "" And TxtNumRollo5.Text = "" And TxtNRoll5.Text = "" And TxtObser5.Text = "" Then
                 'Nothing
-            ElseIf TxtAncho5.Text = "" Or TxtCalibre5.Text = "" Or TxtPeso5.Text = "" Or TxtNRoll5.Text = "" Then
-                MessageBox.Show("Ingresar todos los datos en Rollo 5", "Advertencia", MessageBoxButtons.OK)
+            ElseIf TxtAncho5.Text = "" Or TxtCalibre5.Text = "" Or TxtPeso5.Text = "" Or TxtNRoll5.Text = "" Or TxtPedimento.Text = "" Then
+                MessageBox.Show("Ingresar todos los datos en Rollo 5 y/o Pedimento", "Advertencia", MessageBoxButtons.OK)
             Else
                 Try
                     Dim Funcion As New RegistroMP
@@ -414,6 +422,7 @@ Public Class MPInventario
                     Datos.Trabaj = TxtResponsable.Text
                     Datos.CE_ = TxtCE.Text
                     Datos.IDDO_ = ip_pro.Text
+                    Datos.Pedimento_ = TxtPedimento.Text
 
                     If Funcion.R(Datos) Then
                         Dim Prod As String = TxtNRoll5.Text
@@ -461,8 +470,8 @@ Public Class MPInventario
 
             If TxtAncho6.Text = "" And TxtCalibre6.Text = "" And TxtPeso6.Text = "" And TxtNumRollo6.Text = "" And TxtNRoll6.Text = "" And TxtObser6.Text = "" Then
                 'Nothing
-            ElseIf TxtAncho6.Text = "" Or TxtCalibre6.Text = "" Or TxtPeso6.Text = "" Or TxtNRoll6.Text = "" Then
-                MessageBox.Show("Ingresar todos los datos en Rollo 6", "Advertencia", MessageBoxButtons.OK)
+            ElseIf TxtAncho6.Text = "" Or TxtCalibre6.Text = "" Or TxtPeso6.Text = "" Or TxtNRoll6.Text = "" Or TxtPedimento.Text = "" Then
+                MessageBox.Show("Ingresar todos los datos en Rollo 6 y/o Pedimento", "Advertencia", MessageBoxButtons.OK)
             Else
                 Try
                     Dim Funcion As New RegistroMP
@@ -482,6 +491,7 @@ Public Class MPInventario
                     Datos.Trabaj = TxtResponsable.Text
                     Datos.CE_ = TxtCE.Text
                     Datos.IDDO_ = ip_pro.Text
+                    Datos.Pedimento_ = TxtPedimento.Text
 
                     If Funcion.R(Datos) Then
                         Dim Prod As String = TxtNRoll6.Text
@@ -529,8 +539,8 @@ Public Class MPInventario
 
             If TxtAncho7.Text = "" And TxtCalibre7.Text = "" And TxtPeso7.Text = "" And TxtNumRollo7.Text = "" And TxtNRoll7.Text = "" And TxtObser7.Text = "" Then
                 'Nothing
-            ElseIf TxtAncho7.Text = "" Or TxtCalibre7.Text = "" Or TxtPeso7.Text = "" Or TxtNRoll7.Text = "" Then
-                MessageBox.Show("Ingresar todos los datos en Rollo 7", "Advertencia", MessageBoxButtons.OK)
+            ElseIf TxtAncho7.Text = "" Or TxtCalibre7.Text = "" Or TxtPeso7.Text = "" Or TxtNRoll7.Text = "" Or TxtPedimento.Text = "" Then
+                MessageBox.Show("Ingresar todos los datos en Rollo 7 y/o Pedimento", "Advertencia", MessageBoxButtons.OK)
             Else
                 Try
                     Dim Funcion As New RegistroMP
@@ -550,6 +560,7 @@ Public Class MPInventario
                     Datos.Trabaj = TxtResponsable.Text
                     Datos.CE_ = TxtCE.Text
                     Datos.IDDO_ = ip_pro.Text
+                    Datos.Pedimento_ = TxtPedimento.Text
 
                     If Funcion.R(Datos) Then
                         Dim Prod As String = TxtNRoll7.Text
@@ -597,8 +608,8 @@ Public Class MPInventario
 
             If TxtAncho8.Text = "" And TxtCalibre8.Text = "" And TxtPeso8.Text = "" And TxtNumRollo8.Text = "" And TxtNRoll8.Text = "" And TxtObser8.Text = "" Then
                 'Nothing
-            ElseIf TxtAncho8.Text = "" Or TxtCalibre8.Text = "" Or TxtPeso8.Text = "" Or TxtNRoll8.Text = "" Then
-                MessageBox.Show("Ingresar todos los datos en Rollo 8", "Advertencia", MessageBoxButtons.OK)
+            ElseIf TxtAncho8.Text = "" Or TxtCalibre8.Text = "" Or TxtPeso8.Text = "" Or TxtNRoll8.Text = "" Or TxtPedimento.Text = "" Then
+                MessageBox.Show("Ingresar todos los datos en Rollo 8 y/o Pedimento", "Advertencia", MessageBoxButtons.OK)
             Else
                 Try
                     Dim Funcion As New RegistroMP
@@ -618,6 +629,7 @@ Public Class MPInventario
                     Datos.Trabaj = TxtResponsable.Text
                     Datos.CE_ = TxtCE.Text
                     Datos.IDDO_ = ip_pro.Text
+                    Datos.Pedimento_ = TxtPedimento.Text
 
                     If Funcion.R(Datos) Then
                         Dim Prod As String = TxtNRoll8.Text
@@ -665,8 +677,8 @@ Public Class MPInventario
 
             If TxtAncho9.Text = "" And TxtCalibre9.Text = "" And TxtPeso9.Text = "" And TxtNumRollo9.Text = "" And TxtNRoll9.Text = "" And TxtObser9.Text = "" Then
                 'Nothing
-            ElseIf TxtAncho9.Text = "" Or TxtCalibre9.Text = "" Or TxtPeso9.Text = "" Or TxtNRoll9.Text = "" Then
-                MessageBox.Show("Ingresar todos los datos en Rollo 9", "Advertencia", MessageBoxButtons.OK)
+            ElseIf TxtAncho9.Text = "" Or TxtCalibre9.Text = "" Or TxtPeso9.Text = "" Or TxtNRoll9.Text = "" Or TxtPedimento.Text = "" Then
+                MessageBox.Show("Ingresar todos los datos en Rollo 9 y/o Pedimento", "Advertencia", MessageBoxButtons.OK)
             Else
                 Try
                     Dim Funcion As New RegistroMP
@@ -686,6 +698,7 @@ Public Class MPInventario
                     Datos.Trabaj = TxtResponsable.Text
                     Datos.CE_ = TxtCE.Text
                     Datos.IDDO_ = ip_pro.Text
+                    Datos.Pedimento_ = TxtPedimento.Text
 
                     If Funcion.R(Datos) Then
                         Dim Prod As String = TxtNRoll9.Text
@@ -733,8 +746,8 @@ Public Class MPInventario
 
             If TxtAncho10.Text = "" And TxtCalibre10.Text = "" And TxtPeso10.Text = "" And TxtNumRollo10.Text = "" And TxtNRoll10.Text = "" And TxtObser10.Text = "" Then
                 'Nothing
-            ElseIf TxtAncho10.Text = "" Or TxtCalibre10.Text = "" Or TxtPeso10.Text = "" Or TxtNRoll10.Text = "" Then
-                MessageBox.Show("Ingresar todos los datos en Rollo 10", "Advertencia", MessageBoxButtons.OK)
+            ElseIf TxtAncho10.Text = "" Or TxtCalibre10.Text = "" Or TxtPeso10.Text = "" Or TxtNRoll10.Text = "" Or TxtPedimento.Text = "" Then
+                MessageBox.Show("Ingresar todos los datos en Rollo 10 y/o Pedimento", "Advertencia", MessageBoxButtons.OK)
             Else
                 Try
                     Dim Funcion As New RegistroMP
@@ -754,6 +767,7 @@ Public Class MPInventario
                     Datos.Trabaj = TxtResponsable.Text
                     Datos.CE_ = TxtCE.Text
                     Datos.IDDO_ = ip_pro.Text
+                    Datos.Pedimento_ = TxtPedimento.Text
 
                     If Funcion.R(Datos) Then
                         Dim Prod As String = TxtNRoll10.Text
@@ -801,8 +815,8 @@ Public Class MPInventario
 
             If TxtAncho11.Text = "" And TxtCalibre11.Text = "" And TxtPeso11.Text = "" And TxtNumRollo11.Text = "" And TxtNRoll11.Text = "" And TxtObser11.Text = "" Then
                 'Nothing
-            ElseIf TxtAncho11.Text = "" Or TxtCalibre11.Text = "" Or TxtPeso11.Text = "" Or TxtNRoll11.Text = "" Then
-                MessageBox.Show("Ingresar todos los datos en Rollo 11", "Advertencia", MessageBoxButtons.OK)
+            ElseIf TxtAncho11.Text = "" Or TxtCalibre11.Text = "" Or TxtPeso11.Text = "" Or TxtNRoll11.Text = "" Or TxtPedimento.Text = "" Then
+                MessageBox.Show("Ingresar todos los datos en Rollo 11 y/o Pedimento", "Advertencia", MessageBoxButtons.OK)
             Else
                 Try
                     Dim Funcion As New RegistroMP
@@ -822,6 +836,7 @@ Public Class MPInventario
                     Datos.Trabaj = TxtResponsable.Text
                     Datos.CE_ = TxtCE.Text
                     Datos.IDDO_ = ip_pro.Text
+                    Datos.Pedimento_ = TxtPedimento.Text
 
                     If Funcion.R(Datos) Then
                         Dim Prod As String = TxtNRoll11.Text
@@ -869,8 +884,8 @@ Public Class MPInventario
 
             If TxtAncho12.Text = "" And TxtCalibre12.Text = "" And TxtPeso12.Text = "" And TxtNumRollo12.Text = "" And TxtNRoll12.Text = "" And TxtObser12.Text = "" Then
                 'Nothing
-            ElseIf TxtAncho12.Text = "" Or TxtCalibre12.Text = "" Or TxtPeso12.Text = "" Or TxtNRoll12.Text = "" Then
-                MessageBox.Show("Ingresar todos los datos en Rollo 12", "Advertencia", MessageBoxButtons.OK)
+            ElseIf TxtAncho12.Text = "" Or TxtCalibre12.Text = "" Or TxtPeso12.Text = "" Or TxtNRoll12.Text = "" Or TxtPedimento.Text = "" Then
+                MessageBox.Show("Ingresar todos los datos en Rollo 12 y/o Pedimento", "Advertencia", MessageBoxButtons.OK)
             Else
                 Try
                     Dim Funcion As New RegistroMP
@@ -890,6 +905,7 @@ Public Class MPInventario
                     Datos.Trabaj = TxtResponsable.Text
                     Datos.CE_ = TxtCE.Text
                     Datos.IDDO_ = ip_pro.Text
+                    Datos.Pedimento_ = TxtPedimento.Text
 
                     If Funcion.R(Datos) Then
                         Dim Prod As String = TxtNRoll12.Text
@@ -937,8 +953,8 @@ Public Class MPInventario
 
             If TxtAncho13.Text = "" And TxtCalibre13.Text = "" And TxtPeso13.Text = "" And TxtNumRollo13.Text = "" And TxtNRoll13.Text = "" And TxtObser13.Text = "" Then
                 'Nothing
-            ElseIf TxtAncho13.Text = "" Or TxtCalibre13.Text = "" Or TxtPeso13.Text = "" Or TxtNRoll13.Text = "" Then
-                MessageBox.Show("Ingresar todos los datos en Rollo 13", "Advertencia", MessageBoxButtons.OK)
+            ElseIf TxtAncho13.Text = "" Or TxtCalibre13.Text = "" Or TxtPeso13.Text = "" Or TxtNRoll13.Text = "" Or TxtPedimento.Text = "" Then
+                MessageBox.Show("Ingresar todos los datos en Rollo 13 y/o Pedimento", "Advertencia", MessageBoxButtons.OK)
             Else
                 Try
                     Dim Funcion As New RegistroMP
@@ -958,6 +974,7 @@ Public Class MPInventario
                     Datos.Trabaj = TxtResponsable.Text
                     Datos.CE_ = TxtCE.Text
                     Datos.IDDO_ = ip_pro.Text
+                    Datos.Pedimento_ = TxtPedimento.Text
 
                     If Funcion.R(Datos) Then
                         Dim Prod As String = TxtNRoll13.Text
@@ -1005,8 +1022,8 @@ Public Class MPInventario
 
             If TxtAncho14.Text = "" And TxtCalibre14.Text = "" And TxtPeso14.Text = "" And TxtNumRollo14.Text = "" And TxtNRoll14.Text = "" And TxtObser14.Text = "" Then
                 'Nothing
-            ElseIf TxtAncho14.Text = "" Or TxtCalibre14.Text = "" Or TxtPeso14.Text = "" Or TxtNRoll14.Text = "" Then
-                MessageBox.Show("Ingresar todos los datos en Rollo 14", "Advertencia", MessageBoxButtons.OK)
+            ElseIf TxtAncho14.Text = "" Or TxtCalibre14.Text = "" Or TxtPeso14.Text = "" Or TxtNRoll14.Text = "" Or TxtPedimento.Text = "" Then
+                MessageBox.Show("Ingresar todos los datos en Rollo 14 y/o Pedimento", "Advertencia", MessageBoxButtons.OK)
             Else
                 Try
                     Dim Funcion As New RegistroMP
@@ -1026,6 +1043,7 @@ Public Class MPInventario
                     Datos.Trabaj = TxtResponsable.Text
                     Datos.CE_ = TxtCE.Text
                     Datos.IDDO_ = ip_pro.Text
+                    Datos.Pedimento_ = TxtPedimento.Text
 
                     If Funcion.R(Datos) Then
                         Dim Prod As String = TxtNRoll14.Text
@@ -1073,8 +1091,8 @@ Public Class MPInventario
 
             If TxtAncho15.Text = "" And TxtCalibre15.Text = "" And TxtPeso15.Text = "" And TxtNumRollo15.Text = "" And TxtNRoll15.Text = "" And TxtObser15.Text = "" Then
                 'Nothing
-            ElseIf TxtAncho15.Text = "" Or TxtCalibre15.Text = "" Or TxtPeso15.Text = "" Or TxtNRoll15.Text = "" Then
-                MessageBox.Show("Ingresar todos los datos en Rollo 15", "Advertencia", MessageBoxButtons.OK)
+            ElseIf TxtAncho15.Text = "" Or TxtCalibre15.Text = "" Or TxtPeso15.Text = "" Or TxtNRoll15.Text = "" Or TxtPedimento.Text = "" Then
+                MessageBox.Show("Ingresar todos los datos en Rollo 15 y/o Pedimento", "Advertencia", MessageBoxButtons.OK)
             Else
                 Try
                     Dim Funcion As New RegistroMP
@@ -1094,6 +1112,7 @@ Public Class MPInventario
                     Datos.Trabaj = TxtResponsable.Text
                     Datos.CE_ = TxtCE.Text
                     Datos.IDDO_ = ip_pro.Text
+                    Datos.Pedimento_ = TxtPedimento.Text
 
                     If Funcion.R(Datos) Then
                         Dim Prod As String = TxtNRoll15.Text
@@ -1141,8 +1160,8 @@ Public Class MPInventario
 
             If TxtAncho16.Text = "" And TxtCalibre16.Text = "" And TxtPeso16.Text = "" And TxtNumRollo16.Text = "" And TxtNRoll16.Text = "" And TxtObser16.Text = "" Then
                 'Nothing
-            ElseIf TxtAncho16.Text = "" Or TxtCalibre16.Text = "" Or TxtPeso16.Text = "" Or TxtNRoll16.Text = "" Then
-                MessageBox.Show("Ingresar todos los datos en Rollo 16", "Advertencia", MessageBoxButtons.OK)
+            ElseIf TxtAncho16.Text = "" Or TxtCalibre16.Text = "" Or TxtPeso16.Text = "" Or TxtNRoll16.Text = "" Or TxtPedimento.Text = "" Then
+                MessageBox.Show("Ingresar todos los datos en Rollo 16 y/o Pedimento", "Advertencia", MessageBoxButtons.OK)
             Else
                 Try
                     Dim Funcion As New RegistroMP
@@ -1162,6 +1181,7 @@ Public Class MPInventario
                     Datos.Trabaj = TxtResponsable.Text
                     Datos.CE_ = TxtCE.Text
                     Datos.IDDO_ = ip_pro.Text
+                    Datos.Pedimento_ = TxtPedimento.Text
 
                     If Funcion.R(Datos) Then
                         Dim Prod As String = TxtNRoll16.Text
@@ -1209,8 +1229,8 @@ Public Class MPInventario
 
             If TxtAncho17.Text = "" And TxtCalibre17.Text = "" And TxtPeso17.Text = "" And TxtNumRollo17.Text = "" And TxtNRoll17.Text = "" And TxtObser17.Text = "" Then
                 'Nothing
-            ElseIf TxtAncho17.Text = "" Or TxtCalibre17.Text = "" Or TxtPeso17.Text = "" Or TxtNRoll17.Text = "" Then
-                MessageBox.Show("Ingresar todos los datos en Rollo 17", "Advertencia", MessageBoxButtons.OK)
+            ElseIf TxtAncho17.Text = "" Or TxtCalibre17.Text = "" Or TxtPeso17.Text = "" Or TxtNRoll17.Text = "" Or TxtPedimento.Text = "" Then
+                MessageBox.Show("Ingresar todos los datos en Rollo 17 y/o Pedimento", "Advertencia", MessageBoxButtons.OK)
             Else
                 Try
                     Dim Funcion As New RegistroMP
@@ -1230,6 +1250,7 @@ Public Class MPInventario
                     Datos.Trabaj = TxtResponsable.Text
                     Datos.CE_ = TxtCE.Text
                     Datos.IDDO_ = ip_pro.Text
+                    Datos.Pedimento_ = TxtPedimento.Text
 
                     If Funcion.R(Datos) Then
                         Dim Prod As String = TxtNRoll17.Text
@@ -1277,8 +1298,8 @@ Public Class MPInventario
 
             If TxtAncho18.Text = "" And TxtCalibre18.Text = "" And TxtPeso18.Text = "" And TxtNumRollo18.Text = "" And TxtNRoll18.Text = "" And TxtObser18.Text = "" Then
                 'Nothing
-            ElseIf TxtAncho18.Text = "" Or TxtCalibre18.Text = "" Or TxtPeso18.Text = "" Or TxtNRoll18.Text = "" Then
-                MessageBox.Show("Ingresar todos los datos en Rollo 18", "Advertencia", MessageBoxButtons.OK)
+            ElseIf TxtAncho18.Text = "" Or TxtCalibre18.Text = "" Or TxtPeso18.Text = "" Or TxtNRoll18.Text = "" Or TxtPedimento.Text = "" Then
+                MessageBox.Show("Ingresar todos los datos en Rollo 18 y/o Pedimento", "Advertencia", MessageBoxButtons.OK)
             Else
                 Try
                     Dim Funcion As New RegistroMP
@@ -1298,6 +1319,7 @@ Public Class MPInventario
                     Datos.Trabaj = TxtResponsable.Text
                     Datos.CE_ = TxtCE.Text
                     Datos.IDDO_ = ip_pro.Text
+                    Datos.Pedimento_ = TxtPedimento.Text
 
                     If Funcion.R(Datos) Then
                         Dim Prod As String = TxtNRoll18.Text
@@ -1345,8 +1367,8 @@ Public Class MPInventario
 
             If TxtAncho19.Text = "" And TxtCalibre19.Text = "" And TxtPeso19.Text = "" And TxtNumRollo19.Text = "" And TxtNRoll19.Text = "" And TxtObser19.Text = "" Then
                 'Nothing
-            ElseIf TxtAncho19.Text = "" Or TxtCalibre19.Text = "" Or TxtPeso19.Text = "" Or TxtNRoll19.Text = "" Then
-                MessageBox.Show("Ingresar todos los datos en Rollo 19", "Advertencia", MessageBoxButtons.OK)
+            ElseIf TxtAncho19.Text = "" Or TxtCalibre19.Text = "" Or TxtPeso19.Text = "" Or TxtNRoll19.Text = "" Or TxtPedimento.Text = "" Then
+                MessageBox.Show("Ingresar todos los datos en Rollo 19 y/o Pedimento", "Advertencia", MessageBoxButtons.OK)
             Else
                 Try
                     Dim Funcion As New RegistroMP
@@ -1366,6 +1388,7 @@ Public Class MPInventario
                     Datos.Trabaj = TxtResponsable.Text
                     Datos.CE_ = TxtCE.Text
                     Datos.IDDO_ = ip_pro.Text
+                    Datos.Pedimento_ = TxtPedimento.Text
 
                     If Funcion.R(Datos) Then
                         Dim Prod As String = TxtNRoll19.Text
@@ -1413,8 +1436,8 @@ Public Class MPInventario
 
             If TxtAncho20.Text = "" And TxtCalibre20.Text = "" And TxtPeso20.Text = "" And TxtNumRollo20.Text = "" And TxtNRoll20.Text = "" And TxtObser20.Text = "" Then
                 'Nothing
-            ElseIf TxtAncho20.Text = "" Or TxtCalibre20.Text = "" Or TxtPeso20.Text = "" Or TxtNRoll20.Text = "" Then
-                MessageBox.Show("Ingresar todos los datos en Rollo 20", "Advertencia", MessageBoxButtons.OK)
+            ElseIf TxtAncho20.Text = "" Or TxtCalibre20.Text = "" Or TxtPeso20.Text = "" Or TxtNRoll20.Text = "" Or TxtPedimento.Text = "" Then
+                MessageBox.Show("Ingresar todos los datos en Rollo 20 y/o Pedimento", "Advertencia", MessageBoxButtons.OK)
             Else
                 Try
                     Dim Funcion As New RegistroMP
@@ -1434,6 +1457,7 @@ Public Class MPInventario
                     Datos.Trabaj = TxtResponsable.Text
                     Datos.CE_ = TxtCE.Text
                     Datos.IDDO_ = ip_pro.Text
+                    Datos.Pedimento_ = TxtPedimento.Text
 
                     If Funcion.R(Datos) Then
                         Dim Prod As String = TxtNRoll20.Text
@@ -1480,6 +1504,7 @@ Public Class MPInventario
             End If
         End If
     End Sub
+
 
     Private Sub BTerminar_Click(sender As Object, e As EventArgs) Handles BTerminar.Click
         If MsgBox("Desea Finalizar la Entrega de Materia Prima", vbYesNo) = vbYes Then
@@ -2427,3 +2452,41 @@ Public Class MPInventario
         If Arrastre Then Me.Location = Me.PointToScreen(New Point(MousePosition.X - Me.Location.X - ex, MousePosition.Y - Me.Location.Y - ey))
     End Sub
 End Class
+
+
+
+'  Select P.Id_Producto, P.Nombre_Producto, P.Clave_Producto, P.Minimo, P.Maximo, P.Existencia, ED.PUUSD, ED.FUSD, 
+'			(COALESCE(ED.PUUSD,0) * COALESCE(ED.FUSD,0)) AS TUSD, ED.Tipo_Cambio, 
+'						CASE WHEN ED.Tipo_Cambio > 0
+'									THEN CASE WHEN TUSD > 0 
+'													THEN ED.Tipo_Cambio * TUSD 
+'											  ELSE 0
+'										 END  
+'									ELSE CASE WHEN ED.Precio_Unitario_PZA > 0
+'													THEN ED.Precio_Unitario_PZA
+'											  ELSE 0
+'										 END
+'						END AS 'PrecioUnitarioPZA',   
+'			ED.PU_Corte_PZA, M.Medida, ED.PU_Total, ED.Precio_Total, 
+'			 o.purchase_order
+'  FROM TB_Productos AS P
+'	LEFT JOIN TB_EDetalleProductos AS ED ON P.Id_Producto = ED.Id_Producto
+'	LEFT JOIN TB_Ordenes_Compra AS O ON ED.CodiS = O.CodiS
+'	INNER JOIN TB_Medidas AS M ON P.Id_Medida = M.Id_Medida
+'  WHERE P.Estado = 'Activo' AND
+'		P.Existencia > 0
+'  ORDER BY Id_Producto asc
+
+
+
+
+
+'Select 'Importe', PD.id_pedimento, PD.precio_pagado As 'USD', PD.t_cambio AS 'T.C', (PD.precio_pagado * PD.t_cambio) AS 'Moneda Nacional'
+'From TB_Pedimentos AS PD
+
+
+'Select 'Peso', PD.id_pedimento, PD.peso_bruto AS 'USD',' '
+'From TB_Pedimentos AS PD
+
+'Select 'Costo - Kilo', PD.id_pedimento, (PD.precio_pagado / PD.peso_bruto) as 'USD', PD.t_cambio AS 'T.C', ((PD.precio_pagado / PD.peso_bruto)*PD.t_cambio)
+'From TB_Pedimentos AS PD
