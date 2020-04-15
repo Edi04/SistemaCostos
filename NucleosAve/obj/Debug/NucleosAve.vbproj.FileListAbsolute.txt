@@ -1283,9 +1283,7 @@ C:\Users\ANTUA\Desktop\Sistema_Costos\SistemaCostos\NucleosAve\obj\Debug\Nucleos
 C:\Users\ANTUA\Desktop\Sistema_Costos\SistemaCostos\NucleosAve\obj\Debug\NucleosAve.xml
 C:\Users\ANTUA\Desktop\Sistema_Costos\SistemaCostos\NucleosAve\obj\Debug\NucleosAve.pdb
 C:\Users\ANTUA\Desktop\Sistema_Costos\SistemaCostos\NucleosAve\obj\Debug\NucleosAve.Rh.resources
-
 C:\Users\ANTUA\Desktop\Sistema_Costos\SistemaCostos\NucleosAve\obj\Debug\NucleosAve.RegistrosRH.resources
-
 C:\Users\SISTEMAS\source\SistemaCostos\NucleosAve\obj\Debug\NucleosAve.vbprojAssemblyReference.cache
 C:\Users\SISTEMAS\source\SistemaCostos\NucleosAve\obj\Debug\NucleosAve.ArchivosPDF.resources
 C:\Users\SISTEMAS\source\SistemaCostos\NucleosAve\obj\Debug\NucleosAve.ArchivosXML.resources
@@ -1404,4 +1402,6 @@ C:\Users\SISTEMAS\source\SistemaCostos\NucleosAve\bin\Debug\zh-CHT\Microsoft.Rep
 C:\Users\SISTEMAS\source\SistemaCostos\NucleosAve\obj\Debug\NucleosAve.exe.manifest
 C:\Users\SISTEMAS\source\SistemaCostos\NucleosAve\obj\Debug\NucleosAve.application
 C:\Users\SISTEMAS\source\SistemaCostos\NucleosAve\obj\Debug\NucleosAve.vbproj.CopyComplete
-
+C:\Users\ANTUA\Desktop\Sistema_Costos\SistemaCostos\NucleosAve\obj\Debug\NucleosAve.MPHistorial.resources
+C:\Users\ANTUA\Desktop\Sistema_Costos\SistemaCostos\NucleosAve\obj\Debug\NucleosAve.Ventas.resources
+C:\Users\ANTUA\Desktop\Sistema_Costos\SistemaCostos\NucleosAve\obj\Debug\NucleosAve.Registros_Ventas.resources

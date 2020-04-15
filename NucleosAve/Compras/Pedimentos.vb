@@ -142,7 +142,7 @@ Public Class Pedimentos
 
                 If funciones.FN_InsertarPedimentos(logica) Then
                     MsgBox("Datos Insertados Correctamente pedimento", MessageBoxIcon.Information)
-                    Generarcodigo()
+
                 End If
             Catch ex As Exception
                 MsgBox(ex.Message)
@@ -1847,6 +1847,7 @@ Public Class Pedimentos
             ivaCT.Clear()
             '----------------------------------------------------------------------------------
         End If
+        Generarcodigo()
     End Sub
 
     Private Sub ComboFactura_SelectionChangeCommitted_1(sender As Object, e As EventArgs)
@@ -5009,7 +5010,6 @@ Public Class Pedimentos
 
                 If funciones.FN_ModificarPedimentos(logica) Then
                     MsgBox("Pedimento Modificado Correctamente", MessageBoxIcon.Information)
-                    Generarcodigo()
                 End If
             Catch ex As Exception
                 MsgBox(ex.Message)
@@ -6674,6 +6674,7 @@ Public Class Pedimentos
             TextUSDFLE10.Clear()
 
         End If
+        Generarcodigo()
     End Sub
 
 

@@ -66,6 +66,8 @@ Partial Class Index
         Me.BAlmac = New System.Windows.Forms.PictureBox()
         Me.LAlma = New System.Windows.Forms.Label()
         Me.PMCompras = New System.Windows.Forms.Panel()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.btn_ventas = New System.Windows.Forms.PictureBox()
         Me.LAP = New System.Windows.Forms.Label()
         Me.PMPrima = New System.Windows.Forms.PictureBox()
         Me.Lpdf = New System.Windows.Forms.Label()
@@ -73,6 +75,8 @@ Partial Class Index
         Me.btn_pdf = New System.Windows.Forms.PictureBox()
         Me.Btn_listado = New System.Windows.Forms.PictureBox()
         Me.PMCostos = New System.Windows.Forms.Panel()
+        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
+        Me.LVentas = New System.Windows.Forms.Label()
         Me.PMTransporte = New System.Windows.Forms.Panel()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.btn_fletesyentregas = New System.Windows.Forms.PictureBox()
@@ -133,8 +137,6 @@ Partial Class Index
         Me.PStatus = New System.Windows.Forms.Panel()
         Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         Me.LStatus = New System.Windows.Forms.Label()
-        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
-        Me.LVentas = New System.Windows.Forms.Label()
         CType(Me.B_Minimizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.B_Cerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_mantenimientos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -161,10 +163,12 @@ Partial Class Index
         Me.PAlmacen.SuspendLayout()
         CType(Me.BAlmac, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PMCompras.SuspendLayout()
+        CType(Me.btn_ventas, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PMPrima, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_pdf, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Btn_listado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PMCostos.SuspendLayout()
+        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PMTransporte.SuspendLayout()
         CType(Me.btn_fletesyentregas, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_entregas, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -204,7 +208,6 @@ Partial Class Index
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PStatus.SuspendLayout()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'B_Minimizar
@@ -215,9 +218,7 @@ Partial Class Index
         Me.B_Minimizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.B_Minimizar.Image = CType(resources.GetObject("B_Minimizar.Image"), System.Drawing.Image)
         Me.B_Minimizar.InitialImage = Global.NucleosAve.My.Resources.Resources.icons8_minimizar_la_ventana_5001
-
-        Me.B_Minimizar.Location = New System.Drawing.Point(816, 1)
-
+        Me.B_Minimizar.Location = New System.Drawing.Point(810, -1)
         Me.B_Minimizar.Name = "B_Minimizar"
         Me.B_Minimizar.Size = New System.Drawing.Size(53, 52)
         Me.B_Minimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -231,12 +232,9 @@ Partial Class Index
         Me.B_Cerrar.BackColor = System.Drawing.Color.Transparent
         Me.B_Cerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.B_Cerrar.Image = Global.NucleosAve.My.Resources.Resources.icons8_cerrar_ventana_5001
-
-        Me.B_Cerrar.Location = New System.Drawing.Point(660, 1)
-
-        Me.B_Cerrar.Location = New System.Drawing.Point(870, 1)
-
+        Me.B_Cerrar.Location = New System.Drawing.Point(864, -1)
         Me.B_Cerrar.Name = "B_Cerrar"
+        Me.B_Cerrar.Size = New System.Drawing.Size(61, 52)
         Me.B_Cerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.B_Cerrar.TabIndex = 28
         Me.B_Cerrar.TabStop = False
@@ -589,9 +587,9 @@ Partial Class Index
         Me.PCompras.BackColor = System.Drawing.Color.Transparent
         Me.PCompras.Controls.Add(Me.BCompras)
         Me.PCompras.Controls.Add(Me.LCompras)
-        Me.PCompras.Location = New System.Drawing.Point(30, 138)
+        Me.PCompras.Location = New System.Drawing.Point(30, 133)
         Me.PCompras.Name = "PCompras"
-        Me.PCompras.Size = New System.Drawing.Size(61, 72)
+        Me.PCompras.Size = New System.Drawing.Size(61, 85)
         Me.PCompras.TabIndex = 63
         Me.PCompras.Visible = False
         '
@@ -602,7 +600,7 @@ Partial Class Index
         Me.BCompras.BackColor = System.Drawing.Color.Transparent
         Me.BCompras.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.BCompras.Image = Global.NucleosAve.My.Resources.Resources.icons_recibo
-        Me.BCompras.Location = New System.Drawing.Point(3, 1)
+        Me.BCompras.Location = New System.Drawing.Point(3, 7)
         Me.BCompras.Name = "BCompras"
         Me.BCompras.Size = New System.Drawing.Size(55, 52)
         Me.BCompras.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -617,9 +615,9 @@ Partial Class Index
         Me.LCompras.ForeColor = System.Drawing.Color.Black
         Me.LCompras.Location = New System.Drawing.Point(3, 57)
         Me.LCompras.Name = "LCompras"
-        Me.LCompras.Size = New System.Drawing.Size(55, 13)
+        Me.LCompras.Size = New System.Drawing.Size(55, 26)
         Me.LCompras.TabIndex = 36
-        Me.LCompras.Text = "Compras"
+        Me.LCompras.Text = "Compras" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "  Ventas"
         '
         'PCostos
         '
@@ -735,6 +733,8 @@ Partial Class Index
         'PMCompras
         '
         Me.PMCompras.BackColor = System.Drawing.Color.Transparent
+        Me.PMCompras.Controls.Add(Me.Label13)
+        Me.PMCompras.Controls.Add(Me.btn_ventas)
         Me.PMCompras.Controls.Add(Me.LAP)
         Me.PMCompras.Controls.Add(Me.PMPrima)
         Me.PMCompras.Controls.Add(Me.Lpdf)
@@ -748,6 +748,33 @@ Partial Class Index
         Me.PMCompras.Size = New System.Drawing.Size(570, 130)
         Me.PMCompras.TabIndex = 71
         Me.PMCompras.Visible = False
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.BackColor = System.Drawing.Color.Transparent
+        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.ForeColor = System.Drawing.Color.Black
+        Me.Label13.Location = New System.Drawing.Point(474, 80)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(50, 15)
+        Me.Label13.TabIndex = 80
+        Me.Label13.Text = "Ventas"
+        Me.Label13.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'btn_ventas
+        '
+        Me.btn_ventas.AccessibleDescription = "dfghdfgdfhdhfd"
+        Me.btn_ventas.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btn_ventas.BackColor = System.Drawing.Color.Transparent
+        Me.btn_ventas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn_ventas.Image = Global.NucleosAve.My.Resources.Resources.icons8_ventas_totales_64
+        Me.btn_ventas.Location = New System.Drawing.Point(465, 10)
+        Me.btn_ventas.Name = "btn_ventas"
+        Me.btn_ventas.Size = New System.Drawing.Size(65, 65)
+        Me.btn_ventas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_ventas.TabIndex = 79
+        Me.btn_ventas.TabStop = False
         '
         'LAP
         '
@@ -843,6 +870,32 @@ Partial Class Index
         Me.PMCostos.Size = New System.Drawing.Size(570, 130)
         Me.PMCostos.TabIndex = 72
         Me.PMCostos.Visible = False
+        '
+        'PictureBox6
+        '
+        Me.PictureBox6.AccessibleDescription = "dfghdfgdfhdhfd"
+        Me.PictureBox6.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.PictureBox6.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox6.Image = Global.NucleosAve.My.Resources.Resources.icons8_rollo_de_papel_para_empapelar_96
+        Me.PictureBox6.Location = New System.Drawing.Point(181, 9)
+        Me.PictureBox6.Name = "PictureBox6"
+        Me.PictureBox6.Size = New System.Drawing.Size(65, 65)
+        Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox6.TabIndex = 35
+        Me.PictureBox6.TabStop = False
+        '
+        'LVentas
+        '
+        Me.LVentas.AutoSize = True
+        Me.LVentas.BackColor = System.Drawing.Color.Transparent
+        Me.LVentas.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LVentas.ForeColor = System.Drawing.Color.Black
+        Me.LVentas.Location = New System.Drawing.Point(191, 76)
+        Me.LVentas.Name = "LVentas"
+        Me.LVentas.Size = New System.Drawing.Size(46, 13)
+        Me.LVentas.TabIndex = 36
+        Me.LVentas.Text = "Ventas"
         '
         'PMTransporte
         '
@@ -1325,7 +1378,6 @@ Partial Class Index
         Me.PA_R.Name = "PA_R"
         Me.PA_R.Size = New System.Drawing.Size(61, 72)
         Me.PA_R.TabIndex = 77
-        Me.PA_R.Visible = False
         '
         'BA_R
         '
@@ -1604,45 +1656,16 @@ Partial Class Index
         Me.LStatus.TabIndex = 36
         Me.LStatus.Text = "Estatus"
         '
-        'PictureBox6
-        '
-        Me.PictureBox6.AccessibleDescription = "dfghdfgdfhdhfd"
-        Me.PictureBox6.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.PictureBox6.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox6.Image = Global.NucleosAve.My.Resources.Resources.icons8_rollo_de_papel_para_empapelar_96
-        Me.PictureBox6.Location = New System.Drawing.Point(181, 9)
-        Me.PictureBox6.Name = "PictureBox6"
-        Me.PictureBox6.Size = New System.Drawing.Size(65, 65)
-        Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox6.TabIndex = 35
-        Me.PictureBox6.TabStop = False
-        '
-        'LVentas
-        '
-        Me.LVentas.AutoSize = True
-        Me.LVentas.BackColor = System.Drawing.Color.Transparent
-        Me.LVentas.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LVentas.ForeColor = System.Drawing.Color.Black
-        Me.LVentas.Location = New System.Drawing.Point(191, 76)
-        Me.LVentas.Name = "LVentas"
-        Me.LVentas.Size = New System.Drawing.Size(46, 13)
-        Me.LVentas.TabIndex = 36
-        Me.LVentas.Text = "Ventas"
-        '
         'Index
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.NucleosAve.My.Resources.Resources.Fondo
-
-        Me.ClientSize = New System.Drawing.Size(715, 425)
-
         Me.ClientSize = New System.Drawing.Size(926, 425)
+        Me.Controls.Add(Me.PMCompras)
         Me.Controls.Add(Me.PMAlmacen)
         Me.Controls.Add(Me.PMGasolina)
         Me.Controls.Add(Me.PMTransporte)
-        Me.Controls.Add(Me.PMCompras)
         Me.Controls.Add(Me.PMCostos)
         Me.Controls.Add(Me.PStatus)
         Me.Controls.Add(Me.PProcesos)
@@ -1706,11 +1729,13 @@ Partial Class Index
         CType(Me.BAlmac, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PMCompras.ResumeLayout(False)
         Me.PMCompras.PerformLayout()
+        CType(Me.btn_ventas, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PMPrima, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btn_pdf, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Btn_listado, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PMCostos.ResumeLayout(False)
         Me.PMCostos.PerformLayout()
+        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PMTransporte.ResumeLayout(False)
         Me.PMTransporte.PerformLayout()
         CType(Me.btn_fletesyentregas, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1766,7 +1791,6 @@ Partial Class Index
         Me.PStatus.ResumeLayout(False)
         Me.PStatus.PerformLayout()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1884,4 +1908,6 @@ Partial Class Index
     Friend WithEvents PStatus As Panel
     Friend WithEvents PictureBox7 As PictureBox
     Friend WithEvents LStatus As Label
+    Friend WithEvents Label13 As Label
+    Friend WithEvents btn_ventas As PictureBox
 End Class

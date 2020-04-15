@@ -328,6 +328,11 @@
     Private Sub btn_recursos_humanos_Click(sender As Object, e As EventArgs) Handles btn_recursos_humanos.Click
         Rh.Show()
     End Sub
+
+    Private Sub btn_ventas_Click(sender As Object, e As EventArgs) Handles btn_ventas.Click
+        Ventas.Show()
+    End Sub
+
     Private Sub btn_gas_por_mucho_Click(sender As Object, e As EventArgs) Handles btn_gas_por_mucho.Click
         Compra_Conbustible.Show()
     End Sub

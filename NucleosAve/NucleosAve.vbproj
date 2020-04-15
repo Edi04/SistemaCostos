@@ -358,6 +358,12 @@
       <DependentUpon>mostrarTrasportes.xsd</DependentUpon>
     </Compile>
     <Compile Include="MPrima\CRegistroMP.vb" />
+    <Compile Include="MPrima\MPHistorial.designer.vb">
+      <DependentUpon>MPHistorial.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MPrima\MPHistorial.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MPrima\MPInventario.designer.vb">
       <DependentUpon>MPInventario.vb</DependentUpon>
     </Compile>
@@ -489,6 +495,20 @@
     <Compile Include="Trasporte\Servicios_Mantenimiento\ServiciosMantenimiento.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Ventas\ClassVentas.vb" />
+    <Compile Include="Ventas\Fuction_Ventas.vb" />
+    <Compile Include="Ventas\Registros_Ventas.Designer.vb">
+      <DependentUpon>Registros_Ventas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\Registros_Ventas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\Ventas.Designer.vb">
+      <DependentUpon>Ventas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\Ventas.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Compras\ArchivosPDF.resx">
@@ -578,6 +598,9 @@
     <EmbeddedResource Include="Mass\NMMarca.resx">
       <DependentUpon>NMMarca.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MPrima\MPHistorial.resx">
+      <DependentUpon>MPHistorial.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MPrima\MPInventario.resx">
       <DependentUpon>MPInventario.vb</DependentUpon>
     </EmbeddedResource>
@@ -626,6 +649,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Trasporte\Servicios_Mantenimiento\ServiciosMantenimiento.resx">
       <DependentUpon>ServiciosMantenimiento.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\Registros_Ventas.resx">
+      <DependentUpon>Registros_Ventas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\Ventas.resx">
+      <DependentUpon>Ventas.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -818,6 +847,7 @@
     <None Include="Resources\icons8-carretilla-elevadora-80.png" />
     <None Include="Resources\icons8-remolque-240.png" />
     <None Include="Resources\icons8-apretón-de-manos-80 %281%29.png" />
+    <None Include="Resources\icons8-ventas-totales-64.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
