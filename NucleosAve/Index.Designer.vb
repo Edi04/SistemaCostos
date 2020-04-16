@@ -1663,6 +1663,7 @@ Partial Class Index
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.NucleosAve.My.Resources.Resources.Fondo
         Me.ClientSize = New System.Drawing.Size(926, 425)
+        Me.Controls.Add(Me.PMMPrima)
         Me.Controls.Add(Me.PMCompras)
         Me.Controls.Add(Me.PMAlmacen)
         Me.Controls.Add(Me.PMGasolina)
@@ -1673,7 +1674,6 @@ Partial Class Index
         Me.Controls.Add(Me.PSCRAP)
         Me.Controls.Add(Me.PM_recursos_Humanos)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.PMMPrima)
         Me.Controls.Add(Me.PM_Armado_Rectangular)
         Me.Controls.Add(Me.PA_R)
         Me.Controls.Add(Me.PAGasolina)

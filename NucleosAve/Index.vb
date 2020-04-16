@@ -196,7 +196,7 @@
     End Sub
 
     Private Sub BMOHR_Click(sender As Object, e As EventArgs) Handles BMOHR.Click
-        'MPHistorial.Show()
+        MPHistorial.Show()
         WindowState = FormWindowState.Minimized
     End Sub
 
