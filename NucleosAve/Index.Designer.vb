@@ -1378,6 +1378,7 @@ Partial Class Index
         Me.PA_R.Name = "PA_R"
         Me.PA_R.Size = New System.Drawing.Size(61, 72)
         Me.PA_R.TabIndex = 77
+        Me.PA_R.Visible = False
         '
         'BA_R
         '

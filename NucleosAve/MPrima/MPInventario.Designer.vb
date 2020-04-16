@@ -22,17 +22,17 @@ Partial Class MPInventario
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle21 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle22 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.BMinimizar = New System.Windows.Forms.Button()
         Me.BCerrar = New System.Windows.Forms.Button()
         Me.POpc = New System.Windows.Forms.Panel()
@@ -696,8 +696,8 @@ Partial Class MPInventario
         '
         'DVOC
         '
-        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.DVOC.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DVOC.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.DVOC.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.DVOC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DVOC.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.PurchaseOrder, Me.OC, Me.Proveedor, Me.Cantidad, Me.UM, Me.CS, Me.Material, Me.IDDP, Me.Faltante})
@@ -710,8 +710,8 @@ Partial Class MPInventario
         'ID
         '
         Me.ID.DataPropertyName = "id_orden"
-        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.ID.DefaultCellStyle = DataGridViewCellStyle13
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.ID.DefaultCellStyle = DataGridViewCellStyle2
         Me.ID.HeaderText = "ID"
         Me.ID.Name = "ID"
         Me.ID.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
@@ -721,8 +721,8 @@ Partial Class MPInventario
         'PurchaseOrder
         '
         Me.PurchaseOrder.DataPropertyName = "purchase_order"
-        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.PurchaseOrder.DefaultCellStyle = DataGridViewCellStyle14
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.PurchaseOrder.DefaultCellStyle = DataGridViewCellStyle3
         Me.PurchaseOrder.HeaderText = "Orden de Compra"
         Me.PurchaseOrder.Name = "PurchaseOrder"
         Me.PurchaseOrder.Width = 60
@@ -730,8 +730,8 @@ Partial Class MPInventario
         'OC
         '
         Me.OC.DataPropertyName = "codigo"
-        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.OC.DefaultCellStyle = DataGridViewCellStyle15
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.OC.DefaultCellStyle = DataGridViewCellStyle4
         Me.OC.HeaderText = "Orden de Compra"
         Me.OC.Name = "OC"
         Me.OC.Visible = False
@@ -739,8 +739,8 @@ Partial Class MPInventario
         'Proveedor
         '
         Me.Proveedor.DataPropertyName = "nombre"
-        DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        Me.Proveedor.DefaultCellStyle = DataGridViewCellStyle16
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        Me.Proveedor.DefaultCellStyle = DataGridViewCellStyle5
         Me.Proveedor.HeaderText = "Proveedor"
         Me.Proveedor.Name = "Proveedor"
         Me.Proveedor.Width = 190
@@ -748,16 +748,16 @@ Partial Class MPInventario
         'Cantidad
         '
         Me.Cantidad.DataPropertyName = "cantidad"
-        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Cantidad.DefaultCellStyle = DataGridViewCellStyle17
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Cantidad.DefaultCellStyle = DataGridViewCellStyle6
         Me.Cantidad.HeaderText = "Cantidad"
         Me.Cantidad.Name = "Cantidad"
         '
         'UM
         '
         Me.UM.DataPropertyName = "Um"
-        DataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.UM.DefaultCellStyle = DataGridViewCellStyle18
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.UM.DefaultCellStyle = DataGridViewCellStyle7
         Me.UM.HeaderText = "U.Medida"
         Me.UM.Name = "UM"
         Me.UM.Width = 60
@@ -765,8 +765,8 @@ Partial Class MPInventario
         'CS
         '
         Me.CS.DataPropertyName = "CodiS"
-        DataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.CS.DefaultCellStyle = DataGridViewCellStyle19
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.CS.DefaultCellStyle = DataGridViewCellStyle8
         Me.CS.HeaderText = "CS"
         Me.CS.Name = "CS"
         Me.CS.Visible = False
@@ -774,8 +774,8 @@ Partial Class MPInventario
         'Material
         '
         Me.Material.DataPropertyName = "descripcion"
-        DataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Material.DefaultCellStyle = DataGridViewCellStyle20
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Material.DefaultCellStyle = DataGridViewCellStyle9
         Me.Material.HeaderText = "Material"
         Me.Material.Name = "Material"
         Me.Material.Visible = False
@@ -783,8 +783,8 @@ Partial Class MPInventario
         'IDDP
         '
         Me.IDDP.DataPropertyName = "id_pro"
-        DataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.IDDP.DefaultCellStyle = DataGridViewCellStyle21
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.IDDP.DefaultCellStyle = DataGridViewCellStyle10
         Me.IDDP.HeaderText = "IDDP"
         Me.IDDP.Name = "IDDP"
         Me.IDDP.Visible = False
@@ -792,8 +792,8 @@ Partial Class MPInventario
         'Faltante
         '
         Me.Faltante.DataPropertyName = "Faltante"
-        DataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Faltante.DefaultCellStyle = DataGridViewCellStyle22
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Faltante.DefaultCellStyle = DataGridViewCellStyle11
         Me.Faltante.HeaderText = "Faltante"
         Me.Faltante.Name = "Faltante"
         '
@@ -3980,6 +3980,7 @@ Partial Class MPInventario
         Me.TxtPedimento.Size = New System.Drawing.Size(96, 20)
         Me.TxtPedimento.TabIndex = 93
         Me.TxtPedimento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TxtPedimento.Visible = False
         '
         'LPedimento
         '
@@ -3991,6 +3992,7 @@ Partial Class MPInventario
         Me.LPedimento.Size = New System.Drawing.Size(73, 16)
         Me.LPedimento.TabIndex = 94
         Me.LPedimento.Text = "Pedimento"
+        Me.LPedimento.Visible = False
         '
         'Label2
         '
@@ -4002,6 +4004,7 @@ Partial Class MPInventario
         Me.Label2.Size = New System.Drawing.Size(105, 13)
         Me.Label2.TabIndex = 95
         Me.Label2.Text = "Ejem: 3387-0000422"
+        Me.Label2.Visible = False
         '
         'MPInventario
         '

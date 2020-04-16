@@ -118,7 +118,7 @@ Public Class MPInventario
         Conex.Close()
 
         TxtPedimento.ReadOnly = False
-        TxtPedimento.Text = ""
+        TxtPedimento.Text = "1"
     End Sub
 
     Private Sub BGMP_Click(sender As Object, e As EventArgs) Handles BGMP.Click
