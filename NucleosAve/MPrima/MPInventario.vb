@@ -34,7 +34,7 @@ Public Class MPInventario
     End Sub
 
     Private Sub DVOC_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DVOC.CellContentClick
-        Dim OC, Prove, UMS, Mat, CodS, Codi, Fal As String
+        Dim OC, Prove, UMS, Mat, CodS, Codi, Fal, Det As String
         Dim Exis As Double
         Dim id_orden, ip_pr As Integer
         Dim row As DataGridViewRow = DVOC.Rows(e.RowIndex)
@@ -73,10 +73,13 @@ Public Class MPInventario
         Mat = row.Cells(7).Value
         TxtMaterial.Text = Mat
 
-        ip_pr = row.Cells(8).Value
+        Det = row.Cells(8).Value
+        TxtDetalles.Text = Det
+
+        ip_pr = row.Cells(9).Value
         ip_pro.Text = ip_pr
 
-        Fal = row.Cells(9).Value
+        Fal = row.Cells(10).Value
         TxtCR.Text = Fal
 
         Panel2.Visible = False
@@ -1507,22 +1510,47 @@ Public Class MPInventario
 
 
     Private Sub BTerminar_Click(sender As Object, e As EventArgs) Handles BTerminar.Click
-        If MsgBox("Desea Finalizar la Entrega de Materia Prima", vbYesNo) = vbYes Then
+        If (TxtAncho1.Text = "" And TxtCalibre1.Text = "" And TxtPeso1.Text = "" And TxtNumRollo1.Text = "" And TxtNRolI1.Text = "" And TxtObser1.Text = "") Or
+           (TxtAncho2.Text = "" And TxtCalibre2.Text = "" And TxtPeso2.Text = "" And TxtNumRollo2.Text = "" And TxtNRoll2.Text = "" And TxtObser2.Text = "") Or
+           (TxtAncho3.Text = "" And TxtCalibre3.Text = "" And TxtPeso3.Text = "" And TxtNumRollo3.Text = "" And TxtNRoll3.Text = "" And TxtObser3.Text = "") Or
+           (TxtAncho4.Text = "" And TxtCalibre4.Text = "" And TxtPeso4.Text = "" And TxtNumRollo4.Text = "" And TxtNRoll4.Text = "" And TxtObser4.Text = "") Or
+           (TxtAncho5.Text = "" And TxtCalibre5.Text = "" And TxtPeso5.Text = "" And TxtNumRollo5.Text = "" And TxtNRoll5.Text = "" And TxtObser5.Text = "") Or
+           (TxtAncho6.Text = "" And TxtCalibre6.Text = "" And TxtPeso6.Text = "" And TxtNumRollo6.Text = "" And TxtNRoll6.Text = "" And TxtObser6.Text = "") Or
+           (TxtAncho7.Text = "" And TxtCalibre7.Text = "" And TxtPeso7.Text = "" And TxtNumRollo7.Text = "" And TxtNRoll7.Text = "" And TxtObser7.Text = "") Or
+           (TxtAncho8.Text = "" And TxtCalibre8.Text = "" And TxtPeso8.Text = "" And TxtNumRollo8.Text = "" And TxtNRoll8.Text = "" And TxtObser8.Text = "") Or
+           (TxtAncho9.Text = "" And TxtCalibre9.Text = "" And TxtPeso9.Text = "" And TxtNumRollo9.Text = "" And TxtNRoll9.Text = "" And TxtObser9.Text = "") Or
+           (TxtAncho10.Text = "" And TxtCalibre10.Text = "" And TxtPeso10.Text = "" And TxtNumRollo10.Text = "" And TxtNRoll10.Text = "" And TxtObser10.Text = "") Or
+           (TxtAncho11.Text = "" And TxtCalibre11.Text = "" And TxtPeso11.Text = "" And TxtNumRollo11.Text = "" And TxtNRoll11.Text = "" And TxtObser11.Text = "") Or
+           (TxtAncho12.Text = "" And TxtCalibre12.Text = "" And TxtPeso12.Text = "" And TxtNumRollo12.Text = "" And TxtNRoll12.Text = "" And TxtObser12.Text = "") Or
+           (TxtAncho13.Text = "" And TxtCalibre13.Text = "" And TxtPeso13.Text = "" And TxtNumRollo13.Text = "" And TxtNRoll13.Text = "" And TxtObser13.Text = "") Or
+           (TxtAncho14.Text = "" And TxtCalibre14.Text = "" And TxtPeso14.Text = "" And TxtNumRollo14.Text = "" And TxtNRoll14.Text = "" And TxtObser14.Text = "") Or
+           (TxtAncho15.Text = "" And TxtCalibre15.Text = "" And TxtPeso15.Text = "" And TxtNumRollo15.Text = "" And TxtNRoll15.Text = "" And TxtObser15.Text = "") Or
+           (TxtAncho16.Text = "" And TxtCalibre16.Text = "" And TxtPeso16.Text = "" And TxtNumRollo16.Text = "" And TxtNRoll16.Text = "" And TxtObser16.Text = "") Or
+           (TxtAncho17.Text = "" And TxtCalibre17.Text = "" And TxtPeso17.Text = "" And TxtNumRollo17.Text = "" And TxtNRoll17.Text = "" And TxtObser17.Text = "") Or
+           (TxtAncho18.Text = "" And TxtCalibre18.Text = "" And TxtPeso18.Text = "" And TxtNumRollo18.Text = "" And TxtNRoll18.Text = "" And TxtObser18.Text = "") Or
+           (TxtAncho19.Text = "" And TxtCalibre19.Text = "" And TxtPeso19.Text = "" And TxtNumRollo19.Text = "" And TxtNRoll19.Text = "" And TxtObser19.Text = "") Or
+           (TxtAncho20.Text = "" And TxtCalibre20.Text = "" And TxtPeso20.Text = "" And TxtNumRollo20.Text = "" And TxtNRoll20.Text = "" And TxtObser20.Text = "") Then
 
-            Dim CodS As String = LIDO.Text
+            If MsgBox("Desea Finalizar la Entrega de Materia Prima", vbYesNo) = vbYes Then
 
-            Conex.Open()
-            Dim CONSULTA As String = "UPDATE TB_Ordenes_Compra 
+                Dim CodS As String = LIDO.Text
+
+                Conex.Open()
+                Dim CONSULTA As String = "UPDATE TB_Ordenes_Compra 
                                         SET estado = 'Finalizado'
                                         WHERE id_orden = '" & CodS & "'"
 
-            Dim COMANDO As New SqlCommand(CONSULTA, Conex)
+                Dim COMANDO As New SqlCommand(CONSULTA, Conex)
 
-            COMANDO.ExecuteNonQuery()
+                COMANDO.ExecuteNonQuery()
 
-            Conex.Close()
+                Conex.Close()
 
-            BGMP.Enabled = False
+                BGMP.Enabled = False
+            End If
+
+        Else
+            MessageBox.Show("Guardar datos para poder finalizar la orden de compra", "Advertencia", MessageBoxButtons.OK)
         End If
     End Sub
 
@@ -1531,24 +1559,31 @@ Public Class MPInventario
     Private Sub TxtBOC_TextChanged(sender As Object, e As EventArgs) Handles TxtBOC.TextChanged
         If TxtBOC.Text = "" Then
         Else
-            Dim Consulta As String = "SELECT OC.id_orden, OC.purchase_order, OC.codigo, P.nombre, OD.cantidad, OD.Um, OC.CodiS, OD.descripcion, OD.id_pro, case OD.Um 
-		                                    When 'MT'
-		                                        Then OD.cantidad * 1000 - IsNull(Od.estatus, 0)
-                                            When 'MT'
-		                                        Then OD.cantidad * 1000 - IsNull(Od.estatus, 0)
-		                                    WHEN 'KG'
-		                                        THEN OD.cantidad - IsNull(Od.estatus, 0)
-		                                    END AS 'Faltante'
+            Dim Consulta As String = "SELECT OC.id_orden, OC.purchase_order, OC.codigo, P.nombre, OD.cantidad, OD.Um,OC.CodiS, OD.descripcion, 
+                                             OD.detalles, OD.id_pro, case OD.Um 
+		                                                                    When 'MT'
+		                                                                        THEN OD.cantidad * 1000 - IsNull(Od.estatus, 0)
+		                                                                    When 'TON'
+		                                                                        THEN OD.cantidad * 1000 - IsNull(Od.estatus, 0)
+		                                                                    WHEN 'KG'
+		                                                                        THEN OD.cantidad - IsNull(Od.estatus, 0)
+		                                                                    END AS 'Faltante'
                                       FROM TB_Ordenes_Compra as OC
                                           INNER JOIN Tb_Proveedores AS P ON P.id_p = OC.id_pro
                                           INNER JOIN TB_Ordenes_Detalle AS OD ON OD.codigo = OC.codigo
+                                          INNER JOIN TB_Productos AS PR ON OD.descripcion = PR.Nombre_Producto
                                       WHERE OC.estado = 'Activo' AND 
-                                            OC.purchase_order like '%'+@Busqueda+'%' AND 
-                                               (OD.descripcion LIKE '%GRAIN%' OR
-                                                OD.descripcion LIKE '%STEEL%' OR
-                                                OD.descripcion LIKE '%SILICON%' OR
-                                                OD.descripcion LIKE '%SILICIO%' OR
-                                                OD.descripcion LIKE '%GRADE%')"
+                                            PR.Estado = 'MPActivo' AND 
+                                            OC.purchase_order LIKE '%'+@Busqueda+'%'
+                                      GROUP BY OC.id_orden, OC.purchase_order, OC.codigo, P.nombre, OD.cantidad, OD.Um, OC.CodiS, OD.descripcion, 
+                                            od.detalles, OD.id_pro, case OD.Um 
+		                                                                When 'MT'
+		                                                                    THEN OD.cantidad * 1000 - IsNull(Od.estatus, 0)
+		                                                                When 'TON'
+		                                                                    THEN OD.cantidad * 1000 - IsNull(Od.estatus, 0)
+		                                                                WHEN 'KG'
+		                                                                    THEN OD.cantidad - IsNull(Od.estatus, 0)
+		                                                                END "
 
             Dim cmd As New SqlCommand(Consulta, Conex)
             cmd.Parameters.AddWithValue("@Busqueda", Trim(TxtBOC.Text))
@@ -1617,6 +1652,52 @@ Public Class MPInventario
         End If
 
         Da.Close()
+        Conex.Close()
+    End Sub
+
+    Private Sub Calibre()
+        Dim Consulta As String = "SELECT OC.id_orden, OC.purchase_order, OC.codigo, P.nombre, OD.cantidad, OD.Um,OC.CodiS, OD.descripcion, 
+                                             OD.detalles, OD.id_pro, case OD.Um 
+		                                                                    When 'MT'
+		                                                                        THEN OD.cantidad * 1000 - IsNull(Od.estatus, 0)
+		                                                                    When 'TON'
+		                                                                        THEN OD.cantidad * 1000 - IsNull(Od.estatus, 0)
+		                                                                    WHEN 'KG'
+		                                                                        THEN OD.cantidad - IsNull(Od.estatus, 0)
+		                                                                    END AS 'Faltante'
+                                      FROM TB_Ordenes_Compra as OC
+                                          INNER JOIN Tb_Proveedores AS P ON P.id_p = OC.id_pro
+                                          INNER JOIN TB_Ordenes_Detalle AS OD ON OD.codigo = OC.codigo
+                                          INNER JOIN TB_Productos AS PR ON OD.descripcion = PR.Nombre_Producto
+                                      WHERE OC.estado = 'Activo' AND 
+                                            PR.Estado = 'MPActivo' AND 
+                                            OC.purchase_order LIKE '%'+@Busqueda+'%'
+                                      GROUP BY OC.id_orden, OC.purchase_order, OC.codigo, P.nombre, OD.cantidad, OD.Um, OC.CodiS, OD.descripcion, 
+                                            od.detalles, OD.id_pro, case OD.Um 
+		                                                                When 'MT'
+		                                                                    THEN OD.cantidad * 1000 - IsNull(Od.estatus, 0)
+		                                                                When 'TON'
+		                                                                    THEN OD.cantidad * 1000 - IsNull(Od.estatus, 0)
+		                                                                WHEN 'KG'
+		                                                                    THEN OD.cantidad - IsNull(Od.estatus, 0)
+		                                                                END "
+
+        Dim cmd As New SqlCommand(Consulta, Conex)
+
+        Dim Da As New SqlDataAdapter(cmd)
+        Dim Ds As New DataSet
+
+        Try
+            Conex.Open()
+            Da.Fill(Ds)
+
+            DGVCA.DataSource = Ds.Tables(0)
+            Da.Dispose()
+
+        Catch ex As Exception
+            MessageBox.Show(Err.Description.ToString(), "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+
         Conex.Close()
     End Sub
 

@@ -102,3 +102,5 @@ Public Class MPHistorial
         If Arrastre Then Me.Location = Me.PointToScreen(New Point(MousePosition.X - Me.Location.X - ex, MousePosition.Y - Me.Location.Y - ey))
     End Sub
 End Class
+
+

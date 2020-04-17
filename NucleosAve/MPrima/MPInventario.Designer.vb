@@ -22,17 +22,19 @@ Partial Class MPInventario
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle21 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle22 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle23 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle24 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle25 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle26 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.BMinimizar = New System.Windows.Forms.Button()
         Me.BCerrar = New System.Windows.Forms.Button()
         Me.POpc = New System.Windows.Forms.Panel()
@@ -72,6 +74,7 @@ Partial Class MPInventario
         Me.CS = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Material = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.IDDP = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Detalles = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Faltante = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.TxtCR = New System.Windows.Forms.TextBox()
@@ -369,6 +372,14 @@ Partial Class MPInventario
         Me.TxtPedimento = New System.Windows.Forms.TextBox()
         Me.LPedimento = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.TxtDetalles = New System.Windows.Forms.TextBox()
+        Me.BC1 = New System.Windows.Forms.Button()
+        Me.PCalibres = New System.Windows.Forms.Panel()
+        Me.DGVCA = New System.Windows.Forms.DataGridView()
+        Me.LCalibre = New System.Windows.Forms.Label()
+        Me.IDC = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CodigoC = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CalibreC = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.POpc.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -395,6 +406,8 @@ Partial Class MPInventario
         Me.Rollo2.SuspendLayout()
         Me.Rollo1.SuspendLayout()
         Me.TRollos.SuspendLayout()
+        Me.PCalibres.SuspendLayout()
+        CType(Me.DGVCA, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BMinimizar
@@ -402,7 +415,7 @@ Partial Class MPInventario
         Me.BMinimizar.BackColor = System.Drawing.Color.Transparent
         Me.BMinimizar.BackgroundImage = Global.NucleosAve.My.Resources.Resources.icons8_minimizar_la_ventana_5001
         Me.BMinimizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.BMinimizar.Location = New System.Drawing.Point(481, 2)
+        Me.BMinimizar.Location = New System.Drawing.Point(752, 3)
         Me.BMinimizar.Name = "BMinimizar"
         Me.BMinimizar.Size = New System.Drawing.Size(50, 50)
         Me.BMinimizar.TabIndex = 1
@@ -413,7 +426,7 @@ Partial Class MPInventario
         Me.BCerrar.BackColor = System.Drawing.Color.Transparent
         Me.BCerrar.BackgroundImage = Global.NucleosAve.My.Resources.Resources.icons8_cerrar_ventana_5001
         Me.BCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.BCerrar.Location = New System.Drawing.Point(537, 2)
+        Me.BCerrar.Location = New System.Drawing.Point(808, 3)
         Me.BCerrar.Name = "BCerrar"
         Me.BCerrar.Size = New System.Drawing.Size(50, 50)
         Me.BCerrar.TabIndex = 2
@@ -424,7 +437,7 @@ Partial Class MPInventario
         Me.POpc.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.POpc.BackColor = System.Drawing.Color.SteelBlue
         Me.POpc.Controls.Add(Me.LCS)
-        Me.POpc.Location = New System.Drawing.Point(-161, 56)
+        Me.POpc.Location = New System.Drawing.Point(-29, 56)
         Me.POpc.Name = "POpc"
         Me.POpc.Size = New System.Drawing.Size(920, 10)
         Me.POpc.TabIndex = 3
@@ -443,7 +456,7 @@ Partial Class MPInventario
         Me.LMateriaPrimaA.AutoSize = True
         Me.LMateriaPrimaA.BackColor = System.Drawing.Color.Transparent
         Me.LMateriaPrimaA.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LMateriaPrimaA.Location = New System.Drawing.Point(243, 69)
+        Me.LMateriaPrimaA.Location = New System.Drawing.Point(362, 69)
         Me.LMateriaPrimaA.Name = "LMateriaPrimaA"
         Me.LMateriaPrimaA.Size = New System.Drawing.Size(124, 24)
         Me.LMateriaPrimaA.TabIndex = 0
@@ -454,7 +467,7 @@ Partial Class MPInventario
         Me.LFLL.AutoSize = True
         Me.LFLL.BackColor = System.Drawing.Color.Transparent
         Me.LFLL.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LFLL.Location = New System.Drawing.Point(126, 100)
+        Me.LFLL.Location = New System.Drawing.Point(245, 103)
         Me.LFLL.Name = "LFLL"
         Me.LFLL.Size = New System.Drawing.Size(118, 16)
         Me.LFLL.TabIndex = 0
@@ -462,15 +475,14 @@ Partial Class MPInventario
         '
         'DTFechaLl
         '
-        Me.DTFechaLl.Location = New System.Drawing.Point(86, 119)
+        Me.DTFechaLl.Location = New System.Drawing.Point(205, 122)
         Me.DTFechaLl.Name = "DTFechaLl"
         Me.DTFechaLl.Size = New System.Drawing.Size(200, 20)
         Me.DTFechaLl.TabIndex = 4
         '
         'DTFechaR
         '
-        Me.DTFechaR.Enabled = False
-        Me.DTFechaR.Location = New System.Drawing.Point(306, 119)
+        Me.DTFechaR.Location = New System.Drawing.Point(425, 122)
         Me.DTFechaR.Name = "DTFechaR"
         Me.DTFechaR.Size = New System.Drawing.Size(200, 20)
         Me.DTFechaR.TabIndex = 0
@@ -480,7 +492,7 @@ Partial Class MPInventario
         Me.LFR.AutoSize = True
         Me.LFR.BackColor = System.Drawing.Color.Transparent
         Me.LFR.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LFR.Location = New System.Drawing.Point(346, 100)
+        Me.LFR.Location = New System.Drawing.Point(465, 103)
         Me.LFR.Name = "LFR"
         Me.LFR.Size = New System.Drawing.Size(119, 16)
         Me.LFR.TabIndex = 0
@@ -491,7 +503,7 @@ Partial Class MPInventario
         Me.LProveedor.AutoSize = True
         Me.LProveedor.BackColor = System.Drawing.Color.Transparent
         Me.LProveedor.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LProveedor.Location = New System.Drawing.Point(258, 154)
+        Me.LProveedor.Location = New System.Drawing.Point(377, 158)
         Me.LProveedor.Name = "LProveedor"
         Me.LProveedor.Size = New System.Drawing.Size(72, 16)
         Me.LProveedor.TabIndex = 0
@@ -499,10 +511,11 @@ Partial Class MPInventario
         '
         'TxtMaterial
         '
-        Me.TxtMaterial.Location = New System.Drawing.Point(86, 215)
+        Me.TxtMaterial.Location = New System.Drawing.Point(16, 209)
+        Me.TxtMaterial.Multiline = True
         Me.TxtMaterial.Name = "TxtMaterial"
         Me.TxtMaterial.ReadOnly = True
-        Me.TxtMaterial.Size = New System.Drawing.Size(422, 20)
+        Me.TxtMaterial.Size = New System.Drawing.Size(422, 39)
         Me.TxtMaterial.TabIndex = 0
         Me.TxtMaterial.Text = "Acero al Silicio"
         Me.TxtMaterial.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -529,7 +542,7 @@ Partial Class MPInventario
         '
         'TxtCE
         '
-        Me.TxtCE.Location = New System.Drawing.Point(444, 348)
+        Me.TxtCE.Location = New System.Drawing.Point(618, 348)
         Me.TxtCE.Name = "TxtCE"
         Me.TxtCE.ReadOnly = True
         Me.TxtCE.Size = New System.Drawing.Size(96, 20)
@@ -542,7 +555,7 @@ Partial Class MPInventario
         Me.LCanE.AutoSize = True
         Me.LCanE.BackColor = System.Drawing.Color.Transparent
         Me.LCanE.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LCanE.Location = New System.Drawing.Point(438, 329)
+        Me.LCanE.Location = New System.Drawing.Point(612, 329)
         Me.LCanE.Name = "LCanE"
         Me.LCanE.Size = New System.Drawing.Size(114, 16)
         Me.LCanE.TabIndex = 0
@@ -552,7 +565,7 @@ Partial Class MPInventario
         '
         Me.TxtProveedor.BackColor = System.Drawing.Color.White
         Me.TxtProveedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtProveedor.Location = New System.Drawing.Point(86, 179)
+        Me.TxtProveedor.Location = New System.Drawing.Point(205, 183)
         Me.TxtProveedor.Name = "TxtProveedor"
         Me.TxtProveedor.ReadOnly = True
         Me.TxtProveedor.Size = New System.Drawing.Size(422, 20)
@@ -596,7 +609,7 @@ Partial Class MPInventario
         Me.LKGE.AutoSize = True
         Me.LKGE.BackColor = System.Drawing.Color.White
         Me.LKGE.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LKGE.Location = New System.Drawing.Point(540, 285)
+        Me.LKGE.Location = New System.Drawing.Point(714, 285)
         Me.LKGE.Name = "LKGE"
         Me.LKGE.Size = New System.Drawing.Size(26, 16)
         Me.LKGE.TabIndex = 0
@@ -624,12 +637,12 @@ Partial Class MPInventario
         Me.Panel1.Controls.Add(Me.DVOC)
         Me.Panel1.Location = New System.Drawing.Point(7, 50)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(568, 425)
+        Me.Panel1.Size = New System.Drawing.Size(830, 425)
         Me.Panel1.TabIndex = 61
         '
         'TxtBOC
         '
-        Me.TxtBOC.Location = New System.Drawing.Point(443, 99)
+        Me.TxtBOC.Location = New System.Drawing.Point(583, 99)
         Me.TxtBOC.Name = "TxtBOC"
         Me.TxtBOC.Size = New System.Drawing.Size(104, 20)
         Me.TxtBOC.TabIndex = 71
@@ -640,7 +653,7 @@ Partial Class MPInventario
         Me.GroupBox1.Controls.Add(Me.BBOC1)
         Me.GroupBox1.Controls.Add(Me.DTF2)
         Me.GroupBox1.Controls.Add(Me.DTF1)
-        Me.GroupBox1.Location = New System.Drawing.Point(13, 28)
+        Me.GroupBox1.Location = New System.Drawing.Point(153, 28)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(426, 138)
         Me.GroupBox1.TabIndex = 70
@@ -677,7 +690,7 @@ Partial Class MPInventario
         Me.LBOD.AutoSize = True
         Me.LBOD.BackColor = System.Drawing.Color.Transparent
         Me.LBOD.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LBOD.Location = New System.Drawing.Point(439, 78)
+        Me.LBOD.Location = New System.Drawing.Point(579, 78)
         Me.LBOD.Name = "LBOD"
         Me.LBOD.Size = New System.Drawing.Size(115, 16)
         Me.LBOD.TabIndex = 72
@@ -688,7 +701,7 @@ Partial Class MPInventario
         Me.LBOC.AutoSize = True
         Me.LBOC.BackColor = System.Drawing.Color.Transparent
         Me.LBOC.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LBOC.Location = New System.Drawing.Point(204, 1)
+        Me.LBOC.Location = New System.Drawing.Point(333, 1)
         Me.LBOC.Name = "LBOC"
         Me.LBOC.Size = New System.Drawing.Size(163, 24)
         Me.LBOC.TabIndex = 65
@@ -696,22 +709,22 @@ Partial Class MPInventario
         '
         'DVOC
         '
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.DVOC.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DVOC.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle14
         Me.DVOC.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.DVOC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DVOC.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.PurchaseOrder, Me.OC, Me.Proveedor, Me.Cantidad, Me.UM, Me.CS, Me.Material, Me.IDDP, Me.Faltante})
+        Me.DVOC.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.PurchaseOrder, Me.OC, Me.Proveedor, Me.Cantidad, Me.UM, Me.CS, Me.Material, Me.IDDP, Me.Detalles, Me.Faltante})
         Me.DVOC.GridColor = System.Drawing.Color.White
         Me.DVOC.Location = New System.Drawing.Point(3, 172)
         Me.DVOC.Name = "DVOC"
-        Me.DVOC.Size = New System.Drawing.Size(562, 248)
+        Me.DVOC.Size = New System.Drawing.Size(824, 248)
         Me.DVOC.TabIndex = 67
         '
         'ID
         '
         Me.ID.DataPropertyName = "id_orden"
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.ID.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.ID.DefaultCellStyle = DataGridViewCellStyle15
         Me.ID.HeaderText = "ID"
         Me.ID.Name = "ID"
         Me.ID.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
@@ -721,17 +734,17 @@ Partial Class MPInventario
         'PurchaseOrder
         '
         Me.PurchaseOrder.DataPropertyName = "purchase_order"
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.PurchaseOrder.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.PurchaseOrder.DefaultCellStyle = DataGridViewCellStyle16
         Me.PurchaseOrder.HeaderText = "Orden de Compra"
         Me.PurchaseOrder.Name = "PurchaseOrder"
-        Me.PurchaseOrder.Width = 60
+        Me.PurchaseOrder.Width = 80
         '
         'OC
         '
         Me.OC.DataPropertyName = "codigo"
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.OC.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.OC.DefaultCellStyle = DataGridViewCellStyle17
         Me.OC.HeaderText = "Orden de Compra"
         Me.OC.Name = "OC"
         Me.OC.Visible = False
@@ -739,25 +752,25 @@ Partial Class MPInventario
         'Proveedor
         '
         Me.Proveedor.DataPropertyName = "nombre"
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        Me.Proveedor.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        Me.Proveedor.DefaultCellStyle = DataGridViewCellStyle18
         Me.Proveedor.HeaderText = "Proveedor"
         Me.Proveedor.Name = "Proveedor"
-        Me.Proveedor.Width = 190
+        Me.Proveedor.Width = 200
         '
         'Cantidad
         '
         Me.Cantidad.DataPropertyName = "cantidad"
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Cantidad.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Cantidad.DefaultCellStyle = DataGridViewCellStyle19
         Me.Cantidad.HeaderText = "Cantidad"
         Me.Cantidad.Name = "Cantidad"
         '
         'UM
         '
         Me.UM.DataPropertyName = "Um"
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.UM.DefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.UM.DefaultCellStyle = DataGridViewCellStyle20
         Me.UM.HeaderText = "U.Medida"
         Me.UM.Name = "UM"
         Me.UM.Width = 60
@@ -765,8 +778,8 @@ Partial Class MPInventario
         'CS
         '
         Me.CS.DataPropertyName = "CodiS"
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.CS.DefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.CS.DefaultCellStyle = DataGridViewCellStyle21
         Me.CS.HeaderText = "CS"
         Me.CS.Name = "CS"
         Me.CS.Visible = False
@@ -774,8 +787,8 @@ Partial Class MPInventario
         'Material
         '
         Me.Material.DataPropertyName = "descripcion"
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Material.DefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Material.DefaultCellStyle = DataGridViewCellStyle22
         Me.Material.HeaderText = "Material"
         Me.Material.Name = "Material"
         Me.Material.Visible = False
@@ -783,17 +796,24 @@ Partial Class MPInventario
         'IDDP
         '
         Me.IDDP.DataPropertyName = "id_pro"
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.IDDP.DefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.IDDP.DefaultCellStyle = DataGridViewCellStyle23
         Me.IDDP.HeaderText = "IDDP"
         Me.IDDP.Name = "IDDP"
         Me.IDDP.Visible = False
         '
+        'Detalles
+        '
+        Me.Detalles.DataPropertyName = "detalles"
+        Me.Detalles.HeaderText = "Detalles"
+        Me.Detalles.Name = "Detalles"
+        Me.Detalles.Width = 180
+        '
         'Faltante
         '
         Me.Faltante.DataPropertyName = "Faltante"
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Faltante.DefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Faltante.DefaultCellStyle = DataGridViewCellStyle24
         Me.Faltante.HeaderText = "Faltante"
         Me.Faltante.Name = "Faltante"
         '
@@ -802,15 +822,15 @@ Partial Class MPInventario
         Me.Panel2.BackColor = System.Drawing.Color.SteelBlue
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Panel2.Controls.Add(Me.Panel1)
-        Me.Panel2.Location = New System.Drawing.Point(4, 73)
+        Me.Panel2.Location = New System.Drawing.Point(848, 91)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(589, 505)
+        Me.Panel2.Size = New System.Drawing.Size(844, 505)
         Me.Panel2.TabIndex = 62
         Me.Panel2.Visible = False
         '
         'TxtCR
         '
-        Me.TxtCR.Location = New System.Drawing.Point(444, 283)
+        Me.TxtCR.Location = New System.Drawing.Point(618, 283)
         Me.TxtCR.Name = "TxtCR"
         Me.TxtCR.ReadOnly = True
         Me.TxtCR.Size = New System.Drawing.Size(96, 20)
@@ -823,7 +843,7 @@ Partial Class MPInventario
         Me.LCR.AutoSize = True
         Me.LCR.BackColor = System.Drawing.Color.Transparent
         Me.LCR.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LCR.Location = New System.Drawing.Point(438, 264)
+        Me.LCR.Location = New System.Drawing.Point(612, 264)
         Me.LCR.Name = "LCR"
         Me.LCR.Size = New System.Drawing.Size(119, 16)
         Me.LCR.TabIndex = 0
@@ -834,7 +854,7 @@ Partial Class MPInventario
         Me.BGMP.BackColor = System.Drawing.Color.Transparent
         Me.BGMP.BackgroundImage = Global.NucleosAve.My.Resources.Resources.file_1411
         Me.BGMP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.BGMP.Location = New System.Drawing.Point(468, 393)
+        Me.BGMP.Location = New System.Drawing.Point(642, 393)
         Me.BGMP.Name = "BGMP"
         Me.BGMP.Size = New System.Drawing.Size(50, 50)
         Me.BGMP.TabIndex = 65
@@ -890,7 +910,7 @@ Partial Class MPInventario
         Me.LKGCE.AutoSize = True
         Me.LKGCE.BackColor = System.Drawing.Color.White
         Me.LKGCE.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LKGCE.Location = New System.Drawing.Point(540, 349)
+        Me.LKGCE.Location = New System.Drawing.Point(714, 349)
         Me.LKGCE.Name = "LKGCE"
         Me.LKGCE.Size = New System.Drawing.Size(26, 16)
         Me.LKGCE.TabIndex = 0
@@ -915,7 +935,7 @@ Partial Class MPInventario
         Me.Rollo20.Location = New System.Drawing.Point(4, 22)
         Me.Rollo20.Name = "Rollo20"
         Me.Rollo20.Padding = New System.Windows.Forms.Padding(3)
-        Me.Rollo20.Size = New System.Drawing.Size(412, 293)
+        Me.Rollo20.Size = New System.Drawing.Size(444, 293)
         Me.Rollo20.TabIndex = 19
         Me.Rollo20.Text = "Rollo20"
         '
@@ -1066,7 +1086,7 @@ Partial Class MPInventario
         Me.Rollo19.Location = New System.Drawing.Point(4, 22)
         Me.Rollo19.Name = "Rollo19"
         Me.Rollo19.Padding = New System.Windows.Forms.Padding(3)
-        Me.Rollo19.Size = New System.Drawing.Size(412, 293)
+        Me.Rollo19.Size = New System.Drawing.Size(444, 293)
         Me.Rollo19.TabIndex = 18
         Me.Rollo19.Text = "Rollo19"
         '
@@ -1217,7 +1237,7 @@ Partial Class MPInventario
         Me.Rollo18.Location = New System.Drawing.Point(4, 22)
         Me.Rollo18.Name = "Rollo18"
         Me.Rollo18.Padding = New System.Windows.Forms.Padding(3)
-        Me.Rollo18.Size = New System.Drawing.Size(412, 293)
+        Me.Rollo18.Size = New System.Drawing.Size(444, 293)
         Me.Rollo18.TabIndex = 17
         Me.Rollo18.Text = "Rollo18"
         '
@@ -1368,7 +1388,7 @@ Partial Class MPInventario
         Me.Rollo17.Location = New System.Drawing.Point(4, 22)
         Me.Rollo17.Name = "Rollo17"
         Me.Rollo17.Padding = New System.Windows.Forms.Padding(3)
-        Me.Rollo17.Size = New System.Drawing.Size(412, 293)
+        Me.Rollo17.Size = New System.Drawing.Size(444, 293)
         Me.Rollo17.TabIndex = 16
         Me.Rollo17.Text = "Rollo17"
         '
@@ -1519,7 +1539,7 @@ Partial Class MPInventario
         Me.Rollo16.Location = New System.Drawing.Point(4, 22)
         Me.Rollo16.Name = "Rollo16"
         Me.Rollo16.Padding = New System.Windows.Forms.Padding(3)
-        Me.Rollo16.Size = New System.Drawing.Size(412, 293)
+        Me.Rollo16.Size = New System.Drawing.Size(444, 293)
         Me.Rollo16.TabIndex = 15
         Me.Rollo16.Text = "Rollo16"
         '
@@ -1670,7 +1690,7 @@ Partial Class MPInventario
         Me.Rollo15.Location = New System.Drawing.Point(4, 22)
         Me.Rollo15.Name = "Rollo15"
         Me.Rollo15.Padding = New System.Windows.Forms.Padding(3)
-        Me.Rollo15.Size = New System.Drawing.Size(412, 293)
+        Me.Rollo15.Size = New System.Drawing.Size(444, 293)
         Me.Rollo15.TabIndex = 14
         Me.Rollo15.Text = "Rollo15"
         '
@@ -1821,7 +1841,7 @@ Partial Class MPInventario
         Me.Rollo14.Location = New System.Drawing.Point(4, 22)
         Me.Rollo14.Name = "Rollo14"
         Me.Rollo14.Padding = New System.Windows.Forms.Padding(3)
-        Me.Rollo14.Size = New System.Drawing.Size(412, 293)
+        Me.Rollo14.Size = New System.Drawing.Size(444, 293)
         Me.Rollo14.TabIndex = 13
         Me.Rollo14.Text = "Rollo14"
         '
@@ -1972,7 +1992,7 @@ Partial Class MPInventario
         Me.Rollo13.Location = New System.Drawing.Point(4, 22)
         Me.Rollo13.Name = "Rollo13"
         Me.Rollo13.Padding = New System.Windows.Forms.Padding(3)
-        Me.Rollo13.Size = New System.Drawing.Size(412, 293)
+        Me.Rollo13.Size = New System.Drawing.Size(444, 293)
         Me.Rollo13.TabIndex = 12
         Me.Rollo13.Text = "Rollo13"
         '
@@ -2123,7 +2143,7 @@ Partial Class MPInventario
         Me.Rollo12.Location = New System.Drawing.Point(4, 22)
         Me.Rollo12.Name = "Rollo12"
         Me.Rollo12.Padding = New System.Windows.Forms.Padding(3)
-        Me.Rollo12.Size = New System.Drawing.Size(412, 293)
+        Me.Rollo12.Size = New System.Drawing.Size(444, 293)
         Me.Rollo12.TabIndex = 11
         Me.Rollo12.Text = "Rollo12"
         '
@@ -2274,7 +2294,7 @@ Partial Class MPInventario
         Me.Rollo11.Location = New System.Drawing.Point(4, 22)
         Me.Rollo11.Name = "Rollo11"
         Me.Rollo11.Padding = New System.Windows.Forms.Padding(3)
-        Me.Rollo11.Size = New System.Drawing.Size(412, 293)
+        Me.Rollo11.Size = New System.Drawing.Size(444, 293)
         Me.Rollo11.TabIndex = 10
         Me.Rollo11.Text = "Rollo11"
         '
@@ -2425,7 +2445,7 @@ Partial Class MPInventario
         Me.Rollo10.Location = New System.Drawing.Point(4, 22)
         Me.Rollo10.Name = "Rollo10"
         Me.Rollo10.Padding = New System.Windows.Forms.Padding(3)
-        Me.Rollo10.Size = New System.Drawing.Size(412, 293)
+        Me.Rollo10.Size = New System.Drawing.Size(444, 293)
         Me.Rollo10.TabIndex = 9
         Me.Rollo10.Text = "Rollo10"
         '
@@ -2576,7 +2596,7 @@ Partial Class MPInventario
         Me.Rollo9.Location = New System.Drawing.Point(4, 22)
         Me.Rollo9.Name = "Rollo9"
         Me.Rollo9.Padding = New System.Windows.Forms.Padding(3)
-        Me.Rollo9.Size = New System.Drawing.Size(412, 293)
+        Me.Rollo9.Size = New System.Drawing.Size(444, 293)
         Me.Rollo9.TabIndex = 8
         Me.Rollo9.Text = "Rollo9"
         '
@@ -2727,7 +2747,7 @@ Partial Class MPInventario
         Me.Rollo8.Location = New System.Drawing.Point(4, 22)
         Me.Rollo8.Name = "Rollo8"
         Me.Rollo8.Padding = New System.Windows.Forms.Padding(3)
-        Me.Rollo8.Size = New System.Drawing.Size(412, 293)
+        Me.Rollo8.Size = New System.Drawing.Size(444, 293)
         Me.Rollo8.TabIndex = 7
         Me.Rollo8.Text = "Rollo8"
         '
@@ -2878,7 +2898,7 @@ Partial Class MPInventario
         Me.Rollo7.Location = New System.Drawing.Point(4, 22)
         Me.Rollo7.Name = "Rollo7"
         Me.Rollo7.Padding = New System.Windows.Forms.Padding(3)
-        Me.Rollo7.Size = New System.Drawing.Size(412, 293)
+        Me.Rollo7.Size = New System.Drawing.Size(444, 293)
         Me.Rollo7.TabIndex = 6
         Me.Rollo7.Text = "Rollo7"
         '
@@ -3029,7 +3049,7 @@ Partial Class MPInventario
         Me.Rollo6.Location = New System.Drawing.Point(4, 22)
         Me.Rollo6.Name = "Rollo6"
         Me.Rollo6.Padding = New System.Windows.Forms.Padding(3)
-        Me.Rollo6.Size = New System.Drawing.Size(412, 293)
+        Me.Rollo6.Size = New System.Drawing.Size(444, 293)
         Me.Rollo6.TabIndex = 5
         Me.Rollo6.Text = "Rollo6"
         '
@@ -3180,7 +3200,7 @@ Partial Class MPInventario
         Me.Rollo5.Location = New System.Drawing.Point(4, 22)
         Me.Rollo5.Name = "Rollo5"
         Me.Rollo5.Padding = New System.Windows.Forms.Padding(3)
-        Me.Rollo5.Size = New System.Drawing.Size(412, 293)
+        Me.Rollo5.Size = New System.Drawing.Size(444, 293)
         Me.Rollo5.TabIndex = 4
         Me.Rollo5.Text = "Rollo5"
         '
@@ -3331,7 +3351,7 @@ Partial Class MPInventario
         Me.Rollo4.Location = New System.Drawing.Point(4, 22)
         Me.Rollo4.Name = "Rollo4"
         Me.Rollo4.Padding = New System.Windows.Forms.Padding(3)
-        Me.Rollo4.Size = New System.Drawing.Size(412, 293)
+        Me.Rollo4.Size = New System.Drawing.Size(444, 293)
         Me.Rollo4.TabIndex = 3
         Me.Rollo4.Text = "Rollo4"
         '
@@ -3482,7 +3502,7 @@ Partial Class MPInventario
         Me.Rollo3.Location = New System.Drawing.Point(4, 22)
         Me.Rollo3.Name = "Rollo3"
         Me.Rollo3.Padding = New System.Windows.Forms.Padding(3)
-        Me.Rollo3.Size = New System.Drawing.Size(412, 293)
+        Me.Rollo3.Size = New System.Drawing.Size(444, 293)
         Me.Rollo3.TabIndex = 2
         Me.Rollo3.Text = "Rollo3"
         '
@@ -3633,7 +3653,7 @@ Partial Class MPInventario
         Me.Rollo2.Location = New System.Drawing.Point(4, 22)
         Me.Rollo2.Name = "Rollo2"
         Me.Rollo2.Padding = New System.Windows.Forms.Padding(3)
-        Me.Rollo2.Size = New System.Drawing.Size(412, 293)
+        Me.Rollo2.Size = New System.Drawing.Size(444, 293)
         Me.Rollo2.TabIndex = 1
         Me.Rollo2.Text = "Rollo 2"
         '
@@ -3787,7 +3807,7 @@ Partial Class MPInventario
         Me.Rollo1.Location = New System.Drawing.Point(4, 22)
         Me.Rollo1.Name = "Rollo1"
         Me.Rollo1.Padding = New System.Windows.Forms.Padding(3)
-        Me.Rollo1.Size = New System.Drawing.Size(412, 293)
+        Me.Rollo1.Size = New System.Drawing.Size(444, 293)
         Me.Rollo1.TabIndex = 0
         Me.Rollo1.Text = "Rollo 1"
         '
@@ -3796,7 +3816,7 @@ Partial Class MPInventario
         Me.LKG1.AutoSize = True
         Me.LKG1.BackColor = System.Drawing.Color.White
         Me.LKG1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LKG1.Location = New System.Drawing.Point(320, 33)
+        Me.LKG1.Location = New System.Drawing.Point(315, 33)
         Me.LKG1.Name = "LKG1"
         Me.LKG1.Size = New System.Drawing.Size(26, 16)
         Me.LKG1.TabIndex = 0
@@ -3831,7 +3851,7 @@ Partial Class MPInventario
         '
         'TxtPeso1
         '
-        Me.TxtPeso1.Location = New System.Drawing.Point(261, 31)
+        Me.TxtPeso1.Location = New System.Drawing.Point(256, 31)
         Me.TxtPeso1.Name = "TxtPeso1"
         Me.TxtPeso1.ReadOnly = True
         Me.TxtPeso1.Size = New System.Drawing.Size(68, 20)
@@ -3840,7 +3860,7 @@ Partial Class MPInventario
         '
         'TxtCalibre1
         '
-        Me.TxtCalibre1.Location = New System.Drawing.Point(164, 31)
+        Me.TxtCalibre1.Location = New System.Drawing.Point(147, 31)
         Me.TxtCalibre1.Name = "TxtCalibre1"
         Me.TxtCalibre1.ReadOnly = True
         Me.TxtCalibre1.Size = New System.Drawing.Size(77, 20)
@@ -3849,7 +3869,7 @@ Partial Class MPInventario
         '
         'TxtAncho1
         '
-        Me.TxtAncho1.Location = New System.Drawing.Point(66, 31)
+        Me.TxtAncho1.Location = New System.Drawing.Point(49, 31)
         Me.TxtAncho1.Name = "TxtAncho1"
         Me.TxtAncho1.ReadOnly = True
         Me.TxtAncho1.Size = New System.Drawing.Size(77, 20)
@@ -3883,7 +3903,7 @@ Partial Class MPInventario
         Me.LCalibre1.AutoSize = True
         Me.LCalibre1.BackColor = System.Drawing.Color.Transparent
         Me.LCalibre1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LCalibre1.Location = New System.Drawing.Point(179, 12)
+        Me.LCalibre1.Location = New System.Drawing.Point(162, 12)
         Me.LCalibre1.Name = "LCalibre1"
         Me.LCalibre1.Size = New System.Drawing.Size(51, 16)
         Me.LCalibre1.TabIndex = 0
@@ -3894,7 +3914,7 @@ Partial Class MPInventario
         Me.LPeso1.AutoSize = True
         Me.LPeso1.BackColor = System.Drawing.Color.Transparent
         Me.LPeso1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LPeso1.Location = New System.Drawing.Point(278, 12)
+        Me.LPeso1.Location = New System.Drawing.Point(273, 12)
         Me.LPeso1.Name = "LPeso1"
         Me.LPeso1.Size = New System.Drawing.Size(40, 16)
         Me.LPeso1.TabIndex = 0
@@ -3905,7 +3925,7 @@ Partial Class MPInventario
         Me.LAncho1.AutoSize = True
         Me.LAncho1.BackColor = System.Drawing.Color.Transparent
         Me.LAncho1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LAncho1.Location = New System.Drawing.Point(83, 12)
+        Me.LAncho1.Location = New System.Drawing.Point(66, 12)
         Me.LAncho1.Name = "LAncho1"
         Me.LAncho1.Size = New System.Drawing.Size(46, 16)
         Me.LAncho1.TabIndex = 0
@@ -3944,10 +3964,10 @@ Partial Class MPInventario
         Me.TRollos.Controls.Add(Me.Rollo18)
         Me.TRollos.Controls.Add(Me.Rollo19)
         Me.TRollos.Controls.Add(Me.Rollo20)
-        Me.TRollos.Location = New System.Drawing.Point(12, 263)
+        Me.TRollos.Location = New System.Drawing.Point(132, 263)
         Me.TRollos.Name = "TRollos"
         Me.TRollos.SelectedIndex = 0
-        Me.TRollos.Size = New System.Drawing.Size(420, 319)
+        Me.TRollos.Size = New System.Drawing.Size(452, 319)
         Me.TRollos.TabIndex = 5
         '
         'Label1
@@ -3955,7 +3975,7 @@ Partial Class MPInventario
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(465, 523)
+        Me.Label1.Location = New System.Drawing.Point(639, 523)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(54, 15)
         Me.Label1.TabIndex = 92
@@ -3966,7 +3986,7 @@ Partial Class MPInventario
         Me.BTerminar.BackColor = System.Drawing.Color.Transparent
         Me.BTerminar.BackgroundImage = Global.NucleosAve.My.Resources.Resources.icons8_cancelar_suscripción_64
         Me.BTerminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.BTerminar.Location = New System.Drawing.Point(468, 475)
+        Me.BTerminar.Location = New System.Drawing.Point(642, 475)
         Me.BTerminar.Name = "BTerminar"
         Me.BTerminar.Size = New System.Drawing.Size(50, 50)
         Me.BTerminar.TabIndex = 91
@@ -3980,7 +4000,6 @@ Partial Class MPInventario
         Me.TxtPedimento.Size = New System.Drawing.Size(96, 20)
         Me.TxtPedimento.TabIndex = 93
         Me.TxtPedimento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TxtPedimento.Visible = False
         '
         'LPedimento
         '
@@ -3992,30 +4011,107 @@ Partial Class MPInventario
         Me.LPedimento.Size = New System.Drawing.Size(73, 16)
         Me.LPedimento.TabIndex = 94
         Me.LPedimento.Text = "Pedimento"
-        Me.LPedimento.Visible = False
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(334, 46)
+        Me.Label2.Location = New System.Drawing.Point(348, 46)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(105, 13)
+        Me.Label2.Size = New System.Drawing.Size(78, 13)
         Me.Label2.TabIndex = 95
-        Me.Label2.Text = "Ejem: 3387-0000422"
-        Me.Label2.Visible = False
+        Me.Label2.Text = "Ejem: 0000422"
+        '
+        'TxtDetalles
+        '
+        Me.TxtDetalles.Location = New System.Drawing.Point(444, 209)
+        Me.TxtDetalles.Multiline = True
+        Me.TxtDetalles.Name = "TxtDetalles"
+        Me.TxtDetalles.ReadOnly = True
+        Me.TxtDetalles.Size = New System.Drawing.Size(402, 39)
+        Me.TxtDetalles.TabIndex = 96
+        Me.TxtDetalles.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'BC1
+        '
+        Me.BC1.BackColor = System.Drawing.Color.Transparent
+        Me.BC1.BackgroundImage = Global.NucleosAve.My.Resources.Resources.file_1911
+        Me.BC1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.BC1.Location = New System.Drawing.Point(359, 314)
+        Me.BC1.Name = "BC1"
+        Me.BC1.Size = New System.Drawing.Size(21, 23)
+        Me.BC1.TabIndex = 97
+        Me.BC1.UseVisualStyleBackColor = False
+        '
+        'PCalibres
+        '
+        Me.PCalibres.BackColor = System.Drawing.Color.White
+        Me.PCalibres.Controls.Add(Me.LCalibre)
+        Me.PCalibres.Controls.Add(Me.DGVCA)
+        Me.PCalibres.Location = New System.Drawing.Point(599, 263)
+        Me.PCalibres.Name = "PCalibres"
+        Me.PCalibres.Size = New System.Drawing.Size(252, 272)
+        Me.PCalibres.TabIndex = 98
+        '
+        'DGVCA
+        '
+        Me.DGVCA.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGVCA.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IDC, Me.CodigoC, Me.CalibreC})
+        Me.DGVCA.Location = New System.Drawing.Point(3, 38)
+        Me.DGVCA.Name = "DGVCA"
+        Me.DGVCA.Size = New System.Drawing.Size(249, 231)
+        Me.DGVCA.TabIndex = 0
+        '
+        'LCalibre
+        '
+        Me.LCalibre.AutoSize = True
+        Me.LCalibre.BackColor = System.Drawing.Color.Transparent
+        Me.LCalibre.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LCalibre.Location = New System.Drawing.Point(86, 7)
+        Me.LCalibre.Name = "LCalibre"
+        Me.LCalibre.Size = New System.Drawing.Size(78, 24)
+        Me.LCalibre.TabIndex = 99
+        Me.LCalibre.Text = "Calibres"
+        '
+        'IDC
+        '
+        Me.IDC.DataPropertyName = "Id_Calibre"
+        DataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.IDC.DefaultCellStyle = DataGridViewCellStyle25
+        Me.IDC.HeaderText = "ID"
+        Me.IDC.Name = "IDC"
+        Me.IDC.Visible = False
+        '
+        'CodigoC
+        '
+        Me.CodigoC.DataPropertyName = "Codigo"
+        DataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.CodigoC.DefaultCellStyle = DataGridViewCellStyle26
+        Me.CodigoC.HeaderText = "Código"
+        Me.CodigoC.Name = "CodigoC"
+        Me.CodigoC.Width = 50
+        '
+        'CalibreC
+        '
+        Me.CalibreC.DataPropertyName = "Calibre"
+        Me.CalibreC.HeaderText = "Calibre"
+        Me.CalibreC.Name = "CalibreC"
+        Me.CalibreC.Width = 150
         '
         'MPInventario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.NucleosAve.My.Resources.Resources.Fondo
-        Me.ClientSize = New System.Drawing.Size(594, 608)
+        Me.ClientSize = New System.Drawing.Size(858, 608)
+        Me.Controls.Add(Me.PCalibres)
+        Me.Controls.Add(Me.BC1)
+        Me.Controls.Add(Me.Panel2)
+        Me.Controls.Add(Me.TxtDetalles)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.TxtPedimento)
         Me.Controls.Add(Me.LPedimento)
-        Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.BTerminar)
         Me.Controls.Add(Me.LKGCE)
@@ -4099,6 +4195,9 @@ Partial Class MPInventario
         Me.Rollo1.ResumeLayout(False)
         Me.Rollo1.PerformLayout()
         Me.TRollos.ResumeLayout(False)
+        Me.PCalibres.ResumeLayout(False)
+        Me.PCalibres.PerformLayout()
+        CType(Me.DGVCA, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -4427,6 +4526,9 @@ Partial Class MPInventario
     Friend WithEvents Label1 As Label
     Friend WithEvents BTerminar As Button
     Public WithEvents TxtCS As TextBox
+    Public WithEvents TxtPedimento As TextBox
+    Friend WithEvents LPedimento As Label
+    Friend WithEvents Label2 As Label
     Friend WithEvents ID As DataGridViewLinkColumn
     Friend WithEvents PurchaseOrder As DataGridViewTextBoxColumn
     Friend WithEvents OC As DataGridViewTextBoxColumn
@@ -4436,8 +4538,14 @@ Partial Class MPInventario
     Friend WithEvents CS As DataGridViewTextBoxColumn
     Friend WithEvents Material As DataGridViewTextBoxColumn
     Friend WithEvents IDDP As DataGridViewTextBoxColumn
+    Friend WithEvents Detalles As DataGridViewTextBoxColumn
     Friend WithEvents Faltante As DataGridViewTextBoxColumn
-    Public WithEvents TxtPedimento As TextBox
-    Friend WithEvents LPedimento As Label
-    Friend WithEvents Label2 As Label
+    Friend WithEvents TxtDetalles As TextBox
+    Friend WithEvents BC1 As Button
+    Friend WithEvents PCalibres As Panel
+    Friend WithEvents DGVCA As DataGridView
+    Friend WithEvents LCalibre As Label
+    Friend WithEvents IDC As DataGridViewTextBoxColumn
+    Friend WithEvents CodigoC As DataGridViewTextBoxColumn
+    Friend WithEvents CalibreC As DataGridViewTextBoxColumn
 End Class
