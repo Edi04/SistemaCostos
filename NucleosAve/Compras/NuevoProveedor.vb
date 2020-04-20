@@ -14,6 +14,7 @@
             logica.pro_nombre = Me.textNombre.Text
             logica.pro_direccion = Me.textDireccion.Text
             logica.pro_telefono = Me.textTelefono.Text
+            logica.pro_categoria = Me.combo_categoria.Text
             If funciones.FN_InsertarProvedor(logica) Then
                 MsgBox("Proveedor Agregado Correctamente", MessageBoxIcon.Information)
             End If

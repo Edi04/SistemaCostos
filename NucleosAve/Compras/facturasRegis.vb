@@ -34,6 +34,7 @@ Public Class facturasRegis
 
 
     Private Sub DataGridFacturas_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridFacturas.CellClick
+        Ventas.TextBox_Factura.Text = DataGridFacturas.CurrentRow.Cells(0).Value
         Dim tabla As New DataTable
         Dim seleccionado As String
         seleccionado = DataGridFacturas.CurrentRow.Cells(0).Value
@@ -43,17 +44,17 @@ Public Class facturasRegis
         Dim codigo As String
         codigo = id_fac.Text
 
-        'Dim conexxo As New SqlConnection(conexioncita)
-        'conexxo.Open()
-        'comando = New SqlCommand("SP_Eliminar_Facturas")
-        'comando.CommandType = CommandType.StoredProcedure
-        'comando.Connection = conexxo
+        Dim conexxo As New SqlConnection(conexioncita)
+        conexxo.Open()
+        comando = New SqlCommand("SP_Eliminar_Facturas")
+        comando.CommandType = CommandType.StoredProcedure
+        comando.Connection = conexxo
 
 
-        'comando.Parameters.AddWithValue("@codigo", codigo)
-        'comando.Parameters.AddWithValue("@estado", "Inactivo")
+        comando.Parameters.AddWithValue("@codigo", codigo)
+        comando.Parameters.AddWithValue("@estado", "Inactivo")
 
-        'comando.ExecuteNonQuery()
+        comando.ExecuteNonQuery()
 
     End Sub
 
@@ -100,6 +101,7 @@ Public Class facturasRegis
         Me.Hide()
         factura.Show()
     End Sub
+
 
     Private Sub Inicio_Od_MouseDown(sender As Object, e As MouseEventArgs) Handles MyBase.MouseDown
         ex = e.X

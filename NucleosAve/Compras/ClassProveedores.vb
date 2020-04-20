@@ -1,5 +1,15 @@
 ﻿Public Class ClassProveedores
-    Dim nombre, direccion, telefono As String
+    Dim nombre, direccion, telefono, categoria As String
+
+
+    Public Property pro_categoria
+        Get
+            Return categoria
+        End Get
+        Set(value)
+            categoria = value
+        End Set
+    End Property
     Public Property pro_nombre
         Get
             Return nombre

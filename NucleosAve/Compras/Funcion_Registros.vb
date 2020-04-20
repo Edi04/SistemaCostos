@@ -118,8 +118,10 @@ Public Class Funcion_Registros
             comando = New SqlCommand("Mostrar_Facturas")
             comando.CommandType = CommandType.StoredProcedure
             comando.Connection = conexxo
+
             comando.Parameters.AddWithValue("@rango1", facturasRegis.DateTimeRango1.Value)
             comando.Parameters.AddWithValue("@rango2", facturasRegis.DateTimeRango2.Value)
+            comando.Parameters.AddWithValue("@tipo_factura", facturasRegis.ComboBox_tiposfactu.Text)
             If comando.ExecuteNonQuery Then
                 Dim tabla As New DataTable
                 Dim adaptador As New SqlDataAdapter(comando)
@@ -318,6 +320,8 @@ Public Class Funcion_Registros
             comando.Parameters.AddWithValue("@TotalFactura", fact.FTotalFactura)
             Dim hora2 As String = DateTime.Now.ToString("dd/MM/yyyy")
             comando.Parameters.AddWithValue("@HRegistro", hora2)
+            comando.Parameters.AddWithValue("@tipo_factura", fact.Ftipo_factura)
+
             If comando.ExecuteNonQuery Then
                 Return True
             Else
@@ -620,6 +624,8 @@ Public Class Funcion_Registros
             comando.Parameters.AddWithValue("@nombre", dts.pro_nombre)
             comando.Parameters.AddWithValue("@direccion", dts.pro_direccion)
             comando.Parameters.AddWithValue("@telefono", dts.pro_telefono)
+            comando.Parameters.AddWithValue("@categoria", dts.pro_categoria)
+            comando.Parameters.AddWithValue("@estado", "Activo")
             If comando.ExecuteNonQuery Then
                 Return True
             Else

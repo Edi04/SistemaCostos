@@ -56,6 +56,10 @@ Public Class RegistrosRH
         ey = e.Y
         Arrastre = True
     End Sub
+
+    Private Sub DataGridView_registros_rh_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView_registros_rh.CellContentClick
+
+    End Sub
     '-------------------------------------------------------------
     '-----------------------------------------------------------------------------------
     '-----------------------------------------------------------------------------------

@@ -3611,7 +3611,7 @@ Public Class OrdCompra
     End Sub
 
     Private Sub BtnagregarProvedor_Click(sender As Object, e As EventArgs) Handles BtnagregarProvedor.Click
-        NuevoProveedor.ShowDialog()
+        NuevoProveedor.Show()
     End Sub
 
 

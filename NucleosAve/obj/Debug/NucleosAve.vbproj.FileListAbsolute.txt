@@ -1405,3 +1405,8 @@ C:\Users\SISTEMAS\source\SistemaCostos\NucleosAve\obj\Debug\NucleosAve.vbproj.Co
 C:\Users\ANTUA\Desktop\Sistema_Costos\SistemaCostos\NucleosAve\obj\Debug\NucleosAve.MPHistorial.resources
 C:\Users\ANTUA\Desktop\Sistema_Costos\SistemaCostos\NucleosAve\obj\Debug\NucleosAve.Ventas.resources
 C:\Users\ANTUA\Desktop\Sistema_Costos\SistemaCostos\NucleosAve\obj\Debug\NucleosAve.Registros_Ventas.resources
+C:\Users\ANTUA\Desktop\Sistema_Costos\SistemaCostos\NucleosAve\obj\Debug\NucleosAve.Alta_Empleados.resources
+C:\Users\ANTUA\Desktop\Sistema_Costos\SistemaCostos\NucleosAve\obj\Debug\NucleosAve.Busquedas_Empleados.resources
+C:\Users\ANTUA\Desktop\Sistema_Costos\SistemaCostos\NucleosAve\obj\Debug\NucleosAve.Reportes_Empleado.resources
+C:\Users\ANTUA\Desktop\Sistema_Costos\SistemaCostos\NucleosAve\obj\Debug\NucleosAve.RegistrosReportes.resources
+C:\Users\ANTUA\Desktop\Sistema_Costos\SistemaCostos\NucleosAve\obj\Debug\NucleosAve.Entregas_Equipo_Proteccion.resources

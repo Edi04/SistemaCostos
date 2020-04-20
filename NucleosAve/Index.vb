@@ -333,6 +333,26 @@
         Ventas.Show()
     End Sub
 
+    Private Sub LCompras_Click(sender As Object, e As EventArgs) Handles LCompras.Click
+
+    End Sub
+
+    Private Sub btn_empleados_Click(sender As Object, e As EventArgs) Handles btn_empleados.Click
+        Alta_Empleados.Show()
+    End Sub
+
+    Private Sub btn_reportes_atencion_Click(sender As Object, e As EventArgs) Handles btn_reportes_atencion.Click
+        Reportes_Empleado.Show()
+    End Sub
+
+    Private Sub btn_ee_Seguridad_Click(sender As Object, e As EventArgs) Handles btn_ee_Seguridad.Click
+        Entregas_Equipo_Proteccion.Show()
+    End Sub
+
+    Private Sub btn_entrega_equipo_seguridad_Click(sender As Object, e As EventArgs) Handles btn_entrega_equipo_seguridad.Click
+        Entregas_Equipo_Proteccion.Show()
+    End Sub
+
     Private Sub btn_gas_por_mucho_Click(sender As Object, e As EventArgs) Handles btn_gas_por_mucho.Click
         Compra_Conbustible.Show()
     End Sub

@@ -47,10 +47,11 @@ Partial Class Rh
         Me.TextBox_puesto = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.TextBox_nombre = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TextBox_clave = New System.Windows.Forms.TextBox()
         Me.Panel9 = New System.Windows.Forms.Panel()
+        Me.btn_agregar_empleado = New System.Windows.Forms.Button()
+        Me.TextBox_nombre = New System.Windows.Forms.ComboBox()
         Me.Prestaciones = New System.Windows.Forms.TabPage()
         Me.Label36 = New System.Windows.Forms.Label()
         Me.TextBox_aus = New System.Windows.Forms.TextBox()
@@ -283,7 +284,6 @@ Partial Class Rh
         Me.Empleado.Controls.Add(Me.TextBox_puesto)
         Me.Empleado.Controls.Add(Me.Label6)
         Me.Empleado.Controls.Add(Me.Label5)
-        Me.Empleado.Controls.Add(Me.TextBox_nombre)
         Me.Empleado.Controls.Add(Me.Label4)
         Me.Empleado.Controls.Add(Me.TextBox_clave)
         Me.Empleado.Controls.Add(Me.ComboBox_verificado_calidad)
@@ -442,14 +442,6 @@ Partial Class Rh
         Me.Label5.TabIndex = 120
         Me.Label5.Text = "Nombre Empleado"
         '
-        'TextBox_nombre
-        '
-        Me.TextBox_nombre.Location = New System.Drawing.Point(155, 141)
-        Me.TextBox_nombre.Name = "TextBox_nombre"
-        Me.TextBox_nombre.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.TextBox_nombre.Size = New System.Drawing.Size(191, 20)
-        Me.TextBox_nombre.TabIndex = 119
-        '
         'Label4
         '
         Me.Label4.AutoSize = True
@@ -471,11 +463,31 @@ Partial Class Rh
         'Panel9
         '
         Me.Panel9.BackColor = System.Drawing.Color.Gainsboro
+        Me.Panel9.Controls.Add(Me.btn_agregar_empleado)
+        Me.Panel9.Controls.Add(Me.TextBox_nombre)
         Me.Panel9.Controls.Add(Me.Label3)
         Me.Panel9.Location = New System.Drawing.Point(118, 22)
         Me.Panel9.Name = "Panel9"
         Me.Panel9.Size = New System.Drawing.Size(499, 363)
         Me.Panel9.TabIndex = 162
+        '
+        'btn_agregar_empleado
+        '
+        Me.btn_agregar_empleado.BackColor = System.Drawing.Color.Lime
+        Me.btn_agregar_empleado.Location = New System.Drawing.Point(233, 120)
+        Me.btn_agregar_empleado.Name = "btn_agregar_empleado"
+        Me.btn_agregar_empleado.Size = New System.Drawing.Size(17, 21)
+        Me.btn_agregar_empleado.TabIndex = 121
+        Me.btn_agregar_empleado.Text = "+"
+        Me.btn_agregar_empleado.UseVisualStyleBackColor = False
+        '
+        'TextBox_nombre
+        '
+        Me.TextBox_nombre.FormattingEnabled = True
+        Me.TextBox_nombre.Location = New System.Drawing.Point(40, 120)
+        Me.TextBox_nombre.Name = "TextBox_nombre"
+        Me.TextBox_nombre.Size = New System.Drawing.Size(188, 21)
+        Me.TextBox_nombre.TabIndex = 120
         '
         'Prestaciones
         '
@@ -1601,7 +1613,6 @@ Partial Class Rh
     Friend WithEvents TextBox_puesto As TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents TextBox_nombre As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents TextBox_clave As TextBox
     Friend WithEvents Prestaciones As TabPage
@@ -1715,4 +1726,6 @@ Partial Class Rh
     Friend WithEvents BtnGuardarFac As Button
     Friend WithEvents btn_buscar As PictureBox
     Friend WithEvents TextBox_id As TextBox
+    Friend WithEvents TextBox_nombre As ComboBox
+    Friend WithEvents btn_agregar_empleado As Button
 End Class

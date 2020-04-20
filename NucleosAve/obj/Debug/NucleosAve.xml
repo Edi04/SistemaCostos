@@ -192,6 +192,11 @@ NucleosAve
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:NucleosAve.My.Resources.Resources.icons8_cámaras_múltiples_96">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:NucleosAve.My.Resources.Resources.icons8_cancelar_suscripción_64">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
@@ -242,12 +247,22 @@ NucleosAve
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:NucleosAve.My.Resources.Resources.icons8_equipo_de_paracaidismo_64">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:NucleosAve.My.Resources.Resources.icons8_escáner_de_código_de_barras_2_filled_64">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:NucleosAve.My.Resources.Resources.icons8_exportar_pdf_100">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:NucleosAve.My.Resources.Resources.icons8_foul_64">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
@@ -262,7 +277,17 @@ NucleosAve
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:NucleosAve.My.Resources.Resources.icons8_imagen_96">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:NucleosAve.My.Resources.Resources.icons8_imprimir_481">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:NucleosAve.My.Resources.Resources.icons8_ingeniero_128">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
@@ -363,6 +388,11 @@ NucleosAve
 </summary>
 </member>
 <member name="P:NucleosAve.My.Resources.Resources.icons8_transporte_de_petróleo_80">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:NucleosAve.My.Resources.Resources.icons8_ventas_totales_64">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>

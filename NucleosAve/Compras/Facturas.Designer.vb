@@ -107,6 +107,8 @@ Partial Class factura
         Me.text_xml = New System.Windows.Forms.TextBox()
         Me.btn_descargaxml = New System.Windows.Forms.PictureBox()
         Me.btn_descargapdf = New System.Windows.Forms.PictureBox()
+        Me.ComboBox_tiposfactu = New System.Windows.Forms.ComboBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.btn_minimizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_Cerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -838,7 +840,7 @@ Partial Class factura
         'txtCodigo
         '
         Me.txtCodigo.Cursor = System.Windows.Forms.Cursors.No
-        Me.txtCodigo.Location = New System.Drawing.Point(12, 53)
+        Me.txtCodigo.Location = New System.Drawing.Point(346, 53)
         Me.txtCodigo.Name = "txtCodigo"
         Me.txtCodigo.ReadOnly = True
         Me.txtCodigo.Size = New System.Drawing.Size(100, 20)
@@ -848,7 +850,7 @@ Partial Class factura
         'txtOrdenCompra
         '
         Me.txtOrdenCompra.Cursor = System.Windows.Forms.Cursors.No
-        Me.txtOrdenCompra.Location = New System.Drawing.Point(119, 53)
+        Me.txtOrdenCompra.Location = New System.Drawing.Point(346, 53)
         Me.txtOrdenCompra.Name = "txtOrdenCompra"
         Me.txtOrdenCompra.Size = New System.Drawing.Size(100, 20)
         Me.txtOrdenCompra.TabIndex = 180
@@ -858,11 +860,11 @@ Partial Class factura
         Me.Button1.BackColor = System.Drawing.Color.DodgerBlue
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button1.Location = New System.Drawing.Point(225, 51)
+        Me.Button1.Location = New System.Drawing.Point(452, 51)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(97, 25)
         Me.Button1.TabIndex = 181
-        Me.Button1.Text = "Asignar OC"
+        Me.Button1.Text = "Buscar"
         Me.Button1.UseVisualStyleBackColor = False
         '
         'btnCerrarPrograma
@@ -969,12 +971,32 @@ Partial Class factura
         Me.btn_descargapdf.TabIndex = 189
         Me.btn_descargapdf.TabStop = False
         '
+        'ComboBox_tiposfactu
+        '
+        Me.ComboBox_tiposfactu.FormattingEnabled = True
+        Me.ComboBox_tiposfactu.Items.AddRange(New Object() {"Compra", "Venta"})
+        Me.ComboBox_tiposfactu.Location = New System.Drawing.Point(219, 53)
+        Me.ComboBox_tiposfactu.Name = "ComboBox_tiposfactu"
+        Me.ComboBox_tiposfactu.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox_tiposfactu.TabIndex = 191
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(216, 32)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(67, 13)
+        Me.Label1.TabIndex = 192
+        Me.Label1.Text = "Tipo Factura"
+        '
         'factura
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.NucleosAve.My.Resources.Resources.Fondo
         Me.ClientSize = New System.Drawing.Size(788, 531)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.ComboBox_tiposfactu)
         Me.Controls.Add(Me.btn_descargaxml)
         Me.Controls.Add(Me.btn_descargapdf)
         Me.Controls.Add(Me.text_xml)
@@ -1164,4 +1186,6 @@ Partial Class factura
     Friend WithEvents text_xml As TextBox
     Friend WithEvents btn_descargaxml As PictureBox
     Friend WithEvents btn_descargapdf As PictureBox
+    Friend WithEvents ComboBox_tiposfactu As ComboBox
+    Friend WithEvents Label1 As Label
 End Class

@@ -2,8 +2,17 @@
     Dim id_fact As Integer
     Dim codigo, Nombre_emi, Rfc_emi, RegimenFiscal_emi, Folio_fiscal, NCertificado, Fecha, LugarExpedicion, Nombre_rep, Rfc_rep,
     UsoCfdi_rep, Tasa_cuota, Tipofactor, Impuesto, TipoComprobante, Formadepago, MetododePago, CondicionesPago,
-    Moneda, folio, version, sello, certificado, codigoOrden, estado As String
+    Moneda, folio, version, sello, certificado, codigoOrden, estado, tipo_factura As String
     Dim TipodeCambio, Subtotal, Impuestostraslados, TotalFactura As Double
+
+    Public Property Ftipo_factura
+        Get
+            Return tipo_factura
+        End Get
+        Set(value)
+            tipo_factura = value
+        End Set
+    End Property
     Public Property FId_fact
         Get
             Return id_fact

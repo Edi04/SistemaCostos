@@ -34,6 +34,8 @@ Partial Class facturasRegis
         Me.id_fac = New System.Windows.Forms.Label()
         Me.btn_minimizar = New System.Windows.Forms.PictureBox()
         Me.btn_Cerrar = New System.Windows.Forms.PictureBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.ComboBox_tiposfactu = New System.Windows.Forms.ComboBox()
         CType(Me.DataGridFacturas, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -61,7 +63,7 @@ Partial Class facturasRegis
         Me.DataGridFacturas.DefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridFacturas.Location = New System.Drawing.Point(12, 114)
         Me.DataGridFacturas.Name = "DataGridFacturas"
-        Me.DataGridFacturas.Size = New System.Drawing.Size(776, 324)
+        Me.DataGridFacturas.Size = New System.Drawing.Size(882, 324)
         Me.DataGridFacturas.TabIndex = 0
         '
         'btn_Buscar
@@ -69,9 +71,9 @@ Partial Class facturasRegis
         Me.btn_Buscar.BackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(76, Byte), Integer), CType(CType(60, Byte), Integer))
         Me.btn_Buscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_Buscar.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btn_Buscar.Location = New System.Drawing.Point(311, 64)
+        Me.btn_Buscar.Location = New System.Drawing.Point(393, 72)
         Me.btn_Buscar.Name = "btn_Buscar"
-        Me.btn_Buscar.Size = New System.Drawing.Size(139, 44)
+        Me.btn_Buscar.Size = New System.Drawing.Size(204, 35)
         Me.btn_Buscar.TabIndex = 115
         Me.btn_Buscar.Text = "Buscar"
         Me.btn_Buscar.UseVisualStyleBackColor = False
@@ -100,17 +102,17 @@ Partial Class facturasRegis
         '
         'DateTimeRango1
         '
-        Me.DateTimeRango1.Location = New System.Drawing.Point(151, 38)
+        Me.DateTimeRango1.Location = New System.Drawing.Point(169, 43)
         Me.DateTimeRango1.Name = "DateTimeRango1"
-        Me.DateTimeRango1.Size = New System.Drawing.Size(200, 20)
+        Me.DateTimeRango1.Size = New System.Drawing.Size(219, 20)
         Me.DateTimeRango1.TabIndex = 187
         Me.DateTimeRango1.Value = New Date(2020, 1, 1, 0, 0, 0, 0)
         '
         'DateTimeRango2
         '
-        Me.DateTimeRango2.Location = New System.Drawing.Point(407, 38)
+        Me.DateTimeRango2.Location = New System.Drawing.Point(403, 43)
         Me.DateTimeRango2.Name = "DateTimeRango2"
-        Me.DateTimeRango2.Size = New System.Drawing.Size(200, 20)
+        Me.DateTimeRango2.Size = New System.Drawing.Size(214, 20)
         Me.DateTimeRango2.TabIndex = 188
         Me.DateTimeRango2.Value = New Date(2020, 2, 4, 16, 9, 5, 0)
         '
@@ -131,7 +133,7 @@ Partial Class facturasRegis
         Me.btn_minimizar.BackColor = System.Drawing.Color.Transparent
         Me.btn_minimizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btn_minimizar.Image = Global.NucleosAve.My.Resources.Resources.icons8_minimizar_la_ventana_5001
-        Me.btn_minimizar.Location = New System.Drawing.Point(689, 1)
+        Me.btn_minimizar.Location = New System.Drawing.Point(793, 1)
         Me.btn_minimizar.Name = "btn_minimizar"
         Me.btn_minimizar.Size = New System.Drawing.Size(53, 52)
         Me.btn_minimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -145,19 +147,41 @@ Partial Class facturasRegis
         Me.btn_Cerrar.BackColor = System.Drawing.Color.Transparent
         Me.btn_Cerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btn_Cerrar.Image = Global.NucleosAve.My.Resources.Resources.icons8_cerrar_ventana_5001
-        Me.btn_Cerrar.Location = New System.Drawing.Point(744, 1)
+        Me.btn_Cerrar.Location = New System.Drawing.Point(848, 1)
         Me.btn_Cerrar.Name = "btn_Cerrar"
         Me.btn_Cerrar.Size = New System.Drawing.Size(55, 52)
         Me.btn_Cerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.btn_Cerrar.TabIndex = 190
         Me.btn_Cerrar.TabStop = False
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.ForeColor = System.Drawing.Color.Black
+        Me.Label1.Location = New System.Drawing.Point(630, 21)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(67, 13)
+        Me.Label1.TabIndex = 194
+        Me.Label1.Text = "Tipo Factura"
+        '
+        'ComboBox_tiposfactu
+        '
+        Me.ComboBox_tiposfactu.FormattingEnabled = True
+        Me.ComboBox_tiposfactu.Items.AddRange(New Object() {"Compra", "Venta"})
+        Me.ComboBox_tiposfactu.Location = New System.Drawing.Point(633, 42)
+        Me.ComboBox_tiposfactu.Name = "ComboBox_tiposfactu"
+        Me.ComboBox_tiposfactu.Size = New System.Drawing.Size(140, 21)
+        Me.ComboBox_tiposfactu.TabIndex = 193
+        '
         'facturasRegis
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(906, 450)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.ComboBox_tiposfactu)
         Me.Controls.Add(Me.btn_minimizar)
         Me.Controls.Add(Me.btn_Cerrar)
         Me.Controls.Add(Me.id_fac)
@@ -192,4 +216,6 @@ Partial Class facturasRegis
     Friend WithEvents id_fac As Label
     Friend WithEvents btn_minimizar As PictureBox
     Friend WithEvents btn_Cerrar As PictureBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents ComboBox_tiposfactu As ComboBox
 End Class

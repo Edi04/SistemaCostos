@@ -245,6 +245,7 @@ Partial Class Ventas
         Me.textpdf.ReadOnly = True
         Me.textpdf.Size = New System.Drawing.Size(129, 20)
         Me.textpdf.TabIndex = 195
+        Me.textpdf.Visible = False
         '
         'Panel10
         '
@@ -304,6 +305,7 @@ Partial Class Ventas
         Me.TextBox_codigo_general.ReadOnly = True
         Me.TextBox_codigo_general.Size = New System.Drawing.Size(129, 20)
         Me.TextBox_codigo_general.TabIndex = 197
+        Me.TextBox_codigo_general.Visible = False
         '
         'TextBox_id
         '
@@ -314,6 +316,7 @@ Partial Class Ventas
         Me.TextBox_id.ReadOnly = True
         Me.TextBox_id.Size = New System.Drawing.Size(129, 20)
         Me.TextBox_id.TabIndex = 198
+        Me.TextBox_id.Visible = False
         '
         'btn_regis
         '

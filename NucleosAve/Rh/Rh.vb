@@ -36,7 +36,7 @@ Public Class Rh
     End Sub
     '------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     Private Sub Rh_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        combo_empleado()
     End Sub
 
     Private Sub btn_buscar_Click(sender As Object, e As EventArgs) Handles btn_buscar.Click
@@ -207,7 +207,7 @@ Public Class Rh
 
     Sub limpiar()
         TextBox_clave.Clear()
-        TextBox_nombre.Clear()
+
         TextBox_puesto.Clear()
         TextBox_observaciones.Clear()
         TextBox_salario_diaro.Clear()
@@ -257,5 +257,22 @@ Public Class Rh
         TextBox_horas_trabajadas_mes.Clear()
         TextBox_costoporhora.Clear()
         TextBox_costoxminuto.Clear()
+    End Sub
+
+    Private Sub btn_agregar_empleado_Click(sender As Object, e As EventArgs) Handles btn_agregar_empleado.Click
+        Alta_Empleados.Show()
+    End Sub
+
+    Sub combo_empleado() 'combo para mostrar los productos
+        Dim conexxo As New SqlConnection(conexioncita)
+        conexxo.Open()
+        comando = New SqlCommand("select Id_Empleado,(Nombre_Empleado+' '+Ape_Paterno+' '+Ape_Materno)as Nombre from TB_Empleados order by Nombre_Empleado asc", conexxo)
+        adaptador = New SqlDataAdapter(comando)
+        tabla = New DataTable()
+        adaptador.Fill(tabla)
+        '-------PRODUCTO 1 --------------
+        TextBox_nombre.DataSource = tabla
+        TextBox_nombre.DisplayMember = "Nombre"
+        TextBox_nombre.ValueMember = "Id_Empleado"
     End Sub
 End Class

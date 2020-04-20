@@ -31,9 +31,11 @@ Partial Class Registros_Ventas
         Me.DateTime_Rango1 = New System.Windows.Forms.DateTimePicker()
         Me.DateTimePicker_rago2 = New System.Windows.Forms.DateTimePicker()
         Me.btnBuscar = New System.Windows.Forms.Button()
+        Me.btn_trash = New System.Windows.Forms.PictureBox()
         CType(Me.btn_minimizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_Cerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView_registros, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btn_trash, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btn_minimizar
@@ -126,12 +128,24 @@ Partial Class Registros_Ventas
         Me.btnBuscar.Text = "Buscar Registros"
         Me.btnBuscar.UseVisualStyleBackColor = False
         '
+        'btn_trash
+        '
+        Me.btn_trash.BackColor = System.Drawing.Color.Transparent
+        Me.btn_trash.Image = Global.NucleosAve.My.Resources.Resources.icons8_basura_100
+        Me.btn_trash.Location = New System.Drawing.Point(730, 89)
+        Me.btn_trash.Name = "btn_trash"
+        Me.btn_trash.Size = New System.Drawing.Size(44, 45)
+        Me.btn_trash.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_trash.TabIndex = 185
+        Me.btn_trash.TabStop = False
+        '
         'Registros_Ventas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.NucleosAve.My.Resources.Resources.Fondo
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.btn_trash)
         Me.Controls.Add(Me.btnBuscar)
         Me.Controls.Add(Me.DateTimePicker_rago2)
         Me.Controls.Add(Me.DateTime_Rango1)
@@ -148,6 +162,7 @@ Partial Class Registros_Ventas
         CType(Me.btn_minimizar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btn_Cerrar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView_registros, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_trash, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -161,4 +176,5 @@ Partial Class Registros_Ventas
     Friend WithEvents DateTime_Rango1 As DateTimePicker
     Friend WithEvents DateTimePicker_rago2 As DateTimePicker
     Friend WithEvents btnBuscar As Button
+    Friend WithEvents btn_trash As PictureBox
 End Class

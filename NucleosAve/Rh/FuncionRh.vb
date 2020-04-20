@@ -196,4 +196,298 @@ Public Class FuncionRh
         End Try
     End Function
     '<--------------Fin Modificacion--------------->
+
+    '-------------->Alta de Empleados<------------
+    Public Function FN_InsertarEmpleados(ByVal dts As ClassEmpleados) As Boolean
+        Try
+            Dim conexxo As New SqlConnection(conexioncita)
+            conexxo.Open()
+            comando = New SqlCommand("SP_Insertar_Empleados")
+            comando.CommandType = CommandType.StoredProcedure
+            comando.Connection = conexxo
+
+            comando.Parameters.AddWithValue("@Numero_Nomina", dts.RH_Numero_Nomina)
+            comando.Parameters.AddWithValue("@Nombre_Empleado", dts.RH_Nombre_Empleado)
+            comando.Parameters.AddWithValue("@Ape_Paterno", dts.RH_Ape_Paterno)
+            comando.Parameters.AddWithValue("@Ape_Materno", dts.RH_Ape_Materno)
+            comando.Parameters.AddWithValue("@NNS", dts.RH_NSS)
+            comando.Parameters.AddWithValue("@RFC", dts.RH_RFC)
+            comando.Parameters.AddWithValue("@Nacionalidad", dts.RH_NAcionalidad)
+            comando.Parameters.AddWithValue("@Area", dts.RH_Area)
+            comando.Parameters.AddWithValue("@Estudios", dts.RH_Estudios)
+            comando.Parameters.AddWithValue("@Correo", dts.RH_correo)
+            comando.Parameters.AddWithValue("@Telefono", dts.RH_telefono)
+            comando.Parameters.AddWithValue("@Telefono2", dts.RH_telefono2)
+            comando.Parameters.AddWithValue("@Direccion", dts.RH_direccion)
+            comando.Parameters.AddWithValue("@Perfil", dts.RH_perfil)
+            comando.Parameters.AddWithValue("@Alerg_Enfe", dts.RH_alergis)
+            comando.Parameters.AddWithValue("@F_Nacimiento", dts.RH_fecha_nacimiento)
+            comando.Parameters.AddWithValue("@Edad", dts.RH_edad)
+            comando.Parameters.AddWithValue("@Edo_Civil", dts.RH_estado_civil)
+            comando.Parameters.AddWithValue("@Nombre_Familiar", dts.RH_NOmbre_Familiar)
+            comando.Parameters.AddWithValue("@Telefono_F", dts.RH_telefono_fam)
+
+            comando.Parameters.AddWithValue("@Direccion_F", dts.RH_direccion_fam)
+            comando.Parameters.AddWithValue("@Fotografia", dts.RH_fotografia)
+            comando.Parameters.AddWithValue("@F_Ingreso", dts.RH_fecha_ingreso)
+            Dim hora2 As String = DateTime.Now.ToString("dd/MM/yyyy")
+            comando.Parameters.AddWithValue("@Fecha_Ingreso", hora2)
+            comando.Parameters.AddWithValue("@estado", "Activo")
+
+            If comando.ExecuteNonQuery Then
+                Return True
+            Else
+                Return False
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        Finally
+            con.Close()
+        End Try
+    End Function
+    '<--------------Fin Alta--------------->
+    '<------------------------Listado de Empleados----------------------------->
+    Public Function FnMostrarListadoEmpleados() As DataTable
+        Try
+            Dim conexxo As New SqlConnection(conexioncita)
+            conexxo.Open()
+
+            comando = New SqlCommand("SP_Mostrar_Empleados")
+            comando.CommandType = CommandType.StoredProcedure
+            comando.Connection = conexxo
+            comando.Parameters.AddWithValue("@rango1", Busquedas_Empleados.DateTime_rango1.Value)
+            comando.Parameters.AddWithValue("@rango2", Busquedas_Empleados.DateTime_rango2.Value)
+            If comando.ExecuteNonQuery Then
+                Dim tabla As New DataTable
+                Dim adaptador As New SqlDataAdapter(comando)
+                adaptador.Fill(tabla)
+                Return tabla
+            Else
+                Return Nothing
+            End If
+            conexxo.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+    '-------------->Alta de Empleados<------------
+    Public Function FN_MOdificarEmpleados(ByVal dts As ClassEmpleados) As Boolean
+        Try
+            Dim conexxo As New SqlConnection(conexioncita)
+            conexxo.Open()
+            comando = New SqlCommand("SP_Modificar_Empleados")
+            comando.CommandType = CommandType.StoredProcedure
+            comando.Connection = conexxo
+
+            comando.Parameters.AddWithValue("@Numero_Nomina", dts.RH_Numero_Nomina)
+            comando.Parameters.AddWithValue("@Nombre_Empleado", dts.RH_Nombre_Empleado)
+            comando.Parameters.AddWithValue("@Ape_Paterno", dts.RH_Ape_Paterno)
+            comando.Parameters.AddWithValue("@Ape_Materno", dts.RH_Ape_Materno)
+            comando.Parameters.AddWithValue("@NNS", dts.RH_NSS)
+            comando.Parameters.AddWithValue("@RFC", dts.RH_RFC)
+            comando.Parameters.AddWithValue("@Nacionalidad", dts.RH_NAcionalidad)
+            comando.Parameters.AddWithValue("@Area", dts.RH_Area)
+            comando.Parameters.AddWithValue("@Estudios", dts.RH_Estudios)
+            comando.Parameters.AddWithValue("@Correo", dts.RH_correo)
+            comando.Parameters.AddWithValue("@Telefono", dts.RH_telefono)
+            comando.Parameters.AddWithValue("@Telefono2", dts.RH_telefono2)
+            comando.Parameters.AddWithValue("@Direccion", dts.RH_direccion)
+            comando.Parameters.AddWithValue("@Perfil", dts.RH_perfil)
+            comando.Parameters.AddWithValue("@Alerg_Enfe", dts.RH_alergis)
+            comando.Parameters.AddWithValue("@F_Nacimiento", dts.RH_fecha_nacimiento)
+            comando.Parameters.AddWithValue("@Edad", dts.RH_edad)
+            comando.Parameters.AddWithValue("@Edo_Civil", dts.RH_estado_civil)
+            comando.Parameters.AddWithValue("@Nombre_Familiar", dts.RH_NOmbre_Familiar)
+            comando.Parameters.AddWithValue("@Telefono_F", dts.RH_telefono_fam)
+            comando.Parameters.AddWithValue("@Direccion_F", dts.RH_direccion_fam)
+            comando.Parameters.AddWithValue("@Fotografia", dts.RH_fotografia)
+            comando.Parameters.AddWithValue("@F_Ingreso", dts.RH_fecha_ingreso)
+            comando.Parameters.AddWithValue("@id", dts.RH_id_empleado)
+
+            If comando.ExecuteNonQuery Then
+                Return True
+            Else
+                Return False
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        Finally
+            con.Close()
+        End Try
+    End Function
+    '<--------------Fin Alta--------------->
+
+    '-----------------Eliminar Empleado------------------>
+    Public Function FN_EliminarEmpleado(ByVal dts As ClassEmpleados) As Boolean
+        Try
+            Dim conexxo As New SqlConnection(conexioncita)
+            conexxo.Open()
+            comando = New SqlCommand("SP_EliminarEmpleado")
+            comando.CommandType = CommandType.StoredProcedure
+            comando.Connection = conexxo
+
+            comando.Parameters.AddWithValue("@id", dts.RH_id_empleado)
+            comando.Parameters.AddWithValue("@estado", "Inactivo")
+
+            If comando.ExecuteNonQuery Then
+                Return True
+            Else
+                Return False
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        Finally
+            con.Close()
+        End Try
+    End Function
+    '----------------------------------------------------
+
+    '-------------->Alta de Empleados<------------
+    Public Function FN_InsertarReportes(ByVal dts As ClassReportesEmpleados) As Boolean
+        Try
+            Dim conexxo As New SqlConnection(conexioncita)
+            conexxo.Open()
+            comando = New SqlCommand("SP_Insertar_Reportes_Empleados")
+            comando.CommandType = CommandType.StoredProcedure
+            comando.Connection = conexxo
+
+            comando.Parameters.AddWithValue("@empleado", dts.RE_empleado)
+            comando.Parameters.AddWithValue("@Quien_Reporta", dts.RE_quien_reporta)
+            comando.Parameters.AddWithValue("@fecha", dts.RE_fecha)
+            comando.Parameters.AddWithValue("@motivo", dts.RE_motivo)
+            comando.Parameters.AddWithValue("@descripcion", dts.RE_descripcion)
+            comando.Parameters.AddWithValue("@estado", "Activo")
+
+            If comando.ExecuteNonQuery Then
+                Return True
+            Else
+                Return False
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        Finally
+            con.Close()
+        End Try
+    End Function
+
+    '<------------------------Listado de Reportes----------------------------->
+    Public Function FnMostrarReportes() As DataTable
+        Try
+            Dim conexxo As New SqlConnection(conexioncita)
+            conexxo.Open()
+
+            comando = New SqlCommand("SP_Mostrar_Reports")
+            comando.CommandType = CommandType.StoredProcedure
+            comando.Connection = conexxo
+            comando.Parameters.AddWithValue("@rango1", RegistrosReportes.rango1.Value)
+            comando.Parameters.AddWithValue("@rango2", RegistrosReportes.rango2.Value)
+            comando.Parameters.AddWithValue("@empleado", RegistrosReportes.ComboBox_empleado.Text)
+            If comando.ExecuteNonQuery Then
+                Dim tabla As New DataTable
+                Dim adaptador As New SqlDataAdapter(comando)
+                adaptador.Fill(tabla)
+                Return tabla
+            Else
+                Return Nothing
+            End If
+            conexxo.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+    '<.........................fIN lISTADO----------------------------------------->
+    '-------------->Modificaion Reportes<------------
+    Public Function FN_ModificarReportes(ByVal dts As ClassReportesEmpleados) As Boolean
+        Try
+            Dim conexxo As New SqlConnection(conexioncita)
+            conexxo.Open()
+            comando = New SqlCommand("SP_Modificar_Reportes_Empleados")
+            comando.CommandType = CommandType.StoredProcedure
+            comando.Connection = conexxo
+
+            comando.Parameters.AddWithValue("@empleado", dts.RE_empleado)
+            comando.Parameters.AddWithValue("@Quien_Reporta", dts.RE_quien_reporta)
+            comando.Parameters.AddWithValue("@fecha", dts.RE_fecha)
+            comando.Parameters.AddWithValue("@motivo", dts.RE_motivo)
+            comando.Parameters.AddWithValue("@descripcion", dts.RE_descripcion)
+            comando.Parameters.AddWithValue("@id", dts.RE_id)
+
+
+            If comando.ExecuteNonQuery Then
+                Return True
+            Else
+                Return False
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        Finally
+            con.Close()
+        End Try
+    End Function
+
+    '<------------------------Listado de Entrega de Equipo de Seguridad----------------------------->
+    Public Function FnMostrarEntregaEpp() As DataTable
+        Try
+            Dim conexxo As New SqlConnection(conexioncita)
+            conexxo.Open()
+
+            comando = New SqlCommand("SP_Mostrar_Entregas_Equipo_Seguridad")
+            comando.CommandType = CommandType.StoredProcedure
+            comando.Connection = conexxo
+            comando.Parameters.AddWithValue("@rango1", Entregas_Equipo_Proteccion.rango1.Value)
+            comando.Parameters.AddWithValue("@rango2", Entregas_Equipo_Proteccion.rango2.Value)
+            If comando.ExecuteNonQuery Then
+                Dim tabla As New DataTable
+                Dim adaptador As New SqlDataAdapter(comando)
+                adaptador.Fill(tabla)
+                Return tabla
+            Else
+                Return Nothing
+            End If
+            conexxo.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+    '<.........................fIN lISTADO----------------------------------------->
+    '-----------------Eliminar Reporte------------------>
+    Public Function FN_EliminarReporte(ByVal dts As ClassReportesEmpleados) As Boolean
+        Try
+            Dim conexxo As New SqlConnection(conexioncita)
+            conexxo.Open()
+            comando = New SqlCommand("SP_EliminarReporte")
+            comando.CommandType = CommandType.StoredProcedure
+            comando.Connection = conexxo
+
+            comando.Parameters.AddWithValue("@id", dts.RE_id)
+            comando.Parameters.AddWithValue("@estado", "Inactivo")
+
+            If comando.ExecuteNonQuery Then
+                Return True
+            Else
+                Return False
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        Finally
+            con.Close()
+        End Try
+    End Function
+    '----------------------------------------------------
 End Class

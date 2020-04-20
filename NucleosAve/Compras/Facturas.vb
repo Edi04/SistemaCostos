@@ -507,6 +507,7 @@ Public Class factura
                 logica.FSubtotal = Me.SubtotalLab.Text
                 logica.FImpuestostraslados = Me.impurestrosTrasladosLAB.Text
                 logica.FTotalFactura = Me.TotalLab.Text
+                logica.Ftipo_factura = Me.ComboBox_tiposfactu.Text
 
                 If funciones.FN_InsertarFacturas(logica) Then
                     MsgBox("Factura Agregada Correctamente", MessageBoxIcon.Information)

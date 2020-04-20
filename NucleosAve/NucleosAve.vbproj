@@ -17,9 +17,9 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <PublishUrl>\\ANTUA-PC\archivos compartidos\sistema\</PublishUrl>
+    <PublishUrl>\\CHECADOR_AVE-PC\Users\Public\iconos\Versiones Sistemas\v31\</PublishUrl>
     <Install>true</Install>
-    <InstallFrom>Disk</InstallFrom>
+    <InstallFrom>Unc</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
     <UpdateMode>Foreground</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
@@ -29,7 +29,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <WebPage>publish.htm</WebPage>
     <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>44</ApplicationRevision>
+    <ApplicationRevision>45</ApplicationRevision>
     <ApplicationVersion>1.3.3.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -242,6 +242,12 @@
     <Compile Include="Control\HistorialOP.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Entregas_Equipo\Entregas_Equipo_Proteccion.Designer.vb">
+      <DependentUpon>Entregas_Equipo_Proteccion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Entregas_Equipo\Entregas_Equipo_Proteccion.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Index.Designer.vb">
       <DependentUpon>Index.vb</DependentUpon>
     </Compile>
@@ -436,12 +442,38 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>traerproductos.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Rh\Alta_Empleados.Designer.vb">
+      <DependentUpon>Alta_Empleados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Rh\Alta_Empleados.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rh\Busquedas_Empleados.Designer.vb">
+      <DependentUpon>Busquedas_Empleados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Rh\Busquedas_Empleados.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rh\ClassEmpleados.vb" />
+    <Compile Include="Rh\ClassReportesEmpleados.vb" />
     <Compile Include="Rh\ClassRh.vb" />
     <Compile Include="Rh\FuncionRh.vb" />
+    <Compile Include="Rh\RegistrosReportes.Designer.vb">
+      <DependentUpon>RegistrosReportes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Rh\RegistrosReportes.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Rh\RegistrosRH.Designer.vb">
       <DependentUpon>RegistrosRH.vb</DependentUpon>
     </Compile>
     <Compile Include="Rh\RegistrosRH.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rh\Reportes_Empleado.Designer.vb">
+      <DependentUpon>Reportes_Empleado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Rh\Reportes_Empleado.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Rh\Rh.Designer.vb">
@@ -544,6 +576,9 @@
     <EmbeddedResource Include="Control\HistorialOP.resx">
       <DependentUpon>HistorialOP.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Entregas_Equipo\Entregas_Equipo_Proteccion.resx">
+      <DependentUpon>Entregas_Equipo_Proteccion.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Index.resx">
       <DependentUpon>Index.vb</DependentUpon>
     </EmbeddedResource>
@@ -626,8 +661,20 @@
     <EmbeddedResource Include="Compras\reportes.resx">
       <DependentUpon>reportes.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Rh\Alta_Empleados.resx">
+      <DependentUpon>Alta_Empleados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rh\Busquedas_Empleados.resx">
+      <DependentUpon>Busquedas_Empleados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rh\RegistrosReportes.resx">
+      <DependentUpon>RegistrosReportes.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Rh\RegistrosRH.resx">
       <DependentUpon>RegistrosRH.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rh\Reportes_Empleado.resx">
+      <DependentUpon>Reportes_Empleado.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Rh\Rh.resx">
       <DependentUpon>Rh.vb</DependentUpon>
@@ -848,6 +895,11 @@
     <None Include="Resources\icons8-remolque-240.png" />
     <None Include="Resources\icons8-apretón-de-manos-80 %281%29.png" />
     <None Include="Resources\icons8-ventas-totales-64.png" />
+    <None Include="Resources\icons8-imagen-96.png" />
+    <None Include="Resources\icons8-cámaras-múltiples-96.png" />
+    <None Include="Resources\icons8-ingeniero-128.png" />
+    <None Include="Resources\icons8-foul-64.png" />
+    <None Include="Resources\icons8-equipo-de-paracaidismo-64.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">

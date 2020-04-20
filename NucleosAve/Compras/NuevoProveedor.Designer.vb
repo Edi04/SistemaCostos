@@ -31,6 +31,8 @@ Partial Class NuevoProveedor
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.btnProve = New System.Windows.Forms.Button()
+        Me.combo_categoria = New System.Windows.Forms.ComboBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         CType(Me.btn_Cerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -103,12 +105,32 @@ Partial Class NuevoProveedor
         '
         Me.btnProve.BackColor = System.Drawing.Color.GreenYellow
         Me.btnProve.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnProve.Location = New System.Drawing.Point(186, 126)
+        Me.btnProve.Location = New System.Drawing.Point(186, 145)
         Me.btnProve.Name = "btnProve"
         Me.btnProve.Size = New System.Drawing.Size(75, 23)
         Me.btnProve.TabIndex = 111
         Me.btnProve.Text = "Agregar"
         Me.btnProve.UseVisualStyleBackColor = False
+        '
+        'combo_categoria
+        '
+        Me.combo_categoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.combo_categoria.FormattingEnabled = True
+        Me.combo_categoria.Items.AddRange(New Object() {"Materia Prima", "General"})
+        Me.combo_categoria.Location = New System.Drawing.Point(88, 118)
+        Me.combo_categoria.Name = "combo_categoria"
+        Me.combo_categoria.Size = New System.Drawing.Size(173, 21)
+        Me.combo_categoria.TabIndex = 112
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
+        Me.Label4.Location = New System.Drawing.Point(26, 121)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(52, 13)
+        Me.Label4.TabIndex = 113
+        Me.Label4.Text = "Categoria"
         '
         'NuevoProveedor
         '
@@ -117,6 +139,8 @@ Partial Class NuevoProveedor
         Me.BackgroundImage = Global.NucleosAve.My.Resources.Resources.Fondo
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(332, 176)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.combo_categoria)
         Me.Controls.Add(Me.btnProve)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
@@ -144,4 +168,6 @@ Partial Class NuevoProveedor
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents btnProve As Button
+    Friend WithEvents combo_categoria As ComboBox
+    Friend WithEvents Label4 As Label
 End Class

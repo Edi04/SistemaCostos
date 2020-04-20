@@ -1743,7 +1743,7 @@ Partial Class OrdCompra
         Me.Label24.BackColor = System.Drawing.Color.Transparent
         Me.Label24.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label24.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label24.Location = New System.Drawing.Point(10, 578)
+        Me.Label24.Location = New System.Drawing.Point(10, 577)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(91, 16)
         Me.Label24.TabIndex = 81
@@ -1892,6 +1892,7 @@ Partial Class OrdCompra
         '
         'ComboBoxProveedores
         '
+        Me.ComboBoxProveedores.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBoxProveedores.FormattingEnabled = True
         Me.ComboBoxProveedores.Location = New System.Drawing.Point(6, 30)
         Me.ComboBoxProveedores.Name = "ComboBoxProveedores"

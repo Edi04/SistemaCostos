@@ -66,6 +66,8 @@ Partial Class Index
         Me.BAlmac = New System.Windows.Forms.PictureBox()
         Me.LAlma = New System.Windows.Forms.Label()
         Me.PMCompras = New System.Windows.Forms.Panel()
+        Me.btn_entrega_equipo_seguridad = New System.Windows.Forms.PictureBox()
+        Me.Label18 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.btn_ventas = New System.Windows.Forms.PictureBox()
         Me.LAP = New System.Windows.Forms.Label()
@@ -75,8 +77,6 @@ Partial Class Index
         Me.btn_pdf = New System.Windows.Forms.PictureBox()
         Me.Btn_listado = New System.Windows.Forms.PictureBox()
         Me.PMCostos = New System.Windows.Forms.Panel()
-        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
-        Me.LVentas = New System.Windows.Forms.Label()
         Me.PMTransporte = New System.Windows.Forms.Panel()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.btn_fletesyentregas = New System.Windows.Forms.PictureBox()
@@ -126,6 +126,12 @@ Partial Class Index
         Me.btn_rh_abre = New System.Windows.Forms.PictureBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.PM_recursos_Humanos = New System.Windows.Forms.Panel()
+        Me.btn_ee_Seguridad = New System.Windows.Forms.PictureBox()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.btn_reportes_atencion = New System.Windows.Forms.PictureBox()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.btn_empleados = New System.Windows.Forms.PictureBox()
+        Me.Label14 = New System.Windows.Forms.Label()
         Me.btn_recursos_humanos = New System.Windows.Forms.PictureBox()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.PSCRAP = New System.Windows.Forms.Panel()
@@ -163,12 +169,12 @@ Partial Class Index
         Me.PAlmacen.SuspendLayout()
         CType(Me.BAlmac, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PMCompras.SuspendLayout()
+        CType(Me.btn_entrega_equipo_seguridad, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_ventas, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PMPrima, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_pdf, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Btn_listado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PMCostos.SuspendLayout()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PMTransporte.SuspendLayout()
         CType(Me.btn_fletesyentregas, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_entregas, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -201,6 +207,9 @@ Partial Class Index
         Me.Panel1.SuspendLayout()
         CType(Me.btn_rh_abre, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PM_recursos_Humanos.SuspendLayout()
+        CType(Me.btn_ee_Seguridad, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btn_reportes_atencion, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btn_empleados, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_recursos_humanos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PSCRAP.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -589,7 +598,7 @@ Partial Class Index
         Me.PCompras.Controls.Add(Me.LCompras)
         Me.PCompras.Location = New System.Drawing.Point(30, 133)
         Me.PCompras.Name = "PCompras"
-        Me.PCompras.Size = New System.Drawing.Size(61, 85)
+        Me.PCompras.Size = New System.Drawing.Size(61, 102)
         Me.PCompras.TabIndex = 63
         Me.PCompras.Visible = False
         '
@@ -600,7 +609,7 @@ Partial Class Index
         Me.BCompras.BackColor = System.Drawing.Color.Transparent
         Me.BCompras.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.BCompras.Image = Global.NucleosAve.My.Resources.Resources.icons_recibo
-        Me.BCompras.Location = New System.Drawing.Point(3, 7)
+        Me.BCompras.Location = New System.Drawing.Point(3, 8)
         Me.BCompras.Name = "BCompras"
         Me.BCompras.Size = New System.Drawing.Size(55, 52)
         Me.BCompras.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -613,7 +622,7 @@ Partial Class Index
         Me.LCompras.BackColor = System.Drawing.Color.Transparent
         Me.LCompras.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LCompras.ForeColor = System.Drawing.Color.Black
-        Me.LCompras.Location = New System.Drawing.Point(3, 57)
+        Me.LCompras.Location = New System.Drawing.Point(3, 68)
         Me.LCompras.Name = "LCompras"
         Me.LCompras.Size = New System.Drawing.Size(55, 26)
         Me.LCompras.TabIndex = 36
@@ -733,6 +742,8 @@ Partial Class Index
         'PMCompras
         '
         Me.PMCompras.BackColor = System.Drawing.Color.Transparent
+        Me.PMCompras.Controls.Add(Me.btn_entrega_equipo_seguridad)
+        Me.PMCompras.Controls.Add(Me.Label18)
         Me.PMCompras.Controls.Add(Me.Label13)
         Me.PMCompras.Controls.Add(Me.btn_ventas)
         Me.PMCompras.Controls.Add(Me.LAP)
@@ -749,13 +760,39 @@ Partial Class Index
         Me.PMCompras.TabIndex = 71
         Me.PMCompras.Visible = False
         '
+        'btn_entrega_equipo_seguridad
+        '
+        Me.btn_entrega_equipo_seguridad.AccessibleDescription = "dfghdfgdfhdhfd"
+        Me.btn_entrega_equipo_seguridad.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btn_entrega_equipo_seguridad.BackColor = System.Drawing.Color.Transparent
+        Me.btn_entrega_equipo_seguridad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn_entrega_equipo_seguridad.Image = Global.NucleosAve.My.Resources.Resources.icons8_equipo_de_paracaidismo_64
+        Me.btn_entrega_equipo_seguridad.Location = New System.Drawing.Point(343, 9)
+        Me.btn_entrega_equipo_seguridad.Name = "btn_entrega_equipo_seguridad"
+        Me.btn_entrega_equipo_seguridad.Size = New System.Drawing.Size(65, 65)
+        Me.btn_entrega_equipo_seguridad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_entrega_equipo_seguridad.TabIndex = 81
+        Me.btn_entrega_equipo_seguridad.TabStop = False
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.BackColor = System.Drawing.Color.Transparent
+        Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label18.ForeColor = System.Drawing.Color.Black
+        Me.Label18.Location = New System.Drawing.Point(333, 79)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(89, 30)
+        Me.Label18.TabIndex = 82
+        Me.Label18.Text = "E. Equipo de" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " Seguridad"
+        '
         'Label13
         '
         Me.Label13.AutoSize = True
         Me.Label13.BackColor = System.Drawing.Color.Transparent
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.ForeColor = System.Drawing.Color.Black
-        Me.Label13.Location = New System.Drawing.Point(474, 80)
+        Me.Label13.Location = New System.Drawing.Point(439, 80)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(50, 15)
         Me.Label13.TabIndex = 80
@@ -769,7 +806,7 @@ Partial Class Index
         Me.btn_ventas.BackColor = System.Drawing.Color.Transparent
         Me.btn_ventas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btn_ventas.Image = Global.NucleosAve.My.Resources.Resources.icons8_ventas_totales_64
-        Me.btn_ventas.Location = New System.Drawing.Point(465, 10)
+        Me.btn_ventas.Location = New System.Drawing.Point(430, 10)
         Me.btn_ventas.Name = "btn_ventas"
         Me.btn_ventas.Size = New System.Drawing.Size(65, 65)
         Me.btn_ventas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -859,8 +896,6 @@ Partial Class Index
         'PMCostos
         '
         Me.PMCostos.BackColor = System.Drawing.Color.Transparent
-        Me.PMCostos.Controls.Add(Me.PictureBox6)
-        Me.PMCostos.Controls.Add(Me.LVentas)
         Me.PMCostos.Controls.Add(Me.B_Facturas)
         Me.PMCostos.Controls.Add(Me.L_Facturas)
         Me.PMCostos.Controls.Add(Me.B_pedimentos)
@@ -870,32 +905,6 @@ Partial Class Index
         Me.PMCostos.Size = New System.Drawing.Size(570, 130)
         Me.PMCostos.TabIndex = 72
         Me.PMCostos.Visible = False
-        '
-        'PictureBox6
-        '
-        Me.PictureBox6.AccessibleDescription = "dfghdfgdfhdhfd"
-        Me.PictureBox6.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.PictureBox6.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox6.Image = Global.NucleosAve.My.Resources.Resources.icons8_rollo_de_papel_para_empapelar_96
-        Me.PictureBox6.Location = New System.Drawing.Point(181, 9)
-        Me.PictureBox6.Name = "PictureBox6"
-        Me.PictureBox6.Size = New System.Drawing.Size(65, 65)
-        Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox6.TabIndex = 35
-        Me.PictureBox6.TabStop = False
-        '
-        'LVentas
-        '
-        Me.LVentas.AutoSize = True
-        Me.LVentas.BackColor = System.Drawing.Color.Transparent
-        Me.LVentas.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LVentas.ForeColor = System.Drawing.Color.Black
-        Me.LVentas.Location = New System.Drawing.Point(191, 76)
-        Me.LVentas.Name = "LVentas"
-        Me.LVentas.Size = New System.Drawing.Size(46, 13)
-        Me.LVentas.TabIndex = 36
-        Me.LVentas.Text = "Ventas"
         '
         'PMTransporte
         '
@@ -1511,6 +1520,12 @@ Partial Class Index
         'PM_recursos_Humanos
         '
         Me.PM_recursos_Humanos.BackColor = System.Drawing.Color.Transparent
+        Me.PM_recursos_Humanos.Controls.Add(Me.btn_ee_Seguridad)
+        Me.PM_recursos_Humanos.Controls.Add(Me.Label17)
+        Me.PM_recursos_Humanos.Controls.Add(Me.btn_reportes_atencion)
+        Me.PM_recursos_Humanos.Controls.Add(Me.Label16)
+        Me.PM_recursos_Humanos.Controls.Add(Me.btn_empleados)
+        Me.PM_recursos_Humanos.Controls.Add(Me.Label14)
         Me.PM_recursos_Humanos.Controls.Add(Me.btn_recursos_humanos)
         Me.PM_recursos_Humanos.Controls.Add(Me.Label15)
         Me.PM_recursos_Humanos.Location = New System.Drawing.Point(30, 250)
@@ -1518,6 +1533,84 @@ Partial Class Index
         Me.PM_recursos_Humanos.Size = New System.Drawing.Size(570, 130)
         Me.PM_recursos_Humanos.TabIndex = 77
         Me.PM_recursos_Humanos.Visible = False
+        '
+        'btn_ee_Seguridad
+        '
+        Me.btn_ee_Seguridad.AccessibleDescription = "dfghdfgdfhdhfd"
+        Me.btn_ee_Seguridad.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btn_ee_Seguridad.BackColor = System.Drawing.Color.Transparent
+        Me.btn_ee_Seguridad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn_ee_Seguridad.Image = Global.NucleosAve.My.Resources.Resources.icons8_equipo_de_paracaidismo_64
+        Me.btn_ee_Seguridad.Location = New System.Drawing.Point(215, 11)
+        Me.btn_ee_Seguridad.Name = "btn_ee_Seguridad"
+        Me.btn_ee_Seguridad.Size = New System.Drawing.Size(65, 65)
+        Me.btn_ee_Seguridad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_ee_Seguridad.TabIndex = 73
+        Me.btn_ee_Seguridad.TabStop = False
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.BackColor = System.Drawing.Color.Transparent
+        Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.ForeColor = System.Drawing.Color.Black
+        Me.Label17.Location = New System.Drawing.Point(205, 81)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(89, 30)
+        Me.Label17.TabIndex = 74
+        Me.Label17.Text = "E. Equipo de" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " Seguridad"
+        '
+        'btn_reportes_atencion
+        '
+        Me.btn_reportes_atencion.AccessibleDescription = "dfghdfgdfhdhfd"
+        Me.btn_reportes_atencion.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btn_reportes_atencion.BackColor = System.Drawing.Color.Transparent
+        Me.btn_reportes_atencion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn_reportes_atencion.Image = Global.NucleosAve.My.Resources.Resources.icons8_foul_64
+        Me.btn_reportes_atencion.Location = New System.Drawing.Point(331, 12)
+        Me.btn_reportes_atencion.Name = "btn_reportes_atencion"
+        Me.btn_reportes_atencion.Size = New System.Drawing.Size(65, 65)
+        Me.btn_reportes_atencion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_reportes_atencion.TabIndex = 71
+        Me.btn_reportes_atencion.TabStop = False
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.BackColor = System.Drawing.Color.Transparent
+        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.ForeColor = System.Drawing.Color.Black
+        Me.Label16.Location = New System.Drawing.Point(300, 82)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(155, 30)
+        Me.Label16.TabIndex = 72
+        Me.Label16.Text = "        Reportes" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(llamadas de atencion)"
+        '
+        'btn_empleados
+        '
+        Me.btn_empleados.AccessibleDescription = "dfghdfgdfhdhfd"
+        Me.btn_empleados.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btn_empleados.BackColor = System.Drawing.Color.Transparent
+        Me.btn_empleados.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn_empleados.Image = Global.NucleosAve.My.Resources.Resources.icons8_ingeniero_128
+        Me.btn_empleados.Location = New System.Drawing.Point(125, 10)
+        Me.btn_empleados.Name = "btn_empleados"
+        Me.btn_empleados.Size = New System.Drawing.Size(65, 65)
+        Me.btn_empleados.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_empleados.TabIndex = 69
+        Me.btn_empleados.TabStop = False
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.BackColor = System.Drawing.Color.Transparent
+        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.ForeColor = System.Drawing.Color.Black
+        Me.Label14.Location = New System.Drawing.Point(118, 81)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(79, 15)
+        Me.Label14.TabIndex = 70
+        Me.Label14.Text = "Empleados"
         '
         'btn_recursos_humanos
         '
@@ -1539,11 +1632,11 @@ Partial Class Index
         Me.Label15.BackColor = System.Drawing.Color.Transparent
         Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label15.ForeColor = System.Drawing.Color.Black
-        Me.Label15.Location = New System.Drawing.Point(11, 78)
+        Me.Label15.Location = New System.Drawing.Point(42, 79)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(132, 15)
+        Me.Label15.Size = New System.Drawing.Size(71, 30)
         Me.Label15.TabIndex = 68
-        Me.Label15.Text = "Recursos Humanos"
+        Me.Label15.Text = "Recursos " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Humanos"
         '
         'PSCRAP
         '
@@ -1663,14 +1756,14 @@ Partial Class Index
         Me.BackgroundImage = Global.NucleosAve.My.Resources.Resources.Fondo
         Me.ClientSize = New System.Drawing.Size(926, 425)
         Me.Controls.Add(Me.PMCompras)
+        Me.Controls.Add(Me.PM_recursos_Humanos)
+        Me.Controls.Add(Me.PMCostos)
         Me.Controls.Add(Me.PMAlmacen)
         Me.Controls.Add(Me.PMGasolina)
         Me.Controls.Add(Me.PMTransporte)
-        Me.Controls.Add(Me.PMCostos)
         Me.Controls.Add(Me.PStatus)
         Me.Controls.Add(Me.PProcesos)
         Me.Controls.Add(Me.PSCRAP)
-        Me.Controls.Add(Me.PM_recursos_Humanos)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.PMMPrima)
         Me.Controls.Add(Me.PM_Armado_Rectangular)
@@ -1729,13 +1822,13 @@ Partial Class Index
         CType(Me.BAlmac, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PMCompras.ResumeLayout(False)
         Me.PMCompras.PerformLayout()
+        CType(Me.btn_entrega_equipo_seguridad, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btn_ventas, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PMPrima, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btn_pdf, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Btn_listado, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PMCostos.ResumeLayout(False)
         Me.PMCostos.PerformLayout()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PMTransporte.ResumeLayout(False)
         Me.PMTransporte.PerformLayout()
         CType(Me.btn_fletesyentregas, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1781,6 +1874,9 @@ Partial Class Index
         CType(Me.btn_rh_abre, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PM_recursos_Humanos.ResumeLayout(False)
         Me.PM_recursos_Humanos.PerformLayout()
+        CType(Me.btn_ee_Seguridad, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_reportes_atencion, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_empleados, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btn_recursos_humanos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PSCRAP.ResumeLayout(False)
         Me.PSCRAP.PerformLayout()
@@ -1897,8 +1993,6 @@ Partial Class Index
     Friend WithEvents PBMHR As Panel
     Friend WithEvents BMOHR As PictureBox
     Friend WithEvents LHR As Label
-    Friend WithEvents PictureBox6 As PictureBox
-    Friend WithEvents LVentas As Label
     Friend WithEvents PSCRAP As Panel
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents LSCRAP As Label
@@ -1910,4 +2004,12 @@ Partial Class Index
     Friend WithEvents LStatus As Label
     Friend WithEvents Label13 As Label
     Friend WithEvents btn_ventas As PictureBox
+    Friend WithEvents btn_empleados As PictureBox
+    Friend WithEvents Label14 As Label
+    Friend WithEvents btn_reportes_atencion As PictureBox
+    Friend WithEvents Label16 As Label
+    Friend WithEvents btn_ee_Seguridad As PictureBox
+    Friend WithEvents Label17 As Label
+    Friend WithEvents btn_entrega_equipo_seguridad As PictureBox
+    Friend WithEvents Label18 As Label
 End Class
