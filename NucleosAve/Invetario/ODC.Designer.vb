@@ -26,6 +26,7 @@ Partial Class ODC
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ODC))
         Me.BBOCompra = New System.Windows.Forms.Button()
         Me.OCompra = New System.Windows.Forms.TextBox()
         Me.BMinimizar = New System.Windows.Forms.Button()
@@ -284,7 +285,6 @@ Partial Class ODC
         Me.TxtPS3 = New System.Windows.Forms.TextBox()
         Me.TxtPS2 = New System.Windows.Forms.TextBox()
         Me.TxtPS1 = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.LP1 = New System.Windows.Forms.Label()
         Me.BE4 = New System.Windows.Forms.Button()
         Me.BE3 = New System.Windows.Forms.Button()
@@ -425,6 +425,9 @@ Partial Class ODC
         Me.LPr5 = New System.Windows.Forms.Label()
         Me.LID5 = New System.Windows.Forms.Label()
         Me.Productos1 = New System.Windows.Forms.TabControl()
+        Me.LCompras = New System.Windows.Forms.Label()
+        Me.BCompras = New System.Windows.Forms.Button()
+        Me.LProv = New System.Windows.Forms.Label()
         Me.POC.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DGOCA, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -505,7 +508,7 @@ Partial Class ODC
         Me.LProd.AutoSize = True
         Me.LProd.BackColor = System.Drawing.Color.Transparent
         Me.LProd.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LProd.Location = New System.Drawing.Point(407, 103)
+        Me.LProd.Location = New System.Drawing.Point(454, 103)
         Me.LProd.Name = "LProd"
         Me.LProd.Size = New System.Drawing.Size(104, 24)
         Me.LProd.TabIndex = 24
@@ -517,7 +520,7 @@ Partial Class ODC
         Me.LFinalizar.AutoSize = True
         Me.LFinalizar.BackColor = System.Drawing.Color.Transparent
         Me.LFinalizar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LFinalizar.Location = New System.Drawing.Point(990, 125)
+        Me.LFinalizar.Location = New System.Drawing.Point(964, 125)
         Me.LFinalizar.Name = "LFinalizar"
         Me.LFinalizar.Size = New System.Drawing.Size(54, 15)
         Me.LFinalizar.TabIndex = 25
@@ -529,7 +532,7 @@ Partial Class ODC
         Me.BTerminar.BackColor = System.Drawing.Color.Transparent
         Me.BTerminar.BackgroundImage = Global.NucleosAve.My.Resources.Resources.icons8_cancelar_suscripción_64
         Me.BTerminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.BTerminar.Location = New System.Drawing.Point(993, 77)
+        Me.BTerminar.Location = New System.Drawing.Point(967, 77)
         Me.BTerminar.Name = "BTerminar"
         Me.BTerminar.Size = New System.Drawing.Size(50, 50)
         Me.BTerminar.TabIndex = 27
@@ -541,7 +544,7 @@ Partial Class ODC
         Me.BGuardar.BackColor = System.Drawing.Color.Transparent
         Me.BGuardar.BackgroundImage = Global.NucleosAve.My.Resources.Resources.list_3
         Me.BGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.BGuardar.Location = New System.Drawing.Point(937, 77)
+        Me.BGuardar.Location = New System.Drawing.Point(856, 77)
         Me.BGuardar.Name = "BGuardar"
         Me.BGuardar.Size = New System.Drawing.Size(50, 50)
         Me.BGuardar.TabIndex = 26
@@ -556,7 +559,7 @@ Partial Class ODC
         Me.POC.Controls.Add(Me.LBOD)
         Me.POC.Controls.Add(Me.LBusqueda)
         Me.POC.Controls.Add(Me.DGOCA)
-        Me.POC.Location = New System.Drawing.Point(-1, 76)
+        Me.POC.Location = New System.Drawing.Point(2, 73)
         Me.POC.Name = "POC"
         Me.POC.Size = New System.Drawing.Size(1071, 533)
         Me.POC.TabIndex = 28
@@ -738,7 +741,7 @@ Partial Class ODC
         Me.PMaterial.Controls.Add(Me.BCM)
         Me.PMaterial.Controls.Add(Me.TxtBMaterial)
         Me.PMaterial.Controls.Add(Me.DGProducto)
-        Me.PMaterial.Location = New System.Drawing.Point(250, 200)
+        Me.PMaterial.Location = New System.Drawing.Point(299, 178)
         Me.PMaterial.Name = "PMaterial"
         Me.PMaterial.Size = New System.Drawing.Size(450, 212)
         Me.PMaterial.TabIndex = 29
@@ -3386,7 +3389,6 @@ Partial Class ODC
         Me.TP1.Controls.Add(Me.TxtPS3)
         Me.TP1.Controls.Add(Me.TxtPS2)
         Me.TP1.Controls.Add(Me.TxtPS1)
-        Me.TP1.Controls.Add(Me.Label2)
         Me.TP1.Controls.Add(Me.LP1)
         Me.TP1.Controls.Add(Me.BE4)
         Me.TP1.Controls.Add(Me.BE3)
@@ -3504,19 +3506,6 @@ Partial Class ODC
         Me.TxtPS1.Text = "0"
         Me.TxtPS1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.TxtPS1.Visible = False
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(508, 210)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(55, 30)
-        Me.Label2.TabIndex = 8
-        Me.Label2.Text = "Ingresar " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "por:"
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.Label2.Visible = False
         '
         'LP1
         '
@@ -5119,6 +5108,39 @@ Partial Class ODC
         Me.Productos1.TabIndex = 0
         Me.Productos1.Visible = False
         '
+        'LCompras
+        '
+        Me.LCompras.AutoSize = True
+        Me.LCompras.BackColor = System.Drawing.Color.Transparent
+        Me.LCompras.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LCompras.Location = New System.Drawing.Point(909, 125)
+        Me.LCompras.Name = "LCompras"
+        Me.LCompras.Size = New System.Drawing.Size(57, 15)
+        Me.LCompras.TabIndex = 31
+        Me.LCompras.Text = "Compras"
+        Me.LCompras.Visible = False
+        '
+        'BCompras
+        '
+        Me.BCompras.BackColor = System.Drawing.Color.Transparent
+        Me.BCompras.BackgroundImage = CType(resources.GetObject("BCompras.BackgroundImage"), System.Drawing.Image)
+        Me.BCompras.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.BCompras.Location = New System.Drawing.Point(912, 77)
+        Me.BCompras.Name = "BCompras"
+        Me.BCompras.Size = New System.Drawing.Size(50, 50)
+        Me.BCompras.TabIndex = 32
+        Me.BCompras.UseVisualStyleBackColor = False
+        Me.BCompras.Visible = False
+        '
+        'LProv
+        '
+        Me.LProv.AutoSize = True
+        Me.LProv.Location = New System.Drawing.Point(487, 32)
+        Me.LProv.Name = "LProv"
+        Me.LProv.Size = New System.Drawing.Size(0, 13)
+        Me.LProv.TabIndex = 33
+        Me.LProv.Visible = False
+        '
         'ODC
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -5126,6 +5148,9 @@ Partial Class ODC
         Me.BackgroundImage = Global.NucleosAve.My.Resources.Resources.Fondo
         Me.ClientSize = New System.Drawing.Size(1044, 617)
         Me.Controls.Add(Me.POC)
+        Me.Controls.Add(Me.LProv)
+        Me.Controls.Add(Me.LCompras)
+        Me.Controls.Add(Me.BCompras)
         Me.Controls.Add(Me.PMaterial)
         Me.Controls.Add(Me.LProd)
         Me.Controls.Add(Me.LDGP)
@@ -5562,11 +5587,13 @@ Partial Class ODC
     Friend WithEvents TxtPS3 As TextBox
     Friend WithEvents TxtPS2 As TextBox
     Friend WithEvents TxtPS1 As TextBox
-    Friend WithEvents Label2 As Label
     Friend WithEvents LP1 As Label
     Friend WithEvents TxtPS20 As TextBox
     Friend WithEvents TxtPS19 As TextBox
     Friend WithEvents TxtPS18 As TextBox
     Friend WithEvents TxtPS17 As TextBox
     Friend WithEvents LP5 As Label
+    Friend WithEvents LCompras As Label
+    Friend WithEvents BCompras As Button
+    Friend WithEvents LProv As Label
 End Class

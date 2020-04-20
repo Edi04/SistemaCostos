@@ -29,7 +29,6 @@ Public Class Inventario
     Dim DACategoria As New SqlDataAdapter
 
     Private WithEvents Trabajador As New System.ComponentModel.BackgroundWorker
-
     Private Sub Inventario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         DatosGV()
         FechaActual()
@@ -115,8 +114,10 @@ Public Class Inventario
         If TxtNExistencia.Text = Nothing Then
             MessageBox.Show("Ingresar Cantidad", "Advertencia", MessageBoxButtons.OK)
         Else
-            Datos()
-            CargaInfpRO()
+            If MsgBox("La cantidad a Ingresar es: " & TxtNExistencia.Text, vbYesNo) = vbYes Then
+                Datos()
+                CargaInfpRO()
+            End If
         End If
     End Sub
 
@@ -135,19 +136,25 @@ Public Class Inventario
            (CCategoria.SelectedValue = Nothing) Or (CCategoria.SelectedValue = 7) Then
             MessageBox.Show("Seleccione los Datos", "Advertencia", MessageBoxButtons.OK)
         ElseIf CArea.SelectedValue = Nothing Then
-            CArea.SelectedValue = 35
-            Modifi()
-            CargaInfpRO()
-            BOrdenC.Visible = True
+            If MsgBox("Desea Modificar la Información del Producto " & TxtNombreP.Text, vbYesNo) = vbYes Then
+                CArea.SelectedValue = 35
+                Modifi()
+                CargaInfpRO()
+                BOrdenC.Visible = True
+            End If
 
         ElseIf CProceso.SelectedValue = Nothing Then
-            CProceso.SelectedValue = 49
-            Modifi()
-            CargaInfpRO()
-            BOrdenC.Visible = True
+            If MsgBox("Desea Modificar la Información del Producto " & TxtNombreP.Text, vbYesNo) = vbYes Then
+                CProceso.SelectedValue = 49
+                Modifi()
+                CargaInfpRO()
+                BOrdenC.Visible = True
+            End If
         Else
-            Modifi()
-            BOrdenC.Visible = True
+            If MsgBox("Desea Modificar la Información del Producto " & TxtNombreP.Text, vbYesNo) = vbYes Then
+                Modifi()
+                BOrdenC.Visible = True
+            End If
         End If
     End Sub
 
@@ -161,8 +168,10 @@ Public Class Inventario
 
     '   Eliminar
     Private Sub BEliminar_Click(sender As Object, e As EventArgs) Handles BEliminar.Click
-        Eliminar()
-        AgregarExistencias.Visible = False
+        If MsgBox("Desea Eliminar el Producto " & TxtNombreP.Text, vbYesNo) = vbYes Then
+            Eliminar()
+            AgregarExistencias.Visible = False
+        End If
     End Sub
 
     '   Detalles Productos
@@ -232,11 +241,12 @@ Public Class Inventario
         AgregarExistencias.Visible = False
         TxTUPza.ReadOnly = False
 
-        If TxtTipoCambio.Text = "" Then
+        If TxtTipoCambio.Text = "" Or TxtTipoCambio.Text = "Valor" Then
             HTC.Enabled = True
         End If
 
         IA.Text = "1"
+        CargaInfpRO()
     End Sub
 
 
@@ -366,9 +376,8 @@ Public Class Inventario
         Dim CanS As Double = CDec(TxtNExistencia.Text)
         Dim Pre As Double = TxtTotal.Text
 
-        Dim CONSULTA As String = "IF NOT EXISTS(SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodS & "' AND Producto = '" & Prod & "')
-	                                 INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanE, CanS, PrecioE, PrecioS)
-                                                                VALUES ('" & CodS & "', '" & Prod & "', '" & CanS & "', 0, " & Pre & ",0)"
+        Dim CONSULTA As String = "INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanE, CanS, PrecioE, PrecioS, Created)
+                                                             VALUES ('" & CodS & "', '" & Prod & "', '" & CanS & "', 0, " & Pre & ",0, SYSDATETIME())"
 
         Dim COMANDO As New SqlCommand(CONSULTA, Conex)
 
@@ -456,14 +465,15 @@ Public Class Inventario
         If TxtBusqueda.Text = "" Then
             DatosGV()
         Else
-            Dim Consulta As String = "SELECT P.Id_Producto, P.Clave_Producto, P.Nombre_Producto
+            Dim Consulta As String = "SELECT P.Id_Producto, P.Clave_Producto, P.Nombre_Producto, P.Existencia
                                       FROM TB_Productos AS P
                                            INNER JOIN TB_Marcas AS Ma ON Ma.Id_Marca = P.Id_Marca
                                       WHERE (P.Clave_Producto LIKE '%'+@Busqueda+'%' OR
                                              P.Nombre_Producto LIKE '%'+@Busqueda+'%' OR
                                              Ma.Marca LIKE '%'+@Busqueda+'%' OR
                                              P.Codigo_Barras LIKE '%'+@Busqueda+'%') AND
-                                             P.Estado = 'Activo'"
+                                             P.Estado = 'Activo'
+                                        ORDER BY P.Nombre_Producto ASC"
 
             Dim cmd As New SqlCommand(Consulta, Conex)
             cmd.Parameters.AddWithValue("@Busqueda", Trim(TxtBusqueda.Text))

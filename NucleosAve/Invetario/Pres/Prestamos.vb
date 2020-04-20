@@ -37,7 +37,46 @@ Public Class Prestamos
     End Sub
 
     Private Sub BEliminar_Click(sender As Object, e As EventArgs) Handles BEliminar.Click
-        Eliminar()
+        'Crear Código
+        Dim Fecha = DateTime.Now.ToString("yy")
+        Dim cmd As New SqlCommand("SELECT Id_Prestamo
+                                       FROM TB_Prestamos
+                                       ORDER BY Id_Prestamo DESC", Conex)
+        Dim strCodigo As String
+
+        Conex.Open()
+        strCodigo = cmd.ExecuteScalar
+        Conex.Close()
+
+        Dim Id As Integer = CType(strCodigo.Substring(0), Integer)
+
+        LCS.Text = "CSAPE-" + Format(Id + 1, "0000") + "/" + Fecha 'Inventario
+
+        'Insertar Código
+        Dim CodS As String = LCS.Text
+        Dim Emple As String = LUsuario.Text
+
+            Conex.Open()
+            Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodS FROM TB_CodigS WHERE CodS = '" & CodS & "')
+		                                    INSERT INTO TB_CodigS (CodS, Created)
+                                                           VALUES ( '" & CodS & "', SYSDATETIME())"
+            Dim COMANDO As New SqlCommand(CONSULTA, Conex)
+
+            COMANDO.ExecuteNonQuery()
+        Conex.Close()
+
+        If MsgBox("Desea Eliminar el Prestamo", vbYesNo) = vbYes Then
+            Conex.Open()
+            Dim CONSULTAa As String = "IF NOT EXISTS(SELECT CodiS FROM TB_MovimientoRastreo WHERE CodiS = '" & CodS & "')
+                                    INSERT INTO TB_MovimientoRastreo (Tipo, Estado, Responsable, CodiS , Created)
+                                                            VALUES ( 'Prestamo', 'Eliminación', '" & Emple & "', '" & CodS & "',SYSDATETIME() )"
+            Dim COMANDOa As New SqlCommand(CONSULTAa, Conex)
+
+            COMANDOa.ExecuteNonQuery()
+            Conex.Close()
+
+            Eliminar()
+        End If
     End Sub
 
     Private Sub BModificar_Click(sender As Object, e As EventArgs) Handles BModificar.Click
@@ -59,7 +98,9 @@ Public Class Prestamos
     End Sub
 
     Private Sub BGuardarM(sender As Object, e As EventArgs) Handles BGuardarMo.Click
-        Modifi()
+        If MsgBox("Desea Guardar la Modificación", vbYesNo) = vbYes Then
+            Modifi()
+        End If
     End Sub
 
     Private Sub BNuevoPrestamo_Click(sender As Object, e As EventArgs) Handles BNuevoPrestamo.Click
@@ -82,7 +123,47 @@ Public Class Prestamos
     End Sub
 
     Private Sub BGIngreso_Click(sender As Object, e As EventArgs) Handles BGIngreso.Click
-        FPres()
+        'Crear Código
+        Dim Fecha = DateTime.Now.ToString("yy")
+        Dim cmd As New SqlCommand("SELECT Id_Prestamo
+                                       FROM TB_Prestamos
+                                       ORDER BY Id_Prestamo DESC", Conex)
+        Dim strCodigo As String
+
+        Conex.Open()
+        strCodigo = cmd.ExecuteScalar
+        Conex.Close()
+
+        Dim Id As Integer = CType(strCodigo.Substring(0), Integer)
+
+        LCS.Text = "CSAPI-" + Format(Id + 1, "0000") + "/" + Fecha 'Inventario
+
+        'Insertar Código
+        Dim CodS As String = LCS.Text
+        Dim Emple As String = LUsuario.Text
+
+        Conex.Open()
+        Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodS FROM TB_CodigS WHERE CodS = '" & CodS & "')
+		                                    INSERT INTO TB_CodigS (CodS, Created)
+                                                           VALUES ( '" & CodS & "', SYSDATETIME())"
+        Dim COMANDO As New SqlCommand(CONSULTA, Conex)
+
+        COMANDO.ExecuteNonQuery()
+        Conex.Close()
+
+        If MsgBox("Desea Ingresar el Producto", vbYesNo) = vbYes Then
+            Conex.Open()
+            Dim CONSULTAa As String = "IF NOT EXISTS(SELECT CodiS FROM TB_MovimientoRastreo WHERE CodiS = '" & CodS & "')
+                                    INSERT INTO TB_MovimientoRastreo (Tipo, Estado, Responsable, CodiS , Created)
+                                                            VALUES ( 'Prestamo', 'Ingreso', '" & Emple & "', '" & CodS & "',SYSDATETIME() )"
+            Dim COMANDOa As New SqlCommand(CONSULTAa, Conex)
+
+            COMANDOa.ExecuteNonQuery()
+            Conex.Close()
+
+
+            FPres()
+        End If
     End Sub
 
     Private Sub BMostrarHist_Click(sender As Object, e As EventArgs) Handles BMostrarHist.Click
@@ -159,6 +240,17 @@ Public Class Prestamos
 
         Try
             Conex.Open()
+            Dim Prod As String = TxtMaterial.Text
+            Dim CodS As String = LCS.Text
+            Dim CanS As Double = CDec(TxtCantidad.Text)
+
+            Dim CONSULTA As String = "INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanE, CanS, PrecioE, PrecioS, Created)
+                                                                VALUES ('" & CodS & "', '" & Prod & "', '" & CanS & "', 0, 0, 0, SYSDATETIME())"
+
+            Dim COMANDO As New SqlCommand(CONSULTA, Conex)
+
+            COMANDO.ExecuteNonQuery()
+
             RData = EDatos.ExecuteReader()
 
             DataB()
@@ -238,6 +330,17 @@ Public Class Prestamos
 
         Try
             Conex.Open()
+            Dim Prod As String = TxtMaterial.Text
+            Dim CodS As String = LCS.Text
+            Dim CanS As Double = CDec(TxtCantidad.Text)
+
+            Dim CONSULTA As String = "INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanE, CanS, PrecioE, PrecioS, Created)
+                                                                VALUES ('" & CodS & "', '" & Prod & "', '" & CanS & "', 0, 0, 0, SYSDATETIME())"
+
+            Dim COMANDO As New SqlCommand(CONSULTA, Conex)
+
+            COMANDO.ExecuteNonQuery()
+
             RData = GDatos.ExecuteReader()
             BotF()
             BRIngreso.Visible = False

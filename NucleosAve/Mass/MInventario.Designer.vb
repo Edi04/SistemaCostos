@@ -64,13 +64,9 @@ Partial Class MInventario
         Me.TxtMaximo = New System.Windows.Forms.TextBox()
         Me.IDP = New System.Windows.Forms.Label()
         Me.GDatos_Generales = New System.Windows.Forms.GroupBox()
-        Me.BAMar = New System.Windows.Forms.Button()
-        Me.CMarca = New System.Windows.Forms.ComboBox()
         Me.CMedida = New System.Windows.Forms.ComboBox()
         Me.LMa = New System.Windows.Forms.Label()
         Me.LM = New System.Windows.Forms.Label()
-        Me.TxtMarca = New System.Windows.Forms.TextBox()
-        Me.LMarca = New System.Windows.Forms.Label()
         Me.TxtMedida = New System.Windows.Forms.TextBox()
         Me.LUMedida = New System.Windows.Forms.Label()
         Me.TxtDescripcion = New System.Windows.Forms.TextBox()
@@ -90,6 +86,8 @@ Partial Class MInventario
         Me.Exis = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.POpc = New System.Windows.Forms.Panel()
         Me.LC = New System.Windows.Forms.Label()
+        Me.TxtGramaje = New System.Windows.Forms.TextBox()
+        Me.LG = New System.Windows.Forms.Label()
         Me.AgregarExistencias.SuspendLayout()
         Me.PUSD.SuspendLayout()
         Me.GNExistencia.SuspendLayout()
@@ -573,13 +571,11 @@ Partial Class MInventario
         '
         Me.GDatos_Generales.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.GDatos_Generales.BackColor = System.Drawing.Color.Transparent
-        Me.GDatos_Generales.Controls.Add(Me.BAMar)
-        Me.GDatos_Generales.Controls.Add(Me.CMarca)
+        Me.GDatos_Generales.Controls.Add(Me.TxtGramaje)
+        Me.GDatos_Generales.Controls.Add(Me.LG)
         Me.GDatos_Generales.Controls.Add(Me.CMedida)
         Me.GDatos_Generales.Controls.Add(Me.LMa)
         Me.GDatos_Generales.Controls.Add(Me.LM)
-        Me.GDatos_Generales.Controls.Add(Me.TxtMarca)
-        Me.GDatos_Generales.Controls.Add(Me.LMarca)
         Me.GDatos_Generales.Controls.Add(Me.TxtMedida)
         Me.GDatos_Generales.Controls.Add(Me.LUMedida)
         Me.GDatos_Generales.Controls.Add(Me.TxtDescripcion)
@@ -597,35 +593,12 @@ Partial Class MInventario
         Me.GDatos_Generales.TabStop = False
         Me.GDatos_Generales.Text = "Datos Generales del Producto"
         '
-        'BAMar
-        '
-        Me.BAMar.BackColor = System.Drawing.Color.Transparent
-        Me.BAMar.BackgroundImage = Global.NucleosAve.My.Resources.Resources.file1
-        Me.BAMar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.BAMar.Location = New System.Drawing.Point(283, 128)
-        Me.BAMar.Name = "BAMar"
-        Me.BAMar.Size = New System.Drawing.Size(22, 22)
-        Me.BAMar.TabIndex = 177
-        Me.BAMar.UseVisualStyleBackColor = False
-        Me.BAMar.Visible = False
-        '
-        'CMarca
-        '
-        Me.CMarca.BackColor = System.Drawing.SystemColors.MenuBar
-        Me.CMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.CMarca.FormattingEnabled = True
-        Me.CMarca.Location = New System.Drawing.Point(143, 128)
-        Me.CMarca.Name = "CMarca"
-        Me.CMarca.Size = New System.Drawing.Size(137, 21)
-        Me.CMarca.TabIndex = 8
-        Me.CMarca.Visible = False
-        '
         'CMedida
         '
         Me.CMedida.BackColor = System.Drawing.SystemColors.MenuBar
         Me.CMedida.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CMedida.FormattingEnabled = True
-        Me.CMedida.Location = New System.Drawing.Point(143, 97)
+        Me.CMedida.Location = New System.Drawing.Point(143, 101)
         Me.CMedida.Name = "CMedida"
         Me.CMedida.Size = New System.Drawing.Size(162, 21)
         Me.CMedida.TabIndex = 4
@@ -649,33 +622,11 @@ Partial Class MInventario
         Me.LM.TabIndex = 6
         Me.LM.Visible = False
         '
-        'TxtMarca
-        '
-        Me.TxtMarca.BackColor = System.Drawing.Color.Gainsboro
-        Me.TxtMarca.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TxtMarca.Location = New System.Drawing.Point(143, 131)
-        Me.TxtMarca.Multiline = True
-        Me.TxtMarca.Name = "TxtMarca"
-        Me.TxtMarca.ReadOnly = True
-        Me.TxtMarca.Size = New System.Drawing.Size(162, 15)
-        Me.TxtMarca.TabIndex = 7
-        '
-        'LMarca
-        '
-        Me.LMarca.AutoSize = True
-        Me.LMarca.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LMarca.ForeColor = System.Drawing.Color.Black
-        Me.LMarca.Location = New System.Drawing.Point(91, 129)
-        Me.LMarca.Name = "LMarca"
-        Me.LMarca.Size = New System.Drawing.Size(46, 16)
-        Me.LMarca.TabIndex = 0
-        Me.LMarca.Text = "Marca"
-        '
         'TxtMedida
         '
         Me.TxtMedida.BackColor = System.Drawing.Color.Gainsboro
         Me.TxtMedida.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TxtMedida.Location = New System.Drawing.Point(143, 100)
+        Me.TxtMedida.Location = New System.Drawing.Point(143, 104)
         Me.TxtMedida.Multiline = True
         Me.TxtMedida.Name = "TxtMedida"
         Me.TxtMedida.ReadOnly = True
@@ -687,7 +638,7 @@ Partial Class MInventario
         Me.LUMedida.AutoSize = True
         Me.LUMedida.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LUMedida.ForeColor = System.Drawing.Color.Black
-        Me.LUMedida.Location = New System.Drawing.Point(17, 98)
+        Me.LUMedida.Location = New System.Drawing.Point(17, 102)
         Me.LUMedida.Name = "LUMedida"
         Me.LUMedida.Size = New System.Drawing.Size(120, 16)
         Me.LUMedida.TabIndex = 0
@@ -697,7 +648,7 @@ Partial Class MInventario
         '
         Me.TxtDescripcion.BackColor = System.Drawing.Color.Gainsboro
         Me.TxtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TxtDescripcion.Location = New System.Drawing.Point(143, 155)
+        Me.TxtDescripcion.Location = New System.Drawing.Point(143, 157)
         Me.TxtDescripcion.Multiline = True
         Me.TxtDescripcion.Name = "TxtDescripcion"
         Me.TxtDescripcion.ReadOnly = True
@@ -709,7 +660,7 @@ Partial Class MInventario
         Me.LDescripcion.AutoSize = True
         Me.LDescripcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LDescripcion.ForeColor = System.Drawing.Color.Black
-        Me.LDescripcion.Location = New System.Drawing.Point(57, 155)
+        Me.LDescripcion.Location = New System.Drawing.Point(57, 157)
         Me.LDescripcion.Name = "LDescripcion"
         Me.LDescripcion.Size = New System.Drawing.Size(80, 16)
         Me.LDescripcion.TabIndex = 0
@@ -891,6 +842,29 @@ Partial Class MInventario
         Me.LC.TabIndex = 176
         Me.LC.Visible = False
         '
+        'TxtGramaje
+        '
+        Me.TxtGramaje.BackColor = System.Drawing.Color.Gainsboro
+        Me.TxtGramaje.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TxtGramaje.Location = New System.Drawing.Point(142, 132)
+        Me.TxtGramaje.Multiline = True
+        Me.TxtGramaje.Name = "TxtGramaje"
+        Me.TxtGramaje.ReadOnly = True
+        Me.TxtGramaje.Size = New System.Drawing.Size(162, 15)
+        Me.TxtGramaje.TabIndex = 11
+        Me.TxtGramaje.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'LG
+        '
+        Me.LG.AutoSize = True
+        Me.LG.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LG.ForeColor = System.Drawing.Color.Black
+        Me.LG.Location = New System.Drawing.Point(76, 130)
+        Me.LG.Name = "LG"
+        Me.LG.Size = New System.Drawing.Size(60, 16)
+        Me.LG.TabIndex = 10
+        Me.LG.Text = "Gramaje"
+        '
         'MInventario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -985,12 +959,9 @@ Partial Class MInventario
     Friend WithEvents TxtMaximo As TextBox
     Friend WithEvents IDP As Label
     Friend WithEvents GDatos_Generales As GroupBox
-    Friend WithEvents CMarca As ComboBox
     Friend WithEvents CMedida As ComboBox
     Friend WithEvents LMa As Label
     Friend WithEvents LM As Label
-    Friend WithEvents TxtMarca As TextBox
-    Friend WithEvents LMarca As Label
     Friend WithEvents TxtMedida As TextBox
     Friend WithEvents LUMedida As Label
     Friend WithEvents TxtDescripcion As TextBox
@@ -1010,8 +981,9 @@ Partial Class MInventario
     Friend WithEvents Exis As DataGridViewTextBoxColumn
     Friend WithEvents POpc As Panel
     Friend WithEvents LC As Label
-    Friend WithEvents BAMar As Button
     Friend WithEvents BCerrarN As Button
     Friend WithEvents TxtUTotal As TextBox
     Friend WithEvents LUTotal As Label
+    Friend WithEvents TxtGramaje As TextBox
+    Friend WithEvents LG As Label
 End Class

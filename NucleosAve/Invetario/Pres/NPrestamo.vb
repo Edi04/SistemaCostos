@@ -11,9 +11,9 @@ Public Class NPrestamo
 
         'Crear Código
         Dim Fecha = DateTime.Now.ToString("yy")
-        Dim cmd As New SqlCommand("SELECT Id_S
-                                       FROM TB_CodigS
-                                       ORDER BY Id_S DESC", Conex)
+        Dim cmd As New SqlCommand("SELECT Id_Prestamo
+                                       FROM TB_Prestamos
+                                       ORDER BY Id_Prestamo DESC", Conex)
         Dim strCodigo As String
 
         Conex.Open()
@@ -22,8 +22,8 @@ Public Class NPrestamo
 
         Dim Id As Integer = CType(strCodigo.Substring(0), Integer)
 
-        LCS.Text = "CSA-" + Format(Id + 1, "0000") + "/" + Fecha 'Inventario
-        Tickets.LCS.Text = "CSA-" + Format(Id + 1, "0000") + "/" + Fecha 'Tickets
+        LCS.Text = "CSAP-" + Format(Id + 1, "0000") + "/" + Fecha 'Inventario
+        Tickets.LCS.Text = "CSAP-" + Format(Id + 1, "0000") + "/" + Fecha 'Tickets
 
         'Insertar Código
         If Tickets.LCS.Text <> Nothing Then
@@ -56,10 +56,24 @@ Public Class NPrestamo
     End Sub
 
     Private Sub BGuardarMo_Click(sender As Object, e As EventArgs) Handles BGuardarMo.Click
-        If IDE.Text = "" Or IDP.Text = "" Then
-            MessageBox.Show("Seleccione al Trabajador y/o Material", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-        Else
-            Datos()
+        If MsgBox("Desea Guardar el Prestamo", vbYesNo) = vbYes Then
+            If IDE.Text = "" Or IDP.Text = "" Then
+                MessageBox.Show("Seleccione al Trabajador y/o Material", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Else
+                Dim Emple As String = LUsuario.Text
+                Dim CodS As String = LCS.Text
+
+                Conex.Open()
+                Dim CONSULTAa As String = "IF NOT EXISTS(SELECT CodiS FROM TB_MovimientoRastreo WHERE CodiS = '" & CodS & "')
+                                    INSERT INTO TB_MovimientoRastreo (Tipo, Estado, Responsable, CodiS , Created)
+                                                            VALUES ( 'Prestamo', 'Entrega', '" & Emple & "', '" & CodS & "',SYSDATETIME() )"
+                Dim COMANDOa As New SqlCommand(CONSULTAa, Conex)
+
+                COMANDOa.ExecuteNonQuery()
+                Conex.Close()
+
+                Datos()
+            End If
         End If
     End Sub
 
@@ -133,10 +147,12 @@ Public Class NPrestamo
     End Sub
 
     Private Sub BGNT_Click(sender As Object, e As EventArgs) Handles BGNT.Click
-        If TxtNombre.Text = "" Or TxtAP.Text = "" Or TxtAM.Text = "" Then
-            MessageBox.Show("Ingrese el Nombre Completo", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-        Else
-            DatosNT()
+        If MsgBox("Desea Guardar la Siguiente Información: " & TxtNN.Text & " - " & TxtNombre.Text & " " & TxtAP.Text & " " & TxtAM.Text, vbYesNo) = vbYes Then
+            If TxtNombre.Text = "" Or TxtAP.Text = "" Or TxtAM.Text = "" Then
+                MessageBox.Show("Ingrese el Nombre Completo", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Else
+                DatosNT()
+            End If
         End If
     End Sub
 
@@ -160,8 +176,8 @@ Public Class NPrestamo
         GDatos.Parameters.AddWithValue("@Id_Empleado", Trim(IDE.Text))
         GDatos.Parameters.AddWithValue("@Id_Producto", Trim(IDP.Text))
         GDatos.Parameters.AddWithValue("@Cantidad", Trim(TxtCantidad.Text))
-        GDatos.Parameters.AddWithValue("@FPrestamo", Trim(DTFPrestamo.Value.Date))
-        GDatos.Parameters.AddWithValue("@FEntrega ", Trim(DTFEntrega.Value.Date))
+        GDatos.Parameters.AddWithValue("@FPrestamo", DateA)
+        GDatos.Parameters.AddWithValue("@FEntrega ", DTFEntrega.Value)
         GDatos.Parameters.AddWithValue("@Descripcion", Trim(TxtDescripcion.Text))
         GDatos.Parameters.AddWithValue("@Con_Salida", Trim(TxtDSalida.Text))
         GDatos.Parameters.AddWithValue("@ResponsableS", Trim(LUsuario.Text))
@@ -170,10 +186,22 @@ Public Class NPrestamo
         Dim RData As SqlDataReader
         Try
             Conex.Open()
-            RData = GDatos.ExecuteReader()
-            Me.Close()
+            Dim Prod As String = TxtMaterial.Text
+            Dim CodS As String = LCS.Text
+            Dim CanS As Double = CDec(TxtCantidad.Text)
 
+            Dim CONSULTA As String = "INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanE, CanS, PrecioE, PrecioS, Created)
+                                                                VALUES ('" & CodS & "', '" & Prod & "', '" & CanS & "', 0, 0, 0, SYSDATETIME())"
+
+            Dim COMANDO As New SqlCommand(CONSULTA, Conex)
+
+            COMANDO.ExecuteNonQuery()
+
+            RData = GDatos.ExecuteReader()
+
+            Me.Close()
             Prestamos.Show()
+
         Catch ex As Exception
             MessageBox.Show(Err.Description.ToString(), "Error al Guardar Datos", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try

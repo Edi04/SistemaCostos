@@ -23,13 +23,11 @@ Partial Class Inventario
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.POpc = New System.Windows.Forms.Panel()
         Me.DataView = New System.Windows.Forms.DataGridView()
-        Me.ID = New System.Windows.Forms.DataGridViewLinkColumn()
-        Me.Nombre_Producto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Clave_Producto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Exis = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GBusqueda = New System.Windows.Forms.GroupBox()
         Me.LEspecific = New System.Windows.Forms.Label()
         Me.PBusqueda = New System.Windows.Forms.PictureBox()
@@ -82,8 +80,12 @@ Partial Class Inventario
         Me.GTipoCambio = New System.Windows.Forms.GroupBox()
         Me.TxtTipoCambio = New System.Windows.Forms.TextBox()
         Me.AgregarExistencias = New System.Windows.Forms.Panel()
-        Me.LCS = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.GNExistencia = New System.Windows.Forms.GroupBox()
+        Me.PMenos = New System.Windows.Forms.PictureBox()
+        Me.TxtNExistencia = New System.Windows.Forms.TextBox()
         Me.BGExistencia = New System.Windows.Forms.Button()
+        Me.LCS = New System.Windows.Forms.Label()
         Me.OrdenCompra = New System.Windows.Forms.GroupBox()
         Me.TxtOrdenCompra = New System.Windows.Forms.TextBox()
         Me.PUSD = New System.Windows.Forms.GroupBox()
@@ -108,9 +110,6 @@ Partial Class Inventario
         Me.TxtUUSD = New System.Windows.Forms.TextBox()
         Me.LUUSD = New System.Windows.Forms.Label()
         Me.LFUSD = New System.Windows.Forms.Label()
-        Me.GNExistencia = New System.Windows.Forms.GroupBox()
-        Me.PMenos = New System.Windows.Forms.PictureBox()
-        Me.TxtNExistencia = New System.Windows.Forms.TextBox()
         Me.LEntraP = New System.Windows.Forms.Label()
         Me.PSeparador = New System.Windows.Forms.Panel()
         Me.LTExistencias = New System.Windows.Forms.Label()
@@ -134,7 +133,10 @@ Partial Class Inventario
         Me.BOrdenC = New System.Windows.Forms.Button()
         Me.LUsuario = New System.Windows.Forms.Label()
         Me.LIDE = New System.Windows.Forms.Label()
-        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.ID = New System.Windows.Forms.DataGridViewLinkColumn()
+        Me.Nombre_Producto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Clave_Producto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Exis = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.DataView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GBusqueda.SuspendLayout()
         CType(Me.PBusqueda, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -147,23 +149,23 @@ Partial Class Inventario
         Me.GPUSD.SuspendLayout()
         Me.GTipoCambio.SuspendLayout()
         Me.AgregarExistencias.SuspendLayout()
+        Me.Panel1.SuspendLayout()
+        Me.GNExistencia.SuspendLayout()
+        CType(Me.PMenos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.OrdenCompra.SuspendLayout()
         Me.PUSD.SuspendLayout()
         Me.GTCambio.SuspendLayout()
         Me.GPrecioUSD.SuspendLayout()
-        Me.GNExistencia.SuspendLayout()
-        CType(Me.PMenos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PSeparador.SuspendLayout()
-        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'POpc
         '
         Me.POpc.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.POpc.BackColor = System.Drawing.Color.SteelBlue
-        Me.POpc.Location = New System.Drawing.Point(-3, 65)
+        Me.POpc.Location = New System.Drawing.Point(20, 65)
         Me.POpc.Name = "POpc"
-        Me.POpc.Size = New System.Drawing.Size(1047, 10)
+        Me.POpc.Size = New System.Drawing.Size(1112, 10)
         Me.POpc.TabIndex = 0
         '
         'DataView
@@ -175,59 +177,23 @@ Partial Class Inventario
         Me.DataView.BackgroundColor = System.Drawing.Color.SteelBlue
         Me.DataView.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DataView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle16.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle16
         Me.DataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.Nombre_Producto, Me.Clave_Producto, Me.Exis})
         Me.DataView.EnableHeadersVisualStyles = False
         Me.DataView.GridColor = System.Drawing.SystemColors.GradientActiveCaption
-        Me.DataView.Location = New System.Drawing.Point(601, 77)
+        Me.DataView.Location = New System.Drawing.Point(603, 77)
         Me.DataView.Name = "DataView"
         Me.DataView.ReadOnly = True
-        Me.DataView.Size = New System.Drawing.Size(443, 443)
+        Me.DataView.Size = New System.Drawing.Size(541, 443)
         Me.DataView.TabIndex = 1
-        '
-        'ID
-        '
-        Me.ID.DataPropertyName = "Id_Producto"
-        Me.ID.Frozen = True
-        Me.ID.HeaderText = "ID"
-        Me.ID.Name = "ID"
-        Me.ID.ReadOnly = True
-        Me.ID.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.ID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.ID.Text = ""
-        Me.ID.Width = 40
-        '
-        'Nombre_Producto
-        '
-        Me.Nombre_Producto.DataPropertyName = "Nombre_Producto"
-        Me.Nombre_Producto.FillWeight = 150.0!
-        Me.Nombre_Producto.HeaderText = "Nombre del Producto"
-        Me.Nombre_Producto.Name = "Nombre_Producto"
-        Me.Nombre_Producto.ReadOnly = True
-        Me.Nombre_Producto.Width = 300
-        '
-        'Clave_Producto
-        '
-        Me.Clave_Producto.DataPropertyName = "Clave_Producto"
-        Me.Clave_Producto.HeaderText = "Clave del Producto"
-        Me.Clave_Producto.Name = "Clave_Producto"
-        Me.Clave_Producto.ReadOnly = True
-        '
-        'Exis
-        '
-        Me.Exis.DataPropertyName = "Existencia"
-        Me.Exis.HeaderText = "Existencia"
-        Me.Exis.Name = "Exis"
-        Me.Exis.ReadOnly = True
-        Me.Exis.Width = 50
         '
         'GBusqueda
         '
@@ -238,7 +204,7 @@ Partial Class Inventario
         Me.GBusqueda.Controls.Add(Me.TxtBusqueda)
         Me.GBusqueda.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GBusqueda.ForeColor = System.Drawing.Color.Black
-        Me.GBusqueda.Location = New System.Drawing.Point(19, 81)
+        Me.GBusqueda.Location = New System.Drawing.Point(25, 81)
         Me.GBusqueda.Name = "GBusqueda"
         Me.GBusqueda.Size = New System.Drawing.Size(552, 65)
         Me.GBusqueda.TabIndex = 0
@@ -253,7 +219,7 @@ Partial Class Inventario
         Me.LEspecific.Name = "LEspecific"
         Me.LEspecific.Size = New System.Drawing.Size(329, 13)
         Me.LEspecific.TabIndex = 0
-        Me.LEspecific.Text = "Clave del Producto, Nombre del Producto, Marca O Codigo de Barra"
+        Me.LEspecific.Text = "Clave del Producto, Nombre del Producto, Marca O Código de Barra"
         '
         'PBusqueda
         '
@@ -298,7 +264,7 @@ Partial Class Inventario
         Me.GDatos_Generales.Controls.Add(Me.LProducto)
         Me.GDatos_Generales.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.GDatos_Generales.ForeColor = System.Drawing.Color.Black
-        Me.GDatos_Generales.Location = New System.Drawing.Point(19, 164)
+        Me.GDatos_Generales.Location = New System.Drawing.Point(25, 164)
         Me.GDatos_Generales.Name = "GDatos_Generales"
         Me.GDatos_Generales.Size = New System.Drawing.Size(310, 236)
         Me.GDatos_Generales.TabIndex = 2
@@ -332,8 +298,9 @@ Partial Class Inventario
         Me.LMa.AutoSize = True
         Me.LMa.Location = New System.Drawing.Point(-3, 106)
         Me.LMa.Name = "LMa"
-        Me.LMa.Size = New System.Drawing.Size(0, 13)
+        Me.LMa.Size = New System.Drawing.Size(13, 13)
         Me.LMa.TabIndex = 7
+        Me.LMa.Text = "1"
         Me.LMa.Visible = False
         '
         'LM
@@ -341,8 +308,9 @@ Partial Class Inventario
         Me.LM.AutoSize = True
         Me.LM.Location = New System.Drawing.Point(2, 78)
         Me.LM.Name = "LM"
-        Me.LM.Size = New System.Drawing.Size(0, 13)
+        Me.LM.Size = New System.Drawing.Size(13, 13)
         Me.LM.TabIndex = 6
+        Me.LM.Text = "1"
         Me.LM.Visible = False
         '
         'TxtMarca
@@ -476,7 +444,7 @@ Partial Class Inventario
         Me.GCantidad.Controls.Add(Me.LMáximo)
         Me.GCantidad.Controls.Add(Me.TxtMaximo)
         Me.GCantidad.ForeColor = System.Drawing.Color.Black
-        Me.GCantidad.Location = New System.Drawing.Point(6, 406)
+        Me.GCantidad.Location = New System.Drawing.Point(12, 406)
         Me.GCantidad.Name = "GCantidad"
         Me.GCantidad.Size = New System.Drawing.Size(110, 84)
         Me.GCantidad.TabIndex = 3
@@ -568,7 +536,7 @@ Partial Class Inventario
         Me.GDetalles.Controls.Add(Me.LArea)
         Me.GDetalles.Controls.Add(Me.LProceso)
         Me.GDetalles.ForeColor = System.Drawing.Color.White
-        Me.GDetalles.Location = New System.Drawing.Point(121, 406)
+        Me.GDetalles.Location = New System.Drawing.Point(127, 406)
         Me.GDetalles.Name = "GDetalles"
         Me.GDetalles.Size = New System.Drawing.Size(257, 103)
         Me.GDetalles.TabIndex = 4
@@ -593,8 +561,9 @@ Partial Class Inventario
         Me.LC.AutoSize = True
         Me.LC.Location = New System.Drawing.Point(0, 60)
         Me.LC.Name = "LC"
-        Me.LC.Size = New System.Drawing.Size(0, 13)
+        Me.LC.Size = New System.Drawing.Size(13, 13)
         Me.LC.TabIndex = 6
+        Me.LC.Text = "1"
         Me.LC.Visible = False
         '
         'LP
@@ -602,8 +571,9 @@ Partial Class Inventario
         Me.LP.AutoSize = True
         Me.LP.Location = New System.Drawing.Point(0, 39)
         Me.LP.Name = "LP"
-        Me.LP.Size = New System.Drawing.Size(0, 13)
+        Me.LP.Size = New System.Drawing.Size(13, 13)
         Me.LP.TabIndex = 5
+        Me.LP.Text = "1"
         Me.LP.Visible = False
         '
         'CProceso
@@ -623,8 +593,9 @@ Partial Class Inventario
         Me.LA.AutoSize = True
         Me.LA.Location = New System.Drawing.Point(4, 15)
         Me.LA.Name = "LA"
-        Me.LA.Size = New System.Drawing.Size(0, 13)
+        Me.LA.Size = New System.Drawing.Size(13, 13)
         Me.LA.TabIndex = 4
+        Me.LA.Text = "1"
         Me.LA.Visible = False
         '
         'TxtCategoria
@@ -716,7 +687,7 @@ Partial Class Inventario
         Me.GCodigoBarras.Controls.Add(Me.TxtCB)
         Me.GCodigoBarras.Controls.Add(Me.CodigoBarras)
         Me.GCodigoBarras.ForeColor = System.Drawing.Color.Black
-        Me.GCodigoBarras.Location = New System.Drawing.Point(382, 406)
+        Me.GCodigoBarras.Location = New System.Drawing.Point(388, 406)
         Me.GCodigoBarras.Name = "GCodigoBarras"
         Me.GCodigoBarras.Size = New System.Drawing.Size(216, 114)
         Me.GCodigoBarras.TabIndex = 5
@@ -800,7 +771,7 @@ Partial Class Inventario
         Me.GPrecio.BackColor = System.Drawing.Color.Transparent
         Me.GPrecio.Controls.Add(Me.TxtPrecio)
         Me.GPrecio.ForeColor = System.Drawing.Color.Black
-        Me.GPrecio.Location = New System.Drawing.Point(345, 179)
+        Me.GPrecio.Location = New System.Drawing.Point(351, 179)
         Me.GPrecio.Name = "GPrecio"
         Me.GPrecio.Size = New System.Drawing.Size(90, 38)
         Me.GPrecio.TabIndex = 6
@@ -824,7 +795,7 @@ Partial Class Inventario
         Me.Imagen.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Imagen.BackColor = System.Drawing.Color.Transparent
         Me.Imagen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Imagen.Location = New System.Drawing.Point(445, 164)
+        Me.Imagen.Location = New System.Drawing.Point(451, 164)
         Me.Imagen.Name = "Imagen"
         Me.Imagen.Size = New System.Drawing.Size(134, 172)
         Me.Imagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -837,7 +808,7 @@ Partial Class Inventario
         Me.GPUSD.BackColor = System.Drawing.Color.Transparent
         Me.GPUSD.Controls.Add(Me.TxtUSD)
         Me.GPUSD.ForeColor = System.Drawing.Color.Black
-        Me.GPUSD.Location = New System.Drawing.Point(344, 334)
+        Me.GPUSD.Location = New System.Drawing.Point(350, 334)
         Me.GPUSD.Name = "GPUSD"
         Me.GPUSD.Size = New System.Drawing.Size(90, 38)
         Me.GPUSD.TabIndex = 8
@@ -862,7 +833,7 @@ Partial Class Inventario
         Me.GTipoCambio.BackColor = System.Drawing.Color.Transparent
         Me.GTipoCambio.Controls.Add(Me.TxtTipoCambio)
         Me.GTipoCambio.ForeColor = System.Drawing.Color.Black
-        Me.GTipoCambio.Location = New System.Drawing.Point(335, 237)
+        Me.GTipoCambio.Location = New System.Drawing.Point(341, 237)
         Me.GTipoCambio.Name = "GTipoCambio"
         Me.GTipoCambio.Size = New System.Drawing.Size(106, 45)
         Me.GTipoCambio.TabIndex = 7
@@ -895,11 +866,67 @@ Partial Class Inventario
         Me.AgregarExistencias.Controls.Add(Me.GPrecioUSD)
         Me.AgregarExistencias.Controls.Add(Me.LEntraP)
         Me.AgregarExistencias.Controls.Add(Me.PSeparador)
-        Me.AgregarExistencias.Location = New System.Drawing.Point(75, 534)
+        Me.AgregarExistencias.Location = New System.Drawing.Point(1, 534)
         Me.AgregarExistencias.Name = "AgregarExistencias"
-        Me.AgregarExistencias.Size = New System.Drawing.Size(897, 190)
+        Me.AgregarExistencias.Size = New System.Drawing.Size(1141, 190)
         Me.AgregarExistencias.TabIndex = 9
         Me.AgregarExistencias.Visible = False
+        '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.GNExistencia)
+        Me.Panel1.Controls.Add(Me.BGExistencia)
+        Me.Panel1.Location = New System.Drawing.Point(4, 47)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(1134, 133)
+        Me.Panel1.TabIndex = 85
+        '
+        'GNExistencia
+        '
+        Me.GNExistencia.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.GNExistencia.BackColor = System.Drawing.Color.Transparent
+        Me.GNExistencia.Controls.Add(Me.PMenos)
+        Me.GNExistencia.Controls.Add(Me.TxtNExistencia)
+        Me.GNExistencia.ForeColor = System.Drawing.Color.Black
+        Me.GNExistencia.Location = New System.Drawing.Point(450, 23)
+        Me.GNExistencia.Name = "GNExistencia"
+        Me.GNExistencia.Size = New System.Drawing.Size(104, 72)
+        Me.GNExistencia.TabIndex = 10
+        Me.GNExistencia.TabStop = False
+        Me.GNExistencia.Text = "Cantidad"
+        '
+        'PMenos
+        '
+        Me.PMenos.Image = Global.NucleosAve.My.Resources.Resources.file_511
+        Me.PMenos.Location = New System.Drawing.Point(75, 28)
+        Me.PMenos.Name = "PMenos"
+        Me.PMenos.Size = New System.Drawing.Size(24, 24)
+        Me.PMenos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PMenos.TabIndex = 28
+        Me.PMenos.TabStop = False
+        '
+        'TxtNExistencia
+        '
+        Me.TxtNExistencia.BackColor = System.Drawing.Color.Gainsboro
+        Me.TxtNExistencia.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TxtNExistencia.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtNExistencia.Location = New System.Drawing.Point(6, 21)
+        Me.TxtNExistencia.Multiline = True
+        Me.TxtNExistencia.Name = "TxtNExistencia"
+        Me.TxtNExistencia.Size = New System.Drawing.Size(63, 37)
+        Me.TxtNExistencia.TabIndex = 1
+        Me.TxtNExistencia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'BGExistencia
+        '
+        Me.BGExistencia.BackColor = System.Drawing.Color.Transparent
+        Me.BGExistencia.BackgroundImage = Global.NucleosAve.My.Resources.Resources.file_1411
+        Me.BGExistencia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.BGExistencia.Location = New System.Drawing.Point(573, 35)
+        Me.BGExistencia.Name = "BGExistencia"
+        Me.BGExistencia.Size = New System.Drawing.Size(50, 50)
+        Me.BGExistencia.TabIndex = 84
+        Me.BGExistencia.UseVisualStyleBackColor = False
         '
         'LCS
         '
@@ -910,24 +937,13 @@ Partial Class Inventario
         Me.LCS.TabIndex = 84
         Me.LCS.Visible = False
         '
-        'BGExistencia
-        '
-        Me.BGExistencia.BackColor = System.Drawing.Color.Transparent
-        Me.BGExistencia.BackgroundImage = Global.NucleosAve.My.Resources.Resources.file_1411
-        Me.BGExistencia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.BGExistencia.Location = New System.Drawing.Point(344, 35)
-        Me.BGExistencia.Name = "BGExistencia"
-        Me.BGExistencia.Size = New System.Drawing.Size(50, 50)
-        Me.BGExistencia.TabIndex = 84
-        Me.BGExistencia.UseVisualStyleBackColor = False
-        '
         'OrdenCompra
         '
         Me.OrdenCompra.BackColor = System.Drawing.Color.Transparent
         Me.OrdenCompra.Controls.Add(Me.TxtOrdenCompra)
         Me.OrdenCompra.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.OrdenCompra.ForeColor = System.Drawing.Color.White
-        Me.OrdenCompra.Location = New System.Drawing.Point(717, 86)
+        Me.OrdenCompra.Location = New System.Drawing.Point(767, 86)
         Me.OrdenCompra.Name = "OrdenCompra"
         Me.OrdenCompra.Size = New System.Drawing.Size(139, 65)
         Me.OrdenCompra.TabIndex = 15
@@ -959,7 +975,7 @@ Partial Class Inventario
         Me.PUSD.Controls.Add(Me.LPUPZA)
         Me.PUSD.Controls.Add(Me.LUCPza)
         Me.PUSD.ForeColor = System.Drawing.Color.White
-        Me.PUSD.Location = New System.Drawing.Point(475, 65)
+        Me.PUSD.Location = New System.Drawing.Point(513, 60)
         Me.PUSD.Name = "PUSD"
         Me.PUSD.Size = New System.Drawing.Size(233, 108)
         Me.PUSD.TabIndex = 14
@@ -1069,7 +1085,7 @@ Partial Class Inventario
         Me.LErrEP.AutoSize = True
         Me.LErrEP.BackColor = System.Drawing.Color.LightCoral
         Me.LErrEP.ForeColor = System.Drawing.Color.Black
-        Me.LErrEP.Location = New System.Drawing.Point(394, 112)
+        Me.LErrEP.Location = New System.Drawing.Point(429, 112)
         Me.LErrEP.Name = "LErrEP"
         Me.LErrEP.Size = New System.Drawing.Size(71, 39)
         Me.LErrEP.TabIndex = 0
@@ -1089,7 +1105,7 @@ Partial Class Inventario
         'DTTipoCambio
         '
         Me.DTTipoCambio.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DTTipoCambio.Location = New System.Drawing.Point(316, 113)
+        Me.DTTipoCambio.Location = New System.Drawing.Point(351, 113)
         Me.DTTipoCambio.Name = "DTTipoCambio"
         Me.DTTipoCambio.Size = New System.Drawing.Size(84, 20)
         Me.DTTipoCambio.TabIndex = 13
@@ -1101,7 +1117,7 @@ Partial Class Inventario
         Me.GTCambio.Controls.Add(Me.PCalendario)
         Me.GTCambio.Controls.Add(Me.TCambio)
         Me.GTCambio.ForeColor = System.Drawing.Color.Black
-        Me.GTCambio.Location = New System.Drawing.Point(314, 65)
+        Me.GTCambio.Location = New System.Drawing.Point(349, 65)
         Me.GTCambio.Name = "GTCambio"
         Me.GTCambio.Size = New System.Drawing.Size(117, 47)
         Me.GTCambio.TabIndex = 12
@@ -1142,7 +1158,7 @@ Partial Class Inventario
         Me.GPrecioUSD.Controls.Add(Me.LUUSD)
         Me.GPrecioUSD.Controls.Add(Me.LFUSD)
         Me.GPrecioUSD.ForeColor = System.Drawing.Color.Black
-        Me.GPrecioUSD.Location = New System.Drawing.Point(153, 60)
+        Me.GPrecioUSD.Location = New System.Drawing.Point(178, 60)
         Me.GPrecioUSD.Name = "GPrecioUSD"
         Me.GPrecioUSD.Size = New System.Drawing.Size(145, 85)
         Me.GPrecioUSD.TabIndex = 11
@@ -1218,48 +1234,12 @@ Partial Class Inventario
         Me.LFUSD.Text = "Flete"
         Me.LFUSD.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
-        'GNExistencia
-        '
-        Me.GNExistencia.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.GNExistencia.BackColor = System.Drawing.Color.Transparent
-        Me.GNExistencia.Controls.Add(Me.PMenos)
-        Me.GNExistencia.Controls.Add(Me.TxtNExistencia)
-        Me.GNExistencia.ForeColor = System.Drawing.Color.Black
-        Me.GNExistencia.Location = New System.Drawing.Point(206, 23)
-        Me.GNExistencia.Name = "GNExistencia"
-        Me.GNExistencia.Size = New System.Drawing.Size(104, 72)
-        Me.GNExistencia.TabIndex = 10
-        Me.GNExistencia.TabStop = False
-        Me.GNExistencia.Text = "Cantidad"
-        '
-        'PMenos
-        '
-        Me.PMenos.Image = Global.NucleosAve.My.Resources.Resources.file_511
-        Me.PMenos.Location = New System.Drawing.Point(75, 28)
-        Me.PMenos.Name = "PMenos"
-        Me.PMenos.Size = New System.Drawing.Size(24, 24)
-        Me.PMenos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PMenos.TabIndex = 28
-        Me.PMenos.TabStop = False
-        '
-        'TxtNExistencia
-        '
-        Me.TxtNExistencia.BackColor = System.Drawing.Color.Gainsboro
-        Me.TxtNExistencia.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TxtNExistencia.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtNExistencia.Location = New System.Drawing.Point(6, 21)
-        Me.TxtNExistencia.Multiline = True
-        Me.TxtNExistencia.Name = "TxtNExistencia"
-        Me.TxtNExistencia.Size = New System.Drawing.Size(63, 37)
-        Me.TxtNExistencia.TabIndex = 1
-        Me.TxtNExistencia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
         'LEntraP
         '
         Me.LEntraP.AutoSize = True
         Me.LEntraP.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LEntraP.ForeColor = System.Drawing.Color.Black
-        Me.LEntraP.Location = New System.Drawing.Point(352, 26)
+        Me.LEntraP.Location = New System.Drawing.Point(458, 26)
         Me.LEntraP.Name = "LEntraP"
         Me.LEntraP.Size = New System.Drawing.Size(175, 20)
         Me.LEntraP.TabIndex = 0
@@ -1271,9 +1251,9 @@ Partial Class Inventario
         Me.PSeparador.BackColor = System.Drawing.Color.SteelBlue
         Me.PSeparador.Controls.Add(Me.LTExistencias)
         Me.PSeparador.Controls.Add(Me.LIdProducto)
-        Me.PSeparador.Location = New System.Drawing.Point(0, 3)
+        Me.PSeparador.Location = New System.Drawing.Point(3, 3)
         Me.PSeparador.Name = "PSeparador"
-        Me.PSeparador.Size = New System.Drawing.Size(898, 18)
+        Me.PSeparador.Size = New System.Drawing.Size(1135, 18)
         Me.PSeparador.TabIndex = 1
         '
         'LTExistencias
@@ -1298,7 +1278,7 @@ Partial Class Inventario
         '
         Me.HURL.AutoSize = True
         Me.HURL.BackColor = System.Drawing.Color.Transparent
-        Me.HURL.Location = New System.Drawing.Point(267, 290)
+        Me.HURL.Location = New System.Drawing.Point(223, 290)
         Me.HURL.Name = "HURL"
         Me.HURL.Size = New System.Drawing.Size(0, 13)
         Me.HURL.TabIndex = 0
@@ -1309,7 +1289,7 @@ Partial Class Inventario
         Me.LAdvet.AutoSize = True
         Me.LAdvet.BackColor = System.Drawing.Color.LightCoral
         Me.LAdvet.ForeColor = System.Drawing.Color.Black
-        Me.LAdvet.Location = New System.Drawing.Point(340, 275)
+        Me.LAdvet.Location = New System.Drawing.Point(361, 275)
         Me.LAdvet.Name = "LAdvet"
         Me.LAdvet.Size = New System.Drawing.Size(71, 39)
         Me.LAdvet.TabIndex = 0
@@ -1328,7 +1308,7 @@ Partial Class Inventario
         '
         Me.BImagen.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BImagen.ForeColor = System.Drawing.Color.Black
-        Me.BImagen.Location = New System.Drawing.Point(421, 297)
+        Me.BImagen.Location = New System.Drawing.Point(453, 297)
         Me.BImagen.Name = "BImagen"
         Me.BImagen.Size = New System.Drawing.Size(75, 39)
         Me.BImagen.TabIndex = 81
@@ -1339,7 +1319,7 @@ Partial Class Inventario
         'NameImagen
         '
         Me.NameImagen.AutoSize = True
-        Me.NameImagen.Location = New System.Drawing.Point(403, 400)
+        Me.NameImagen.Location = New System.Drawing.Point(359, 400)
         Me.NameImagen.Name = "NameImagen"
         Me.NameImagen.Size = New System.Drawing.Size(0, 13)
         Me.NameImagen.TabIndex = 82
@@ -1348,7 +1328,7 @@ Partial Class Inventario
         'IA
         '
         Me.IA.AutoSize = True
-        Me.IA.Location = New System.Drawing.Point(358, 400)
+        Me.IA.Location = New System.Drawing.Point(314, 400)
         Me.IA.Name = "IA"
         Me.IA.Size = New System.Drawing.Size(0, 13)
         Me.IA.TabIndex = 83
@@ -1382,7 +1362,7 @@ Partial Class Inventario
         Me.BCerrar.BackColor = System.Drawing.Color.Transparent
         Me.BCerrar.BackgroundImage = Global.NucleosAve.My.Resources.Resources.icons8_cerrar_ventana_5001
         Me.BCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.BCerrar.Location = New System.Drawing.Point(983, 9)
+        Me.BCerrar.Location = New System.Drawing.Point(1092, 5)
         Me.BCerrar.Name = "BCerrar"
         Me.BCerrar.Size = New System.Drawing.Size(50, 50)
         Me.BCerrar.TabIndex = 4
@@ -1393,7 +1373,7 @@ Partial Class Inventario
         Me.BMinimizar.BackColor = System.Drawing.Color.Transparent
         Me.BMinimizar.BackgroundImage = Global.NucleosAve.My.Resources.Resources.icons8_minimizar_la_ventana_5001
         Me.BMinimizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.BMinimizar.Location = New System.Drawing.Point(927, 9)
+        Me.BMinimizar.Location = New System.Drawing.Point(1036, 5)
         Me.BMinimizar.Name = "BMinimizar"
         Me.BMinimizar.Size = New System.Drawing.Size(50, 50)
         Me.BMinimizar.TabIndex = 3
@@ -1488,21 +1468,52 @@ Partial Class Inventario
         Me.LIDE.TabIndex = 85
         Me.LIDE.Visible = False
         '
-        'Panel1
+        'ID
         '
-        Me.Panel1.Controls.Add(Me.GNExistencia)
-        Me.Panel1.Controls.Add(Me.BGExistencia)
-        Me.Panel1.Location = New System.Drawing.Point(136, 60)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(720, 127)
-        Me.Panel1.TabIndex = 85
+        Me.ID.DataPropertyName = "Id_Producto"
+        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.ID.DefaultCellStyle = DataGridViewCellStyle17
+        Me.ID.Frozen = True
+        Me.ID.HeaderText = "ID"
+        Me.ID.Name = "ID"
+        Me.ID.ReadOnly = True
+        Me.ID.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.ID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.ID.Text = ""
+        Me.ID.Width = 40
+        '
+        'Nombre_Producto
+        '
+        Me.Nombre_Producto.DataPropertyName = "Nombre_Producto"
+        Me.Nombre_Producto.FillWeight = 150.0!
+        Me.Nombre_Producto.HeaderText = "Nombre del Producto"
+        Me.Nombre_Producto.Name = "Nombre_Producto"
+        Me.Nombre_Producto.ReadOnly = True
+        Me.Nombre_Producto.Width = 295
+        '
+        'Clave_Producto
+        '
+        Me.Clave_Producto.DataPropertyName = "Clave_Producto"
+        Me.Clave_Producto.HeaderText = "Clave del Producto"
+        Me.Clave_Producto.Name = "Clave_Producto"
+        Me.Clave_Producto.ReadOnly = True
+        '
+        'Exis
+        '
+        Me.Exis.DataPropertyName = "Existencia"
+        DataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.Exis.DefaultCellStyle = DataGridViewCellStyle18
+        Me.Exis.HeaderText = "Existencia"
+        Me.Exis.Name = "Exis"
+        Me.Exis.ReadOnly = True
+        Me.Exis.Width = 60
         '
         'Inventario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.NucleosAve.My.Resources.Resources.Fondo
-        Me.ClientSize = New System.Drawing.Size(1044, 726)
+        Me.ClientSize = New System.Drawing.Size(1144, 726)
         Me.Controls.Add(Me.LIDE)
         Me.Controls.Add(Me.LUsuario)
         Me.Controls.Add(Me.BOrdenC)
@@ -1558,6 +1569,10 @@ Partial Class Inventario
         Me.GTipoCambio.PerformLayout()
         Me.AgregarExistencias.ResumeLayout(False)
         Me.AgregarExistencias.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.GNExistencia.ResumeLayout(False)
+        Me.GNExistencia.PerformLayout()
+        CType(Me.PMenos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.OrdenCompra.ResumeLayout(False)
         Me.OrdenCompra.PerformLayout()
         Me.PUSD.ResumeLayout(False)
@@ -1566,12 +1581,8 @@ Partial Class Inventario
         Me.GTCambio.PerformLayout()
         Me.GPrecioUSD.ResumeLayout(False)
         Me.GPrecioUSD.PerformLayout()
-        Me.GNExistencia.ResumeLayout(False)
-        Me.GNExistencia.PerformLayout()
-        CType(Me.PMenos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PSeparador.ResumeLayout(False)
         Me.PSeparador.PerformLayout()
-        Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1682,9 +1693,9 @@ Partial Class Inventario
     Friend WithEvents LCS As Label
     Friend WithEvents LUsuario As Label
     Friend WithEvents LIDE As Label
+    Friend WithEvents Panel1 As Panel
     Friend WithEvents ID As DataGridViewLinkColumn
     Friend WithEvents Nombre_Producto As DataGridViewTextBoxColumn
     Friend WithEvents Clave_Producto As DataGridViewTextBoxColumn
     Friend WithEvents Exis As DataGridViewTextBoxColumn
-    Friend WithEvents Panel1 As Panel
 End Class

@@ -1,7 +1,7 @@
 ﻿Public Class CRegistroMP
-    Dim Num_RI, Num_RE, IdOD As Integer
-    Dim Ancho, Peso, CE As Double
-    Dim Proveedor, Calibre, Descripcion, OCompra, LCS, Trabaja, Pedimento As String
+    Dim Num_RI, IdOD As Integer
+    Dim Ancho, Peso, CE, TC, Espesor As Double
+    Dim Proveedor, Calibre, Descripcion, OCompra, LCS, Trabaja, Pedimento, Num_RE As String
     Dim FLlegada, FRegistro As Date
 
     Public Property Proveedor_
@@ -136,6 +136,24 @@
         End Get
         Set(value)
             Pedimento = value
+        End Set
+    End Property
+
+    Public Property TC_
+        Get
+            Return TC
+        End Get
+        Set(value)
+            TC = value
+        End Set
+    End Property
+
+    Public Property Espesor_
+        Get
+            Return Espesor
+        End Get
+        Set(value)
+            Espesor = value
         End Set
     End Property
 End Class

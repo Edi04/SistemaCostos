@@ -19,6 +19,7 @@ Public Class RegistroMP
             GDatos1.Parameters.AddWithValue("@Calibre", dts.Calibre_)
             GDatos1.Parameters.AddWithValue("@Ancho", dts.Ancho_)
             GDatos1.Parameters.AddWithValue("@Peso", dts.Peso_)
+            GDatos1.Parameters.AddWithValue("@Espesor", dts.Espesor_)
             GDatos1.Parameters.AddWithValue("@Descripcion", dts.Descripcion_)
             GDatos1.Parameters.AddWithValue("@FechaLlegada", dts.FechaLlegada)
             GDatos1.Parameters.AddWithValue("@FechaRegistro", dts.FechaRegistro)
@@ -29,6 +30,8 @@ Public Class RegistroMP
             GDatos1.Parameters.AddWithValue("@CE", dts.CE_)
             GDatos1.Parameters.AddWithValue("@IDOD", dts.IDDO_)
             GDatos1.Parameters.AddWithValue("@Pedimento", dts.Pedimento_)
+            GDatos1.Parameters.AddWithValue("@TipoCambio", dts.TC_)
+
 
             If GDatos1.ExecuteNonQuery Then
                 Return True

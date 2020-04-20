@@ -128,72 +128,76 @@ Public Class Entregas
     End Sub
 
     Private Sub BGEntrega_Click(sender As Object, e As EventArgs) Handles BGEntrega.Click
-        Dim Nombre As String = TxtNN.Text & " - " & TxtTrabajador.Text
+        If MsgBox("Desea Guardar la Entrega del Material: " & TxtMaterial.Text, vbYesNo) = vbYes Then
+            Dim Nombre As String = TxtNN.Text & " - " & TxtTrabajador.Text
 
-        If ETickets.LTrabajador.Text = "" Then
-            ETickets.Show()
-            If IDE.Text = "" Or IDP.Text = "" Then
-                MessageBox.Show("Seleccione al Trabajador y/o Material", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            ElseIf LEx.Text < TxtCantidad.Text Then
-                MessageBox.Show("Verifique Existencias", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            Else
-                Datos()
-            End If
-        Else
-            If ETickets.LTrabajador.Text <> Nombre Then
-                ETickets.Impresion_Click(sender, e)
+            If ETickets.LTrabajador.Text = "" Then
                 ETickets.Show()
                 If IDE.Text = "" Or IDP.Text = "" Then
                     MessageBox.Show("Seleccione al Trabajador y/o Material", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-                ElseIf LEx.Text < TxtCantidad.Text Then
+                ElseIf CDec(LEx.Text) < CDec(TxtCantidad.Text) Then
                     MessageBox.Show("Verifique Existencias", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 Else
                     Datos()
                 End If
-            ElseIf ETickets.LTrabajador.Text = Nombre Then
-                If IDE.Text = "" Or IDP.Text = "" Then
-                    MessageBox.Show("Seleccione al Trabajador y/o Material", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-                ElseIf LEx.Text < TxtCantidad.Text Then
-                    MessageBox.Show("Verifique Existencias", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-                Else
-                    Datos()
+            Else
+                If ETickets.LTrabajador.Text <> Nombre Then
+                    ETickets.Impresion_Click(sender, e)
+                    ETickets.Show()
+                    If IDE.Text = "" Or IDP.Text = "" Then
+                        MessageBox.Show("Seleccione al Trabajador y/o Material", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                    ElseIf CDec(LEx.Text) < CDec(TxtCantidad.Text) Then
+                        MessageBox.Show("Verifique Existencias", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                    Else
+                        Datos()
+                    End If
+                ElseIf ETickets.LTrabajador.Text = Nombre Then
+                    If IDE.Text = "" Or IDP.Text = "" Then
+                        MessageBox.Show("Seleccione al Trabajador y/o Material", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                    ElseIf CDec(LEx.Text) < CDec(TxtCantidad.Text) Then
+                        MessageBox.Show("Verifique Existencias", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                    Else
+                        Datos()
+                    End If
                 End If
             End If
         End If
     End Sub
 
     Private Sub BEliminar_Click(sender As Object, e As EventArgs) Handles BEliminar.Click
-        'Crear Código
-        Dim Fecha = DateTime.Now.ToString("yy")
-        Dim cmd As New SqlCommand("SELECT Id_S
+        If MsgBox("Desea Eliminar el Prestamo", vbYesNo) = vbYes Then
+            'Crear Código
+            Dim Fecha = DateTime.Now.ToString("yy")
+            Dim cmd As New SqlCommand("SELECT Id_S
                                        FROM TB_CodigS
                                        ORDER BY Id_S DESC", Conex)
-        Dim strCodigo As String
-
-        Conex.Open()
-        strCodigo = cmd.ExecuteScalar
-        Conex.Close()
-
-        Dim Id As Integer = CType(strCodigo.Substring(0), Integer)
-
-        LCS.Text = "CSAEE-" + Format(Id + 1, "0000") + "/" + Fecha 'Inventario
-        Tickets.LCS.Text = "CSAEE-" + Format(Id + 1, "0000") + "/" + Fecha 'Tickets
-
-        'Insertar Código
-        If ETickets.LCS.Text <> Nothing Then
-            Dim CodS As String = LCS.Text
+            Dim strCodigo As String
 
             Conex.Open()
-            Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodS FROM TB_CodigS WHERE CodS = '" & CodS & "')
+            strCodigo = cmd.ExecuteScalar
+            Conex.Close()
+
+            Dim Id As Integer = CType(strCodigo.Substring(0), Integer)
+
+            LCS.Text = "CSAEE-" + Format(Id + 1, "0000") + "/" + Fecha 'Inventario
+            Tickets.LCS.Text = "CSAEE-" + Format(Id + 1, "0000") + "/" + Fecha 'Tickets
+
+            'Insertar Código
+            If ETickets.LCS.Text <> Nothing Then
+                Dim CodS As String = LCS.Text
+
+                Conex.Open()
+                Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodS FROM TB_CodigS WHERE CodS = '" & CodS & "')
 		                                    INSERT INTO TB_CodigS (CodS, Created)
                                                            VALUES ( '" & CodS & "', SYSDATETIME())"
-            Dim COMANDO As New SqlCommand(CONSULTA, Conex)
+                Dim COMANDO As New SqlCommand(CONSULTA, Conex)
 
-            COMANDO.ExecuteNonQuery()
-            Conex.Close()
+                COMANDO.ExecuteNonQuery()
+                Conex.Close()
+            End If
+
+            Eliminar()
         End If
-
-        Eliminar()
     End Sub
 
     Private Sub DatosPM_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DatosPM.CellContentClick
@@ -259,10 +263,12 @@ Public Class Entregas
     End Sub
 
     Private Sub BGNT_Click(sender As Object, e As EventArgs) Handles BGNT.Click
-        If TxtNombre.Text = "" Or TxtAP.Text = "" Or TxtAM.Text = "" Then
-            MessageBox.Show("Ingrese el Nombre Completo", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-        Else
-            DatosNT()
+        If MsgBox("Desea Guardar la Información: " & TxtNNN.Text & " " & TxtNombre.Text & " " & TxtAP.Text & " " & TxtAM.Text, vbYesNo) = vbYes Then
+            If TxtNombre.Text = "" Or TxtAP.Text = "" Or TxtAM.Text = "" Then
+                MessageBox.Show("Ingrese el Nombre Completo", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Else
+                DatosNT()
+            End If
         End If
     End Sub
 
@@ -285,6 +291,9 @@ Public Class Entregas
         ANuevoT.Visible = False
     End Sub
 
+    Private Sub BEEP_Click(sender As Object, e As EventArgs) Handles BEPP.Click
+        EntregaEPP.Show()
+    End Sub
 
     'Textbox
     Private Sub TxtBusqueda_TextChanged(sender As Object, e As EventArgs) Handles TxtBusqueda.TextChanged
@@ -375,9 +384,8 @@ Public Class Entregas
         Dim CodS As String = LCS.Text
         Dim CanS As Double = CDec(TxtCantidad.Text)
 
-        Dim CONSULTA As String = "IF NOT EXISTS(SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodS & "' AND Producto = '" & Prod & "')
-	                                 INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanE, CanS, PrecioE, PrecioS)
-                                                                VALUES ('" & CodS & "', '" & Prod & "', '" & CanS & "', 0, 0,0)"
+        Dim CONSULTA As String = "INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanE, CanS, PrecioE, PrecioS, Created)
+                                         VALUES ('" & CodS & "', '" & Prod & "', '" & CanS & "', 0, 0,0, SYSDATETIME())"
 
         Dim COMANDO As New SqlCommand(CONSULTA, Conex)
 
@@ -582,7 +590,9 @@ Public Class Entregas
                                                 (Nombre_Producto  LIKE '%'+@Busqueda+'%' OR
                                                 Clave_Producto  LIKE '%'+@Busqueda+'%' OR
                                                 Codigo_Barras LIKE '%'+@Busqueda+'%') AND
-									            Existencia > 0
+									            Existencia > 0 AND
+                                                Nombre_Producto NOT LIKE '%EPP%' AND
+
                                         ORDER BY Nombre_Producto ASC"
 
             Dim cmd As New SqlCommand(Consulta, Conex)
@@ -708,7 +718,7 @@ Public Class Entregas
 
 
     'Validación
-    Private Sub TxtCalidad_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TxtCantidad.KeyPress
+    Private Sub TxtCalidad_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TxtCantidad.KeyPress, TxtNNN.KeyPress
         NumerosyDecimal(TxtCantidad, e)
     End Sub
 

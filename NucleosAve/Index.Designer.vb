@@ -1072,7 +1072,7 @@ Partial Class Index
         Me.BMInventario.BackColor = System.Drawing.Color.Transparent
         Me.BMInventario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.BMInventario.Image = Global.NucleosAve.My.Resources.Resources.icons8_maletín_médico_80
-        Me.BMInventario.Location = New System.Drawing.Point(15, 9)
+        Me.BMInventario.Location = New System.Drawing.Point(26, 9)
         Me.BMInventario.Name = "BMInventario"
         Me.BMInventario.Size = New System.Drawing.Size(65, 65)
         Me.BMInventario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -1087,9 +1087,10 @@ Partial Class Index
         Me.LMInventario.ForeColor = System.Drawing.Color.Black
         Me.LMInventario.Location = New System.Drawing.Point(12, 76)
         Me.LMInventario.Name = "LMInventario"
-        Me.LMInventario.Size = New System.Drawing.Size(70, 15)
+        Me.LMInventario.Size = New System.Drawing.Size(94, 30)
         Me.LMInventario.TabIndex = 60
-        Me.LMInventario.Text = "Inventario"
+        Me.LMInventario.Text = "Inventario" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Medicamento"
+        Me.LMInventario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'PPedidos
         '
@@ -1387,6 +1388,7 @@ Partial Class Index
         Me.PA_R.Name = "PA_R"
         Me.PA_R.Size = New System.Drawing.Size(61, 72)
         Me.PA_R.TabIndex = 77
+        Me.PA_R.Visible = False
         '
         'BA_R
         '
@@ -1755,6 +1757,8 @@ Partial Class Index
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.NucleosAve.My.Resources.Resources.Fondo
         Me.ClientSize = New System.Drawing.Size(926, 425)
+        Me.Controls.Add(Me.PMMass)
+        Me.Controls.Add(Me.PMMPrima)
         Me.Controls.Add(Me.PMCompras)
         Me.Controls.Add(Me.PM_recursos_Humanos)
         Me.Controls.Add(Me.PMCostos)
@@ -1765,12 +1769,10 @@ Partial Class Index
         Me.Controls.Add(Me.PProcesos)
         Me.Controls.Add(Me.PSCRAP)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.PMMPrima)
         Me.Controls.Add(Me.PM_Armado_Rectangular)
         Me.Controls.Add(Me.PA_R)
         Me.Controls.Add(Me.PAGasolina)
         Me.Controls.Add(Me.PMaPrima)
-        Me.Controls.Add(Me.PMMass)
         Me.Controls.Add(Me.PPedidos)
         Me.Controls.Add(Me.PMass)
         Me.Controls.Add(Me.PAlmacen)

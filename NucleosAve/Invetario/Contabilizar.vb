@@ -37,10 +37,12 @@ Public Class Contabilizar
     End Sub
 
     Private Sub BGuardarMo_Click(sender As Object, e As EventArgs) Handles BGuardarMo.Click
-        If TxtNE.Text <> Nothing Then
-            Datos()
-        Else
-            MessageBox.Show("Ingresar Existencias", "Aviso", MessageBoxButtons.OK)
+        If MsgBox("Desea Modificar la Existencia del Producto: " & TxtNombreP.Text, vbYesNo) = vbYes Then
+            If TxtNE.Text <> Nothing Then
+                Datos()
+            Else
+                MessageBox.Show("Ingresar Existencias", "Aviso", MessageBoxButtons.OK)
+            End If
         End If
     End Sub
 

@@ -86,7 +86,7 @@ Public Class ODC
         B19()
         B20()
 
-        Dim IDO, Cod, PO, Codis As String
+        Dim IDO, Cod, PO, Codis, Prove As String
         Dim row As DataGridViewRow = DGOCA.CurrentRow()
 
         IDO = row.Cells(0).Value
@@ -100,6 +100,9 @@ Public Class ODC
 
         Codis = row.Cells(3).Value
         CodS.Text = Codis
+
+        Prove = row.Cells(4).Value
+        LProv.Text = Prove
 
         POC.Visible = False
         Productos1.Visible = True
@@ -631,6 +634,8 @@ Public Class ODC
 
         MR()
         Productos()
+        BCompras.Visible = True
+        LCompras.Visible = True
     End Sub
 
     Private Sub BB1_Click(sender As Object, e As EventArgs) Handles BB1.Click
@@ -1445,41 +1450,42 @@ Public Class ODC
     End Sub
 
     Private Sub BTerminar_Click(sender As Object, e As EventArgs) Handles BTerminar.Click
-        Dim CodSs As String = OCompra.Text
+        If MsgBox("Desea Finalizar", vbYesNo) = vbYes Then
+            Dim CodSs As String = OCompra.Text
 
-        Conex.Open()
-        Dim CONSULTA As String = "UPDATE TB_Ordenes_Compra 
+            Conex.Open()
+            Dim CONSULTA As String = "UPDATE TB_Ordenes_Compra 
                                         SET estado = 'Finalizado'
                                         WHERE purchase_order = '" & CodSs & "'"
 
-        Dim COMANDO As New SqlCommand(CONSULTA, Conex)
+            Dim COMANDO As New SqlCommand(CONSULTA, Conex)
 
-        COMANDO.ExecuteNonQuery()
+            COMANDO.ExecuteNonQuery()
 
-        B1()
-        B2()
-        B3()
-        B4()
-        B5()
-        B6()
-        B7()
-        B8()
-        B9()
-        B10()
-        B11()
-        B12()
-        B13()
-        B14()
-        B15()
-        B16()
-        B17()
-        B18()
-        B19()
-        B20()
-        Conex.Close()
+            B1()
+            B2()
+            B3()
+            B4()
+            B5()
+            B6()
+            B7()
+            B8()
+            B9()
+            B10()
+            B11()
+            B12()
+            B13()
+            B14()
+            B15()
+            B16()
+            B17()
+            B18()
+            B19()
+            B20()
+            Conex.Close()
 
-        POC.Visible = True
-        Dim Consultas As String = "SELECT OC.id_orden, OC.codigo, OC.purchase_order, OC.CodiS, PR.nombre, COUNT(OD.descripcion) AS 'Productos Solicitados'
+            POC.Visible = True
+            Dim Consultas As String = "SELECT OC.id_orden, OC.codigo, OC.purchase_order, OC.CodiS, PR.nombre, COUNT(OD.descripcion) AS 'Productos Solicitados'
                                                         FROM TB_Ordenes_Compra AS OC
                                                             INNER JOIN Tb_Proveedores AS Pr ON Pr.id_p = OC.id_pro
                                                             INNER JOIN TB_Ordenes_Detalle AS OD ON OC.codigo = OD.codigo
@@ -1494,24 +1500,25 @@ Public Class ODC
                                                             OD.um NOT LIKE '%Servicio%'
                                                         GROUP BY OC.id_orden, OC.codigo, OC.purchase_order, OC.CodiS, Pr.nombre"
 
-        Dim cmds As New SqlCommand(Consultas, Conex)
-        cmds.Parameters.AddWithValue("@Busqueda", "-")
+            Dim cmds As New SqlCommand(Consultas, Conex)
+            cmds.Parameters.AddWithValue("@Busqueda", "-")
 
-        Dim Das As New SqlDataAdapter(cmds)
-        Dim Dss As New DataSet
+            Dim Das As New SqlDataAdapter(cmds)
+            Dim Dss As New DataSet
 
-        Try
-            Conex.Open()
-            Das.Fill(Dss)
+            Try
+                Conex.Open()
+                Das.Fill(Dss)
 
-            DGOCA.DataSource = Dss.Tables(0)
-            Das.Dispose()
+                DGOCA.DataSource = Dss.Tables(0)
+                Das.Dispose()
 
-        Catch ex As Exception
-            MessageBox.Show(Err.Description.ToString(), "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
+            Catch ex As Exception
+                MessageBox.Show(Err.Description.ToString(), "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
 
-        Conex.Close()
+            Conex.Close()
+        End If
     End Sub
 
     Private Sub BE1_Click(sender As Object, e As EventArgs) Handles BE1.Click
@@ -1894,6 +1901,437 @@ Public Class ODC
         BE20.Visible = False
     End Sub
 
+    Private Sub BCompras_Click(sender As Object, e As EventArgs) Handles BCompras.Click
+        If MsgBox("Desea Enviar Mensaje de Estatus", vbYesNo) = vbYes Then
+            Dim Fecha = DateTime.Now.ToString("dd-MM-yyy")
+            Dim smtp As New System.Net.Mail.SmtpClient
+            Dim correo As New System.Net.Mail.MailMessage
+            Dim P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20 As String
+            Dim cE1, cE2, cE3, cE4, cE5, cE6, cE7, cE8, cE9, cE10, cE11, cE12, cE13, cE14, cE15, cE16, cE17, cE18, cE19, cE20 As String
+            Dim c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12, c13, c14, c15, c16, c17, c18, c19, c20 As String
+            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
+            If CEntra1.Text = "" Or CEnt1.Text = "" Or Producto1.Text = "" Then
+                P1 = Nothing
+                c1 = Nothing
+                cE1 = Nothing
+            Else
+                If TxtAP1.Text = "" Then
+                    P1 = Producto1.Text
+                    c1 = CEntra1.Text
+                    cE1 = CEnt1.Text & " " & LUM1.Text
+                Else
+                    P1 = TxtAP1.Text
+                    c1 = CEntra1.Text
+                    cE1 = CEnt1.Text & " " & LUM1.Text
+                End If
+            End If
+            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
+            If CEntra2.Text = "" Or CEnt2.Text = "" Or Producto2.Text = "" Then
+                P2 = Nothing
+                c2 = Nothing
+                cE2 = Nothing
+            Else
+                If TxtAP2.Text = "" Then
+                    P2 = Producto2.Text
+                    c2 = CEntra2.Text
+                    cE2 = CEnt2.Text & " " & LUM2.Text
+                Else
+                    P2 = TxtAP2.Text
+                    c2 = CEntra2.Text
+                    cE2 = CEnt2.Text & " " & LUM2.Text
+                End If
+            End If
+            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
+            If CEntra3.Text = "" Or CEnt3.Text = "" Or Producto3.Text = "" Then
+                P3 = Nothing
+                c3 = Nothing
+                cE3 = Nothing
+            Else
+                If TxtAP3.Text = "" Then
+                    P3 = Producto3.Text
+                    c3 = CEntra3.Text
+                    cE3 = CEnt3.Text & " " & LUM3.Text
+                Else
+                    P3 = TxtAP3.Text
+                    c3 = CEntra3.Text
+                    cE3 = CEnt3.Text & " " & LUM3.Text
+                End If
+            End If
+            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
+            If CEntra4.Text = "" Or CEnt4.Text = "" Or Producto4.Text = "" Then
+                P4 = Nothing
+                c4 = Nothing
+                cE4 = Nothing
+            Else
+                If TxtAP4.Text = "" Then
+                    P4 = Producto4.Text
+                    c4 = CEntra4.Text
+                    cE4 = CEnt4.Text & " " & LUM4.Text
+                Else
+                    P4 = TxtAP4.Text
+                    c4 = CEntra4.Text
+                    cE4 = CEnt4.Text & " " & LUM4.Text
+                End If
+            End If
+            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
+            If CEntra5.Text = "" Or CEnt5.Text = "" Or Producto5.Text = "" Then
+                P5 = Nothing
+                c5 = Nothing
+                cE5 = Nothing
+            Else
+                If TxtAP5.Text = "" Then
+                    P5 = Producto5.Text
+                    c5 = CEntra5.Text
+                    cE5 = CEnt5.Text & " " & LUM5.Text
+                Else
+                    P5 = TxtAP5.Text
+                    c5 = CEntra5.Text
+                    cE5 = CEnt5.Text & " " & LUM5.Text
+                End If
+            End If
+            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
+            If CEntra6.Text = "" Or CEnt6.Text = "" Or Producto6.Text = "" Then
+                P6 = Nothing
+                c6 = Nothing
+                cE6 = Nothing
+            Else
+                If TxtAP6.Text = "" Then
+                    P6 = Producto6.Text
+                    c6 = CEntra6.Text
+                    cE6 = CEnt6.Text & " " & LUM6.Text
+                Else
+                    P6 = TxtAP6.Text
+                    c6 = CEntra6.Text
+                    cE6 = CEnt6.Text & " " & LUM6.Text
+                End If
+            End If
+            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
+            If CEntra7.Text = "" Or CEnt7.Text = "" Or Producto7.Text = "" Then
+                P7 = Nothing
+                c7 = Nothing
+                cE7 = Nothing
+            Else
+                If TxtAP7.Text = "" Then
+                    P7 = Producto7.Text
+                    c7 = CEntra7.Text
+                    cE7 = CEnt7.Text & " " & LUM7.Text
+                Else
+                    P7 = TxtAP7.Text
+                    c7 = CEntra7.Text
+                    cE7 = CEnt7.Text & " " & LUM7.Text
+                End If
+            End If
+            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
+            If CEntra8.Text = "" Or CEnt8.Text = "" Or Producto8.Text = "" Then
+                P8 = Nothing
+                c8 = Nothing
+                cE8 = Nothing
+            Else
+                If TxtAP8.Text = "" Then
+                    P8 = Producto8.Text
+                    c8 = CEntra8.Text
+                    cE8 = CEnt8.Text & " " & LUM8.Text
+                Else
+                    P8 = TxtAP8.Text
+                    c8 = CEntra8.Text
+                    cE8 = CEnt8.Text & " " & LUM8.Text
+                End If
+            End If
+            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
+            If CEntra9.Text = "" Or CEnt9.Text = "" Or Producto9.Text = "" Then
+                P9 = Nothing
+                c9 = Nothing
+                cE9 = Nothing
+            Else
+                If TxtAP9.Text = "" Then
+                    P9 = Producto9.Text
+                    c9 = CEntra9.Text
+                    cE9 = CEnt9.Text & " " & LUM9.Text
+                Else
+                    P9 = TxtAP9.Text
+                    c9 = CEntra9.Text
+                    cE9 = CEnt9.Text & " " & LUM9.Text
+                End If
+            End If
+            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
+            If CEntra10.Text = "" Or CEnt10.Text = "" Or Producto10.Text = "" Then
+                P10 = Nothing
+                c10 = Nothing
+                cE10 = Nothing
+            Else
+                If TxtAP10.Text = "" Then
+                    P10 = Producto10.Text
+                    c10 = CEntra10.Text
+                    cE10 = CEnt10.Text & " " & LUM10.Text
+                Else
+                    P10 = TxtAP10.Text
+                    c10 = CEntra10.Text
+                    cE10 = CEnt10.Text & " " & LUM10.Text
+                End If
+            End If
+            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
+            If CEntra11.Text = "" Or CEnt11.Text = "" Or Producto11.Text = "" Then
+                P11 = Nothing
+                c11 = Nothing
+                cE11 = Nothing
+            Else
+                If TxtAP11.Text = "" Then
+                    P11 = Producto11.Text
+                    c11 = CEntra11.Text
+                    cE11 = CEnt11.Text & " " & LUM11.Text
+                Else
+                    P11 = TxtAP11.Text
+                    c11 = CEntra11.Text
+                    cE11 = CEnt11.Text & " " & LUM11.Text
+                End If
+            End If
+            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
+            If CEntra12.Text = "" Or CEnt12.Text = "" Or Producto12.Text = "" Then
+                P12 = Nothing
+                c12 = Nothing
+                cE12 = Nothing
+            Else
+                If TxtAP12.Text = "" Then
+                    P12 = Producto12.Text
+                    c12 = CEntra12.Text
+                    cE12 = CEnt12.Text & " " & LUM12.Text
+                Else
+                    P12 = TxtAP12.Text
+                    c12 = CEntra12.Text
+                    cE12 = CEnt12.Text & " " & LUM12.Text
+                End If
+            End If
+            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
+            If CEntra13.Text = "" Or CEnt13.Text = "" Or Producto13.Text = "" Then
+                P13 = Nothing
+                c13 = Nothing
+                cE13 = Nothing
+            Else
+                If TxtAP13.Text = "" Then
+                    P13 = Producto13.Text
+                    c13 = CEntra13.Text
+                    cE13 = CEnt13.Text & " " & LUM13.Text
+                Else
+                    P13 = TxtAP13.Text
+                    c13 = CEntra13.Text
+                    cE13 = CEnt13.Text & " " & LUM13.Text
+                End If
+            End If
+            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
+            If CEntra14.Text = "" Or CEnt14.Text = "" Or Producto14.Text = "" Then
+                P14 = Nothing
+                c14 = Nothing
+                cE14 = Nothing
+            Else
+                If TxtAP14.Text = "" Then
+                    P14 = Producto14.Text
+                    c14 = CEntra14.Text
+                    cE14 = CEnt14.Text & " " & LUM14.Text
+                Else
+                    P14 = TxtAP14.Text
+                    c14 = CEntra14.Text
+                    cE14 = CEnt14.Text & " " & LUM14.Text
+                End If
+            End If
+            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
+            If CEntra15.Text = "" Or CEnt15.Text = "" Or Producto15.Text = "" Then
+                P15 = Nothing
+                c15 = Nothing
+                cE15 = Nothing
+            Else
+                If TxtAP15.Text = "" Then
+                    P15 = Producto15.Text
+                    c15 = CEntra15.Text
+                    cE15 = CEnt15.Text & " " & LUM15.Text
+                Else
+                    P15 = TxtAP15.Text
+                    c15 = CEntra15.Text
+                    cE15 = CEnt15.Text & " " & LUM15.Text
+                End If
+            End If
+            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
+            If CEntra16.Text = "" Or CEnt16.Text = "" Or Producto16.Text = "" Then
+                P16 = Nothing
+                c16 = Nothing
+                cE16 = Nothing
+            Else
+                If TxtAP16.Text = "" Then
+                    P16 = Producto16.Text
+                    c16 = CEntra16.Text
+                    cE16 = CEnt16.Text & " " & LUM16.Text
+                Else
+                    P16 = TxtAP16.Text
+                    c16 = CEntra16.Text
+                    cE16 = CEnt16.Text & " " & LUM16.Text
+                End If
+            End If
+            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
+            If CEntra17.Text = "" Or CEnt17.Text = "" Or Producto17.Text = "" Then
+                P17 = Nothing
+                c17 = Nothing
+                cE17 = Nothing
+            Else
+                If TxtAP17.Text = "" Then
+                    P17 = Producto17.Text
+                    c17 = CEntra17.Text
+                    cE17 = CEnt17.Text & " " & LUM17.Text
+                Else
+                    P17 = TxtAP17.Text
+                    c17 = CEntra17.Text
+                    cE17 = CEnt17.Text & " " & LUM17.Text
+                End If
+            End If
+            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
+            If CEntra18.Text = "" Or CEnt18.Text = "" Or Producto18.Text = "" Then
+                P18 = Nothing
+                c18 = Nothing
+                cE18 = Nothing
+            Else
+                If TxtAP18.Text = "" Then
+                    P18 = Producto18.Text
+                    c18 = CEntra18.Text
+                    cE18 = CEnt18.Text & " " & LUM18.Text
+                Else
+                    P18 = TxtAP18.Text
+                    c18 = CEntra18.Text
+                    cE18 = CEnt18.Text & " " & LUM18.Text
+                End If
+            End If
+            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
+            If CEntra19.Text = "" Or CEnt19.Text = "" Or Producto19.Text = "" Then
+                P19 = Nothing
+                c19 = Nothing
+                cE19 = Nothing
+            Else
+                If TxtAP19.Text = "" Then
+                    P19 = Producto19.Text
+                    c19 = CEntra19.Text
+                    cE19 = CEnt19.Text & " " & LUM19.Text
+                Else
+                    P19 = TxtAP19.Text
+                    c19 = CEntra19.Text
+                    cE19 = CEnt19.Text & " " & LUM19.Text
+                End If
+            End If
+            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
+            If CEntra20.Text = "" Or CEnt20.Text = "" Or Producto20.Text = "" Then
+                P20 = Nothing
+                c20 = Nothing
+                cE20 = Nothing
+            Else
+                If TxtAP20.Text = "" Then
+                    P20 = Producto20.Text
+                    c20 = CEntra20.Text
+                    cE20 = CEnt20.Text & " " & LUM20.Text
+                Else
+                    P20 = TxtAP20.Text
+                    c20 = CEntra20.Text
+                    cE20 = CEnt20.Text & " " & LUM20.Text
+                End If
+            End If
+            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
+
+            With smtp
+                .Port = 25
+                .Host = ""
+                .Credentials = New System.Net.NetworkCredential("", "")
+                .EnableSsl = False
+            End With
+            With correo
+                .From = New System.Net.Mail.MailAddress("")
+                .To.Add("")
+                .Subject = "Orden de Compra" & OCompra.Text
+                .Body = "<img src ='\\ANTUA-PC\Servidor_de_Archivos\Imagenes\logo_correo\logo.png'>" & "<p align='right'>Orden de Compra : " & OCompra.Text & "</p><br />" &
+                        "Fecha: " & Fecha & "<br />" &
+                        "Proveedor: " & LProv.Text & "<br />" &
+                        "Los Productos de la Orden de Compra son los Siguientes" & "<br />" &
+                            "<center><p>Listado de Productos:</p></center>" &
+                            "<center><table  border= " & 1 & " >
+                            <tr ALIGN=CENTER>
+                                <th>Producto</th>
+                                <th>Cantidad Solicitada</th>
+                                <th>Cantidad Ingresada</th>
+                            </tr> 
+                            <tr ALIGN=CENTER>" &
+                                    "<td>" & P1 & "&nbsp;&nbsp;</td>" &
+                                        "<td style='text-align: center;'>" & c1 & "&nbsp;&nbsp;</td>" &
+                                        "<td style='text-align: center;'>" & cE1 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
+                                    "<td>" & P2 & "&nbsp;&nbsp;</td>" &
+                                        "<td style='text-align: center;'>" & c2 & "&nbsp;&nbsp;</td>" &
+                                        "<td style='text-align: center;'>" & cE2 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
+                                    "<td>" & P3 & "&nbsp;&nbsp;</td>" &
+                                        "<td style='text-align: center;'>" & c3 & "&nbsp;&nbsp;</td>" &
+                                        "<td style='text-align: center;'>" & cE3 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
+                                    "<td>" & P4 & "&nbsp;&nbsp;</td>" &
+                                        "<td style='text-align: center;'>" & c4 & "&nbsp;&nbsp;</td>" &
+                                        "<td style='text-align: center;'>" & cE4 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
+                                    "<td>" & P5 & "&nbsp;&nbsp;</td>" &
+                                        "<td style='text-align: center;'>" & c5 & "&nbsp;&nbsp;</td>" &
+                                        "<td style='text-align: center;'>" & cE5 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
+                                    "<td>" & P6 & "&nbsp;&nbsp;</td>" &
+                                        "<td style='text-align: center;'>" & c6 & "&nbsp;&nbsp;</td>" &
+                                        "<td style='text-align: center;'>" & cE6 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
+                                    "<td>" & P7 & "&nbsp;&nbsp;</td>" &
+                                        "<td style='text-align: center;'>" & c7 & "&nbsp;&nbsp;</td>" &
+                                        "<td style='text-align: center;'>" & cE7 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
+                                    "<td>" & P8 & "&nbsp;&nbsp;</td>" &
+                                        "<td style='text-align: center;'>" & c8 & "&nbsp;&nbsp;</td>" &
+                                        "<td style='text-align: center;'>" & cE8 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
+                                    "<td>" & P9 & "&nbsp;&nbsp;</td>" &
+                                        "<td style='text-align: center;'>" & c9 & "&nbsp;&nbsp;</td>" &
+                                        "<td style='text-align: center;'>" & cE9 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
+                                    "<td>" & P10 & "&nbsp;&nbsp;</td>" &
+                                        "<td style='text-align: center;'>" & c10 & "&nbsp;&nbsp;</td>" &
+                                        "<td style='text-align: center;'>" & cE10 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
+                                    "<td>" & P11 & "&nbsp;&nbsp;</td>" &
+                                        "<td style='text-align: center;'>" & c11 & "&nbsp;&nbsp;</td>" &
+                                        "<td style='text-align: center;'>" & cE11 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
+                                    "<td>" & P12 & "&nbsp;&nbsp;</td>" &
+                                        "<td style='text-align: center;'>" & c12 & "&nbsp;&nbsp;</td>" &
+                                        "<td style='text-align: center;'>" & cE12 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
+                                    "<td>" & P13 & "&nbsp;&nbsp;</td>" &
+                                        "<td style='text-align: center;'>" & c13 & "&nbsp;&nbsp;</td>" &
+                                        "<td style='text-align: center;'>" & cE13 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
+                                    "<td>" & P14 & "&nbsp;&nbsp;</td>" &
+                                        "<td style='text-align: center;'>" & c14 & "&nbsp;&nbsp;</td>" &
+                                        "<td style='text-align: center;'>" & cE14 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
+                                    "<td>" & P15 & "&nbsp;&nbsp;</td>" &
+                                        "<td style='text-align: center;'>" & c15 & "&nbsp;&nbsp;</td>" &
+                                        "<td style='text-align: center;'>" & cE15 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
+                                    "<td>" & P16 & "&nbsp;&nbsp;</td>" &
+                                        "<td style='text-align: center;'>" & c16 & "&nbsp;&nbsp;</td>" &
+                                        "<td style='text-align: center;'>" & cE16 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
+                                    "<td>" & P17 & "&nbsp;&nbsp;</td>" &
+                                        "<td style='text-align: center;'>" & c17 & "&nbsp;&nbsp;</td>" &
+                                        "<td style='text-align: center;'>" & cE17 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
+                                    "<td>" & P18 & "&nbsp;&nbsp;</td>" &
+                                        "<td style='text-align: center;'>" & c18 & "&nbsp;&nbsp;</td>" &
+                                        "<td style='text-align: center;'>" & cE18 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
+                                    "<td>" & P19 & "&nbsp;&nbsp;</td>" &
+                                        "<td style='text-align: center;'>" & c19 & "&nbsp;&nbsp;</td>" &
+                                        "<td style='text-align: center;'>" & cE19 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
+                                    "<td>" & P20 & "&nbsp;&nbsp;</td>" &
+                                        "<td style='text-align: center;'>" & c20 & "&nbsp;&nbsp;</td>" &
+                                        "<td style='text-align: center;'>" & cE20 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>
+                            </table></center>" &
+                        "<font color='red'>Nota : Por favor de notificar si se esperan los productos faltantes</font>"
+                .IsBodyHtml = True
+                .Priority = System.Net.Mail.MailPriority.Normal
+            End With
+
+            Try
+                smtp.Send(correo)
+                MessageBox.Show("Su mensaje de correo ha sido enviado.",
+                                "Correo enviado",
+                                 MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Catch ex As Exception
+                MessageBox.Show("Error: " & ex.Message,
+                                "Error al enviar correo",
+                                 MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+        End If
+    End Sub
+
 
     'Text
     Private Sub TxtBOC_TextChanged(sender As Object, e As EventArgs) Handles TxtBOC.TextChanged
@@ -1949,8 +2387,8 @@ Public Class ODC
 
             Conex.Open()
             Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
-                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE, PrecioS)
-                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0, '" & Pre & "')"
+                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE, PrecioS, Created)
+                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0, '" & Pre & "' , SYSDATETIME())"
 
             Dim COMANDO As New SqlCommand(CONSULTA, Conex)
 
@@ -1970,8 +2408,8 @@ Public Class ODC
 
             Conex.Open()
             Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
-                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE, PrecioS)
-                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0, '" & Pre & "')"
+                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE, PrecioS, Created)
+                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0, '" & Pre & "' , SYSDATETIME())"
 
             Dim COMANDO As New SqlCommand(CONSULTA, Conex)
 
@@ -1991,8 +2429,8 @@ Public Class ODC
 
             Conex.Open()
             Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
-                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE, PrecioS)
-                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0, '" & Pre & "')"
+                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE, PrecioS, Created)
+                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0, '" & Pre & "' , SYSDATETIME())"
 
             Dim COMANDO As New SqlCommand(CONSULTA, Conex)
 
@@ -2012,8 +2450,8 @@ Public Class ODC
 
             Conex.Open()
             Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
-                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE, PrecioS)
-                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0, '" & Pre & "')"
+                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE, PrecioS, Created)
+                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0, '" & Pre & "' , SYSDATETIME())"
 
             Dim COMANDO As New SqlCommand(CONSULTA, Conex)
 
@@ -2033,8 +2471,8 @@ Public Class ODC
 
             Conex.Open()
             Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
-                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE, PrecioS)
-                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0, '" & Pre & "')"
+                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE, PrecioS, Created)
+                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0, '" & Pre & "' , SYSDATETIME())"
 
             Dim COMANDO As New SqlCommand(CONSULTA, Conex)
 
@@ -2054,8 +2492,8 @@ Public Class ODC
 
             Conex.Open()
             Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
-                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE, PrecioS)
-                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0, '" & Pre & "')"
+                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE, PrecioS, Created)
+                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0, '" & Pre & "' , SYSDATETIME())"
 
             Dim COMANDO As New SqlCommand(CONSULTA, Conex)
 
@@ -2075,8 +2513,8 @@ Public Class ODC
 
             Conex.Open()
             Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
-                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE, PrecioS)
-                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0, '" & Pre & "')"
+                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE, PrecioS, Created)
+                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0, '" & Pre & "' , SYSDATETIME())"
 
             Dim COMANDO As New SqlCommand(CONSULTA, Conex)
 
@@ -2096,8 +2534,8 @@ Public Class ODC
 
             Conex.Open()
             Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
-                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE, PrecioS)
-                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0, '" & Pre & "')"
+                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE, PrecioS, Created)
+                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0, '" & Pre & "' , SYSDATETIME())"
 
             Dim COMANDO As New SqlCommand(CONSULTA, Conex)
 
@@ -2117,8 +2555,8 @@ Public Class ODC
 
             Conex.Open()
             Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
-                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE, PrecioS)
-                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0, '" & Pre & "')"
+                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE, PrecioS, Created)
+                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0, '" & Pre & "' , SYSDATETIME())"
 
             Dim COMANDO As New SqlCommand(CONSULTA, Conex)
 
@@ -2138,8 +2576,8 @@ Public Class ODC
 
             Conex.Open()
             Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
-                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE, PrecioS)
-                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0, '" & Pre & "')"
+                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE, PrecioS, Created)
+                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0, '" & Pre & "' , SYSDATETIME())"
 
             Dim COMANDO As New SqlCommand(CONSULTA, Conex)
 
@@ -2159,8 +2597,8 @@ Public Class ODC
 
             Conex.Open()
             Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
-                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE, PrecioS)
-                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0, '" & Pre & "')"
+                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE, PrecioS, Created)
+                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0, '" & Pre & "' , SYSDATETIME())"
 
             Dim COMANDO As New SqlCommand(CONSULTA, Conex)
 
@@ -2180,8 +2618,8 @@ Public Class ODC
 
             Conex.Open()
             Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
-                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE, PrecioS)
-                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0, '" & Pre & "')"
+                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE, PrecioS, Created)
+                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0, '" & Pre & "' , SYSDATETIME())"
 
             Dim COMANDO As New SqlCommand(CONSULTA, Conex)
 
@@ -2201,8 +2639,8 @@ Public Class ODC
 
             Conex.Open()
             Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
-                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE, PrecioS)
-                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0, '" & Pre & "')"
+                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE, PrecioS, Created)
+                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0, '" & Pre & "' , SYSDATETIME())"
 
             Dim COMANDO As New SqlCommand(CONSULTA, Conex)
 
@@ -2222,8 +2660,8 @@ Public Class ODC
 
             Conex.Open()
             Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
-                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE, PrecioS)
-                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0, '" & Pre & "')"
+                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE, PrecioS, Created)
+                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0, '" & Pre & "' , SYSDATETIME())"
 
             Dim COMANDO As New SqlCommand(CONSULTA, Conex)
 
@@ -2243,8 +2681,8 @@ Public Class ODC
 
             Conex.Open()
             Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
-                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE, PrecioS)
-                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0, '" & Pre & "')"
+                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE, PrecioS, Created)
+                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0, '" & Pre & "' , SYSDATETIME())"
 
             Dim COMANDO As New SqlCommand(CONSULTA, Conex)
 
@@ -2264,8 +2702,8 @@ Public Class ODC
 
             Conex.Open()
             Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
-                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE, PrecioS)
-                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0, '" & Pre & "')"
+                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE, PrecioS, Created)
+                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0, '" & Pre & "' , SYSDATETIME())"
 
             Dim COMANDO As New SqlCommand(CONSULTA, Conex)
 
@@ -2285,8 +2723,8 @@ Public Class ODC
 
             Conex.Open()
             Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
-                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE, PrecioS)
-                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0, '" & Pre & "')"
+                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE, PrecioS, Created)
+                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0, '" & Pre & "' , SYSDATETIME())"
 
             Dim COMANDO As New SqlCommand(CONSULTA, Conex)
 
@@ -2306,8 +2744,8 @@ Public Class ODC
 
             Conex.Open()
             Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
-                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE, PrecioS)
-                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0, '" & Pre & "')"
+                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE, PrecioS, Created)
+                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0, '" & Pre & "' , SYSDATETIME())"
 
             Dim COMANDO As New SqlCommand(CONSULTA, Conex)
 
@@ -2327,8 +2765,8 @@ Public Class ODC
 
             Conex.Open()
             Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
-                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE, PrecioS)
-                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0, '" & Pre & "')"
+                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE, PrecioS, Created)
+                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0, '" & Pre & "' , SYSDATETIME())"
 
             Dim COMANDO As New SqlCommand(CONSULTA, Conex)
 
@@ -2348,8 +2786,8 @@ Public Class ODC
 
             Conex.Open()
             Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
-                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE, PrecioS)
-                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0, '" & Pre & "')"
+                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE, PrecioS, Created)
+                                                                           VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0, '" & Pre & "' , SYSDATETIME())"
 
             Dim COMANDO As New SqlCommand(CONSULTA, Conex)
 
@@ -2390,7 +2828,6 @@ Public Class ODC
             Conex.Close()
         End If
     End Sub
-
 
 
     'Consultas
@@ -4603,10 +5040,6 @@ Public Class ODC
 
     Private Sub Form1_MouseUp(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles MyBase.MouseUp
         Arrastre = False
-    End Sub
-
-    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
-
     End Sub
 
     Private Sub Form1_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles MyBase.MouseMove

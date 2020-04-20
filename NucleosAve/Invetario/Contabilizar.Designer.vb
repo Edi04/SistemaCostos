@@ -22,12 +22,8 @@ Partial Class Contabilizar
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.DataView = New System.Windows.Forms.DataGridView()
-        Me.ID = New System.Windows.Forms.DataGridViewLinkColumn()
-        Me.Nombre_Producto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Clave_Producto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Existencia = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.POpc = New System.Windows.Forms.Panel()
         Me.BMinimizar = New System.Windows.Forms.PictureBox()
         Me.BCerrar = New System.Windows.Forms.PictureBox()
@@ -49,6 +45,10 @@ Partial Class Contabilizar
         Me.PBusqueda = New System.Windows.Forms.PictureBox()
         Me.TxtBusqueda = New System.Windows.Forms.TextBox()
         Me.txtResponsable = New System.Windows.Forms.Label()
+        Me.ID = New System.Windows.Forms.DataGridViewLinkColumn()
+        Me.Nombre_Producto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Clave_Producto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Existencia = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.DataView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BMinimizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -66,67 +66,29 @@ Partial Class Contabilizar
         Me.DataView.BackgroundColor = System.Drawing.Color.SteelBlue
         Me.DataView.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DataView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.Nombre_Producto, Me.Clave_Producto, Me.Existencia})
         Me.DataView.EnableHeadersVisualStyles = False
         Me.DataView.GridColor = System.Drawing.SystemColors.GradientActiveCaption
-        Me.DataView.Location = New System.Drawing.Point(12, 138)
+        Me.DataView.Location = New System.Drawing.Point(3, 138)
         Me.DataView.Name = "DataView"
         Me.DataView.ReadOnly = True
-        Me.DataView.Size = New System.Drawing.Size(456, 364)
+        Me.DataView.Size = New System.Drawing.Size(495, 364)
         Me.DataView.TabIndex = 19
-        '
-        'ID
-        '
-        Me.ID.DataPropertyName = "Id_Producto"
-        Me.ID.Frozen = True
-        Me.ID.HeaderText = "ID"
-        Me.ID.Name = "ID"
-        Me.ID.ReadOnly = True
-        Me.ID.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.ID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.ID.Text = ""
-        Me.ID.Width = 50
-        '
-        'Nombre_Producto
-        '
-        Me.Nombre_Producto.DataPropertyName = "Nombre_Producto"
-        Me.Nombre_Producto.Frozen = True
-        Me.Nombre_Producto.HeaderText = "Nombre del Producto"
-        Me.Nombre_Producto.Name = "Nombre_Producto"
-        Me.Nombre_Producto.ReadOnly = True
-        Me.Nombre_Producto.Width = 200
-        '
-        'Clave_Producto
-        '
-        Me.Clave_Producto.DataPropertyName = "Clave_Producto"
-        Me.Clave_Producto.Frozen = True
-        Me.Clave_Producto.HeaderText = "Clave del Producto"
-        Me.Clave_Producto.Name = "Clave_Producto"
-        Me.Clave_Producto.ReadOnly = True
-        '
-        'Existencia
-        '
-        Me.Existencia.DataPropertyName = "Existencia"
-        Me.Existencia.Frozen = True
-        Me.Existencia.HeaderText = "Existencia"
-        Me.Existencia.Name = "Existencia"
-        Me.Existencia.ReadOnly = True
-        Me.Existencia.Width = 60
         '
         'POpc
         '
         Me.POpc.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.POpc.BackColor = System.Drawing.Color.SteelBlue
-        Me.POpc.Location = New System.Drawing.Point(0, 53)
+        Me.POpc.Location = New System.Drawing.Point(39, 53)
         Me.POpc.Name = "POpc"
         Me.POpc.Size = New System.Drawing.Size(701, 10)
         Me.POpc.TabIndex = 18
@@ -138,7 +100,7 @@ Partial Class Contabilizar
         Me.BMinimizar.BackColor = System.Drawing.Color.Transparent
         Me.BMinimizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.BMinimizar.Image = Global.NucleosAve.My.Resources.Resources.icons8_minimizar_la_ventana_5001
-        Me.BMinimizar.Location = New System.Drawing.Point(584, 0)
+        Me.BMinimizar.Location = New System.Drawing.Point(623, 0)
         Me.BMinimizar.Name = "BMinimizar"
         Me.BMinimizar.Size = New System.Drawing.Size(53, 52)
         Me.BMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -152,7 +114,7 @@ Partial Class Contabilizar
         Me.BCerrar.BackColor = System.Drawing.Color.Transparent
         Me.BCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.BCerrar.Image = Global.NucleosAve.My.Resources.Resources.icons8_cerrar_ventana_5001
-        Me.BCerrar.Location = New System.Drawing.Point(637, 0)
+        Me.BCerrar.Location = New System.Drawing.Point(676, 0)
         Me.BCerrar.Name = "BCerrar"
         Me.BCerrar.Size = New System.Drawing.Size(55, 52)
         Me.BCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -175,7 +137,7 @@ Partial Class Contabilizar
         Me.GDatos_Generales.Controls.Add(Me.LProducto)
         Me.GDatos_Generales.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.GDatos_Generales.ForeColor = System.Drawing.Color.Black
-        Me.GDatos_Generales.Location = New System.Drawing.Point(474, 113)
+        Me.GDatos_Generales.Location = New System.Drawing.Point(508, 117)
         Me.GDatos_Generales.Name = "GDatos_Generales"
         Me.GDatos_Generales.Size = New System.Drawing.Size(218, 361)
         Me.GDatos_Generales.TabIndex = 22
@@ -300,7 +262,7 @@ Partial Class Contabilizar
         '
         Me.BGuardarMo.BackColor = System.Drawing.Color.Transparent
         Me.BGuardarMo.Image = Global.NucleosAve.My.Resources.Resources.file_1411
-        Me.BGuardarMo.Location = New System.Drawing.Point(368, 0)
+        Me.BGuardarMo.Location = New System.Drawing.Point(729, 274)
         Me.BGuardarMo.Name = "BGuardarMo"
         Me.BGuardarMo.Size = New System.Drawing.Size(47, 50)
         Me.BGuardarMo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -326,7 +288,7 @@ Partial Class Contabilizar
         Me.GBusqueda.Controls.Add(Me.TxtBusqueda)
         Me.GBusqueda.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GBusqueda.ForeColor = System.Drawing.Color.Black
-        Me.GBusqueda.Location = New System.Drawing.Point(45, 68)
+        Me.GBusqueda.Location = New System.Drawing.Point(84, 68)
         Me.GBusqueda.Name = "GBusqueda"
         Me.GBusqueda.Size = New System.Drawing.Size(374, 65)
         Me.GBusqueda.TabIndex = 77
@@ -375,12 +337,50 @@ Partial Class Contabilizar
         Me.txtResponsable.TabIndex = 78
         Me.txtResponsable.Visible = False
         '
+        'ID
+        '
+        Me.ID.DataPropertyName = "Id_Producto"
+        Me.ID.Frozen = True
+        Me.ID.HeaderText = "ID"
+        Me.ID.Name = "ID"
+        Me.ID.ReadOnly = True
+        Me.ID.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.ID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.ID.Text = ""
+        Me.ID.Width = 50
+        '
+        'Nombre_Producto
+        '
+        Me.Nombre_Producto.DataPropertyName = "Nombre_Producto"
+        Me.Nombre_Producto.Frozen = True
+        Me.Nombre_Producto.HeaderText = "Nombre del Producto"
+        Me.Nombre_Producto.Name = "Nombre_Producto"
+        Me.Nombre_Producto.ReadOnly = True
+        Me.Nombre_Producto.Width = 230
+        '
+        'Clave_Producto
+        '
+        Me.Clave_Producto.DataPropertyName = "Clave_Producto"
+        Me.Clave_Producto.Frozen = True
+        Me.Clave_Producto.HeaderText = "Clave del Producto"
+        Me.Clave_Producto.Name = "Clave_Producto"
+        Me.Clave_Producto.ReadOnly = True
+        '
+        'Existencia
+        '
+        Me.Existencia.DataPropertyName = "Existencia"
+        Me.Existencia.Frozen = True
+        Me.Existencia.HeaderText = "Existencia"
+        Me.Existencia.Name = "Existencia"
+        Me.Existencia.ReadOnly = True
+        Me.Existencia.Width = 60
+        '
         'Contabilizar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.NucleosAve.My.Resources.Resources.Fondo
-        Me.ClientSize = New System.Drawing.Size(700, 514)
+        Me.ClientSize = New System.Drawing.Size(778, 514)
         Me.Controls.Add(Me.txtResponsable)
         Me.Controls.Add(Me.GBusqueda)
         Me.Controls.Add(Me.IDD)

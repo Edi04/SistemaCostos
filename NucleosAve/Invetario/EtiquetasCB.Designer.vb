@@ -136,7 +136,7 @@ Partial Class EtiquetasCB
         Me.GBusqueda.ForeColor = System.Drawing.Color.Black
         Me.GBusqueda.Location = New System.Drawing.Point(39, 1)
         Me.GBusqueda.Name = "GBusqueda"
-        Me.GBusqueda.Size = New System.Drawing.Size(277, 52)
+        Me.GBusqueda.Size = New System.Drawing.Size(326, 52)
         Me.GBusqueda.TabIndex = 1
         Me.GBusqueda.TabStop = False
         Me.GBusqueda.Text = "Búsqueda"
@@ -144,7 +144,7 @@ Partial Class EtiquetasCB
         'PBusqueda
         '
         Me.PBusqueda.Image = Global.NucleosAve.My.Resources.Resources.file_1911
-        Me.PBusqueda.Location = New System.Drawing.Point(234, 11)
+        Me.PBusqueda.Location = New System.Drawing.Point(287, 12)
         Me.PBusqueda.Name = "PBusqueda"
         Me.PBusqueda.Size = New System.Drawing.Size(39, 38)
         Me.PBusqueda.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -159,7 +159,7 @@ Partial Class EtiquetasCB
         Me.TxtBusqueda.Location = New System.Drawing.Point(29, 20)
         Me.TxtBusqueda.Multiline = True
         Me.TxtBusqueda.Name = "TxtBusqueda"
-        Me.TxtBusqueda.Size = New System.Drawing.Size(193, 30)
+        Me.TxtBusqueda.Size = New System.Drawing.Size(252, 30)
         Me.TxtBusqueda.TabIndex = 1
         Me.TxtBusqueda.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.TxtBusqueda.WordWrap = False
@@ -239,12 +239,12 @@ Partial Class EtiquetasCB
         Me.Codigo.PostnetHeightTall = 0.3226!
         Me.Codigo.PostnetSpacing = 0.064!
         Me.Codigo.Resolution = IDAutomation.Windows.Forms.LinearBarCode.Resolutions.Printer
-        Me.Codigo.ResolutionCustomDPI = 600.0!
+        Me.Codigo.ResolutionCustomDPI = 96.0!
         Me.Codigo.ResolutionPrinterToUse = ""
         Me.Codigo.RotationAngle = IDAutomation.Windows.Forms.LinearBarCode.RotationAngles.Zero_Degrees
         Me.Codigo.ShowText = True
         Me.Codigo.ShowTextLocation = IDAutomation.Windows.Forms.LinearBarCode.HRTextPositions.Bottom
-        Me.Codigo.Size = New System.Drawing.Size(171, 79)
+        Me.Codigo.Size = New System.Drawing.Size(171, 74)
         Me.Codigo.SuppSeparationCM = 0.5!
         Me.Codigo.SymbologyID = IDAutomation.Windows.Forms.LinearBarCode.Symbologies.Code39
         Me.Codigo.TabIndex = 6

@@ -15,7 +15,6 @@ Public Class MInventario
     Private Sub MInventario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         DatosGV()
         Consultas()
-        Marcaa()
         Nombres()
     End Sub
 
@@ -44,15 +43,10 @@ Public Class MInventario
         BOrdenC.Visible = False
     End Sub
 
-    '   AMarca
-    Private Sub BAMar_Click(sender As Object, e As EventArgs) Handles BAMar.Click
-        NMMarca.Show()
-    End Sub
-
     '   Guardar Modificación
     Private Sub BGuardarMo_Click(sender As Object, e As EventArgs) Handles BGuardarMo.Click
-        If (CMedida.SelectedValue = Nothing) Or (CMarca.SelectedValue = Nothing) Then
-            MessageBox.Show("Seleccione los Datos", "Advertencia", MessageBoxButtons.OK)
+        If (CMedida.SelectedValue = Nothing) Then
+            MessageBox.Show("Seleccione la Unidad de Medida", "Advertencia", MessageBoxButtons.OK)
         Else
             Modif()
             BOrdenC.Visible = True
@@ -67,19 +61,14 @@ Public Class MInventario
         BOrdenC.Visible = True
     End Sub
 
-    Private Sub CMarca_Sel(sender As Object, e As EventArgs) Handles CMarca.Click
-        Marcaa()
-    End Sub
-
     '   Agregar Existencia
     Private Sub BAgregarExistencia_Click(sender As Object, e As EventArgs) Handles BAgregarExistencia.Click
         If Tickets.LCS.Text <> Nothing Then
             LCS.Text = Tickets.LCS.Text
         Else
             Dim Fecha = DateTime.Now.ToString("yy")
-            Dim cmd As New SqlCommand("SELECT Id_S
-                                    FROM TB_CodigS
-                                    ORDER BY Id_S DESC", Conex)
+            Dim cmd As New SqlCommand("SELECT COUNT(Id_DProducto)
+                                        FROM TB_EDetalleProductos", Conex)
             Dim strCodigo As String
             Conex.Open()
             strCodigo = cmd.ExecuteScalar
@@ -187,7 +176,6 @@ Public Class MInventario
                 TxtMinimo.Text = Trim(dr("Minimo"))
                 TxtMaximo.Text = Trim(dr("Maximo"))
                 TxtMedida.Text = Trim(dr("Medida"))
-                TxtMarca.Text = Trim(dr("Marca"))
                 TxtPrecio.Text = Trim(dr("PU_Total"))
 
                 LM.Text = Trim(dr("Id_Medida"))
@@ -250,9 +238,8 @@ Public Class MInventario
         Dim CanS As Double = CDec(TxtNExistencia.Text)
         Dim PrecE As Double = TxtUTotal.Text
 
-        Dim CONSULTA As String = "If NOT exists(Select CodiS, Producto From TB_DetalleSeguimiento WHERE CodiS = '" & CodS & "' AND Producto = '" & Prod & "')
-	                                        INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanE, CanS, PrecioE, PrecioS)
-                                                                       VALUES ('" & CodS & "', '" & Prod & "', '" & CanS & "', 0, " & PrecE & ", 0)"
+        Dim CONSULTA As String = "INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanE, CanS, PrecioE, PrecioS, Created)
+                                   VALUES ('" & CodS & "', '" & Prod & "', '" & CanS & "', 0, " & PrecE & ", 0, SYSDATETIME())"
 
         Dim COMANDO As New SqlCommand(CONSULTA, Conex)
 
@@ -308,7 +295,6 @@ Public Class MInventario
             Dim NP As String = TxtNombreP.Text
             Dim De As String = TxtDescripcion.Text
             Dim IM As Integer = CMedida.SelectedValue
-            Dim IMa As Integer = CMarca.SelectedValue
             Dim Ma As Double = TxtMinimo.Text
             Dim Mx As Double = TxtMaximo.Text
 
@@ -318,7 +304,6 @@ Public Class MInventario
 	                                    Nombre_Producto = '" & NP & "',
 	                                    Descripcion = '" & De & "',
 	                                    Id_Medida = '" & IM & "',
-	                                    Id_Marca = '" & IMa & "',
 	                                    Minimo = '" & Ma & "',
 	                                    Maximo = '" & Mx & "',
 	                                    Id_Categoria = 5,
@@ -358,26 +343,6 @@ Public Class MInventario
             .DataSource = DTUMedida
             .DisplayMember = "Medida"
             .ValueMember = "Id_Medida"
-        End With
-    End Sub
-
-    Public Sub Marcaa()
-        With Marca
-            .CommandType = CommandType.Text
-            .CommandText = "SELECT *
-                            FROM TB_Marcas
-                            WHERE Estado = 'AMass'
-                            ORDER BY Marca ASC"
-            .Connection = Conex
-        End With
-
-        DAMarca.SelectCommand = Marca
-        DTMarca = New DataTable
-        DAMarca.Fill(DTMarca)
-        With CMarca
-            .DataSource = DTMarca
-            .DisplayMember = "Marca"
-            .ValueMember = "Id_Marca"
         End With
     End Sub
 
@@ -479,18 +444,15 @@ Public Class MInventario
         TxtClaveP.ReadOnly = True
         TxtNombreP.ReadOnly = True
         CMedida.Visible = False
-        CMarca.Visible = False
         TxtDescripcion.ReadOnly = True
         TxtMinimo.ReadOnly = True
         TxtMaximo.ReadOnly = True
-        TxtMarca.Visible = True
 
         TxtClaveP.BackColor = Color.Gainsboro
         TxtNombreP.BackColor = Color.Gainsboro
         TxtDescripcion.BackColor = Color.Gainsboro
         TxtMinimo.BackColor = Color.Gainsboro
         TxtMaximo.BackColor = Color.Gainsboro
-        BAMar.Visible = False
 
         BRetorno.Visible = False
         BGuardarMo.Visible = False
@@ -512,7 +474,6 @@ Public Class MInventario
         TxtMinimo.Text = ""
         TxtMaximo.Text = ""
         TxtMedida.Text = ""
-        TxtMarca.Text = ""
         TxtPrecio.Text = ""
 
         BAgregarExistencia.Visible = False
@@ -531,13 +492,9 @@ Public Class MInventario
     Private Sub AModif()
         CMedida.Visible = True
         CMedida.SelectedValue = LM.Text
-        CMarca.Visible = True
-        CMarca.SelectedValue = LMa.Text
         TxtDescripcion.ReadOnly = False
         TxtMinimo.ReadOnly = False
         TxtMaximo.ReadOnly = False
-        TxtMarca.Visible = False
-        BAMar.Visible = True
 
         TxtDescripcion.BackColor = Color.LightCoral
         TxtMinimo.BackColor = Color.LightCoral
@@ -573,6 +530,11 @@ Public Class MInventario
 
     Private Sub Form1_MouseUp(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles MyBase.MouseUp
         Arrastre = False
+    End Sub
+
+    Private Sub GDatos_Generales_Enter(sender As Object, e As EventArgs) Handles GDatos_Generales.Enter
+
+
     End Sub
 
     Private Sub Form1_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles MyBase.MouseMove
