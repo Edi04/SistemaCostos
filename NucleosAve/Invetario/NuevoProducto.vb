@@ -211,6 +211,7 @@ Public Class NuevoProducto
         Dim RData As SqlDataReader
         Try
             Conex.Open()
+            Inventario.TxtBusqueda.Text = TxtNombreP.Text
 
             If NameImagen.Text = "" Then
             Else

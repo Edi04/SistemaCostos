@@ -22,6 +22,7 @@ Partial Class Entregas
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Entregas))
         Me.PLinea = New System.Windows.Forms.Panel()
         Me.DatosPM = New System.Windows.Forms.DataGridView()
         Me.ID = New System.Windows.Forms.DataGridViewLinkColumn()
@@ -95,6 +96,7 @@ Partial Class Entregas
         Me.ANuevoT = New System.Windows.Forms.Button()
         Me.LCS = New System.Windows.Forms.Label()
         Me.LEx = New System.Windows.Forms.Label()
+        Me.BEPP = New System.Windows.Forms.Button()
         CType(Me.DatosPM, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GBusqueda.SuspendLayout()
         CType(Me.PBusqueda, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -110,7 +112,7 @@ Partial Class Entregas
         '
         Me.PLinea.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.PLinea.BackColor = System.Drawing.Color.SteelBlue
-        Me.PLinea.Location = New System.Drawing.Point(29, 55)
+        Me.PLinea.Location = New System.Drawing.Point(96, 55)
         Me.PLinea.Name = "PLinea"
         Me.PLinea.Size = New System.Drawing.Size(751, 11)
         Me.PLinea.TabIndex = 78
@@ -125,7 +127,7 @@ Partial Class Entregas
         Me.DatosPM.Location = New System.Drawing.Point(372, 117)
         Me.DatosPM.Name = "DatosPM"
         Me.DatosPM.ReadOnly = True
-        Me.DatosPM.Size = New System.Drawing.Size(425, 403)
+        Me.DatosPM.Size = New System.Drawing.Size(558, 403)
         Me.DatosPM.TabIndex = 2
         '
         'ID
@@ -216,7 +218,7 @@ Partial Class Entregas
         Me.GBusqueda.Controls.Add(Me.TxtBusqueda)
         Me.GBusqueda.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GBusqueda.ForeColor = System.Drawing.Color.Black
-        Me.GBusqueda.Location = New System.Drawing.Point(32, 108)
+        Me.GBusqueda.Location = New System.Drawing.Point(27, 113)
         Me.GBusqueda.Name = "GBusqueda"
         Me.GBusqueda.Size = New System.Drawing.Size(339, 65)
         Me.GBusqueda.TabIndex = 1
@@ -801,7 +803,7 @@ Partial Class Entregas
         Me.BCerrar.BackColor = System.Drawing.Color.Transparent
         Me.BCerrar.BackgroundImage = Global.NucleosAve.My.Resources.Resources.icons8_cerrar_ventana_5001
         Me.BCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.BCerrar.Location = New System.Drawing.Point(704, 3)
+        Me.BCerrar.Location = New System.Drawing.Point(892, 0)
         Me.BCerrar.Name = "BCerrar"
         Me.BCerrar.Size = New System.Drawing.Size(50, 50)
         Me.BCerrar.TabIndex = 0
@@ -812,7 +814,7 @@ Partial Class Entregas
         Me.BMinimizar.BackColor = System.Drawing.Color.Transparent
         Me.BMinimizar.BackgroundImage = Global.NucleosAve.My.Resources.Resources.icons8_minimizar_la_ventana_5001
         Me.BMinimizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.BMinimizar.Location = New System.Drawing.Point(655, 3)
+        Me.BMinimizar.Location = New System.Drawing.Point(843, 0)
         Me.BMinimizar.Name = "BMinimizar"
         Me.BMinimizar.Size = New System.Drawing.Size(50, 50)
         Me.BMinimizar.TabIndex = 0
@@ -884,12 +886,24 @@ Partial Class Entregas
         Me.LEx.TabIndex = 80
         Me.LEx.Visible = False
         '
+        'BEPP
+        '
+        Me.BEPP.BackColor = System.Drawing.Color.Transparent
+        Me.BEPP.BackgroundImage = CType(resources.GetObject("BEPP.BackgroundImage"), System.Drawing.Image)
+        Me.BEPP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.BEPP.Location = New System.Drawing.Point(80, 3)
+        Me.BEPP.Name = "BEPP"
+        Me.BEPP.Size = New System.Drawing.Size(50, 50)
+        Me.BEPP.TabIndex = 81
+        Me.BEPP.UseVisualStyleBackColor = False
+        '
         'Entregas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.NucleosAve.My.Resources.Resources.Fondo
-        Me.ClientSize = New System.Drawing.Size(809, 520)
+        Me.ClientSize = New System.Drawing.Size(942, 520)
+        Me.Controls.Add(Me.BEPP)
         Me.Controls.Add(Me.LEx)
         Me.Controls.Add(Me.LCS)
         Me.Controls.Add(Me.PNT)
@@ -1003,4 +1017,5 @@ Partial Class Entregas
     Friend WithEvents CProceso As ComboBox
     Friend WithEvents LProceso As Label
     Friend WithEvents TxtProceso As TextBox
+    Friend WithEvents BEPP As Button
 End Class

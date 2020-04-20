@@ -67,6 +67,7 @@ Partial Class Prestamos
         Me.BRetorno = New System.Windows.Forms.Button()
         Me.BNuevoPrestamo = New System.Windows.Forms.Button()
         Me.BMostrarHist = New System.Windows.Forms.Button()
+        Me.LCS = New System.Windows.Forms.Label()
         Me.GBusqueda.SuspendLayout()
         CType(Me.PBusqueda, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DatosPM, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -78,7 +79,7 @@ Partial Class Prestamos
         '
         Me.PLinea.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.PLinea.BackColor = System.Drawing.Color.SteelBlue
-        Me.PLinea.Location = New System.Drawing.Point(0, 53)
+        Me.PLinea.Location = New System.Drawing.Point(42, 53)
         Me.PLinea.Name = "PLinea"
         Me.PLinea.Size = New System.Drawing.Size(691, 11)
         Me.PLinea.TabIndex = 75
@@ -103,7 +104,7 @@ Partial Class Prestamos
         Me.GBusqueda.Controls.Add(Me.TxtBusqueda)
         Me.GBusqueda.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GBusqueda.ForeColor = System.Drawing.Color.Black
-        Me.GBusqueda.Location = New System.Drawing.Point(0, 97)
+        Me.GBusqueda.Location = New System.Drawing.Point(2, 97)
         Me.GBusqueda.Name = "GBusqueda"
         Me.GBusqueda.Size = New System.Drawing.Size(353, 65)
         Me.GBusqueda.TabIndex = 1
@@ -150,10 +151,10 @@ Partial Class Prestamos
         Me.DatosPM.BackgroundColor = System.Drawing.Color.SteelBlue
         Me.DatosPM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DatosPM.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.NombreE, Me.NombreP, Me.FechaEnt})
-        Me.DatosPM.Location = New System.Drawing.Point(359, 97)
+        Me.DatosPM.Location = New System.Drawing.Point(355, 97)
         Me.DatosPM.Name = "DatosPM"
         Me.DatosPM.ReadOnly = True
-        Me.DatosPM.Size = New System.Drawing.Size(332, 395)
+        Me.DatosPM.Size = New System.Drawing.Size(419, 395)
         Me.DatosPM.TabIndex = 2
         '
         'ID
@@ -170,6 +171,7 @@ Partial Class Prestamos
         Me.NombreE.HeaderText = "Trabajador"
         Me.NombreE.Name = "NombreE"
         Me.NombreE.ReadOnly = True
+        Me.NombreE.Width = 120
         '
         'NombreP
         '
@@ -177,6 +179,7 @@ Partial Class Prestamos
         Me.NombreP.HeaderText = "Material"
         Me.NombreP.Name = "NombreP"
         Me.NombreP.ReadOnly = True
+        Me.NombreP.Width = 120
         '
         'FechaEnt
         '
@@ -461,7 +464,7 @@ Partial Class Prestamos
         Me.BCerrar.BackColor = System.Drawing.Color.Transparent
         Me.BCerrar.BackgroundImage = Global.NucleosAve.My.Resources.Resources.icons8_cerrar_ventana_5001
         Me.BCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.BCerrar.Location = New System.Drawing.Point(638, 1)
+        Me.BCerrar.Location = New System.Drawing.Point(724, 1)
         Me.BCerrar.Name = "BCerrar"
         Me.BCerrar.Size = New System.Drawing.Size(50, 50)
         Me.BCerrar.TabIndex = 0
@@ -472,7 +475,7 @@ Partial Class Prestamos
         Me.BMinimizar.BackColor = System.Drawing.Color.Transparent
         Me.BMinimizar.BackgroundImage = Global.NucleosAve.My.Resources.Resources.icons8_minimizar_la_ventana_5001
         Me.BMinimizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.BMinimizar.Location = New System.Drawing.Point(582, 1)
+        Me.BMinimizar.Location = New System.Drawing.Point(668, 1)
         Me.BMinimizar.Name = "BMinimizar"
         Me.BMinimizar.Size = New System.Drawing.Size(50, 50)
         Me.BMinimizar.TabIndex = 0
@@ -584,12 +587,22 @@ Partial Class Prestamos
         Me.BMostrarHist.TabIndex = 0
         Me.BMostrarHist.UseVisualStyleBackColor = False
         '
+        'LCS
+        '
+        Me.LCS.AutoSize = True
+        Me.LCS.Location = New System.Drawing.Point(553, 84)
+        Me.LCS.Name = "LCS"
+        Me.LCS.Size = New System.Drawing.Size(0, 13)
+        Me.LCS.TabIndex = 90
+        Me.LCS.Visible = False
+        '
         'Prestamos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.NucleosAve.My.Resources.Resources.Fondo
-        Me.ClientSize = New System.Drawing.Size(691, 505)
+        Me.ClientSize = New System.Drawing.Size(774, 505)
+        Me.Controls.Add(Me.LCS)
         Me.Controls.Add(Me.BMostrarHist)
         Me.Controls.Add(Me.BNuevoPrestamo)
         Me.Controls.Add(Me.BRetorno)
@@ -648,10 +661,6 @@ Partial Class Prestamos
     Friend WithEvents LSalidaDetalle As Label
     Friend WithEvents LDescripcion As Label
     Friend WithEvents TxtFEntrega As TextBox
-    Friend WithEvents ID As DataGridViewLinkColumn
-    Friend WithEvents NombreE As DataGridViewTextBoxColumn
-    Friend WithEvents NombreP As DataGridViewTextBoxColumn
-    Friend WithEvents FechaEnt As DataGridViewTextBoxColumn
     Friend WithEvents IDD As Label
     Friend WithEvents LUsuario As Label
     Friend WithEvents DTFEntrega As DateTimePicker
@@ -669,4 +678,9 @@ Partial Class Prestamos
     Friend WithEvents BRetorno As Button
     Friend WithEvents BNuevoPrestamo As Button
     Friend WithEvents BMostrarHist As Button
+    Friend WithEvents ID As DataGridViewLinkColumn
+    Friend WithEvents NombreE As DataGridViewTextBoxColumn
+    Friend WithEvents NombreP As DataGridViewTextBoxColumn
+    Friend WithEvents FechaEnt As DataGridViewTextBoxColumn
+    Friend WithEvents LCS As Label
 End Class

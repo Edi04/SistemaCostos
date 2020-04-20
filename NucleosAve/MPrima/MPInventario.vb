@@ -7,6 +7,7 @@ Public Class MPInventario
         Nombres()
         Panel2.Visible = True
         TxtBOC.Text = "-"
+        Calibre()
     End Sub
 
     'Botones
@@ -37,7 +38,7 @@ Public Class MPInventario
         Dim OC, Prove, UMS, Mat, CodS, Codi, Fal, Det As String
         Dim Exis As Double
         Dim id_orden, ip_pr As Integer
-        Dim row As DataGridViewRow = DVOC.Rows(e.RowIndex)
+        Dim row As DataGridViewRow = DVOC.CurrentRow
 
         id_orden = row.Cells(0).Value
         LIDO.Text = id_orden
@@ -104,32 +105,20 @@ Public Class MPInventario
         Rol19()
         Rol20()
 
-        BGMP.Enabled = True
-
-        Dim DateTime As Date = DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt")
-        Dim CodSs As String = LCS.Text
-        Dim Emple As String = TxtResponsable.Text
-        Dim OrdenCompr As String = TxtOC.Text
-
-        Conex.Open()
-        Dim CONSULTA As String = "INSERT INTO TB_MovimientoRastreo (Codigo, Tipo, Estado, Responsable, CodiS , Created)
-                                                                VALUES ('" & OrdenCompr & "', 'Materia Prima', 'Entrada', '" & Emple & "', '" & CodSs & "',SYSDATETIME() )"
-        Dim COMANDO As New SqlCommand(CONSULTA, Conex)
-
-        COMANDO.ExecuteNonQuery()
-
-        Conex.Close()
-
         TxtPedimento.ReadOnly = False
-        TxtPedimento.Text = "1"
+
+        TxtTC.ReadOnly = False
+        TxtTC.Text = ""
     End Sub
 
     Private Sub BGMP_Click(sender As Object, e As EventArgs) Handles BGMP.Click
         If TxtOC.Text <> "" Then
+
+
             If TxtAncho1.Text = "" And TxtCalibre1.Text = "" And TxtPeso1.Text = "" And TxtNumRollo1.Text = "" And TxtNRolI1.Text = "" And TxtObser1.Text = "" Then
                 'Nothing
-            ElseIf TxtAncho1.Text = "" Or TxtCalibre1.Text = "" Or TxtPeso1.Text = "" Or TxtNRolI1.Text = "" Or TxtPedimento.Text = "" Then
-                MessageBox.Show("Ingresar todos los datos en Rollo 1 y/o Pedimento", "Advertencia", MessageBoxButtons.OK)
+            ElseIf TxtAncho1.Text = "" Or TxtCalibre1.Text = "" Or TxtPeso1.Text = "" Or TxtNRolI1.Text = "" Then
+                MessageBox.Show("Ingresar todos los datos en Rollo 1", "Advertencia", MessageBoxButtons.OK)
             Else
                 Try
                     Dim Funcion As New RegistroMP
@@ -137,11 +126,20 @@ Public Class MPInventario
 
                     Datos.Proveedor_ = TxtProveedor.Text
                     Datos.Num_RIn = TxtNRolI1.Text
-                    Datos.Num_REx = TxtNumRollo1.Text
+                    If TxtNumRollo1.Text = "" Then
+                        Datos.Num_REx = "N/A"
+                    Else
+                        Datos.Num_REx = TxtNumRollo1.Text
+                    End If
                     Datos.Calibre_ = TxtCalibre1.Text
                     Datos.Ancho_ = TxtAncho1.Text
                     Datos.Peso_ = TxtPeso1.Text
-                    Datos.Descripcion_ = TxtObser1.Text
+                    Datos.Espesor_ = TxtEspesor1.Text
+                    If TxtObser1.Text = "" Then
+                        Datos.Descripcion_ = "N/A"
+                    Else
+                        Datos.Descripcion_ = TxtObser1.Text
+                    End If
                     Datos.FechaLlegada = DTFechaLl.Value
                     Datos.FechaRegistro = DTFechaR.Value
                     Datos.OCompra_ = TxtOC.Text
@@ -149,7 +147,13 @@ Public Class MPInventario
                     Datos.Trabaj = TxtResponsable.Text
                     Datos.CE_ = TxtCE.Text
                     Datos.IDDO_ = ip_pro.Text
-                    Datos.Pedimento_ = TxtPedimento.Text
+                    If TxtPedimento.Text = "" Then
+                        Datos.Pedimento_ = "N/A"
+                        Datos.TC_ = 0.0
+                    Else
+                        Datos.Pedimento_ = TxtPedimento.Text
+                        Datos.TC_ = TxtTC.Text
+                    End If
 
 
                     If Funcion.R(Datos) Then
@@ -159,8 +163,7 @@ Public Class MPInventario
                         Dim CanS As String() = Can.Split(" ")
 
                         Conex.Open()
-                        Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
-                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
+                        Dim CONSULTA As String = "INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
                                                                            VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0)"
 
                         Dim COMANDO As New SqlCommand(CONSULTA, Conex)
@@ -197,8 +200,8 @@ Public Class MPInventario
 
             If TxtAncho2.Text = "" And TxtCalibre2.Text = "" And TxtPeso2.Text = "" And TxtNumRollo2.Text = "" And TxtNRoll2.Text = "" And TxtObser2.Text = "" Then
                 'Nothing
-            ElseIf TxtAncho2.Text = "" Or TxtCalibre2.Text = "" Or TxtPeso2.Text = "" Or TxtNRoll2.Text = "" Or TxtPedimento.Text = "" Then
-                MessageBox.Show("Ingresar todos los datos en Rollo 2 y/o Pedimento", "Advertencia", MessageBoxButtons.OK)
+            ElseIf TxtAncho2.Text = "" Or TxtCalibre2.Text = "" Or TxtPeso2.Text = "" Or TxtNRoll2.Text = "" Then
+                MessageBox.Show("Ingresar todos los datos en Rollo 2", "Advertencia", MessageBoxButtons.OK)
             Else
                 Try
                     Dim Funcion As New RegistroMP
@@ -206,11 +209,19 @@ Public Class MPInventario
 
                     Datos.Proveedor_ = TxtProveedor.Text
                     Datos.Num_RIn = TxtNRoll2.Text
-                    Datos.Num_REx = TxtNumRollo2.Text
+                    If TxtNumRollo2.Text = "" Then
+                        Datos.Num_REx = "N/A"
+                    Else
+                        Datos.Num_REx = TxtNumRollo2.Text
+                    End If
                     Datos.Calibre_ = TxtCalibre2.Text
                     Datos.Ancho_ = TxtAncho2.Text
                     Datos.Peso_ = TxtPeso2.Text
-                    Datos.Descripcion_ = TxtObser2.Text
+                    If TxtObser2.Text = "" Then
+                        Datos.Descripcion_ = "N/A"
+                    Else
+                        Datos.Descripcion_ = TxtObser2.Text
+                    End If
                     Datos.FechaLlegada = DTFechaLl.Value
                     Datos.FechaRegistro = DTFechaR.Value
                     Datos.OCompra_ = TxtOC.Text
@@ -218,7 +229,14 @@ Public Class MPInventario
                     Datos.Trabaj = TxtResponsable.Text
                     Datos.CE_ = TxtCE.Text
                     Datos.IDDO_ = ip_pro.Text
-                    Datos.Pedimento_ = TxtPedimento.Text
+                    Datos.Espesor_ = TxtEspesor2.Text
+                    If TxtPedimento.Text = "" Then
+                        Datos.Pedimento_ = "N/A"
+                        Datos.TC_ = 0.0
+                    Else
+                        Datos.Pedimento_ = TxtPedimento.Text
+                        Datos.TC_ = TxtTC.Text
+                    End If
 
                     If Funcion.R(Datos) Then
                         Dim Prod As String = TxtNRoll2.Text
@@ -227,8 +245,7 @@ Public Class MPInventario
                         Dim CanS As String() = Can.Split(" ")
 
                         Conex.Open()
-                        Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
-                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
+                        Dim CONSULTA As String = "INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
                                                                            VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0)"
 
                         Dim COMANDO As New SqlCommand(CONSULTA, Conex)
@@ -266,8 +283,8 @@ Public Class MPInventario
 
             If TxtAncho3.Text = "" And TxtCalibre3.Text = "" And TxtPeso3.Text = "" And TxtNumRollo3.Text = "" And TxtNRoll3.Text = "" And TxtObser3.Text = "" Then
                 'Nothing
-            ElseIf TxtAncho3.Text = "" Or TxtCalibre3.Text = "" Or TxtPeso3.Text = "" Or TxtNRoll3.Text = "" Or TxtPedimento.Text = "" Then
-                MessageBox.Show("Ingresar todos los datos en Rollo 3 y/o Pedimento", "Advertencia", MessageBoxButtons.OK)
+            ElseIf TxtAncho3.Text = "" Or TxtCalibre3.Text = "" Or TxtPeso3.Text = "" Or TxtNRoll3.Text = "" Then
+                MessageBox.Show("Ingresar todos los datos en Rollo 3", "Advertencia", MessageBoxButtons.OK)
             Else
                 Try
                     Dim Funcion As New RegistroMP
@@ -275,11 +292,19 @@ Public Class MPInventario
 
                     Datos.Proveedor_ = TxtProveedor.Text
                     Datos.Num_RIn = TxtNRoll3.Text
-                    Datos.Num_REx = TxtNumRollo3.Text
+                    If TxtNumRollo3.Text = "" Then
+                        Datos.Num_REx = "N/A"
+                    Else
+                        Datos.Num_REx = TxtNumRollo3.Text
+                    End If
                     Datos.Calibre_ = TxtCalibre3.Text
                     Datos.Ancho_ = TxtAncho3.Text
                     Datos.Peso_ = TxtPeso3.Text
-                    Datos.Descripcion_ = TxtObser3.Text
+                    If TxtObser3.Text = "" Then
+                        Datos.Descripcion_ = "N/A"
+                    Else
+                        Datos.Descripcion_ = TxtObser3.Text
+                    End If
                     Datos.FechaLlegada = DTFechaLl.Value
                     Datos.FechaRegistro = DTFechaR.Value
                     Datos.OCompra_ = TxtOC.Text
@@ -287,7 +312,14 @@ Public Class MPInventario
                     Datos.Trabaj = TxtResponsable.Text
                     Datos.CE_ = TxtCE.Text
                     Datos.IDDO_ = ip_pro.Text
-                    Datos.Pedimento_ = TxtPedimento.Text
+                    Datos.Espesor_ = TxtEspesor3.Text
+                    If TxtPedimento.Text = "" Then
+                        Datos.Pedimento_ = "N/A"
+                        Datos.TC_ = 0.0
+                    Else
+                        Datos.Pedimento_ = TxtPedimento.Text
+                        Datos.TC_ = TxtTC.Text
+                    End If
 
                     If Funcion.R(Datos) Then
                         Dim Prod As String = TxtNRoll3.Text
@@ -296,8 +328,7 @@ Public Class MPInventario
                         Dim CanS As String() = Can.Split(" ")
 
                         Conex.Open()
-                        Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
-                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
+                        Dim CONSULTA As String = "INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
                                                                            VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0)"
 
                         Dim COMANDO As New SqlCommand(CONSULTA, Conex)
@@ -335,8 +366,8 @@ Public Class MPInventario
 
             If TxtAncho4.Text = "" And TxtCalibre4.Text = "" And TxtPeso4.Text = "" And TxtNumRollo4.Text = "" And TxtNRoll4.Text = "" And TxtObser4.Text = "" Then
                 'Nothing
-            ElseIf TxtAncho4.Text = "" Or TxtCalibre4.Text = "" Or TxtPeso4.Text = "" Or TxtNRoll4.Text = "" Or TxtPedimento.Text = "" Then
-                MessageBox.Show("Ingresar todos los datos en Rollo 4 y/o Pedimento", "Advertencia", MessageBoxButtons.OK)
+            ElseIf TxtAncho4.Text = "" Or TxtCalibre4.Text = "" Or TxtPeso4.Text = "" Or TxtNRoll4.Text = "" Then
+                MessageBox.Show("Ingresar todos los datos en Rollo 4", "Advertencia", MessageBoxButtons.OK)
             Else
                 Try
                     Dim Funcion As New RegistroMP
@@ -344,11 +375,19 @@ Public Class MPInventario
 
                     Datos.Proveedor_ = TxtProveedor.Text
                     Datos.Num_RIn = TxtNRoll4.Text
-                    Datos.Num_REx = TxtNumRollo4.Text
+                    If TxtNumRollo4.Text = "" Then
+                        TxtNumRollo4.Text = "N/A"
+                    Else
+                        Datos.Num_REx = TxtNumRollo4.Text
+                    End If
                     Datos.Calibre_ = TxtCalibre4.Text
                     Datos.Ancho_ = TxtAncho4.Text
                     Datos.Peso_ = TxtPeso4.Text
-                    Datos.Descripcion_ = TxtObser4.Text
+                    If TxtObser4.Text = "" Then
+                        Datos.Descripcion_.Text = "N/A"
+                    Else
+                        Datos.Descripcion_ = TxtObser4.Text
+                    End If
                     Datos.FechaLlegada = DTFechaLl.Value
                     Datos.FechaRegistro = DTFechaR.Value
                     Datos.OCompra_ = TxtOC.Text
@@ -356,17 +395,23 @@ Public Class MPInventario
                     Datos.Trabaj = TxtResponsable.Text
                     Datos.CE_ = TxtCE.Text
                     Datos.IDDO_ = ip_pro.Text
-                    Datos.Pedimento_ = TxtPedimento.Text
+                    Datos.Espesor_ = TxtEspesor4.Text
+                    If TxtPedimento.Text = "" Then
+                        Datos.Pedimento_ = "N/A"
+                        Datos.TC_ = 0.0
+                    Else
+                        Datos.Pedimento_ = TxtPedimento.Text
+                    Datos.TC_ = TxtTC.Text
+                    End If
 
-                    If Funcion.R(Datos) Then
+            If Funcion.R(Datos) Then
                         Dim Prod As String = TxtNRoll4.Text
                         Dim CodSs As String = LCS.Text
                         Dim Can As String = TxtPeso4.Text
                         Dim CanS As String() = Can.Split(" ")
 
                         Conex.Open()
-                        Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
-                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
+                        Dim CONSULTA As String = " INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
                                                                            VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0)"
 
                         Dim COMANDO As New SqlCommand(CONSULTA, Conex)
@@ -404,8 +449,8 @@ Public Class MPInventario
 
             If TxtAncho5.Text = "" And TxtCalibre5.Text = "" And TxtPeso5.Text = "" And TxtNumRollo5.Text = "" And TxtNRoll5.Text = "" And TxtObser5.Text = "" Then
                 'Nothing
-            ElseIf TxtAncho5.Text = "" Or TxtCalibre5.Text = "" Or TxtPeso5.Text = "" Or TxtNRoll5.Text = "" Or TxtPedimento.Text = "" Then
-                MessageBox.Show("Ingresar todos los datos en Rollo 5 y/o Pedimento", "Advertencia", MessageBoxButtons.OK)
+            ElseIf TxtAncho5.Text = "" Or TxtCalibre5.Text = "" Or TxtPeso5.Text = "" Or TxtNRoll5.Text = "" Then
+                MessageBox.Show("Ingresar todos los datos en Rollo 5", "Advertencia", MessageBoxButtons.OK)
             Else
                 Try
                     Dim Funcion As New RegistroMP
@@ -413,11 +458,19 @@ Public Class MPInventario
 
                     Datos.Proveedor_ = TxtProveedor.Text
                     Datos.Num_RIn = TxtNRoll5.Text
-                    Datos.Num_REx = TxtNumRollo5.Text
+                    If TxtNumRollo5.Text = "" Then
+                        Datos.Num_REx = "N/A"
+                    Else
+                        Datos.Num_REx = TxtNumRollo5.Text
+                    End If
                     Datos.Calibre_ = TxtCalibre5.Text
                     Datos.Ancho_ = TxtAncho5.Text
                     Datos.Peso_ = TxtPeso5.Text
-                    Datos.Descripcion_ = TxtObser5.Text
+                    If TxtObser5.Text = "" Then
+                        Datos.Descripcion_ = "N/A"
+                    Else
+                        Datos.Descripcion_ = TxtObser5.Text
+                    End If
                     Datos.FechaLlegada = DTFechaLl.Value
                     Datos.FechaRegistro = DTFechaR.Value
                     Datos.OCompra_ = TxtOC.Text
@@ -425,7 +478,14 @@ Public Class MPInventario
                     Datos.Trabaj = TxtResponsable.Text
                     Datos.CE_ = TxtCE.Text
                     Datos.IDDO_ = ip_pro.Text
-                    Datos.Pedimento_ = TxtPedimento.Text
+                    Datos.Espesor_ = TxtEspesor5.Text
+                    If TxtPedimento.Text = "" Then
+                        Datos.Pedimento_ = "N/A"
+                        Datos.TC_ = 0.0
+                    Else
+                        Datos.Pedimento_ = TxtPedimento.Text
+                        Datos.TC_ = TxtTC.Text
+                    End If
 
                     If Funcion.R(Datos) Then
                         Dim Prod As String = TxtNRoll5.Text
@@ -434,8 +494,7 @@ Public Class MPInventario
                         Dim CanS As String() = Can.Split(" ")
 
                         Conex.Open()
-                        Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
-                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
+                        Dim CONSULTA As String = "INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
                                                                            VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0)"
 
                         Dim COMANDO As New SqlCommand(CONSULTA, Conex)
@@ -473,8 +532,8 @@ Public Class MPInventario
 
             If TxtAncho6.Text = "" And TxtCalibre6.Text = "" And TxtPeso6.Text = "" And TxtNumRollo6.Text = "" And TxtNRoll6.Text = "" And TxtObser6.Text = "" Then
                 'Nothing
-            ElseIf TxtAncho6.Text = "" Or TxtCalibre6.Text = "" Or TxtPeso6.Text = "" Or TxtNRoll6.Text = "" Or TxtPedimento.Text = "" Then
-                MessageBox.Show("Ingresar todos los datos en Rollo 6 y/o Pedimento", "Advertencia", MessageBoxButtons.OK)
+            ElseIf TxtAncho6.Text = "" Or TxtCalibre6.Text = "" Or TxtPeso6.Text = "" Or TxtNRoll6.Text = "" Then
+                MessageBox.Show("Ingresar todos los datos en Rollo 6", "Advertencia", MessageBoxButtons.OK)
             Else
                 Try
                     Dim Funcion As New RegistroMP
@@ -482,11 +541,19 @@ Public Class MPInventario
 
                     Datos.Proveedor_ = TxtProveedor.Text
                     Datos.Num_RIn = TxtNRoll6.Text
-                    Datos.Num_REx = TxtNumRollo6.Text
+                    If TxtNumRollo6.Text = "" Then
+                        Datos.Num_REx = "N/A"
+                    Else
+                        Datos.Num_REx = TxtNumRollo6.Text
+                    End If
                     Datos.Calibre_ = TxtCalibre6.Text
                     Datos.Ancho_ = TxtAncho6.Text
                     Datos.Peso_ = TxtPeso6.Text
-                    Datos.Descripcion_ = TxtObser6.Text
+                    If TxtObser6.Text = "" Then
+                        TxtObser6.Text = "N/A"
+                    Else
+                        Datos.Descripcion_ = TxtObser6.Text
+                    End If
                     Datos.FechaLlegada = DTFechaLl.Value
                     Datos.FechaRegistro = DTFechaR.Value
                     Datos.OCompra_ = TxtOC.Text
@@ -494,17 +561,23 @@ Public Class MPInventario
                     Datos.Trabaj = TxtResponsable.Text
                     Datos.CE_ = TxtCE.Text
                     Datos.IDDO_ = ip_pro.Text
-                    Datos.Pedimento_ = TxtPedimento.Text
+                    Datos.Espesor_ = TxtEspesor6.Text
+                    If TxtPedimento.Text = "" Then
+                        Datos.Pedimento_ = "N/A"
+                        Datos.TC_ = 0.0
+                    Else
+                        Datos.Pedimento_ = TxtPedimento.Text
+                    Datos.TC_ = TxtTC.Text
+                    End If
 
-                    If Funcion.R(Datos) Then
+            If Funcion.R(Datos) Then
                         Dim Prod As String = TxtNRoll6.Text
                         Dim CodSs As String = LCS.Text
                         Dim Can As String = TxtPeso6.Text
                         Dim CanS As String() = Can.Split(" ")
 
                         Conex.Open()
-                        Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
-                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
+                        Dim CONSULTA As String = "INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
                                                                            VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0)"
 
                         Dim COMANDO As New SqlCommand(CONSULTA, Conex)
@@ -542,8 +615,8 @@ Public Class MPInventario
 
             If TxtAncho7.Text = "" And TxtCalibre7.Text = "" And TxtPeso7.Text = "" And TxtNumRollo7.Text = "" And TxtNRoll7.Text = "" And TxtObser7.Text = "" Then
                 'Nothing
-            ElseIf TxtAncho7.Text = "" Or TxtCalibre7.Text = "" Or TxtPeso7.Text = "" Or TxtNRoll7.Text = "" Or TxtPedimento.Text = "" Then
-                MessageBox.Show("Ingresar todos los datos en Rollo 7 y/o Pedimento", "Advertencia", MessageBoxButtons.OK)
+            ElseIf TxtAncho7.Text = "" Or TxtCalibre7.Text = "" Or TxtPeso7.Text = "" Or TxtNRoll7.Text = "" Then
+                MessageBox.Show("Ingresar todos los datos en Rollo 7", "Advertencia", MessageBoxButtons.OK)
             Else
                 Try
                     Dim Funcion As New RegistroMP
@@ -551,11 +624,19 @@ Public Class MPInventario
 
                     Datos.Proveedor_ = TxtProveedor.Text
                     Datos.Num_RIn = TxtNRoll7.Text
-                    Datos.Num_REx = TxtNumRollo7.Text
+                    If TxtNumRollo7.Text = "" Then
+                        Datos.Num_REx = "N/A"
+                    Else
+                        Datos.Num_REx = TxtNumRollo7.Text
+                    End If
                     Datos.Calibre_ = TxtCalibre7.Text
                     Datos.Ancho_ = TxtAncho7.Text
                     Datos.Peso_ = TxtPeso7.Text
-                    Datos.Descripcion_ = TxtObser7.Text
+                    If TxtObser7.Text = "" Then
+                        Datos.Descripcion_ = "N/A"
+                    Else
+                        Datos.Descripcion_ = TxtObser7.Text
+                    End If
                     Datos.FechaLlegada = DTFechaLl.Value
                     Datos.FechaRegistro = DTFechaR.Value
                     Datos.OCompra_ = TxtOC.Text
@@ -563,7 +644,14 @@ Public Class MPInventario
                     Datos.Trabaj = TxtResponsable.Text
                     Datos.CE_ = TxtCE.Text
                     Datos.IDDO_ = ip_pro.Text
-                    Datos.Pedimento_ = TxtPedimento.Text
+                    Datos.Espesor_ = TxtEspesor7.Text
+                    If TxtPedimento.Text = "" Then
+                        Datos.Pedimento_ = "N/A"
+                        Datos.TC_ = 0.0
+                    Else
+                        Datos.Pedimento_ = TxtPedimento.Text
+                        Datos.TC_ = TxtTC.Text
+                    End If
 
                     If Funcion.R(Datos) Then
                         Dim Prod As String = TxtNRoll7.Text
@@ -572,8 +660,7 @@ Public Class MPInventario
                         Dim CanS As String() = Can.Split(" ")
 
                         Conex.Open()
-                        Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
-                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
+                        Dim CONSULTA As String = "INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
                                                                            VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0)"
 
                         Dim COMANDO As New SqlCommand(CONSULTA, Conex)
@@ -611,8 +698,8 @@ Public Class MPInventario
 
             If TxtAncho8.Text = "" And TxtCalibre8.Text = "" And TxtPeso8.Text = "" And TxtNumRollo8.Text = "" And TxtNRoll8.Text = "" And TxtObser8.Text = "" Then
                 'Nothing
-            ElseIf TxtAncho8.Text = "" Or TxtCalibre8.Text = "" Or TxtPeso8.Text = "" Or TxtNRoll8.Text = "" Or TxtPedimento.Text = "" Then
-                MessageBox.Show("Ingresar todos los datos en Rollo 8 y/o Pedimento", "Advertencia", MessageBoxButtons.OK)
+            ElseIf TxtAncho8.Text = "" Or TxtCalibre8.Text = "" Or TxtPeso8.Text = "" Or TxtNRoll8.Text = "" Then
+                MessageBox.Show("Ingresar todos los datos en Rollo 8", "Advertencia", MessageBoxButtons.OK)
             Else
                 Try
                     Dim Funcion As New RegistroMP
@@ -620,11 +707,19 @@ Public Class MPInventario
 
                     Datos.Proveedor_ = TxtProveedor.Text
                     Datos.Num_RIn = TxtNRoll8.Text
-                    Datos.Num_REx = TxtNumRollo8.Text
+                    If TxtNumRollo8.Text = "" Then
+                        Datos.Num_REx = "N/A"
+                    Else
+                        Datos.Num_REx = TxtNumRollo8.Text
+                    End If
                     Datos.Calibre_ = TxtCalibre8.Text
                     Datos.Ancho_ = TxtAncho8.Text
                     Datos.Peso_ = TxtPeso8.Text
-                    Datos.Descripcion_ = TxtObser8.Text
+                    If TxtObser8.Text = "" Then
+                        Datos.Descripcion_ = "N/A"
+                    Else
+                        Datos.Descripcion_ = TxtObser8.Text
+                    End If
                     Datos.FechaLlegada = DTFechaLl.Value
                     Datos.FechaRegistro = DTFechaR.Value
                     Datos.OCompra_ = TxtOC.Text
@@ -632,7 +727,14 @@ Public Class MPInventario
                     Datos.Trabaj = TxtResponsable.Text
                     Datos.CE_ = TxtCE.Text
                     Datos.IDDO_ = ip_pro.Text
-                    Datos.Pedimento_ = TxtPedimento.Text
+                    Datos.Espesor_ = TxtEspesor8.Text
+                    If TxtPedimento.Text = "" Then
+                        Datos.Pedimento_ = "N/A"
+                        Datos.TC_ = 0.0
+                    Else
+                        Datos.Pedimento_ = TxtPedimento.Text
+                        Datos.TC_ = TxtTC.Text
+                    End If
 
                     If Funcion.R(Datos) Then
                         Dim Prod As String = TxtNRoll8.Text
@@ -641,8 +743,7 @@ Public Class MPInventario
                         Dim CanS As String() = Can.Split(" ")
 
                         Conex.Open()
-                        Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
-                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
+                        Dim CONSULTA As String = "INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
                                                                            VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0)"
 
                         Dim COMANDO As New SqlCommand(CONSULTA, Conex)
@@ -680,8 +781,8 @@ Public Class MPInventario
 
             If TxtAncho9.Text = "" And TxtCalibre9.Text = "" And TxtPeso9.Text = "" And TxtNumRollo9.Text = "" And TxtNRoll9.Text = "" And TxtObser9.Text = "" Then
                 'Nothing
-            ElseIf TxtAncho9.Text = "" Or TxtCalibre9.Text = "" Or TxtPeso9.Text = "" Or TxtNRoll9.Text = "" Or TxtPedimento.Text = "" Then
-                MessageBox.Show("Ingresar todos los datos en Rollo 9 y/o Pedimento", "Advertencia", MessageBoxButtons.OK)
+            ElseIf TxtAncho9.Text = "" Or TxtCalibre9.Text = "" Or TxtPeso9.Text = "" Or TxtNRoll9.Text = "" Then
+                MessageBox.Show("Ingresar todos los datos en Rollo 9", "Advertencia", MessageBoxButtons.OK)
             Else
                 Try
                     Dim Funcion As New RegistroMP
@@ -689,11 +790,19 @@ Public Class MPInventario
 
                     Datos.Proveedor_ = TxtProveedor.Text
                     Datos.Num_RIn = TxtNRoll9.Text
-                    Datos.Num_REx = TxtNumRollo9.Text
+                    If TxtNumRollo9.Text = "" Then
+                        Datos.Num_REx = "N/A"
+                    Else
+                        Datos.Num_REx = TxtNumRollo9.Text
+                    End If
                     Datos.Calibre_ = TxtCalibre9.Text
                     Datos.Ancho_ = TxtAncho9.Text
                     Datos.Peso_ = TxtPeso9.Text
-                    Datos.Descripcion_ = TxtObser9.Text
+                    If TxtObser9.Text = "" Then
+                        Datos.Descripcion_ = "N/A"
+                    Else
+                        Datos.Descripcion_ = TxtObser9.Text
+                    End If
                     Datos.FechaLlegada = DTFechaLl.Value
                     Datos.FechaRegistro = DTFechaR.Value
                     Datos.OCompra_ = TxtOC.Text
@@ -701,17 +810,23 @@ Public Class MPInventario
                     Datos.Trabaj = TxtResponsable.Text
                     Datos.CE_ = TxtCE.Text
                     Datos.IDDO_ = ip_pro.Text
-                    Datos.Pedimento_ = TxtPedimento.Text
+                    Datos.Espesor_ = TxtEspesor9.Text
+                    If TxtPedimento.Text = "" Then
+                        Datos.Pedimento_ = "N/A"
+                        Datos.TC_ = 0.0
+                    Else
+                        Datos.Pedimento_ = TxtPedimento.Text
+                    Datos.TC_ = TxtTC.Text
+                    End If
 
-                    If Funcion.R(Datos) Then
+            If Funcion.R(Datos) Then
                         Dim Prod As String = TxtNRoll9.Text
                         Dim CodSs As String = LCS.Text
                         Dim Can As String = TxtPeso9.Text
                         Dim CanS As String() = Can.Split(" ")
 
                         Conex.Open()
-                        Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
-                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
+                        Dim CONSULTA As String = "INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
                                                                            VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0)"
 
                         Dim COMANDO As New SqlCommand(CONSULTA, Conex)
@@ -749,8 +864,8 @@ Public Class MPInventario
 
             If TxtAncho10.Text = "" And TxtCalibre10.Text = "" And TxtPeso10.Text = "" And TxtNumRollo10.Text = "" And TxtNRoll10.Text = "" And TxtObser10.Text = "" Then
                 'Nothing
-            ElseIf TxtAncho10.Text = "" Or TxtCalibre10.Text = "" Or TxtPeso10.Text = "" Or TxtNRoll10.Text = "" Or TxtPedimento.Text = "" Then
-                MessageBox.Show("Ingresar todos los datos en Rollo 10 y/o Pedimento", "Advertencia", MessageBoxButtons.OK)
+            ElseIf TxtAncho10.Text = "" Or TxtCalibre10.Text = "" Or TxtPeso10.Text = "" Or TxtNRoll10.Text = "" Then
+                MessageBox.Show("Ingresar todos los datos en Rollo 10", "Advertencia", MessageBoxButtons.OK)
             Else
                 Try
                     Dim Funcion As New RegistroMP
@@ -758,11 +873,19 @@ Public Class MPInventario
 
                     Datos.Proveedor_ = TxtProveedor.Text
                     Datos.Num_RIn = TxtNRoll10.Text
-                    Datos.Num_REx = TxtNumRollo10.Text
+                    If TxtNumRollo10.Text = "" Then
+                        Datos.Num_REx = "N/A"
+                    Else
+                        Datos.Num_REx = TxtNumRollo10.Text
+                    End If
                     Datos.Calibre_ = TxtCalibre10.Text
                     Datos.Ancho_ = TxtAncho10.Text
                     Datos.Peso_ = TxtPeso10.Text
-                    Datos.Descripcion_ = TxtObser10.Text
+                    If TxtObser10.Text = "" Then
+                        Datos.Descripcion_ = "N/A"
+                    Else
+                        Datos.Descripcion_ = TxtObser10.Text
+                    End If
                     Datos.FechaLlegada = DTFechaLl.Value
                     Datos.FechaRegistro = DTFechaR.Value
                     Datos.OCompra_ = TxtOC.Text
@@ -770,17 +893,23 @@ Public Class MPInventario
                     Datos.Trabaj = TxtResponsable.Text
                     Datos.CE_ = TxtCE.Text
                     Datos.IDDO_ = ip_pro.Text
-                    Datos.Pedimento_ = TxtPedimento.Text
+                    Datos.Espesor_ = TxtEspesor10.Text
+                    If TxtPedimento.Text = "" Then
+                        Datos.Pedimento_ = "N/A"
+                        Datos.TC_ = 0.0
+                    Else
+                        Datos.Pedimento_ = TxtPedimento.Text
+                    Datos.TC_ = TxtTC.Text
+                    End If
 
-                    If Funcion.R(Datos) Then
+            If Funcion.R(Datos) Then
                         Dim Prod As String = TxtNRoll10.Text
                         Dim CodSs As String = LCS.Text
                         Dim Can As String = TxtPeso10.Text
                         Dim CanS As String() = Can.Split(" ")
 
                         Conex.Open()
-                        Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
-                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
+                        Dim CONSULTA As String = "INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
                                                                            VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0)"
 
                         Dim COMANDO As New SqlCommand(CONSULTA, Conex)
@@ -818,8 +947,8 @@ Public Class MPInventario
 
             If TxtAncho11.Text = "" And TxtCalibre11.Text = "" And TxtPeso11.Text = "" And TxtNumRollo11.Text = "" And TxtNRoll11.Text = "" And TxtObser11.Text = "" Then
                 'Nothing
-            ElseIf TxtAncho11.Text = "" Or TxtCalibre11.Text = "" Or TxtPeso11.Text = "" Or TxtNRoll11.Text = "" Or TxtPedimento.Text = "" Then
-                MessageBox.Show("Ingresar todos los datos en Rollo 11 y/o Pedimento", "Advertencia", MessageBoxButtons.OK)
+            ElseIf TxtAncho11.Text = "" Or TxtCalibre11.Text = "" Or TxtPeso11.Text = "" Or TxtNRoll11.Text = "" Then
+                MessageBox.Show("Ingresar todos los datos en Rollo 11", "Advertencia", MessageBoxButtons.OK)
             Else
                 Try
                     Dim Funcion As New RegistroMP
@@ -827,11 +956,19 @@ Public Class MPInventario
 
                     Datos.Proveedor_ = TxtProveedor.Text
                     Datos.Num_RIn = TxtNRoll11.Text
-                    Datos.Num_REx = TxtNumRollo11.Text
+                    If TxtNumRollo11.Text = "" Then
+                        Datos.Num_REx = "N/A"
+                    Else
+                        Datos.Num_REx = TxtNumRollo11.Text
+                    End If
                     Datos.Calibre_ = TxtCalibre11.Text
                     Datos.Ancho_ = TxtAncho11.Text
                     Datos.Peso_ = TxtPeso11.Text
-                    Datos.Descripcion_ = TxtObser11.Text
+                    If TxtObser11.Text = "" Then
+                        Datos.Descripcion_ = "N/A"
+                    Else
+                        Datos.Descripcion_ = TxtObser11.Text
+                    End If
                     Datos.FechaLlegada = DTFechaLl.Value
                     Datos.FechaRegistro = DTFechaR.Value
                     Datos.OCompra_ = TxtOC.Text
@@ -839,7 +976,14 @@ Public Class MPInventario
                     Datos.Trabaj = TxtResponsable.Text
                     Datos.CE_ = TxtCE.Text
                     Datos.IDDO_ = ip_pro.Text
-                    Datos.Pedimento_ = TxtPedimento.Text
+                    Datos.Espesor_ = TxtEspesor11.Text
+                    If TxtPedimento.Text = "" Then
+                        Datos.Pedimento_ = "N/A"
+                        Datos.TC_ = 0.0
+                    Else
+                        Datos.Pedimento_ = TxtPedimento.Text
+                        Datos.TC_ = TxtTC.Text
+                    End If
 
                     If Funcion.R(Datos) Then
                         Dim Prod As String = TxtNRoll11.Text
@@ -848,8 +992,7 @@ Public Class MPInventario
                         Dim CanS As String() = Can.Split(" ")
 
                         Conex.Open()
-                        Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
-                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
+                        Dim CONSULTA As String = "INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
                                                                            VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0)"
 
                         Dim COMANDO As New SqlCommand(CONSULTA, Conex)
@@ -887,8 +1030,8 @@ Public Class MPInventario
 
             If TxtAncho12.Text = "" And TxtCalibre12.Text = "" And TxtPeso12.Text = "" And TxtNumRollo12.Text = "" And TxtNRoll12.Text = "" And TxtObser12.Text = "" Then
                 'Nothing
-            ElseIf TxtAncho12.Text = "" Or TxtCalibre12.Text = "" Or TxtPeso12.Text = "" Or TxtNRoll12.Text = "" Or TxtPedimento.Text = "" Then
-                MessageBox.Show("Ingresar todos los datos en Rollo 12 y/o Pedimento", "Advertencia", MessageBoxButtons.OK)
+            ElseIf TxtAncho12.Text = "" Or TxtCalibre12.Text = "" Or TxtPeso12.Text = "" Or TxtNRoll12.Text = "" Then
+                MessageBox.Show("Ingresar todos los datos en Rollo 12", "Advertencia", MessageBoxButtons.OK)
             Else
                 Try
                     Dim Funcion As New RegistroMP
@@ -896,11 +1039,19 @@ Public Class MPInventario
 
                     Datos.Proveedor_ = TxtProveedor.Text
                     Datos.Num_RIn = TxtNRoll12.Text
-                    Datos.Num_REx = TxtNumRollo12.Text
+                    If TxtNumRollo12.Text = "" Then
+                        Datos.Num_REx = "N/A"
+                    Else
+                        Datos.Num_REx = TxtNumRollo12.Text
+                    End If
                     Datos.Calibre_ = TxtCalibre12.Text
                     Datos.Ancho_ = TxtAncho12.Text
                     Datos.Peso_ = TxtPeso12.Text
-                    Datos.Descripcion_ = TxtObser12.Text
+                    If TxtObser12.Text = "" Then
+                        Datos.Descripcion_ = "N/A"
+                    Else
+                        Datos.Descripcion_ = TxtObser12.Text
+                    End If
                     Datos.FechaLlegada = DTFechaLl.Value
                     Datos.FechaRegistro = DTFechaR.Value
                     Datos.OCompra_ = TxtOC.Text
@@ -908,7 +1059,14 @@ Public Class MPInventario
                     Datos.Trabaj = TxtResponsable.Text
                     Datos.CE_ = TxtCE.Text
                     Datos.IDDO_ = ip_pro.Text
-                    Datos.Pedimento_ = TxtPedimento.Text
+                    Datos.Espesor_ = TxtEspesor12.Text
+                    If TxtPedimento.Text = "" Then
+                        Datos.Pedimento_ = "N/A"
+                        Datos.TC_ = 0.0
+                    Else
+                        Datos.Pedimento_ = TxtPedimento.Text
+                        Datos.TC_ = TxtTC.Text
+                    End If
 
                     If Funcion.R(Datos) Then
                         Dim Prod As String = TxtNRoll12.Text
@@ -917,8 +1075,7 @@ Public Class MPInventario
                         Dim CanS As String() = Can.Split(" ")
 
                         Conex.Open()
-                        Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
-                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
+                        Dim CONSULTA As String = "INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
                                                                            VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0)"
 
                         Dim COMANDO As New SqlCommand(CONSULTA, Conex)
@@ -956,8 +1113,8 @@ Public Class MPInventario
 
             If TxtAncho13.Text = "" And TxtCalibre13.Text = "" And TxtPeso13.Text = "" And TxtNumRollo13.Text = "" And TxtNRoll13.Text = "" And TxtObser13.Text = "" Then
                 'Nothing
-            ElseIf TxtAncho13.Text = "" Or TxtCalibre13.Text = "" Or TxtPeso13.Text = "" Or TxtNRoll13.Text = "" Or TxtPedimento.Text = "" Then
-                MessageBox.Show("Ingresar todos los datos en Rollo 13 y/o Pedimento", "Advertencia", MessageBoxButtons.OK)
+            ElseIf TxtAncho13.Text = "" Or TxtCalibre13.Text = "" Or TxtPeso13.Text = "" Or TxtNRoll13.Text = "" Then
+                MessageBox.Show("Ingresar todos los datos en Rollo 13", "Advertencia", MessageBoxButtons.OK)
             Else
                 Try
                     Dim Funcion As New RegistroMP
@@ -965,11 +1122,19 @@ Public Class MPInventario
 
                     Datos.Proveedor_ = TxtProveedor.Text
                     Datos.Num_RIn = TxtNRoll13.Text
-                    Datos.Num_REx = TxtNumRollo13.Text
+                    If TxtNumRollo13.Text = "" Then
+                        Datos.Num_REx = "N/A"
+                    Else
+                        Datos.Num_REx = TxtNumRollo13.Text
+                    End If
                     Datos.Calibre_ = TxtCalibre13.Text
                     Datos.Ancho_ = TxtAncho13.Text
                     Datos.Peso_ = TxtPeso13.Text
-                    Datos.Descripcion_ = TxtObser13.Text
+                    If TxtObser13.Text = "" Then
+                        Datos.Descripcion_ = "N/A"
+                    Else
+                        Datos.Descripcion_ = TxtObser13.Text
+                    End If
                     Datos.FechaLlegada = DTFechaLl.Value
                     Datos.FechaRegistro = DTFechaR.Value
                     Datos.OCompra_ = TxtOC.Text
@@ -977,7 +1142,14 @@ Public Class MPInventario
                     Datos.Trabaj = TxtResponsable.Text
                     Datos.CE_ = TxtCE.Text
                     Datos.IDDO_ = ip_pro.Text
-                    Datos.Pedimento_ = TxtPedimento.Text
+                    Datos.Espesor_ = TxtEspesor13.Text
+                    If TxtPedimento.Text = "" Then
+                        Datos.Pedimento_ = "N/A"
+                        Datos.TC_ = 0.0
+                    Else
+                        Datos.Pedimento_ = TxtPedimento.Text
+                        Datos.TC_ = TxtTC.Text
+                    End If
 
                     If Funcion.R(Datos) Then
                         Dim Prod As String = TxtNRoll13.Text
@@ -986,8 +1158,7 @@ Public Class MPInventario
                         Dim CanS As String() = Can.Split(" ")
 
                         Conex.Open()
-                        Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
-                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
+                        Dim CONSULTA As String = "INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
                                                                            VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0)"
 
                         Dim COMANDO As New SqlCommand(CONSULTA, Conex)
@@ -1025,8 +1196,8 @@ Public Class MPInventario
 
             If TxtAncho14.Text = "" And TxtCalibre14.Text = "" And TxtPeso14.Text = "" And TxtNumRollo14.Text = "" And TxtNRoll14.Text = "" And TxtObser14.Text = "" Then
                 'Nothing
-            ElseIf TxtAncho14.Text = "" Or TxtCalibre14.Text = "" Or TxtPeso14.Text = "" Or TxtNRoll14.Text = "" Or TxtPedimento.Text = "" Then
-                MessageBox.Show("Ingresar todos los datos en Rollo 14 y/o Pedimento", "Advertencia", MessageBoxButtons.OK)
+            ElseIf TxtAncho14.Text = "" Or TxtCalibre14.Text = "" Or TxtPeso14.Text = "" Or TxtNRoll14.Text = "" Then
+                MessageBox.Show("Ingresar todos los datos en Rollo 14", "Advertencia", MessageBoxButtons.OK)
             Else
                 Try
                     Dim Funcion As New RegistroMP
@@ -1034,11 +1205,19 @@ Public Class MPInventario
 
                     Datos.Proveedor_ = TxtProveedor.Text
                     Datos.Num_RIn = TxtNRoll14.Text
-                    Datos.Num_REx = TxtNumRollo14.Text
+                    If TxtNumRollo14.Text = "" Then
+                        Datos.Num_REx = "N/A"
+                    Else
+                        Datos.Num_REx = TxtNumRollo14.Text
+                    End If
                     Datos.Calibre_ = TxtCalibre14.Text
                     Datos.Ancho_ = TxtAncho14.Text
                     Datos.Peso_ = TxtPeso14.Text
-                    Datos.Descripcion_ = TxtObser14.Text
+                    If TxtObser14.Text = "" Then
+                        Datos.Descripcion_ = "N/A"
+                    Else
+                        Datos.Descripcion_ = TxtObser14.Text
+                    End If
                     Datos.FechaLlegada = DTFechaLl.Value
                     Datos.FechaRegistro = DTFechaR.Value
                     Datos.OCompra_ = TxtOC.Text
@@ -1046,7 +1225,14 @@ Public Class MPInventario
                     Datos.Trabaj = TxtResponsable.Text
                     Datos.CE_ = TxtCE.Text
                     Datos.IDDO_ = ip_pro.Text
-                    Datos.Pedimento_ = TxtPedimento.Text
+                    Datos.Espesor_ = TxtEspesor14.Text
+                    If TxtPedimento.Text = "" Then
+                        Datos.Pedimento_ = "N/A"
+                        Datos.TC_ = 0.0
+                    Else
+                        Datos.Pedimento_ = TxtPedimento.Text
+                        Datos.TC_ = TxtTC.Text
+                    End If
 
                     If Funcion.R(Datos) Then
                         Dim Prod As String = TxtNRoll14.Text
@@ -1055,8 +1241,7 @@ Public Class MPInventario
                         Dim CanS As String() = Can.Split(" ")
 
                         Conex.Open()
-                        Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
-                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
+                        Dim CONSULTA As String = "INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
                                                                            VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0)"
 
                         Dim COMANDO As New SqlCommand(CONSULTA, Conex)
@@ -1094,8 +1279,8 @@ Public Class MPInventario
 
             If TxtAncho15.Text = "" And TxtCalibre15.Text = "" And TxtPeso15.Text = "" And TxtNumRollo15.Text = "" And TxtNRoll15.Text = "" And TxtObser15.Text = "" Then
                 'Nothing
-            ElseIf TxtAncho15.Text = "" Or TxtCalibre15.Text = "" Or TxtPeso15.Text = "" Or TxtNRoll15.Text = "" Or TxtPedimento.Text = "" Then
-                MessageBox.Show("Ingresar todos los datos en Rollo 15 y/o Pedimento", "Advertencia", MessageBoxButtons.OK)
+            ElseIf TxtAncho15.Text = "" Or TxtCalibre15.Text = "" Or TxtPeso15.Text = "" Or TxtNRoll15.Text = "" Then
+                MessageBox.Show("Ingresar todos los datos en Rollo 15", "Advertencia", MessageBoxButtons.OK)
             Else
                 Try
                     Dim Funcion As New RegistroMP
@@ -1103,29 +1288,43 @@ Public Class MPInventario
 
                     Datos.Proveedor_ = TxtProveedor.Text
                     Datos.Num_RIn = TxtNRoll15.Text
-                    Datos.Num_REx = TxtNumRollo15.Text
+                    If TxtNumRollo15.Text = "" Then
+                        Datos.Num_REx = "N/A"
+                    Else
+                        Datos.Num_REx = TxtNumRollo15.Text
+                    End If
                     Datos.Calibre_ = TxtCalibre15.Text
                     Datos.Ancho_ = TxtAncho15.Text
                     Datos.Peso_ = TxtPeso15.Text
-                    Datos.Descripcion_ = TxtObser15.Text
-                    Datos.FechaLlegada = DTFechaLl.Value
+                    If TxtObser15.Text = "" Then
+                        Datos.Descripcion_ = "N/A"
+                    Else
+                        Datos.Descripcion_ = TxtObser15.Text
+                        Datos.FechaLlegada = DTFechaLl.Value
+                    End If
                     Datos.FechaRegistro = DTFechaR.Value
                     Datos.OCompra_ = TxtOC.Text
                     Datos.LCS_ = LCS.Text
                     Datos.Trabaj = TxtResponsable.Text
                     Datos.CE_ = TxtCE.Text
                     Datos.IDDO_ = ip_pro.Text
-                    Datos.Pedimento_ = TxtPedimento.Text
+                    Datos.Espesor_ = TxtEspesor15.Text
+                    If TxtPedimento.Text = "" Then
+                        Datos.Pedimento_ = "N/A"
+                        Datos.TC_ = 0.0
+                    Else
+                        Datos.Pedimento_ = TxtPedimento.Text
+                    Datos.TC_ = TxtTC.Text
+                    End If
 
-                    If Funcion.R(Datos) Then
+            If Funcion.R(Datos) Then
                         Dim Prod As String = TxtNRoll15.Text
                         Dim CodSs As String = LCS.Text
                         Dim Can As String = TxtPeso15.Text
                         Dim CanS As String() = Can.Split(" ")
 
                         Conex.Open()
-                        Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
-                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
+                        Dim CONSULTA As String = "INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
                                                                            VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0)"
 
                         Dim COMANDO As New SqlCommand(CONSULTA, Conex)
@@ -1163,8 +1362,8 @@ Public Class MPInventario
 
             If TxtAncho16.Text = "" And TxtCalibre16.Text = "" And TxtPeso16.Text = "" And TxtNumRollo16.Text = "" And TxtNRoll16.Text = "" And TxtObser16.Text = "" Then
                 'Nothing
-            ElseIf TxtAncho16.Text = "" Or TxtCalibre16.Text = "" Or TxtPeso16.Text = "" Or TxtNRoll16.Text = "" Or TxtPedimento.Text = "" Then
-                MessageBox.Show("Ingresar todos los datos en Rollo 16 y/o Pedimento", "Advertencia", MessageBoxButtons.OK)
+            ElseIf TxtAncho16.Text = "" Or TxtCalibre16.Text = "" Or TxtPeso16.Text = "" Or TxtNRoll16.Text = "" Then
+                MessageBox.Show("Ingresar todos los datos en Rollo 16", "Advertencia", MessageBoxButtons.OK)
             Else
                 Try
                     Dim Funcion As New RegistroMP
@@ -1172,29 +1371,43 @@ Public Class MPInventario
 
                     Datos.Proveedor_ = TxtProveedor.Text
                     Datos.Num_RIn = TxtNRoll16.Text
-                    Datos.Num_REx = TxtNumRollo16.Text
+                    If TxtNumRollo16.Text = "" Then
+                        Datos.Num_REx = "N/A"
+                    Else
+                        Datos.Num_REx = TxtNumRollo16.Text
+                    End If
                     Datos.Calibre_ = TxtCalibre16.Text
                     Datos.Ancho_ = TxtAncho16.Text
                     Datos.Peso_ = TxtPeso16.Text
-                    Datos.Descripcion_ = TxtObser16.Text
-                    Datos.FechaLlegada = DTFechaLl.Value
+                    If TxtObser16.Text = "" Then
+                        Datos.Descripcion_ = "N/A"
+                    Else
+                        Datos.Descripcion_ = TxtObser16.Text
+                        Datos.FechaLlegada = DTFechaLl.Value
+                    End If
                     Datos.FechaRegistro = DTFechaR.Value
                     Datos.OCompra_ = TxtOC.Text
                     Datos.LCS_ = LCS.Text
                     Datos.Trabaj = TxtResponsable.Text
                     Datos.CE_ = TxtCE.Text
                     Datos.IDDO_ = ip_pro.Text
-                    Datos.Pedimento_ = TxtPedimento.Text
+                    Datos.Espesor_ = TxtEspesor16.Text
+                    If TxtPedimento.Text = "" Then
+                        Datos.Pedimento_ = "N/A"
+                        Datos.TC_ = 0.0
+                    Else
+                        Datos.Pedimento_ = TxtPedimento.Text
+                    Datos.TC_ = TxtTC.Text
+                    End If
 
-                    If Funcion.R(Datos) Then
+            If Funcion.R(Datos) Then
                         Dim Prod As String = TxtNRoll16.Text
                         Dim CodSs As String = LCS.Text
                         Dim Can As String = TxtPeso16.Text
                         Dim CanS As String() = Can.Split(" ")
 
                         Conex.Open()
-                        Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
-                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
+                        Dim CONSULTA As String = "INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
                                                                            VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0)"
 
                         Dim COMANDO As New SqlCommand(CONSULTA, Conex)
@@ -1232,8 +1445,8 @@ Public Class MPInventario
 
             If TxtAncho17.Text = "" And TxtCalibre17.Text = "" And TxtPeso17.Text = "" And TxtNumRollo17.Text = "" And TxtNRoll17.Text = "" And TxtObser17.Text = "" Then
                 'Nothing
-            ElseIf TxtAncho17.Text = "" Or TxtCalibre17.Text = "" Or TxtPeso17.Text = "" Or TxtNRoll17.Text = "" Or TxtPedimento.Text = "" Then
-                MessageBox.Show("Ingresar todos los datos en Rollo 17 y/o Pedimento", "Advertencia", MessageBoxButtons.OK)
+            ElseIf TxtAncho17.Text = "" Or TxtCalibre17.Text = "" Or TxtPeso17.Text = "" Or TxtNRoll17.Text = "" Then
+                MessageBox.Show("Ingresar todos los datos en Rollo 17", "Advertencia", MessageBoxButtons.OK)
             Else
                 Try
                     Dim Funcion As New RegistroMP
@@ -1241,11 +1454,19 @@ Public Class MPInventario
 
                     Datos.Proveedor_ = TxtProveedor.Text
                     Datos.Num_RIn = TxtNRoll17.Text
-                    Datos.Num_REx = TxtNumRollo17.Text
+                    If TxtNumRollo17.Text = "" Then
+                        Datos.Num_REx = "N/A"
+                    Else
+                        Datos.Num_REx = TxtNumRollo17.Text
+                    End If
                     Datos.Calibre_ = TxtCalibre17.Text
                     Datos.Ancho_ = TxtAncho17.Text
                     Datos.Peso_ = TxtPeso17.Text
-                    Datos.Descripcion_ = TxtObser17.Text
+                    If TxtObser17.Text = "" Then
+                        Datos.Descripcion_ = "N/A"
+                    Else
+                        Datos.Descripcion_ = TxtObser17.Text
+                    End If
                     Datos.FechaLlegada = DTFechaLl.Value
                     Datos.FechaRegistro = DTFechaR.Value
                     Datos.OCompra_ = TxtOC.Text
@@ -1253,7 +1474,14 @@ Public Class MPInventario
                     Datos.Trabaj = TxtResponsable.Text
                     Datos.CE_ = TxtCE.Text
                     Datos.IDDO_ = ip_pro.Text
-                    Datos.Pedimento_ = TxtPedimento.Text
+                    Datos.Espesor_ = TxtEspesor17.Text
+                    If TxtPedimento.Text = "" Then
+                        Datos.Pedimento_ = "N/A"
+                        Datos.TC_ = 0.0
+                    Else
+                        Datos.Pedimento_ = TxtPedimento.Text
+                        Datos.TC_ = TxtTC.Text
+                    End If
 
                     If Funcion.R(Datos) Then
                         Dim Prod As String = TxtNRoll17.Text
@@ -1262,8 +1490,7 @@ Public Class MPInventario
                         Dim CanS As String() = Can.Split(" ")
 
                         Conex.Open()
-                        Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
-                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
+                        Dim CONSULTA As String = "INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
                                                                            VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0)"
 
                         Dim COMANDO As New SqlCommand(CONSULTA, Conex)
@@ -1301,8 +1528,8 @@ Public Class MPInventario
 
             If TxtAncho18.Text = "" And TxtCalibre18.Text = "" And TxtPeso18.Text = "" And TxtNumRollo18.Text = "" And TxtNRoll18.Text = "" And TxtObser18.Text = "" Then
                 'Nothing
-            ElseIf TxtAncho18.Text = "" Or TxtCalibre18.Text = "" Or TxtPeso18.Text = "" Or TxtNRoll18.Text = "" Or TxtPedimento.Text = "" Then
-                MessageBox.Show("Ingresar todos los datos en Rollo 18 y/o Pedimento", "Advertencia", MessageBoxButtons.OK)
+            ElseIf TxtAncho18.Text = "" Or TxtCalibre18.Text = "" Or TxtPeso18.Text = "" Or TxtNRoll18.Text = "" Then
+                MessageBox.Show("Ingresar todos los datos en Rollo 18", "Advertencia", MessageBoxButtons.OK)
             Else
                 Try
                     Dim Funcion As New RegistroMP
@@ -1310,11 +1537,19 @@ Public Class MPInventario
 
                     Datos.Proveedor_ = TxtProveedor.Text
                     Datos.Num_RIn = TxtNRoll18.Text
-                    Datos.Num_REx = TxtNumRollo18.Text
+                    If TxtNumRollo18.Text = "" Then
+                        Datos.Num_REx = "N/A"
+                    Else
+                        Datos.Num_REx = TxtNumRollo18.Text
+                    End If
                     Datos.Calibre_ = TxtCalibre18.Text
                     Datos.Ancho_ = TxtAncho18.Text
                     Datos.Peso_ = TxtPeso18.Text
-                    Datos.Descripcion_ = TxtObser18.Text
+                    If TxtObser18.Text = "" Then
+                        Datos.Descripcion_ = "N/A"
+                    Else
+                        Datos.Descripcion_ = TxtObser18.Text
+                    End If
                     Datos.FechaLlegada = DTFechaLl.Value
                     Datos.FechaRegistro = DTFechaR.Value
                     Datos.OCompra_ = TxtOC.Text
@@ -1322,7 +1557,14 @@ Public Class MPInventario
                     Datos.Trabaj = TxtResponsable.Text
                     Datos.CE_ = TxtCE.Text
                     Datos.IDDO_ = ip_pro.Text
-                    Datos.Pedimento_ = TxtPedimento.Text
+                    Datos.Espesor_ = TxtEspesor18.Text
+                    If TxtPedimento.Text = "" Then
+                        Datos.Pedimento_ = "N/A"
+                        Datos.TC_ = 0.0
+                    Else
+                        Datos.Pedimento_ = TxtPedimento.Text
+                        Datos.TC_ = TxtTC.Text
+                    End If
 
                     If Funcion.R(Datos) Then
                         Dim Prod As String = TxtNRoll18.Text
@@ -1331,8 +1573,7 @@ Public Class MPInventario
                         Dim CanS As String() = Can.Split(" ")
 
                         Conex.Open()
-                        Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
-                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
+                        Dim CONSULTA As String = "INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
                                                                            VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0)"
 
                         Dim COMANDO As New SqlCommand(CONSULTA, Conex)
@@ -1370,8 +1611,8 @@ Public Class MPInventario
 
             If TxtAncho19.Text = "" And TxtCalibre19.Text = "" And TxtPeso19.Text = "" And TxtNumRollo19.Text = "" And TxtNRoll19.Text = "" And TxtObser19.Text = "" Then
                 'Nothing
-            ElseIf TxtAncho19.Text = "" Or TxtCalibre19.Text = "" Or TxtPeso19.Text = "" Or TxtNRoll19.Text = "" Or TxtPedimento.Text = "" Then
-                MessageBox.Show("Ingresar todos los datos en Rollo 19 y/o Pedimento", "Advertencia", MessageBoxButtons.OK)
+            ElseIf TxtAncho19.Text = "" Or TxtCalibre19.Text = "" Or TxtPeso19.Text = "" Or TxtNRoll19.Text = "" Then
+                MessageBox.Show("Ingresar todos los datos en Rollo 19", "Advertencia", MessageBoxButtons.OK)
             Else
                 Try
                     Dim Funcion As New RegistroMP
@@ -1379,11 +1620,19 @@ Public Class MPInventario
 
                     Datos.Proveedor_ = TxtProveedor.Text
                     Datos.Num_RIn = TxtNRoll19.Text
-                    Datos.Num_REx = TxtNumRollo19.Text
+                    If TxtNumRollo19.Text = "" Then
+                        Datos.Num_REx = "N/A"
+                    Else
+                        Datos.Num_REx = TxtNumRollo19.Text
+                    End If
                     Datos.Calibre_ = TxtCalibre19.Text
                     Datos.Ancho_ = TxtAncho19.Text
                     Datos.Peso_ = TxtPeso19.Text
-                    Datos.Descripcion_ = TxtObser19.Text
+                    If TxtObser19.Text = "" Then
+                        Datos.Descripcion_ = "N/A"
+                    Else
+                        Datos.Descripcion_ = TxtObser19.Text
+                    End If
                     Datos.FechaLlegada = DTFechaLl.Value
                     Datos.FechaRegistro = DTFechaR.Value
                     Datos.OCompra_ = TxtOC.Text
@@ -1391,7 +1640,14 @@ Public Class MPInventario
                     Datos.Trabaj = TxtResponsable.Text
                     Datos.CE_ = TxtCE.Text
                     Datos.IDDO_ = ip_pro.Text
-                    Datos.Pedimento_ = TxtPedimento.Text
+                    Datos.Espesor_ = TxtEspesor19.Text
+                    If TxtPedimento.Text = "" Then
+                        Datos.Pedimento_ = "N/A"
+                        Datos.TC_ = 0.0
+                    Else
+                        Datos.Pedimento_ = TxtPedimento.Text
+                        Datos.TC_ = TxtTC.Text
+                    End If
 
                     If Funcion.R(Datos) Then
                         Dim Prod As String = TxtNRoll19.Text
@@ -1400,8 +1656,7 @@ Public Class MPInventario
                         Dim CanS As String() = Can.Split(" ")
 
                         Conex.Open()
-                        Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
-                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
+                        Dim CONSULTA As String = "INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
                                                                            VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0)"
 
                         Dim COMANDO As New SqlCommand(CONSULTA, Conex)
@@ -1439,8 +1694,8 @@ Public Class MPInventario
 
             If TxtAncho20.Text = "" And TxtCalibre20.Text = "" And TxtPeso20.Text = "" And TxtNumRollo20.Text = "" And TxtNRoll20.Text = "" And TxtObser20.Text = "" Then
                 'Nothing
-            ElseIf TxtAncho20.Text = "" Or TxtCalibre20.Text = "" Or TxtPeso20.Text = "" Or TxtNRoll20.Text = "" Or TxtPedimento.Text = "" Then
-                MessageBox.Show("Ingresar todos los datos en Rollo 20 y/o Pedimento", "Advertencia", MessageBoxButtons.OK)
+            ElseIf TxtAncho20.Text = "" Or TxtCalibre20.Text = "" Or TxtPeso20.Text = "" Or TxtNRoll20.Text = "" Then
+                MessageBox.Show("Ingresar todos los datos en Rollo 20", "Advertencia", MessageBoxButtons.OK)
             Else
                 Try
                     Dim Funcion As New RegistroMP
@@ -1448,11 +1703,19 @@ Public Class MPInventario
 
                     Datos.Proveedor_ = TxtProveedor.Text
                     Datos.Num_RIn = TxtNRoll20.Text
-                    Datos.Num_REx = TxtNumRollo20.Text
+                    If TxtNumRollo20.Text = "" Then
+                        Datos.Num_REx = "N/A"
+                    Else
+                        Datos.Num_REx = TxtNumRollo20.Text
+                    End If
                     Datos.Calibre_ = TxtCalibre20.Text
                     Datos.Ancho_ = TxtAncho20.Text
                     Datos.Peso_ = TxtPeso20.Text
-                    Datos.Descripcion_ = TxtObser20.Text
+                    If TxtObser20.Text = "" Then
+                        Datos.Descripcion_ = "N/A"
+                    Else
+                        Datos.Descripcion_ = TxtObser20.Text
+                    End If
                     Datos.FechaLlegada = DTFechaLl.Value
                     Datos.FechaRegistro = DTFechaR.Value
                     Datos.OCompra_ = TxtOC.Text
@@ -1460,7 +1723,14 @@ Public Class MPInventario
                     Datos.Trabaj = TxtResponsable.Text
                     Datos.CE_ = TxtCE.Text
                     Datos.IDDO_ = ip_pro.Text
-                    Datos.Pedimento_ = TxtPedimento.Text
+                    Datos.Espesor_ = TxtEspesor20.Text
+                    If TxtPedimento.Text = "" Then
+                        Datos.Pedimento_ = "N/A"
+                        Datos.TC_ = 0.0
+                    Else
+                        Datos.Pedimento_ = TxtPedimento.Text
+                        Datos.TC_ = TxtTC.Text
+                    End If
 
                     If Funcion.R(Datos) Then
                         Dim Prod As String = TxtNRoll20.Text
@@ -1469,8 +1739,7 @@ Public Class MPInventario
                         Dim CanS As String() = Can.Split(" ")
 
                         Conex.Open()
-                        Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodSs & "' AND Producto = '" & Prod & "')
-                                             INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
+                        Dim CONSULTA As String = "INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanS, CanE)
                                                                            VALUES ('" & CodSs & "', '" & Prod & "', '" & CanS(0) & "', 0)"
 
                         Dim COMANDO As New SqlCommand(CONSULTA, Conex)
@@ -1552,6 +1821,270 @@ Public Class MPInventario
         Else
             MessageBox.Show("Guardar datos para poder finalizar la orden de compra", "Advertencia", MessageBoxButtons.OK)
         End If
+    End Sub
+
+    Private Sub BC1_Click(sender As Object, e As EventArgs) Handles BC1.Click
+        If PCalibres.Visible = True And LC.Text <> "" Then
+            LC.Text = "1"
+
+        ElseIf PCalibres.Visible = True Then
+            PCalibres.Visible = False
+            LC.Text = ""
+        ElseIf PCalibres.Visible = False Then
+            PCalibres.Visible = True
+            LC.Text = "1"
+        End If
+    End Sub
+
+    Private Sub BC2_Click(sender As Object, e As EventArgs) Handles BC2.Click
+        If PCalibres.Visible = True And LC.Text <> "" Then
+            LC.Text = "2"
+
+        ElseIf PCalibres.Visible = True Then
+            PCalibres.Visible = False
+            LC.Text = ""
+        ElseIf PCalibres.Visible = False Then
+            PCalibres.Visible = True
+            LC.Text = "2"
+        End If
+    End Sub
+
+    Private Sub BC3_Click(sender As Object, e As EventArgs) Handles BC3.Click
+        If PCalibres.Visible = True And LC.Text <> "" Then
+            LC.Text = "3"
+
+        ElseIf PCalibres.Visible = True Then
+            PCalibres.Visible = False
+            LC.Text = ""
+        ElseIf PCalibres.Visible = False Then
+            PCalibres.Visible = True
+            LC.Text = "3"
+        End If
+    End Sub
+
+    Private Sub BC4_Click(sender As Object, e As EventArgs) Handles BC4.Click
+        If PCalibres.Visible = True And LC.Text <> "" Then
+            LC.Text = "4"
+
+        ElseIf PCalibres.Visible = True Then
+            PCalibres.Visible = False
+            LC.Text = ""
+        ElseIf PCalibres.Visible = False Then
+            PCalibres.Visible = True
+            LC.Text = "4"
+        End If
+    End Sub
+
+    Private Sub BC5_Click(sender As Object, e As EventArgs) Handles BC5.Click
+        If PCalibres.Visible = True And LC.Text <> "" Then
+            LC.Text = "5"
+
+        ElseIf PCalibres.Visible = True Then
+            PCalibres.Visible = False
+            LC.Text = ""
+        ElseIf PCalibres.Visible = False Then
+            PCalibres.Visible = True
+            LC.Text = "5"
+        End If
+    End Sub
+
+    Private Sub BC6_Click(sender As Object, e As EventArgs) Handles BC6.Click
+        If PCalibres.Visible = True And LC.Text <> "" Then
+            LC.Text = "6"
+
+        ElseIf PCalibres.Visible = True Then
+            PCalibres.Visible = False
+            LC.Text = ""
+        ElseIf PCalibres.Visible = False Then
+            PCalibres.Visible = True
+            LC.Text = "6"
+        End If
+    End Sub
+
+    Private Sub BC7_Click(sender As Object, e As EventArgs) Handles BC7.Click
+        If PCalibres.Visible = True And LC.Text <> "" Then
+            LC.Text = "7"
+
+        ElseIf PCalibres.Visible = True Then
+            PCalibres.Visible = False
+            LC.Text = ""
+        ElseIf PCalibres.Visible = False Then
+            PCalibres.Visible = True
+            LC.Text = "7"
+        End If
+    End Sub
+
+    Private Sub BC8_Click(sender As Object, e As EventArgs) Handles BC8.Click
+        If PCalibres.Visible = True And LC.Text <> "" Then
+            LC.Text = "8"
+
+        ElseIf PCalibres.Visible = True Then
+            PCalibres.Visible = False
+            LC.Text = ""
+        ElseIf PCalibres.Visible = False Then
+            PCalibres.Visible = True
+            LC.Text = "8"
+        End If
+    End Sub
+
+    Private Sub BC9_Click(sender As Object, e As EventArgs) Handles BC9.Click
+        If PCalibres.Visible = True And LC.Text <> "" Then
+            LC.Text = "9"
+
+        ElseIf PCalibres.Visible = True Then
+            PCalibres.Visible = False
+            LC.Text = ""
+        ElseIf PCalibres.Visible = False Then
+            PCalibres.Visible = True
+            LC.Text = "9"
+        End If
+    End Sub
+
+    Private Sub BC10_Click(sender As Object, e As EventArgs) Handles BC10.Click
+        If PCalibres.Visible = True And LC.Text <> "" Then
+            LC.Text = "10"
+
+        ElseIf PCalibres.Visible = True Then
+            PCalibres.Visible = False
+            LC.Text = ""
+        ElseIf PCalibres.Visible = False Then
+            PCalibres.Visible = True
+            LC.Text = "10"
+        End If
+    End Sub
+
+    Private Sub BC11_Click(sender As Object, e As EventArgs) Handles BC11.Click
+        If PCalibres.Visible = True And LC.Text <> "" Then
+            LC.Text = "11"
+
+        ElseIf PCalibres.Visible = True Then
+            PCalibres.Visible = False
+            LC.Text = ""
+        ElseIf PCalibres.Visible = False Then
+            PCalibres.Visible = True
+            LC.Text = "11"
+        End If
+    End Sub
+
+    Private Sub BC12_Click(sender As Object, e As EventArgs) Handles BC12.Click
+        If PCalibres.Visible = True And LC.Text <> "" Then
+            LC.Text = "12"
+
+        ElseIf PCalibres.Visible = True Then
+            PCalibres.Visible = False
+            LC.Text = ""
+        ElseIf PCalibres.Visible = False Then
+            PCalibres.Visible = True
+            LC.Text = "12"
+        End If
+    End Sub
+
+    Private Sub BC13_Click(sender As Object, e As EventArgs) Handles BC13.Click
+        If PCalibres.Visible = True And LC.Text <> "" Then
+            LC.Text = "13"
+
+        ElseIf PCalibres.Visible = True Then
+            PCalibres.Visible = False
+            LC.Text = ""
+        ElseIf PCalibres.Visible = False Then
+            PCalibres.Visible = True
+            LC.Text = "13"
+        End If
+    End Sub
+
+    Private Sub BC14_Click(sender As Object, e As EventArgs) Handles BC14.Click
+        If PCalibres.Visible = True And LC.Text <> "" Then
+            LC.Text = "14"
+
+        ElseIf PCalibres.Visible = True Then
+            PCalibres.Visible = False
+            LC.Text = ""
+        ElseIf PCalibres.Visible = False Then
+            PCalibres.Visible = True
+            LC.Text = "14"
+        End If
+    End Sub
+
+    Private Sub BC15_Click(sender As Object, e As EventArgs) Handles BC15.Click
+        If PCalibres.Visible = True And LC.Text <> "" Then
+            LC.Text = "15"
+
+        ElseIf PCalibres.Visible = True Then
+            PCalibres.Visible = False
+            LC.Text = ""
+        ElseIf PCalibres.Visible = False Then
+            PCalibres.Visible = True
+            LC.Text = "15"
+        End If
+    End Sub
+
+    Private Sub BC16_Click(sender As Object, e As EventArgs) Handles BC16.Click
+        If PCalibres.Visible = True And LC.Text <> "" Then
+            LC.Text = "16"
+
+        ElseIf PCalibres.Visible = True Then
+            PCalibres.Visible = False
+            LC.Text = ""
+        ElseIf PCalibres.Visible = False Then
+            PCalibres.Visible = True
+            LC.Text = "16"
+        End If
+    End Sub
+
+    Private Sub BC17_Click(sender As Object, e As EventArgs) Handles BC17.Click
+        If PCalibres.Visible = True And LC.Text <> "" Then
+            LC.Text = "17"
+
+        ElseIf PCalibres.Visible = True Then
+            PCalibres.Visible = False
+            LC.Text = ""
+        ElseIf PCalibres.Visible = False Then
+            PCalibres.Visible = True
+        LC.Text = "17"
+        End If
+    End Sub
+
+    Private Sub BC18_Click(sender As Object, e As EventArgs) Handles BC18.Click
+        If PCalibres.Visible = True And LC.Text <> "" Then
+            LC.Text = "18"
+
+        ElseIf PCalibres.Visible = True Then
+            PCalibres.Visible = False
+            LC.Text = ""
+        ElseIf PCalibres.Visible = False Then
+            PCalibres.Visible = True
+            LC.Text = "18"
+        End If
+    End Sub
+
+    Private Sub BC19_Click(sender As Object, e As EventArgs) Handles BC19.Click
+        If PCalibres.Visible = True And LC.Text <> "" Then
+            LC.Text = "19"
+
+        ElseIf PCalibres.Visible = True Then
+            PCalibres.Visible = False
+            LC.Text = ""
+        ElseIf PCalibres.Visible = False Then
+            PCalibres.Visible = True
+            LC.Text = "19"
+        End If
+    End Sub
+
+    Private Sub BC20_Click(sender As Object, e As EventArgs) Handles BC20.Click
+        If PCalibres.Visible = True And LC.Text <> "" Then
+            LC.Text = "20"
+
+        ElseIf PCalibres.Visible = True Then
+            PCalibres.Visible = False
+            LC.Text = ""
+        ElseIf PCalibres.Visible = False Then
+            PCalibres.Visible = True
+            LC.Text = "20"
+        End If
+    End Sub
+
+    Private Sub Rollo1_DoubleClick(sender As Object, e As EventArgs) Handles TRollos.Click
+        PCalibres.Visible = False
     End Sub
 
 
@@ -1656,31 +2189,8 @@ Public Class MPInventario
     End Sub
 
     Private Sub Calibre()
-        Dim Consulta As String = "SELECT OC.id_orden, OC.purchase_order, OC.codigo, P.nombre, OD.cantidad, OD.Um,OC.CodiS, OD.descripcion, 
-                                             OD.detalles, OD.id_pro, case OD.Um 
-		                                                                    When 'MT'
-		                                                                        THEN OD.cantidad * 1000 - IsNull(Od.estatus, 0)
-		                                                                    When 'TON'
-		                                                                        THEN OD.cantidad * 1000 - IsNull(Od.estatus, 0)
-		                                                                    WHEN 'KG'
-		                                                                        THEN OD.cantidad - IsNull(Od.estatus, 0)
-		                                                                    END AS 'Faltante'
-                                      FROM TB_Ordenes_Compra as OC
-                                          INNER JOIN Tb_Proveedores AS P ON P.id_p = OC.id_pro
-                                          INNER JOIN TB_Ordenes_Detalle AS OD ON OD.codigo = OC.codigo
-                                          INNER JOIN TB_Productos AS PR ON OD.descripcion = PR.Nombre_Producto
-                                      WHERE OC.estado = 'Activo' AND 
-                                            PR.Estado = 'MPActivo' AND 
-                                            OC.purchase_order LIKE '%'+@Busqueda+'%'
-                                      GROUP BY OC.id_orden, OC.purchase_order, OC.codigo, P.nombre, OD.cantidad, OD.Um, OC.CodiS, OD.descripcion, 
-                                            od.detalles, OD.id_pro, case OD.Um 
-		                                                                When 'MT'
-		                                                                    THEN OD.cantidad * 1000 - IsNull(Od.estatus, 0)
-		                                                                When 'TON'
-		                                                                    THEN OD.cantidad * 1000 - IsNull(Od.estatus, 0)
-		                                                                WHEN 'KG'
-		                                                                    THEN OD.cantidad - IsNull(Od.estatus, 0)
-		                                                                END "
+        Dim Consulta As String = "SELECT Codigo, Calibre
+                                        FROM TB_Calibres"
 
         Dim cmd As New SqlCommand(Consulta, Conex)
 
@@ -1781,6 +2291,33 @@ Public Class MPInventario
         NumerosyDecimal(TxtPeso18, e)
         NumerosyDecimal(TxtPeso19, e)
         NumerosyDecimal(TxtPeso20, e)
+    End Sub
+
+    Private Sub Espesor(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TxtEspesor1.KeyPress, TxtEspesor2.KeyPress, TxtEspesor3.KeyPress, TxtEspesor4.KeyPress, TxtEspesor5.KeyPress,
+                                                                                                        TxtEspesor6.KeyPress, TxtEspesor7.KeyPress, TxtEspesor8.KeyPress, TxtEspesor9.KeyPress, TxtEspesor10.KeyPress,
+                                                                                                        TxtEspesor11.KeyPress, TxtEspesor12.KeyPress, TxtEspesor13.KeyPress, TxtEspesor14.KeyPress, TxtEspesor15.KeyPress,
+                                                                                                        TxtEspesor16.KeyPress, TxtEspesor17.KeyPress, TxtEspesor18.KeyPress, TxtEspesor19.KeyPress, TxtEspesor20.KeyPress
+
+        NumerosyDecimal(TxtEspesor1, e)
+        NumerosyDecimal(TxtEspesor2, e)
+        NumerosyDecimal(TxtEspesor3, e)
+        NumerosyDecimal(TxtEspesor4, e)
+        NumerosyDecimal(TxtEspesor5, e)
+        NumerosyDecimal(TxtEspesor6, e)
+        NumerosyDecimal(TxtEspesor7, e)
+        NumerosyDecimal(TxtEspesor8, e)
+        NumerosyDecimal(TxtEspesor9, e)
+        NumerosyDecimal(TxtEspesor10, e)
+        NumerosyDecimal(TxtEspesor11, e)
+        NumerosyDecimal(TxtEspesor12, e)
+        NumerosyDecimal(TxtEspesor13, e)
+        NumerosyDecimal(TxtEspesor14, e)
+        NumerosyDecimal(TxtEspesor15, e)
+        NumerosyDecimal(TxtEspesor16, e)
+        NumerosyDecimal(TxtEspesor17, e)
+        NumerosyDecimal(TxtEspesor18, e)
+        NumerosyDecimal(TxtEspesor19, e)
+        NumerosyDecimal(TxtEspesor20, e)
     End Sub
 
     '   Numeros y Punto Decimal
@@ -1925,6 +2462,8 @@ Public Class MPInventario
         TxtNRolI1.ReadOnly = False
         TxtObser1.Text = ""
         TxtObser1.ReadOnly = False
+        TxtEspesor1.Text = ""
+        TxtEspesor1.ReadOnly = False
     End Sub
 
     Public Sub Rol2()
@@ -1940,6 +2479,8 @@ Public Class MPInventario
         TxtNRoll2.ReadOnly = False
         TxtObser2.Text = ""
         TxtObser2.ReadOnly = False
+        TxtEspesor2.Text = ""
+        TxtEspesor2.ReadOnly = False
     End Sub
 
     Public Sub Rol3()
@@ -1955,6 +2496,8 @@ Public Class MPInventario
         TxtNRoll3.ReadOnly = False
         TxtObser3.Text = ""
         TxtObser3.ReadOnly = False
+        TxtEspesor3.Text = ""
+        TxtEspesor3.ReadOnly = False
     End Sub
 
     Public Sub Rol4()
@@ -1970,6 +2513,8 @@ Public Class MPInventario
         TxtNRoll4.ReadOnly = False
         TxtObser4.Text = ""
         TxtObser4.ReadOnly = False
+        TxtEspesor4.Text = ""
+        TxtEspesor4.ReadOnly = False
     End Sub
 
     Public Sub Rol5()
@@ -1985,6 +2530,8 @@ Public Class MPInventario
         TxtNRoll5.ReadOnly = False
         TxtObser5.Text = ""
         TxtObser5.ReadOnly = False
+        TxtEspesor5.Text = ""
+        TxtEspesor5.ReadOnly = False
     End Sub
 
     Public Sub Rol6()
@@ -2000,6 +2547,8 @@ Public Class MPInventario
         TxtNRoll6.ReadOnly = False
         TxtObser6.Text = ""
         TxtObser6.ReadOnly = False
+        TxtEspesor6.Text = ""
+        TxtEspesor6.ReadOnly = False
     End Sub
 
     Public Sub Rol7()
@@ -2015,6 +2564,8 @@ Public Class MPInventario
         TxtNRoll7.ReadOnly = False
         TxtObser7.Text = ""
         TxtObser7.ReadOnly = False
+        TxtEspesor7.Text = ""
+        TxtEspesor7.ReadOnly = False
     End Sub
 
     Public Sub Rol8()
@@ -2030,6 +2581,8 @@ Public Class MPInventario
         TxtNRoll8.ReadOnly = False
         TxtObser8.Text = ""
         TxtObser8.ReadOnly = False
+        TxtEspesor8.Text = ""
+        TxtEspesor8.ReadOnly = False
     End Sub
 
     Public Sub Rol9()
@@ -2045,6 +2598,8 @@ Public Class MPInventario
         TxtNRoll9.ReadOnly = False
         TxtObser9.Text = ""
         TxtObser9.ReadOnly = False
+        TxtEspesor9.Text = ""
+        TxtEspesor9.ReadOnly = False
     End Sub
 
     Public Sub Rol10()
@@ -2060,6 +2615,8 @@ Public Class MPInventario
         TxtNRoll10.ReadOnly = False
         TxtObser10.Text = ""
         TxtObser10.ReadOnly = False
+        TxtEspesor10.Text = ""
+        TxtEspesor10.ReadOnly = False
     End Sub
 
     Public Sub Rol11()
@@ -2075,6 +2632,8 @@ Public Class MPInventario
         TxtNRoll11.ReadOnly = False
         TxtObser11.Text = ""
         TxtObser11.ReadOnly = False
+        TxtEspesor11.Text = ""
+        TxtEspesor11.ReadOnly = False
     End Sub
 
     Public Sub Rol12()
@@ -2090,6 +2649,8 @@ Public Class MPInventario
         TxtNRoll12.ReadOnly = False
         TxtObser12.Text = ""
         TxtObser12.ReadOnly = False
+        TxtEspesor12.Text = ""
+        TxtEspesor12.ReadOnly = False
     End Sub
 
     Public Sub Rol13()
@@ -2105,6 +2666,8 @@ Public Class MPInventario
         TxtNRoll13.ReadOnly = False
         TxtObser13.Text = ""
         TxtObser13.ReadOnly = False
+        TxtEspesor13.Text = ""
+        TxtEspesor13.ReadOnly = False
     End Sub
 
     Public Sub Rol14()
@@ -2120,6 +2683,8 @@ Public Class MPInventario
         TxtNRoll14.ReadOnly = False
         TxtObser14.Text = ""
         TxtObser14.ReadOnly = False
+        TxtEspesor14.Text = ""
+        TxtEspesor14.ReadOnly = False
     End Sub
 
     Public Sub Rol15()
@@ -2135,6 +2700,8 @@ Public Class MPInventario
         TxtNRoll15.ReadOnly = False
         TxtObser15.Text = ""
         TxtObser15.ReadOnly = False
+        TxtEspesor15.Text = ""
+        TxtEspesor15.ReadOnly = False
     End Sub
 
     Public Sub Rol16()
@@ -2150,6 +2717,8 @@ Public Class MPInventario
         TxtNRoll16.ReadOnly = False
         TxtObser16.Text = ""
         TxtObser16.ReadOnly = False
+        TxtEspesor16.Text = ""
+        TxtEspesor16.ReadOnly = False
     End Sub
 
     Public Sub Rol17()
@@ -2165,6 +2734,8 @@ Public Class MPInventario
         TxtNRoll17.ReadOnly = False
         TxtObser17.Text = ""
         TxtObser17.ReadOnly = False
+        TxtEspesor17.Text = ""
+        TxtEspesor17.ReadOnly = False
     End Sub
 
     Public Sub Rol18()
@@ -2180,6 +2751,8 @@ Public Class MPInventario
         TxtNRoll18.ReadOnly = False
         TxtObser18.Text = ""
         TxtObser18.ReadOnly = False
+        TxtEspesor18.Text = ""
+        TxtEspesor18.ReadOnly = False
     End Sub
 
     Public Sub Rol19()
@@ -2195,6 +2768,8 @@ Public Class MPInventario
         TxtNRoll19.ReadOnly = False
         TxtObser19.Text = ""
         TxtObser19.ReadOnly = False
+        TxtEspesor19.Text = ""
+        TxtEspesor19.ReadOnly = False
     End Sub
 
     Public Sub Rol20()
@@ -2210,6 +2785,8 @@ Public Class MPInventario
         TxtNRoll20.ReadOnly = False
         TxtObser20.Text = ""
         TxtObser20.ReadOnly = False
+        TxtEspesor20.Text = ""
+        TxtEspesor20.ReadOnly = False
     End Sub
 
 
@@ -2227,6 +2804,8 @@ Public Class MPInventario
         TxtNRolI1.ReadOnly = True
         TxtObser1.Text = ""
         TxtObser1.ReadOnly = True
+        TxtEspesor1.Text = ""
+        TxtEspesor1.ReadOnly = True
     End Sub
 
     Public Sub Roll2()
@@ -2242,6 +2821,8 @@ Public Class MPInventario
         TxtNRoll2.ReadOnly = True
         TxtObser2.Text = ""
         TxtObser2.ReadOnly = True
+        TxtEspesor2.Text = ""
+        TxtEspesor2.ReadOnly = True
     End Sub
 
     Public Sub Roll3()
@@ -2257,6 +2838,8 @@ Public Class MPInventario
         TxtNRoll3.ReadOnly = True
         TxtObser3.Text = ""
         TxtObser3.ReadOnly = True
+        TxtEspesor3.Text = ""
+        TxtEspesor3.ReadOnly = True
     End Sub
 
     Public Sub Roll4()
@@ -2272,6 +2855,8 @@ Public Class MPInventario
         TxtNRoll4.ReadOnly = True
         TxtObser4.Text = ""
         TxtObser4.ReadOnly = True
+        TxtEspesor4.Text = ""
+        TxtEspesor4.ReadOnly = True
     End Sub
 
     Public Sub Roll5()
@@ -2287,6 +2872,8 @@ Public Class MPInventario
         TxtNRoll5.ReadOnly = True
         TxtObser5.Text = ""
         TxtObser5.ReadOnly = True
+        TxtEspesor5.Text = ""
+        TxtEspesor5.ReadOnly = True
     End Sub
 
     Public Sub Roll6()
@@ -2302,6 +2889,8 @@ Public Class MPInventario
         TxtNRoll6.ReadOnly = True
         TxtObser6.Text = ""
         TxtObser6.ReadOnly = True
+        TxtEspesor6.Text = ""
+        TxtEspesor6.ReadOnly = True
     End Sub
 
     Public Sub Roll7()
@@ -2317,6 +2906,8 @@ Public Class MPInventario
         TxtNRoll7.ReadOnly = True
         TxtObser7.Text = ""
         TxtObser7.ReadOnly = True
+        TxtEspesor7.Text = ""
+        TxtEspesor7.ReadOnly = True
     End Sub
 
     Public Sub Roll8()
@@ -2332,6 +2923,8 @@ Public Class MPInventario
         TxtNRoll8.ReadOnly = True
         TxtObser8.Text = ""
         TxtObser8.ReadOnly = True
+        TxtEspesor8.Text = ""
+        TxtEspesor8.ReadOnly = True
     End Sub
 
     Public Sub Roll9()
@@ -2347,6 +2940,8 @@ Public Class MPInventario
         TxtNRoll9.ReadOnly = True
         TxtObser9.Text = ""
         TxtObser9.ReadOnly = True
+        TxtEspesor9.Text = ""
+        TxtEspesor9.ReadOnly = True
     End Sub
 
     Public Sub Roll10()
@@ -2362,6 +2957,8 @@ Public Class MPInventario
         TxtNRoll10.ReadOnly = True
         TxtObser10.Text = ""
         TxtObser10.ReadOnly = True
+        TxtEspesor10.Text = ""
+        TxtEspesor10.ReadOnly = True
     End Sub
 
     Public Sub Roll11()
@@ -2377,6 +2974,8 @@ Public Class MPInventario
         TxtNRoll11.ReadOnly = True
         TxtObser11.Text = ""
         TxtObser11.ReadOnly = True
+        TxtEspesor11.Text = ""
+        TxtEspesor11.ReadOnly = True
     End Sub
 
     Public Sub Roll12()
@@ -2392,6 +2991,8 @@ Public Class MPInventario
         TxtNRoll12.ReadOnly = True
         TxtObser12.Text = ""
         TxtObser12.ReadOnly = True
+        TxtEspesor12.Text = ""
+        TxtEspesor12.ReadOnly = True
     End Sub
 
     Public Sub Roll13()
@@ -2407,6 +3008,8 @@ Public Class MPInventario
         TxtNRoll13.ReadOnly = True
         TxtObser13.Text = ""
         TxtObser13.ReadOnly = True
+        TxtEspesor13.Text = ""
+        TxtEspesor13.ReadOnly = True
     End Sub
 
     Public Sub Roll14()
@@ -2422,6 +3025,8 @@ Public Class MPInventario
         TxtNRoll14.ReadOnly = True
         TxtObser14.Text = ""
         TxtObser14.ReadOnly = True
+        TxtEspesor14.Text = ""
+        TxtEspesor14.ReadOnly = True
     End Sub
 
     Public Sub Roll15()
@@ -2437,6 +3042,8 @@ Public Class MPInventario
         TxtNRoll15.ReadOnly = True
         TxtObser15.Text = ""
         TxtObser15.ReadOnly = True
+        TxtEspesor15.Text = ""
+        TxtEspesor15.ReadOnly = True
     End Sub
 
     Public Sub Roll16()
@@ -2452,6 +3059,8 @@ Public Class MPInventario
         TxtNRoll16.ReadOnly = True
         TxtObser16.Text = ""
         TxtObser16.ReadOnly = True
+        TxtEspesor16.Text = ""
+        TxtEspesor16.ReadOnly = True
     End Sub
 
     Public Sub Roll17()
@@ -2467,6 +3076,8 @@ Public Class MPInventario
         TxtNRoll17.ReadOnly = True
         TxtObser17.Text = ""
         TxtObser17.ReadOnly = True
+        TxtEspesor17.Text = ""
+        TxtEspesor17.ReadOnly = True
     End Sub
 
     Public Sub Roll18()
@@ -2482,6 +3093,8 @@ Public Class MPInventario
         TxtNRoll18.ReadOnly = True
         TxtObser18.Text = ""
         TxtObser18.ReadOnly = True
+        TxtEspesor18.Text = ""
+        TxtEspesor18.ReadOnly = True
     End Sub
 
     Public Sub Roll19()
@@ -2497,6 +3110,8 @@ Public Class MPInventario
         TxtNRoll19.ReadOnly = True
         TxtObser19.Text = ""
         TxtObser19.ReadOnly = True
+        TxtEspesor19.Text = ""
+        TxtEspesor19.ReadOnly = True
     End Sub
 
     Public Sub Roll20()
@@ -2512,6 +3127,8 @@ Public Class MPInventario
         TxtNRoll20.ReadOnly = True
         TxtObser20.Text = ""
         TxtObser20.ReadOnly = True
+        TxtEspesor20.Text = ""
+        TxtEspesor20.ReadOnly = True
     End Sub
 
 
@@ -2528,6 +3145,92 @@ Public Class MPInventario
         Arrastre = False
     End Sub
 
+    Private Sub DGVCA_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVCA.CellContentClick
+        Dim Calibre As String
+        Dim Row As DataGridViewRow = DGVCA.Rows(e.RowIndex)
+
+        If LC.Text = "1" Then
+            Calibre = Row.Cells(1).Value
+            TxtCalibre1.Text = Calibre
+
+        ElseIf LC.Text = "2" Then
+            Calibre = Row.Cells(1).Value
+            TxtCalibre2.Text = Calibre
+
+        ElseIf LC.Text = "3" Then
+            Calibre = Row.Cells(1).Value
+            TxtCalibre3.Text = Calibre
+
+        ElseIf LC.Text = "4" Then
+            Calibre = Row.Cells(1).Value
+            TxtCalibre4.Text = Calibre
+
+        ElseIf LC.Text = "5" Then
+            Calibre = Row.Cells(1).Value
+            TxtCalibre5.Text = Calibre
+
+        ElseIf LC.Text = "6" Then
+            Calibre = Row.Cells(1).Value
+            TxtCalibre6.Text = Calibre
+
+        ElseIf LC.Text = "7" Then
+            Calibre = Row.Cells(1).Value
+            TxtCalibre7.Text = Calibre
+
+        ElseIf LC.Text = "8" Then
+            Calibre = Row.Cells(1).Value
+            TxtCalibre8.Text = Calibre
+
+        ElseIf LC.Text = "9" Then
+            Calibre = Row.Cells(1).Value
+            TxtCalibre9.Text = Calibre
+
+        ElseIf LC.Text = "10" Then
+            Calibre = Row.Cells(1).Value
+            TxtCalibre10.Text = Calibre
+
+        ElseIf LC.Text = "11" Then
+            Calibre = Row.Cells(1).Value
+            TxtCalibre11.Text = Calibre
+
+        ElseIf LC.Text = "12" Then
+            Calibre = Row.Cells(1).Value
+            TxtCalibre12.Text = Calibre
+
+        ElseIf LC.Text = "13" Then
+            Calibre = Row.Cells(1).Value
+            TxtCalibre13.Text = Calibre
+
+        ElseIf LC.Text = "14" Then
+            Calibre = Row.Cells(1).Value
+            TxtCalibre14.Text = Calibre
+
+        ElseIf LC.Text = "15" Then
+            Calibre = Row.Cells(1).Value
+            TxtCalibre15.Text = Calibre
+
+        ElseIf LC.Text = "16" Then
+            Calibre = Row.Cells(1).Value
+            TxtCalibre16.Text = Calibre
+
+        ElseIf LC.Text = "17" Then
+            Calibre = Row.Cells(1).Value
+            TxtCalibre17.Text = Calibre
+
+        ElseIf LC.Text = "18" Then
+            Calibre = Row.Cells(1).Value
+            TxtCalibre18.Text = Calibre
+
+        ElseIf LC.Text = "19" Then
+            Calibre = Row.Cells(1).Value
+            TxtCalibre19.Text = Calibre
+
+        ElseIf LC.Text = "20" Then
+            Calibre = Row.Cells(1).Value
+            TxtCalibre20.Text = Calibre
+        End If
+        PCalibres.Visible = False
+    End Sub
 
     Private Sub Form1_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles MyBase.MouseMove
         If Arrastre Then Me.Location = Me.PointToScreen(New Point(MousePosition.X - Me.Location.X - ex, MousePosition.Y - Me.Location.Y - ey))
