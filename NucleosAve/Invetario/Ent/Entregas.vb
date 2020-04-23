@@ -591,7 +591,7 @@ Public Class Entregas
                                                 Clave_Producto  LIKE '%'+@Busqueda+'%' OR
                                                 Codigo_Barras LIKE '%'+@Busqueda+'%') AND
 									            Existencia > 0 AND
-                                                Nombre_Producto NOT LIKE '%EPP%' AND
+                                                Nombre_Producto NOT LIKE '%Zapato%' AND
 
                                         ORDER BY Nombre_Producto ASC"
 

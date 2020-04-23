@@ -1,4 +1,6 @@
 ﻿Imports System.Data.SqlClient
+Imports System.Web.Mail
+
 
 Public Class ODC
     Dim Conex As New SqlConnection(My.Settings.Conexxx)
@@ -1910,340 +1912,232 @@ Public Class ODC
             Dim cE1, cE2, cE3, cE4, cE5, cE6, cE7, cE8, cE9, cE10, cE11, cE12, cE13, cE14, cE15, cE16, cE17, cE18, cE19, cE20 As String
             Dim c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12, c13, c14, c15, c16, c17, c18, c19, c20 As String
             ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
-            If CEntra1.Text = "" Or CEnt1.Text = "" Or Producto1.Text = "" Then
-                P1 = Nothing
-                c1 = Nothing
-                cE1 = Nothing
+
+            If TxtAP1.Text = "" Then
+                P1 = Producto1.Text
+                c1 = CEntra1.Text
+                cE1 = CantidadS1.Text & " " & LUM1.Text
             Else
-                If TxtAP1.Text = "" Then
-                    P1 = Producto1.Text
-                    c1 = CEntra1.Text
-                    cE1 = CEnt1.Text & " " & LUM1.Text
-                Else
-                    P1 = TxtAP1.Text
-                    c1 = CEntra1.Text
-                    cE1 = CEnt1.Text & " " & LUM1.Text
-                End If
-            End If
-            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
-            If CEntra2.Text = "" Or CEnt2.Text = "" Or Producto2.Text = "" Then
-                P2 = Nothing
-                c2 = Nothing
-                cE2 = Nothing
-            Else
-                If TxtAP2.Text = "" Then
-                    P2 = Producto2.Text
-                    c2 = CEntra2.Text
-                    cE2 = CEnt2.Text & " " & LUM2.Text
-                Else
-                    P2 = TxtAP2.Text
-                    c2 = CEntra2.Text
-                    cE2 = CEnt2.Text & " " & LUM2.Text
-                End If
-            End If
-            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
-            If CEntra3.Text = "" Or CEnt3.Text = "" Or Producto3.Text = "" Then
-                P3 = Nothing
-                c3 = Nothing
-                cE3 = Nothing
-            Else
-                If TxtAP3.Text = "" Then
-                    P3 = Producto3.Text
-                    c3 = CEntra3.Text
-                    cE3 = CEnt3.Text & " " & LUM3.Text
-                Else
-                    P3 = TxtAP3.Text
-                    c3 = CEntra3.Text
-                    cE3 = CEnt3.Text & " " & LUM3.Text
-                End If
-            End If
-            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
-            If CEntra4.Text = "" Or CEnt4.Text = "" Or Producto4.Text = "" Then
-                P4 = Nothing
-                c4 = Nothing
-                cE4 = Nothing
-            Else
-                If TxtAP4.Text = "" Then
-                    P4 = Producto4.Text
-                    c4 = CEntra4.Text
-                    cE4 = CEnt4.Text & " " & LUM4.Text
-                Else
-                    P4 = TxtAP4.Text
-                    c4 = CEntra4.Text
-                    cE4 = CEnt4.Text & " " & LUM4.Text
-                End If
-            End If
-            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
-            If CEntra5.Text = "" Or CEnt5.Text = "" Or Producto5.Text = "" Then
-                P5 = Nothing
-                c5 = Nothing
-                cE5 = Nothing
-            Else
-                If TxtAP5.Text = "" Then
-                    P5 = Producto5.Text
-                    c5 = CEntra5.Text
-                    cE5 = CEnt5.Text & " " & LUM5.Text
-                Else
-                    P5 = TxtAP5.Text
-                    c5 = CEntra5.Text
-                    cE5 = CEnt5.Text & " " & LUM5.Text
-                End If
-            End If
-            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
-            If CEntra6.Text = "" Or CEnt6.Text = "" Or Producto6.Text = "" Then
-                P6 = Nothing
-                c6 = Nothing
-                cE6 = Nothing
-            Else
-                If TxtAP6.Text = "" Then
-                    P6 = Producto6.Text
-                    c6 = CEntra6.Text
-                    cE6 = CEnt6.Text & " " & LUM6.Text
-                Else
-                    P6 = TxtAP6.Text
-                    c6 = CEntra6.Text
-                    cE6 = CEnt6.Text & " " & LUM6.Text
-                End If
-            End If
-            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
-            If CEntra7.Text = "" Or CEnt7.Text = "" Or Producto7.Text = "" Then
-                P7 = Nothing
-                c7 = Nothing
-                cE7 = Nothing
-            Else
-                If TxtAP7.Text = "" Then
-                    P7 = Producto7.Text
-                    c7 = CEntra7.Text
-                    cE7 = CEnt7.Text & " " & LUM7.Text
-                Else
-                    P7 = TxtAP7.Text
-                    c7 = CEntra7.Text
-                    cE7 = CEnt7.Text & " " & LUM7.Text
-                End If
-            End If
-            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
-            If CEntra8.Text = "" Or CEnt8.Text = "" Or Producto8.Text = "" Then
-                P8 = Nothing
-                c8 = Nothing
-                cE8 = Nothing
-            Else
-                If TxtAP8.Text = "" Then
-                    P8 = Producto8.Text
-                    c8 = CEntra8.Text
-                    cE8 = CEnt8.Text & " " & LUM8.Text
-                Else
-                    P8 = TxtAP8.Text
-                    c8 = CEntra8.Text
-                    cE8 = CEnt8.Text & " " & LUM8.Text
-                End If
-            End If
-            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
-            If CEntra9.Text = "" Or CEnt9.Text = "" Or Producto9.Text = "" Then
-                P9 = Nothing
-                c9 = Nothing
-                cE9 = Nothing
-            Else
-                If TxtAP9.Text = "" Then
-                    P9 = Producto9.Text
-                    c9 = CEntra9.Text
-                    cE9 = CEnt9.Text & " " & LUM9.Text
-                Else
-                    P9 = TxtAP9.Text
-                    c9 = CEntra9.Text
-                    cE9 = CEnt9.Text & " " & LUM9.Text
-                End If
-            End If
-            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
-            If CEntra10.Text = "" Or CEnt10.Text = "" Or Producto10.Text = "" Then
-                P10 = Nothing
-                c10 = Nothing
-                cE10 = Nothing
-            Else
-                If TxtAP10.Text = "" Then
-                    P10 = Producto10.Text
-                    c10 = CEntra10.Text
-                    cE10 = CEnt10.Text & " " & LUM10.Text
-                Else
-                    P10 = TxtAP10.Text
-                    c10 = CEntra10.Text
-                    cE10 = CEnt10.Text & " " & LUM10.Text
-                End If
-            End If
-            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
-            If CEntra11.Text = "" Or CEnt11.Text = "" Or Producto11.Text = "" Then
-                P11 = Nothing
-                c11 = Nothing
-                cE11 = Nothing
-            Else
-                If TxtAP11.Text = "" Then
-                    P11 = Producto11.Text
-                    c11 = CEntra11.Text
-                    cE11 = CEnt11.Text & " " & LUM11.Text
-                Else
-                    P11 = TxtAP11.Text
-                    c11 = CEntra11.Text
-                    cE11 = CEnt11.Text & " " & LUM11.Text
-                End If
-            End If
-            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
-            If CEntra12.Text = "" Or CEnt12.Text = "" Or Producto12.Text = "" Then
-                P12 = Nothing
-                c12 = Nothing
-                cE12 = Nothing
-            Else
-                If TxtAP12.Text = "" Then
-                    P12 = Producto12.Text
-                    c12 = CEntra12.Text
-                    cE12 = CEnt12.Text & " " & LUM12.Text
-                Else
-                    P12 = TxtAP12.Text
-                    c12 = CEntra12.Text
-                    cE12 = CEnt12.Text & " " & LUM12.Text
-                End If
-            End If
-            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
-            If CEntra13.Text = "" Or CEnt13.Text = "" Or Producto13.Text = "" Then
-                P13 = Nothing
-                c13 = Nothing
-                cE13 = Nothing
-            Else
-                If TxtAP13.Text = "" Then
-                    P13 = Producto13.Text
-                    c13 = CEntra13.Text
-                    cE13 = CEnt13.Text & " " & LUM13.Text
-                Else
-                    P13 = TxtAP13.Text
-                    c13 = CEntra13.Text
-                    cE13 = CEnt13.Text & " " & LUM13.Text
-                End If
-            End If
-            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
-            If CEntra14.Text = "" Or CEnt14.Text = "" Or Producto14.Text = "" Then
-                P14 = Nothing
-                c14 = Nothing
-                cE14 = Nothing
-            Else
-                If TxtAP14.Text = "" Then
-                    P14 = Producto14.Text
-                    c14 = CEntra14.Text
-                    cE14 = CEnt14.Text & " " & LUM14.Text
-                Else
-                    P14 = TxtAP14.Text
-                    c14 = CEntra14.Text
-                    cE14 = CEnt14.Text & " " & LUM14.Text
-                End If
-            End If
-            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
-            If CEntra15.Text = "" Or CEnt15.Text = "" Or Producto15.Text = "" Then
-                P15 = Nothing
-                c15 = Nothing
-                cE15 = Nothing
-            Else
-                If TxtAP15.Text = "" Then
-                    P15 = Producto15.Text
-                    c15 = CEntra15.Text
-                    cE15 = CEnt15.Text & " " & LUM15.Text
-                Else
-                    P15 = TxtAP15.Text
-                    c15 = CEntra15.Text
-                    cE15 = CEnt15.Text & " " & LUM15.Text
-                End If
-            End If
-            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
-            If CEntra16.Text = "" Or CEnt16.Text = "" Or Producto16.Text = "" Then
-                P16 = Nothing
-                c16 = Nothing
-                cE16 = Nothing
-            Else
-                If TxtAP16.Text = "" Then
-                    P16 = Producto16.Text
-                    c16 = CEntra16.Text
-                    cE16 = CEnt16.Text & " " & LUM16.Text
-                Else
-                    P16 = TxtAP16.Text
-                    c16 = CEntra16.Text
-                    cE16 = CEnt16.Text & " " & LUM16.Text
-                End If
-            End If
-            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
-            If CEntra17.Text = "" Or CEnt17.Text = "" Or Producto17.Text = "" Then
-                P17 = Nothing
-                c17 = Nothing
-                cE17 = Nothing
-            Else
-                If TxtAP17.Text = "" Then
-                    P17 = Producto17.Text
-                    c17 = CEntra17.Text
-                    cE17 = CEnt17.Text & " " & LUM17.Text
-                Else
-                    P17 = TxtAP17.Text
-                    c17 = CEntra17.Text
-                    cE17 = CEnt17.Text & " " & LUM17.Text
-                End If
-            End If
-            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
-            If CEntra18.Text = "" Or CEnt18.Text = "" Or Producto18.Text = "" Then
-                P18 = Nothing
-                c18 = Nothing
-                cE18 = Nothing
-            Else
-                If TxtAP18.Text = "" Then
-                    P18 = Producto18.Text
-                    c18 = CEntra18.Text
-                    cE18 = CEnt18.Text & " " & LUM18.Text
-                Else
-                    P18 = TxtAP18.Text
-                    c18 = CEntra18.Text
-                    cE18 = CEnt18.Text & " " & LUM18.Text
-                End If
-            End If
-            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
-            If CEntra19.Text = "" Or CEnt19.Text = "" Or Producto19.Text = "" Then
-                P19 = Nothing
-                c19 = Nothing
-                cE19 = Nothing
-            Else
-                If TxtAP19.Text = "" Then
-                    P19 = Producto19.Text
-                    c19 = CEntra19.Text
-                    cE19 = CEnt19.Text & " " & LUM19.Text
-                Else
-                    P19 = TxtAP19.Text
-                    c19 = CEntra19.Text
-                    cE19 = CEnt19.Text & " " & LUM19.Text
-                End If
-            End If
-            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
-            If CEntra20.Text = "" Or CEnt20.Text = "" Or Producto20.Text = "" Then
-                P20 = Nothing
-                c20 = Nothing
-                cE20 = Nothing
-            Else
-                If TxtAP20.Text = "" Then
-                    P20 = Producto20.Text
-                    c20 = CEntra20.Text
-                    cE20 = CEnt20.Text & " " & LUM20.Text
-                Else
-                    P20 = TxtAP20.Text
-                    c20 = CEntra20.Text
-                    cE20 = CEnt20.Text & " " & LUM20.Text
-                End If
+                P1 = TxtAP1.Text
+                c1 = CEntra1.Text
+                cE1 = CantidadS1.Text & " " & LUM1.Text
             End If
             ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
 
+            If TxtAP2.Text = "" Then
+                    P2 = Producto2.Text
+                    c2 = CEntra2.Text
+                    cE2 = CantidadS2.Text & " " & LUM2.Text
+                Else
+                    P2 = TxtAP2.Text
+                    c2 = CEntra2.Text
+                    cE2 = CantidadS2.Text & " " & LUM2.Text
+                End If
+
+            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
+
+            If TxtAP3.Text = "" Then
+                    P3 = Producto3.Text
+                    c3 = CEntra3.Text
+                    cE3 = CantidadS3.Text & " " & LUM3.Text
+                Else
+                    P3 = TxtAP3.Text
+                    c3 = CEntra3.Text
+                    cE3 = CantidadS3.Text & " " & LUM3.Text
+                End If
+            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
+
+            If TxtAP4.Text = "" Then
+                P4 = Producto4.Text
+                c4 = CEntra4.Text
+                cE4 = CantidadS4.Text & " " & LUM4.Text
+            Else
+                P4 = TxtAP4.Text
+                c4 = CEntra4.Text
+                cE4 = CantidadS4.Text & " " & LUM4.Text
+            End If
+            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
+
+            If TxtAP5.Text = "" Then
+                P5 = Producto5.Text
+                c5 = CEntra5.Text
+                cE5 = CantidadS5.Text & " " & LUM5.Text
+            Else
+                P5 = TxtAP5.Text
+                c5 = CEntra5.Text
+                cE5 = CantidadS5.Text & " " & LUM5.Text
+            End If
+            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
+
+            If TxtAP6.Text = "" Then
+                P6 = Producto6.Text
+                c6 = CEntra6.Text
+                cE6 = CantidadS6.Text & " " & LUM6.Text
+            Else
+                P6 = TxtAP6.Text
+                c6 = CEntra6.Text
+                cE6 = CantidadS6.Text & " " & LUM6.Text
+            End If
+            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
+
+            If TxtAP7.Text = "" Then
+                P7 = Producto7.Text
+                c7 = CEntra7.Text
+                cE7 = CantidadS7.Text & " " & LUM7.Text
+            Else
+                P7 = TxtAP7.Text
+                c7 = CEntra7.Text
+                cE7 = CantidadS7.Text & " " & LUM7.Text
+            End If
+            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
+            If TxtAP8.Text = "" Then
+                P8 = Producto8.Text
+                c8 = CEntra8.Text
+                cE8 = CantidadS8.Text & " " & LUM8.Text
+            Else
+                P8 = TxtAP8.Text
+                c8 = CEntra8.Text
+                cE8 = CantidadS8.Text & " " & LUM8.Text
+            End If
+            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
+
+            If TxtAP9.Text = "" Then
+                P9 = Producto9.Text
+                c9 = CEntra9.Text
+                cE9 = CantidadS9.Text & " " & LUM9.Text
+            Else
+                P9 = TxtAP9.Text
+                c9 = CEntra9.Text
+                cE9 = CantidadS9.Text & " " & LUM9.Text
+            End If
+            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
+
+            If TxtAP10.Text = "" Then
+                P10 = Producto10.Text
+                c10 = CEntra10.Text
+                cE10 = CantidadS10.Text & " " & LUM10.Text
+            Else
+                P10 = TxtAP10.Text
+                c10 = CEntra10.Text
+                cE10 = CantidadS10.Text & " " & LUM10.Text
+            End If
+            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
+            If TxtAP11.Text = "" Then
+                P11 = Producto11.Text
+                c11 = CEntra11.Text
+                cE11 = CantidadS11.Text & " " & LUM11.Text
+            Else
+                P11 = TxtAP11.Text
+                c11 = CEntra11.Text
+                cE11 = CantidadS11.Text & " " & LUM11.Text
+            End If
+            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
+            If TxtAP12.Text = "" Then
+                P12 = Producto12.Text
+                c12 = CEntra12.Text
+                cE12 = CantidadS12.Text & " " & LUM12.Text
+            Else
+                P12 = TxtAP12.Text
+                c12 = CEntra12.Text
+                cE12 = CantidadS12.Text & " " & LUM12.Text
+            End If
+            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
+            If TxtAP13.Text = "" Then
+                P13 = Producto13.Text
+                c13 = CEntra13.Text
+                cE13 = CantidadS13.Text & " " & LUM13.Text
+            Else
+                P13 = TxtAP13.Text
+                c13 = CEntra13.Text
+                cE13 = CantidadS13.Text & " " & LUM13.Text
+            End If
+            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
+            If TxtAP14.Text = "" Then
+                P14 = Producto14.Text
+                c14 = CEntra14.Text
+                cE14 = CantidadS14.Text & " " & LUM14.Text
+            Else
+                P14 = TxtAP14.Text
+                c14 = CEntra14.Text
+                cE14 = CantidadS14.Text & " " & LUM14.Text
+            End If
+            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
+            If TxtAP15.Text = "" Then
+                P15 = Producto15.Text
+                c15 = CEntra15.Text
+                cE15 = CantidadS15.Text & " " & LUM15.Text
+            Else
+                P15 = TxtAP15.Text
+                c15 = CEntra15.Text
+                cE15 = CantidadS15.Text & " " & LUM15.Text
+            End If
+            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
+            If TxtAP16.Text = "" Then
+                P16 = Producto16.Text
+                c16 = CEntra16.Text
+                cE16 = CantidadS16.Text & " " & LUM16.Text
+            Else
+                P16 = TxtAP16.Text
+                c16 = CEntra16.Text
+                cE16 = CantidadS16.Text & " " & LUM16.Text
+            End If
+            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
+            If TxtAP17.Text = "" Then
+                P17 = Producto17.Text
+                c17 = CEntra17.Text
+                cE17 = CantidadS17.Text & " " & LUM17.Text
+            Else
+                P17 = TxtAP17.Text
+                c17 = CEntra17.Text
+                cE17 = CantidadS17.Text & " " & LUM17.Text
+            End If
+            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
+            If TxtAP18.Text = "" Then
+                P18 = Producto18.Text
+                c18 = CEntra18.Text
+                cE18 = CantidadS18.Text & " " & LUM18.Text
+            Else
+                P18 = TxtAP18.Text
+                c18 = CEntra18.Text
+                cE18 = CantidadS18.Text & " " & LUM18.Text
+            End If
+            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
+            If TxtAP19.Text = "" Then
+                P19 = Producto19.Text
+                c19 = CEntra19.Text
+                cE19 = CantidadS19.Text & " " & LUM19.Text
+            Else
+                P19 = TxtAP19.Text
+                c19 = CEntra19.Text
+                cE19 = CantidadS19.Text & " " & LUM19.Text
+            End If
+            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
+            If TxtAP20.Text = "" Then
+                P20 = Producto20.Text
+                c20 = CEntra20.Text
+                cE20 = CantidadS20.Text & " " & LUM20.Text
+            Else
+                P20 = TxtAP20.Text
+                c20 = CEntra20.Text
+                cE20 = CantidadS20.Text & " " & LUM20.Text
+            End If
+            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
+
+            Dim Oc As String = OCompra.Text
+            Dim Pr As String = LProv.Text
             With smtp
-                .Port = 25
-                .Host = ""
-                .Credentials = New System.Net.NetworkCredential("", "")
+                .Port = 26
+                .Host = "mail.nucleosave.com.mx"
+                .Credentials = New System.Net.NetworkCredential("Sistemas01@nucleosave.com.mx", "Sistemas01")
                 .EnableSsl = False
             End With
             With correo
-                .From = New System.Net.Mail.MailAddress("")
-                .To.Add("")
-                .Subject = "Orden de Compra" & OCompra.Text
-                .Body = "<img src ='\\ANTUA-PC\Servidor_de_Archivos\Imagenes\logo_correo\logo.png'>" & "<p align='right'>Orden de Compra : " & OCompra.Text & "</p><br />" &
+                .From = New System.Net.Mail.MailAddress("Sistemas01@nucleosave.com.mx")
+                .To.Add("Sistemas01@nucleosave.com.mx")
+                .Subject = "Orden de Compra: " & Oc
+                .Body = "<p align='right'>Orden de Compra : " & OCompra.Text & "</p><br />" &
                         "Fecha: " & Fecha & "<br />" &
-                        "Proveedor: " & LProv.Text & "<br />" &
+                        "Proveedor: " & Pr & "<br />" &
                         "Los Productos de la Orden de Compra son los Siguientes" & "<br />" &
                             "<center><p>Listado de Productos:</p></center>" &
                             "<center><table  border= " & 1 & " >
@@ -2254,65 +2148,65 @@ Public Class ODC
                             </tr> 
                             <tr ALIGN=CENTER>" &
                                     "<td>" & P1 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & c1 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & cE1 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
+                                        "<td style='text-align: center;'>" & cE1 & "&nbsp;&nbsp;</td>" &
+                                        "<td style='text-align: center;'>" & c1 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
                                     "<td>" & P2 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & c2 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & cE2 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
+                                        "<td style='text-align: center;'>" & cE2 & "&nbsp;&nbsp;</td>" &
+                                        "<td style='text-align: center;'>" & c2 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
                                     "<td>" & P3 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & c3 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & cE3 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
+                                        "<td style='text-align: center;'>" & cE3 & "&nbsp;&nbsp;</td>" &
+                                        "<td style='text-align: center;'>" & c3 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
                                     "<td>" & P4 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & c4 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & cE4 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
+                                        "<td style='text-align: center;'>" & cE4 & "&nbsp;&nbsp;</td>" &
+                                        "<td style='text-align: center;'>" & c4 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
                                     "<td>" & P5 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & c5 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & cE5 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
+                                        "<td style='text-align: center;'>" & cE5 & "&nbsp;&nbsp;</td>" &
+                                        "<td style='text-align: center;'>" & c5 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
                                     "<td>" & P6 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & c6 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & cE6 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
+                                        "<td style='text-align: center;'>" & cE6 & "&nbsp;&nbsp;</td>" &
+                                        "<td style='text-align: center;'>" & c6 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
                                     "<td>" & P7 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & c7 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & cE7 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
+                                        "<td style='text-align: center;'>" & cE7 & "&nbsp;&nbsp;</td>" &
+                                        "<td style='text-align: center;'>" & c7 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
                                     "<td>" & P8 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & c8 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & cE8 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
+                                        "<td style='text-align: center;'>" & cE8 & "&nbsp;&nbsp;</td>" &
+                                        "<td style='text-align: center;'>" & c8 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
                                     "<td>" & P9 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & c9 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & cE9 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
+                                        "<td style='text-align: center;'>" & cE9 & "&nbsp;&nbsp;</td>" &
+                                        "<td style='text-align: center;'>" & c9 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
                                     "<td>" & P10 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & c10 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & cE10 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
+                                        "<td style='text-align: center;'>" & cE10 & "&nbsp;&nbsp;</td>" &
+                                        "<td style='text-align: center;'>" & c10 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
                                     "<td>" & P11 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & c11 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & cE11 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
+                                        "<td style='text-align: center;'>" & cE11 & "&nbsp;&nbsp;</td>" &
+                                        "<td style='text-align: center;'>" & c11 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
                                     "<td>" & P12 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & c12 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & cE12 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
+                                        "<td style='text-align: center;'>" & cE12 & "&nbsp;&nbsp;</td>" &
+                                        "<td style='text-align: center;'>" & c12 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
                                     "<td>" & P13 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & c13 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & cE13 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
+                                        "<td style='text-align: center;'>" & cE13 & "&nbsp;&nbsp;</td>" &
+                                        "<td style='text-align: center;'>" & c13 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
                                     "<td>" & P14 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & c14 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & cE14 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
+                                        "<td style='text-align: center;'>" & cE14 & "&nbsp;&nbsp;</td>" &
+                                        "<td style='text-align: center;'>" & c14 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
                                     "<td>" & P15 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & c15 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & cE15 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
+                                        "<td style='text-align: center;'>" & cE15 & "&nbsp;&nbsp;</td>" &
+                                        "<td style='text-align: center;'>" & c15 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
                                     "<td>" & P16 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & c16 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & cE16 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
+                                        "<td style='text-align: center;'>" & cE16 & "&nbsp;&nbsp;</td>" &
+                                        "<td style='text-align: center;'>" & c16 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
                                     "<td>" & P17 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & c17 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & cE17 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
+                                        "<td style='text-align: center;'>" & cE17 & "&nbsp;&nbsp;</td>" &
+                                        "<td style='text-align: center;'>" & c17 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
                                     "<td>" & P18 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & c18 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & cE18 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
+                                        "<td style='text-align: center;'>" & cE18 & "&nbsp;&nbsp;</td>" &
+                                        "<td style='text-align: center;'>" & c18 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
                                     "<td>" & P19 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & c19 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & cE19 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
+                                        "<td style='text-align: center;'>" & cE19 & "&nbsp;&nbsp;</td>" &
+                                        "<td style='text-align: center;'>" & c19 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
                                     "<td>" & P20 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & c20 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & cE20 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>
+                                        "<td style='text-align: center;'>" & cE20 & "&nbsp;&nbsp;</td>" &
+                                        "<td style='text-align: center;'>" & c20 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>
                             </table></center>" &
                         "<font color='red'>Nota : Por favor de notificar si se esperan los productos faltantes</font>"
                 .IsBodyHtml = True

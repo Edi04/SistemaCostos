@@ -30,13 +30,16 @@ Partial Class MPHistorial
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MPHistorial))
         Me.BMinimizar = New System.Windows.Forms.Button()
         Me.BCerrar = New System.Windows.Forms.Button()
         Me.POpc = New System.Windows.Forms.Panel()
         Me.LCS = New System.Windows.Forms.Label()
         Me.LBOC = New System.Windows.Forms.Label()
         Me.GBusqueda = New System.Windows.Forms.GroupBox()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.BBOC1 = New System.Windows.Forms.Button()
+        Me.CFechas = New System.Windows.Forms.CheckBox()
+        Me.DTF2 = New System.Windows.Forms.DateTimePicker()
         Me.DTF1 = New System.Windows.Forms.DateTimePicker()
         Me.LEspecific = New System.Windows.Forms.Label()
         Me.PBusqueda = New System.Windows.Forms.PictureBox()
@@ -58,6 +61,7 @@ Partial Class MPHistorial
         Me.PBMPr = New System.Windows.Forms.Panel()
         Me.BPMPr = New System.Windows.Forms.PictureBox()
         Me.LPMMP = New System.Windows.Forms.Label()
+        Me.BHist = New System.Windows.Forms.Button()
         Me.POpc.SuspendLayout()
         Me.GBusqueda.SuspendLayout()
         CType(Me.PBusqueda, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -122,38 +126,61 @@ Partial Class MPHistorial
         '
         Me.GBusqueda.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.GBusqueda.BackColor = System.Drawing.Color.Transparent
-        Me.GBusqueda.Controls.Add(Me.Label1)
+        Me.GBusqueda.Controls.Add(Me.BBOC1)
+        Me.GBusqueda.Controls.Add(Me.CFechas)
+        Me.GBusqueda.Controls.Add(Me.DTF2)
         Me.GBusqueda.Controls.Add(Me.DTF1)
         Me.GBusqueda.Controls.Add(Me.LEspecific)
         Me.GBusqueda.Controls.Add(Me.PBusqueda)
         Me.GBusqueda.Controls.Add(Me.TxtBusqueda)
         Me.GBusqueda.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GBusqueda.ForeColor = System.Drawing.Color.Black
-        Me.GBusqueda.Location = New System.Drawing.Point(54, 106)
+        Me.GBusqueda.Location = New System.Drawing.Point(6, 106)
         Me.GBusqueda.Name = "GBusqueda"
-        Me.GBusqueda.Size = New System.Drawing.Size(938, 65)
+        Me.GBusqueda.Size = New System.Drawing.Size(1035, 81)
         Me.GBusqueda.TabIndex = 67
         Me.GBusqueda.TabStop = False
         Me.GBusqueda.Text = "Búsqueda"
         '
-        'Label1
+        'BBOC1
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(580, 9)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(111, 13)
-        Me.Label1.TabIndex = 72
-        Me.Label1.Text = "Fecha de Registro"
+        Me.BBOC1.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(254, Byte), Integer))
+        Me.BBOC1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.BBOC1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BBOC1.Location = New System.Drawing.Point(726, 56)
+        Me.BBOC1.Name = "BBOC1"
+        Me.BBOC1.Size = New System.Drawing.Size(75, 23)
+        Me.BBOC1.TabIndex = 75
+        Me.BBOC1.Text = "Buscar"
+        Me.BBOC1.UseVisualStyleBackColor = False
+        '
+        'CFechas
+        '
+        Me.CFechas.AutoSize = True
+        Me.CFechas.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CFechas.Location = New System.Drawing.Point(682, 9)
+        Me.CFechas.Name = "CFechas"
+        Me.CFechas.Size = New System.Drawing.Size(165, 22)
+        Me.CFechas.TabIndex = 74
+        Me.CFechas.Text = "Fecha de Registro"
+        Me.CFechas.UseVisualStyleBackColor = True
+        '
+        'DTF2
+        '
+        Me.DTF2.CalendarFont = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DTF2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DTF2.Location = New System.Drawing.Point(764, 34)
+        Me.DTF2.Name = "DTF2"
+        Me.DTF2.Size = New System.Drawing.Size(262, 21)
+        Me.DTF2.TabIndex = 73
         '
         'DTF1
         '
         Me.DTF1.CalendarFont = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DTF1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DTF1.Location = New System.Drawing.Point(566, 26)
+        Me.DTF1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DTF1.Location = New System.Drawing.Point(491, 34)
         Me.DTF1.Name = "DTF1"
-        Me.DTF1.Size = New System.Drawing.Size(290, 24)
+        Me.DTF1.Size = New System.Drawing.Size(267, 21)
         Me.DTF1.TabIndex = 71
         '
         'LEspecific
@@ -169,7 +196,7 @@ Partial Class MPHistorial
         'PBusqueda
         '
         Me.PBusqueda.Image = Global.NucleosAve.My.Resources.Resources.file_1911
-        Me.PBusqueda.Location = New System.Drawing.Point(501, 21)
+        Me.PBusqueda.Location = New System.Drawing.Point(428, 25)
         Me.PBusqueda.Name = "PBusqueda"
         Me.PBusqueda.Size = New System.Drawing.Size(34, 37)
         Me.PBusqueda.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -184,7 +211,7 @@ Partial Class MPHistorial
         Me.TxtBusqueda.Location = New System.Drawing.Point(22, 26)
         Me.TxtBusqueda.Multiline = True
         Me.TxtBusqueda.Name = "TxtBusqueda"
-        Me.TxtBusqueda.Size = New System.Drawing.Size(469, 31)
+        Me.TxtBusqueda.Size = New System.Drawing.Size(400, 31)
         Me.TxtBusqueda.TabIndex = 0
         Me.TxtBusqueda.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.TxtBusqueda.WordWrap = False
@@ -339,12 +366,25 @@ Partial Class MPHistorial
         Me.LPMMP.TabIndex = 36
         Me.LPMMP.Text = "Ingresar" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Material"
         '
+        'BHist
+        '
+        Me.BHist.BackColor = System.Drawing.Color.Transparent
+        Me.BHist.BackgroundImage = CType(resources.GetObject("BHist.BackgroundImage"), System.Drawing.Image)
+        Me.BHist.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.BHist.Location = New System.Drawing.Point(70, 1)
+        Me.BHist.Name = "BHist"
+        Me.BHist.Size = New System.Drawing.Size(50, 50)
+        Me.BHist.TabIndex = 70
+        Me.BHist.UseVisualStyleBackColor = False
+        Me.BHist.Visible = False
+        '
         'MPHistorial
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.NucleosAve.My.Resources.Resources.Fondo
         Me.ClientSize = New System.Drawing.Size(1044, 586)
+        Me.Controls.Add(Me.BHist)
         Me.Controls.Add(Me.PBMPr)
         Me.Controls.Add(Me.DGHR)
         Me.Controls.Add(Me.GBusqueda)
@@ -380,7 +420,6 @@ Partial Class MPHistorial
     Friend WithEvents PBusqueda As PictureBox
     Friend WithEvents TxtBusqueda As TextBox
     Friend WithEvents DGHR As DataGridView
-    Friend WithEvents Label1 As Label
     Friend WithEvents DTF1 As DateTimePicker
     Friend WithEvents ID As DataGridViewLinkColumn
     Friend WithEvents OCompra As DataGridViewTextBoxColumn
@@ -398,4 +437,8 @@ Partial Class MPHistorial
     Friend WithEvents PBMPr As Panel
     Friend WithEvents BPMPr As PictureBox
     Friend WithEvents LPMMP As Label
+    Friend WithEvents BHist As Button
+    Friend WithEvents CFechas As CheckBox
+    Friend WithEvents DTF2 As DateTimePicker
+    Friend WithEvents BBOC1 As Button
 End Class
