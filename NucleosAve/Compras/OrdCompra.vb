@@ -3879,8 +3879,8 @@ Public Class OrdCompra
         End With
         With correo
             .From = New System.Net.Mail.MailAddress("Sistemas01@nucleosave.com.mx")
-            .To.Add("Sistemas01@nucleosave.com.mx")
-            .Subject = "Orden de Compra" & TextCodigo.Text
+            .To.Add("javier@nucleosave.com.mx")
+            .Subject = "Urgente Ordenes de Compra" & TextCodigo.Text
             .Body = "<img src ='\\ANTUA-PC\Servidor_de_Archivos\Imagenes\logo_correo\logo.png'>" & "<p align='right'>Orden de Compra : " & TextCodigo.Text & "</p><br />" &
                     "Fecha: " & DateFechaOrden.Value.Date & "<br />" &
                     "Proveedor: " & ComboBoxProveedores.Text & "<br />" &
@@ -3931,7 +3931,7 @@ Public Class OrdCompra
                     "<td style='text-align: center;'>" & c19 & "&nbsp;&nbsp;</td></tr><tr>" &
                      "<td>" & P20 & "&nbsp;&nbsp;</td>" &
                     "<td style='text-align: center;'>" & c20 & "&nbsp;&nbsp;</td></tr><tr></table></center>" &
-            "<font color='red'>Nota : Por Favor visite el sistema de ordenes de compra para más detalles e introduzca el codigó de la orden que ha recibido</font>"
+            "<font color='red'>Nota : Por Favor visite el sistema de ordenes de compra para más detalles e introduzca el codigó de la orden que ha recibido, seleccione apruebe o desapruebe esta orden</font>"
             .IsBodyHtml = True
             .Priority = System.Net.Mail.MailPriority.Normal
         End With
