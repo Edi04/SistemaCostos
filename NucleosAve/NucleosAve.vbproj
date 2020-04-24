@@ -103,6 +103,11 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\IDAutomation.LinearBarCode.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1400.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
     </Reference>
@@ -273,6 +278,12 @@
     <Compile Include="Invetario\DetalleProductos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Invetario\Ent\EntregaEPP.Designer.vb">
+      <DependentUpon>EntregaEPP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Invetario\Ent\EntregaEPP.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Invetario\Ent\Entregas.designer.vb">
       <DependentUpon>Entregas.vb</DependentUpon>
     </Compile>
@@ -340,6 +351,12 @@
     <Compile Include="Invetario\Tickets.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Mass\EntregasEPP.Designer.vb">
+      <DependentUpon>EntregasEPP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mass\EntregasEPP.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Mass\HistorialM.Designer.vb">
       <DependentUpon>HistorialM.vb</DependentUpon>
     </Compile>
@@ -350,12 +367,6 @@
       <DependentUpon>MInventario.vb</DependentUpon>
     </Compile>
     <Compile Include="Mass\MInventario.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Mass\NMMarca.Designer.vb">
-      <DependentUpon>NMMarca.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Mass\NMMarca.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="mostrarTrasportes.Designer.vb">
@@ -591,6 +602,9 @@
     <EmbeddedResource Include="Invetario\DetalleProductos.resx">
       <DependentUpon>DetalleProductos.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Invetario\Ent\EntregaEPP.resx">
+      <DependentUpon>EntregaEPP.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Invetario\Ent\Entregas.resx">
       <DependentUpon>Entregas.vb</DependentUpon>
     </EmbeddedResource>
@@ -624,14 +638,14 @@
     <EmbeddedResource Include="Invetario\Tickets.resx">
       <DependentUpon>Tickets.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mass\EntregasEPP.resx">
+      <DependentUpon>EntregasEPP.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mass\HistorialM.resx">
       <DependentUpon>HistorialM.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mass\MInventario.resx">
       <DependentUpon>MInventario.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Mass\NMMarca.resx">
-      <DependentUpon>NMMarca.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MPrima\MPHistorial.resx">
       <DependentUpon>MPHistorial.vb</DependentUpon>
