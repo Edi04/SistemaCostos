@@ -27,9 +27,9 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>45</ApplicationRevision>
+    <ApplicationRevision>46</ApplicationRevision>
     <ApplicationVersion>1.3.3.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -273,6 +273,12 @@
     <Compile Include="Invetario\DetalleProductos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Invetario\Ent\EntregaEPP.Designer.vb">
+      <DependentUpon>EntregaEPP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Invetario\Ent\EntregaEPP.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Invetario\Ent\Entregas.designer.vb">
       <DependentUpon>Entregas.vb</DependentUpon>
     </Compile>
@@ -350,12 +356,6 @@
       <DependentUpon>MInventario.vb</DependentUpon>
     </Compile>
     <Compile Include="Mass\MInventario.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Mass\NMMarca.Designer.vb">
-      <DependentUpon>NMMarca.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Mass\NMMarca.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="mostrarTrasportes.Designer.vb">
@@ -591,6 +591,9 @@
     <EmbeddedResource Include="Invetario\DetalleProductos.resx">
       <DependentUpon>DetalleProductos.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Invetario\Ent\EntregaEPP.resx">
+      <DependentUpon>EntregaEPP.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Invetario\Ent\Entregas.resx">
       <DependentUpon>Entregas.vb</DependentUpon>
     </EmbeddedResource>
@@ -629,9 +632,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mass\MInventario.resx">
       <DependentUpon>MInventario.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Mass\NMMarca.resx">
-      <DependentUpon>NMMarca.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MPrima\MPHistorial.resx">
       <DependentUpon>MPHistorial.vb</DependentUpon>
@@ -900,6 +900,10 @@
     <None Include="Resources\icons8-ingeniero-128.png" />
     <None Include="Resources\icons8-foul-64.png" />
     <None Include="Resources\icons8-equipo-de-paracaidismo-64.png" />
+    <None Include="Resources\icons8-order-history-64.png" />
+    <None Include="Resources\icons8-warehouse-80.png" />
+    <None Include="Resources\icons8-ok-480.png" />
+    <None Include="Resources\icons8-cancel-480.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">

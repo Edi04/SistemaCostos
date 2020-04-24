@@ -40,7 +40,7 @@ Public Class InicioSesion
                         Index.PMass.Visible = True
                         Index.PPedidos.Visible = True
                         Index.PMaPrima.Visible = True
-                        Index.Panel1.Visible = True
+                        Index.Parh.Visible = True
                         Index.PA_R.Visible = True
                         Index.PSCRAP.Visible = True
                         Index.PProcesos.Visible = True
@@ -49,8 +49,16 @@ Public Class InicioSesion
                         'Almacen
                     ElseIf Proceso(CUsuarios.Text) = 43 Then
                         Index.PAlmacen.Visible = True
-                        Index.PAlmacen.Location = New Point(30, 138)
-                        Index.PMAlmacen.Visible = True
+                        Index.PAlmacen.Location = New Point(97, 138)
+                        Index.PCompras.Visible = True
+                        Index.btn_pdf.Visible = False
+                        Index.Lpdf.Visible = False
+                        Index.PMPrima.Visible = False
+                        Index.LAP.Visible = False
+                        Index.btn_entrega_equipo_seguridad.Visible = False
+                        Index.Label18.Visible = False
+                        Index.btn_ventas.Visible = False
+                        Index.Label13.Visible = False
 
                         If LV.Text = "0" Then
                             Index.PContabilizar.Visible = True
@@ -68,15 +76,8 @@ Public Class InicioSesion
 
                         'Costos - Finanza
                     ElseIf Proceso(CUsuarios.Text) = 44 Then
-                        Index.PCompras.Visible = True
                         Index.PCostos.Visible = True
-                        Index.PTransporte.Visible = True
-                        Index.PAlmacen.Visible = True
-                        Index.PMass.Visible = True
-                        Index.PPedidos.Visible = True
-                        Index.PMaPrima.Visible = True
-                        Index.Panel1.Visible = True
-
+                        Index.PCostos.Location = New Point(30, 138)
 
                         'TRASPORTE  
                     ElseIf Proceso(CUsuarios.Text) = 31 Then
@@ -96,6 +97,10 @@ Public Class InicioSesion
                         Index.PMaPrima.Location = New Point(30, 138)
                         Index.PMMPrima.Visible = True
 
+                        'RH
+                    ElseIf Proceso(CUsuarios.Text) = 34 Then
+                        Index.Parh.Visible = True
+                        Index.Parh.Location = New Point(30, 138)
                     End If
             Else
                     MsgBox("Contraseña Invalida", MsgBoxStyle.Critical)

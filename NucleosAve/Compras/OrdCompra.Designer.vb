@@ -281,6 +281,17 @@ Partial Class OrdCompra
         Me.Label42 = New System.Windows.Forms.Label()
         Me.TextBox_observaciones = New System.Windows.Forms.TextBox()
         Me.ComboBox_AREA = New System.Windows.Forms.ComboBox()
+        Me.Label43 = New System.Windows.Forms.Label()
+        Me.btn_bAlmacen = New System.Windows.Forms.PictureBox()
+        Me.P_Aprovar_Descartar = New System.Windows.Forms.Panel()
+        Me.Label46 = New System.Windows.Forms.Label()
+        Me.Label45 = New System.Windows.Forms.Label()
+        Me.btn_descartar = New System.Windows.Forms.PictureBox()
+        Me.btn_aprovar = New System.Windows.Forms.PictureBox()
+        Me.TextBox_descartar = New System.Windows.Forms.TextBox()
+        Me.TextBox_Aprovado = New System.Windows.Forms.TextBox()
+        Me.Label44 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(Me.btnEliminar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnModificar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnview, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -307,6 +318,11 @@ Partial Class OrdCompra
         CType(Me.btnRegresar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnCerrarPrograma, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_enviarmail, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btn_bAlmacen, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.P_Aprovar_Descartar.SuspendLayout()
+        CType(Me.btn_descartar, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btn_aprovar, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label28
@@ -351,7 +367,7 @@ Partial Class OrdCompra
         Me.Label6.BackColor = System.Drawing.Color.Transparent
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label6.Location = New System.Drawing.Point(708, 57)
+        Me.Label6.Location = New System.Drawing.Point(677, 57)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(64, 16)
         Me.Label6.TabIndex = 11
@@ -364,7 +380,7 @@ Partial Class OrdCompra
         Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label5.Location = New System.Drawing.Point(783, 57)
+        Me.Label5.Location = New System.Drawing.Point(752, 57)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(72, 16)
         Me.Label5.TabIndex = 10
@@ -384,7 +400,7 @@ Partial Class OrdCompra
         'btnEliminar
         '
         Me.btnEliminar.Image = Global.NucleosAve.My.Resources.Resources.file_1311
-        Me.btnEliminar.Location = New System.Drawing.Point(720, 11)
+        Me.btnEliminar.Location = New System.Drawing.Point(689, 11)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(41, 41)
         Me.btnEliminar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -395,7 +411,7 @@ Partial Class OrdCompra
         'btnModificar
         '
         Me.btnModificar.Image = Global.NucleosAve.My.Resources.Resources.file_42
-        Me.btnModificar.Location = New System.Drawing.Point(789, 13)
+        Me.btnModificar.Location = New System.Drawing.Point(758, 13)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(44, 41)
         Me.btnModificar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -3108,7 +3124,7 @@ Partial Class OrdCompra
         '
         Me.btn_enviarmail.BackColor = System.Drawing.Color.Transparent
         Me.btn_enviarmail.Image = CType(resources.GetObject("btn_enviarmail.Image"), System.Drawing.Image)
-        Me.btn_enviarmail.Location = New System.Drawing.Point(864, 13)
+        Me.btn_enviarmail.Location = New System.Drawing.Point(835, 13)
         Me.btn_enviarmail.Name = "btn_enviarmail"
         Me.btn_enviarmail.Size = New System.Drawing.Size(44, 41)
         Me.btn_enviarmail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -3215,6 +3231,136 @@ Partial Class OrdCompra
         Me.ComboBox_AREA.Size = New System.Drawing.Size(201, 21)
         Me.ComboBox_AREA.TabIndex = 128
         '
+        'Label43
+        '
+        Me.Label43.AutoSize = True
+        Me.Label43.BackColor = System.Drawing.Color.Transparent
+        Me.Label43.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label43.ForeColor = System.Drawing.Color.Black
+        Me.Label43.Location = New System.Drawing.Point(885, 56)
+        Me.Label43.Name = "Label43"
+        Me.Label43.Size = New System.Drawing.Size(0, 13)
+        Me.Label43.TabIndex = 182
+        '
+        'btn_bAlmacen
+        '
+        Me.btn_bAlmacen.AccessibleDescription = "dfghdfgdfhdhfd"
+        Me.btn_bAlmacen.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btn_bAlmacen.BackColor = System.Drawing.Color.Transparent
+        Me.btn_bAlmacen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn_bAlmacen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.btn_bAlmacen.Image = Global.NucleosAve.My.Resources.Resources.icons8_warehouse_80
+        Me.btn_bAlmacen.Location = New System.Drawing.Point(900, 14)
+        Me.btn_bAlmacen.Name = "btn_bAlmacen"
+        Me.btn_bAlmacen.Size = New System.Drawing.Size(38, 38)
+        Me.btn_bAlmacen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_bAlmacen.TabIndex = 181
+        Me.btn_bAlmacen.TabStop = False
+        '
+        'P_Aprovar_Descartar
+        '
+        Me.P_Aprovar_Descartar.Controls.Add(Me.Label46)
+        Me.P_Aprovar_Descartar.Controls.Add(Me.Label45)
+        Me.P_Aprovar_Descartar.Controls.Add(Me.btn_descartar)
+        Me.P_Aprovar_Descartar.Controls.Add(Me.btn_aprovar)
+        Me.P_Aprovar_Descartar.Controls.Add(Me.TextBox_descartar)
+        Me.P_Aprovar_Descartar.Controls.Add(Me.TextBox_Aprovado)
+        Me.P_Aprovar_Descartar.Controls.Add(Me.Label44)
+        Me.P_Aprovar_Descartar.Controls.Add(Me.PictureBox1)
+        Me.P_Aprovar_Descartar.Location = New System.Drawing.Point(329, 81)
+        Me.P_Aprovar_Descartar.Name = "P_Aprovar_Descartar"
+        Me.P_Aprovar_Descartar.Size = New System.Drawing.Size(423, 159)
+        Me.P_Aprovar_Descartar.TabIndex = 183
+        Me.P_Aprovar_Descartar.Visible = False
+        '
+        'Label46
+        '
+        Me.Label46.AutoSize = True
+        Me.Label46.Location = New System.Drawing.Point(232, 112)
+        Me.Label46.Name = "Label46"
+        Me.Label46.Size = New System.Drawing.Size(53, 13)
+        Me.Label46.TabIndex = 191
+        Me.Label46.Text = "Descartar"
+        '
+        'Label45
+        '
+        Me.Label45.AutoSize = True
+        Me.Label45.Location = New System.Drawing.Point(130, 112)
+        Me.Label45.Name = "Label45"
+        Me.Label45.Size = New System.Drawing.Size(44, 13)
+        Me.Label45.TabIndex = 190
+        Me.Label45.Text = "Aprovar"
+        '
+        'btn_descartar
+        '
+        Me.btn_descartar.AccessibleDescription = "dfghdfgdfhdhfd"
+        Me.btn_descartar.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btn_descartar.BackColor = System.Drawing.Color.Transparent
+        Me.btn_descartar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn_descartar.Image = Global.NucleosAve.My.Resources.Resources.icons8_cancel_480
+        Me.btn_descartar.Location = New System.Drawing.Point(229, 53)
+        Me.btn_descartar.Name = "btn_descartar"
+        Me.btn_descartar.Size = New System.Drawing.Size(55, 52)
+        Me.btn_descartar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_descartar.TabIndex = 189
+        Me.btn_descartar.TabStop = False
+        '
+        'btn_aprovar
+        '
+        Me.btn_aprovar.AccessibleDescription = "dfghdfgdfhdhfd"
+        Me.btn_aprovar.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btn_aprovar.BackColor = System.Drawing.Color.Transparent
+        Me.btn_aprovar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn_aprovar.Image = Global.NucleosAve.My.Resources.Resources.icons8_ok_480
+        Me.btn_aprovar.Location = New System.Drawing.Point(127, 53)
+        Me.btn_aprovar.Name = "btn_aprovar"
+        Me.btn_aprovar.Size = New System.Drawing.Size(55, 52)
+        Me.btn_aprovar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_aprovar.TabIndex = 188
+        Me.btn_aprovar.TabStop = False
+        '
+        'TextBox_descartar
+        '
+        Me.TextBox_descartar.Location = New System.Drawing.Point(320, 132)
+        Me.TextBox_descartar.Name = "TextBox_descartar"
+        Me.TextBox_descartar.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox_descartar.TabIndex = 187
+        Me.TextBox_descartar.Text = "Descartada"
+        Me.TextBox_descartar.Visible = False
+        '
+        'TextBox_Aprovado
+        '
+        Me.TextBox_Aprovado.Location = New System.Drawing.Point(3, 133)
+        Me.TextBox_Aprovado.Name = "TextBox_Aprovado"
+        Me.TextBox_Aprovado.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox_Aprovado.TabIndex = 186
+        Me.TextBox_Aprovado.Text = "Aprovada"
+        Me.TextBox_Aprovado.Visible = False
+        '
+        'Label44
+        '
+        Me.Label44.AutoSize = True
+        Me.Label44.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.25!)
+        Me.Label44.Location = New System.Drawing.Point(28, 14)
+        Me.Label44.Name = "Label44"
+        Me.Label44.Size = New System.Drawing.Size(326, 17)
+        Me.Label44.TabIndex = 185
+        Me.Label44.Text = "¿ Que deseas Hacer con esta Orden de Compra ?"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.AccessibleDescription = "dfghdfgdfhdhfd"
+        Me.PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox1.Image = Global.NucleosAve.My.Resources.Resources.icons8_cerrar_ventana_5001
+        Me.PictureBox1.Location = New System.Drawing.Point(366, 1)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(55, 52)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 184
+        Me.PictureBox1.TabStop = False
+        '
         'OrdCompra
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -3223,6 +3369,9 @@ Partial Class OrdCompra
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(1159, 610)
+        Me.Controls.Add(Me.P_Aprovar_Descartar)
+        Me.Controls.Add(Me.Label43)
+        Me.Controls.Add(Me.btn_bAlmacen)
         Me.Controls.Add(Me.ComboBox_AREA)
         Me.Controls.Add(Me.Label42)
         Me.Controls.Add(Me.TextBox_observaciones)
@@ -3303,6 +3452,12 @@ Partial Class OrdCompra
         CType(Me.btnRegresar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnCerrarPrograma, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btn_enviarmail, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_bAlmacen, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.P_Aprovar_Descartar.ResumeLayout(False)
+        Me.P_Aprovar_Descartar.PerformLayout()
+        CType(Me.btn_descartar, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_aprovar, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -3564,4 +3719,15 @@ Partial Class OrdCompra
     Friend WithEvents Label42 As Label
     Friend WithEvents TextBox_observaciones As TextBox
     Friend WithEvents ComboBox_AREA As ComboBox
+    Friend WithEvents Label43 As Label
+    Friend WithEvents btn_bAlmacen As PictureBox
+    Friend WithEvents P_Aprovar_Descartar As Panel
+    Friend WithEvents btn_descartar As PictureBox
+    Friend WithEvents btn_aprovar As PictureBox
+    Friend WithEvents TextBox_descartar As TextBox
+    Friend WithEvents TextBox_Aprovado As TextBox
+    Friend WithEvents Label44 As Label
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents Label46 As Label
+    Friend WithEvents Label45 As Label
 End Class

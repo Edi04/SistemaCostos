@@ -197,6 +197,11 @@ NucleosAve
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:NucleosAve.My.Resources.Resources.icons8_cancel_480">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:NucleosAve.My.Resources.Resources.icons8_cancelar_suscripción_64">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
@@ -307,6 +312,16 @@ NucleosAve
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:NucleosAve.My.Resources.Resources.icons8_ok_480">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:NucleosAve.My.Resources.Resources.icons8_order_history_64">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:NucleosAve.My.Resources.Resources.icons8_paquete_64">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
@@ -403,6 +418,11 @@ NucleosAve
 </summary>
 </member>
 <member name="P:NucleosAve.My.Resources.Resources.icons8_verificar_80">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:NucleosAve.My.Resources.Resources.icons8_warehouse_80">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>

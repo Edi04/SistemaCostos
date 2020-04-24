@@ -275,4 +275,568 @@ Public Class Rh
         TextBox_nombre.DisplayMember = "Nombre"
         TextBox_nombre.ValueMember = "Id_Empleado"
     End Sub
+
+
+
+    Sub suma_total_percepciones() Handles TextBox_sueldo.TextChanged, TextBox_compensasion.TextChanged, TextBox_tiempo_extra.TextChanged, TextBox_aguinaldo.TextChanged, TextBox_vacaciones.TextChanged,
+                TextBox_prima_vacacional.TextChanged, TextBox_ptu.TextChanged, TextBox_bono_productividad.TextChanged, TextBox_prima_dominical.TextChanged, TextBox_subcidio_incapaciodad.TextChanged,
+                TextBox_sueldo_retroactivo.TextChanged, TextBox_prestamo_personal.TextChanged, TextBox_vacaciones_pagadas.TextChanged, TextBox_gratificacion_anual.TextChanged, TextBox_indemnizacion.TextChanged,
+                TextBox_prima_antiguedad.TextChanged, TextBox_premio_puntualidad.TextChanged, TextBox_prestamo_personal_persepcion.TextChanged
+        Dim cu1 As Decimal = 0
+        Dim cu2 As Decimal = 0
+        Dim cu3 As Decimal = 0
+        Dim cu4 As Decimal = 0
+        Dim cu5 As Decimal = 0
+        Dim cu6 As Decimal = 0
+        Dim cu7 As Decimal = 0
+        Dim cu8 As Decimal = 0
+        Dim cu9 As Decimal = 0
+        Dim cu10 As Decimal = 0
+        Dim cu11 As Decimal = 0
+        Dim cu12 As Decimal = 0
+        Dim cu13 As Decimal = 0
+        Dim cu14 As Decimal = 0
+        Dim cu15 As Decimal = 0
+        Dim cu16 As Decimal = 0
+        Dim cu17 As Decimal = 0
+        Dim cu18 As Decimal = 0
+
+        If TextBox_sueldo.Text <> Nothing Then
+            cu1 = CDec(TextBox_sueldo.Text)
+        End If
+        If TextBox_compensasion.Text <> Nothing Then
+            cu2 = CDec(TextBox_compensasion.Text)
+        End If
+        If TextBox_tiempo_extra.Text <> Nothing Then
+            cu3 = CDec(TextBox_tiempo_extra.Text)
+        End If
+        If TextBox_aguinaldo.Text <> Nothing Then
+            cu4 = CDec(TextBox_aguinaldo.Text)
+        End If
+        If TextBox_vacaciones.Text <> Nothing Then
+            cu5 = CDec(TextBox_vacaciones.Text)
+        End If
+        If TextBox_prima_vacacional.Text <> Nothing Then
+            cu6 = CDec(TextBox_prima_vacacional.Text)
+        End If
+        If TextBox_ptu.Text <> Nothing Then
+            cu7 = CDec(TextBox_ptu.Text)
+        End If
+        If TextBox_bono_productividad.Text <> Nothing Then
+            cu8 = CDec(TextBox_bono_productividad.Text)
+        End If
+        If TextBox_prima_dominical.Text <> Nothing Then
+            cu9 = CDec(TextBox_prima_dominical.Text)
+        End If
+        If TextBox_subcidio_incapaciodad.Text <> Nothing Then
+            cu10 = CDec(TextBox_subcidio_incapaciodad.Text)
+        End If
+        If TextBox_sueldo_retroactivo.Text <> Nothing Then
+            cu11 = CDec(TextBox_sueldo_retroactivo.Text)
+        End If
+        If TextBox_prestamo_personal.Text <> Nothing Then
+            cu12 = CDec(TextBox_prestamo_personal.Text)
+        End If
+        If TextBox_vacaciones_pagadas.Text <> Nothing Then
+            cu13 = CDec(TextBox_vacaciones_pagadas.Text)
+        End If
+        If TextBox_gratificacion_anual.Text <> Nothing Then
+            cu14 = CDec(TextBox_gratificacion_anual.Text)
+        End If
+        If TextBox_indemnizacion.Text <> Nothing Then
+            cu15 = CDec(TextBox_indemnizacion.Text)
+        End If
+        If TextBox_prima_antiguedad.Text <> Nothing Then
+            cu16 = CDec(TextBox_prima_antiguedad.Text)
+        End If
+        If TextBox_premio_puntualidad.Text <> Nothing Then
+            cu17 = CDec(TextBox_premio_puntualidad.Text)
+        End If
+        If TextBox_prestamo_personal_persepcion.Text <> Nothing Then
+            cu18 = CDec(TextBox_prestamo_personal_persepcion.Text)
+        End If
+
+        TextBox_total_persepciones_sinprestamo.Text = FormatCurrency(cu1 + cu2 + cu3 + cu4 + cu5 + cu6 + cu7 + cu8 + cu9 + cu10 + cu11 + cu12 + cu13 + cu14 + cu15 + cu16 + cu17 + cu18)
+    End Sub
+
+    Sub operacion_cf() Handles TextBox_uma_diaria.TextChanged, TextBox_cuotapat.TextChanged, TextBox_dias.TextChanged, TextBox_inc.TextChanged
+        Dim cu1 As Decimal = 0
+        Dim cu2 As Decimal = 0
+        Dim cu3 As Decimal = 0
+        Dim cu4 As Decimal = 0
+
+        If TextBox_uma_diaria.Text <> Nothing Then
+            cu1 = CDec(TextBox_uma_diaria.Text)
+        End If
+        If TextBox_cuotapat.Text <> Nothing Then
+            cu2 = CDec(TextBox_cuotapat.Text)
+        End If
+        If TextBox_dias.Text <> Nothing Then
+            cu3 = CDec(TextBox_dias.Text)
+        End If
+        If TextBox_inc.Text <> Nothing Then
+            cu4 = CDec(TextBox_inc.Text)
+        End If
+
+        TextBox_cf.Text = FormatCurrency((cu1 * cu2) * (cu3 - cu4))
+    End Sub
+
+    Sub operacion_Factor_Mensual() Handles TextBox_uma_diaria.TextChanged, TextBox_factor_mensual.TextChanged
+        Dim cu1 As Decimal = 0
+        Dim cu2 As Decimal = 0
+
+        If TextBox_uma_diaria.Text <> Nothing Then
+            cu1 = CDec(TextBox_uma_diaria.Text)
+        End If
+        If TextBox_factor_mensual.Text <> Nothing Then
+            cu2 = CDec(TextBox_factor_mensual.Text)
+        End If
+
+        TextBox_uma_mensual.Text = FormatCurrency((cu1 * cu2))
+    End Sub
+
+    Sub operacion_cuota_diaria() Handles TextBox_uma_diaria.TextChanged, TextBox_cuotapat.TextChanged
+        Dim cu1 As Decimal = 0
+        Dim cu2 As Decimal = 0
+
+        If TextBox_uma_diaria.Text <> Nothing Then
+            cu1 = CDec(TextBox_uma_diaria.Text)
+        End If
+        If TextBox_cuotapat.Text <> Nothing Then
+            cu2 = CDec(TextBox_cuotapat.Text)
+        End If
+
+        TextBox_cuota_diaria.Text = FormatCurrency((cu1 * cu2))
+    End Sub
+
+    Sub operacion_falso_verdadero() Handles TextBox_uma_diaria.TextChanged, TextBox_sdi.TextChanged
+        Dim cu1 As Decimal = 0
+        Dim cu2 As Decimal = 0
+        Dim suma As Decimal = 0
+
+        If TextBox_uma_diaria.Text <> Nothing Then
+            cu1 = CDec(TextBox_uma_diaria.Text)
+        End If
+        If TextBox_sdi.Text <> Nothing Then
+            cu2 = CDec(TextBox_sdi.Text)
+        End If
+
+        suma = (cu1 * 3)
+        If cu2 > suma Then
+            TextBox_falso_verdadero.Text = "Verdadero"
+            TextBox_falso_verdadero.BackColor = Color.GreenYellow
+        Else
+            TextBox_falso_verdadero.Text = "Falso"
+            TextBox_falso_verdadero.BackColor = Color.Red
+        End If
+    End Sub
+
+    Sub operacion_exc_pat() Handles TextBox_sdi.TextChanged, TextBox_dias.TextChanged, TextBox_inc.TextChanged, TextBox_uma_diaria.TextChanged
+        Dim cu1 As Decimal = 0
+        Dim cu2 As Decimal = 0
+        Dim cu3 As Decimal = 0
+        Dim cu4 As Decimal = 0
+        Dim suma As Decimal = 0
+        Dim porcentaje As Decimal = 0
+
+        If TextBox_sdi.Text <> Nothing Then
+            cu1 = CDec(TextBox_sdi.Text)
+        End If
+        If TextBox_dias.Text <> Nothing Then
+            cu2 = CDec(TextBox_dias.Text)
+        End If
+        If TextBox_inc.Text <> Nothing Then
+            cu3 = CDec(TextBox_inc.Text)
+        End If
+        If TextBox_uma_diaria.Text <> Nothing Then
+            cu4 = CDec(TextBox_uma_diaria.Text)
+        End If
+
+        suma = (cu4 * 3)
+        porcentaje = 0.011
+
+        TextBox_exc_pat.Text = (((cu1 - suma) * porcentaje) * (cu2 - cu3))
+    End Sub
+
+    Sub operacion_pd_pat() Handles TextBox_dias.TextChanged, TextBox_sdi.TextChanged, TextBox_inc.TextChanged
+        Dim cu1 As Decimal = 0
+        Dim cu2 As Decimal = 0
+        Dim cu3 As Decimal = 0
+        Dim cu4 As Decimal = 0
+        Dim suma As Decimal = 0
+        Dim porcentaje As Decimal = 0
+
+        If TextBox_dias.Text <> Nothing Then
+            cu1 = CDec(TextBox_dias.Text)
+        End If
+        If TextBox_sdi.Text <> Nothing Then
+            cu2 = CDec(TextBox_sdi.Text)
+        End If
+        If TextBox_inc.Text <> Nothing Then
+            cu3 = CDec(TextBox_inc.Text)
+        End If
+
+        porcentaje = 0.007
+
+        TextBox_pd_pat.Text = ((cu2 * porcentaje) * (cu1 - cu3))
+    End Sub
+
+    Sub operacion_GM_pat() Handles TextBox_dias.TextChanged, TextBox_sdi.TextChanged, TextBox_inc.TextChanged
+        Dim cu1 As Decimal = 0
+        Dim cu2 As Decimal = 0
+        Dim cu3 As Decimal = 0
+        Dim cu4 As Decimal = 0
+        Dim suma As Decimal = 0
+        Dim porcentaje As Decimal = 0
+
+        If TextBox_dias.Text <> Nothing Then
+            cu1 = CDec(TextBox_dias.Text)
+        End If
+        If TextBox_sdi.Text <> Nothing Then
+            cu2 = CDec(TextBox_sdi.Text)
+        End If
+        If TextBox_inc.Text <> Nothing Then
+            cu3 = CDec(TextBox_inc.Text)
+        End If
+
+        porcentaje = 0.0105
+
+        TextBox_gmp_pat.Text = ((cu2 * porcentaje) * (cu1 - cu3))
+    End Sub
+
+    Sub operacion_RT() Handles TextBox_dias.TextChanged, TextBox_sdi.TextChanged, TextBox_inc.TextChanged, TextBox_aus.TextChanged
+        Dim cu1 As Decimal = 0
+        Dim cu2 As Decimal = 0
+        Dim cu3 As Decimal = 0
+        Dim cu4 As Decimal = 0
+        Dim suma As Decimal = 0
+        Dim porcentaje As Decimal = 0
+
+        If TextBox_dias.Text <> Nothing Then
+            cu1 = CDec(TextBox_dias.Text)
+        End If
+        If TextBox_sdi.Text <> Nothing Then
+            cu2 = CDec(TextBox_sdi.Text)
+        End If
+        If TextBox_inc.Text <> Nothing Then
+            cu3 = CDec(TextBox_inc.Text)
+        End If
+        If TextBox_aus.Text <> Nothing Then
+            cu4 = CDec(TextBox_aus.Text)
+        End If
+
+
+        porcentaje = 0.0253404
+
+        TextBox_rt.Text = ((cu2 * porcentaje) * (cu1 - cu3 - cu4))
+    End Sub
+
+    Sub operacion_IV() Handles TextBox_dias.TextChanged, TextBox_sdi.TextChanged, TextBox_inc.TextChanged, TextBox_aus.TextChanged
+        Dim cu1 As Decimal = 0
+        Dim cu2 As Decimal = 0
+        Dim cu3 As Decimal = 0
+        Dim cu4 As Decimal = 0
+        Dim suma As Decimal = 0
+        Dim porcentaje As Decimal = 0
+
+        If TextBox_dias.Text <> Nothing Then
+            cu1 = CDec(TextBox_dias.Text)
+        End If
+        If TextBox_sdi.Text <> Nothing Then
+            cu2 = CDec(TextBox_sdi.Text)
+        End If
+        If TextBox_inc.Text <> Nothing Then
+            cu3 = CDec(TextBox_inc.Text)
+        End If
+        If TextBox_aus.Text <> Nothing Then
+            cu4 = CDec(TextBox_aus.Text)
+        End If
+
+
+        porcentaje = 0.0175
+
+        TextBox_iv_pat.Text = ((cu2 * porcentaje) * (cu1 - cu3 - cu4))
+    End Sub
+
+    Sub operacion_GPS() Handles TextBox_dias.TextChanged, TextBox_sdi.TextChanged, TextBox_inc.TextChanged, TextBox_aus.TextChanged
+        Dim cu1 As Decimal = 0
+        Dim cu2 As Decimal = 0
+        Dim cu3 As Decimal = 0
+        Dim cu4 As Decimal = 0
+        Dim suma As Decimal = 0
+        Dim porcentaje As Decimal = 0
+
+        If TextBox_dias.Text <> Nothing Then
+            cu1 = CDec(TextBox_dias.Text)
+        End If
+        If TextBox_sdi.Text <> Nothing Then
+            cu2 = CDec(TextBox_sdi.Text)
+        End If
+        If TextBox_inc.Text <> Nothing Then
+            cu3 = CDec(TextBox_inc.Text)
+        End If
+        If TextBox_aus.Text <> Nothing Then
+            cu4 = CDec(TextBox_aus.Text)
+        End If
+
+
+        porcentaje = 0.01
+
+        TextBox_gps.Text = ((cu2 * porcentaje) * (cu1 - cu3 - cu4))
+    End Sub
+
+    Sub operacion_Retiro() Handles TextBox_dias.TextChanged, TextBox_sdi.TextChanged, TextBox_inc.TextChanged, TextBox_aus.TextChanged
+        Dim cu1 As Decimal = 0
+        Dim cu2 As Decimal = 0
+        Dim cu3 As Decimal = 0
+        Dim cu4 As Decimal = 0
+        Dim suma As Decimal = 0
+        Dim porcentaje As Decimal = 0
+
+        If TextBox_dias.Text <> Nothing Then
+            cu1 = CDec(TextBox_dias.Text)
+        End If
+        If TextBox_sdi.Text <> Nothing Then
+            cu2 = CDec(TextBox_sdi.Text)
+        End If
+        If TextBox_inc.Text <> Nothing Then
+            cu3 = CDec(TextBox_inc.Text)
+        End If
+        If TextBox_aus.Text <> Nothing Then
+            cu4 = CDec(TextBox_aus.Text)
+        End If
+
+
+        porcentaje = 0.02
+
+        TextBox_RETIRO.Text = ((cu1 - cu3 - cu4) * cu2) * porcentaje
+    End Sub
+
+    Sub cesantia_vejes_patronal() Handles TextBox_dias.TextChanged, TextBox_sdi.TextChanged, TextBox_inc.TextChanged, TextBox_aus.TextChanged
+        Dim cu1 As Decimal = 0
+        Dim cu2 As Decimal = 0
+        Dim cu3 As Decimal = 0
+        Dim cu4 As Decimal = 0
+        Dim suma As Decimal = 0
+        Dim porcentaje As Decimal = 0
+
+        If TextBox_dias.Text <> Nothing Then
+            cu1 = CDec(TextBox_dias.Text)
+        End If
+        If TextBox_sdi.Text <> Nothing Then
+            cu2 = CDec(TextBox_sdi.Text)
+        End If
+        If TextBox_inc.Text <> Nothing Then
+            cu3 = CDec(TextBox_inc.Text)
+        End If
+        If TextBox_aus.Text <> Nothing Then
+            cu4 = CDec(TextBox_aus.Text)
+        End If
+
+        porcentaje = 0.0315
+
+        TextBox_VEJESPATRONAL.Text = ((cu1 - cu3 - cu4) * cu2) * porcentaje
+    End Sub
+
+    Sub operacion_infonavit() Handles TextBox_dias.TextChanged, TextBox_sdi.TextChanged, TextBox_inc.TextChanged, TextBox_aus.TextChanged
+        Dim cu1 As Decimal = 0
+        Dim cu2 As Decimal = 0
+        Dim cu3 As Decimal = 0
+        Dim cu4 As Decimal = 0
+        Dim suma As Decimal = 0
+        Dim porcentaje As Decimal = 0
+
+        If TextBox_dias.Text <> Nothing Then
+            cu1 = CDec(TextBox_dias.Text)
+        End If
+        If TextBox_sdi.Text <> Nothing Then
+            cu2 = CDec(TextBox_sdi.Text)
+        End If
+        If TextBox_inc.Text <> Nothing Then
+            cu3 = CDec(TextBox_inc.Text)
+        End If
+        If TextBox_aus.Text <> Nothing Then
+            cu4 = CDec(TextBox_aus.Text)
+        End If
+
+        porcentaje = 0.05
+
+        TextBox_APORTACION_PATRONAL.Text = ((cu1 - cu3 - cu4) * cu2) * porcentaje
+    End Sub
+
+    Sub operacion_total_carga_social() Handles TextBox_cf.TextChanged, TextBox_exc_pat.TextChanged, TextBox_pd_pat.TextChanged, TextBox_gmp_pat.TextChanged, TextBox_rt.TextChanged,
+      TextBox_iv_pat.TextChanged, TextBox_gps.TextChanged, TextBox_RETIRO.TextChanged, TextBox_VEJESPATRONAL.TextChanged, TextBox_APORTACION_PATRONAL.TextChanged
+
+        Dim cu1 As Decimal = 0
+        Dim cu2 As Decimal = 0
+        Dim cu3 As Decimal = 0
+        Dim cu4 As Decimal = 0
+        Dim cu5 As Decimal = 0
+        Dim cu6 As Decimal = 0
+        Dim cu7 As Decimal = 0
+        Dim cu8 As Decimal = 0
+        Dim cu9 As Decimal = 0
+        Dim cu10 As Decimal = 0
+
+        Dim suma As Decimal = 0
+        Dim porcentaje As Decimal = 0
+
+        If TextBox_cf.Text <> Nothing Then
+            cu1 = CDec(TextBox_cf.Text)
+        End If
+        If TextBox_exc_pat.Text <> Nothing Then
+            cu2 = CDec(TextBox_exc_pat.Text)
+        End If
+        If TextBox_pd_pat.Text <> Nothing Then
+            cu3 = CDec(TextBox_pd_pat.Text)
+        End If
+        If TextBox_gmp_pat.Text <> Nothing Then
+            cu4 = CDec(TextBox_gmp_pat.Text)
+        End If
+        If TextBox_rt.Text <> Nothing Then
+            cu5 = CDec(TextBox_rt.Text)
+        End If
+        If TextBox_iv_pat.Text <> Nothing Then
+            cu6 = CDec(TextBox_iv_pat.Text)
+        End If
+        If TextBox_gps.Text <> Nothing Then
+            cu7 = CDec(TextBox_gps.Text)
+        End If
+        If TextBox_RETIRO.Text <> Nothing Then
+            cu8 = CDec(TextBox_RETIRO.Text)
+        End If
+        If TextBox_APORTACION_PATRONAL.Text <> Nothing Then
+            cu9 = CDec(TextBox_APORTACION_PATRONAL.Text)
+        End If
+        If TextBox_VEJESPATRONAL.Text <> Nothing Then
+            cu10 = CDec(TextBox_VEJESPATRONAL.Text)
+        End If
+
+        TextBox_TOTAL_cARGA_SOCIAL.Text = (cu1 + cu2 + cu3 + cu4 + cu5 + cu6 + cu7 + cu8 + cu9 + cu10)
+    End Sub
+
+    Sub operacion_impuestos_nominas() Handles TextBox_sueldo.TextChanged, TextBox_compensasion.TextChanged, TextBox_tiempo_extra.TextChanged, TextBox_aguinaldo.TextChanged, TextBox_vacaciones.TextChanged,
+               TextBox_prima_vacacional.TextChanged, TextBox_ptu.TextChanged, TextBox_bono_productividad.TextChanged, TextBox_prima_dominical.TextChanged, TextBox_subcidio_incapaciodad.TextChanged,
+               TextBox_sueldo_retroactivo.TextChanged, TextBox_prestamo_personal.TextChanged
+        Dim cu1 As Decimal = 0
+        Dim cu2 As Decimal = 0
+        Dim cu3 As Decimal = 0
+        Dim cu4 As Decimal = 0
+        Dim cu5 As Decimal = 0
+        Dim cu6 As Decimal = 0
+        Dim cu7 As Decimal = 0
+        Dim cu8 As Decimal = 0
+        Dim cu9 As Decimal = 0
+        Dim cu10 As Decimal = 0
+        Dim cu11 As Decimal = 0
+        Dim cu12 As Decimal = 0
+        Dim porcentaje As Decimal = 0
+
+        If TextBox_sueldo.Text <> Nothing Then
+            cu1 = CDec(TextBox_sueldo.Text)
+        End If
+        If TextBox_compensasion.Text <> Nothing Then
+            cu2 = CDec(TextBox_compensasion.Text)
+        End If
+        If TextBox_tiempo_extra.Text <> Nothing Then
+            cu3 = CDec(TextBox_tiempo_extra.Text)
+        End If
+        If TextBox_aguinaldo.Text <> Nothing Then
+            cu4 = CDec(TextBox_aguinaldo.Text)
+        End If
+        If TextBox_vacaciones.Text <> Nothing Then
+            cu5 = CDec(TextBox_vacaciones.Text)
+        End If
+        If TextBox_prima_vacacional.Text <> Nothing Then
+            cu6 = CDec(TextBox_prima_vacacional.Text)
+        End If
+        If TextBox_ptu.Text <> Nothing Then
+            cu7 = CDec(TextBox_ptu.Text)
+        End If
+        If TextBox_bono_productividad.Text <> Nothing Then
+            cu8 = CDec(TextBox_bono_productividad.Text)
+        End If
+        If TextBox_prima_dominical.Text <> Nothing Then
+            cu9 = CDec(TextBox_prima_dominical.Text)
+        End If
+        If TextBox_subcidio_incapaciodad.Text <> Nothing Then
+            cu10 = CDec(TextBox_subcidio_incapaciodad.Text)
+        End If
+        If TextBox_sueldo_retroactivo.Text <> Nothing Then
+            cu11 = CDec(TextBox_sueldo_retroactivo.Text)
+        End If
+        If TextBox_prestamo_personal.Text <> Nothing Then
+            cu12 = CDec(TextBox_prestamo_personal.Text)
+        End If
+
+        porcentaje = 0.03
+        TextBox_impuestos_nominas.Text = FormatCurrency((cu1 + cu2 + cu3 + cu4 + cu5 + cu6 + cu7 + cu8 + cu9 + cu10 + cu11 + cu12) * porcentaje)
+    End Sub
+
+    Sub operacion_ManodeObra() Handles TextBox_TOTAL_cARGA_SOCIAL.TextChanged, TextBox_impuestos_nominas.TextChanged, TextBox_total_persepciones_sinprestamo.TextChanged
+
+        Dim cu1 As Decimal = 0
+        Dim cu2 As Decimal = 0
+        Dim cu3 As Decimal = 0
+
+
+        Dim suma As Decimal = 0
+        Dim porcentaje As Decimal = 0
+
+        If TextBox_TOTAL_cARGA_SOCIAL.Text <> Nothing Then
+            cu1 = CDec(TextBox_TOTAL_cARGA_SOCIAL.Text)
+        End If
+        If TextBox_impuestos_nominas.Text <> Nothing Then
+            cu2 = CDec(TextBox_impuestos_nominas.Text)
+        End If
+        If TextBox_total_persepciones_sinprestamo.Text <> Nothing Then
+            cu3 = CDec(TextBox_total_persepciones_sinprestamo.Text)
+        End If
+
+        TextBox_manodeObra.Text = (cu1 + cu2 + cu3)
+    End Sub
+
+    Sub operacion_costoporhora() Handles TextBox_manodeObra.TextChanged, TextBox_horas_trabajadas_mes.TextChanged
+
+        Dim cu1 As Double
+        Dim cu2 As Double
+        Dim cu3 As Decimal = 0
+
+
+        Dim suma As Decimal = 0
+        Dim porcentaje As Decimal = 0
+
+        If TextBox_manodeObra.Text <> Nothing Then
+            cu1 = (TextBox_manodeObra.Text)
+        End If
+        If TextBox_horas_trabajadas_mes.Text <> Nothing Then
+            cu2 = (TextBox_horas_trabajadas_mes.Text)
+        End If
+
+        If TextBox_manodeObra.Text <> "0" And TextBox_horas_trabajadas_mes.Text <> "0" Then
+            TextBox_costoporhora.Text = (cu1 / cu2)
+        Else
+
+        End If
+    End Sub
+    Sub operacion_costoporminuto() Handles TextBox_costoporhora.TextChanged
+
+        Dim cu1 As Double
+        Dim cu2 As Decimal
+        Dim cu3 As Decimal
+
+
+        Dim numero As Double
+        Dim porcentaje As Decimal = 0
+
+        If TextBox_costoporhora.Text <> Nothing Then
+            cu1 = (TextBox_costoporhora.Text)
+        End If
+
+        numero = 60
+
+        TextBox_costoxminuto.Text = (cu1 / numero)
+
+
+    End Sub
 End Class

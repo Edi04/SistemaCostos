@@ -3872,7 +3872,7 @@ Public Class OrdCompra
         ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
 
         With smtp
-            .Port = 25
+            .Port = 26
             .Host = "mail.nucleosave.com.mx"
             .Credentials = New System.Net.NetworkCredential("Sistemas01@nucleosave.com.mx", "Sistemas01")
             .EnableSsl = False
@@ -4010,7 +4010,49 @@ Public Class OrdCompra
         End If
     End Sub
 
+    Private Sub btn_bAlmacen_Click(sender As Object, e As EventArgs) Handles btn_bAlmacen.Click
+        P_Aprovar_Descartar.Visible = True
+    End Sub
 
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        P_Aprovar_Descartar.Visible = False
+    End Sub
+
+    Private Sub btn_aprovar_Click(sender As Object, e As EventArgs) Handles btn_aprovar.Click
+        If MessageBox.Show("Estas seguro que quieres aprovar esta OC " + TextCodigo.Text, " Orden De Compra", MessageBoxButtons.OKCancel, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
+            Try
+                Dim funciones As New Funcion_Registros
+                Dim logica As New ClassRegistrosOrdC
+
+                logica.G_codigo = Me.TextCodigo.Text
+                logica.G_almacen = Me.TextBox_Aprovado.Text
+
+                If funciones.FN_aceptar_descartar_oc(logica) Then
+                    MsgBox("La Orden Fue Aprovada", MessageBoxIcon.Information)
+                End If
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        End If
+    End Sub
+
+    Private Sub btn_descartar_Click(sender As Object, e As EventArgs) Handles btn_descartar.Click
+        If MessageBox.Show("Estas seguro que quieres descargar esta OC " + TextCodigo.Text, " Orden De Compra", MessageBoxButtons.OKCancel, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
+            Try
+                Dim funciones As New Funcion_Registros
+                Dim logica As New ClassRegistrosOrdC
+
+                logica.G_codigo = Me.TextCodigo.Text
+                logica.G_almacen = Me.TextBox_descartar.Text
+
+                If funciones.FN_aceptar_descartar_oc(logica) Then
+                    MsgBox("La Orden Fue Descartada", MessageBoxIcon.Information)
+                End If
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        End If
+    End Sub
 
     Private Sub Btn_masProductos_Click(sender As Object, e As EventArgs) Handles Btn_masProductos.Click
         NProductos.Show()

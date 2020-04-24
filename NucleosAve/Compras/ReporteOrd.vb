@@ -10,7 +10,6 @@
         Me.DataTable1TableAdapter.Fill(Me.reporteOrdC.DataTable1, codigoord)
         'TODO: esta línea de código carga datos en la tabla 'traerproductos.TB_Ordenes_Detalle' Puede moverla o quitarla según sea necesario.
         Me.TB_Ordenes_DetalleTableAdapter.Fill(Me.traerproductos.TB_Ordenes_Detalle, codigoord)
-
         Me.ReportViewer1.RefreshReport()
     End Sub
 

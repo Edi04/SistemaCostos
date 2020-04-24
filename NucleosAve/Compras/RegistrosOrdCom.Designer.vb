@@ -39,6 +39,14 @@ Partial Class RegistrosOrdCom
         Me.Label3 = New System.Windows.Forms.Label()
         Me.btn_pdf = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.btn_bAlmacen = New System.Windows.Forms.PictureBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Panel_busqueda_almacen = New System.Windows.Forms.Panel()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.TextBox_codigo_orden = New System.Windows.Forms.TextBox()
+        Me.btn_buscar = New System.Windows.Forms.Button()
+        Me.btn_cerrarventanita = New System.Windows.Forms.PictureBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         CType(Me.DataGridRegistrosOd, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SISUT020DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SISUT020DataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -46,6 +54,9 @@ Partial Class RegistrosOrdCom
         CType(Me.btn_Cerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_pdf, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btn_bAlmacen, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel_busqueda_almacen.SuspendLayout()
+        CType(Me.btn_cerrarventanita, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DataGridRegistrosOd
@@ -197,6 +208,101 @@ Partial Class RegistrosOrdCom
         Me.PictureBox2.TabIndex = 178
         Me.PictureBox2.TabStop = False
         '
+        'btn_bAlmacen
+        '
+        Me.btn_bAlmacen.AccessibleDescription = "dfghdfgdfhdhfd"
+        Me.btn_bAlmacen.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btn_bAlmacen.BackColor = System.Drawing.Color.Transparent
+        Me.btn_bAlmacen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn_bAlmacen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.btn_bAlmacen.Image = Global.NucleosAve.My.Resources.Resources.icons8_warehouse_80
+        Me.btn_bAlmacen.Location = New System.Drawing.Point(143, 68)
+        Me.btn_bAlmacen.Name = "btn_bAlmacen"
+        Me.btn_bAlmacen.Size = New System.Drawing.Size(38, 38)
+        Me.btn_bAlmacen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_bAlmacen.TabIndex = 179
+        Me.btn_bAlmacen.TabStop = False
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Black
+        Me.Label1.Location = New System.Drawing.Point(102, 110)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(115, 13)
+        Me.Label1.TabIndex = 180
+        Me.Label1.Text = "Busqueda Almacen"
+        '
+        'Panel_busqueda_almacen
+        '
+        Me.Panel_busqueda_almacen.BackColor = System.Drawing.Color.White
+        Me.Panel_busqueda_almacen.Controls.Add(Me.Label4)
+        Me.Panel_busqueda_almacen.Controls.Add(Me.btn_cerrarventanita)
+        Me.Panel_busqueda_almacen.Controls.Add(Me.Label2)
+        Me.Panel_busqueda_almacen.Controls.Add(Me.TextBox_codigo_orden)
+        Me.Panel_busqueda_almacen.Controls.Add(Me.btn_buscar)
+        Me.Panel_busqueda_almacen.Location = New System.Drawing.Point(216, 153)
+        Me.Panel_busqueda_almacen.Name = "Panel_busqueda_almacen"
+        Me.Panel_busqueda_almacen.Size = New System.Drawing.Size(411, 94)
+        Me.Panel_busqueda_almacen.TabIndex = 181
+        Me.Panel_busqueda_almacen.Visible = False
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label2.Location = New System.Drawing.Point(19, 42)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(111, 13)
+        Me.Label2.TabIndex = 184
+        Me.Label2.Text = "Codigo Orden Compra"
+        '
+        'TextBox_codigo_orden
+        '
+        Me.TextBox_codigo_orden.Location = New System.Drawing.Point(20, 60)
+        Me.TextBox_codigo_orden.Name = "TextBox_codigo_orden"
+        Me.TextBox_codigo_orden.Size = New System.Drawing.Size(229, 20)
+        Me.TextBox_codigo_orden.TabIndex = 183
+        '
+        'btn_buscar
+        '
+        Me.btn_buscar.BackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(76, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.btn_buscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_buscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.25!)
+        Me.btn_buscar.ForeColor = System.Drawing.Color.Cornsilk
+        Me.btn_buscar.Location = New System.Drawing.Point(273, 52)
+        Me.btn_buscar.Name = "btn_buscar"
+        Me.btn_buscar.Size = New System.Drawing.Size(129, 33)
+        Me.btn_buscar.TabIndex = 182
+        Me.btn_buscar.Text = "Buscar"
+        Me.btn_buscar.UseVisualStyleBackColor = False
+        '
+        'btn_cerrarventanita
+        '
+        Me.btn_cerrarventanita.AccessibleDescription = "dfghdfgdfhdhfd"
+        Me.btn_cerrarventanita.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btn_cerrarventanita.BackColor = System.Drawing.Color.Transparent
+        Me.btn_cerrarventanita.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn_cerrarventanita.Image = Global.NucleosAve.My.Resources.Resources.icons8_cerrar_ventana_5001
+        Me.btn_cerrarventanita.Location = New System.Drawing.Point(372, 0)
+        Me.btn_cerrarventanita.Name = "btn_cerrarventanita"
+        Me.btn_cerrarventanita.Size = New System.Drawing.Size(39, 34)
+        Me.btn_cerrarventanita.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_cerrarventanita.TabIndex = 182
+        Me.btn_cerrarventanita.TabStop = False
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label4.Location = New System.Drawing.Point(146, 11)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(109, 13)
+        Me.Label4.TabIndex = 185
+        Me.Label4.Text = "Busqueda por Codigo"
+        '
         'RegistrosOrdCom
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -205,6 +311,9 @@ Partial Class RegistrosOrdCom
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.ClientSize = New System.Drawing.Size(851, 407)
+        Me.Controls.Add(Me.Panel_busqueda_almacen)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.btn_bAlmacen)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.btn_pdf)
@@ -227,6 +336,10 @@ Partial Class RegistrosOrdCom
         CType(Me.btn_Cerrar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btn_pdf, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_bAlmacen, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel_busqueda_almacen.ResumeLayout(False)
+        Me.Panel_busqueda_almacen.PerformLayout()
+        CType(Me.btn_cerrarventanita, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -243,4 +356,12 @@ Partial Class RegistrosOrdCom
     Friend WithEvents Label3 As Label
     Friend WithEvents btn_pdf As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents btn_bAlmacen As PictureBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Panel_busqueda_almacen As Panel
+    Friend WithEvents Label2 As Label
+    Friend WithEvents TextBox_codigo_orden As TextBox
+    Friend WithEvents btn_buscar As Button
+    Friend WithEvents Label4 As Label
+    Friend WithEvents btn_cerrarventanita As PictureBox
 End Class

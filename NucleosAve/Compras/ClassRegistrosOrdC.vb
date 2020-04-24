@@ -6,11 +6,18 @@
     Dim codigo, purchase_order, place_delivery,
         req_compra, cif, delivery_time, boarding_instructions,
         payment_conditions, observations, buyer,
-        aproved, personal_seller, id_pro, total_letter, CS, moneda, observaciones, Categoria As String
+        aproved, personal_seller, id_pro, total_letter, CS, moneda, observaciones, Categoria, almacen As String
     Dim total, subtotal, iva, totalusd As Double
 
     'comenzamos a realizar los sedders y los geders
-
+    Public Property G_almacen
+        Get
+            Return almacen
+        End Get
+        Set(value)
+            almacen = value
+        End Set
+    End Property
     Public Property G_Categoria
         Get
             Return Categoria
