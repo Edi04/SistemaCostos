@@ -125,4 +125,8 @@ Public Class Tickets
     Private Sub CProveedor_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CProveedor.SelectedIndexChanged
         TxtProveedor.Text = CProveedor.Text
     End Sub
+
+    Private Sub DatosDG_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DatosDG.CellContentClick
+
+    End Sub
 End Class

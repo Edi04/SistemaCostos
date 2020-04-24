@@ -426,8 +426,22 @@ Partial Class ODC
         Me.LID5 = New System.Windows.Forms.Label()
         Me.Productos1 = New System.Windows.Forms.TabControl()
         Me.LCompras = New System.Windows.Forms.Label()
-        Me.BCompras = New System.Windows.Forms.Button()
         Me.LProv = New System.Windows.Forms.Label()
+        Me.BInicio = New System.Windows.Forms.Button()
+        Me.PCorreo = New System.Windows.Forms.Panel()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.BMenos = New System.Windows.Forms.Button()
+        Me.TxtEmail1 = New System.Windows.Forms.TextBox()
+        Me.TxtEmail2 = New System.Windows.Forms.TextBox()
+        Me.BM = New System.Windows.Forms.Button()
+        Me.TxtEmail3 = New System.Windows.Forms.TextBox()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.TxtPassword = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.TxtUser = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.BHist = New System.Windows.Forms.Button()
+        Me.LCorreo = New System.Windows.Forms.Label()
         Me.POC.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DGOCA, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -439,6 +453,9 @@ Partial Class ODC
         Me.TP1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.Productos1.SuspendLayout()
+        Me.PCorreo.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
         '
         'BBOCompra
@@ -520,7 +537,7 @@ Partial Class ODC
         Me.LFinalizar.AutoSize = True
         Me.LFinalizar.BackColor = System.Drawing.Color.Transparent
         Me.LFinalizar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LFinalizar.Location = New System.Drawing.Point(964, 125)
+        Me.LFinalizar.Location = New System.Drawing.Point(966, 125)
         Me.LFinalizar.Name = "LFinalizar"
         Me.LFinalizar.Size = New System.Drawing.Size(54, 15)
         Me.LFinalizar.TabIndex = 25
@@ -559,7 +576,7 @@ Partial Class ODC
         Me.POC.Controls.Add(Me.LBOD)
         Me.POC.Controls.Add(Me.LBusqueda)
         Me.POC.Controls.Add(Me.DGOCA)
-        Me.POC.Location = New System.Drawing.Point(2, 73)
+        Me.POC.Location = New System.Drawing.Point(2, 72)
         Me.POC.Name = "POC"
         Me.POC.Size = New System.Drawing.Size(1071, 533)
         Me.POC.TabIndex = 28
@@ -5113,24 +5130,12 @@ Partial Class ODC
         Me.LCompras.AutoSize = True
         Me.LCompras.BackColor = System.Drawing.Color.Transparent
         Me.LCompras.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LCompras.Location = New System.Drawing.Point(909, 125)
+        Me.LCompras.Location = New System.Drawing.Point(916, 125)
         Me.LCompras.Name = "LCompras"
-        Me.LCompras.Size = New System.Drawing.Size(57, 15)
+        Me.LCompras.Size = New System.Drawing.Size(44, 15)
         Me.LCompras.TabIndex = 31
-        Me.LCompras.Text = "Compras"
+        Me.LCompras.Text = "Correo"
         Me.LCompras.Visible = False
-        '
-        'BCompras
-        '
-        Me.BCompras.BackColor = System.Drawing.Color.Transparent
-        Me.BCompras.BackgroundImage = CType(resources.GetObject("BCompras.BackgroundImage"), System.Drawing.Image)
-        Me.BCompras.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.BCompras.Location = New System.Drawing.Point(912, 77)
-        Me.BCompras.Name = "BCompras"
-        Me.BCompras.Size = New System.Drawing.Size(50, 50)
-        Me.BCompras.TabIndex = 32
-        Me.BCompras.UseVisualStyleBackColor = False
-        Me.BCompras.Visible = False
         '
         'LProv
         '
@@ -5141,6 +5146,159 @@ Partial Class ODC
         Me.LProv.TabIndex = 33
         Me.LProv.Visible = False
         '
+        'BInicio
+        '
+        Me.BInicio.BackColor = System.Drawing.Color.Transparent
+        Me.BInicio.BackgroundImage = CType(resources.GetObject("BInicio.BackgroundImage"), System.Drawing.Image)
+        Me.BInicio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.BInicio.Location = New System.Drawing.Point(912, 77)
+        Me.BInicio.Name = "BInicio"
+        Me.BInicio.Size = New System.Drawing.Size(50, 50)
+        Me.BInicio.TabIndex = 72
+        Me.BInicio.UseVisualStyleBackColor = False
+        Me.BInicio.Visible = False
+        '
+        'PCorreo
+        '
+        Me.PCorreo.BackColor = System.Drawing.Color.Transparent
+        Me.PCorreo.Controls.Add(Me.GroupBox2)
+        Me.PCorreo.Controls.Add(Me.GroupBox3)
+        Me.PCorreo.Controls.Add(Me.BHist)
+        Me.PCorreo.Controls.Add(Me.LCorreo)
+        Me.PCorreo.Location = New System.Drawing.Point(332, 77)
+        Me.PCorreo.Name = "PCorreo"
+        Me.PCorreo.Size = New System.Drawing.Size(578, 234)
+        Me.PCorreo.TabIndex = 73
+        Me.PCorreo.Visible = False
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.BMenos)
+        Me.GroupBox2.Controls.Add(Me.TxtEmail1)
+        Me.GroupBox2.Controls.Add(Me.TxtEmail2)
+        Me.GroupBox2.Controls.Add(Me.BM)
+        Me.GroupBox2.Controls.Add(Me.TxtEmail3)
+        Me.GroupBox2.Location = New System.Drawing.Point(9, 129)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(398, 100)
+        Me.GroupBox2.TabIndex = 84
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Enviar a"
+        '
+        'BMenos
+        '
+        Me.BMenos.BackColor = System.Drawing.Color.Transparent
+        Me.BMenos.BackgroundImage = CType(resources.GetObject("BMenos.BackgroundImage"), System.Drawing.Image)
+        Me.BMenos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.BMenos.Location = New System.Drawing.Point(362, 48)
+        Me.BMenos.Name = "BMenos"
+        Me.BMenos.Size = New System.Drawing.Size(31, 28)
+        Me.BMenos.TabIndex = 83
+        Me.BMenos.UseVisualStyleBackColor = False
+        Me.BMenos.Visible = False
+        '
+        'TxtEmail1
+        '
+        Me.TxtEmail1.Location = New System.Drawing.Point(6, 20)
+        Me.TxtEmail1.Name = "TxtEmail1"
+        Me.TxtEmail1.Size = New System.Drawing.Size(350, 20)
+        Me.TxtEmail1.TabIndex = 77
+        '
+        'TxtEmail2
+        '
+        Me.TxtEmail2.Location = New System.Drawing.Point(6, 48)
+        Me.TxtEmail2.Name = "TxtEmail2"
+        Me.TxtEmail2.Size = New System.Drawing.Size(350, 20)
+        Me.TxtEmail2.TabIndex = 79
+        Me.TxtEmail2.Visible = False
+        '
+        'BM
+        '
+        Me.BM.BackColor = System.Drawing.Color.Transparent
+        Me.BM.BackgroundImage = CType(resources.GetObject("BM.BackgroundImage"), System.Drawing.Image)
+        Me.BM.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.BM.Location = New System.Drawing.Point(362, 13)
+        Me.BM.Name = "BM"
+        Me.BM.Size = New System.Drawing.Size(31, 28)
+        Me.BM.TabIndex = 82
+        Me.BM.UseVisualStyleBackColor = False
+        '
+        'TxtEmail3
+        '
+        Me.TxtEmail3.Location = New System.Drawing.Point(6, 75)
+        Me.TxtEmail3.Name = "TxtEmail3"
+        Me.TxtEmail3.Size = New System.Drawing.Size(350, 20)
+        Me.TxtEmail3.TabIndex = 81
+        Me.TxtEmail3.Visible = False
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.TxtPassword)
+        Me.GroupBox3.Controls.Add(Me.Label1)
+        Me.GroupBox3.Controls.Add(Me.TxtUser)
+        Me.GroupBox3.Controls.Add(Me.Label2)
+        Me.GroupBox3.Location = New System.Drawing.Point(9, 37)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(566, 82)
+        Me.GroupBox3.TabIndex = 83
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "Inicio de Sesión"
+        '
+        'TxtPassword
+        '
+        Me.TxtPassword.Location = New System.Drawing.Point(383, 43)
+        Me.TxtPassword.Name = "TxtPassword"
+        Me.TxtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.TxtPassword.Size = New System.Drawing.Size(177, 20)
+        Me.TxtPassword.TabIndex = 75
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(7, 24)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(94, 13)
+        Me.Label1.TabIndex = 72
+        Me.Label1.Text = "Correo Electrónico"
+        '
+        'TxtUser
+        '
+        Me.TxtUser.Location = New System.Drawing.Point(7, 43)
+        Me.TxtUser.Name = "TxtUser"
+        Me.TxtUser.Size = New System.Drawing.Size(350, 20)
+        Me.TxtUser.TabIndex = 73
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(390, 24)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(61, 13)
+        Me.Label2.TabIndex = 74
+        Me.Label2.Text = "Contraseña"
+        '
+        'BHist
+        '
+        Me.BHist.BackColor = System.Drawing.Color.Transparent
+        Me.BHist.BackgroundImage = CType(resources.GetObject("BHist.BackgroundImage"), System.Drawing.Image)
+        Me.BHist.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.BHist.Location = New System.Drawing.Point(453, 154)
+        Me.BHist.Name = "BHist"
+        Me.BHist.Size = New System.Drawing.Size(50, 50)
+        Me.BHist.TabIndex = 71
+        Me.BHist.UseVisualStyleBackColor = False
+        '
+        'LCorreo
+        '
+        Me.LCorreo.AutoSize = True
+        Me.LCorreo.BackColor = System.Drawing.Color.Transparent
+        Me.LCorreo.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LCorreo.Location = New System.Drawing.Point(189, 11)
+        Me.LCorreo.Name = "LCorreo"
+        Me.LCorreo.Size = New System.Drawing.Size(186, 24)
+        Me.LCorreo.TabIndex = 67
+        Me.LCorreo.Text = "Correo Electrónico"
+        '
         'ODC
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -5148,9 +5306,10 @@ Partial Class ODC
         Me.BackgroundImage = Global.NucleosAve.My.Resources.Resources.Fondo
         Me.ClientSize = New System.Drawing.Size(1044, 617)
         Me.Controls.Add(Me.POC)
+        Me.Controls.Add(Me.PCorreo)
+        Me.Controls.Add(Me.BInicio)
         Me.Controls.Add(Me.LProv)
         Me.Controls.Add(Me.LCompras)
-        Me.Controls.Add(Me.BCompras)
         Me.Controls.Add(Me.PMaterial)
         Me.Controls.Add(Me.LProd)
         Me.Controls.Add(Me.LDGP)
@@ -5190,6 +5349,12 @@ Partial Class ODC
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
         Me.Productos1.ResumeLayout(False)
+        Me.PCorreo.ResumeLayout(False)
+        Me.PCorreo.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -5594,6 +5759,20 @@ Partial Class ODC
     Friend WithEvents TxtPS17 As TextBox
     Friend WithEvents LP5 As Label
     Friend WithEvents LCompras As Label
-    Friend WithEvents BCompras As Button
     Friend WithEvents LProv As Label
+    Friend WithEvents BInicio As Button
+    Friend WithEvents PCorreo As Panel
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents BMenos As Button
+    Friend WithEvents TxtEmail1 As TextBox
+    Friend WithEvents TxtEmail2 As TextBox
+    Friend WithEvents BM As Button
+    Friend WithEvents TxtEmail3 As TextBox
+    Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents TxtPassword As TextBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents TxtUser As TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents BHist As Button
+    Friend WithEvents LCorreo As Label
 End Class

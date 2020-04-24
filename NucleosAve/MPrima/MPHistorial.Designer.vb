@@ -22,14 +22,14 @@ Partial Class MPHistorial
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MPHistorial))
         Me.BMinimizar = New System.Windows.Forms.Button()
         Me.BCerrar = New System.Windows.Forms.Button()
@@ -61,13 +61,31 @@ Partial Class MPHistorial
         Me.PBMPr = New System.Windows.Forms.Panel()
         Me.BPMPr = New System.Windows.Forms.PictureBox()
         Me.LPMMP = New System.Windows.Forms.Label()
+        Me.BInicio = New System.Windows.Forms.Button()
+        Me.PCorreo = New System.Windows.Forms.Panel()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.BMenos = New System.Windows.Forms.Button()
+        Me.TxtEmail1 = New System.Windows.Forms.TextBox()
+        Me.TxtEmail2 = New System.Windows.Forms.TextBox()
+        Me.BE1 = New System.Windows.Forms.Button()
+        Me.TxtEmail3 = New System.Windows.Forms.TextBox()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.TxtPassword = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.TxtUser = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.BHist = New System.Windows.Forms.Button()
+        Me.LCorreo = New System.Windows.Forms.Label()
+        Me.BExcel = New System.Windows.Forms.Button()
         Me.POpc.SuspendLayout()
         Me.GBusqueda.SuspendLayout()
         CType(Me.PBusqueda, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DGHR, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PBMPr.SuspendLayout()
         CType(Me.BPMPr, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PCorreo.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'BMinimizar
@@ -157,6 +175,8 @@ Partial Class MPHistorial
         'CFechas
         '
         Me.CFechas.AutoSize = True
+        Me.CFechas.Checked = True
+        Me.CFechas.CheckState = System.Windows.Forms.CheckState.Checked
         Me.CFechas.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CFechas.Location = New System.Drawing.Point(682, 9)
         Me.CFechas.Name = "CFechas"
@@ -228,8 +248,8 @@ Partial Class MPHistorial
         'ID
         '
         Me.ID.DataPropertyName = "Id_MPrim"
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.ID.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.ID.DefaultCellStyle = DataGridViewCellStyle9
         Me.ID.HeaderText = "ID"
         Me.ID.Name = "ID"
         Me.ID.Width = 45
@@ -237,8 +257,8 @@ Partial Class MPHistorial
         'OCompra
         '
         Me.OCompra.DataPropertyName = "OCompra"
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.OCompra.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.OCompra.DefaultCellStyle = DataGridViewCellStyle10
         Me.OCompra.HeaderText = "OCompra"
         Me.OCompra.Name = "OCompra"
         Me.OCompra.Width = 60
@@ -253,8 +273,8 @@ Partial Class MPHistorial
         'Num_Interno
         '
         Me.Num_Interno.DataPropertyName = "Num_Interno"
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.Num_Interno.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.Num_Interno.DefaultCellStyle = DataGridViewCellStyle11
         Me.Num_Interno.FillWeight = 150.0!
         Me.Num_Interno.HeaderText = "Num_Interno"
         Me.Num_Interno.Name = "Num_Interno"
@@ -263,8 +283,8 @@ Partial Class MPHistorial
         'Num_Externo
         '
         Me.Num_Externo.DataPropertyName = "Num_Externo"
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.Num_Externo.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.Num_Externo.DefaultCellStyle = DataGridViewCellStyle12
         Me.Num_Externo.HeaderText = "Num_Externo"
         Me.Num_Externo.Name = "Num_Externo"
         Me.Num_Externo.Width = 80
@@ -272,8 +292,8 @@ Partial Class MPHistorial
         'Calibre
         '
         Me.Calibre.DataPropertyName = "Calibre"
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.Calibre.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.Calibre.DefaultCellStyle = DataGridViewCellStyle13
         Me.Calibre.HeaderText = "Calibre"
         Me.Calibre.Name = "Calibre"
         Me.Calibre.Width = 60
@@ -281,8 +301,8 @@ Partial Class MPHistorial
         'Ancho
         '
         Me.Ancho.DataPropertyName = "Ancho"
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.Ancho.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.Ancho.DefaultCellStyle = DataGridViewCellStyle14
         Me.Ancho.HeaderText = "Ancho"
         Me.Ancho.Name = "Ancho"
         Me.Ancho.Width = 60
@@ -290,8 +310,8 @@ Partial Class MPHistorial
         'Peso
         '
         Me.Peso.DataPropertyName = "Peso"
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.Peso.DefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.Peso.DefaultCellStyle = DataGridViewCellStyle15
         Me.Peso.HeaderText = "Peso"
         Me.Peso.Name = "Peso"
         Me.Peso.Width = 60
@@ -299,8 +319,8 @@ Partial Class MPHistorial
         'UMedida
         '
         Me.UMedida.DataPropertyName = "UMedida"
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.UMedida.DefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.UMedida.DefaultCellStyle = DataGridViewCellStyle16
         Me.UMedida.HeaderText = "UMedida"
         Me.UMedida.Name = "UMedida"
         Me.UMedida.Width = 55
@@ -366,17 +386,170 @@ Partial Class MPHistorial
         Me.LPMMP.TabIndex = 36
         Me.LPMMP.Text = "Ingresar" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Material"
         '
+        'BInicio
+        '
+        Me.BInicio.BackColor = System.Drawing.Color.Transparent
+        Me.BInicio.BackgroundImage = CType(resources.GetObject("BInicio.BackgroundImage"), System.Drawing.Image)
+        Me.BInicio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.BInicio.Location = New System.Drawing.Point(92, 3)
+        Me.BInicio.Name = "BInicio"
+        Me.BInicio.Size = New System.Drawing.Size(50, 50)
+        Me.BInicio.TabIndex = 71
+        Me.BInicio.UseVisualStyleBackColor = False
+        Me.BInicio.Visible = False
+        '
+        'PCorreo
+        '
+        Me.PCorreo.BackColor = System.Drawing.Color.Transparent
+        Me.PCorreo.Controls.Add(Me.GroupBox2)
+        Me.PCorreo.Controls.Add(Me.GroupBox1)
+        Me.PCorreo.Controls.Add(Me.BHist)
+        Me.PCorreo.Controls.Add(Me.LCorreo)
+        Me.PCorreo.Location = New System.Drawing.Point(92, 68)
+        Me.PCorreo.Name = "PCorreo"
+        Me.PCorreo.Size = New System.Drawing.Size(578, 234)
+        Me.PCorreo.TabIndex = 72
+        Me.PCorreo.Visible = False
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.BMenos)
+        Me.GroupBox2.Controls.Add(Me.TxtEmail1)
+        Me.GroupBox2.Controls.Add(Me.TxtEmail2)
+        Me.GroupBox2.Controls.Add(Me.BE1)
+        Me.GroupBox2.Controls.Add(Me.TxtEmail3)
+        Me.GroupBox2.Location = New System.Drawing.Point(9, 129)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(398, 100)
+        Me.GroupBox2.TabIndex = 84
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Enviar a"
+        '
+        'BMenos
+        '
+        Me.BMenos.BackColor = System.Drawing.Color.Transparent
+        Me.BMenos.BackgroundImage = CType(resources.GetObject("BMenos.BackgroundImage"), System.Drawing.Image)
+        Me.BMenos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.BMenos.Location = New System.Drawing.Point(362, 48)
+        Me.BMenos.Name = "BMenos"
+        Me.BMenos.Size = New System.Drawing.Size(31, 28)
+        Me.BMenos.TabIndex = 83
+        Me.BMenos.UseVisualStyleBackColor = False
+        Me.BMenos.Visible = False
+        '
+        'TxtEmail1
+        '
+        Me.TxtEmail1.Location = New System.Drawing.Point(6, 20)
+        Me.TxtEmail1.Name = "TxtEmail1"
+        Me.TxtEmail1.Size = New System.Drawing.Size(350, 20)
+        Me.TxtEmail1.TabIndex = 77
+        '
+        'TxtEmail2
+        '
+        Me.TxtEmail2.Location = New System.Drawing.Point(6, 48)
+        Me.TxtEmail2.Name = "TxtEmail2"
+        Me.TxtEmail2.Size = New System.Drawing.Size(350, 20)
+        Me.TxtEmail2.TabIndex = 79
+        Me.TxtEmail2.Visible = False
+        '
+        'BE1
+        '
+        Me.BE1.BackColor = System.Drawing.Color.Transparent
+        Me.BE1.BackgroundImage = CType(resources.GetObject("BE1.BackgroundImage"), System.Drawing.Image)
+        Me.BE1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.BE1.Location = New System.Drawing.Point(362, 13)
+        Me.BE1.Name = "BE1"
+        Me.BE1.Size = New System.Drawing.Size(31, 28)
+        Me.BE1.TabIndex = 82
+        Me.BE1.UseVisualStyleBackColor = False
+        '
+        'TxtEmail3
+        '
+        Me.TxtEmail3.Location = New System.Drawing.Point(6, 75)
+        Me.TxtEmail3.Name = "TxtEmail3"
+        Me.TxtEmail3.Size = New System.Drawing.Size(350, 20)
+        Me.TxtEmail3.TabIndex = 81
+        Me.TxtEmail3.Visible = False
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.TxtPassword)
+        Me.GroupBox1.Controls.Add(Me.Label1)
+        Me.GroupBox1.Controls.Add(Me.TxtUser)
+        Me.GroupBox1.Controls.Add(Me.Label2)
+        Me.GroupBox1.Location = New System.Drawing.Point(9, 37)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(566, 82)
+        Me.GroupBox1.TabIndex = 83
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Inicio de Sesión"
+        '
+        'TxtPassword
+        '
+        Me.TxtPassword.Location = New System.Drawing.Point(383, 43)
+        Me.TxtPassword.Name = "TxtPassword"
+        Me.TxtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.TxtPassword.Size = New System.Drawing.Size(177, 20)
+        Me.TxtPassword.TabIndex = 75
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(7, 24)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(94, 13)
+        Me.Label1.TabIndex = 72
+        Me.Label1.Text = "Correo Electrónico"
+        '
+        'TxtUser
+        '
+        Me.TxtUser.Location = New System.Drawing.Point(7, 43)
+        Me.TxtUser.Name = "TxtUser"
+        Me.TxtUser.Size = New System.Drawing.Size(350, 20)
+        Me.TxtUser.TabIndex = 73
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(390, 24)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(61, 13)
+        Me.Label2.TabIndex = 74
+        Me.Label2.Text = "Contraseña"
+        '
         'BHist
         '
         Me.BHist.BackColor = System.Drawing.Color.Transparent
         Me.BHist.BackgroundImage = CType(resources.GetObject("BHist.BackgroundImage"), System.Drawing.Image)
         Me.BHist.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.BHist.Location = New System.Drawing.Point(70, 1)
+        Me.BHist.Location = New System.Drawing.Point(453, 154)
         Me.BHist.Name = "BHist"
         Me.BHist.Size = New System.Drawing.Size(50, 50)
-        Me.BHist.TabIndex = 70
+        Me.BHist.TabIndex = 71
         Me.BHist.UseVisualStyleBackColor = False
-        Me.BHist.Visible = False
+        '
+        'LCorreo
+        '
+        Me.LCorreo.AutoSize = True
+        Me.LCorreo.BackColor = System.Drawing.Color.Transparent
+        Me.LCorreo.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LCorreo.Location = New System.Drawing.Point(189, 11)
+        Me.LCorreo.Name = "LCorreo"
+        Me.LCorreo.Size = New System.Drawing.Size(186, 24)
+        Me.LCorreo.TabIndex = 67
+        Me.LCorreo.Text = "Correo Electrónico"
+        '
+        'BExcel
+        '
+        Me.BExcel.BackColor = System.Drawing.Color.Transparent
+        Me.BExcel.BackgroundImage = CType(resources.GetObject("BExcel.BackgroundImage"), System.Drawing.Image)
+        Me.BExcel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.BExcel.Location = New System.Drawing.Point(152, 3)
+        Me.BExcel.Name = "BExcel"
+        Me.BExcel.Size = New System.Drawing.Size(50, 50)
+        Me.BExcel.TabIndex = 73
+        Me.BExcel.UseVisualStyleBackColor = False
+        Me.BExcel.Visible = False
         '
         'MPHistorial
         '
@@ -384,7 +557,9 @@ Partial Class MPHistorial
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.NucleosAve.My.Resources.Resources.Fondo
         Me.ClientSize = New System.Drawing.Size(1044, 586)
-        Me.Controls.Add(Me.BHist)
+        Me.Controls.Add(Me.BExcel)
+        Me.Controls.Add(Me.PCorreo)
+        Me.Controls.Add(Me.BInicio)
         Me.Controls.Add(Me.PBMPr)
         Me.Controls.Add(Me.DGHR)
         Me.Controls.Add(Me.GBusqueda)
@@ -405,6 +580,12 @@ Partial Class MPHistorial
         Me.PBMPr.ResumeLayout(False)
         Me.PBMPr.PerformLayout()
         CType(Me.BPMPr, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PCorreo.ResumeLayout(False)
+        Me.PCorreo.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -437,8 +618,23 @@ Partial Class MPHistorial
     Friend WithEvents PBMPr As Panel
     Friend WithEvents BPMPr As PictureBox
     Friend WithEvents LPMMP As Label
-    Friend WithEvents BHist As Button
     Friend WithEvents CFechas As CheckBox
     Friend WithEvents DTF2 As DateTimePicker
     Friend WithEvents BBOC1 As Button
+    Friend WithEvents BInicio As Button
+    Friend WithEvents PCorreo As Panel
+    Friend WithEvents TxtEmail3 As TextBox
+    Friend WithEvents TxtEmail2 As TextBox
+    Friend WithEvents TxtEmail1 As TextBox
+    Friend WithEvents TxtPassword As TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents TxtUser As TextBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents LCorreo As Label
+    Friend WithEvents BE1 As Button
+    Friend WithEvents BHist As Button
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents BMenos As Button
+    Friend WithEvents BExcel As Button
 End Class

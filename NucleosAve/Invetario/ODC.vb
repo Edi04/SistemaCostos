@@ -1,6 +1,7 @@
 ﻿Imports System.Data.SqlClient
-Imports System.Web.Mail
-
+Imports System.Net.Mail
+Imports System.Net
+Imports System.Text.RegularExpressions
 
 Public Class ODC
     Dim Conex As New SqlConnection(My.Settings.Conexxx)
@@ -636,7 +637,7 @@ Public Class ODC
 
         MR()
         Productos()
-        BCompras.Visible = True
+        BInicio.Visible = True
         LCompras.Visible = True
     End Sub
 
@@ -1903,330 +1904,6 @@ Public Class ODC
         BE20.Visible = False
     End Sub
 
-    Private Sub BCompras_Click(sender As Object, e As EventArgs) Handles BCompras.Click
-        If MsgBox("Desea Enviar Mensaje de Estatus", vbYesNo) = vbYes Then
-            Dim Fecha = DateTime.Now.ToString("dd-MM-yyy")
-            Dim smtp As New System.Net.Mail.SmtpClient
-            Dim correo As New System.Net.Mail.MailMessage
-            Dim P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20 As String
-            Dim cE1, cE2, cE3, cE4, cE5, cE6, cE7, cE8, cE9, cE10, cE11, cE12, cE13, cE14, cE15, cE16, cE17, cE18, cE19, cE20 As String
-            Dim c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12, c13, c14, c15, c16, c17, c18, c19, c20 As String
-            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
-
-            If TxtAP1.Text = "" Then
-                P1 = Producto1.Text
-                c1 = CEntra1.Text
-                cE1 = CantidadS1.Text & " " & LUM1.Text
-            Else
-                P1 = TxtAP1.Text
-                c1 = CEntra1.Text
-                cE1 = CantidadS1.Text & " " & LUM1.Text
-            End If
-            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
-
-            If TxtAP2.Text = "" Then
-                    P2 = Producto2.Text
-                    c2 = CEntra2.Text
-                    cE2 = CantidadS2.Text & " " & LUM2.Text
-                Else
-                    P2 = TxtAP2.Text
-                    c2 = CEntra2.Text
-                    cE2 = CantidadS2.Text & " " & LUM2.Text
-                End If
-
-            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
-
-            If TxtAP3.Text = "" Then
-                    P3 = Producto3.Text
-                    c3 = CEntra3.Text
-                    cE3 = CantidadS3.Text & " " & LUM3.Text
-                Else
-                    P3 = TxtAP3.Text
-                    c3 = CEntra3.Text
-                    cE3 = CantidadS3.Text & " " & LUM3.Text
-                End If
-            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
-
-            If TxtAP4.Text = "" Then
-                P4 = Producto4.Text
-                c4 = CEntra4.Text
-                cE4 = CantidadS4.Text & " " & LUM4.Text
-            Else
-                P4 = TxtAP4.Text
-                c4 = CEntra4.Text
-                cE4 = CantidadS4.Text & " " & LUM4.Text
-            End If
-            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
-
-            If TxtAP5.Text = "" Then
-                P5 = Producto5.Text
-                c5 = CEntra5.Text
-                cE5 = CantidadS5.Text & " " & LUM5.Text
-            Else
-                P5 = TxtAP5.Text
-                c5 = CEntra5.Text
-                cE5 = CantidadS5.Text & " " & LUM5.Text
-            End If
-            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
-
-            If TxtAP6.Text = "" Then
-                P6 = Producto6.Text
-                c6 = CEntra6.Text
-                cE6 = CantidadS6.Text & " " & LUM6.Text
-            Else
-                P6 = TxtAP6.Text
-                c6 = CEntra6.Text
-                cE6 = CantidadS6.Text & " " & LUM6.Text
-            End If
-            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
-
-            If TxtAP7.Text = "" Then
-                P7 = Producto7.Text
-                c7 = CEntra7.Text
-                cE7 = CantidadS7.Text & " " & LUM7.Text
-            Else
-                P7 = TxtAP7.Text
-                c7 = CEntra7.Text
-                cE7 = CantidadS7.Text & " " & LUM7.Text
-            End If
-            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
-            If TxtAP8.Text = "" Then
-                P8 = Producto8.Text
-                c8 = CEntra8.Text
-                cE8 = CantidadS8.Text & " " & LUM8.Text
-            Else
-                P8 = TxtAP8.Text
-                c8 = CEntra8.Text
-                cE8 = CantidadS8.Text & " " & LUM8.Text
-            End If
-            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
-
-            If TxtAP9.Text = "" Then
-                P9 = Producto9.Text
-                c9 = CEntra9.Text
-                cE9 = CantidadS9.Text & " " & LUM9.Text
-            Else
-                P9 = TxtAP9.Text
-                c9 = CEntra9.Text
-                cE9 = CantidadS9.Text & " " & LUM9.Text
-            End If
-            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
-
-            If TxtAP10.Text = "" Then
-                P10 = Producto10.Text
-                c10 = CEntra10.Text
-                cE10 = CantidadS10.Text & " " & LUM10.Text
-            Else
-                P10 = TxtAP10.Text
-                c10 = CEntra10.Text
-                cE10 = CantidadS10.Text & " " & LUM10.Text
-            End If
-            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
-            If TxtAP11.Text = "" Then
-                P11 = Producto11.Text
-                c11 = CEntra11.Text
-                cE11 = CantidadS11.Text & " " & LUM11.Text
-            Else
-                P11 = TxtAP11.Text
-                c11 = CEntra11.Text
-                cE11 = CantidadS11.Text & " " & LUM11.Text
-            End If
-            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
-            If TxtAP12.Text = "" Then
-                P12 = Producto12.Text
-                c12 = CEntra12.Text
-                cE12 = CantidadS12.Text & " " & LUM12.Text
-            Else
-                P12 = TxtAP12.Text
-                c12 = CEntra12.Text
-                cE12 = CantidadS12.Text & " " & LUM12.Text
-            End If
-            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
-            If TxtAP13.Text = "" Then
-                P13 = Producto13.Text
-                c13 = CEntra13.Text
-                cE13 = CantidadS13.Text & " " & LUM13.Text
-            Else
-                P13 = TxtAP13.Text
-                c13 = CEntra13.Text
-                cE13 = CantidadS13.Text & " " & LUM13.Text
-            End If
-            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
-            If TxtAP14.Text = "" Then
-                P14 = Producto14.Text
-                c14 = CEntra14.Text
-                cE14 = CantidadS14.Text & " " & LUM14.Text
-            Else
-                P14 = TxtAP14.Text
-                c14 = CEntra14.Text
-                cE14 = CantidadS14.Text & " " & LUM14.Text
-            End If
-            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
-            If TxtAP15.Text = "" Then
-                P15 = Producto15.Text
-                c15 = CEntra15.Text
-                cE15 = CantidadS15.Text & " " & LUM15.Text
-            Else
-                P15 = TxtAP15.Text
-                c15 = CEntra15.Text
-                cE15 = CantidadS15.Text & " " & LUM15.Text
-            End If
-            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
-            If TxtAP16.Text = "" Then
-                P16 = Producto16.Text
-                c16 = CEntra16.Text
-                cE16 = CantidadS16.Text & " " & LUM16.Text
-            Else
-                P16 = TxtAP16.Text
-                c16 = CEntra16.Text
-                cE16 = CantidadS16.Text & " " & LUM16.Text
-            End If
-            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
-            If TxtAP17.Text = "" Then
-                P17 = Producto17.Text
-                c17 = CEntra17.Text
-                cE17 = CantidadS17.Text & " " & LUM17.Text
-            Else
-                P17 = TxtAP17.Text
-                c17 = CEntra17.Text
-                cE17 = CantidadS17.Text & " " & LUM17.Text
-            End If
-            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
-            If TxtAP18.Text = "" Then
-                P18 = Producto18.Text
-                c18 = CEntra18.Text
-                cE18 = CantidadS18.Text & " " & LUM18.Text
-            Else
-                P18 = TxtAP18.Text
-                c18 = CEntra18.Text
-                cE18 = CantidadS18.Text & " " & LUM18.Text
-            End If
-            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
-            If TxtAP19.Text = "" Then
-                P19 = Producto19.Text
-                c19 = CEntra19.Text
-                cE19 = CantidadS19.Text & " " & LUM19.Text
-            Else
-                P19 = TxtAP19.Text
-                c19 = CEntra19.Text
-                cE19 = CantidadS19.Text & " " & LUM19.Text
-            End If
-            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
-            If TxtAP20.Text = "" Then
-                P20 = Producto20.Text
-                c20 = CEntra20.Text
-                cE20 = CantidadS20.Text & " " & LUM20.Text
-            Else
-                P20 = TxtAP20.Text
-                c20 = CEntra20.Text
-                cE20 = CantidadS20.Text & " " & LUM20.Text
-            End If
-            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
-
-            Dim Oc As String = OCompra.Text
-            Dim Pr As String = LProv.Text
-            With smtp
-                .Port = 26
-                .Host = "mail.nucleosave.com.mx"
-                .Credentials = New System.Net.NetworkCredential("Sistemas01@nucleosave.com.mx", "Sistemas01")
-                .EnableSsl = False
-            End With
-            With correo
-                .From = New System.Net.Mail.MailAddress("Sistemas01@nucleosave.com.mx")
-                .To.Add("Sistemas01@nucleosave.com.mx")
-                .Subject = "Orden de Compra: " & Oc
-                .Body = "<p align='right'>Orden de Compra : " & OCompra.Text & "</p><br />" &
-                        "Fecha: " & Fecha & "<br />" &
-                        "Proveedor: " & Pr & "<br />" &
-                        "Los Productos de la Orden de Compra son los Siguientes" & "<br />" &
-                            "<center><p>Listado de Productos:</p></center>" &
-                            "<center><table  border= " & 1 & " >
-                            <tr ALIGN=CENTER>
-                                <th>Producto</th>
-                                <th>Cantidad Solicitada</th>
-                                <th>Cantidad Ingresada</th>
-                            </tr> 
-                            <tr ALIGN=CENTER>" &
-                                    "<td>" & P1 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & cE1 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & c1 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
-                                    "<td>" & P2 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & cE2 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & c2 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
-                                    "<td>" & P3 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & cE3 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & c3 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
-                                    "<td>" & P4 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & cE4 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & c4 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
-                                    "<td>" & P5 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & cE5 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & c5 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
-                                    "<td>" & P6 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & cE6 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & c6 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
-                                    "<td>" & P7 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & cE7 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & c7 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
-                                    "<td>" & P8 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & cE8 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & c8 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
-                                    "<td>" & P9 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & cE9 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & c9 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
-                                    "<td>" & P10 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & cE10 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & c10 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
-                                    "<td>" & P11 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & cE11 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & c11 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
-                                    "<td>" & P12 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & cE12 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & c12 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
-                                    "<td>" & P13 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & cE13 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & c13 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
-                                    "<td>" & P14 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & cE14 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & c14 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
-                                    "<td>" & P15 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & cE15 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & c15 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
-                                    "<td>" & P16 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & cE16 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & c16 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
-                                    "<td>" & P17 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & cE17 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & c17 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
-                                    "<td>" & P18 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & cE18 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & c18 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
-                                    "<td>" & P19 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & cE19 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & c19 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
-                                    "<td>" & P20 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & cE20 & "&nbsp;&nbsp;</td>" &
-                                        "<td style='text-align: center;'>" & c20 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>
-                            </table></center>" &
-                        "<font color='red'>Nota : Por favor de notificar si se esperan los productos faltantes</font>"
-                .IsBodyHtml = True
-                .Priority = System.Net.Mail.MailPriority.Normal
-            End With
-
-            Try
-                smtp.Send(correo)
-                MessageBox.Show("Su mensaje de correo ha sido enviado.",
-                                "Correo enviado",
-                                 MessageBoxButtons.OK, MessageBoxIcon.Information)
-            Catch ex As Exception
-                MessageBox.Show("Error: " & ex.Message,
-                                "Error al enviar correo",
-                                 MessageBoxButtons.OK, MessageBoxIcon.Error)
-            End Try
-        End If
-    End Sub
-
-
     'Text
     Private Sub TxtBOC_TextChanged(sender As Object, e As EventArgs) Handles TxtBOC.TextChanged
         If TxtBOC.Text = "" Then
@@ -2723,6 +2400,408 @@ Public Class ODC
         End If
     End Sub
 
+    '///////////////////////////////////
+    Private Sub BInicio_Click(sender As Object, e As EventArgs) Handles BInicio.Click
+        If PCorreo.Visible = True Then
+            PCorreo.Visible = False
+        ElseIf PCorreo.Visible = False Then
+            PCorreo.Visible = True
+        End If
+    End Sub
+    Private Sub BM_Click(sender As Object, e As EventArgs) Handles BM.Click
+        If TxtEmail1.Visible = True And TxtEmail2.Visible = False Then
+            TxtEmail2.Visible = True
+            BMenos.Visible = True
+        ElseIf TxtEmail2.Visible = True And TxtEmail3.Visible = False Then
+            TxtEmail3.Visible = True
+        End If
+    End Sub
+
+    Private Sub Menos_Click(sender As Object, e As EventArgs) Handles BMenos.Click
+        If TxtEmail1.Visible = True And TxtEmail2.Visible = True And TxtEmail3.Visible = False Then
+            TxtEmail2.Visible = False
+            TxtEmail2.Text = ""
+            BMenos.Visible = False
+        ElseIf TxtEmail2.Visible = True And TxtEmail3.Visible = True Then
+            TxtEmail3.Visible = False
+            TxtEmail3.Text = ""
+        End If
+    End Sub
+
+    Private Function validar_Mail(ByVal sMail As String) As Boolean
+        ' retorna true o false   
+        Return Regex.IsMatch(sMail,
+                "^([\w-]+\.)*?[\w-]+@[\w-]+\.([\w-]+\.)*?[\w]+$") '"^([\w-]+\.)*?[\w-]+@nucleosave.com.mx") 
+    End Function
+
+    Private Sub BHist_Click(sender As Object, e As EventArgs) Handles BHist.Click
+        If validar_Mail(LCase(TxtUser.Text)) = False Then
+            MsgBox("Correo electronico de " & TxtUser.Text & " no valido")
+        Else
+
+            If TxtEmail1.Text <> "" And TxtEmail2.Text = "" And TxtEmail3.Text = "" Then
+                If validar_Mail(LCase(TxtEmail1.Text)) = False Then
+                    MsgBox("Correo electronico de " & TxtEmail1.Text & " no valido, Ejemplo usuario@nucleosave.com.mx")
+                Else
+                    Correo()
+                End If
+            End If
+
+            If TxtEmail1.Text <> "" And TxtEmail2.Text <> "" And TxtEmail3.Text = "" Then
+                If validar_Mail(LCase(TxtEmail1.Text)) = False Then
+                    MsgBox("Correo electronico de " & TxtEmail1.Text & " no valido, Ejemplo usuario@nucleosave.com.mx")
+                ElseIf validar_Mail(LCase(TxtEmail2.Text)) = False Then
+                    MsgBox("Correo electronico de " & TxtEmail2.Text & " no valido, Ejemplo usuario@nucleosave.com.mx")
+                Else
+                    Correo()
+                End If
+            End If
+
+            If TxtEmail1.Text <> "" And TxtEmail2.Text <> "" And TxtEmail3.Text <> "" Then
+                If validar_Mail(LCase(TxtEmail1.Text)) = False Then
+                    MsgBox("Correo electronico de " & TxtEmail1.Text & " no valido, Ejemplo usuario@nucleosave.com.mx")
+                ElseIf validar_Mail(LCase(TxtEmail2.Text)) = False Then
+                    MsgBox("Correo electronico de " & TxtEmail2.Text & " no valido, Ejemplo usuario@nucleosave.com.mx")
+                ElseIf validar_Mail(LCase(TxtEmail3.Text)) = False Then
+                    MsgBox("Correo electronico de " & TxtEmail3.Text & " no valido, Ejemplo usuario@nucleosave.com.mx")
+                Else
+                    Correo()
+                End If
+            End If
+        End If
+    End Sub
+
+    Private Sub Correo()
+        If MsgBox("Desea Enviar Mensaje de Estatus", vbYesNo) = vbYes Then
+            Dim Fecha = DateTime.Now.ToString("dd-MM-yyy")
+            Dim smtp As New System.Net.Mail.SmtpClient
+            Dim correoa As New System.Net.Mail.MailMessage
+            Dim P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20 As String
+            Dim cE1, cE2, cE3, cE4, cE5, cE6, cE7, cE8, cE9, cE10, cE11, cE12, cE13, cE14, cE15, cE16, cE17, cE18, cE19, cE20 As String
+            Dim c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12, c13, c14, c15, c16, c17, c18, c19, c20 As String
+            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
+            If TxtAP1.Text = "" Then
+                P1 = Producto1.Text
+                c1 = CEntra1.Text
+                cE1 = CantidadS1.Text & " " & LUM1.Text
+            Else
+                P1 = TxtAP1.Text
+                c1 = CEntra1.Text
+                cE1 = CantidadS1.Text & " " & LUM1.Text
+            End If
+            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
+            If TxtAP2.Text = "" Then
+                P2 = Producto2.Text
+                c2 = CEntra2.Text
+                cE2 = CantidadS2.Text & " " & LUM2.Text
+            Else
+                P2 = TxtAP2.Text
+                c2 = CEntra2.Text
+                cE2 = CantidadS2.Text & " " & LUM2.Text
+            End If
+            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
+            If TxtAP3.Text = "" Then
+                P3 = Producto3.Text
+                c3 = CEntra3.Text
+                cE3 = CantidadS3.Text & " " & LUM3.Text
+            Else
+                P3 = TxtAP3.Text
+                c3 = CEntra3.Text
+                cE3 = CantidadS3.Text & " " & LUM3.Text
+            End If
+            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
+            If TxtAP4.Text = "" Then
+                P4 = Producto4.Text
+                c4 = CEntra4.Text
+                cE4 = CantidadS4.Text & " " & LUM4.Text
+            Else
+                P4 = TxtAP4.Text
+                c4 = CEntra4.Text
+                cE4 = CantidadS4.Text & " " & LUM4.Text
+            End If
+            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
+            If TxtAP5.Text = "" Then
+                P5 = Producto5.Text
+                c5 = CEntra5.Text
+                cE5 = CantidadS5.Text & " " & LUM5.Text
+            Else
+                P5 = TxtAP5.Text
+                c5 = CEntra5.Text
+                cE5 = CantidadS5.Text & " " & LUM5.Text
+            End If
+            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
+            If TxtAP6.Text = "" Then
+                P6 = Producto6.Text
+                c6 = CEntra6.Text
+                cE6 = CantidadS6.Text & " " & LUM6.Text
+            Else
+                P6 = TxtAP6.Text
+                c6 = CEntra6.Text
+                cE6 = CantidadS6.Text & " " & LUM6.Text
+            End If
+            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
+            If TxtAP7.Text = "" Then
+                P7 = Producto7.Text
+                c7 = CEntra7.Text
+                cE7 = CantidadS7.Text & " " & LUM7.Text
+            Else
+                P7 = TxtAP7.Text
+                c7 = CEntra7.Text
+                cE7 = CantidadS7.Text & " " & LUM7.Text
+            End If
+            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
+            If TxtAP8.Text = "" Then
+                P8 = Producto8.Text
+                c8 = CEntra8.Text
+                cE8 = CantidadS8.Text & " " & LUM8.Text
+            Else
+                P8 = TxtAP8.Text
+                c8 = CEntra8.Text
+                cE8 = CantidadS8.Text & " " & LUM8.Text
+            End If
+            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
+            If TxtAP9.Text = "" Then
+                P9 = Producto9.Text
+                c9 = CEntra9.Text
+                cE9 = CantidadS9.Text & " " & LUM9.Text
+            Else
+                P9 = TxtAP9.Text
+                c9 = CEntra9.Text
+                cE9 = CantidadS9.Text & " " & LUM9.Text
+            End If
+            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
+            If TxtAP10.Text = "" Then
+                P10 = Producto10.Text
+                c10 = CEntra10.Text
+                cE10 = CantidadS10.Text & " " & LUM10.Text
+            Else
+                P10 = TxtAP10.Text
+                c10 = CEntra10.Text
+                cE10 = CantidadS10.Text & " " & LUM10.Text
+            End If
+            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
+            If TxtAP11.Text = "" Then
+                P11 = Producto11.Text
+                c11 = CEntra11.Text
+                cE11 = CantidadS11.Text & " " & LUM11.Text
+            Else
+                P11 = TxtAP11.Text
+                c11 = CEntra11.Text
+                cE11 = CantidadS11.Text & " " & LUM11.Text
+            End If
+            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
+            If TxtAP12.Text = "" Then
+                P12 = Producto12.Text
+                c12 = CEntra12.Text
+                cE12 = CantidadS12.Text & " " & LUM12.Text
+            Else
+                P12 = TxtAP12.Text
+                c12 = CEntra12.Text
+                cE12 = CantidadS12.Text & " " & LUM12.Text
+            End If
+            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
+            If TxtAP13.Text = "" Then
+                P13 = Producto13.Text
+                c13 = CEntra13.Text
+                cE13 = CantidadS13.Text & " " & LUM13.Text
+            Else
+                P13 = TxtAP13.Text
+                c13 = CEntra13.Text
+                cE13 = CantidadS13.Text & " " & LUM13.Text
+            End If
+            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
+            If TxtAP14.Text = "" Then
+                P14 = Producto14.Text
+                c14 = CEntra14.Text
+                cE14 = CantidadS14.Text & " " & LUM14.Text
+            Else
+                P14 = TxtAP14.Text
+                c14 = CEntra14.Text
+                cE14 = CantidadS14.Text & " " & LUM14.Text
+            End If
+            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
+            If TxtAP15.Text = "" Then
+                P15 = Producto15.Text
+                c15 = CEntra15.Text
+                cE15 = CantidadS15.Text & " " & LUM15.Text
+            Else
+                P15 = TxtAP15.Text
+                c15 = CEntra15.Text
+                cE15 = CantidadS15.Text & " " & LUM15.Text
+            End If
+            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
+            If TxtAP16.Text = "" Then
+                P16 = Producto16.Text
+                c16 = CEntra16.Text
+                cE16 = CantidadS16.Text & " " & LUM16.Text
+            Else
+                P16 = TxtAP16.Text
+                c16 = CEntra16.Text
+                cE16 = CantidadS16.Text & " " & LUM16.Text
+            End If
+            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
+            If TxtAP17.Text = "" Then
+                P17 = Producto17.Text
+                c17 = CEntra17.Text
+                cE17 = CantidadS17.Text & " " & LUM17.Text
+            Else
+                P17 = TxtAP17.Text
+                c17 = CEntra17.Text
+                cE17 = CantidadS17.Text & " " & LUM17.Text
+            End If
+            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
+            If TxtAP18.Text = "" Then
+                P18 = Producto18.Text
+                c18 = CEntra18.Text
+                cE18 = CantidadS18.Text & " " & LUM18.Text
+            Else
+                P18 = TxtAP18.Text
+                c18 = CEntra18.Text
+                cE18 = CantidadS18.Text & " " & LUM18.Text
+            End If
+            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
+            If TxtAP19.Text = "" Then
+                P19 = Producto19.Text
+                c19 = CEntra19.Text
+                cE19 = CantidadS19.Text & " " & LUM19.Text
+            Else
+                P19 = TxtAP19.Text
+                c19 = CEntra19.Text
+                cE19 = CantidadS19.Text & " " & LUM19.Text
+            End If
+            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
+            If TxtAP20.Text = "" Then
+                P20 = Producto20.Text
+                c20 = CEntra20.Text
+                cE20 = CantidadS20.Text & " " & LUM20.Text
+            Else
+                P20 = TxtAP20.Text
+                c20 = CEntra20.Text
+                cE20 = CantidadS20.Text & " " & LUM20.Text
+            End If
+            ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
+
+            Dim Oc As String = OCompra.Text
+            Dim Pr As String = LProv.Text
+
+            With smtp
+                .Port = 26
+                .Host = "mail.nucleosave.com.mx"
+                .Credentials = New System.Net.NetworkCredential(Trim(TxtUser.Text), Trim(TxtPassword.Text)) '("Sistemas01@nucleosave.com.mx", "Sistemas01")
+                    .EnableSsl = True
+                End With
+
+                With correoa
+                    .From = New System.Net.Mail.MailAddress(Trim(TxtUser.Text)) '("Sistemas01@nucleosave.com.mx")
+                    .To.Add(Trim(TxtEmail1.Text)) '("Sistemas01@nucleosave.com.mx")
+                    If TxtEmail2.Text <> "" Then
+                        .To.Add(Trim(TxtEmail2.Text))
+                    End If
+                    If TxtEmail3.Text <> "" Then
+                        .To.Add(Trim(TxtEmail3.Text))
+                    End If
+                .Subject = "Ingreso de la Orden de Compra: " & Oc
+                .Body = "<p align='right'>Orden de Compra : " & OCompra.Text & "</p><br />" &
+                            "Fecha: " & Fecha & "<br />" &
+                            "Proveedor: " & Pr & "<br />" &
+                            "Los Productos de la Orden de Compra son los Siguientes" & "<br />" &
+                                "<center><p>Listado de Productos:</p></center>" &
+                                "<center><table  border= " & 1 & " >
+                            <tr ALIGN=CENTER>
+                                <th>Producto</th>
+                                <th>Cantidad Solicitada</th>
+                                <th>Cantidad Ingresada</th>
+                            </tr> 
+                            <tr ALIGN=CENTER>" &
+                                        "<td>" & P1 & "&nbsp;&nbsp;</td>" &
+                                            "<td style='text-align: center;'>" & cE1 & "&nbsp;&nbsp;</td>" &
+                                            "<td style='text-align: center;'>" & c1 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
+                                        "<td>" & P2 & "&nbsp;&nbsp;</td>" &
+                                            "<td style='text-align: center;'>" & cE2 & "&nbsp;&nbsp;</td>" &
+                                            "<td style='text-align: center;'>" & c2 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
+                                        "<td>" & P3 & "&nbsp;&nbsp;</td>" &
+                                            "<td style='text-align: center;'>" & cE3 & "&nbsp;&nbsp;</td>" &
+                                            "<td style='text-align: center;'>" & c3 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
+                                        "<td>" & P4 & "&nbsp;&nbsp;</td>" &
+                                            "<td style='text-align: center;'>" & cE4 & "&nbsp;&nbsp;</td>" &
+                                            "<td style='text-align: center;'>" & c4 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
+                                        "<td>" & P5 & "&nbsp;&nbsp;</td>" &
+                                            "<td style='text-align: center;'>" & cE5 & "&nbsp;&nbsp;</td>" &
+                                            "<td style='text-align: center;'>" & c5 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
+                                        "<td>" & P6 & "&nbsp;&nbsp;</td>" &
+                                            "<td style='text-align: center;'>" & cE6 & "&nbsp;&nbsp;</td>" &
+                                            "<td style='text-align: center;'>" & c6 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
+                                        "<td>" & P7 & "&nbsp;&nbsp;</td>" &
+                                            "<td style='text-align: center;'>" & cE7 & "&nbsp;&nbsp;</td>" &
+                                            "<td style='text-align: center;'>" & c7 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
+                                        "<td>" & P8 & "&nbsp;&nbsp;</td>" &
+                                            "<td style='text-align: center;'>" & cE8 & "&nbsp;&nbsp;</td>" &
+                                            "<td style='text-align: center;'>" & c8 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
+                                        "<td>" & P9 & "&nbsp;&nbsp;</td>" &
+                                            "<td style='text-align: center;'>" & cE9 & "&nbsp;&nbsp;</td>" &
+                                            "<td style='text-align: center;'>" & c9 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
+                                        "<td>" & P10 & "&nbsp;&nbsp;</td>" &
+                                            "<td style='text-align: center;'>" & cE10 & "&nbsp;&nbsp;</td>" &
+                                            "<td style='text-align: center;'>" & c10 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
+                                        "<td>" & P11 & "&nbsp;&nbsp;</td>" &
+                                            "<td style='text-align: center;'>" & cE11 & "&nbsp;&nbsp;</td>" &
+                                            "<td style='text-align: center;'>" & c11 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
+                                        "<td>" & P12 & "&nbsp;&nbsp;</td>" &
+                                            "<td style='text-align: center;'>" & cE12 & "&nbsp;&nbsp;</td>" &
+                                            "<td style='text-align: center;'>" & c12 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
+                                        "<td>" & P13 & "&nbsp;&nbsp;</td>" &
+                                            "<td style='text-align: center;'>" & cE13 & "&nbsp;&nbsp;</td>" &
+                                            "<td style='text-align: center;'>" & c13 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
+                                        "<td>" & P14 & "&nbsp;&nbsp;</td>" &
+                                            "<td style='text-align: center;'>" & cE14 & "&nbsp;&nbsp;</td>" &
+                                            "<td style='text-align: center;'>" & c14 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
+                                        "<td>" & P15 & "&nbsp;&nbsp;</td>" &
+                                            "<td style='text-align: center;'>" & cE15 & "&nbsp;&nbsp;</td>" &
+                                            "<td style='text-align: center;'>" & c15 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
+                                        "<td>" & P16 & "&nbsp;&nbsp;</td>" &
+                                            "<td style='text-align: center;'>" & cE16 & "&nbsp;&nbsp;</td>" &
+                                            "<td style='text-align: center;'>" & c16 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
+                                        "<td>" & P17 & "&nbsp;&nbsp;</td>" &
+                                            "<td style='text-align: center;'>" & cE17 & "&nbsp;&nbsp;</td>" &
+                                            "<td style='text-align: center;'>" & c17 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
+                                        "<td>" & P18 & "&nbsp;&nbsp;</td>" &
+                                            "<td style='text-align: center;'>" & cE18 & "&nbsp;&nbsp;</td>" &
+                                            "<td style='text-align: center;'>" & c18 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
+                                        "<td>" & P19 & "&nbsp;&nbsp;</td>" &
+                                            "<td style='text-align: center;'>" & cE19 & "&nbsp;&nbsp;</td>" &
+                                            "<td style='text-align: center;'>" & c19 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>" &
+                                        "<td>" & P20 & "&nbsp;&nbsp;</td>" &
+                                            "<td style='text-align: center;'>" & cE20 & "&nbsp;&nbsp;</td>" &
+                                            "<td style='text-align: center;'>" & c20 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>
+                            </table></center>" &
+                            "<font color='red'>Nota : Por favor de notificar si se esperan los productos faltantes</font>"
+                    .IsBodyHtml = True
+                    .Priority = System.Net.Mail.MailPriority.Normal
+                End With
+                Try
+                smtp.Send(correoa)
+                MessageBox.Show("Correo Enviado exitosamente.", "Reporte de Rollos", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                TxtEmail1.Text = ""
+                TxtEmail2.Text = ""
+                TxtEmail3.Text = ""
+                PCorreo.Visible = False
+            Catch ex As Exception
+                MessageBox.Show("Revise que el correo y contraseña de Inicio de Sesión sean correctas.
+                      Revise que los correos de destino sean correctos", "Enviar Detalle de la Orden de Compra: " & OCompra.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+        End If
+    End Sub
+
+    Private Sub TxtUP_TextChanged(sender As Object, e As EventArgs) Handles TxtPassword.TextChanged
+        If TxtUser.Text <> "" Then
+            BHist.Visible = True
+            BHist.Enabled = True
+        Else
+            BHist.Visible = False
+            BHist.Enabled = True
+        End If
+    End Sub
 
     'Consultas
     Private Sub Productos()
@@ -4934,6 +5013,10 @@ Public Class ODC
 
     Private Sub Form1_MouseUp(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles MyBase.MouseUp
         Arrastre = False
+    End Sub
+
+    Private Sub POC_Paint(sender As Object, e As PaintEventArgs) Handles POC.Paint
+
     End Sub
 
     Private Sub Form1_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles MyBase.MouseMove
