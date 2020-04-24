@@ -3872,15 +3872,15 @@ Public Class OrdCompra
         ':::::::::::::::::::::::::::::::::_IF_::::::::::::::::::::::::::::::::::::::::::::::::::
 
         With smtp
-            .Port = 25
+            .Port = 26
             .Host = "mail.nucleosave.com.mx"
             .Credentials = New System.Net.NetworkCredential("Sistemas01@nucleosave.com.mx", "Sistemas01")
             .EnableSsl = False
         End With
         With correo
             .From = New System.Net.Mail.MailAddress("Sistemas01@nucleosave.com.mx")
-            .To.Add("Sistemas01@nucleosave.com.mx")
-            .Subject = "Orden de Compra" & TextCodigo.Text
+            .To.Add("javier@nucleosave.com.mx")
+            .Subject = "Urgente Ordenes de Compra" & TextCodigo.Text
             .Body = "<img src ='\\ANTUA-PC\Servidor_de_Archivos\Imagenes\logo_correo\logo.png'>" & "<p align='right'>Orden de Compra : " & TextCodigo.Text & "</p><br />" &
                     "Fecha: " & DateFechaOrden.Value.Date & "<br />" &
                     "Proveedor: " & ComboBoxProveedores.Text & "<br />" &
@@ -3931,7 +3931,7 @@ Public Class OrdCompra
                     "<td style='text-align: center;'>" & c19 & "&nbsp;&nbsp;</td></tr><tr>" &
                      "<td>" & P20 & "&nbsp;&nbsp;</td>" &
                     "<td style='text-align: center;'>" & c20 & "&nbsp;&nbsp;</td></tr><tr></table></center>" &
-            "<font color='red'>Nota : Por Favor visite el sistema de ordenes de compra para más detalles e introduzca el codigó de la orden que ha recibido</font>"
+            "<font color='red'>Nota : Por Favor visite el sistema de ordenes de compra para más detalles e introduzca el codigó de la orden que ha recibido, seleccione apruebe o desapruebe esta orden</font>"
             .IsBodyHtml = True
             .Priority = System.Net.Mail.MailPriority.Normal
         End With
@@ -4010,7 +4010,49 @@ Public Class OrdCompra
         End If
     End Sub
 
+    Private Sub btn_bAlmacen_Click(sender As Object, e As EventArgs) Handles btn_bAlmacen.Click
+        P_Aprovar_Descartar.Visible = True
+    End Sub
 
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        P_Aprovar_Descartar.Visible = False
+    End Sub
+
+    Private Sub btn_aprovar_Click(sender As Object, e As EventArgs) Handles btn_aprovar.Click
+        If MessageBox.Show("Estas seguro que quieres aprovar esta OC " + TextCodigo.Text, " Orden De Compra", MessageBoxButtons.OKCancel, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
+            Try
+                Dim funciones As New Funcion_Registros
+                Dim logica As New ClassRegistrosOrdC
+
+                logica.G_codigo = Me.TextCodigo.Text
+                logica.G_almacen = Me.TextBox_Aprovado.Text
+
+                If funciones.FN_aceptar_descartar_oc(logica) Then
+                    MsgBox("La Orden Fue Aprovada", MessageBoxIcon.Information)
+                End If
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        End If
+    End Sub
+
+    Private Sub btn_descartar_Click(sender As Object, e As EventArgs) Handles btn_descartar.Click
+        If MessageBox.Show("Estas seguro que quieres descargar esta OC " + TextCodigo.Text, " Orden De Compra", MessageBoxButtons.OKCancel, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
+            Try
+                Dim funciones As New Funcion_Registros
+                Dim logica As New ClassRegistrosOrdC
+
+                logica.G_codigo = Me.TextCodigo.Text
+                logica.G_almacen = Me.TextBox_descartar.Text
+
+                If funciones.FN_aceptar_descartar_oc(logica) Then
+                    MsgBox("La Orden Fue Descartada", MessageBoxIcon.Information)
+                End If
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        End If
+    End Sub
 
     Private Sub Btn_masProductos_Click(sender As Object, e As EventArgs) Handles Btn_masProductos.Click
         NProductos.Show()

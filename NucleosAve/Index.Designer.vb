@@ -22,6 +22,7 @@ Partial Class Index
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Index))
         Me.B_Minimizar = New System.Windows.Forms.PictureBox()
         Me.B_Cerrar = New System.Windows.Forms.PictureBox()
@@ -122,7 +123,7 @@ Partial Class Index
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Parh = New System.Windows.Forms.Panel()
         Me.btn_rh_abre = New System.Windows.Forms.PictureBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.PM_recursos_Humanos = New System.Windows.Forms.Panel()
@@ -143,6 +144,9 @@ Partial Class Index
         Me.PStatus = New System.Windows.Forms.Panel()
         Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         Me.LStatus = New System.Windows.Forms.Label()
+        Me.lblHora = New System.Windows.Forms.Label()
+        Me.lblFecha = New System.Windows.Forms.Label()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         CType(Me.B_Minimizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.B_Cerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_mantenimientos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -204,7 +208,7 @@ Partial Class Index
         Me.PM_Armado_Rectangular.SuspendLayout()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel1.SuspendLayout()
+        Me.Parh.SuspendLayout()
         CType(Me.btn_rh_abre, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PM_recursos_Humanos.SuspendLayout()
         CType(Me.btn_ee_Seguridad, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -253,7 +257,7 @@ Partial Class Index
         Me.L_Bienvenido.AutoSize = True
         Me.L_Bienvenido.BackColor = System.Drawing.Color.Transparent
         Me.L_Bienvenido.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.L_Bienvenido.ForeColor = System.Drawing.Color.Black
+        Me.L_Bienvenido.ForeColor = System.Drawing.Color.DimGray
         Me.L_Bienvenido.Location = New System.Drawing.Point(42, 9)
         Me.L_Bienvenido.Name = "L_Bienvenido"
         Me.L_Bienvenido.Size = New System.Drawing.Size(262, 42)
@@ -265,7 +269,7 @@ Partial Class Index
         Me.L_User.AutoSize = True
         Me.L_User.BackColor = System.Drawing.Color.Transparent
         Me.L_User.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.L_User.ForeColor = System.Drawing.Color.Black
+        Me.L_User.ForeColor = System.Drawing.Color.DimGray
         Me.L_User.Location = New System.Drawing.Point(52, 51)
         Me.L_User.Name = "L_User"
         Me.L_User.Size = New System.Drawing.Size(88, 37)
@@ -286,7 +290,7 @@ Partial Class Index
         Me.LManteni.AutoSize = True
         Me.LManteni.BackColor = System.Drawing.Color.Transparent
         Me.LManteni.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LManteni.ForeColor = System.Drawing.Color.Black
+        Me.LManteni.ForeColor = System.Drawing.Color.DimGray
         Me.LManteni.Location = New System.Drawing.Point(103, 80)
         Me.LManteni.Name = "LManteni"
         Me.LManteni.Size = New System.Drawing.Size(43, 15)
@@ -312,7 +316,7 @@ Partial Class Index
         Me.LTran.AutoSize = True
         Me.LTran.BackColor = System.Drawing.Color.Transparent
         Me.LTran.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LTran.ForeColor = System.Drawing.Color.Black
+        Me.LTran.ForeColor = System.Drawing.Color.DimGray
         Me.LTran.Location = New System.Drawing.Point(11, 78)
         Me.LTran.Name = "LTran"
         Me.LTran.Size = New System.Drawing.Size(75, 15)
@@ -362,7 +366,7 @@ Partial Class Index
         Me.LConta.AutoSize = True
         Me.LConta.BackColor = System.Drawing.Color.Transparent
         Me.LConta.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LConta.ForeColor = System.Drawing.Color.Black
+        Me.LConta.ForeColor = System.Drawing.Color.DimGray
         Me.LConta.Location = New System.Drawing.Point(1, 72)
         Me.LConta.Name = "LConta"
         Me.LConta.Size = New System.Drawing.Size(84, 15)
@@ -374,7 +378,7 @@ Partial Class Index
         Me.LPedimentos.AutoSize = True
         Me.LPedimentos.BackColor = System.Drawing.Color.Transparent
         Me.LPedimentos.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LPedimentos.ForeColor = System.Drawing.Color.Black
+        Me.LPedimentos.ForeColor = System.Drawing.Color.DimGray
         Me.LPedimentos.Location = New System.Drawing.Point(90, 78)
         Me.LPedimentos.Name = "LPedimentos"
         Me.LPedimentos.Size = New System.Drawing.Size(83, 15)
@@ -424,7 +428,7 @@ Partial Class Index
         Me.LEntrega.AutoSize = True
         Me.LEntrega.BackColor = System.Drawing.Color.Transparent
         Me.LEntrega.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LEntrega.ForeColor = System.Drawing.Color.Black
+        Me.LEntrega.ForeColor = System.Drawing.Color.DimGray
         Me.LEntrega.Location = New System.Drawing.Point(2, 73)
         Me.LEntrega.Name = "LEntrega"
         Me.LEntrega.Size = New System.Drawing.Size(64, 15)
@@ -460,7 +464,7 @@ Partial Class Index
         Me.LPrestamo.AutoSize = True
         Me.LPrestamo.BackColor = System.Drawing.Color.Transparent
         Me.LPrestamo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LPrestamo.ForeColor = System.Drawing.Color.Black
+        Me.LPrestamo.ForeColor = System.Drawing.Color.DimGray
         Me.LPrestamo.Location = New System.Drawing.Point(2, 73)
         Me.LPrestamo.Name = "LPrestamo"
         Me.LPrestamo.Size = New System.Drawing.Size(75, 15)
@@ -496,7 +500,7 @@ Partial Class Index
         Me.L_Inventario.AutoSize = True
         Me.L_Inventario.BackColor = System.Drawing.Color.Transparent
         Me.L_Inventario.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.L_Inventario.ForeColor = System.Drawing.Color.Black
+        Me.L_Inventario.ForeColor = System.Drawing.Color.DimGray
         Me.L_Inventario.Location = New System.Drawing.Point(4, 73)
         Me.L_Inventario.Name = "L_Inventario"
         Me.L_Inventario.Size = New System.Drawing.Size(70, 15)
@@ -532,7 +536,7 @@ Partial Class Index
         Me.L_Barras.AutoSize = True
         Me.L_Barras.BackColor = System.Drawing.Color.Transparent
         Me.L_Barras.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.L_Barras.ForeColor = System.Drawing.Color.Black
+        Me.L_Barras.ForeColor = System.Drawing.Color.DimGray
         Me.L_Barras.Location = New System.Drawing.Point(3, 71)
         Me.L_Barras.Name = "L_Barras"
         Me.L_Barras.Size = New System.Drawing.Size(69, 30)
@@ -544,7 +548,7 @@ Partial Class Index
         Me.L_Facturas.AutoSize = True
         Me.L_Facturas.BackColor = System.Drawing.Color.Transparent
         Me.L_Facturas.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.L_Facturas.ForeColor = System.Drawing.Color.Black
+        Me.L_Facturas.ForeColor = System.Drawing.Color.DimGray
         Me.L_Facturas.Location = New System.Drawing.Point(16, 76)
         Me.L_Facturas.Name = "L_Facturas"
         Me.L_Facturas.Size = New System.Drawing.Size(62, 15)
@@ -570,7 +574,7 @@ Partial Class Index
         Me.L_OrdenCompra.AutoSize = True
         Me.L_OrdenCompra.BackColor = System.Drawing.Color.Transparent
         Me.L_OrdenCompra.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.L_OrdenCompra.ForeColor = System.Drawing.Color.Black
+        Me.L_OrdenCompra.ForeColor = System.Drawing.Color.DimGray
         Me.L_OrdenCompra.Location = New System.Drawing.Point(13, 74)
         Me.L_OrdenCompra.Name = "L_OrdenCompra"
         Me.L_OrdenCompra.Size = New System.Drawing.Size(66, 30)
@@ -621,7 +625,7 @@ Partial Class Index
         Me.LCompras.AutoSize = True
         Me.LCompras.BackColor = System.Drawing.Color.Transparent
         Me.LCompras.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LCompras.ForeColor = System.Drawing.Color.Black
+        Me.LCompras.ForeColor = System.Drawing.Color.DimGray
         Me.LCompras.Location = New System.Drawing.Point(3, 68)
         Me.LCompras.Name = "LCompras"
         Me.LCompras.Size = New System.Drawing.Size(55, 26)
@@ -658,7 +662,7 @@ Partial Class Index
         Me.LCos.AutoSize = True
         Me.LCos.BackColor = System.Drawing.Color.Transparent
         Me.LCos.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LCos.ForeColor = System.Drawing.Color.Black
+        Me.LCos.ForeColor = System.Drawing.Color.DimGray
         Me.LCos.Location = New System.Drawing.Point(8, 57)
         Me.LCos.Name = "LCos"
         Me.LCos.Size = New System.Drawing.Size(45, 13)
@@ -695,7 +699,7 @@ Partial Class Index
         Me.LTrans.AutoSize = True
         Me.LTrans.BackColor = System.Drawing.Color.Transparent
         Me.LTrans.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LTrans.ForeColor = System.Drawing.Color.Black
+        Me.LTrans.ForeColor = System.Drawing.Color.DimGray
         Me.LTrans.Location = New System.Drawing.Point(2, 57)
         Me.LTrans.Name = "LTrans"
         Me.LTrans.Size = New System.Drawing.Size(68, 13)
@@ -732,7 +736,7 @@ Partial Class Index
         Me.LAlma.AutoSize = True
         Me.LAlma.BackColor = System.Drawing.Color.Transparent
         Me.LAlma.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LAlma.ForeColor = System.Drawing.Color.Black
+        Me.LAlma.ForeColor = System.Drawing.Color.DimGray
         Me.LAlma.Location = New System.Drawing.Point(3, 57)
         Me.LAlma.Name = "LAlma"
         Me.LAlma.Size = New System.Drawing.Size(55, 13)
@@ -779,7 +783,7 @@ Partial Class Index
         Me.Label18.AutoSize = True
         Me.Label18.BackColor = System.Drawing.Color.Transparent
         Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.ForeColor = System.Drawing.Color.Black
+        Me.Label18.ForeColor = System.Drawing.Color.DimGray
         Me.Label18.Location = New System.Drawing.Point(333, 79)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(89, 30)
@@ -791,7 +795,7 @@ Partial Class Index
         Me.Label13.AutoSize = True
         Me.Label13.BackColor = System.Drawing.Color.Transparent
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.ForeColor = System.Drawing.Color.Black
+        Me.Label13.ForeColor = System.Drawing.Color.DimGray
         Me.Label13.Location = New System.Drawing.Point(439, 80)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(50, 15)
@@ -818,7 +822,7 @@ Partial Class Index
         Me.LAP.AutoSize = True
         Me.LAP.BackColor = System.Drawing.Color.Transparent
         Me.LAP.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LAP.ForeColor = System.Drawing.Color.Black
+        Me.LAP.ForeColor = System.Drawing.Color.DimGray
         Me.LAP.Location = New System.Drawing.Point(253, 74)
         Me.LAP.Name = "LAP"
         Me.LAP.Size = New System.Drawing.Size(65, 30)
@@ -845,7 +849,7 @@ Partial Class Index
         Me.Lpdf.AutoSize = True
         Me.Lpdf.BackColor = System.Drawing.Color.Transparent
         Me.Lpdf.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lpdf.ForeColor = System.Drawing.Color.Black
+        Me.Lpdf.ForeColor = System.Drawing.Color.DimGray
         Me.Lpdf.Location = New System.Drawing.Point(156, 76)
         Me.Lpdf.Name = "Lpdf"
         Me.Lpdf.Size = New System.Drawing.Size(90, 30)
@@ -858,7 +862,7 @@ Partial Class Index
         Me.LListado.AutoSize = True
         Me.LListado.BackColor = System.Drawing.Color.Transparent
         Me.LListado.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LListado.ForeColor = System.Drawing.Color.Black
+        Me.LListado.ForeColor = System.Drawing.Color.DimGray
         Me.LListado.Location = New System.Drawing.Point(96, 76)
         Me.LListado.Name = "LListado"
         Me.LListado.Size = New System.Drawing.Size(54, 15)
@@ -930,7 +934,7 @@ Partial Class Index
         Me.Label10.AutoSize = True
         Me.Label10.BackColor = System.Drawing.Color.Transparent
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.ForeColor = System.Drawing.Color.Black
+        Me.Label10.ForeColor = System.Drawing.Color.DimGray
         Me.Label10.Location = New System.Drawing.Point(329, 82)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(64, 30)
@@ -956,7 +960,7 @@ Partial Class Index
         Me.Label7.AutoSize = True
         Me.Label7.BackColor = System.Drawing.Color.Transparent
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.Black
+        Me.Label7.ForeColor = System.Drawing.Color.DimGray
         Me.Label7.Location = New System.Drawing.Point(250, 81)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(64, 15)
@@ -982,7 +986,7 @@ Partial Class Index
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.Black
+        Me.Label1.ForeColor = System.Drawing.Color.DimGray
         Me.Label1.Location = New System.Drawing.Point(163, 80)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(86, 30)
@@ -1047,7 +1051,7 @@ Partial Class Index
         Me.LMass.AutoSize = True
         Me.LMass.BackColor = System.Drawing.Color.Transparent
         Me.LMass.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LMass.ForeColor = System.Drawing.Color.Black
+        Me.LMass.ForeColor = System.Drawing.Color.DimGray
         Me.LMass.Location = New System.Drawing.Point(12, 57)
         Me.LMass.Name = "LMass"
         Me.LMass.Size = New System.Drawing.Size(36, 13)
@@ -1084,7 +1088,7 @@ Partial Class Index
         Me.LMInventario.AutoSize = True
         Me.LMInventario.BackColor = System.Drawing.Color.Transparent
         Me.LMInventario.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LMInventario.ForeColor = System.Drawing.Color.Black
+        Me.LMInventario.ForeColor = System.Drawing.Color.DimGray
         Me.LMInventario.Location = New System.Drawing.Point(12, 76)
         Me.LMInventario.Name = "LMInventario"
         Me.LMInventario.Size = New System.Drawing.Size(94, 30)
@@ -1097,7 +1101,7 @@ Partial Class Index
         Me.PPedidos.BackColor = System.Drawing.Color.Transparent
         Me.PPedidos.Controls.Add(Me.BPedidos)
         Me.PPedidos.Controls.Add(Me.LPedidos)
-        Me.PPedidos.Location = New System.Drawing.Point(440, 138)
+        Me.PPedidos.Location = New System.Drawing.Point(779, 142)
         Me.PPedidos.Name = "PPedidos"
         Me.PPedidos.Size = New System.Drawing.Size(61, 72)
         Me.PPedidos.TabIndex = 66
@@ -1122,7 +1126,7 @@ Partial Class Index
         Me.LPedidos.AutoSize = True
         Me.LPedidos.BackColor = System.Drawing.Color.Transparent
         Me.LPedidos.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LPedidos.ForeColor = System.Drawing.Color.Black
+        Me.LPedidos.ForeColor = System.Drawing.Color.White
         Me.LPedidos.Location = New System.Drawing.Point(6, 55)
         Me.LPedidos.Name = "LPedidos"
         Me.LPedidos.Size = New System.Drawing.Size(52, 13)
@@ -1159,7 +1163,7 @@ Partial Class Index
         Me.LMP.AutoSize = True
         Me.LMP.BackColor = System.Drawing.Color.Transparent
         Me.LMP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LMP.ForeColor = System.Drawing.Color.Black
+        Me.LMP.ForeColor = System.Drawing.Color.White
         Me.LMP.Location = New System.Drawing.Point(6, 57)
         Me.LMP.Name = "LMP"
         Me.LMP.Size = New System.Drawing.Size(49, 26)
@@ -1206,7 +1210,7 @@ Partial Class Index
         Me.LHR.AutoSize = True
         Me.LHR.BackColor = System.Drawing.Color.Transparent
         Me.LHR.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LHR.ForeColor = System.Drawing.Color.Black
+        Me.LHR.ForeColor = System.Drawing.Color.DimGray
         Me.LHR.Location = New System.Drawing.Point(6, 57)
         Me.LHR.Name = "LHR"
         Me.LHR.Size = New System.Drawing.Size(75, 26)
@@ -1242,7 +1246,7 @@ Partial Class Index
         Me.LPMMP.AutoSize = True
         Me.LPMMP.BackColor = System.Drawing.Color.Transparent
         Me.LPMMP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LPMMP.ForeColor = System.Drawing.Color.Black
+        Me.LPMMP.ForeColor = System.Drawing.Color.DimGray
         Me.LPMMP.Location = New System.Drawing.Point(6, 57)
         Me.LPMMP.Name = "LPMMP"
         Me.LPMMP.Size = New System.Drawing.Size(53, 26)
@@ -1279,7 +1283,7 @@ Partial Class Index
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.Black
+        Me.Label3.ForeColor = System.Drawing.Color.DimGray
         Me.Label3.Location = New System.Drawing.Point(3, 57)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(56, 13)
@@ -1320,7 +1324,7 @@ Partial Class Index
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Black
+        Me.Label2.ForeColor = System.Drawing.Color.DimGray
         Me.Label2.Location = New System.Drawing.Point(97, 77)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(64, 30)
@@ -1360,7 +1364,7 @@ Partial Class Index
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.Black
+        Me.Label4.ForeColor = System.Drawing.Color.DimGray
         Me.Label4.Location = New System.Drawing.Point(14, 78)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(64, 30)
@@ -1372,7 +1376,7 @@ Partial Class Index
         Me.Label5.AutoSize = True
         Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.Black
+        Me.Label5.ForeColor = System.Drawing.Color.DimGray
         Me.Label5.Location = New System.Drawing.Point(167, 79)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(68, 45)
@@ -1384,7 +1388,7 @@ Partial Class Index
         Me.PA_R.BackColor = System.Drawing.Color.Transparent
         Me.PA_R.Controls.Add(Me.BA_R)
         Me.PA_R.Controls.Add(Me.Label6)
-        Me.PA_R.Location = New System.Drawing.Point(639, 138)
+        Me.PA_R.Location = New System.Drawing.Point(846, 143)
         Me.PA_R.Name = "PA_R"
         Me.PA_R.Size = New System.Drawing.Size(61, 72)
         Me.PA_R.TabIndex = 77
@@ -1409,7 +1413,7 @@ Partial Class Index
         Me.Label6.AutoSize = True
         Me.Label6.BackColor = System.Drawing.Color.Transparent
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.Black
+        Me.Label6.ForeColor = System.Drawing.Color.White
         Me.Label6.Location = New System.Drawing.Point(0, 55)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(62, 13)
@@ -1481,16 +1485,16 @@ Partial Class Index
         Me.Label9.TabIndex = 70
         Me.Label9.Text = "Asignar OT."
         '
-        'Panel1
+        'Parh
         '
-        Me.Panel1.BackColor = System.Drawing.Color.Transparent
-        Me.Panel1.Controls.Add(Me.btn_rh_abre)
-        Me.Panel1.Controls.Add(Me.Label11)
-        Me.Panel1.Location = New System.Drawing.Point(572, 138)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(61, 82)
-        Me.Panel1.TabIndex = 79
-        Me.Panel1.Visible = False
+        Me.Parh.BackColor = System.Drawing.Color.Transparent
+        Me.Parh.Controls.Add(Me.btn_rh_abre)
+        Me.Parh.Controls.Add(Me.Label11)
+        Me.Parh.Location = New System.Drawing.Point(439, 134)
+        Me.Parh.Name = "Parh"
+        Me.Parh.Size = New System.Drawing.Size(61, 82)
+        Me.Parh.TabIndex = 79
+        Me.Parh.Visible = False
         '
         'btn_rh_abre
         '
@@ -1511,7 +1515,7 @@ Partial Class Index
         Me.Label11.AutoSize = True
         Me.Label11.BackColor = System.Drawing.Color.Transparent
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.ForeColor = System.Drawing.Color.Black
+        Me.Label11.ForeColor = System.Drawing.Color.DimGray
         Me.Label11.Location = New System.Drawing.Point(13, 61)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(25, 13)
@@ -1555,7 +1559,7 @@ Partial Class Index
         Me.Label17.AutoSize = True
         Me.Label17.BackColor = System.Drawing.Color.Transparent
         Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.ForeColor = System.Drawing.Color.Black
+        Me.Label17.ForeColor = System.Drawing.Color.DimGray
         Me.Label17.Location = New System.Drawing.Point(205, 81)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(89, 30)
@@ -1581,7 +1585,7 @@ Partial Class Index
         Me.Label16.AutoSize = True
         Me.Label16.BackColor = System.Drawing.Color.Transparent
         Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.ForeColor = System.Drawing.Color.Black
+        Me.Label16.ForeColor = System.Drawing.Color.DimGray
         Me.Label16.Location = New System.Drawing.Point(300, 82)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(155, 30)
@@ -1607,7 +1611,7 @@ Partial Class Index
         Me.Label14.AutoSize = True
         Me.Label14.BackColor = System.Drawing.Color.Transparent
         Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.ForeColor = System.Drawing.Color.Black
+        Me.Label14.ForeColor = System.Drawing.Color.DimGray
         Me.Label14.Location = New System.Drawing.Point(118, 81)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(79, 15)
@@ -1633,7 +1637,7 @@ Partial Class Index
         Me.Label15.AutoSize = True
         Me.Label15.BackColor = System.Drawing.Color.Transparent
         Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.ForeColor = System.Drawing.Color.Black
+        Me.Label15.ForeColor = System.Drawing.Color.DimGray
         Me.Label15.Location = New System.Drawing.Point(42, 79)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(71, 30)
@@ -1645,7 +1649,7 @@ Partial Class Index
         Me.PSCRAP.BackColor = System.Drawing.Color.Transparent
         Me.PSCRAP.Controls.Add(Me.PictureBox2)
         Me.PSCRAP.Controls.Add(Me.LSCRAP)
-        Me.PSCRAP.Location = New System.Drawing.Point(706, 138)
+        Me.PSCRAP.Location = New System.Drawing.Point(572, 137)
         Me.PSCRAP.Name = "PSCRAP"
         Me.PSCRAP.Size = New System.Drawing.Size(61, 85)
         Me.PSCRAP.TabIndex = 67
@@ -1670,7 +1674,7 @@ Partial Class Index
         Me.LSCRAP.AutoSize = True
         Me.LSCRAP.BackColor = System.Drawing.Color.Transparent
         Me.LSCRAP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LSCRAP.ForeColor = System.Drawing.Color.Black
+        Me.LSCRAP.ForeColor = System.Drawing.Color.White
         Me.LSCRAP.Location = New System.Drawing.Point(6, 57)
         Me.LSCRAP.Name = "LSCRAP"
         Me.LSCRAP.Size = New System.Drawing.Size(48, 13)
@@ -1682,7 +1686,7 @@ Partial Class Index
         Me.PProcesos.BackColor = System.Drawing.Color.Transparent
         Me.PProcesos.Controls.Add(Me.PictureBox3)
         Me.PProcesos.Controls.Add(Me.Label12)
-        Me.PProcesos.Location = New System.Drawing.Point(773, 138)
+        Me.PProcesos.Location = New System.Drawing.Point(639, 137)
         Me.PProcesos.Name = "PProcesos"
         Me.PProcesos.Size = New System.Drawing.Size(61, 85)
         Me.PProcesos.TabIndex = 68
@@ -1707,7 +1711,7 @@ Partial Class Index
         Me.Label12.AutoSize = True
         Me.Label12.BackColor = System.Drawing.Color.Transparent
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.ForeColor = System.Drawing.Color.Black
+        Me.Label12.ForeColor = System.Drawing.Color.White
         Me.Label12.Location = New System.Drawing.Point(5, 57)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(59, 13)
@@ -1719,7 +1723,7 @@ Partial Class Index
         Me.PStatus.BackColor = System.Drawing.Color.Transparent
         Me.PStatus.Controls.Add(Me.PictureBox7)
         Me.PStatus.Controls.Add(Me.LStatus)
-        Me.PStatus.Location = New System.Drawing.Point(846, 138)
+        Me.PStatus.Location = New System.Drawing.Point(712, 136)
         Me.PStatus.Name = "PStatus"
         Me.PStatus.Size = New System.Drawing.Size(61, 85)
         Me.PStatus.TabIndex = 81
@@ -1731,7 +1735,7 @@ Partial Class Index
         Me.PictureBox7.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.PictureBox7.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox7.Image = Global.NucleosAve.My.Resources.Resources.icons8_rollo_de_papel_para_empapelar_96
+        Me.PictureBox7.Image = Global.NucleosAve.My.Resources.Resources.icons8_order_history_64
         Me.PictureBox7.Location = New System.Drawing.Point(3, 2)
         Me.PictureBox7.Name = "PictureBox7"
         Me.PictureBox7.Size = New System.Drawing.Size(55, 52)
@@ -1744,12 +1748,39 @@ Partial Class Index
         Me.LStatus.AutoSize = True
         Me.LStatus.BackColor = System.Drawing.Color.Transparent
         Me.LStatus.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LStatus.ForeColor = System.Drawing.Color.Black
+        Me.LStatus.ForeColor = System.Drawing.Color.White
         Me.LStatus.Location = New System.Drawing.Point(6, 57)
         Me.LStatus.Name = "LStatus"
-        Me.LStatus.Size = New System.Drawing.Size(49, 13)
+        Me.LStatus.Size = New System.Drawing.Size(53, 13)
         Me.LStatus.TabIndex = 36
-        Me.LStatus.Text = "Estatus"
+        Me.LStatus.Text = "Historial"
+        '
+        'lblHora
+        '
+        Me.lblHora.AutoSize = True
+        Me.lblHora.BackColor = System.Drawing.Color.Transparent
+        Me.lblHora.Font = New System.Drawing.Font("Microsoft Sans Serif", 40.25!)
+        Me.lblHora.ForeColor = System.Drawing.Color.White
+        Me.lblHora.Location = New System.Drawing.Point(686, 332)
+        Me.lblHora.Name = "lblHora"
+        Me.lblHora.Size = New System.Drawing.Size(144, 63)
+        Me.lblHora.TabIndex = 82
+        Me.lblHora.Text = "Hora"
+        '
+        'lblFecha
+        '
+        Me.lblFecha.AutoSize = True
+        Me.lblFecha.BackColor = System.Drawing.Color.Transparent
+        Me.lblFecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.25!)
+        Me.lblFecha.ForeColor = System.Drawing.Color.White
+        Me.lblFecha.Location = New System.Drawing.Point(658, 395)
+        Me.lblFecha.Name = "lblFecha"
+        Me.lblFecha.Size = New System.Drawing.Size(72, 25)
+        Me.lblFecha.TabIndex = 83
+        Me.lblFecha.Text = "Fecha"
+        '
+        'Timer1
+        '
         '
         'Index
         '
@@ -1757,19 +1788,21 @@ Partial Class Index
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.NucleosAve.My.Resources.Resources.Fondo
         Me.ClientSize = New System.Drawing.Size(926, 425)
-        Me.Controls.Add(Me.PMMass)
-        Me.Controls.Add(Me.PMMPrima)
         Me.Controls.Add(Me.PMCompras)
+        Me.Controls.Add(Me.PMMPrima)
         Me.Controls.Add(Me.PM_recursos_Humanos)
-        Me.Controls.Add(Me.PMCostos)
+        Me.Controls.Add(Me.PMMass)
         Me.Controls.Add(Me.PMAlmacen)
         Me.Controls.Add(Me.PMGasolina)
         Me.Controls.Add(Me.PMTransporte)
+        Me.Controls.Add(Me.PMCostos)
+        Me.Controls.Add(Me.PM_Armado_Rectangular)
+        Me.Controls.Add(Me.lblFecha)
+        Me.Controls.Add(Me.lblHora)
         Me.Controls.Add(Me.PStatus)
         Me.Controls.Add(Me.PProcesos)
         Me.Controls.Add(Me.PSCRAP)
-        Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.PM_Armado_Rectangular)
+        Me.Controls.Add(Me.Parh)
         Me.Controls.Add(Me.PA_R)
         Me.Controls.Add(Me.PAGasolina)
         Me.Controls.Add(Me.PMaPrima)
@@ -1784,6 +1817,7 @@ Partial Class Index
         Me.Controls.Add(Me.L_Bienvenido)
         Me.Controls.Add(Me.B_Minimizar)
         Me.Controls.Add(Me.B_Cerrar)
+        Me.ForeColor = System.Drawing.Color.DimGray
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Index"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -1871,8 +1905,8 @@ Partial Class Index
         Me.PM_Armado_Rectangular.PerformLayout()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
+        Me.Parh.ResumeLayout(False)
+        Me.Parh.PerformLayout()
         CType(Me.btn_rh_abre, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PM_recursos_Humanos.ResumeLayout(False)
         Me.PM_recursos_Humanos.PerformLayout()
@@ -1986,7 +2020,7 @@ Partial Class Index
     Friend WithEvents btn_entregas As PictureBox
     Friend WithEvents Label10 As Label
     Friend WithEvents btn_fletesyentregas As PictureBox
-    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Parh As Panel
     Friend WithEvents btn_rh_abre As PictureBox
     Friend WithEvents Label11 As Label
     Friend WithEvents PM_recursos_Humanos As Panel
@@ -2014,4 +2048,7 @@ Partial Class Index
     Friend WithEvents Label17 As Label
     Friend WithEvents btn_entrega_equipo_seguridad As PictureBox
     Friend WithEvents Label18 As Label
+    Friend WithEvents lblHora As Label
+    Friend WithEvents lblFecha As Label
+    Friend WithEvents Timer1 As Timer
 End Class

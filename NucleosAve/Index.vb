@@ -23,6 +23,7 @@
             PMMass.Visible = False
             PMMPrima.Visible = False
             PMGasolina.Visible = False
+            PM_recursos_Humanos.Visible = False
         End If
     End Sub
 
@@ -57,6 +58,7 @@
             PMMPrima.Visible = False
             PMMass.Visible = False
             PMGasolina.Visible = False
+            PM_recursos_Humanos.Visible = False
         End If
     End Sub
 
@@ -83,6 +85,7 @@
             PMMass.Visible = False
             PMMPrima.Visible = False
             PMGasolina.Visible = False
+            PM_recursos_Humanos.Visible = False
         End If
     End Sub
 
@@ -109,6 +112,7 @@
             PMMass.Visible = False
             PMMPrima.Visible = False
             PMGasolina.Visible = False
+            PM_recursos_Humanos.Visible = False
         End If
     End Sub
 
@@ -162,6 +166,7 @@
             PMAlmacen.Visible = False
             PMMPrima.Visible = False
             PMGasolina.Visible = False
+            PM_recursos_Humanos.Visible = False
         End If
     End Sub
 
@@ -187,6 +192,7 @@
             PMAlmacen.Visible = False
             PMMass.Visible = False
             PMGasolina.Visible = False
+            PM_recursos_Humanos.Visible = False
         End If
     End Sub
 
@@ -215,6 +221,8 @@
             PMAlmacen.Visible = False
             PMMass.Visible = False
             PMMPrima.Visible = False
+            PM_recursos_Humanos.Visible = False
+
         End If
     End Sub
 
@@ -271,7 +279,7 @@
     End Sub
 
     Private Sub Index_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        Timer1.Enabled = True
     End Sub
 
     Private Sub BPedidos_Click(sender As Object, e As EventArgs) Handles BPedidos.Click
@@ -351,6 +359,27 @@
 
     Private Sub btn_entrega_equipo_seguridad_Click(sender As Object, e As EventArgs) Handles btn_entrega_equipo_seguridad.Click
         Entregas_Equipo_Proteccion.Show()
+    End Sub
+
+    Private Sub BA_R_Click(sender As Object, e As EventArgs) Handles BA_R.Click
+
+    End Sub
+
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+
+    End Sub
+
+    Private Sub PictureBox3_Click_1(sender As Object, e As EventArgs) Handles PictureBox3.Click
+
+    End Sub
+
+    Private Sub PictureBox7_Click(sender As Object, e As EventArgs) Handles PictureBox7.Click
+
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        lblHora.Text = DateTime.Now.ToString("hh:mm:ss")
+        lblFecha.Text = DateTime.Now.ToLongDateString()
     End Sub
 
     Private Sub btn_gas_por_mucho_Click(sender As Object, e As EventArgs) Handles btn_gas_por_mucho.Click

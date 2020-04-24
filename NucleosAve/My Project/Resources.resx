@@ -190,11 +190,17 @@
   <data name="icons8-dispensador-de-gasolina-80" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-dispensador-de-gasolina-80.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8-warehouse-80" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-warehouse-80.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8-ventas-totales-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-ventas-totales-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="gif gas" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gif gas.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="user_40" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user-40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-tarjeta-para-fichar-96" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-tarjeta-para-fichar-96.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -231,6 +237,9 @@
   </data>
   <data name="icons8-almacén-80" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-almacén-80.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-order-history-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-order-history-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Announce" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Announce.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -288,6 +297,9 @@
   </data>
   <data name="icons8-pdf-100" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-pdf-100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-ok-480" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-ok-480.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="autonomouse_sfm_driving_by_gleb (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\autonomouse_sfm_driving_by_gleb (1).gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -370,10 +382,10 @@
   <data name="icons8-ticket-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-ticket-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="user_40" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\user-40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="icons8-equipo-de-paracaidismo-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-equipo-de-paracaidismo-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-cancel-480" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-cancel-480.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

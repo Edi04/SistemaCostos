@@ -109,6 +109,34 @@ Public Class Funcion_Registros
         End Try
 
     End Function
+    '----------------------------------mostramos la tabla con los regoistros --------------------------
+    Public Function FnMostrarORDcompra_ALMACEN() As DataTable
+        Try
+            Dim conexxo As New SqlConnection(conexioncita)
+            conexxo.Open()
+
+            comando = New SqlCommand("SP38_Mostrar_OrdCom_almacen")
+            comando.CommandType = CommandType.StoredProcedure
+            comando.Connection = conexxo
+            comando.Parameters.AddWithValue("@oc", RegistrosOrdCom.TextBox_codigo_orden.Text)
+            If comando.ExecuteNonQuery Then
+                Dim tabla As New DataTable
+                Dim adaptador As New SqlDataAdapter(comando)
+                adaptador.Fill(tabla)
+                Return tabla
+
+            Else
+                Return Nothing
+
+            End If
+            conexxo.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+
+    End Function
+    '---------------------
     '----------------------------------mostramos la tabla con los regoistros de las facturas--------------------------
     Public Function FnMostrarFacturas() As DataTable
         Try
@@ -867,6 +895,33 @@ Public Class Funcion_Registros
 
             comando.Parameters.AddWithValue("@id", dts.Peid)
             comando.Parameters.AddWithValue("@Estado", "Inactivo")
+
+            If comando.ExecuteNonQuery Then
+                Return True
+            Else
+                Return False
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        Finally
+            con.Close()
+        End Try
+    End Function
+
+
+    '--------------------------------------Modificar registros-------------------------------------
+    Public Function FN_aceptar_descartar_oc(ByVal dts As ClassRegistrosOrdC) As Boolean
+        Try
+            Dim conexxo As New SqlConnection(conexioncita)
+            conexxo.Open()
+            comando = New SqlCommand("SP38_Aceptar_descartar_oc")
+            comando.CommandType = CommandType.StoredProcedure
+            comando.Connection = conexxo
+
+            comando.Parameters.AddWithValue("@codigo", dts.G_codigo)
+            comando.Parameters.AddWithValue("@almacen", dts.G_almacen)
 
             If comando.ExecuteNonQuery Then
                 Return True

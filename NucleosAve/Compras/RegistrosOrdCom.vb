@@ -27,6 +27,20 @@ Public Class RegistrosOrdCom
             MsgBox(ex.Message)
         End Try
     End Sub
+    Sub MostrarRegOrdC_almacen()
+        Try
+            Dim Func As New Funcion_Registros
+            tabla = Func.FnMostrarORDcompra_ALMACEN
+            If tabla.Rows.Count <> 0 Then
+                DataGridRegistrosOd.DataSource = tabla
+            Else
+                DataGridRegistrosOd.DataSource = Nothing
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
 
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs)
         Close()
@@ -3577,10 +3591,22 @@ Public Class RegistrosOrdCom
     End Sub
 
 
+
     Private Sub Inicio_Od_MouseDown(sender As Object, e As MouseEventArgs) Handles MyBase.MouseDown
         ex = e.X
         ey = e.Y
         Arrastre = True
     End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles btn_bAlmacen.Click
+        Panel_busqueda_almacen.Visible = True
+    End Sub
+
+    Private Sub btn_cerrarventanita_Click(sender As Object, e As EventArgs) Handles btn_cerrarventanita.Click
+        Panel_busqueda_almacen.Visible = False
+    End Sub
     '---------------------------------termina coidigo para poder mover formulario------------------------------
+    Private Sub btn_buscar_Click(sender As Object, e As EventArgs) Handles btn_buscar.Click
+        MostrarRegOrdC_almacen()
+    End Sub
 End Class
