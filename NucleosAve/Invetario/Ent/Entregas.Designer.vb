@@ -669,7 +669,7 @@ Partial Class Entregas
         Me.PNT.Controls.Add(Me.LNom)
         Me.PNT.Controls.Add(Me.LN)
         Me.PNT.Controls.Add(Me.LT)
-        Me.PNT.Location = New System.Drawing.Point(324, 179)
+        Me.PNT.Location = New System.Drawing.Point(328, 179)
         Me.PNT.Name = "PNT"
         Me.PNT.Size = New System.Drawing.Size(210, 242)
         Me.PNT.TabIndex = 6
@@ -884,7 +884,6 @@ Partial Class Entregas
         Me.LEx.Name = "LEx"
         Me.LEx.Size = New System.Drawing.Size(0, 13)
         Me.LEx.TabIndex = 80
-        Me.LEx.Visible = False
         '
         'BEPP
         '

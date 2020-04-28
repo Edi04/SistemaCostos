@@ -576,7 +576,7 @@ Partial Class ODC
         Me.POC.Controls.Add(Me.LBOD)
         Me.POC.Controls.Add(Me.LBusqueda)
         Me.POC.Controls.Add(Me.DGOCA)
-        Me.POC.Location = New System.Drawing.Point(2, 72)
+        Me.POC.Location = New System.Drawing.Point(2, 73)
         Me.POC.Name = "POC"
         Me.POC.Size = New System.Drawing.Size(1071, 533)
         Me.POC.TabIndex = 28

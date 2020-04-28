@@ -382,6 +382,11 @@
         lblFecha.Text = DateTime.Now.ToLongDateString()
     End Sub
 
+    Private Sub PictureBox6_Click(sender As Object, e As EventArgs) Handles PictureBox6.Click
+        MIEPP.Show()
+        WindowState = FormWindowState.Minimized
+    End Sub
+
     Private Sub btn_gas_por_mucho_Click(sender As Object, e As EventArgs) Handles btn_gas_por_mucho.Click
         Compra_Conbustible.Show()
     End Sub

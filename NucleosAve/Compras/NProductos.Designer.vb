@@ -39,23 +39,6 @@ Partial Class NProductos
         Me.BMinimizar = New System.Windows.Forms.PictureBox()
         Me.BCerrar = New System.Windows.Forms.PictureBox()
         Me.PAAlmac = New System.Windows.Forms.Panel()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.ComboBox5 = New System.Windows.Forms.ComboBox()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.PAMA = New System.Windows.Forms.Panel()
         Me.BNMA = New System.Windows.Forms.PictureBox()
@@ -79,6 +62,23 @@ Partial Class NProductos
         Me.TxtClaveP = New System.Windows.Forms.TextBox()
         Me.LClave = New System.Windows.Forms.Label()
         Me.LProducto = New System.Windows.Forms.Label()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.ComboBox5 = New System.Windows.Forms.ComboBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
         Me.PAMass = New System.Windows.Forms.Panel()
         Me.LMaas = New System.Windows.Forms.Label()
         Me.PAMMA = New System.Windows.Forms.Panel()
@@ -87,6 +87,8 @@ Partial Class NProductos
         Me.LAMM = New System.Windows.Forms.Label()
         Me.BGuardarMoM = New System.Windows.Forms.Button()
         Me.GDatos_Generales = New System.Windows.Forms.GroupBox()
+        Me.CBMCategoria = New System.Windows.Forms.ComboBox()
+        Me.LMCategoria = New System.Windows.Forms.Label()
         Me.BAMar = New System.Windows.Forms.Button()
         Me.CMaM = New System.Windows.Forms.ComboBox()
         Me.CMedidaM = New System.Windows.Forms.ComboBox()
@@ -144,16 +146,16 @@ Partial Class NProductos
         CType(Me.BMinimizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PAAlmac.SuspendLayout()
-        Me.Panel3.SuspendLayout()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox1.SuspendLayout()
-        Me.GroupBox2.SuspendLayout()
         Me.PAMA.SuspendLayout()
         CType(Me.BNMA, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BGuardar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GGrupos.SuspendLayout()
         Me.Datos_Generales.SuspendLayout()
         CType(Me.BNMarca, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel3.SuspendLayout()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         Me.PAMass.SuspendLayout()
         Me.PAMMA.SuspendLayout()
         CType(Me.BGAMA, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -365,218 +367,6 @@ Partial Class NProductos
         Me.PAAlmac.Size = New System.Drawing.Size(422, 382)
         Me.PAAlmac.TabIndex = 86
         Me.PAAlmac.Visible = False
-        '
-        'Panel3
-        '
-        Me.Panel3.BackColor = System.Drawing.Color.Transparent
-        Me.Panel3.Controls.Add(Me.Label4)
-        Me.Panel3.Controls.Add(Me.PictureBox3)
-        Me.Panel3.Controls.Add(Me.GroupBox1)
-        Me.Panel3.Controls.Add(Me.GroupBox2)
-        Me.Panel3.Location = New System.Drawing.Point(24, 169)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(422, 382)
-        Me.Panel3.TabIndex = 195
-        Me.Panel3.Visible = False
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.Black
-        Me.Label4.Location = New System.Drawing.Point(162, 10)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(79, 24)
-        Me.Label4.TabIndex = 37
-        Me.Label4.Text = "Herraje"
-        '
-        'PictureBox3
-        '
-        Me.PictureBox3.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox3.Image = Global.NucleosAve.My.Resources.Resources.file_1411
-        Me.PictureBox3.Location = New System.Drawing.Point(352, 62)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(47, 50)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox3.TabIndex = 87
-        Me.PictureBox3.TabStop = False
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
-        Me.GroupBox1.Controls.Add(Me.ComboBox1)
-        Me.GroupBox1.Controls.Add(Me.ComboBox2)
-        Me.GroupBox1.Controls.Add(Me.ComboBox3)
-        Me.GroupBox1.Controls.Add(Me.Label6)
-        Me.GroupBox1.Controls.Add(Me.Label7)
-        Me.GroupBox1.Controls.Add(Me.Label8)
-        Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.ForeColor = System.Drawing.Color.White
-        Me.GroupBox1.Location = New System.Drawing.Point(11, 50)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(240, 105)
-        Me.GroupBox1.TabIndex = 3
-        Me.GroupBox1.TabStop = False
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.ComboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-        Me.ComboBox1.BackColor = System.Drawing.Color.Gainsboro
-        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox1.DropDownWidth = 157
-        Me.ComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(77, 15)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(157, 21)
-        Me.ComboBox1.TabIndex = 1
-        '
-        'ComboBox2
-        '
-        Me.ComboBox2.BackColor = System.Drawing.Color.Gainsboro
-        Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox2.DropDownWidth = 200
-        Me.ComboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ComboBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(77, 75)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(157, 21)
-        Me.ComboBox2.TabIndex = 3
-        '
-        'ComboBox3
-        '
-        Me.ComboBox3.BackColor = System.Drawing.Color.Gainsboro
-        Me.ComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox3.DropDownWidth = 157
-        Me.ComboBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ComboBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Location = New System.Drawing.Point(77, 45)
-        Me.ComboBox3.Name = "ComboBox3"
-        Me.ComboBox3.Size = New System.Drawing.Size(157, 21)
-        Me.ComboBox3.TabIndex = 2
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.Black
-        Me.Label6.Location = New System.Drawing.Point(6, 77)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(67, 16)
-        Me.Label6.TabIndex = 0
-        Me.Label6.Text = "Categoria"
-        Me.Label6.TextAlign = System.Drawing.ContentAlignment.TopRight
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.Black
-        Me.Label7.Location = New System.Drawing.Point(36, 18)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(37, 16)
-        Me.Label7.TabIndex = 0
-        Me.Label7.Text = "Área"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.Color.Black
-        Me.Label8.Location = New System.Drawing.Point(15, 47)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(59, 16)
-        Me.Label8.TabIndex = 0
-        Me.Label8.Text = "Proceso"
-        Me.Label8.TextAlign = System.Drawing.ContentAlignment.TopRight
-        '
-        'GroupBox2
-        '
-        Me.GroupBox2.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
-        Me.GroupBox2.Controls.Add(Me.ComboBox5)
-        Me.GroupBox2.Controls.Add(Me.Label10)
-        Me.GroupBox2.Controls.Add(Me.TextBox2)
-        Me.GroupBox2.Controls.Add(Me.TextBox3)
-        Me.GroupBox2.Controls.Add(Me.Label11)
-        Me.GroupBox2.Controls.Add(Me.Label12)
-        Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.GroupBox2.ForeColor = System.Drawing.Color.Black
-        Me.GroupBox2.Location = New System.Drawing.Point(61, 172)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(310, 135)
-        Me.GroupBox2.TabIndex = 4
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Datos Generales del Producto"
-        '
-        'ComboBox5
-        '
-        Me.ComboBox5.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.ComboBox5.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-        Me.ComboBox5.BackColor = System.Drawing.Color.Gainsboro
-        Me.ComboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ComboBox5.FormattingEnabled = True
-        Me.ComboBox5.Location = New System.Drawing.Point(139, 74)
-        Me.ComboBox5.Name = "ComboBox5"
-        Me.ComboBox5.Size = New System.Drawing.Size(165, 21)
-        Me.ComboBox5.TabIndex = 3
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(18, 76)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(120, 16)
-        Me.Label10.TabIndex = 0
-        Me.Label10.Text = "Unidad de Medida"
-        '
-        'TextBox2
-        '
-        Me.TextBox2.BackColor = System.Drawing.Color.Gainsboro
-        Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox2.Location = New System.Drawing.Point(139, 50)
-        Me.TextBox2.Multiline = True
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(162, 15)
-        Me.TextBox2.TabIndex = 2
-        '
-        'TextBox3
-        '
-        Me.TextBox3.BackColor = System.Drawing.Color.Gainsboro
-        Me.TextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox3.Location = New System.Drawing.Point(139, 26)
-        Me.TextBox3.Multiline = True
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(162, 15)
-        Me.TextBox3.TabIndex = 1
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(15, 24)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(122, 16)
-        Me.Label11.TabIndex = 0
-        Me.Label11.Text = "Clave del Producto"
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(1, 48)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(136, 16)
-        Me.Label12.TabIndex = 0
-        Me.Label12.Text = "Nombre del Producto"
         '
         'Label3
         '
@@ -854,6 +644,218 @@ Partial Class NProductos
         Me.LProducto.TabIndex = 0
         Me.LProducto.Text = "Nombre del Producto"
         '
+        'Panel3
+        '
+        Me.Panel3.BackColor = System.Drawing.Color.Transparent
+        Me.Panel3.Controls.Add(Me.Label4)
+        Me.Panel3.Controls.Add(Me.PictureBox3)
+        Me.Panel3.Controls.Add(Me.GroupBox1)
+        Me.Panel3.Controls.Add(Me.GroupBox2)
+        Me.Panel3.Location = New System.Drawing.Point(24, 169)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(422, 382)
+        Me.Panel3.TabIndex = 195
+        Me.Panel3.Visible = False
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.Black
+        Me.Label4.Location = New System.Drawing.Point(162, 10)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(79, 24)
+        Me.Label4.TabIndex = 37
+        Me.Label4.Text = "Herraje"
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox3.Image = Global.NucleosAve.My.Resources.Resources.file_1411
+        Me.PictureBox3.Location = New System.Drawing.Point(352, 62)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(47, 50)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox3.TabIndex = 87
+        Me.PictureBox3.TabStop = False
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox1.Controls.Add(Me.ComboBox1)
+        Me.GroupBox1.Controls.Add(Me.ComboBox2)
+        Me.GroupBox1.Controls.Add(Me.ComboBox3)
+        Me.GroupBox1.Controls.Add(Me.Label6)
+        Me.GroupBox1.Controls.Add(Me.Label7)
+        Me.GroupBox1.Controls.Add(Me.Label8)
+        Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.ForeColor = System.Drawing.Color.White
+        Me.GroupBox1.Location = New System.Drawing.Point(11, 50)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(240, 105)
+        Me.GroupBox1.TabIndex = 3
+        Me.GroupBox1.TabStop = False
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.ComboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.ComboBox1.BackColor = System.Drawing.Color.Gainsboro
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox1.DropDownWidth = 157
+        Me.ComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(77, 15)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(157, 21)
+        Me.ComboBox1.TabIndex = 1
+        '
+        'ComboBox2
+        '
+        Me.ComboBox2.BackColor = System.Drawing.Color.Gainsboro
+        Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox2.DropDownWidth = 200
+        Me.ComboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ComboBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.ComboBox2.FormattingEnabled = True
+        Me.ComboBox2.Location = New System.Drawing.Point(77, 75)
+        Me.ComboBox2.Name = "ComboBox2"
+        Me.ComboBox2.Size = New System.Drawing.Size(157, 21)
+        Me.ComboBox2.TabIndex = 3
+        '
+        'ComboBox3
+        '
+        Me.ComboBox3.BackColor = System.Drawing.Color.Gainsboro
+        Me.ComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox3.DropDownWidth = 157
+        Me.ComboBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ComboBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.ComboBox3.FormattingEnabled = True
+        Me.ComboBox3.Location = New System.Drawing.Point(77, 45)
+        Me.ComboBox3.Name = "ComboBox3"
+        Me.ComboBox3.Size = New System.Drawing.Size(157, 21)
+        Me.ComboBox3.TabIndex = 2
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.Black
+        Me.Label6.Location = New System.Drawing.Point(6, 77)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(67, 16)
+        Me.Label6.TabIndex = 0
+        Me.Label6.Text = "Categoria"
+        Me.Label6.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.Black
+        Me.Label7.Location = New System.Drawing.Point(36, 18)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(37, 16)
+        Me.Label7.TabIndex = 0
+        Me.Label7.Text = "Área"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.Black
+        Me.Label8.Location = New System.Drawing.Point(15, 47)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(59, 16)
+        Me.Label8.TabIndex = 0
+        Me.Label8.Text = "Proceso"
+        Me.Label8.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox2.Controls.Add(Me.ComboBox5)
+        Me.GroupBox2.Controls.Add(Me.Label10)
+        Me.GroupBox2.Controls.Add(Me.TextBox2)
+        Me.GroupBox2.Controls.Add(Me.TextBox3)
+        Me.GroupBox2.Controls.Add(Me.Label11)
+        Me.GroupBox2.Controls.Add(Me.Label12)
+        Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.GroupBox2.ForeColor = System.Drawing.Color.Black
+        Me.GroupBox2.Location = New System.Drawing.Point(61, 172)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(310, 135)
+        Me.GroupBox2.TabIndex = 4
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Datos Generales del Producto"
+        '
+        'ComboBox5
+        '
+        Me.ComboBox5.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.ComboBox5.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.ComboBox5.BackColor = System.Drawing.Color.Gainsboro
+        Me.ComboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ComboBox5.FormattingEnabled = True
+        Me.ComboBox5.Location = New System.Drawing.Point(139, 74)
+        Me.ComboBox5.Name = "ComboBox5"
+        Me.ComboBox5.Size = New System.Drawing.Size(165, 21)
+        Me.ComboBox5.TabIndex = 3
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(18, 76)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(120, 16)
+        Me.Label10.TabIndex = 0
+        Me.Label10.Text = "Unidad de Medida"
+        '
+        'TextBox2
+        '
+        Me.TextBox2.BackColor = System.Drawing.Color.Gainsboro
+        Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox2.Location = New System.Drawing.Point(139, 50)
+        Me.TextBox2.Multiline = True
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(162, 15)
+        Me.TextBox2.TabIndex = 2
+        '
+        'TextBox3
+        '
+        Me.TextBox3.BackColor = System.Drawing.Color.Gainsboro
+        Me.TextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox3.Location = New System.Drawing.Point(139, 26)
+        Me.TextBox3.Multiline = True
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.Size = New System.Drawing.Size(162, 15)
+        Me.TextBox3.TabIndex = 1
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Location = New System.Drawing.Point(15, 24)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(122, 16)
+        Me.Label11.TabIndex = 0
+        Me.Label11.Text = "Clave del Producto"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.Location = New System.Drawing.Point(1, 48)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(136, 16)
+        Me.Label12.TabIndex = 0
+        Me.Label12.Text = "Nombre del Producto"
+        '
         'PAMass
         '
         Me.PAMass.BackColor = System.Drawing.Color.Transparent
@@ -886,16 +888,16 @@ Partial Class NProductos
         Me.PAMMA.Controls.Add(Me.BGAMA)
         Me.PAMMA.Controls.Add(Me.TxtAMarcaM)
         Me.PAMMA.Controls.Add(Me.LAMM)
-        Me.PAMMA.Location = New System.Drawing.Point(130, 220)
+        Me.PAMMA.Location = New System.Drawing.Point(130, 254)
         Me.PAMMA.Name = "PAMMA"
-        Me.PAMMA.Size = New System.Drawing.Size(200, 155)
+        Me.PAMMA.Size = New System.Drawing.Size(200, 121)
         Me.PAMMA.TabIndex = 193
         Me.PAMMA.Visible = False
         '
         'BGAMA
         '
         Me.BGAMA.Image = Global.NucleosAve.My.Resources.Resources.file_1411
-        Me.BGAMA.Location = New System.Drawing.Point(80, 88)
+        Me.BGAMA.Location = New System.Drawing.Point(80, 75)
         Me.BGAMA.Name = "BGAMA"
         Me.BGAMA.Size = New System.Drawing.Size(42, 36)
         Me.BGAMA.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -904,7 +906,7 @@ Partial Class NProductos
         '
         'TxtAMarcaM
         '
-        Me.TxtAMarcaM.Location = New System.Drawing.Point(35, 61)
+        Me.TxtAMarcaM.Location = New System.Drawing.Point(35, 48)
         Me.TxtAMarcaM.Name = "TxtAMarcaM"
         Me.TxtAMarcaM.Size = New System.Drawing.Size(134, 20)
         Me.TxtAMarcaM.TabIndex = 134
@@ -914,7 +916,7 @@ Partial Class NProductos
         Me.LAMM.AutoSize = True
         Me.LAMM.BackColor = System.Drawing.Color.Transparent
         Me.LAMM.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LAMM.Location = New System.Drawing.Point(48, 35)
+        Me.LAMM.Location = New System.Drawing.Point(48, 22)
         Me.LAMM.Name = "LAMM"
         Me.LAMM.Size = New System.Drawing.Size(111, 16)
         Me.LAMM.TabIndex = 133
@@ -935,6 +937,8 @@ Partial Class NProductos
         '
         Me.GDatos_Generales.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.GDatos_Generales.BackColor = System.Drawing.Color.Transparent
+        Me.GDatos_Generales.Controls.Add(Me.CBMCategoria)
+        Me.GDatos_Generales.Controls.Add(Me.LMCategoria)
         Me.GDatos_Generales.Controls.Add(Me.BAMar)
         Me.GDatos_Generales.Controls.Add(Me.CMaM)
         Me.GDatos_Generales.Controls.Add(Me.CMedidaM)
@@ -950,17 +954,38 @@ Partial Class NProductos
         Me.GDatos_Generales.ForeColor = System.Drawing.Color.Black
         Me.GDatos_Generales.Location = New System.Drawing.Point(14, 37)
         Me.GDatos_Generales.Name = "GDatos_Generales"
-        Me.GDatos_Generales.Size = New System.Drawing.Size(310, 173)
+        Me.GDatos_Generales.Size = New System.Drawing.Size(310, 188)
         Me.GDatos_Generales.TabIndex = 9
         Me.GDatos_Generales.TabStop = False
         Me.GDatos_Generales.Text = "Datos Generales del Producto"
+        '
+        'CBMCategoria
+        '
+        Me.CBMCategoria.BackColor = System.Drawing.SystemColors.MenuBar
+        Me.CBMCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CBMCategoria.FormattingEnabled = True
+        Me.CBMCategoria.Location = New System.Drawing.Point(143, 123)
+        Me.CBMCategoria.Name = "CBMCategoria"
+        Me.CBMCategoria.Size = New System.Drawing.Size(162, 21)
+        Me.CBMCategoria.TabIndex = 179
+        '
+        'LMCategoria
+        '
+        Me.LMCategoria.AutoSize = True
+        Me.LMCategoria.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LMCategoria.ForeColor = System.Drawing.Color.Black
+        Me.LMCategoria.Location = New System.Drawing.Point(68, 124)
+        Me.LMCategoria.Name = "LMCategoria"
+        Me.LMCategoria.Size = New System.Drawing.Size(67, 16)
+        Me.LMCategoria.TabIndex = 178
+        Me.LMCategoria.Text = "Categoria"
         '
         'BAMar
         '
         Me.BAMar.BackColor = System.Drawing.Color.Transparent
         Me.BAMar.BackgroundImage = Global.NucleosAve.My.Resources.Resources.file1
         Me.BAMar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.BAMar.Location = New System.Drawing.Point(283, 128)
+        Me.BAMar.Location = New System.Drawing.Point(283, 150)
         Me.BAMar.Name = "BAMar"
         Me.BAMar.Size = New System.Drawing.Size(22, 22)
         Me.BAMar.TabIndex = 177
@@ -971,7 +996,7 @@ Partial Class NProductos
         Me.CMaM.BackColor = System.Drawing.SystemColors.MenuBar
         Me.CMaM.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CMaM.FormattingEnabled = True
-        Me.CMaM.Location = New System.Drawing.Point(143, 128)
+        Me.CMaM.Location = New System.Drawing.Point(143, 150)
         Me.CMaM.Name = "CMaM"
         Me.CMaM.Size = New System.Drawing.Size(137, 21)
         Me.CMaM.TabIndex = 8
@@ -1009,7 +1034,7 @@ Partial Class NProductos
         Me.LMM.AutoSize = True
         Me.LMM.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LMM.ForeColor = System.Drawing.Color.Black
-        Me.LMM.Location = New System.Drawing.Point(91, 129)
+        Me.LMM.Location = New System.Drawing.Point(91, 151)
         Me.LMM.Name = "LMM"
         Me.LMM.Size = New System.Drawing.Size(46, 16)
         Me.LMM.TabIndex = 0
@@ -1473,10 +1498,10 @@ Partial Class NProductos
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.NucleosAve.My.Resources.Resources.Fondo
         Me.ClientSize = New System.Drawing.Size(477, 574)
+        Me.Controls.Add(Me.PAMass)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.PNHe)
         Me.Controls.Add(Me.PAAlmac)
-        Me.Controls.Add(Me.PAMass)
         Me.Controls.Add(Me.PAMP)
         Me.Controls.Add(Me.PAMaq)
         Me.Controls.Add(Me.PMaquin)
@@ -1506,13 +1531,6 @@ Partial Class NProductos
         CType(Me.BCerrar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PAAlmac.ResumeLayout(False)
         Me.PAAlmac.PerformLayout()
-        Me.Panel3.ResumeLayout(False)
-        Me.Panel3.PerformLayout()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
         Me.PAMA.ResumeLayout(False)
         Me.PAMA.PerformLayout()
         CType(Me.BNMA, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1522,6 +1540,13 @@ Partial Class NProductos
         Me.Datos_Generales.ResumeLayout(False)
         Me.Datos_Generales.PerformLayout()
         CType(Me.BNMarca, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         Me.PAMass.ResumeLayout(False)
         Me.PAMass.PerformLayout()
         Me.PAMMA.ResumeLayout(False)
@@ -1659,4 +1684,6 @@ Partial Class NProductos
     Friend WithEvents TextBox3 As TextBox
     Friend WithEvents Label11 As Label
     Friend WithEvents Label12 As Label
+    Friend WithEvents CBMCategoria As ComboBox
+    Friend WithEvents LMCategoria As Label
 End Class

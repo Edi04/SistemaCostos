@@ -458,7 +458,6 @@ Public Class NProductos
     End Sub
 
 
-
     'Mass
     Private Sub BMasD_Click(sender As Object, e As EventArgs) Handles BMas.Click
         If PAMass.Visible = True Then
@@ -471,6 +470,7 @@ Public Class NProductos
             PAAlmac.Visible = False
             MasMedida()
             MasCMarca()
+            MasCategoria()
         End If
     End Sub
 
@@ -482,6 +482,28 @@ Public Class NProductos
     Dim MasDTMarca As DataTable
     Dim MasDAMarca As New SqlDataAdapter
 
+    Dim MaCategoria As New SqlCommand
+    Dim MaDTCategoria As DataTable
+    Dim MaDACategoria As New SqlDataAdapter
+    Private Sub MasCategoria()
+        With MaCategoria
+            .CommandType = CommandType.Text
+            .CommandText = "SELECT *
+                            FROM TB_Categorias
+                            WHERE Estado = 'Activo'
+                            ORDER BY Categoria ASC"
+            .Connection = Conex
+        End With
+
+        MaDACategoria.SelectCommand = MaCategoria
+        MaDTCategoria = New DataTable
+        MaDACategoria.Fill(MaDTCategoria)
+        With CBMCategoria
+            .DataSource = MaDTCategoria
+            .DisplayMember = "Categoria"
+            .ValueMember = "Id_Categoria"
+        End With
+    End Sub
 
     Private Sub MasMedida()
         With MasUMedida
@@ -578,7 +600,7 @@ Public Class NProductos
         GDatos.Parameters.AddWithValue("@Maximo ", "")
         GDatos.Parameters.AddWithValue("@Id_Medida", Trim(CMedidaM.SelectedValue))
         GDatos.Parameters.AddWithValue("@Id_Marca", Trim(CMaM.SelectedValue))
-        GDatos.Parameters.AddWithValue("@Id_Categoria", 5)
+        GDatos.Parameters.AddWithValue("@Id_Categoria", Trim(CBMCategoria.SelectedValue))
         GDatos.Parameters.AddWithValue("@Id_Area", 24)
         GDatos.Parameters.AddWithValue("@Id_Proceso", 39)
         GDatos.Parameters.AddWithValue("@Codigo_Barras", "")
@@ -1069,6 +1091,7 @@ Public Class NProductos
             .ValueMember = "Id_Categoria"
         End With
 
+
         '///////////
         With Proceso
             .CommandType = CommandType.Text
@@ -1231,7 +1254,6 @@ Public Class NProductos
     Private Sub Form1_MouseUp(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles MyBase.MouseUp
         Arrastre = False
     End Sub
-
 
     Private Sub Form1_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles MyBase.MouseMove
         If Arrastre Then Me.Location = Me.PointToScreen(New Point(MousePosition.X - Me.Location.X - ex, MousePosition.Y - Me.Location.Y - ey))
