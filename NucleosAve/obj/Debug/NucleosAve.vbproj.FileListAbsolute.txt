@@ -1410,3 +1410,4 @@ C:\Users\ANTUA\Desktop\Sistema_Costos\SistemaCostos\NucleosAve\obj\Debug\Nucleos
 C:\Users\ANTUA\Desktop\Sistema_Costos\SistemaCostos\NucleosAve\obj\Debug\NucleosAve.RegistrosReportes.resources
 C:\Users\ANTUA\Desktop\Sistema_Costos\SistemaCostos\NucleosAve\obj\Debug\NucleosAve.Entregas_Equipo_Proteccion.resources
 C:\Users\ANTUA\Desktop\Sistema_Costos\SistemaCostos\NucleosAve\obj\Debug\NucleosAve.EntregaEPP.resources
+C:\Users\ANTUA\Desktop\Sistema_Costos\SistemaCostos\NucleosAve\obj\Debug\NucleosAve.EntregasEPP.resources
