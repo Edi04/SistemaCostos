@@ -147,7 +147,7 @@ Public Class NPrestamo
     End Sub
 
     Private Sub BGNT_Click(sender As Object, e As EventArgs) Handles BGNT.Click
-        If MsgBox("Desea Guardar la Siguiente Información: " & TxtNN.Text & " - " & TxtNombre.Text & " " & TxtAP.Text & " " & TxtAM.Text, vbYesNo) = vbYes Then
+        If MsgBox("Desea Guardar la Siguiente Información: " & TxtNNN.Text & " - " & TxtNombre.Text & " " & TxtAP.Text & " " & TxtAM.Text, vbYesNo) = vbYes Then
             If TxtNombre.Text = "" Or TxtAP.Text = "" Or TxtAM.Text = "" Then
                 MessageBox.Show("Ingrese el Nombre Completo", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Else

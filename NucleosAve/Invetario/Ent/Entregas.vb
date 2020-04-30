@@ -165,7 +165,7 @@ Public Class Entregas
     End Sub
 
     Private Sub BEliminar_Click(sender As Object, e As EventArgs) Handles BEliminar.Click
-        If MsgBox("Desea Eliminar el Prestamo", vbYesNo) = vbYes Then
+        If MsgBox("Desea Eliminar la Entrega", vbYesNo) = vbYes Then
             'Crear Código
             Dim Fecha = DateTime.Now.ToString("yy")
             Dim cmd As New SqlCommand("SELECT Id_S
@@ -263,7 +263,7 @@ Public Class Entregas
     End Sub
 
     Private Sub BGNT_Click(sender As Object, e As EventArgs) Handles BGNT.Click
-        If MsgBox("Desea Guardar la Información: " & TxtNNN.Text & " " & TxtNombre.Text & " " & TxtAP.Text & " " & TxtAM.Text, vbYesNo) = vbYes Then
+        If MsgBox("Desea Guardar la Información: " & TxtNNN.Text & " - " & TxtNombre.Text & " " & TxtAP.Text & " " & TxtAM.Text, vbYesNo) = vbYes Then
             If TxtNombre.Text = "" Or TxtAP.Text = "" Or TxtAM.Text = "" Then
                 MessageBox.Show("Ingrese el Nombre Completo", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Else
@@ -512,7 +512,7 @@ Public Class Entregas
                                             (Em.Numero_Nomina LIKE '%'+@Busqueda+'%' OR
                                             P.Nombre_Producto LIKE '%'+@Busqueda+'%' OR
                                             P.Codigo_Barras LIKE '%'+@Busqueda+'%')
-                                      ORDER BY E.Fecha_Entrega ASC"
+                                      ORDER BY E.Fecha_Entrega DESC"
 
             Dim cmd As New SqlCommand(Consulta, Conex)
             cmd.Parameters.AddWithValue("@Busqueda", Trim(TxtBusqueda.Text))

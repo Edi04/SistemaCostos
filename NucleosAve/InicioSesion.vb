@@ -12,6 +12,7 @@ Public Class InicioSesion
     '   Cerrar
     Private Sub BCerrar_Click(sender As Object, e As EventArgs) Handles BCerrar.Click
         Close()
+        Application.Exit()
     End Sub
 
     '   Minimizar
@@ -49,8 +50,9 @@ Public Class InicioSesion
                         'Almacen
                     ElseIf Proceso(CUsuarios.Text) = 43 Then
                         Index.PAlmacen.Visible = True
-                        Index.PAlmacen.Location = New Point(97, 138)
-                        Index.PCompras.Visible = True
+                        Index.PAlmacen.Location = New Point(30, 138)
+                        Index.PMAlmacen.Visible = True
+                        Index.PCompras.Visible = False
                         Index.btn_pdf.Visible = False
                         Index.Lpdf.Visible = False
                         Index.PMPrima.Visible = False
@@ -112,7 +114,6 @@ Public Class InicioSesion
             MsgBox(ex.ToString)
         End Try
     End Sub
-
 
     'Combos
     Private Sub CProceso_SelectionChangeCommitted(sender As Object, e As EventArgs) Handles CProceso.SelectionChangeCommitted

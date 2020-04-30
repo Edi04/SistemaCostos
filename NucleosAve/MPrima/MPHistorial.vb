@@ -254,7 +254,8 @@ Public Class MPHistorial
 		                                    Fecha_Registro, OCompra, CSeguimiento
                                       FROM TB_MateriaPrima
                                       WHERE Estado = 'Almacen MP' AND
-                                            OCompra like '%'+@Busqueda+'%'"
+                                            (OCompra like '%'+@Busqueda+'%' OR
+                                            Num_Interno like '%'+@Busqueda+'%')"
 
             Dim cmd As New SqlCommand(Consulta, Conex)
             cmd.Parameters.AddWithValue("@Busqueda", Trim(TxtBusqueda.Text))
@@ -356,6 +357,57 @@ Public Class MPHistorial
 
     Private Sub Form1_MouseUp(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles MyBase.MouseUp
         Arrastre = False
+    End Sub
+
+    Private Sub DGHR_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGHR.CellContentClick
+        BEliminar.Visible = True
+        Dim row As DataGridViewRow = DGHR.CurrentRow()
+
+        'Mostrar Inf en TextBox
+        IMP.Text = row.Cells(0).Value
+        LRI.Text = row.Cells(3).Value
+        LPeso.Text = row.Cells(6).Value
+
+        l3.Text = row.Cells(1).Value
+
+
+
+    End Sub
+
+    Private Sub BEliminar_Click(sender As Object, e As EventArgs) Handles BEliminar.Click
+        If MsgBox("Desea eliminar el Número de Rollo: " & LBOC.Text, vbYesNo) = vbYes Then
+            Dim LN As Double = IMP.Text
+            Dim Lp As Double = LPeso.Text
+            Dim LO As Double = l3.Text
+            Dim RI As Double = LRI.Text
+
+            Conex.Open()
+            Dim CONSULTA As String = "UPDATE TB_Ordenes_Detalle 
+                                                SET estatus = (Select (estatus - " & Lp & ") 
+                                                               From TB_Ordenes_Detalle 
+                                                               WHERE codigo  = (Select oc.codigo 
+                                                                                from TB_MateriaPrima as mp
+									                                            inner join TB_Ordenes_Compra as oc on oc.purchase_order = mp.OCompra
+									                                            where mp.OCompra = '" & Lo & "'
+									                                            group by oc.codigo) )
+                                                WHERE codigo = (Select oc.codigo 
+                                                                from TB_MateriaPrima as mp
+									                               inner join TB_Ordenes_Compra as oc on oc.purchase_order = mp.OCompra
+									                             where mp.OCompra = '" & Lo & "'
+									                             group by oc.codigo)
+
+                                update TB_MateriaPrima set Estado = 'cancelado'
+                                 where Id_MPrim = " & LN & ""
+
+            Dim COMANDO As New SqlCommand(CONSULTA, Conex)
+
+            COMANDO.ExecuteNonQuery()
+
+            Conex.Close()
+
+            TxtBusqueda.Text = "-"
+        End If
+
     End Sub
 
     Private Sub Form1_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles MyBase.MouseMove

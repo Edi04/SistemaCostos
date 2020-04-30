@@ -1492,6 +1492,7 @@ Public Class ODC
             B18()
             B19()
             B20()
+            OCompra.Text = ""
             Conex.Close()
 
             POC.Visible = True

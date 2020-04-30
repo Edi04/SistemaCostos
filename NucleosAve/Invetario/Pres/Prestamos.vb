@@ -291,7 +291,7 @@ Public Class Prestamos
 
         GDatos.Parameters.AddWithValue("@Id_Prestamo", Trim(IDD.Text))
         GDatos.Parameters.AddWithValue("@Cantidad", Trim(TxtCantidad.Text))
-        GDatos.Parameters.AddWithValue("@FEntrega", Trim(DTFEntrega.Value.Date))
+        GDatos.Parameters.AddWithValue("@FEntrega", DTFEntrega.Value)
         GDatos.Parameters.AddWithValue("@Descripcion", Trim(TxtDescripcion.Text))
         GDatos.Parameters.AddWithValue("@CSalida", Trim(TxtDSalida.Text))
         GDatos.Parameters.AddWithValue("@Updated", DateE)

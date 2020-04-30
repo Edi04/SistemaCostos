@@ -1,19 +1,18 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class EntregasEPP
+
     Dim Conex As New SqlConnection(My.Settings.Conexxx)
 
-    Dim PProceso As New SqlCommand
-    Dim DTProceso As DataTable
-    Dim DAProceso As New SqlDataAdapter
+        Dim PProceso As New SqlCommand
+        Dim DTProceso As DataTable
+        Dim DAProceso As New SqlDataAdapter
 
-    Private Sub EntregasEPP_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Consultas()
-        DI()
+    Private Sub Entregas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        DatosGVPP()
         DatosGVP()
         DatosGVT()
     End Sub
-
 
     'Botones
     '   Cerrar
@@ -27,6 +26,9 @@ Public Class EntregasEPP
     End Sub
 
     Private Sub BNuevoPrestamo_Click(sender As Object, e As EventArgs) Handles BNuevoPrestamo.Click
+
+        Consultas()
+
         'Crear Código
         Dim Fecha = DateTime.Now.ToString("yy")
         Dim cmd As New SqlCommand("SELECT Id_S
@@ -40,21 +42,20 @@ Public Class EntregasEPP
 
         Dim Id As Integer = CType(strCodigo.Substring(0), Integer)
 
-        LCS.Text = "CSAME-" + Format(Id + 1, "0000") + "/" + Fecha 'Inventario
+        LCS.Text = "CSAE-" + Format(Id + 1, "0000") + "/" + Fecha 'Inventario
 
         'Insertar Código
-        If ETickets.LCS.Text <> Nothing Then
-            Dim CodS As String = LCS.Text
 
-            Conex.Open()
-            Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodS FROM TB_CodigS WHERE CodS = '" & CodS & "')
+        Dim CodS As String = LCS.Text
+
+        Conex.Open()
+        Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodS FROM TB_CodigS WHERE CodS = '" & CodS & "')
 		                                    INSERT INTO TB_CodigS (CodS, Created)
                                                            VALUES ( '" & CodS & "', SYSDATETIME())"
-            Dim COMANDO As New SqlCommand(CONSULTA, Conex)
+        Dim COMANDO As New SqlCommand(CONSULTA, Conex)
 
-            COMANDO.ExecuteNonQuery()
-            Conex.Close()
-        End If
+        COMANDO.ExecuteNonQuery()
+        Conex.Close()
 
 
         Nombres()
@@ -66,8 +67,8 @@ Public Class EntregasEPP
         BEliminar.Visible = False
         BGEntrega.Visible = True
         BRIngreso.Visible = True
-        BBTrabajador.Visible = True
         BBBMaterial.Visible = True
+        BBTrabajador.Visible = True
         CProceso.Visible = True
 
         DatosB()
@@ -77,17 +78,17 @@ Public Class EntregasEPP
     Private Sub BBTrabajador_Click(sender As Object, e As EventArgs) Handles BBTrabajador.Click
         PMaterial.Visible = False
         If PTrabajador.Visible = False Then
-            PTrabajador.Visible = True
-            ANuevoT.Visible = True
-        Else
-            If PTrabajador.Visible = True Then
-                PTrabajador.Visible = False
-                ANuevoT.Visible = False
+                PTrabajador.Visible = True
+                ANuevoT.Visible = True
+            Else
+                If PTrabajador.Visible = True Then
+                    PTrabajador.Visible = False
+                    ANuevoT.Visible = False
+                End If
             End If
-        End If
-    End Sub
+        End Sub
 
-    Private Sub BBBMaterial_Click(sender As Object, e As EventArgs) Handles BBBMaterial.Click
+    Private Sub BBProducto_Click(sender As Object, e As EventArgs) Handles BBBMaterial.Click
         If PMaterial.Visible = False Then
             PMaterial.Visible = True
         Else
@@ -97,47 +98,105 @@ Public Class EntregasEPP
         End If
     End Sub
 
-    Private Sub BRNT_Click(sender As Object, e As EventArgs) Handles BRNT.Click
-        PNT.Visible = False
-        PTrabajador.Visible = True
+    Private Sub BRIngreso_Click(sender As Object, e As EventArgs) Handles BRIngreso.Click
+        DatosB()
+        BGEntrega.Visible = False
+        BRIngreso.Visible = False
+        PTrabajador.Visible = False
+        PMaterial.Visible = False
+        BBBMaterial.Visible = False
+        BBTrabajador.Visible = False
+        ANuevoT.Visible = False
+        TxtResponsable.Text = ""
+        TxtTrabajador.Visible = True
+        TxtDescripcion.BackColor = Color.Gainsboro
+        TxtCantidad.BackColor = Color.Gainsboro
     End Sub
 
-    Private Sub BGNT_Click(sender As Object, e As EventArgs) Handles BGNT.Click
-        If MsgBox("Desea Guardar la Información: " & TxtNNN.Text & " " & TxtNombre.Text & " " & TxtAP.Text & " " & TxtAM.Text, vbYesNo) = vbYes Then
-            If TxtNombre.Text = "" Or TxtAP.Text = "" Or TxtAM.Text = "" Then
-                MessageBox.Show("Ingrese el Nombre Completo", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+    Private Sub BGEntrega_Click(sender As Object, e As EventArgs) Handles BGEntrega.Click
+        If MsgBox("Desea Guardar la Entrega del Material: " & TxtMaterial.Text, vbYesNo) = vbYes Then
+            Dim Nombre As String = TxtNN.Text & " - " & TxtTrabajador.Text
+
+            If IDE.Text = "" Or IDP.Text = "" Then
+                MessageBox.Show("Seleccione al Trabajador y/o Material", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            ElseIf CDec(LEx.Text) < CDec(TxtCantidad.Text) Then
+                MessageBox.Show("Verifique Existencias", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Else
-                DatosNT()
+                Datos()
             End If
         End If
     End Sub
 
-    Private Sub ANuevoT_Click(sender As Object, e As EventArgs) Handles ANuevoT.Click
-        PNT.Visible = True
-        PTrabajador.Visible = False
-        TxtNNN.Text = ""
-        TxtNombre.Text = ""
-        TxtAP.Text = ""
-        TxtAM.Text = ""
-    End Sub
+    Private Sub BEliminar_Click(sender As Object, e As EventArgs) Handles BEliminar.Click
+        If MsgBox("Desea Eliminar el Prestamo", vbYesNo) = vbYes Then
+            'Crear Código
+            Dim Fecha = DateTime.Now.ToString("yy")
+            Dim cmd As New SqlCommand("SELECT Id_S
+                                       FROM TB_CodigS
+                                       ORDER BY Id_S DESC", Conex)
+            Dim strCodigo As String
 
+            Conex.Open()
+            strCodigo = cmd.ExecuteScalar
+            Conex.Close()
 
-    Private Sub CEPendientes_CheckedChanged(sender As Object, e As EventArgs) Handles CEPendientes.CheckedChanged
-        If CEPendientes.Checked = True Then
-            CEPendientes.Text = "Entregas Pendientes"
-            DI()
-        ElseIf CEPendientes.Checked = False Then
-            CEPendientes.Text = "Entregas Finalizadas"
+            Dim Id As Integer = CType(strCodigo.Substring(0), Integer)
+
+            LCS.Text = "CSAEE-" + Format(Id + 1, "0000") + "/" + Fecha 'Inventario
+
+            'Insertar Código
+            Dim CodS As String = LCS.Text
+
+            Conex.Open()
+            Dim CONSULTA As String = "IF NOT EXISTS (SELECT CodS FROM TB_CodigS WHERE CodS = '" & CodS & "')
+		                                    INSERT INTO TB_CodigS (CodS, Created)
+                                                           VALUES ( '" & CodS & "', SYSDATETIME())"
+            Dim COMANDO As New SqlCommand(CONSULTA, Conex)
+
+            COMANDO.ExecuteNonQuery()
+            Conex.Close()
+
+            Eliminar()
         End If
     End Sub
 
-    Private Sub TxtBusT_TextChanged(sender As Object, e As EventArgs) Handles TxtBusT.TextAlignChanged
-        ConDTra()
+    Private Sub DatosPM_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DatosPM.CellContentClick
+        Dim row As DataGridViewRow = DatosPM.CurrentRow()
+
+        'Mostrar Inf en TextBox
+        IDD.Text = row.Cells(0).Value
+        TxtNN.Text = row.Cells(1).Value
+        TxtTrabajador.Text = row.Cells(2).Value
+        TxtMaterial.Text = row.Cells(3).Value
+        TxtCantidad.Text = row.Cells(4).Value
+        TxtDescripcion.Text = row.Cells(6).Value
+        TxtResponsable.Text = row.Cells(7).Value
+        TxtProceso.Text = row.Cells(8).Value
+
+        BEliminar.Visible = True
+        BRIngreso.Visible = False
+        BGEntrega.Visible = False
+
+
+        TxtCantidad.ReadOnly = True
+        TxtDescripcion.ReadOnly = True
+        TxtCantidad.BackColor = Color.Gainsboro
+        TxtDescripcion.BackColor = Color.Gainsboro
+        PMaterial.Visible = False
+        BBBMaterial.Visible = False
+        PTrabajador.Visible = False
+        BBTrabajador.Visible = False
+        CProceso.Visible = False
     End Sub
 
-    Private Sub TxtBMaterial_TextChanged(sender As Object, e As EventArgs) Handles TxtBMaterial.TextAlignChanged
-        ConDMa()
-    End Sub
+    Private Sub ANuevoT_Click(sender As Object, e As EventArgs) Handles ANuevoT.Click
+            PNT.Visible = True
+            PTrabajador.Visible = False
+            TxtNNN.Text = ""
+            TxtNombre.Text = ""
+            TxtAP.Text = ""
+            TxtAM.Text = ""
+        End Sub
 
     Private Sub DGProducto_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGProducto.CellContentClick
         Dim FilaID As Integer
@@ -157,57 +216,121 @@ Public Class EntregasEPP
         PMaterial.Visible = False
     End Sub
 
+    Private Sub BRNT_Click(sender As Object, e As EventArgs) Handles BRNT.Click
+        PNT.Visible = False
+        PTrabajador.Visible = True
+    End Sub
+
+    Private Sub BGNT_Click(sender As Object, e As EventArgs) Handles BGNT.Click
+        If MsgBox("Desea Guardar la Información: " & TxtNNN.Text & " " & TxtNombre.Text & " " & TxtAP.Text & " " & TxtAM.Text, vbYesNo) = vbYes Then
+            If TxtNombre.Text = "" Or TxtAP.Text = "" Or TxtAM.Text = "" Then
+                MessageBox.Show("Ingrese el Nombre Completo", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Else
+                DatosNT()
+            End If
+        End If
+    End Sub
+
     Private Sub DGTrabajador_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGTrabajador.CellContentClick
-        Dim FilaID As Integer
-        Dim FilaP As String
-        Dim NN As String
-        Dim row As DataGridViewRow = DGTrabajador.Rows(e.RowIndex)
+            Dim FilaID As Integer
+            Dim FilaP As String
+            Dim NN As String
+            Dim row As DataGridViewRow = DGTrabajador.Rows(e.RowIndex)
 
-        FilaID = row.Cells(0).Value
-        IDE.Text = FilaID
+            FilaID = row.Cells(0).Value
+            IDE.Text = FilaID
 
-        NN = row.Cells(1).Value
-        TxtNN.Text = NN
+            NN = row.Cells(1).Value
+            TxtNN.Text = NN
 
-        FilaP = row.Cells(2).Value
-        TxtTrabajador.Text = FilaP
+            FilaP = row.Cells(2).Value
+            TxtTrabajador.Text = FilaP
 
-        PTrabajador.Visible = False
-        ANuevoT.Visible = False
+            PTrabajador.Visible = False
+            ANuevoT.Visible = False
+        End Sub
+
+    Private Sub CEPendientes_CheckedChanged(sender As Object, e As EventArgs) Handles CEPendientes.CheckedChanged
+        If CEPendientes.Checked = True Then
+            CEPendientes.Text = "Entregas Pendientes"
+            DatosGVPP()
+        ElseIf CEPendientes.Checked = False Then
+            CEPendientes.Text = "Entregas Finalizadas"
+            DatosGV()
+        End If
+    End Sub
+
+    'Textbox
+    Private Sub TxtBusqueda_TextChanged(sender As Object, e As EventArgs) Handles TxtBusqueda.TextChanged
+        If CEPendientes.Checked = True Then
+            DatosGPPP()
+        ElseIf CEPendientes.Checked = False Then
+            DatosGPP()
+        End If
+    End Sub
+
+    Private Sub TxtBMaterial_TextChanged(sender As Object, e As EventArgs) Handles TxtBMaterial.TextChanged
+        ConDMa()
+    End Sub
+
+    Private Sub TxtBusT_TextChanged(sender As Object, e As EventArgs) Handles TxtBusT.TextChanged
+        ConDTra()
     End Sub
 
 
-
-    Private Sub Consultas()
-        With PProceso
-            .CommandType = CommandType.Text
-            .CommandText = "SELECT *
-                            FROM TB_Procesos
-                            WHERE Estado = 'Activo'
-                            ORDER BY Nombre_Proceso ASC"
-            .Connection = Conex
-        End With
-
-        DAProceso.SelectCommand = PProceso
-        DTProceso = New DataTable
-        DAProceso.Fill(DTProceso)
-        With CProceso
-            .DataSource = DTProceso
-            .DisplayMember = "Nombre_Proceso"
-            .ValueMember = "Id_Proceso"
-        End With
+    'Combo
+    Private Sub CProceso_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CProceso.SelectedValueChanged
+        TxtProceso.Text = CProceso.Text
     End Sub
 
-    Private Sub DI()
+
+    'Procedimientos
+    '   Llenar DataView
+    Private Sub DatosGV()
         Dim Consulta As String = "SELECT E.Id_Entrega, Em.Numero_Nomina, (Em.Nombre_Empleado + ' ' + 
-			                             Em.Ape_Paterno + ' ' + Em.Ape_Materno ) AS Nombre,
-			                             P.Id_Producto, P.Nombre_Producto, E.Cantidad, E.Descripcion, Pr.Nombre_Proceso
-                                  FROM TB_Entregas AS E
+			                                    Em.Ape_Paterno + ' ' + Em.Ape_Materno ) AS Nombre,
+			                                    P.Nombre_Producto ,E.Cantidad, E.Fecha_Entrega,
+			                                    E.Descripcion, E.ResponsableS, Pr.Nombre_Proceso
+                                      FROM TB_Entregas AS E
                                       INNER JOIN TB_Empleados AS Em ON E.Id_Empleado = Em.Id_Empleado
-                                      INNER JOIN TB_Productos AS P ON e.Id_Producto = P.Id_Producto
-                                      INNER JOIN TB_Procesos AS Pr ON e.Proceso = Pr.Id_Proceso
-                                  WHERE E.Estado = 'Pendiente'
-                                  ORDER BY E.Fecha_Entrega asc"
+                                      inner join TB_Productos AS P ON e.Id_Producto = P.Id_Producto
+                                      inner join TB_Procesos AS Pr ON e.Proceso = Pr.Id_Proceso
+                                      WHERE E.Estado = 'Activo' AND
+											(P.Nombre_Producto LIKE '%EPP%' OR
+											P.Nombre_Producto LIKE '%zapato%') 
+                                      ORDER BY E.Fecha_Entrega ASC"
+
+        Dim cmd As New SqlCommand(Consulta, Conex)
+        Dim Da As New SqlDataAdapter(cmd)
+        Dim Ds As New DataSet
+
+        Try
+            Conex.Open()
+
+            Da.Fill(Ds)
+            DatosPM.DataSource = Ds.Tables(0)
+            Da.Dispose()
+
+        Catch ex As Exception
+            MessageBox.Show(Err.Description.ToString(), "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+
+        Conex.Close()
+    End Sub
+
+    Private Sub DatosGVPP()
+        Dim Consulta As String = "SELECT E.Id_Entrega, Em.Numero_Nomina, (Em.Nombre_Empleado + ' ' + 
+			                                    Em.Ape_Paterno + ' ' + Em.Ape_Materno ) AS Nombre,
+			                                    P.Nombre_Producto ,E.Cantidad, E.Fecha_Entrega,
+			                                    E.Descripcion, E.ResponsableS, Pr.Nombre_Proceso
+                                      FROM TB_Entregas AS E
+                                      INNER JOIN TB_Empleados AS Em ON E.Id_Empleado = Em.Id_Empleado
+                                      inner join TB_Productos AS P ON e.Id_Producto = P.Id_Producto
+                                      inner join TB_Procesos AS Pr ON e.Proceso = Pr.Id_Proceso
+                                      WHERE E.Estado = 'Pendiente' AND
+											(P.Nombre_Producto LIKE '%EPP%' OR
+											P.Nombre_Producto LIKE '%zapato%') 
+                                      ORDER BY E.Fecha_Entrega ASC"
 
         Dim cmd As New SqlCommand(Consulta, Conex)
         Dim Da As New SqlDataAdapter(cmd)
@@ -248,6 +371,256 @@ Public Class EntregasEPP
         Conex.Close()
     End Sub
 
+    '   Guardar
+    Public Sub Datos()
+        Dim GDatos As New SqlCommand("SP_GNEntrega", Conex)
+        Dim DateA = DateTime.Now
+        Dim Fecha = DateTime.Now.ToString("yyyy/MM/dd")
+
+        GDatos.CommandType = CommandType.StoredProcedure
+
+        GDatos.Parameters.AddWithValue("@Id_Empleado", Trim(IDE.Text))
+        GDatos.Parameters.AddWithValue("@Id_Producto", Trim(IDP.Text))
+        GDatos.Parameters.AddWithValue("@Cantidad", Trim(TxtCantidad.Text))
+        GDatos.Parameters.AddWithValue("@Fecha_Entrega", Fecha)
+        GDatos.Parameters.AddWithValue("@Descripcion ", Trim(TxtDescripcion.Text))
+        GDatos.Parameters.AddWithValue("@ResponsableS", Trim(TxtResponsable.Text))
+        GDatos.Parameters.AddWithValue("@IdProceso", CProceso.SelectedValue)
+        GDatos.Parameters.AddWithValue("@Created", DateA)
+
+        Dim RData As SqlDataReader
+
+        MR()
+        Conex.Open()
+        Dim Prod As String = TxtMaterial.Text
+        Dim CodS As String = LCS.Text
+        Dim CanS As Double = CDec(TxtCantidad.Text)
+
+        Dim CONSULTA As String = "INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanE, CanS, PrecioE, PrecioS, Created)
+                                         VALUES ('" & CodS & "', '" & Prod & "', '" & CanS & "', 0, 0,0, SYSDATETIME())"
+
+        Dim COMANDO As New SqlCommand(CONSULTA, Conex)
+
+        COMANDO.ExecuteNonQuery()
+
+        Conex.Close()
+        Try
+            Conex.Open()
+            RData = GDatos.ExecuteReader()
+
+            DatosB()
+            BRIngreso.Visible = False
+            BGEntrega.Visible = False
+            TxtResponsable.Text = ""
+
+            TxtDescripcion.BackColor = Color.Gainsboro
+            TxtCantidad.BackColor = Color.Gainsboro
+            TxtCantidad.ReadOnly = True
+            TxtDescripcion.ReadOnly = True
+            CProceso.Visible = False
+
+            TxtTrabajador.Visible = True
+            BBBMaterial.Visible = False
+            BBTrabajador.Visible = False
+
+        Catch ex As Exception
+            MessageBox.Show(Err.Description.ToString(), "Error al Guardar Datos", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+
+        Conex.Close()
+
+        If CEPendientes.Checked = True Then
+            DatosGVPP()
+        ElseIf CEPendientes.Checked = False Then
+            DatosGV()
+        End If
+    End Sub
+
+    '   Eliminar Datos
+    Private Sub Eliminar()
+        MRB()
+
+        Conex.Open()
+        Dim Prod As String = TxtMaterial.Text
+        Dim CodS As String = LCS.Text
+        Dim CanS As Double = CDec(TxtCantidad.Text)
+
+        Dim CONSULTA As String = "IF NOT EXISTS(SELECT CodiS, Producto FROM TB_DetalleSeguimiento WHERE CodiS = '" & CodS & "' AND Producto = '" & Prod & "')
+	                                 INSERT INTO TB_DetalleSeguimiento (CodiS, Producto, CanE, CanS, PrecioE, PrecioS)
+                                                                VALUES ('" & CodS & "', '" & Prod & "', '" & CanS & "', 0, 0,0)"
+
+        Dim COMANDO As New SqlCommand(CONSULTA, Conex)
+
+        COMANDO.ExecuteNonQuery()
+
+        Conex.Close()
+
+        Dim DateE = DateTime.Now
+
+        Dim EDatos As New SqlCommand("SP_DesacEntrega", Conex)
+
+        EDatos.CommandType = CommandType.StoredProcedure
+
+        EDatos.Parameters.AddWithValue("@Id_Entrega", Trim(IDD.Text))
+        EDatos.Parameters.AddWithValue("@FechaEliminacion", DateE)
+        EDatos.Parameters.AddWithValue("@REliminacion", Trim(TxtResponsable.Text))
+        EDatos.Parameters.AddWithValue("@Cantidad", Trim(TxtCantidad.Text))
+
+        Dim RData As SqlDataReader
+
+        Try
+            Conex.Open()
+            RData = EDatos.ExecuteReader()
+
+            DatosB()
+            TxtResponsable.Text = ""
+
+        Catch ex As Exception
+            MessageBox.Show(Err.Description.ToString(), "Error al Eliminar Registro", MessageBoxButtons.OK)
+        End Try
+
+        Conex.Close()
+        If CEPendientes.Checked = True Then
+            DatosGVPP()
+        ElseIf CEPendientes.Checked = False Then
+            DatosGV()
+        End If
+    End Sub
+
+    Public Sub DatosNT()
+        Dim GDatos As New SqlCommand("SP_NTrabajador", Conex)
+
+        GDatos.CommandType = CommandType.StoredProcedure
+
+        GDatos.Parameters.AddWithValue("@NNomina", Trim(TxtNNN.Text))
+        GDatos.Parameters.AddWithValue("@Nombre", Trim(TxtNombre.Text))
+        GDatos.Parameters.AddWithValue("@APaterno", Trim(TxtAP.Text))
+        GDatos.Parameters.AddWithValue("@AMaterno", Trim(TxtAM.Text))
+
+        Try
+            Conex.Open()
+            GDatos.ExecuteReader()
+            PNT.Visible = False
+            PTrabajador.Visible = True
+
+        Catch ex As Exception
+            MessageBox.Show(Err.Description.ToString(), "Error al Guardar Datos", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+
+        Conex.Close()
+        DatosGVT()
+    End Sub
+
+
+    'Consultas
+    Private Sub DatosGPP()
+        If TxtBusqueda.Text = "" Then
+            DatosGV()
+        Else
+            Dim Consulta As String = "SELECT E.Id_Entrega, Em.Numero_Nomina, (Em.Nombre_Empleado + ' ' + 
+			                                    Em.Ape_Paterno + ' ' + Em.Ape_Materno ) AS Nombre,
+			                                    P.Nombre_Producto ,E.Cantidad, E.Fecha_Entrega,
+			                                    E.Descripcion, E.ResponsableS, Pr.Nombre_Proceso
+                                      FROM TB_Entregas AS E
+                                      INNER JOIN TB_Empleados AS Em ON E.Id_Empleado = Em.Id_Empleado
+                                      inner join TB_Productos AS P ON e.Id_Producto = P.Id_Producto
+                                      inner join TB_Procesos AS Pr ON e.Proceso = Pr.Id_Proceso
+                                      WHERE E.Estado = 'Activo' AND
+											(P.Nombre_Producto LIKE '%EPP%' OR
+											P.Nombre_Producto LIKE '%zapato%') AND
+                                            (Em.Numero_Nomina LIKE '%'+@Busqueda+'%' OR
+                                            P.Nombre_Producto LIKE '%'+@Busqueda+'%' OR
+                                            P.Codigo_Barras LIKE '%'+@Busqueda+'%')
+                                      ORDER BY E.Fecha_Entrega DESC"
+
+            Dim cmd As New SqlCommand(Consulta, Conex)
+            cmd.Parameters.AddWithValue("@Busqueda", Trim(TxtBusqueda.Text))
+            Dim Da As New SqlDataAdapter(cmd)
+            Dim Ds As New DataSet
+
+            Try
+                Conex.Open()
+
+                Da.Fill(Ds)
+                DatosPM.DataSource = Ds.Tables(0)
+                Da.Dispose()
+
+            Catch ex As Exception
+                MessageBox.Show(Err.Description.ToString(), "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+
+            Conex.Close()
+        End If
+    End Sub
+
+    Private Sub DatosGPPP()
+        If TxtBusqueda.Text = "" Then
+            DatosGVPP()
+        Else
+            Dim Consulta As String = "SELECT E.Id_Entrega, Em.Numero_Nomina, (Em.Nombre_Empleado + ' ' + 
+			                                    Em.Ape_Paterno + ' ' + Em.Ape_Materno ) AS Nombre,
+			                                    P.Nombre_Producto ,E.Cantidad, E.Fecha_Entrega,
+			                                    E.Descripcion, E.ResponsableS, Pr.Nombre_Proceso
+                                      FROM TB_Entregas AS E
+                                      INNER JOIN TB_Empleados AS Em ON E.Id_Empleado = Em.Id_Empleado
+                                      inner join TB_Productos AS P ON e.Id_Producto = P.Id_Producto
+                                      inner join TB_Procesos AS Pr ON e.Proceso = Pr.Id_Proceso
+                                      WHERE E.Estado = 'Pendiente' AND
+											(P.Nombre_Producto LIKE '%EPP%' OR
+											P.Nombre_Producto LIKE '%zapato%') AND
+                                            (Em.Numero_Nomina LIKE '%'+@Busqueda+'%' OR
+                                            P.Nombre_Producto LIKE '%'+@Busqueda+'%' OR
+                                            P.Codigo_Barras LIKE '%'+@Busqueda+'%')
+                                      ORDER BY E.Fecha_Entrega DESC"
+
+            Dim cmd As New SqlCommand(Consulta, Conex)
+            cmd.Parameters.AddWithValue("@Busqueda", Trim(TxtBusqueda.Text))
+            Dim Da As New SqlDataAdapter(cmd)
+            Dim Ds As New DataSet
+
+            Try
+                Conex.Open()
+
+                Da.Fill(Ds)
+                DatosPM.DataSource = Ds.Tables(0)
+                Da.Dispose()
+
+            Catch ex As Exception
+                MessageBox.Show(Err.Description.ToString(), "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+
+            Conex.Close()
+        End If
+    End Sub
+
+    Private Sub DatosGVP()
+        Dim Consulta As String = "SELECT Id_Producto, Nombre_Producto, Clave_Producto, Existencia
+                                  FROM TB_Productos
+                                  WHERE Estado = 'Activo' AND
+    					                Existencia > 0 AND
+                                        (Nombre_Producto LIKE '%EPP%' OR
+                                         Nombre_Producto LIKE '%Zapato%')
+
+                                  ORDER BY Nombre_Producto ASC"
+
+        Dim cmd As New SqlCommand(Consulta, Conex)
+            Dim Da As New SqlDataAdapter(cmd)
+            Dim Ds As New DataSet
+
+            Try
+                Conex.Open()
+
+                Da.Fill(Ds)
+                DGProducto.DataSource = Ds.Tables(0)
+                Da.Dispose()
+
+            Catch ex As Exception
+                MessageBox.Show(Err.Description.ToString(), "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+
+            Conex.Close()
+        End Sub
+
     Private Sub Nombres()
         Dim Consulta As String = "SELECT ( E.Nombre_Empleado+ ' ' + E.Ape_Paterno+' ' +  E.Ape_Materno) AS Nombre
                                   FROM TB_Usuarios AS U
@@ -267,6 +640,42 @@ Public Class EntregasEPP
 
         Da.Close()
         Conex.Close()
+    End Sub
+
+    Private Sub ConDMa()
+        If TxtBMaterial.Text = "" Then
+            DatosGVP()
+        Else
+            Dim Consulta As String = "SELECT Id_Producto, Nombre_Producto, Clave_Producto, Existencia
+                                      FROM TB_Productos
+                                      WHERE Estado = 'Activo' AND
+                                            (Nombre_Producto  LIKE '%'+@Busqueda+'%' OR
+                                             Clave_Producto  LIKE '%'+@Busqueda+'%' OR
+                                             Codigo_Barras LIKE '%'+@Busqueda+'%') AND
+     					                   Existencia > 0 AND
+                                           (Nombre_Producto LIKE '%EPP%' OR
+                                            Nombre_Producto LIKE '%Zapato%')
+
+                                         ORDER BY Nombre_Producto ASC"
+
+            Dim cmd As New SqlCommand(Consulta, Conex)
+            cmd.Parameters.AddWithValue("@Busqueda", Trim(TxtBMaterial.Text))
+            Dim Da As New SqlDataAdapter(cmd)
+            Dim Ds As New DataSet
+
+            Try
+                Conex.Open()
+
+                Da.Fill(Ds)
+                DGProducto.DataSource = Ds.Tables(0)
+                Da.Dispose()
+
+            Catch ex As Exception
+                MessageBox.Show(Err.Description.ToString(), "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+
+            Conex.Close()
+        End If
     End Sub
 
     Private Sub ConDTra()
@@ -302,94 +711,79 @@ Public Class EntregasEPP
         End If
     End Sub
 
-    Private Sub ConDMa()
-        If TxtBMaterial.Text = "" Then
-            DatosGVP()
+    '   Insertar en Moviemiento Rastreo
+    Private Sub MR()
+        Dim DateTime As Date = DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt")
+        Dim CodS As String = LCS.Text
+        Dim Emple As String = TxtResponsable.Text
+
+        Conex.Open()
+        Dim CONSULTA As String = "INSERT INTO TB_MovimientoRastreo (Tipo, Estado, Responsable, CodiS , Created)
+                                                            VALUES ( 'MEntrega', 'MEntrega', '" & Emple & "', '" & CodS & "',SYSDATETIME() )"
+        Dim COMANDO As New SqlCommand(CONSULTA, Conex)
+
+        COMANDO.ExecuteNonQuery()
+
+        Conex.Close()
+    End Sub
+
+    '   Insertar en Moviemiento Rastreo Baja
+    Private Sub MRB()
+        Dim DateTime As Date = DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt")
+        Dim CodS As String = LCS.Text
+        Dim Emple As String = TxtResponsable.Text
+
+        Conex.Open()
+        Dim CONSULTA As String = "IF NOT EXISTS(SELECT CodiS FROM TB_MovimientoRastreo WHERE CodiS = '" & CodS & "')
+                                    INSERT INTO TB_MovimientoRastreo (Tipo, Estado, Responsable, CodiS , Created)
+                                                            VALUES ( 'MCancelacion', 'MCancelacion', '" & Emple & "', '" & CodS & "',SYSDATETIME() )"
+        Dim COMANDO As New SqlCommand(CONSULTA, Conex)
+
+        COMANDO.ExecuteNonQuery()
+
+        Conex.Close()
+    End Sub
+
+    Private Sub Consultas()
+        With PProceso
+            .CommandType = CommandType.Text
+            .CommandText = "SELECT *
+                            FROM TB_Procesos
+                            WHERE Estado = 'Activo'
+                            ORDER BY Nombre_Proceso ASC"
+            .Connection = Conex
+        End With
+
+        DAProceso.SelectCommand = PProceso
+        DTProceso = New DataTable
+        DAProceso.Fill(DTProceso)
+        With CProceso
+            .DataSource = DTProceso
+            .DisplayMember = "Nombre_Proceso"
+            .ValueMember = "Id_Proceso"
+        End With
+    End Sub
+
+
+    'Validación
+    Private Sub TxtCalidad_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TxtCantidad.KeyPress, TxtNNN.KeyPress
+        NumerosyDecimal(TxtCantidad, e)
+    End Sub
+
+    Public Sub NumerosyDecimal(ByVal CajaTexto As Windows.Forms.TextBox, ByVal e As System.Windows.Forms.KeyPressEventArgs)
+        If Char.IsDigit(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf e.KeyChar = "." And Not CajaTexto.Text.IndexOf(".") Then
+            e.Handled = True
+        ElseIf e.KeyChar = "." Then
+            e.Handled = False
         Else
-            Dim Consulta As String = "SELECT Id_Producto, Nombre_Producto, Clave_Producto, Existencia
-                                        FROM TB_Productos
-                                        WHERE Estado = 'Activo' AND
-                                                (Nombre_Producto  LIKE '%'+@Busqueda+'%' OR
-                                                Clave_Producto  LIKE '%'+@Busqueda+'%' OR
-                                                Codigo_Barras LIKE '%'+@Busqueda+'%') AND
-									            Existencia > 0 AND
-                                                (Nombre_Producto LIKE '%EPP%' OR
-	                                    Nombre_Producto LIKE '%Zapato%')
-
-                                        ORDER BY Nombre_Producto ASC"
-
-            Dim cmd As New SqlCommand(Consulta, Conex)
-            cmd.Parameters.AddWithValue("@Busqueda", Trim(TxtBMaterial.Text))
-            Dim Da As New SqlDataAdapter(cmd)
-            Dim Ds As New DataSet
-
-            Try
-                Conex.Open()
-
-                Da.Fill(Ds)
-                DGProducto.DataSource = Ds.Tables(0)
-                Da.Dispose()
-
-            Catch ex As Exception
-                MessageBox.Show(Err.Description.ToString(), "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            End Try
-
-            Conex.Close()
+            e.Handled = True
         End If
     End Sub
 
-    Public Sub DatosNT()
-        Dim GDatos As New SqlCommand("SP_NTrabajador", Conex)
-
-        GDatos.CommandType = CommandType.StoredProcedure
-
-        GDatos.Parameters.AddWithValue("@NNomina", Trim(TxtNNN.Text))
-        GDatos.Parameters.AddWithValue("@Nombre", Trim(TxtNombre.Text))
-        GDatos.Parameters.AddWithValue("@APaterno", Trim(TxtAP.Text))
-        GDatos.Parameters.AddWithValue("@AMaterno", Trim(TxtAM.Text))
-
-        Try
-            Conex.Open()
-            GDatos.ExecuteReader()
-            PNT.Visible = False
-            PTrabajador.Visible = True
-
-        Catch ex As Exception
-            MessageBox.Show(Err.Description.ToString(), "Error al Guardar Datos", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
-
-        Conex.Close()
-        DatosGVT()
-    End Sub
-
-
-    Private Sub DatosGVP()
-        Dim Consulta As String = "SELECT Id_Producto, Nombre_Producto, Clave_Producto, Existencia
-                                  FROM TB_Productos
-                                  WHERE Estado = 'Activo' AND
-									    Existencia > 0 AND
-                                        (Nombre_Producto LIKE '%EPP%' OR
-	                                    Nombre_Producto LIKE '%Zapato%')
-
-                                  ORDER BY Nombre_Producto ASC"
-
-        Dim cmd As New SqlCommand(Consulta, Conex)
-        Dim Da As New SqlDataAdapter(cmd)
-        Dim Ds As New DataSet
-
-        Try
-            Conex.Open()
-
-            Da.Fill(Ds)
-            DGProducto.DataSource = Ds.Tables(0)
-            Da.Dispose()
-
-        Catch ex As Exception
-            MessageBox.Show(Err.Description.ToString(), "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
-
-        Conex.Close()
-    End Sub
 
     Private Sub DatosB()
         TxtNN.Text = ""
@@ -401,4 +795,21 @@ Public Class EntregasEPP
     End Sub
 
 
+    'Movimiento
+    Dim ex, ey As Integer
+    Dim Arrastre As Boolean
+
+    Private Sub Form1_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles MyBase.MouseDown
+        ex = e.X
+        ey = e.Y
+        Arrastre = True
+    End Sub
+
+    Private Sub Form1_MouseUp(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles MyBase.MouseUp
+        Arrastre = False
+    End Sub
+
+    Private Sub Form1_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles MyBase.MouseMove
+        If Arrastre Then Me.Location = Me.PointToScreen(New Point(MousePosition.X - Me.Location.X - ex, MousePosition.Y - Me.Location.Y - ey))
+    End Sub
 End Class

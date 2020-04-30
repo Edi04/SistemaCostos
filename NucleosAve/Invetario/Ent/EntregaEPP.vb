@@ -104,7 +104,12 @@ Public Class EntregaEPP
                                             ResponsableS = '" & Emple & "',
                                             ExiA = (SELECT TOP 1 Existencia FROM TB_Productos Where Id_Producto = " & Id & "),
                                             ExiD = (SELECT TOP 1 (Existencia - " & CanS & ") FROM TB_Productos Where Id_Producto = " & Id & ")
-                                        WHERE Id_Entrega = " & En & ""
+                                        WHERE Id_Entrega = " & En & "
+                                            
+SET NOCOUNT ON;
+	UPDATE Tb_productos
+		Set Existencia = (SELECT TOP 1 (Existencia - " & CanS & ") FROM TB_Productos Where Id_Producto = " & Id & ")
+		Where   Id_Producto = " & Id & ""
 
         Dim COMANDOAa As New SqlCommand(CONSULTAAa, Conex)
 

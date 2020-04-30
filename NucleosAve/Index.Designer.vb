@@ -90,6 +90,8 @@ Partial Class Index
         Me.BMass = New System.Windows.Forms.PictureBox()
         Me.LMass = New System.Windows.Forms.Label()
         Me.PMMass = New System.Windows.Forms.Panel()
+        Me.BMEPP = New System.Windows.Forms.PictureBox()
+        Me.Label19 = New System.Windows.Forms.Label()
         Me.BMInventario = New System.Windows.Forms.PictureBox()
         Me.LMInventario = New System.Windows.Forms.Label()
         Me.PPedidos = New System.Windows.Forms.Panel()
@@ -147,8 +149,8 @@ Partial Class Index
         Me.lblHora = New System.Windows.Forms.Label()
         Me.lblFecha = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
-        Me.Label19 = New System.Windows.Forms.Label()
+        Me.BConsulta = New System.Windows.Forms.PictureBox()
+        Me.Label20 = New System.Windows.Forms.Label()
         CType(Me.B_Minimizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.B_Cerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_mantenimientos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -189,6 +191,7 @@ Partial Class Index
         Me.PMass.SuspendLayout()
         CType(Me.BMass, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PMMass.SuspendLayout()
+        CType(Me.BMEPP, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BMInventario, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PPedidos.SuspendLayout()
         CType(Me.BPedidos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -223,7 +226,7 @@ Partial Class Index
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PStatus.SuspendLayout()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BConsulta, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'B_Minimizar
@@ -1064,7 +1067,9 @@ Partial Class Index
         'PMMass
         '
         Me.PMMass.BackColor = System.Drawing.Color.Transparent
-        Me.PMMass.Controls.Add(Me.PictureBox6)
+        Me.PMMass.Controls.Add(Me.BConsulta)
+        Me.PMMass.Controls.Add(Me.Label20)
+        Me.PMMass.Controls.Add(Me.BMEPP)
         Me.PMMass.Controls.Add(Me.Label19)
         Me.PMMass.Controls.Add(Me.BMInventario)
         Me.PMMass.Controls.Add(Me.LMInventario)
@@ -1073,6 +1078,32 @@ Partial Class Index
         Me.PMMass.Size = New System.Drawing.Size(570, 130)
         Me.PMMass.TabIndex = 0
         Me.PMMass.Visible = False
+        '
+        'BMEPP
+        '
+        Me.BMEPP.AccessibleDescription = "dfghdfgdfhdhfd"
+        Me.BMEPP.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.BMEPP.BackColor = System.Drawing.Color.Transparent
+        Me.BMEPP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BMEPP.Image = Global.NucleosAve.My.Resources.Resources.icons8_equipo_de_paracaidismo_64
+        Me.BMEPP.Location = New System.Drawing.Point(124, 9)
+        Me.BMEPP.Name = "BMEPP"
+        Me.BMEPP.Size = New System.Drawing.Size(65, 65)
+        Me.BMEPP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.BMEPP.TabIndex = 83
+        Me.BMEPP.TabStop = False
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.BackColor = System.Drawing.Color.Transparent
+        Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.ForeColor = System.Drawing.Color.DimGray
+        Me.Label19.Location = New System.Drawing.Point(119, 79)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(73, 30)
+        Me.Label19.TabIndex = 84
+        Me.Label19.Text = "Equipo de" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Seguridad"
         '
         'BMInventario
         '
@@ -1787,31 +1818,31 @@ Partial Class Index
         'Timer1
         '
         '
-        'PictureBox6
+        'BConsulta
         '
-        Me.PictureBox6.AccessibleDescription = "dfghdfgdfhdhfd"
-        Me.PictureBox6.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.PictureBox6.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox6.Image = Global.NucleosAve.My.Resources.Resources.icons8_equipo_de_paracaidismo_64
-        Me.PictureBox6.Location = New System.Drawing.Point(127, 9)
-        Me.PictureBox6.Name = "PictureBox6"
-        Me.PictureBox6.Size = New System.Drawing.Size(65, 65)
-        Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox6.TabIndex = 83
-        Me.PictureBox6.TabStop = False
+        Me.BConsulta.AccessibleDescription = "dfghdfgdfhdhfd"
+        Me.BConsulta.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.BConsulta.BackColor = System.Drawing.Color.Transparent
+        Me.BConsulta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BConsulta.Image = CType(resources.GetObject("BConsulta.Image"), System.Drawing.Image)
+        Me.BConsulta.Location = New System.Drawing.Point(212, 10)
+        Me.BConsulta.Name = "BConsulta"
+        Me.BConsulta.Size = New System.Drawing.Size(65, 65)
+        Me.BConsulta.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.BConsulta.TabIndex = 85
+        Me.BConsulta.TabStop = False
         '
-        'Label19
+        'Label20
         '
-        Me.Label19.AutoSize = True
-        Me.Label19.BackColor = System.Drawing.Color.Transparent
-        Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.ForeColor = System.Drawing.Color.DimGray
-        Me.Label19.Location = New System.Drawing.Point(122, 79)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(73, 30)
-        Me.Label19.TabIndex = 84
-        Me.Label19.Text = "Equipo de" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Seguridad"
+        Me.Label20.AutoSize = True
+        Me.Label20.BackColor = System.Drawing.Color.Transparent
+        Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label20.ForeColor = System.Drawing.Color.DimGray
+        Me.Label20.Location = New System.Drawing.Point(212, 80)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(63, 15)
+        Me.Label20.TabIndex = 86
+        Me.Label20.Text = "Consulta"
         '
         'Index
         '
@@ -1907,6 +1938,7 @@ Partial Class Index
         CType(Me.BMass, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PMMass.ResumeLayout(False)
         Me.PMMass.PerformLayout()
+        CType(Me.BMEPP, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BMInventario, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PPedidos.ResumeLayout(False)
         Me.PPedidos.PerformLayout()
@@ -1954,7 +1986,7 @@ Partial Class Index
         Me.PStatus.ResumeLayout(False)
         Me.PStatus.PerformLayout()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BConsulta, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -2083,6 +2115,8 @@ Partial Class Index
     Friend WithEvents lblHora As Label
     Friend WithEvents lblFecha As Label
     Friend WithEvents Timer1 As Timer
-    Friend WithEvents PictureBox6 As PictureBox
+    Friend WithEvents BMEPP As PictureBox
     Friend WithEvents Label19 As Label
+    Friend WithEvents BConsulta As PictureBox
+    Friend WithEvents Label20 As Label
 End Class

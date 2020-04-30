@@ -362,6 +362,7 @@ Public Class MInventario
         End Try
 
         Conex.Close()
+        BuscarDatos()
     End Sub
 
 
@@ -384,6 +385,7 @@ Public Class MInventario
             DatosGV()
             DataB()
             BInvisiblesCRUD()
+            BNuevoProducto.Visible = True
         Catch ex As Exception
             MessageBox.Show(Err.Description.ToString(), "Error al Eliminar Datos", MessageBoxButtons.OK)
         End Try
@@ -487,8 +489,9 @@ Public Class MInventario
 		                                      Nombre_Producto NOT LIKE '%CAPACITACION%' AND 
 		                                      Nombre_Producto NOT LIKE '%SERVICIO%' AND 
 		                                      Nombre_Producto NOT LIKE '%EXTINTOR%' AND
-		                                      Id_Marca <> 52 AND
-		                                      Id_Categoria = 5
+		                                      P.Id_Marca <> 52 AND
+		                                      P.Id_Categoria = 5 AND
+                                              P.Estado = 'AMass'
                                    ORDER BY Nombre_Producto ASC"
 
             Dim cmd As New SqlCommand(Consulta, Conex)

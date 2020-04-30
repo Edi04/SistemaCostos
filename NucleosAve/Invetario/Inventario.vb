@@ -34,6 +34,10 @@ Public Class Inventario
         FechaActual()
         Consultas()
         Nombres()
+
+        If TxtBusqueda.Text <> "" Then
+            BuscarDatos()
+        End If
     End Sub
 
 

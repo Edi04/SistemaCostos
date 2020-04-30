@@ -607,7 +607,7 @@ Partial Class OCMass
         '
         'PCorreo
         '
-        Me.PCorreo.BackColor = System.Drawing.Color.Transparent
+        Me.PCorreo.BackColor = System.Drawing.Color.White
         Me.PCorreo.Controls.Add(Me.GroupBox2)
         Me.PCorreo.Controls.Add(Me.GroupBox3)
         Me.PCorreo.Controls.Add(Me.BHist)

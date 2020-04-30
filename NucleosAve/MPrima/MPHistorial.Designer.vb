@@ -22,14 +22,14 @@ Partial Class MPHistorial
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MPHistorial))
         Me.BMinimizar = New System.Windows.Forms.Button()
         Me.BCerrar = New System.Windows.Forms.Button()
@@ -77,6 +77,11 @@ Partial Class MPHistorial
         Me.BHist = New System.Windows.Forms.Button()
         Me.LCorreo = New System.Windows.Forms.Label()
         Me.BExcel = New System.Windows.Forms.Button()
+        Me.BEliminar = New System.Windows.Forms.Button()
+        Me.l3 = New System.Windows.Forms.Label()
+        Me.IMP = New System.Windows.Forms.Label()
+        Me.LPeso = New System.Windows.Forms.Label()
+        Me.LRI = New System.Windows.Forms.Label()
         Me.POpc.SuspendLayout()
         Me.GBusqueda.SuspendLayout()
         CType(Me.PBusqueda, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -248,8 +253,8 @@ Partial Class MPHistorial
         'ID
         '
         Me.ID.DataPropertyName = "Id_MPrim"
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.ID.DefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.ID.DefaultCellStyle = DataGridViewCellStyle1
         Me.ID.HeaderText = "ID"
         Me.ID.Name = "ID"
         Me.ID.Width = 45
@@ -257,8 +262,8 @@ Partial Class MPHistorial
         'OCompra
         '
         Me.OCompra.DataPropertyName = "OCompra"
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.OCompra.DefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.OCompra.DefaultCellStyle = DataGridViewCellStyle2
         Me.OCompra.HeaderText = "OCompra"
         Me.OCompra.Name = "OCompra"
         Me.OCompra.Width = 60
@@ -273,8 +278,8 @@ Partial Class MPHistorial
         'Num_Interno
         '
         Me.Num_Interno.DataPropertyName = "Num_Interno"
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.Num_Interno.DefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.Num_Interno.DefaultCellStyle = DataGridViewCellStyle3
         Me.Num_Interno.FillWeight = 150.0!
         Me.Num_Interno.HeaderText = "Num_Interno"
         Me.Num_Interno.Name = "Num_Interno"
@@ -283,8 +288,8 @@ Partial Class MPHistorial
         'Num_Externo
         '
         Me.Num_Externo.DataPropertyName = "Num_Externo"
-        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.Num_Externo.DefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.Num_Externo.DefaultCellStyle = DataGridViewCellStyle4
         Me.Num_Externo.HeaderText = "Num_Externo"
         Me.Num_Externo.Name = "Num_Externo"
         Me.Num_Externo.Width = 80
@@ -292,8 +297,8 @@ Partial Class MPHistorial
         'Calibre
         '
         Me.Calibre.DataPropertyName = "Calibre"
-        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.Calibre.DefaultCellStyle = DataGridViewCellStyle13
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.Calibre.DefaultCellStyle = DataGridViewCellStyle5
         Me.Calibre.HeaderText = "Calibre"
         Me.Calibre.Name = "Calibre"
         Me.Calibre.Width = 60
@@ -301,8 +306,8 @@ Partial Class MPHistorial
         'Ancho
         '
         Me.Ancho.DataPropertyName = "Ancho"
-        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.Ancho.DefaultCellStyle = DataGridViewCellStyle14
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.Ancho.DefaultCellStyle = DataGridViewCellStyle6
         Me.Ancho.HeaderText = "Ancho"
         Me.Ancho.Name = "Ancho"
         Me.Ancho.Width = 60
@@ -310,8 +315,8 @@ Partial Class MPHistorial
         'Peso
         '
         Me.Peso.DataPropertyName = "Peso"
-        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.Peso.DefaultCellStyle = DataGridViewCellStyle15
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.Peso.DefaultCellStyle = DataGridViewCellStyle7
         Me.Peso.HeaderText = "Peso"
         Me.Peso.Name = "Peso"
         Me.Peso.Width = 60
@@ -319,8 +324,8 @@ Partial Class MPHistorial
         'UMedida
         '
         Me.UMedida.DataPropertyName = "UMedida"
-        DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.UMedida.DefaultCellStyle = DataGridViewCellStyle16
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.UMedida.DefaultCellStyle = DataGridViewCellStyle8
         Me.UMedida.HeaderText = "UMedida"
         Me.UMedida.Name = "UMedida"
         Me.UMedida.Width = 55
@@ -551,22 +556,75 @@ Partial Class MPHistorial
         Me.BExcel.UseVisualStyleBackColor = False
         Me.BExcel.Visible = False
         '
+        'BEliminar
+        '
+        Me.BEliminar.BackColor = System.Drawing.Color.Transparent
+        Me.BEliminar.BackgroundImage = Global.NucleosAve.My.Resources.Resources.file_1311
+        Me.BEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.BEliminar.Location = New System.Drawing.Point(714, 3)
+        Me.BEliminar.Name = "BEliminar"
+        Me.BEliminar.Size = New System.Drawing.Size(50, 50)
+        Me.BEliminar.TabIndex = 74
+        Me.BEliminar.UseVisualStyleBackColor = False
+        Me.BEliminar.Visible = False
+        '
+        'l3
+        '
+        Me.l3.AutoSize = True
+        Me.l3.Location = New System.Drawing.Point(784, 33)
+        Me.l3.Name = "l3"
+        Me.l3.Size = New System.Drawing.Size(13, 13)
+        Me.l3.TabIndex = 75
+        Me.l3.Text = "3"
+        '
+        'IMP
+        '
+        Me.IMP.AutoSize = True
+        Me.IMP.Location = New System.Drawing.Point(566, 20)
+        Me.IMP.Name = "IMP"
+        Me.IMP.Size = New System.Drawing.Size(0, 13)
+        Me.IMP.TabIndex = 76
+        Me.IMP.Visible = False
+        '
+        'LPeso
+        '
+        Me.LPeso.AutoSize = True
+        Me.LPeso.Location = New System.Drawing.Point(585, 20)
+        Me.LPeso.Name = "LPeso"
+        Me.LPeso.Size = New System.Drawing.Size(0, 13)
+        Me.LPeso.TabIndex = 77
+        Me.LPeso.Visible = False
+        '
+        'LRI
+        '
+        Me.LRI.AutoSize = True
+        Me.LRI.Location = New System.Drawing.Point(862, 37)
+        Me.LRI.Name = "LRI"
+        Me.LRI.Size = New System.Drawing.Size(0, 13)
+        Me.LRI.TabIndex = 78
+        Me.LRI.Visible = False
+        '
         'MPHistorial
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.NucleosAve.My.Resources.Resources.Fondo
         Me.ClientSize = New System.Drawing.Size(1044, 586)
+        Me.Controls.Add(Me.LRI)
+        Me.Controls.Add(Me.LPeso)
+        Me.Controls.Add(Me.IMP)
+        Me.Controls.Add(Me.l3)
+        Me.Controls.Add(Me.BEliminar)
         Me.Controls.Add(Me.BExcel)
         Me.Controls.Add(Me.PCorreo)
         Me.Controls.Add(Me.BInicio)
         Me.Controls.Add(Me.PBMPr)
-        Me.Controls.Add(Me.DGHR)
         Me.Controls.Add(Me.GBusqueda)
         Me.Controls.Add(Me.LBOC)
         Me.Controls.Add(Me.BMinimizar)
         Me.Controls.Add(Me.BCerrar)
         Me.Controls.Add(Me.POpc)
+        Me.Controls.Add(Me.DGHR)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "MPHistorial"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -637,4 +695,9 @@ Partial Class MPHistorial
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents BMenos As Button
     Friend WithEvents BExcel As Button
+    Friend WithEvents BEliminar As Button
+    Friend WithEvents l3 As Label
+    Friend WithEvents IMP As Label
+    Friend WithEvents LPeso As Label
+    Friend WithEvents LRI As Label
 End Class

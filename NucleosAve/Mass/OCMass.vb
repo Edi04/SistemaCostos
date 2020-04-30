@@ -1486,6 +1486,7 @@ Public Class OCMass
             Conex.Close()
 
             POC.Visible = True
+            OCompra.Text = ""
             Dim Consultas As String = "SELECT OC.id_orden, OC.codigo, OC.purchase_order, OC.CodiS, PR.nombre, COUNT(OD.descripcion) AS 'Productos Solicitados'
                                                         FROM TB_Ordenes_Compra AS OC
                                                             INNER JOIN Tb_Proveedores AS Pr ON Pr.id_p = OC.id_pro

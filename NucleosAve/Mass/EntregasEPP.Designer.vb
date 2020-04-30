@@ -867,13 +867,13 @@ Partial Class EntregasEPP
         Me.Controls.Add(Me.CEPendientes)
         Me.Controls.Add(Me.TxtResponsable)
         Me.Controls.Add(Me.LCS)
-        Me.Controls.Add(Me.PDatos)
         Me.Controls.Add(Me.BMinimizar)
         Me.Controls.Add(Me.BCerrar)
         Me.Controls.Add(Me.GBusqueda)
         Me.Controls.Add(Me.LTitulo)
         Me.Controls.Add(Me.DatosPM)
         Me.Controls.Add(Me.PLinea)
+        Me.Controls.Add(Me.PDatos)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "EntregasEPP"
         Me.Text = "EntregasEPP"

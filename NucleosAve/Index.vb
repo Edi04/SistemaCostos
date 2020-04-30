@@ -2,7 +2,9 @@
 
     'Botones
     Private Sub BCerrar_Click(sender As Object, e As EventArgs) Handles B_Cerrar.Click
-        Application.Exit()
+        Close()
+        InicioSesion.TxtContrasena.Text = ""
+        InicioSesion.Show()
     End Sub
 
     Private Sub B_Minimizar_Click(sender As Object, e As EventArgs) Handles B_Minimizar.Click
@@ -177,6 +179,16 @@
         WindowState = FormWindowState.Minimized
     End Sub
 
+    Private Sub BMEPP_Click(sender As Object, e As EventArgs) Handles BMEPP.Click
+        MIEPP.Show()
+        WindowState = FormWindowState.Minimized
+    End Sub
+
+    Private Sub BConsulta_Click(sender As Object, e As EventArgs) Handles BConsulta.Click
+        Consultas.Show()
+        WindowState = FormWindowState.Minimized
+    End Sub
+
 
     'Materia Prima
     Private Sub BMPrima_Click(sender As Object, e As EventArgs) Handles BMPrima.Click
@@ -282,45 +294,6 @@
         Timer1.Enabled = True
     End Sub
 
-    Private Sub BPedidos_Click(sender As Object, e As EventArgs) Handles BPedidos.Click
-
-    End Sub
-
-    Private Sub Label8_Click(sender As Object, e As EventArgs) Handles Label8.Click
-
-    End Sub
-
-    Private Sub PictureBox3_Click(sender As Object, e As EventArgs)
-    End Sub
-
-    Private Sub Label9_Click(sender As Object, e As EventArgs) Handles Label9.Click
-
-    End Sub
-
-    'Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles BA_R.Click
-    '    If PA_R.Visible = True Then
-    '        PA_R.Visible = False
-    '    ElseIf PA_R.Visible = False Then
-    '        PA_R.Visible = True
-
-    '        PMAlmacen.Visible = False
-    '        PMCompras.Visible = False
-    '        PMCostos.Visible = False
-    '        PMTransporte.Visible = False
-    '        PMMass.Visible = False
-    '        PMMPrima.Visible = False
-    '        PMGasolina.Visible = False
-    '    End If
-    'End Sub
-
-    Private Sub LMP_Click(sender As Object, e As EventArgs) Handles LMP.Click
-
-    End Sub
-
-    Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
-
-    End Sub
-
     Private Sub PictureBox5_Click(sender As Object, e As EventArgs) Handles PictureBox5.Click
         ' CNM_COMPRAS_OC_PROCESO1.ShowDialog()
     End Sub
@@ -341,10 +314,6 @@
         Ventas.Show()
     End Sub
 
-    Private Sub LCompras_Click(sender As Object, e As EventArgs) Handles LCompras.Click
-
-    End Sub
-
     Private Sub btn_empleados_Click(sender As Object, e As EventArgs) Handles btn_empleados.Click
         Alta_Empleados.Show()
     End Sub
@@ -361,30 +330,9 @@
         Entregas_Equipo_Proteccion.Show()
     End Sub
 
-    Private Sub BA_R_Click(sender As Object, e As EventArgs) Handles BA_R.Click
-
-    End Sub
-
-    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
-
-    End Sub
-
-    Private Sub PictureBox3_Click_1(sender As Object, e As EventArgs) Handles PictureBox3.Click
-
-    End Sub
-
-    Private Sub PictureBox7_Click(sender As Object, e As EventArgs) Handles PictureBox7.Click
-
-    End Sub
-
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         lblHora.Text = DateTime.Now.ToString("hh:mm:ss")
         lblFecha.Text = DateTime.Now.ToLongDateString()
-    End Sub
-
-    Private Sub PictureBox6_Click(sender As Object, e As EventArgs) Handles PictureBox6.Click
-        MIEPP.Show()
-        WindowState = FormWindowState.Minimized
     End Sub
 
     Private Sub btn_gas_por_mucho_Click(sender As Object, e As EventArgs) Handles btn_gas_por_mucho.Click

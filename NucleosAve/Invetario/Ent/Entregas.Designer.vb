@@ -22,6 +22,10 @@ Partial Class Entregas
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Entregas))
         Me.PLinea = New System.Windows.Forms.Panel()
         Me.DatosPM = New System.Windows.Forms.DataGridView()
@@ -127,12 +131,16 @@ Partial Class Entregas
         Me.DatosPM.Location = New System.Drawing.Point(372, 117)
         Me.DatosPM.Name = "DatosPM"
         Me.DatosPM.ReadOnly = True
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        Me.DatosPM.RowsDefaultCellStyle = DataGridViewCellStyle2
         Me.DatosPM.Size = New System.Drawing.Size(558, 403)
         Me.DatosPM.TabIndex = 2
         '
         'ID
         '
         Me.ID.DataPropertyName = "Id_Entrega"
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+        Me.ID.DefaultCellStyle = DataGridViewCellStyle1
         Me.ID.HeaderText = "ID"
         Me.ID.Name = "ID"
         Me.ID.ReadOnly = True
@@ -283,6 +291,7 @@ Partial Class Entregas
         Me.PDatos.Controls.Add(Me.LCalidad)
         Me.PDatos.Controls.Add(Me.TxtCantidad)
         Me.PDatos.Controls.Add(Me.LMaterial)
+        Me.PDatos.ForeColor = System.Drawing.Color.Black
         Me.PDatos.Location = New System.Drawing.Point(34, 189)
         Me.PDatos.Name = "PDatos"
         Me.PDatos.Size = New System.Drawing.Size(306, 331)
@@ -540,6 +549,8 @@ Partial Class Entregas
         Me.DGProducto.Location = New System.Drawing.Point(3, 46)
         Me.DGProducto.Name = "DGProducto"
         Me.DGProducto.ReadOnly = True
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        Me.DGProducto.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.DGProducto.Size = New System.Drawing.Size(301, 162)
         Me.DGProducto.TabIndex = 2
         '
@@ -585,6 +596,8 @@ Partial Class Entregas
         Me.DGTrabajador.Location = New System.Drawing.Point(-1, 44)
         Me.DGTrabajador.Name = "DGTrabajador"
         Me.DGTrabajador.ReadOnly = True
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
+        Me.DGTrabajador.RowsDefaultCellStyle = DataGridViewCellStyle4
         Me.DGTrabajador.Size = New System.Drawing.Size(308, 229)
         Me.DGTrabajador.TabIndex = 2
         '
@@ -669,6 +682,7 @@ Partial Class Entregas
         Me.PNT.Controls.Add(Me.LNom)
         Me.PNT.Controls.Add(Me.LN)
         Me.PNT.Controls.Add(Me.LT)
+        Me.PNT.ForeColor = System.Drawing.Color.Black
         Me.PNT.Location = New System.Drawing.Point(328, 179)
         Me.PNT.Name = "PNT"
         Me.PNT.Size = New System.Drawing.Size(210, 242)
@@ -920,6 +934,7 @@ Partial Class Entregas
         Me.Controls.Add(Me.DatosPM)
         Me.Controls.Add(Me.PLinea)
         Me.Controls.Add(Me.PDatos)
+        Me.ForeColor = System.Drawing.Color.White
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Entregas"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -1004,6 +1019,10 @@ Partial Class Entregas
     Friend WithEvents CodigoP As DataGridViewTextBoxColumn
     Friend WithEvents Existencia As DataGridViewTextBoxColumn
     Friend WithEvents LEx As Label
+    Friend WithEvents CProceso As ComboBox
+    Friend WithEvents LProceso As Label
+    Friend WithEvents TxtProceso As TextBox
+    Friend WithEvents BEPP As Button
     Friend WithEvents ID As DataGridViewLinkColumn
     Friend WithEvents NumNomina As DataGridViewTextBoxColumn
     Friend WithEvents NombreE As DataGridViewTextBoxColumn
@@ -1013,8 +1032,4 @@ Partial Class Entregas
     Friend WithEvents Descr As DataGridViewTextBoxColumn
     Friend WithEvents RespS As DataGridViewTextBoxColumn
     Friend WithEvents Proceso As DataGridViewTextBoxColumn
-    Friend WithEvents CProceso As ComboBox
-    Friend WithEvents LProceso As Label
-    Friend WithEvents TxtProceso As TextBox
-    Friend WithEvents BEPP As Button
 End Class
