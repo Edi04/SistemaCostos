@@ -147,6 +147,8 @@ Partial Class Index
         Me.lblHora = New System.Windows.Forms.Label()
         Me.lblFecha = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
+        Me.Label19 = New System.Windows.Forms.Label()
         CType(Me.B_Minimizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.B_Cerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_mantenimientos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -221,6 +223,7 @@ Partial Class Index
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PStatus.SuspendLayout()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'B_Minimizar
@@ -1061,6 +1064,8 @@ Partial Class Index
         'PMMass
         '
         Me.PMMass.BackColor = System.Drawing.Color.Transparent
+        Me.PMMass.Controls.Add(Me.PictureBox6)
+        Me.PMMass.Controls.Add(Me.Label19)
         Me.PMMass.Controls.Add(Me.BMInventario)
         Me.PMMass.Controls.Add(Me.LMInventario)
         Me.PMMass.Location = New System.Drawing.Point(30, 250)
@@ -1782,16 +1787,42 @@ Partial Class Index
         'Timer1
         '
         '
+        'PictureBox6
+        '
+        Me.PictureBox6.AccessibleDescription = "dfghdfgdfhdhfd"
+        Me.PictureBox6.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.PictureBox6.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox6.Image = Global.NucleosAve.My.Resources.Resources.icons8_equipo_de_paracaidismo_64
+        Me.PictureBox6.Location = New System.Drawing.Point(127, 9)
+        Me.PictureBox6.Name = "PictureBox6"
+        Me.PictureBox6.Size = New System.Drawing.Size(65, 65)
+        Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox6.TabIndex = 83
+        Me.PictureBox6.TabStop = False
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.BackColor = System.Drawing.Color.Transparent
+        Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.ForeColor = System.Drawing.Color.DimGray
+        Me.Label19.Location = New System.Drawing.Point(122, 79)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(73, 30)
+        Me.Label19.TabIndex = 84
+        Me.Label19.Text = "Equipo de" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Seguridad"
+        '
         'Index
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.NucleosAve.My.Resources.Resources.Fondo
         Me.ClientSize = New System.Drawing.Size(926, 425)
+        Me.Controls.Add(Me.PMMass)
         Me.Controls.Add(Me.PMCompras)
         Me.Controls.Add(Me.PMMPrima)
         Me.Controls.Add(Me.PM_recursos_Humanos)
-        Me.Controls.Add(Me.PMMass)
         Me.Controls.Add(Me.PMAlmacen)
         Me.Controls.Add(Me.PMGasolina)
         Me.Controls.Add(Me.PMTransporte)
@@ -1923,6 +1954,7 @@ Partial Class Index
         Me.PStatus.ResumeLayout(False)
         Me.PStatus.PerformLayout()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -2051,4 +2083,6 @@ Partial Class Index
     Friend WithEvents lblHora As Label
     Friend WithEvents lblFecha As Label
     Friend WithEvents Timer1 As Timer
+    Friend WithEvents PictureBox6 As PictureBox
+    Friend WithEvents Label19 As Label
 End Class

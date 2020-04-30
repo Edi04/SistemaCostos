@@ -3,10 +3,10 @@ Imports System.Net.Mail
 Imports System.Net
 Imports System.Text.RegularExpressions
 
-Public Class ODC
+Public Class OCMass
     Dim Conex As New SqlConnection(My.Settings.Conexxx)
 
-    Private Sub ODC_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub OCMass_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         POC.Visible = True
     End Sub
 
@@ -14,12 +14,10 @@ Public Class ODC
     'Botones
     Private Sub BCerrar_Click(sender As Object, e As EventArgs) Handles BCerrar.Click
         Close()
-        Inventario.Show()
     End Sub
 
     Private Sub BMinimizar_Click(sender As Object, e As EventArgs) Handles BMinimizar.Click
         WindowState = FormWindowState.Minimized
-        Inventario.Show()
     End Sub
 
     Private Sub BBOCompra_Click(sender As Object, e As EventArgs) Handles BBOCompra.Click
@@ -35,23 +33,16 @@ Public Class ODC
                                           FROM TB_Ordenes_Compra AS OC
                                                INNER JOIN Tb_Proveedores AS Pr ON Pr.id_p = OC.id_pro
                                                INNER JOIN TB_Ordenes_Detalle AS OD ON OC.codigo = OD.codigo
+											   left join TB_Productos as p on (p.Nombre_Producto = od.descripcion or od.estado =p.Id_Producto) 
                                           WHERE OC.estado ='Activo' AND
-                                                OC.CodiS <> ''  AND
-                                                OD.descripcion NOT LIKE '%GRAIN%' AND
-                                                OD.descripcion NOT LIKE '%ORIENTED%' AND
-                                                OD.descripcion NOT LIKE '%STEEL%' AND
-                                                OD.descripcion NOT LIKE '%SILICIO%' AND
-                                                OD.descripcion NOT LIKE '%GRADE%' AND
-                                                OD.descripcion NOT LIKE '%MANTENIMIENTO%' AND
-                                                OD.descripcion NOT LIKE '%SEÑALAMIENTO%' AND
-                                                OD.descripcion NOT LIKE '%CAPACITACION%' AND
-                                                OD.descripcion NOT LIKE '%NOM-%' AND
-												OD.descripcion NOT LIKE '%HERST%' AND
-                                                OD.descripcion NOT LIKE '%extintor%' AND
-                                                Pr.nombre NOT LIKE '%GEOR%' AND
-												OD.um NOT LIKE '%Servicio%' AND
+                                                OC.CodiS <> '' and
+												od.descripcion not like '%EPP%' AND
+												od.descripcion not like '%GUANTE%' and
+												pr.nombre not like '%concreto%' and
+                                                pr.nombre not like '%ing.%' and
+												(p.Estado = 'AMass' or p.Nombre_Producto is null) and
                                                 OC.fecha2_nota BETWEEN @Fech1 and @Fech2
-                                          GROUP BY OC.id_orden, OC.codigo, OC.purchase_order, OC.CodiS, Pr.nombre"
+										 GROUP BY OC.id_orden, OC.codigo, OC.purchase_order, OC.CodiS, Pr.nombre"
 
         Dim cmd As New SqlCommand(Consulta, Conex)
         cmd.Parameters.AddWithValue("@Fech1", DTF1.Value)
@@ -1502,19 +1493,12 @@ Public Class ODC
                                                         WHERE OC.estado ='Activo' AND
                                                             OC.CodiS <> ''  AND
                                                             OC.purchase_order like '%'+@Busqueda+'%' AND
-                                                            OD.descripcion NOT LIKE '%GRAIN%' AND
-                                                            OD.descripcion NOT LIKE '%ORIENTED%' AND
-                                                            OD.descripcion NOT LIKE '%STEEL%' AND
                                                             OD.descripcion NOT LIKE '%SILICIO%' AND
+                                                            OD.descripcion NOT LIKE '%GRAIN ORIENTED%' AND
+                                                            OD.descripcion NOT LIKE '%STEEL%' AND
                                                             OD.descripcion NOT LIKE '%GRADE%' AND
-                                                            OD.descripcion NOT LIKE '%MANTENIMIENTO%' AND
-                                                            OD.descripcion NOT LIKE '%SEÑALAMIENTO%' AND
-                                                            OD.descripcion NOT LIKE '%CAPACITACION%' AND
-                                                            OD.descripcion NOT LIKE '%NOM-%' AND
-												            OD.descripcion NOT LIKE '%HERST%' AND
-                                                            OD.descripcion NOT LIKE '%extintor%' AND
-                                                            Pr.nombre NOT LIKE '%GEOR%' AND
-												            OD.um NOT LIKE '%Servicio%' 
+                                                            OD.descripcion NOT LIKE '%HERST%' AND
+                                                            OD.um NOT LIKE '%Servicio%'
                                                         GROUP BY OC.id_orden, OC.codigo, OC.purchase_order, OC.CodiS, Pr.nombre"
 
             Dim cmds As New SqlCommand(Consultas, Conex)
@@ -1943,26 +1927,20 @@ Public Class ODC
         If TxtBOC.Text = "" Then
         Else
             Dim Consulta As String = "SELECT OC.id_orden, OC.codigo, OC.purchase_order, OC.CodiS, PR.nombre, COUNT(OD.descripcion) AS 'Productos Solicitados'
-                                                        FROM TB_Ordenes_Compra AS OC
-                                                            INNER JOIN Tb_Proveedores AS Pr ON Pr.id_p = OC.id_pro
-                                                            INNER JOIN TB_Ordenes_Detalle AS OD ON OC.codigo = OD.codigo
-                                                        WHERE OC.estado ='Activo' AND
-                                                            OC.CodiS <> ''  AND
-                                                            OC.purchase_order like '%'+@Busqueda+'%' AND
-                                                            OD.descripcion NOT LIKE '%GRAIN%' AND
-                                                            OD.descripcion NOT LIKE '%ORIENTED%' AND
-                                                            OD.descripcion NOT LIKE '%STEEL%' AND
-                                                            OD.descripcion NOT LIKE '%SILICIO%' AND
-                                                            OD.descripcion NOT LIKE '%GRADE%' AND
-                                                            OD.descripcion NOT LIKE '%MANTENIMIENTO%' AND
-                                                            OD.descripcion NOT LIKE '%SEÑALAMIENTO%' AND
-                                                            OD.descripcion NOT LIKE '%CAPACITACION%' AND
-                                                            OD.descripcion NOT LIKE '%NOM-%' AND
-												            OD.descripcion NOT LIKE '%HERST%' AND
-                                                            OD.descripcion NOT LIKE '%extintor%' AND
-                                                            Pr.nombre NOT LIKE '%GEOR%' AND
-												            OD.um NOT LIKE '%Servicio%' 
-                                                        GROUP BY OC.id_orden, OC.codigo, OC.purchase_order, OC.CodiS, Pr.nombre"
+                                          FROM TB_Ordenes_Compra AS OC
+                                               INNER JOIN Tb_Proveedores AS Pr ON Pr.id_p = OC.id_pro
+                                               INNER JOIN TB_Ordenes_Detalle AS OD ON OC.codigo = OD.codigo
+											   left join TB_Productos as p on (p.Nombre_Producto = od.descripcion or od.estado =p.Id_Producto) 
+                                          WHERE OC.estado ='Activo' AND
+                                                OC.CodiS <> '' and
+                                                OC.purchase_order like '%'+@Busqueda+'%' AND
+												od.descripcion not like '%EPP%' AND
+												od.descripcion not like '%GUANTE%' and
+												pr.nombre not like '%concreto%' and
+                                                pr.nombre not like '%ing%' and
+												(p.Estado = 'AMass' or p.Nombre_Producto is null) 
+												
+                                          GROUP BY OC.id_orden, OC.codigo, OC.purchase_order, OC.CodiS, Pr.nombre"
 
             Dim cmd As New SqlCommand(Consulta, Conex)
             cmd.Parameters.AddWithValue("@Busqueda", Trim(TxtBOC.Text))
@@ -2415,7 +2393,7 @@ Public Class ODC
         Else
             Dim Consulta As String = "SELECT Id_Producto, Nombre_Producto, Clave_Producto
                                             FROM TB_Productos
-                                            WHERE Estado = 'Activo' AND
+                                            WHERE Estado = 'AMass' AND
                                                     (Nombre_Producto  LIKE '%'+@Busqueda+'%' OR
                                                     Clave_Producto  LIKE '%'+@Busqueda+'%' OR
                                                     Codigo_Barras LIKE '%'+@Busqueda+'%') 
@@ -2730,18 +2708,18 @@ Public Class ODC
                 .Port = 26
                 .Host = "mail.nucleosave.com.mx"
                 .Credentials = New System.Net.NetworkCredential(Trim(TxtUser.Text), Trim(TxtPassword.Text)) '("Sistemas01@nucleosave.com.mx", "Sistemas01")
-                    .EnableSsl = True
-                End With
+                .EnableSsl = True
+            End With
 
-                With correoa
-                    .From = New System.Net.Mail.MailAddress(Trim(TxtUser.Text)) '("Sistemas01@nucleosave.com.mx")
-                    .To.Add(Trim(TxtEmail1.Text)) '("Sistemas01@nucleosave.com.mx")
-                    If TxtEmail2.Text <> "" Then
-                        .To.Add(Trim(TxtEmail2.Text))
-                    End If
-                    If TxtEmail3.Text <> "" Then
-                        .To.Add(Trim(TxtEmail3.Text))
-                    End If
+            With correoa
+                .From = New System.Net.Mail.MailAddress(Trim(TxtUser.Text)) '("Sistemas01@nucleosave.com.mx")
+                .To.Add(Trim(TxtEmail1.Text)) '("Sistemas01@nucleosave.com.mx")
+                If TxtEmail2.Text <> "" Then
+                    .To.Add(Trim(TxtEmail2.Text))
+                End If
+                If TxtEmail3.Text <> "" Then
+                    .To.Add(Trim(TxtEmail3.Text))
+                End If
                 .Subject = "Ingreso de la Orden de Compra: " & Oc
                 .Body = "<p align='right'>Orden de Compra : " & OCompra.Text & "</p><br />" &
                             "Fecha: " & Fecha & "<br />" &
@@ -2817,10 +2795,10 @@ Public Class ODC
                                             "<td style='text-align: center;'>" & c20 & "&nbsp;&nbsp;</td></tr><tr ALIGN=CENTER>
                             </table></center>" &
                             "<font color='red'>Nota : Por favor de notificar si se esperan los productos faltantes</font>"
-                    .IsBodyHtml = True
-                    .Priority = System.Net.Mail.MailPriority.Normal
-                End With
-                Try
+                .IsBodyHtml = True
+                .Priority = System.Net.Mail.MailPriority.Normal
+            End With
+            Try
                 smtp.Send(correoa)
                 MessageBox.Show("Correo Enviado exitosamente.", "Reporte de Rollos", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
@@ -4449,7 +4427,7 @@ Public Class ODC
     Private Sub M()
         Dim Consulta As String = "SELECT Id_Producto, Nombre_Producto, Clave_Producto
                                           FROM TB_Productos
-                                          WHERE Estado = 'Activo'
+                                          WHERE Estado = 'AMass'
                                           ORDER BY Nombre_Producto ASC"
 
         Dim cmd As New SqlCommand(Consulta, Conex)

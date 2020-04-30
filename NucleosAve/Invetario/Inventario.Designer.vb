@@ -23,11 +23,15 @@ Partial Class Inventario
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.POpc = New System.Windows.Forms.Panel()
         Me.DataView = New System.Windows.Forms.DataGridView()
+        Me.ID = New System.Windows.Forms.DataGridViewLinkColumn()
+        Me.Nombre_Producto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Clave_Producto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Exis = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GBusqueda = New System.Windows.Forms.GroupBox()
         Me.LEspecific = New System.Windows.Forms.Label()
         Me.PBusqueda = New System.Windows.Forms.PictureBox()
@@ -133,10 +137,6 @@ Partial Class Inventario
         Me.BOrdenC = New System.Windows.Forms.Button()
         Me.LUsuario = New System.Windows.Forms.Label()
         Me.LIDE = New System.Windows.Forms.Label()
-        Me.ID = New System.Windows.Forms.DataGridViewLinkColumn()
-        Me.Nombre_Producto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Clave_Producto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Exis = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.DataView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GBusqueda.SuspendLayout()
         CType(Me.PBusqueda, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -177,23 +177,63 @@ Partial Class Inventario
         Me.DataView.BackgroundColor = System.Drawing.Color.SteelBlue
         Me.DataView.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DataView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle16.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle16
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.Nombre_Producto, Me.Clave_Producto, Me.Exis})
         Me.DataView.EnableHeadersVisualStyles = False
         Me.DataView.GridColor = System.Drawing.SystemColors.GradientActiveCaption
-        Me.DataView.Location = New System.Drawing.Point(603, 77)
+        Me.DataView.Location = New System.Drawing.Point(604, 77)
         Me.DataView.Name = "DataView"
         Me.DataView.ReadOnly = True
         Me.DataView.Size = New System.Drawing.Size(541, 443)
         Me.DataView.TabIndex = 1
+        '
+        'ID
+        '
+        Me.ID.DataPropertyName = "Id_Producto"
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.ID.DefaultCellStyle = DataGridViewCellStyle2
+        Me.ID.Frozen = True
+        Me.ID.HeaderText = "ID"
+        Me.ID.Name = "ID"
+        Me.ID.ReadOnly = True
+        Me.ID.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.ID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.ID.Text = ""
+        Me.ID.Width = 40
+        '
+        'Nombre_Producto
+        '
+        Me.Nombre_Producto.DataPropertyName = "Nombre_Producto"
+        Me.Nombre_Producto.FillWeight = 150.0!
+        Me.Nombre_Producto.HeaderText = "Nombre del Producto"
+        Me.Nombre_Producto.Name = "Nombre_Producto"
+        Me.Nombre_Producto.ReadOnly = True
+        Me.Nombre_Producto.Width = 295
+        '
+        'Clave_Producto
+        '
+        Me.Clave_Producto.DataPropertyName = "Clave_Producto"
+        Me.Clave_Producto.HeaderText = "Clave del Producto"
+        Me.Clave_Producto.Name = "Clave_Producto"
+        Me.Clave_Producto.ReadOnly = True
+        '
+        'Exis
+        '
+        Me.Exis.DataPropertyName = "Existencia"
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.Exis.DefaultCellStyle = DataGridViewCellStyle3
+        Me.Exis.HeaderText = "Existencia"
+        Me.Exis.Name = "Exis"
+        Me.Exis.ReadOnly = True
+        Me.Exis.Width = 60
         '
         'GBusqueda
         '
@@ -1467,46 +1507,6 @@ Partial Class Inventario
         Me.LIDE.Size = New System.Drawing.Size(0, 13)
         Me.LIDE.TabIndex = 85
         Me.LIDE.Visible = False
-        '
-        'ID
-        '
-        Me.ID.DataPropertyName = "Id_Producto"
-        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.ID.DefaultCellStyle = DataGridViewCellStyle17
-        Me.ID.Frozen = True
-        Me.ID.HeaderText = "ID"
-        Me.ID.Name = "ID"
-        Me.ID.ReadOnly = True
-        Me.ID.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.ID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.ID.Text = ""
-        Me.ID.Width = 40
-        '
-        'Nombre_Producto
-        '
-        Me.Nombre_Producto.DataPropertyName = "Nombre_Producto"
-        Me.Nombre_Producto.FillWeight = 150.0!
-        Me.Nombre_Producto.HeaderText = "Nombre del Producto"
-        Me.Nombre_Producto.Name = "Nombre_Producto"
-        Me.Nombre_Producto.ReadOnly = True
-        Me.Nombre_Producto.Width = 295
-        '
-        'Clave_Producto
-        '
-        Me.Clave_Producto.DataPropertyName = "Clave_Producto"
-        Me.Clave_Producto.HeaderText = "Clave del Producto"
-        Me.Clave_Producto.Name = "Clave_Producto"
-        Me.Clave_Producto.ReadOnly = True
-        '
-        'Exis
-        '
-        Me.Exis.DataPropertyName = "Existencia"
-        DataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.Exis.DefaultCellStyle = DataGridViewCellStyle18
-        Me.Exis.HeaderText = "Existencia"
-        Me.Exis.Name = "Exis"
-        Me.Exis.ReadOnly = True
-        Me.Exis.Width = 60
         '
         'Inventario
         '

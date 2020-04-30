@@ -25,9 +25,10 @@ Partial Class EntregasEPP
         Me.TxtResponsable = New System.Windows.Forms.Label()
         Me.LCS = New System.Windows.Forms.Label()
         Me.PDatos = New System.Windows.Forms.Panel()
+        Me.BBBMaterial = New System.Windows.Forms.Button()
+        Me.BBTrabajador = New System.Windows.Forms.Button()
         Me.CProceso = New System.Windows.Forms.ComboBox()
         Me.IDD = New System.Windows.Forms.Label()
-        Me.BEntrega = New System.Windows.Forms.Button()
         Me.LProceso = New System.Windows.Forms.Label()
         Me.TxtProceso = New System.Windows.Forms.TextBox()
         Me.IDE = New System.Windows.Forms.Label()
@@ -59,12 +60,47 @@ Partial Class EntregasEPP
         Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Proceso = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PLinea = New System.Windows.Forms.Panel()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.CEPendientes = New System.Windows.Forms.CheckBox()
         Me.BNuevoPrestamo = New System.Windows.Forms.Button()
+        Me.BEliminar = New System.Windows.Forms.Button()
+        Me.ANuevoT = New System.Windows.Forms.Button()
+        Me.BRIngreso = New System.Windows.Forms.Button()
+        Me.BGEntrega = New System.Windows.Forms.Button()
+        Me.PNT = New System.Windows.Forms.Panel()
+        Me.BRNT = New System.Windows.Forms.Button()
+        Me.BGNT = New System.Windows.Forms.Button()
+        Me.TxtNombre = New System.Windows.Forms.TextBox()
+        Me.TxtAM = New System.Windows.Forms.TextBox()
+        Me.TxtAP = New System.Windows.Forms.TextBox()
+        Me.TxtNNN = New System.Windows.Forms.TextBox()
+        Me.LAM = New System.Windows.Forms.Label()
+        Me.LAP = New System.Windows.Forms.Label()
+        Me.LNom = New System.Windows.Forms.Label()
+        Me.LN = New System.Windows.Forms.Label()
+        Me.LT = New System.Windows.Forms.Label()
+        Me.PMaterial = New System.Windows.Forms.Panel()
+        Me.TxtBMaterial = New System.Windows.Forms.TextBox()
+        Me.DGProducto = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewLinkColumn1 = New System.Windows.Forms.DataGridViewLinkColumn()
+        Me.Produto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CodigoP = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Existencia = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PTrabajador = New System.Windows.Forms.Panel()
+        Me.TxtBusT = New System.Windows.Forms.TextBox()
+        Me.DGTrabajador = New System.Windows.Forms.DataGridView()
+        Me.Id_Empleado = New System.Windows.Forms.DataGridViewLinkColumn()
+        Me.Numero_Nomina = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NTrabajador = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.LEx = New System.Windows.Forms.Label()
         Me.PDatos.SuspendLayout()
         Me.GBusqueda.SuspendLayout()
         CType(Me.PBusqueda, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DatosPM, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PNT.SuspendLayout()
+        Me.PMaterial.SuspendLayout()
+        CType(Me.DGProducto, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PTrabajador.SuspendLayout()
+        CType(Me.DGTrabajador, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TxtResponsable
@@ -88,9 +124,10 @@ Partial Class EntregasEPP
         'PDatos
         '
         Me.PDatos.BackColor = System.Drawing.Color.Transparent
+        Me.PDatos.Controls.Add(Me.BBBMaterial)
+        Me.PDatos.Controls.Add(Me.BBTrabajador)
         Me.PDatos.Controls.Add(Me.CProceso)
         Me.PDatos.Controls.Add(Me.IDD)
-        Me.PDatos.Controls.Add(Me.BEntrega)
         Me.PDatos.Controls.Add(Me.LProceso)
         Me.PDatos.Controls.Add(Me.TxtProceso)
         Me.PDatos.Controls.Add(Me.IDE)
@@ -110,6 +147,30 @@ Partial Class EntregasEPP
         Me.PDatos.Size = New System.Drawing.Size(306, 331)
         Me.PDatos.TabIndex = 94
         '
+        'BBBMaterial
+        '
+        Me.BBBMaterial.BackColor = System.Drawing.Color.Transparent
+        Me.BBBMaterial.BackgroundImage = Global.NucleosAve.My.Resources.Resources.file_1911
+        Me.BBBMaterial.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.BBBMaterial.Location = New System.Drawing.Point(270, 80)
+        Me.BBBMaterial.Name = "BBBMaterial"
+        Me.BBBMaterial.Size = New System.Drawing.Size(21, 21)
+        Me.BBBMaterial.TabIndex = 103
+        Me.BBBMaterial.UseVisualStyleBackColor = False
+        Me.BBBMaterial.Visible = False
+        '
+        'BBTrabajador
+        '
+        Me.BBTrabajador.BackColor = System.Drawing.Color.Transparent
+        Me.BBTrabajador.BackgroundImage = Global.NucleosAve.My.Resources.Resources.file_1911
+        Me.BBTrabajador.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.BBTrabajador.Location = New System.Drawing.Point(273, 10)
+        Me.BBTrabajador.Name = "BBTrabajador"
+        Me.BBTrabajador.Size = New System.Drawing.Size(21, 21)
+        Me.BBTrabajador.TabIndex = 102
+        Me.BBTrabajador.UseVisualStyleBackColor = False
+        Me.BBTrabajador.Visible = False
+        '
         'CProceso
         '
         Me.CProceso.FormattingEnabled = True
@@ -127,18 +188,6 @@ Partial Class EntregasEPP
         Me.IDD.Size = New System.Drawing.Size(0, 13)
         Me.IDD.TabIndex = 93
         Me.IDD.Visible = False
-        '
-        'BEntrega
-        '
-        Me.BEntrega.BackColor = System.Drawing.Color.Transparent
-        Me.BEntrega.BackgroundImage = Global.NucleosAve.My.Resources.Resources.file_1411
-        Me.BEntrega.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.BEntrega.Location = New System.Drawing.Point(117, 267)
-        Me.BEntrega.Name = "BEntrega"
-        Me.BEntrega.Size = New System.Drawing.Size(50, 50)
-        Me.BEntrega.TabIndex = 86
-        Me.BEntrega.UseVisualStyleBackColor = False
-        Me.BEntrega.Visible = False
         '
         'LProceso
         '
@@ -212,7 +261,7 @@ Partial Class EntregasEPP
         Me.TxtNN.Multiline = True
         Me.TxtNN.Name = "TxtNN"
         Me.TxtNN.ReadOnly = True
-        Me.TxtNN.Size = New System.Drawing.Size(155, 20)
+        Me.TxtNN.Size = New System.Drawing.Size(133, 20)
         Me.TxtNN.TabIndex = 1
         Me.TxtNN.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -257,7 +306,7 @@ Partial Class EntregasEPP
         Me.TxtMaterial.Multiline = True
         Me.TxtMaterial.Name = "TxtMaterial"
         Me.TxtMaterial.ReadOnly = True
-        Me.TxtMaterial.Size = New System.Drawing.Size(154, 35)
+        Me.TxtMaterial.Size = New System.Drawing.Size(133, 35)
         Me.TxtMaterial.TabIndex = 4
         '
         'LCalidad
@@ -370,7 +419,7 @@ Partial Class EntregasEPP
         Me.LTitulo.AutoSize = True
         Me.LTitulo.BackColor = System.Drawing.Color.Transparent
         Me.LTitulo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LTitulo.Location = New System.Drawing.Point(317, 68)
+        Me.LTitulo.Location = New System.Drawing.Point(334, 68)
         Me.LTitulo.Name = "LTitulo"
         Me.LTitulo.Size = New System.Drawing.Size(274, 20)
         Me.LTitulo.TabIndex = 90
@@ -461,19 +510,19 @@ Partial Class EntregasEPP
         Me.PLinea.Size = New System.Drawing.Size(1001, 11)
         Me.PLinea.TabIndex = 93
         '
-        'CheckBox1
+        'CEPendientes
         '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.BackColor = System.Drawing.Color.Transparent
-        Me.CheckBox1.Checked = True
-        Me.CheckBox1.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox1.Location = New System.Drawing.Point(586, 136)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(196, 24)
-        Me.CheckBox1.TabIndex = 97
-        Me.CheckBox1.Text = "Entregas Pendientes"
-        Me.CheckBox1.UseVisualStyleBackColor = False
+        Me.CEPendientes.AutoSize = True
+        Me.CEPendientes.BackColor = System.Drawing.Color.Transparent
+        Me.CEPendientes.Checked = True
+        Me.CEPendientes.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.CEPendientes.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CEPendientes.Location = New System.Drawing.Point(586, 136)
+        Me.CEPendientes.Name = "CEPendientes"
+        Me.CEPendientes.Size = New System.Drawing.Size(196, 24)
+        Me.CEPendientes.TabIndex = 97
+        Me.CEPendientes.Text = "Entregas Pendientes"
+        Me.CEPendientes.UseVisualStyleBackColor = False
         '
         'BNuevoPrestamo
         '
@@ -486,14 +535,336 @@ Partial Class EntregasEPP
         Me.BNuevoPrestamo.TabIndex = 98
         Me.BNuevoPrestamo.UseVisualStyleBackColor = False
         '
+        'BEliminar
+        '
+        Me.BEliminar.BackColor = System.Drawing.Color.Transparent
+        Me.BEliminar.BackgroundImage = Global.NucleosAve.My.Resources.Resources.file_1311
+        Me.BEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.BEliminar.Location = New System.Drawing.Point(637, 2)
+        Me.BEliminar.Name = "BEliminar"
+        Me.BEliminar.Size = New System.Drawing.Size(50, 50)
+        Me.BEliminar.TabIndex = 99
+        Me.BEliminar.UseVisualStyleBackColor = False
+        Me.BEliminar.Visible = False
+        '
+        'ANuevoT
+        '
+        Me.ANuevoT.BackColor = System.Drawing.Color.Transparent
+        Me.ANuevoT.BackgroundImage = Global.NucleosAve.My.Resources.Resources.user_40
+        Me.ANuevoT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.ANuevoT.Location = New System.Drawing.Point(469, 2)
+        Me.ANuevoT.Name = "ANuevoT"
+        Me.ANuevoT.Size = New System.Drawing.Size(50, 50)
+        Me.ANuevoT.TabIndex = 100
+        Me.ANuevoT.UseVisualStyleBackColor = False
+        Me.ANuevoT.Visible = False
+        '
+        'BRIngreso
+        '
+        Me.BRIngreso.BackColor = System.Drawing.Color.Transparent
+        Me.BRIngreso.BackgroundImage = Global.NucleosAve.My.Resources.Resources.icons8_izquierda_64__1_
+        Me.BRIngreso.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.BRIngreso.Location = New System.Drawing.Point(525, 2)
+        Me.BRIngreso.Name = "BRIngreso"
+        Me.BRIngreso.Size = New System.Drawing.Size(50, 50)
+        Me.BRIngreso.TabIndex = 101
+        Me.BRIngreso.UseVisualStyleBackColor = False
+        Me.BRIngreso.Visible = False
+        '
+        'BGEntrega
+        '
+        Me.BGEntrega.BackColor = System.Drawing.Color.Transparent
+        Me.BGEntrega.BackgroundImage = Global.NucleosAve.My.Resources.Resources.file_1411
+        Me.BGEntrega.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.BGEntrega.Location = New System.Drawing.Point(581, 2)
+        Me.BGEntrega.Name = "BGEntrega"
+        Me.BGEntrega.Size = New System.Drawing.Size(50, 50)
+        Me.BGEntrega.TabIndex = 102
+        Me.BGEntrega.UseVisualStyleBackColor = False
+        Me.BGEntrega.Visible = False
+        '
+        'PNT
+        '
+        Me.PNT.BackColor = System.Drawing.Color.Transparent
+        Me.PNT.Controls.Add(Me.BRNT)
+        Me.PNT.Controls.Add(Me.BGNT)
+        Me.PNT.Controls.Add(Me.TxtNombre)
+        Me.PNT.Controls.Add(Me.TxtAM)
+        Me.PNT.Controls.Add(Me.TxtAP)
+        Me.PNT.Controls.Add(Me.TxtNNN)
+        Me.PNT.Controls.Add(Me.LAM)
+        Me.PNT.Controls.Add(Me.LAP)
+        Me.PNT.Controls.Add(Me.LNom)
+        Me.PNT.Controls.Add(Me.LN)
+        Me.PNT.Controls.Add(Me.LT)
+        Me.PNT.Location = New System.Drawing.Point(306, 158)
+        Me.PNT.Name = "PNT"
+        Me.PNT.Size = New System.Drawing.Size(210, 242)
+        Me.PNT.TabIndex = 29
+        Me.PNT.Visible = False
+        '
+        'BRNT
+        '
+        Me.BRNT.BackColor = System.Drawing.Color.Transparent
+        Me.BRNT.BackgroundImage = Global.NucleosAve.My.Resources.Resources.file_1311
+        Me.BRNT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.BRNT.Location = New System.Drawing.Point(120, 203)
+        Me.BRNT.Name = "BRNT"
+        Me.BRNT.Size = New System.Drawing.Size(37, 34)
+        Me.BRNT.TabIndex = 6
+        Me.BRNT.UseVisualStyleBackColor = False
+        '
+        'BGNT
+        '
+        Me.BGNT.BackColor = System.Drawing.Color.Transparent
+        Me.BGNT.BackgroundImage = Global.NucleosAve.My.Resources.Resources.file_1411
+        Me.BGNT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.BGNT.Location = New System.Drawing.Point(61, 203)
+        Me.BGNT.Name = "BGNT"
+        Me.BGNT.Size = New System.Drawing.Size(38, 34)
+        Me.BGNT.TabIndex = 5
+        Me.BGNT.UseVisualStyleBackColor = False
+        '
+        'TxtNombre
+        '
+        Me.TxtNombre.BackColor = System.Drawing.Color.Gainsboro
+        Me.TxtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TxtNombre.Location = New System.Drawing.Point(80, 96)
+        Me.TxtNombre.Multiline = True
+        Me.TxtNombre.Name = "TxtNombre"
+        Me.TxtNombre.Size = New System.Drawing.Size(100, 20)
+        Me.TxtNombre.TabIndex = 2
+        '
+        'TxtAM
+        '
+        Me.TxtAM.BackColor = System.Drawing.Color.Gainsboro
+        Me.TxtAM.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TxtAM.Location = New System.Drawing.Point(80, 164)
+        Me.TxtAM.Multiline = True
+        Me.TxtAM.Name = "TxtAM"
+        Me.TxtAM.Size = New System.Drawing.Size(100, 20)
+        Me.TxtAM.TabIndex = 4
+        '
+        'TxtAP
+        '
+        Me.TxtAP.BackColor = System.Drawing.Color.Gainsboro
+        Me.TxtAP.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TxtAP.Location = New System.Drawing.Point(80, 130)
+        Me.TxtAP.Multiline = True
+        Me.TxtAP.Name = "TxtAP"
+        Me.TxtAP.Size = New System.Drawing.Size(100, 20)
+        Me.TxtAP.TabIndex = 3
+        '
+        'TxtNNN
+        '
+        Me.TxtNNN.BackColor = System.Drawing.Color.Gainsboro
+        Me.TxtNNN.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TxtNNN.Location = New System.Drawing.Point(80, 62)
+        Me.TxtNNN.Multiline = True
+        Me.TxtNNN.Name = "TxtNNN"
+        Me.TxtNNN.Size = New System.Drawing.Size(100, 20)
+        Me.TxtNNN.TabIndex = 1
+        Me.TxtNNN.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'LAM
+        '
+        Me.LAM.AutoSize = True
+        Me.LAM.Location = New System.Drawing.Point(26, 164)
+        Me.LAM.Name = "LAM"
+        Me.LAM.Size = New System.Drawing.Size(47, 26)
+        Me.LAM.TabIndex = 0
+        Me.LAM.Text = "Apellido " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Materno"
+        Me.LAM.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        'LAP
+        '
+        Me.LAP.AutoSize = True
+        Me.LAP.Location = New System.Drawing.Point(29, 127)
+        Me.LAP.Name = "LAP"
+        Me.LAP.Size = New System.Drawing.Size(44, 26)
+        Me.LAP.TabIndex = 0
+        Me.LAP.Text = "Apellido" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Paterno"
+        Me.LAP.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'LNom
+        '
+        Me.LNom.AutoSize = True
+        Me.LNom.Location = New System.Drawing.Point(29, 97)
+        Me.LNom.Name = "LNom"
+        Me.LNom.Size = New System.Drawing.Size(44, 13)
+        Me.LNom.TabIndex = 0
+        Me.LNom.Text = "Nombre"
+        '
+        'LN
+        '
+        Me.LN.AutoSize = True
+        Me.LN.Location = New System.Drawing.Point(15, 59)
+        Me.LN.Name = "LN"
+        Me.LN.Size = New System.Drawing.Size(58, 26)
+        Me.LN.TabIndex = 0
+        Me.LN.Text = "Número " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "de Nómina"
+        Me.LN.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        'LT
+        '
+        Me.LT.AutoSize = True
+        Me.LT.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LT.Location = New System.Drawing.Point(49, 17)
+        Me.LT.Name = "LT"
+        Me.LT.Size = New System.Drawing.Size(119, 18)
+        Me.LT.TabIndex = 0
+        Me.LT.Text = "Ingresar Datos"
+        '
+        'PMaterial
+        '
+        Me.PMaterial.BackColor = System.Drawing.Color.Transparent
+        Me.PMaterial.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PMaterial.Controls.Add(Me.TxtBMaterial)
+        Me.PMaterial.Controls.Add(Me.DGProducto)
+        Me.PMaterial.Location = New System.Drawing.Point(11, 287)
+        Me.PMaterial.Name = "PMaterial"
+        Me.PMaterial.Size = New System.Drawing.Size(307, 212)
+        Me.PMaterial.TabIndex = 28
+        Me.PMaterial.Visible = False
+        '
+        'TxtBMaterial
+        '
+        Me.TxtBMaterial.BackColor = System.Drawing.Color.Gainsboro
+        Me.TxtBMaterial.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
+        Me.TxtBMaterial.Location = New System.Drawing.Point(9, 10)
+        Me.TxtBMaterial.Multiline = True
+        Me.TxtBMaterial.Name = "TxtBMaterial"
+        Me.TxtBMaterial.Size = New System.Drawing.Size(288, 31)
+        Me.TxtBMaterial.TabIndex = 1
+        '
+        'DGProducto
+        '
+        Me.DGProducto.AllowUserToAddRows = False
+        Me.DGProducto.AllowUserToDeleteRows = False
+        Me.DGProducto.BackgroundColor = System.Drawing.Color.SteelBlue
+        Me.DGProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGProducto.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewLinkColumn1, Me.Produto, Me.CodigoP, Me.Existencia})
+        Me.DGProducto.Location = New System.Drawing.Point(3, 46)
+        Me.DGProducto.Name = "DGProducto"
+        Me.DGProducto.ReadOnly = True
+        Me.DGProducto.Size = New System.Drawing.Size(301, 162)
+        Me.DGProducto.TabIndex = 2
+        '
+        'DataGridViewLinkColumn1
+        '
+        Me.DataGridViewLinkColumn1.DataPropertyName = "Id_Producto"
+        Me.DataGridViewLinkColumn1.HeaderText = "ID"
+        Me.DataGridViewLinkColumn1.Name = "DataGridViewLinkColumn1"
+        Me.DataGridViewLinkColumn1.ReadOnly = True
+        Me.DataGridViewLinkColumn1.Width = 40
+        '
+        'Produto
+        '
+        Me.Produto.DataPropertyName = "Nombre_Producto"
+        Me.Produto.HeaderText = "Producto"
+        Me.Produto.Name = "Produto"
+        Me.Produto.ReadOnly = True
+        Me.Produto.Width = 250
+        '
+        'CodigoP
+        '
+        Me.CodigoP.DataPropertyName = "Clave_Producto"
+        Me.CodigoP.HeaderText = "Codigo"
+        Me.CodigoP.Name = "CodigoP"
+        Me.CodigoP.ReadOnly = True
+        Me.CodigoP.Visible = False
+        '
+        'Existencia
+        '
+        Me.Existencia.DataPropertyName = "Existencia"
+        Me.Existencia.HeaderText = "Existencia"
+        Me.Existencia.Name = "Existencia"
+        Me.Existencia.ReadOnly = True
+        Me.Existencia.Width = 50
+        '
+        'PTrabajador
+        '
+        Me.PTrabajador.BackColor = System.Drawing.Color.Transparent
+        Me.PTrabajador.Controls.Add(Me.TxtBusT)
+        Me.PTrabajador.Controls.Add(Me.DGTrabajador)
+        Me.PTrabajador.Location = New System.Drawing.Point(10, 227)
+        Me.PTrabajador.Name = "PTrabajador"
+        Me.PTrabajador.Size = New System.Drawing.Size(308, 272)
+        Me.PTrabajador.TabIndex = 27
+        Me.PTrabajador.Visible = False
+        '
+        'TxtBusT
+        '
+        Me.TxtBusT.BackColor = System.Drawing.Color.Gainsboro
+        Me.TxtBusT.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
+        Me.TxtBusT.Location = New System.Drawing.Point(22, 7)
+        Me.TxtBusT.Multiline = True
+        Me.TxtBusT.Name = "TxtBusT"
+        Me.TxtBusT.Size = New System.Drawing.Size(270, 31)
+        Me.TxtBusT.TabIndex = 1
+        '
+        'DGTrabajador
+        '
+        Me.DGTrabajador.AllowUserToAddRows = False
+        Me.DGTrabajador.AllowUserToDeleteRows = False
+        Me.DGTrabajador.BackgroundColor = System.Drawing.Color.SteelBlue
+        Me.DGTrabajador.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGTrabajador.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Id_Empleado, Me.Numero_Nomina, Me.NTrabajador})
+        Me.DGTrabajador.Location = New System.Drawing.Point(-1, 44)
+        Me.DGTrabajador.Name = "DGTrabajador"
+        Me.DGTrabajador.ReadOnly = True
+        Me.DGTrabajador.Size = New System.Drawing.Size(308, 229)
+        Me.DGTrabajador.TabIndex = 2
+        '
+        'Id_Empleado
+        '
+        Me.Id_Empleado.DataPropertyName = "Id_Empleado"
+        Me.Id_Empleado.HeaderText = "ID"
+        Me.Id_Empleado.Name = "Id_Empleado"
+        Me.Id_Empleado.ReadOnly = True
+        Me.Id_Empleado.Width = 40
+        '
+        'Numero_Nomina
+        '
+        Me.Numero_Nomina.DataPropertyName = "Numero_Nomina"
+        Me.Numero_Nomina.HeaderText = "Núm. Nómina"
+        Me.Numero_Nomina.Name = "Numero_Nomina"
+        Me.Numero_Nomina.ReadOnly = True
+        Me.Numero_Nomina.Width = 50
+        '
+        'NTrabajador
+        '
+        Me.NTrabajador.DataPropertyName = "Nombre"
+        Me.NTrabajador.HeaderText = "Trabajador"
+        Me.NTrabajador.Name = "NTrabajador"
+        Me.NTrabajador.ReadOnly = True
+        Me.NTrabajador.Width = 170
+        '
+        'LEx
+        '
+        Me.LEx.AutoSize = True
+        Me.LEx.Location = New System.Drawing.Point(726, 109)
+        Me.LEx.Name = "LEx"
+        Me.LEx.Size = New System.Drawing.Size(0, 13)
+        Me.LEx.TabIndex = 103
+        Me.LEx.Visible = False
+        '
         'EntregasEPP
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.NucleosAve.My.Resources.Resources.Fondo
         Me.ClientSize = New System.Drawing.Size(1006, 520)
+        Me.Controls.Add(Me.LEx)
+        Me.Controls.Add(Me.PNT)
+        Me.Controls.Add(Me.ANuevoT)
+        Me.Controls.Add(Me.PMaterial)
+        Me.Controls.Add(Me.BRIngreso)
+        Me.Controls.Add(Me.PTrabajador)
+        Me.Controls.Add(Me.BGEntrega)
+        Me.Controls.Add(Me.BEliminar)
         Me.Controls.Add(Me.BNuevoPrestamo)
-        Me.Controls.Add(Me.CheckBox1)
+        Me.Controls.Add(Me.CEPendientes)
         Me.Controls.Add(Me.TxtResponsable)
         Me.Controls.Add(Me.LCS)
         Me.Controls.Add(Me.PDatos)
@@ -512,6 +883,14 @@ Partial Class EntregasEPP
         Me.GBusqueda.PerformLayout()
         CType(Me.PBusqueda, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DatosPM, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PNT.ResumeLayout(False)
+        Me.PNT.PerformLayout()
+        Me.PMaterial.ResumeLayout(False)
+        Me.PMaterial.PerformLayout()
+        CType(Me.DGProducto, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PTrabajador.ResumeLayout(False)
+        Me.PTrabajador.PerformLayout()
+        CType(Me.DGTrabajador, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -521,7 +900,6 @@ Partial Class EntregasEPP
     Friend WithEvents LCS As Label
     Friend WithEvents PDatos As Panel
     Friend WithEvents IDD As Label
-    Friend WithEvents BEntrega As Button
     Friend WithEvents LProceso As Label
     Friend WithEvents TxtProceso As TextBox
     Friend WithEvents IDE As Label
@@ -553,7 +931,39 @@ Partial Class EntregasEPP
     Friend WithEvents Descripcion As DataGridViewTextBoxColumn
     Friend WithEvents Proceso As DataGridViewTextBoxColumn
     Friend WithEvents PLinea As Panel
-    Friend WithEvents CheckBox1 As CheckBox
+    Friend WithEvents CEPendientes As CheckBox
     Friend WithEvents CProceso As ComboBox
     Friend WithEvents BNuevoPrestamo As Button
+    Friend WithEvents BEliminar As Button
+    Friend WithEvents ANuevoT As Button
+    Friend WithEvents BRIngreso As Button
+    Friend WithEvents BGEntrega As Button
+    Friend WithEvents BBBMaterial As Button
+    Friend WithEvents BBTrabajador As Button
+    Friend WithEvents PNT As Panel
+    Friend WithEvents BRNT As Button
+    Friend WithEvents BGNT As Button
+    Friend WithEvents TxtNombre As TextBox
+    Friend WithEvents TxtAM As TextBox
+    Friend WithEvents TxtAP As TextBox
+    Friend WithEvents TxtNNN As TextBox
+    Friend WithEvents LAM As Label
+    Friend WithEvents LAP As Label
+    Friend WithEvents LNom As Label
+    Friend WithEvents LN As Label
+    Friend WithEvents LT As Label
+    Friend WithEvents PMaterial As Panel
+    Friend WithEvents TxtBMaterial As TextBox
+    Friend WithEvents DGProducto As DataGridView
+    Friend WithEvents DataGridViewLinkColumn1 As DataGridViewLinkColumn
+    Friend WithEvents Produto As DataGridViewTextBoxColumn
+    Friend WithEvents CodigoP As DataGridViewTextBoxColumn
+    Friend WithEvents Existencia As DataGridViewTextBoxColumn
+    Friend WithEvents PTrabajador As Panel
+    Friend WithEvents TxtBusT As TextBox
+    Friend WithEvents DGTrabajador As DataGridView
+    Friend WithEvents Id_Empleado As DataGridViewLinkColumn
+    Friend WithEvents Numero_Nomina As DataGridViewTextBoxColumn
+    Friend WithEvents NTrabajador As DataGridViewTextBoxColumn
+    Friend WithEvents LEx As Label
 End Class
