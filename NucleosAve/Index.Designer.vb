@@ -90,6 +90,11 @@ Partial Class Index
         Me.BMass = New System.Windows.Forms.PictureBox()
         Me.LMass = New System.Windows.Forms.Label()
         Me.PMMass = New System.Windows.Forms.Panel()
+        Me.PMProcesos = New System.Windows.Forms.Panel()
+        Me.PictureBox9 = New System.Windows.Forms.PictureBox()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.BConsulta = New System.Windows.Forms.PictureBox()
+        Me.Label20 = New System.Windows.Forms.Label()
         Me.BMEPP = New System.Windows.Forms.PictureBox()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.BMInventario = New System.Windows.Forms.PictureBox()
@@ -141,7 +146,7 @@ Partial Class Index
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.LSCRAP = New System.Windows.Forms.Label()
         Me.PProcesos = New System.Windows.Forms.Panel()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.BProceso = New System.Windows.Forms.PictureBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.PStatus = New System.Windows.Forms.Panel()
         Me.PictureBox7 = New System.Windows.Forms.PictureBox()
@@ -149,8 +154,6 @@ Partial Class Index
         Me.lblHora = New System.Windows.Forms.Label()
         Me.lblFecha = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.BConsulta = New System.Windows.Forms.PictureBox()
-        Me.Label20 = New System.Windows.Forms.Label()
         CType(Me.B_Minimizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.B_Cerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_mantenimientos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -191,6 +194,9 @@ Partial Class Index
         Me.PMass.SuspendLayout()
         CType(Me.BMass, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PMMass.SuspendLayout()
+        Me.PMProcesos.SuspendLayout()
+        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BConsulta, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BMEPP, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BMInventario, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PPedidos.SuspendLayout()
@@ -223,10 +229,9 @@ Partial Class Index
         Me.PSCRAP.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PProcesos.SuspendLayout()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BProceso, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PStatus.SuspendLayout()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BConsulta, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'B_Minimizar
@@ -1079,6 +1084,70 @@ Partial Class Index
         Me.PMMass.TabIndex = 0
         Me.PMMass.Visible = False
         '
+        'PMProcesos
+        '
+        Me.PMProcesos.BackColor = System.Drawing.Color.Transparent
+        Me.PMProcesos.Controls.Add(Me.PictureBox9)
+        Me.PMProcesos.Controls.Add(Me.Label23)
+        Me.PMProcesos.Location = New System.Drawing.Point(30, 250)
+        Me.PMProcesos.Name = "PMProcesos"
+        Me.PMProcesos.Size = New System.Drawing.Size(570, 130)
+        Me.PMProcesos.TabIndex = 87
+        Me.PMProcesos.Visible = False
+        '
+        'PictureBox9
+        '
+        Me.PictureBox9.AccessibleDescription = "dfghdfgdfhdhfd"
+        Me.PictureBox9.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.PictureBox9.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox9.Image = CType(resources.GetObject("PictureBox9.Image"), System.Drawing.Image)
+        Me.PictureBox9.Location = New System.Drawing.Point(26, 9)
+        Me.PictureBox9.Name = "PictureBox9"
+        Me.PictureBox9.Size = New System.Drawing.Size(65, 65)
+        Me.PictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox9.TabIndex = 59
+        Me.PictureBox9.TabStop = False
+        '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.BackColor = System.Drawing.Color.Transparent
+        Me.Label23.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label23.ForeColor = System.Drawing.Color.DimGray
+        Me.Label23.Location = New System.Drawing.Point(12, 76)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(88, 30)
+        Me.Label23.TabIndex = 60
+        Me.Label23.Text = "Seguimiento" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "   de OT"
+        Me.Label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'BConsulta
+        '
+        Me.BConsulta.AccessibleDescription = "dfghdfgdfhdhfd"
+        Me.BConsulta.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.BConsulta.BackColor = System.Drawing.Color.Transparent
+        Me.BConsulta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BConsulta.Image = CType(resources.GetObject("BConsulta.Image"), System.Drawing.Image)
+        Me.BConsulta.Location = New System.Drawing.Point(212, 10)
+        Me.BConsulta.Name = "BConsulta"
+        Me.BConsulta.Size = New System.Drawing.Size(65, 65)
+        Me.BConsulta.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.BConsulta.TabIndex = 85
+        Me.BConsulta.TabStop = False
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.BackColor = System.Drawing.Color.Transparent
+        Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label20.ForeColor = System.Drawing.Color.DimGray
+        Me.Label20.Location = New System.Drawing.Point(212, 80)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(63, 15)
+        Me.Label20.TabIndex = 86
+        Me.Label20.Text = "Consulta"
+        '
         'BMEPP
         '
         Me.BMEPP.AccessibleDescription = "dfghdfgdfhdhfd"
@@ -1720,7 +1789,7 @@ Partial Class Index
         'PProcesos
         '
         Me.PProcesos.BackColor = System.Drawing.Color.Transparent
-        Me.PProcesos.Controls.Add(Me.PictureBox3)
+        Me.PProcesos.Controls.Add(Me.BProceso)
         Me.PProcesos.Controls.Add(Me.Label12)
         Me.PProcesos.Location = New System.Drawing.Point(639, 137)
         Me.PProcesos.Name = "PProcesos"
@@ -1728,19 +1797,19 @@ Partial Class Index
         Me.PProcesos.TabIndex = 68
         Me.PProcesos.Visible = False
         '
-        'PictureBox3
+        'BProceso
         '
-        Me.PictureBox3.AccessibleDescription = "dfghdfgdfhdhfd"
-        Me.PictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.PictureBox3.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox3.Image = Global.NucleosAve.My.Resources.Resources.icons8_rollo_de_papel_para_empapelar_96
-        Me.PictureBox3.Location = New System.Drawing.Point(3, 2)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(55, 52)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox3.TabIndex = 35
-        Me.PictureBox3.TabStop = False
+        Me.BProceso.AccessibleDescription = "dfghdfgdfhdhfd"
+        Me.BProceso.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.BProceso.BackColor = System.Drawing.Color.Transparent
+        Me.BProceso.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BProceso.Image = Global.NucleosAve.My.Resources.Resources.icons8_despliegue_40
+        Me.BProceso.Location = New System.Drawing.Point(3, 2)
+        Me.BProceso.Name = "BProceso"
+        Me.BProceso.Size = New System.Drawing.Size(55, 52)
+        Me.BProceso.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.BProceso.TabIndex = 35
+        Me.BProceso.TabStop = False
         '
         'Label12
         '
@@ -1818,38 +1887,13 @@ Partial Class Index
         'Timer1
         '
         '
-        'BConsulta
-        '
-        Me.BConsulta.AccessibleDescription = "dfghdfgdfhdhfd"
-        Me.BConsulta.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.BConsulta.BackColor = System.Drawing.Color.Transparent
-        Me.BConsulta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BConsulta.Image = CType(resources.GetObject("BConsulta.Image"), System.Drawing.Image)
-        Me.BConsulta.Location = New System.Drawing.Point(212, 10)
-        Me.BConsulta.Name = "BConsulta"
-        Me.BConsulta.Size = New System.Drawing.Size(65, 65)
-        Me.BConsulta.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.BConsulta.TabIndex = 85
-        Me.BConsulta.TabStop = False
-        '
-        'Label20
-        '
-        Me.Label20.AutoSize = True
-        Me.Label20.BackColor = System.Drawing.Color.Transparent
-        Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label20.ForeColor = System.Drawing.Color.DimGray
-        Me.Label20.Location = New System.Drawing.Point(212, 80)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(63, 15)
-        Me.Label20.TabIndex = 86
-        Me.Label20.Text = "Consulta"
-        '
         'Index
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.NucleosAve.My.Resources.Resources.Fondo
         Me.ClientSize = New System.Drawing.Size(926, 425)
+        Me.Controls.Add(Me.PMProcesos)
         Me.Controls.Add(Me.PMMass)
         Me.Controls.Add(Me.PMCompras)
         Me.Controls.Add(Me.PMMPrima)
@@ -1938,6 +1982,10 @@ Partial Class Index
         CType(Me.BMass, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PMMass.ResumeLayout(False)
         Me.PMMass.PerformLayout()
+        Me.PMProcesos.ResumeLayout(False)
+        Me.PMProcesos.PerformLayout()
+        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BConsulta, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BMEPP, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BMInventario, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PPedidos.ResumeLayout(False)
@@ -1982,11 +2030,10 @@ Partial Class Index
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PProcesos.ResumeLayout(False)
         Me.PProcesos.PerformLayout()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BProceso, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PStatus.ResumeLayout(False)
         Me.PStatus.PerformLayout()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BConsulta, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -2097,7 +2144,7 @@ Partial Class Index
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents LSCRAP As Label
     Friend WithEvents PProcesos As Panel
-    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents BProceso As PictureBox
     Friend WithEvents Label12 As Label
     Friend WithEvents PStatus As Panel
     Friend WithEvents PictureBox7 As PictureBox
@@ -2119,4 +2166,7 @@ Partial Class Index
     Friend WithEvents Label19 As Label
     Friend WithEvents BConsulta As PictureBox
     Friend WithEvents Label20 As Label
+    Friend WithEvents PMProcesos As Panel
+    Friend WithEvents PictureBox9 As PictureBox
+    Friend WithEvents Label23 As Label
 End Class

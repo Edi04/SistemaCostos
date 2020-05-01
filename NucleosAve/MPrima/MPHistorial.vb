@@ -365,20 +365,17 @@ Public Class MPHistorial
 
         'Mostrar Inf en TextBox
         IMP.Text = row.Cells(0).Value
-        LRI.Text = row.Cells(3).Value
+        LRI.Text = row.Cells(2).Value
         LPeso.Text = row.Cells(6).Value
-
-        l3.Text = row.Cells(1).Value
 
 
 
     End Sub
 
     Private Sub BEliminar_Click(sender As Object, e As EventArgs) Handles BEliminar.Click
-        If MsgBox("Desea eliminar el Número de Rollo: " & LBOC.Text, vbYesNo) = vbYes Then
+        If MsgBox("Desea eliminar el Número de Rollo: " & LRI.Text, vbYesNo) = vbYes Then
             Dim LN As Double = IMP.Text
             Dim Lp As Double = LPeso.Text
-            Dim LO As Double = l3.Text
             Dim RI As Double = LRI.Text
 
             Conex.Open()
@@ -388,12 +385,12 @@ Public Class MPHistorial
                                                                WHERE codigo  = (Select oc.codigo 
                                                                                 from TB_MateriaPrima as mp
 									                                            inner join TB_Ordenes_Compra as oc on oc.purchase_order = mp.OCompra
-									                                            where mp.OCompra = '" & Lo & "'
+									                                            where mp.Id_MPrim = '" & LN & "'
 									                                            group by oc.codigo) )
                                                 WHERE codigo = (Select oc.codigo 
                                                                 from TB_MateriaPrima as mp
 									                               inner join TB_Ordenes_Compra as oc on oc.purchase_order = mp.OCompra
-									                             where mp.OCompra = '" & Lo & "'
+									                             where mp.Id_MPrim = '" & LN & "'
 									                             group by oc.codigo)
 
                                 update TB_MateriaPrima set Estado = 'cancelado'
@@ -405,7 +402,31 @@ Public Class MPHistorial
 
             Conex.Close()
 
-            TxtBusqueda.Text = "-"
+            Dim ConsultaS As String = "SELECT Id_MPrim, Proveedor, Num_Interno, Num_Externo, Calibre, Ancho, Peso, UMedida, Descripcion, Fecha_Llegada,
+		                                    Fecha_Registro, OCompra, CSeguimiento
+                                      FROM TB_MateriaPrima
+                                      WHERE Estado = 'Almacen MP'"
+
+            Dim cmdS As New SqlCommand(ConsultaS, Conex)
+            cmdS.Parameters.AddWithValue("@Busqueda", Trim(TxtBusqueda.Text))
+
+            Dim DaS As New SqlDataAdapter(cmdS)
+            Dim DsS As New DataSet
+
+            Try
+                Conex.Open()
+                DaS.Fill(DsS)
+
+                DGHR.DataSource = DsS.Tables(0)
+                DaS.Dispose()
+
+            Catch ex As Exception
+                MessageBox.Show(Err.Description.ToString(), "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+
+            Conex.Close()
+
+            BEliminar.Visible = False
         End If
 
     End Sub

@@ -69,6 +69,22 @@ Public Class InicioSesion
                         End If
 
 
+                        'Planta
+                    ElseIf Proceso(CUsuarios.Text) = 42 Then
+                        Index.PProcesos.Visible = True
+                        Index.PProcesos.Location = New Point(30, 138)
+
+                        Index.PMProcesos.Visible = True
+                        Index.PCompras.Visible = False
+                        Index.btn_pdf.Visible = False
+                        Index.Lpdf.Visible = False
+                        Index.PMPrima.Visible = False
+                        Index.LAP.Visible = False
+                        Index.btn_entrega_equipo_seguridad.Visible = False
+                        Index.Label18.Visible = False
+                        Index.btn_ventas.Visible = False
+                        Index.Label13.Visible = False
+
                         'Compras
                     ElseIf Proceso(CUsuarios.Text) = 35 Then
                         Index.PCompras.Visible = True

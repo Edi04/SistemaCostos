@@ -218,6 +218,29 @@
         WindowState = FormWindowState.Minimized
     End Sub
 
+    ' Procesos
+    Private Sub BProceso_Click(sender As Object, e As EventArgs) Handles BProceso.Click
+        If PMProcesos.Visible = True Then
+            PMProcesos.Visible = False
+        ElseIf PMProcesos.Visible = False Then
+            PMProcesos.Visible = True
+
+            PA_R.Visible = False
+            PMCompras.Visible = False
+            PMCompras.Visible = False
+            PMTransporte.Visible = False
+            PMAlmacen.Visible = False
+            PMMass.Visible = False
+            PMGasolina.Visible = False
+            PM_recursos_Humanos.Visible = False
+        End If
+    End Sub
+
+    Private Sub PictureBox9_Click(sender As Object, e As EventArgs) Handles PictureBox9.Click
+        Rastreo.Show()
+        WindowState = FormWindowState.Minimized
+    End Sub
+
 
     'Gasolina
     Private Sub btn_gas_Click_1(sender As Object, e As EventArgs) Handles btn_gas.Click

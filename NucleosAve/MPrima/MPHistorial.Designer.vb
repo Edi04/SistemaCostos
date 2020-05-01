@@ -573,9 +573,8 @@ Partial Class MPHistorial
         Me.l3.AutoSize = True
         Me.l3.Location = New System.Drawing.Point(784, 33)
         Me.l3.Name = "l3"
-        Me.l3.Size = New System.Drawing.Size(13, 13)
+        Me.l3.Size = New System.Drawing.Size(0, 13)
         Me.l3.TabIndex = 75
-        Me.l3.Text = "3"
         '
         'IMP
         '
